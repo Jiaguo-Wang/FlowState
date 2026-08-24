@@ -1,0 +1,1049 @@
+; ModuleID = 'LLVMDialectModule'
+source_filename = "LLVMDialectModule"
+target datalayout = "e-p3:32:32-p4:32:32-p5:32:32-p6:32:32-p7:32:32-i64:64-i128:128-i256:256-v16:16-v32:32-n16:32:64"
+
+; Function Attrs: nounwind
+define ptx_kernel void @_fused_slot_clear_kernel(ptr addrspace(1) %0, ptr addrspace(1) %1, ptr addrspace(1) %2, ptr addrspace(1) %3, ptr addrspace(1) %4, ptr addrspace(1) readnone captures(none) %5, ptr addrspace(1) readnone captures(none) %6) local_unnamed_addr #0 !dbg !4 {
+  %8 = tail call i32 @llvm.nvvm.read.ptx.sreg.ctaid.x(), !dbg !7
+  %9 = tail call i32 @llvm.nvvm.read.ptx.sreg.ctaid.y(), !dbg !8
+  %10 = tail call i32 @llvm.nvvm.read.ptx.sreg.ctaid.z(), !dbg !9
+  %11 = zext nneg i32 %9 to i64, !dbg !10
+  %12 = getelementptr i64, ptr addrspace(1) %0, i64 %11, !dbg !10
+  %13 = tail call i64 asm sideeffect "mov.u64 $0, 0x0;\0A\09ld.global.b64 { $0 }, [ $1 + 0 ];", "=l,l"(ptr addrspace(1) %12) #2, !dbg !11
+  %14 = getelementptr i64, ptr addrspace(1) %1, i64 %11, !dbg !12
+  %15 = tail call i64 asm sideeffect "mov.u64 $0, 0x0;\0A\09ld.global.b64 { $0 }, [ $1 + 0 ];", "=l,l"(ptr addrspace(1) %14) #2, !dbg !13
+  %16 = zext nneg i32 %8 to i64, !dbg !14
+  %17 = getelementptr i64, ptr addrspace(1) %4, i64 %16, !dbg !14
+  %18 = tail call i64 asm sideeffect "mov.u64 $0, 0x0;\0A\09ld.global.b64 { $0 }, [ $1 + 0 ];", "=l,l"(ptr addrspace(1) %17) #2, !dbg !15
+  %19 = inttoptr i64 %13 to ptr addrspace(1), !dbg !16
+  %20 = getelementptr i64, ptr addrspace(1) %2, i64 %11, !dbg !17
+  %21 = tail call i64 asm sideeffect "mov.u64 $0, 0x0;\0A\09ld.global.b64 { $0 }, [ $1 + 0 ];", "=l,l"(ptr addrspace(1) %20) #2, !dbg !18
+  %22 = zext nneg i32 %10 to i64, !dbg !19
+  %23 = mul i64 %21, %22, !dbg !19
+  %24 = getelementptr i64, ptr addrspace(1) %3, i64 %11, !dbg !20
+  %25 = tail call i64 asm sideeffect "mov.u64 $0, 0x0;\0A\09ld.global.b64 { $0 }, [ $1 + 0 ];", "=l,l"(ptr addrspace(1) %24) #2, !dbg !21
+  %26 = mul i64 %25, %18, !dbg !22
+  %27 = getelementptr bfloat, ptr addrspace(1) %19, i64 %23, !dbg !23
+  %28 = getelementptr bfloat, ptr addrspace(1) %27, i64 %26, !dbg !23
+  %29 = tail call i32 @llvm.nvvm.read.ptx.sreg.tid.x(), !dbg !24
+  %30 = and i32 %29, 127, !dbg !24
+  %31 = or disjoint i32 %30, 128, !dbg !24
+  %32 = or disjoint i32 %30, 256, !dbg !24
+  %33 = or disjoint i32 %30, 384, !dbg !24
+  %34 = or disjoint i32 %30, 512, !dbg !24
+  %35 = or disjoint i32 %30, 640, !dbg !24
+  %36 = or disjoint i32 %30, 768, !dbg !24
+  %37 = or i32 %29, 896, !dbg !24
+  %38 = zext nneg i32 %30 to i64, !dbg !25
+  %39 = zext nneg i32 %31 to i64, !dbg !25
+  %40 = zext nneg i32 %32 to i64, !dbg !25
+  %41 = zext nneg i32 %33 to i64, !dbg !25
+  %42 = zext nneg i32 %34 to i64, !dbg !25
+  %43 = zext nneg i32 %35 to i64, !dbg !25
+  %44 = zext nneg i32 %36 to i64, !dbg !25
+  %45 = zext nneg i32 %37 to i64, !dbg !25
+  %46 = icmp sgt i64 %15, %38, !dbg !25
+  %47 = icmp sgt i64 %15, %39, !dbg !25
+  %48 = icmp sgt i64 %15, %40, !dbg !25
+  %49 = icmp sgt i64 %15, %41, !dbg !25
+  %50 = icmp sgt i64 %15, %42, !dbg !25
+  %51 = icmp sgt i64 %15, %43, !dbg !25
+  %52 = icmp sgt i64 %15, %44, !dbg !25
+  %53 = icmp sgt i64 %15, %45, !dbg !25
+  %54 = getelementptr bfloat, ptr addrspace(1) %28, i64 %38, !dbg !26
+  %55 = getelementptr bfloat, ptr addrspace(1) %28, i64 %39, !dbg !26
+  %56 = getelementptr bfloat, ptr addrspace(1) %28, i64 %40, !dbg !26
+  %57 = getelementptr bfloat, ptr addrspace(1) %28, i64 %41, !dbg !26
+  %58 = getelementptr bfloat, ptr addrspace(1) %28, i64 %42, !dbg !26
+  %59 = getelementptr bfloat, ptr addrspace(1) %28, i64 %43, !dbg !26
+  %60 = getelementptr bfloat, ptr addrspace(1) %28, i64 %44, !dbg !26
+  %61 = getelementptr bfloat, ptr addrspace(1) %28, i64 %45, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %54, i1 %46) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %55, i1 %47) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %56, i1 %48) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %57, i1 %49) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %58, i1 %50) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %59, i1 %51) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %60, i1 %52) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %61, i1 %53) #2, !dbg !27
+  %62 = or disjoint i32 %30, 1024, !dbg !28
+  %63 = or disjoint i32 %30, 1152, !dbg !28
+  %64 = or disjoint i32 %30, 1280, !dbg !28
+  %65 = or disjoint i32 %30, 1408, !dbg !28
+  %66 = or disjoint i32 %30, 1536, !dbg !28
+  %67 = or disjoint i32 %30, 1664, !dbg !28
+  %68 = or disjoint i32 %30, 1792, !dbg !28
+  %69 = or i32 %29, 1920, !dbg !28
+  %70 = zext nneg i32 %62 to i64, !dbg !25
+  %71 = zext nneg i32 %63 to i64, !dbg !25
+  %72 = zext nneg i32 %64 to i64, !dbg !25
+  %73 = zext nneg i32 %65 to i64, !dbg !25
+  %74 = zext nneg i32 %66 to i64, !dbg !25
+  %75 = zext nneg i32 %67 to i64, !dbg !25
+  %76 = zext nneg i32 %68 to i64, !dbg !25
+  %77 = zext nneg i32 %69 to i64, !dbg !25
+  %78 = icmp sgt i64 %15, %70, !dbg !25
+  %79 = icmp sgt i64 %15, %71, !dbg !25
+  %80 = icmp sgt i64 %15, %72, !dbg !25
+  %81 = icmp sgt i64 %15, %73, !dbg !25
+  %82 = icmp sgt i64 %15, %74, !dbg !25
+  %83 = icmp sgt i64 %15, %75, !dbg !25
+  %84 = icmp sgt i64 %15, %76, !dbg !25
+  %85 = icmp sgt i64 %15, %77, !dbg !25
+  %86 = getelementptr bfloat, ptr addrspace(1) %28, i64 %70, !dbg !26
+  %87 = getelementptr bfloat, ptr addrspace(1) %28, i64 %71, !dbg !26
+  %88 = getelementptr bfloat, ptr addrspace(1) %28, i64 %72, !dbg !26
+  %89 = getelementptr bfloat, ptr addrspace(1) %28, i64 %73, !dbg !26
+  %90 = getelementptr bfloat, ptr addrspace(1) %28, i64 %74, !dbg !26
+  %91 = getelementptr bfloat, ptr addrspace(1) %28, i64 %75, !dbg !26
+  %92 = getelementptr bfloat, ptr addrspace(1) %28, i64 %76, !dbg !26
+  %93 = getelementptr bfloat, ptr addrspace(1) %28, i64 %77, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %86, i1 %78) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %87, i1 %79) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %88, i1 %80) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %89, i1 %81) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %90, i1 %82) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %91, i1 %83) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %92, i1 %84) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %93, i1 %85) #2, !dbg !27
+  %94 = or disjoint i32 %30, 2048, !dbg !28
+  %95 = or disjoint i32 %30, 2176, !dbg !28
+  %96 = or disjoint i32 %30, 2304, !dbg !28
+  %97 = or disjoint i32 %30, 2432, !dbg !28
+  %98 = or disjoint i32 %30, 2560, !dbg !28
+  %99 = or disjoint i32 %30, 2688, !dbg !28
+  %100 = or disjoint i32 %30, 2816, !dbg !28
+  %101 = or i32 %29, 2944, !dbg !28
+  %102 = zext nneg i32 %94 to i64, !dbg !25
+  %103 = zext nneg i32 %95 to i64, !dbg !25
+  %104 = zext nneg i32 %96 to i64, !dbg !25
+  %105 = zext nneg i32 %97 to i64, !dbg !25
+  %106 = zext nneg i32 %98 to i64, !dbg !25
+  %107 = zext nneg i32 %99 to i64, !dbg !25
+  %108 = zext nneg i32 %100 to i64, !dbg !25
+  %109 = zext nneg i32 %101 to i64, !dbg !25
+  %110 = icmp sgt i64 %15, %102, !dbg !25
+  %111 = icmp sgt i64 %15, %103, !dbg !25
+  %112 = icmp sgt i64 %15, %104, !dbg !25
+  %113 = icmp sgt i64 %15, %105, !dbg !25
+  %114 = icmp sgt i64 %15, %106, !dbg !25
+  %115 = icmp sgt i64 %15, %107, !dbg !25
+  %116 = icmp sgt i64 %15, %108, !dbg !25
+  %117 = icmp sgt i64 %15, %109, !dbg !25
+  %118 = getelementptr bfloat, ptr addrspace(1) %28, i64 %102, !dbg !26
+  %119 = getelementptr bfloat, ptr addrspace(1) %28, i64 %103, !dbg !26
+  %120 = getelementptr bfloat, ptr addrspace(1) %28, i64 %104, !dbg !26
+  %121 = getelementptr bfloat, ptr addrspace(1) %28, i64 %105, !dbg !26
+  %122 = getelementptr bfloat, ptr addrspace(1) %28, i64 %106, !dbg !26
+  %123 = getelementptr bfloat, ptr addrspace(1) %28, i64 %107, !dbg !26
+  %124 = getelementptr bfloat, ptr addrspace(1) %28, i64 %108, !dbg !26
+  %125 = getelementptr bfloat, ptr addrspace(1) %28, i64 %109, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %118, i1 %110) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %119, i1 %111) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %120, i1 %112) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %121, i1 %113) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %122, i1 %114) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %123, i1 %115) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %124, i1 %116) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %125, i1 %117) #2, !dbg !27
+  %126 = or disjoint i32 %30, 3072, !dbg !28
+  %127 = or disjoint i32 %30, 3200, !dbg !28
+  %128 = or disjoint i32 %30, 3328, !dbg !28
+  %129 = or disjoint i32 %30, 3456, !dbg !28
+  %130 = or disjoint i32 %30, 3584, !dbg !28
+  %131 = or disjoint i32 %30, 3712, !dbg !28
+  %132 = or disjoint i32 %30, 3840, !dbg !28
+  %133 = or i32 %29, 3968, !dbg !28
+  %134 = zext nneg i32 %126 to i64, !dbg !25
+  %135 = zext nneg i32 %127 to i64, !dbg !25
+  %136 = zext nneg i32 %128 to i64, !dbg !25
+  %137 = zext nneg i32 %129 to i64, !dbg !25
+  %138 = zext nneg i32 %130 to i64, !dbg !25
+  %139 = zext nneg i32 %131 to i64, !dbg !25
+  %140 = zext nneg i32 %132 to i64, !dbg !25
+  %141 = zext nneg i32 %133 to i64, !dbg !25
+  %142 = icmp sgt i64 %15, %134, !dbg !25
+  %143 = icmp sgt i64 %15, %135, !dbg !25
+  %144 = icmp sgt i64 %15, %136, !dbg !25
+  %145 = icmp sgt i64 %15, %137, !dbg !25
+  %146 = icmp sgt i64 %15, %138, !dbg !25
+  %147 = icmp sgt i64 %15, %139, !dbg !25
+  %148 = icmp sgt i64 %15, %140, !dbg !25
+  %149 = icmp sgt i64 %15, %141, !dbg !25
+  %150 = getelementptr bfloat, ptr addrspace(1) %28, i64 %134, !dbg !26
+  %151 = getelementptr bfloat, ptr addrspace(1) %28, i64 %135, !dbg !26
+  %152 = getelementptr bfloat, ptr addrspace(1) %28, i64 %136, !dbg !26
+  %153 = getelementptr bfloat, ptr addrspace(1) %28, i64 %137, !dbg !26
+  %154 = getelementptr bfloat, ptr addrspace(1) %28, i64 %138, !dbg !26
+  %155 = getelementptr bfloat, ptr addrspace(1) %28, i64 %139, !dbg !26
+  %156 = getelementptr bfloat, ptr addrspace(1) %28, i64 %140, !dbg !26
+  %157 = getelementptr bfloat, ptr addrspace(1) %28, i64 %141, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %150, i1 %142) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %151, i1 %143) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %152, i1 %144) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %153, i1 %145) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %154, i1 %146) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %155, i1 %147) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %156, i1 %148) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %157, i1 %149) #2, !dbg !27
+  %158 = or disjoint i32 %30, 4096, !dbg !28
+  %159 = or disjoint i32 %30, 4224, !dbg !28
+  %160 = or disjoint i32 %30, 4352, !dbg !28
+  %161 = or disjoint i32 %30, 4480, !dbg !28
+  %162 = or disjoint i32 %30, 4608, !dbg !28
+  %163 = or disjoint i32 %30, 4736, !dbg !28
+  %164 = or disjoint i32 %30, 4864, !dbg !28
+  %165 = or i32 %29, 4992, !dbg !28
+  %166 = zext nneg i32 %158 to i64, !dbg !25
+  %167 = zext nneg i32 %159 to i64, !dbg !25
+  %168 = zext nneg i32 %160 to i64, !dbg !25
+  %169 = zext nneg i32 %161 to i64, !dbg !25
+  %170 = zext nneg i32 %162 to i64, !dbg !25
+  %171 = zext nneg i32 %163 to i64, !dbg !25
+  %172 = zext nneg i32 %164 to i64, !dbg !25
+  %173 = zext nneg i32 %165 to i64, !dbg !25
+  %174 = icmp sgt i64 %15, %166, !dbg !25
+  %175 = icmp sgt i64 %15, %167, !dbg !25
+  %176 = icmp sgt i64 %15, %168, !dbg !25
+  %177 = icmp sgt i64 %15, %169, !dbg !25
+  %178 = icmp sgt i64 %15, %170, !dbg !25
+  %179 = icmp sgt i64 %15, %171, !dbg !25
+  %180 = icmp sgt i64 %15, %172, !dbg !25
+  %181 = icmp sgt i64 %15, %173, !dbg !25
+  %182 = getelementptr bfloat, ptr addrspace(1) %28, i64 %166, !dbg !26
+  %183 = getelementptr bfloat, ptr addrspace(1) %28, i64 %167, !dbg !26
+  %184 = getelementptr bfloat, ptr addrspace(1) %28, i64 %168, !dbg !26
+  %185 = getelementptr bfloat, ptr addrspace(1) %28, i64 %169, !dbg !26
+  %186 = getelementptr bfloat, ptr addrspace(1) %28, i64 %170, !dbg !26
+  %187 = getelementptr bfloat, ptr addrspace(1) %28, i64 %171, !dbg !26
+  %188 = getelementptr bfloat, ptr addrspace(1) %28, i64 %172, !dbg !26
+  %189 = getelementptr bfloat, ptr addrspace(1) %28, i64 %173, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %182, i1 %174) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %183, i1 %175) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %184, i1 %176) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %185, i1 %177) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %186, i1 %178) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %187, i1 %179) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %188, i1 %180) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %189, i1 %181) #2, !dbg !27
+  %190 = or disjoint i32 %30, 5120, !dbg !28
+  %191 = or disjoint i32 %30, 5248, !dbg !28
+  %192 = or disjoint i32 %30, 5376, !dbg !28
+  %193 = or disjoint i32 %30, 5504, !dbg !28
+  %194 = or disjoint i32 %30, 5632, !dbg !28
+  %195 = or disjoint i32 %30, 5760, !dbg !28
+  %196 = or disjoint i32 %30, 5888, !dbg !28
+  %197 = or i32 %29, 6016, !dbg !28
+  %198 = zext nneg i32 %190 to i64, !dbg !25
+  %199 = zext nneg i32 %191 to i64, !dbg !25
+  %200 = zext nneg i32 %192 to i64, !dbg !25
+  %201 = zext nneg i32 %193 to i64, !dbg !25
+  %202 = zext nneg i32 %194 to i64, !dbg !25
+  %203 = zext nneg i32 %195 to i64, !dbg !25
+  %204 = zext nneg i32 %196 to i64, !dbg !25
+  %205 = zext nneg i32 %197 to i64, !dbg !25
+  %206 = icmp sgt i64 %15, %198, !dbg !25
+  %207 = icmp sgt i64 %15, %199, !dbg !25
+  %208 = icmp sgt i64 %15, %200, !dbg !25
+  %209 = icmp sgt i64 %15, %201, !dbg !25
+  %210 = icmp sgt i64 %15, %202, !dbg !25
+  %211 = icmp sgt i64 %15, %203, !dbg !25
+  %212 = icmp sgt i64 %15, %204, !dbg !25
+  %213 = icmp sgt i64 %15, %205, !dbg !25
+  %214 = getelementptr bfloat, ptr addrspace(1) %28, i64 %198, !dbg !26
+  %215 = getelementptr bfloat, ptr addrspace(1) %28, i64 %199, !dbg !26
+  %216 = getelementptr bfloat, ptr addrspace(1) %28, i64 %200, !dbg !26
+  %217 = getelementptr bfloat, ptr addrspace(1) %28, i64 %201, !dbg !26
+  %218 = getelementptr bfloat, ptr addrspace(1) %28, i64 %202, !dbg !26
+  %219 = getelementptr bfloat, ptr addrspace(1) %28, i64 %203, !dbg !26
+  %220 = getelementptr bfloat, ptr addrspace(1) %28, i64 %204, !dbg !26
+  %221 = getelementptr bfloat, ptr addrspace(1) %28, i64 %205, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %214, i1 %206) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %215, i1 %207) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %216, i1 %208) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %217, i1 %209) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %218, i1 %210) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %219, i1 %211) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %220, i1 %212) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %221, i1 %213) #2, !dbg !27
+  %222 = or disjoint i32 %30, 6144, !dbg !28
+  %223 = or disjoint i32 %30, 6272, !dbg !28
+  %224 = or disjoint i32 %30, 6400, !dbg !28
+  %225 = or disjoint i32 %30, 6528, !dbg !28
+  %226 = or disjoint i32 %30, 6656, !dbg !28
+  %227 = or disjoint i32 %30, 6784, !dbg !28
+  %228 = or disjoint i32 %30, 6912, !dbg !28
+  %229 = or i32 %29, 7040, !dbg !28
+  %230 = zext nneg i32 %222 to i64, !dbg !25
+  %231 = zext nneg i32 %223 to i64, !dbg !25
+  %232 = zext nneg i32 %224 to i64, !dbg !25
+  %233 = zext nneg i32 %225 to i64, !dbg !25
+  %234 = zext nneg i32 %226 to i64, !dbg !25
+  %235 = zext nneg i32 %227 to i64, !dbg !25
+  %236 = zext nneg i32 %228 to i64, !dbg !25
+  %237 = zext nneg i32 %229 to i64, !dbg !25
+  %238 = icmp sgt i64 %15, %230, !dbg !25
+  %239 = icmp sgt i64 %15, %231, !dbg !25
+  %240 = icmp sgt i64 %15, %232, !dbg !25
+  %241 = icmp sgt i64 %15, %233, !dbg !25
+  %242 = icmp sgt i64 %15, %234, !dbg !25
+  %243 = icmp sgt i64 %15, %235, !dbg !25
+  %244 = icmp sgt i64 %15, %236, !dbg !25
+  %245 = icmp sgt i64 %15, %237, !dbg !25
+  %246 = getelementptr bfloat, ptr addrspace(1) %28, i64 %230, !dbg !26
+  %247 = getelementptr bfloat, ptr addrspace(1) %28, i64 %231, !dbg !26
+  %248 = getelementptr bfloat, ptr addrspace(1) %28, i64 %232, !dbg !26
+  %249 = getelementptr bfloat, ptr addrspace(1) %28, i64 %233, !dbg !26
+  %250 = getelementptr bfloat, ptr addrspace(1) %28, i64 %234, !dbg !26
+  %251 = getelementptr bfloat, ptr addrspace(1) %28, i64 %235, !dbg !26
+  %252 = getelementptr bfloat, ptr addrspace(1) %28, i64 %236, !dbg !26
+  %253 = getelementptr bfloat, ptr addrspace(1) %28, i64 %237, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %246, i1 %238) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %247, i1 %239) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %248, i1 %240) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %249, i1 %241) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %250, i1 %242) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %251, i1 %243) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %252, i1 %244) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %253, i1 %245) #2, !dbg !27
+  %254 = or disjoint i32 %30, 7168, !dbg !28
+  %255 = or disjoint i32 %30, 7296, !dbg !28
+  %256 = or disjoint i32 %30, 7424, !dbg !28
+  %257 = or disjoint i32 %30, 7552, !dbg !28
+  %258 = or disjoint i32 %30, 7680, !dbg !28
+  %259 = or disjoint i32 %30, 7808, !dbg !28
+  %260 = or disjoint i32 %30, 7936, !dbg !28
+  %261 = or i32 %29, 8064, !dbg !28
+  %262 = zext nneg i32 %254 to i64, !dbg !25
+  %263 = zext nneg i32 %255 to i64, !dbg !25
+  %264 = zext nneg i32 %256 to i64, !dbg !25
+  %265 = zext nneg i32 %257 to i64, !dbg !25
+  %266 = zext nneg i32 %258 to i64, !dbg !25
+  %267 = zext nneg i32 %259 to i64, !dbg !25
+  %268 = zext nneg i32 %260 to i64, !dbg !25
+  %269 = zext nneg i32 %261 to i64, !dbg !25
+  %270 = icmp sgt i64 %15, %262, !dbg !25
+  %271 = icmp sgt i64 %15, %263, !dbg !25
+  %272 = icmp sgt i64 %15, %264, !dbg !25
+  %273 = icmp sgt i64 %15, %265, !dbg !25
+  %274 = icmp sgt i64 %15, %266, !dbg !25
+  %275 = icmp sgt i64 %15, %267, !dbg !25
+  %276 = icmp sgt i64 %15, %268, !dbg !25
+  %277 = icmp sgt i64 %15, %269, !dbg !25
+  %278 = getelementptr bfloat, ptr addrspace(1) %28, i64 %262, !dbg !26
+  %279 = getelementptr bfloat, ptr addrspace(1) %28, i64 %263, !dbg !26
+  %280 = getelementptr bfloat, ptr addrspace(1) %28, i64 %264, !dbg !26
+  %281 = getelementptr bfloat, ptr addrspace(1) %28, i64 %265, !dbg !26
+  %282 = getelementptr bfloat, ptr addrspace(1) %28, i64 %266, !dbg !26
+  %283 = getelementptr bfloat, ptr addrspace(1) %28, i64 %267, !dbg !26
+  %284 = getelementptr bfloat, ptr addrspace(1) %28, i64 %268, !dbg !26
+  %285 = getelementptr bfloat, ptr addrspace(1) %28, i64 %269, !dbg !26
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %278, i1 %270) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %279, i1 %271) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %280, i1 %272) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %281, i1 %273) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %282, i1 %274) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %283, i1 %275) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %284, i1 %276) #2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %285, i1 %277) #2, !dbg !27
+  %286 = insertelement <128 x i32> poison, i32 %29, i64 0, !dbg !28
+  %287 = insertelement <128 x i32> %286, i32 %30, i64 1, !dbg !28
+  %288 = shufflevector <128 x i32> %287, <128 x i32> poison, <128 x i32> <i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 0, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1, i32 1>, !dbg !28
+  %289 = trunc nuw nsw <128 x i32> %288 to <128 x i16>, !dbg !25
+  %290 = or <128 x i16> %289, <i16 24448, i16 24320, i16 24192, i16 24064, i16 23936, i16 23808, i16 23680, i16 23552, i16 23424, i16 23296, i16 23168, i16 23040, i16 22912, i16 22784, i16 22656, i16 22528, i16 22400, i16 22272, i16 22144, i16 22016, i16 21888, i16 21760, i16 21632, i16 21504, i16 21376, i16 21248, i16 21120, i16 20992, i16 20864, i16 20736, i16 20608, i16 20480, i16 20352, i16 20224, i16 20096, i16 19968, i16 19840, i16 19712, i16 19584, i16 19456, i16 19328, i16 19200, i16 19072, i16 18944, i16 18816, i16 18688, i16 18560, i16 18432, i16 18304, i16 18176, i16 18048, i16 17920, i16 17792, i16 17664, i16 17536, i16 17408, i16 17280, i16 17152, i16 17024, i16 16896, i16 16768, i16 16640, i16 16512, i16 16384, i16 16256, i16 16128, i16 16000, i16 15872, i16 15744, i16 15616, i16 15488, i16 15360, i16 15232, i16 15104, i16 14976, i16 14848, i16 14720, i16 14592, i16 14464, i16 14336, i16 14208, i16 14080, i16 13952, i16 13824, i16 13696, i16 13568, i16 13440, i16 13312, i16 13184, i16 13056, i16 12928, i16 12800, i16 12672, i16 12544, i16 12416, i16 12288, i16 12160, i16 12032, i16 11904, i16 11776, i16 11648, i16 11520, i16 11392, i16 11264, i16 11136, i16 11008, i16 10880, i16 10752, i16 10624, i16 10496, i16 10368, i16 10240, i16 10112, i16 9984, i16 9856, i16 9728, i16 9600, i16 9472, i16 9344, i16 9216, i16 9088, i16 8960, i16 8832, i16 8704, i16 8576, i16 8448, i16 8320, i16 8192>, !dbg !25
+  %291 = extractelement <128 x i16> %290, i64 127, !dbg !26
+  %292 = zext nneg i16 %291 to i64, !dbg !26
+  %293 = getelementptr bfloat, ptr addrspace(1) %28, i64 %292, !dbg !26
+  %294 = extractelement <128 x i16> %290, i64 126, !dbg !26
+  %295 = zext nneg i16 %294 to i64, !dbg !26
+  %296 = getelementptr bfloat, ptr addrspace(1) %28, i64 %295, !dbg !26
+  %297 = extractelement <128 x i16> %290, i64 125, !dbg !26
+  %298 = zext nneg i16 %297 to i64, !dbg !26
+  %299 = getelementptr bfloat, ptr addrspace(1) %28, i64 %298, !dbg !26
+  %300 = extractelement <128 x i16> %290, i64 124, !dbg !26
+  %301 = zext nneg i16 %300 to i64, !dbg !26
+  %302 = getelementptr bfloat, ptr addrspace(1) %28, i64 %301, !dbg !26
+  %303 = extractelement <128 x i16> %290, i64 123, !dbg !26
+  %304 = zext nneg i16 %303 to i64, !dbg !26
+  %305 = getelementptr bfloat, ptr addrspace(1) %28, i64 %304, !dbg !26
+  %306 = extractelement <128 x i16> %290, i64 122, !dbg !26
+  %307 = zext nneg i16 %306 to i64, !dbg !26
+  %308 = getelementptr bfloat, ptr addrspace(1) %28, i64 %307, !dbg !26
+  %309 = extractelement <128 x i16> %290, i64 121, !dbg !26
+  %310 = zext nneg i16 %309 to i64, !dbg !26
+  %311 = getelementptr bfloat, ptr addrspace(1) %28, i64 %310, !dbg !26
+  %312 = extractelement <128 x i16> %290, i64 120, !dbg !26
+  %313 = zext i16 %312 to i64, !dbg !26
+  %314 = getelementptr bfloat, ptr addrspace(1) %28, i64 %313, !dbg !26
+  %315 = insertelement <128 x i64> poison, i64 %15, i64 0, !dbg !25
+  %316 = shufflevector <128 x i64> %315, <128 x i64> poison, <128 x i32> zeroinitializer, !dbg !25
+  %317 = zext nneg <128 x i16> %290 to <128 x i64>, !dbg !25
+  %318 = icmp sgt <128 x i64> %316, %317, !dbg !25
+  %319 = extractelement <128 x i1> %318, i64 127, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %293, i1 %319) #2, !dbg !27
+  %320 = extractelement <128 x i1> %318, i64 126, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %296, i1 %320) #2, !dbg !27
+  %321 = extractelement <128 x i1> %318, i64 125, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %299, i1 %321) #2, !dbg !27
+  %322 = extractelement <128 x i1> %318, i64 124, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %302, i1 %322) #2, !dbg !27
+  %323 = extractelement <128 x i1> %318, i64 123, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %305, i1 %323) #2, !dbg !27
+  %324 = extractelement <128 x i1> %318, i64 122, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %308, i1 %324) #2, !dbg !27
+  %325 = extractelement <128 x i1> %318, i64 121, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %311, i1 %325) #2, !dbg !27
+  %326 = extractelement <128 x i1> %318, i64 120, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %314, i1 %326) #2, !dbg !27
+  %327 = extractelement <128 x i16> %290, i64 119, !dbg !26
+  %328 = zext nneg i16 %327 to i64, !dbg !26
+  %329 = getelementptr bfloat, ptr addrspace(1) %28, i64 %328, !dbg !26
+  %330 = extractelement <128 x i16> %290, i64 118, !dbg !26
+  %331 = zext nneg i16 %330 to i64, !dbg !26
+  %332 = getelementptr bfloat, ptr addrspace(1) %28, i64 %331, !dbg !26
+  %333 = extractelement <128 x i16> %290, i64 117, !dbg !26
+  %334 = zext nneg i16 %333 to i64, !dbg !26
+  %335 = getelementptr bfloat, ptr addrspace(1) %28, i64 %334, !dbg !26
+  %336 = extractelement <128 x i16> %290, i64 116, !dbg !26
+  %337 = zext nneg i16 %336 to i64, !dbg !26
+  %338 = getelementptr bfloat, ptr addrspace(1) %28, i64 %337, !dbg !26
+  %339 = extractelement <128 x i16> %290, i64 115, !dbg !26
+  %340 = zext nneg i16 %339 to i64, !dbg !26
+  %341 = getelementptr bfloat, ptr addrspace(1) %28, i64 %340, !dbg !26
+  %342 = extractelement <128 x i16> %290, i64 114, !dbg !26
+  %343 = zext nneg i16 %342 to i64, !dbg !26
+  %344 = getelementptr bfloat, ptr addrspace(1) %28, i64 %343, !dbg !26
+  %345 = extractelement <128 x i16> %290, i64 113, !dbg !26
+  %346 = zext nneg i16 %345 to i64, !dbg !26
+  %347 = getelementptr bfloat, ptr addrspace(1) %28, i64 %346, !dbg !26
+  %348 = extractelement <128 x i16> %290, i64 112, !dbg !26
+  %349 = zext i16 %348 to i64, !dbg !26
+  %350 = getelementptr bfloat, ptr addrspace(1) %28, i64 %349, !dbg !26
+  %351 = extractelement <128 x i1> %318, i64 119, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %329, i1 %351) #2, !dbg !27
+  %352 = extractelement <128 x i1> %318, i64 118, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %332, i1 %352) #2, !dbg !27
+  %353 = extractelement <128 x i1> %318, i64 117, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %335, i1 %353) #2, !dbg !27
+  %354 = extractelement <128 x i1> %318, i64 116, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %338, i1 %354) #2, !dbg !27
+  %355 = extractelement <128 x i1> %318, i64 115, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %341, i1 %355) #2, !dbg !27
+  %356 = extractelement <128 x i1> %318, i64 114, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %344, i1 %356) #2, !dbg !27
+  %357 = extractelement <128 x i1> %318, i64 113, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %347, i1 %357) #2, !dbg !27
+  %358 = extractelement <128 x i1> %318, i64 112, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %350, i1 %358) #2, !dbg !27
+  %359 = extractelement <128 x i16> %290, i64 111, !dbg !26
+  %360 = zext nneg i16 %359 to i64, !dbg !26
+  %361 = getelementptr bfloat, ptr addrspace(1) %28, i64 %360, !dbg !26
+  %362 = extractelement <128 x i16> %290, i64 110, !dbg !26
+  %363 = zext nneg i16 %362 to i64, !dbg !26
+  %364 = getelementptr bfloat, ptr addrspace(1) %28, i64 %363, !dbg !26
+  %365 = extractelement <128 x i16> %290, i64 109, !dbg !26
+  %366 = zext nneg i16 %365 to i64, !dbg !26
+  %367 = getelementptr bfloat, ptr addrspace(1) %28, i64 %366, !dbg !26
+  %368 = extractelement <128 x i16> %290, i64 108, !dbg !26
+  %369 = zext nneg i16 %368 to i64, !dbg !26
+  %370 = getelementptr bfloat, ptr addrspace(1) %28, i64 %369, !dbg !26
+  %371 = extractelement <128 x i16> %290, i64 107, !dbg !26
+  %372 = zext nneg i16 %371 to i64, !dbg !26
+  %373 = getelementptr bfloat, ptr addrspace(1) %28, i64 %372, !dbg !26
+  %374 = extractelement <128 x i16> %290, i64 106, !dbg !26
+  %375 = zext nneg i16 %374 to i64, !dbg !26
+  %376 = getelementptr bfloat, ptr addrspace(1) %28, i64 %375, !dbg !26
+  %377 = extractelement <128 x i16> %290, i64 105, !dbg !26
+  %378 = zext nneg i16 %377 to i64, !dbg !26
+  %379 = getelementptr bfloat, ptr addrspace(1) %28, i64 %378, !dbg !26
+  %380 = extractelement <128 x i16> %290, i64 104, !dbg !26
+  %381 = zext i16 %380 to i64, !dbg !26
+  %382 = getelementptr bfloat, ptr addrspace(1) %28, i64 %381, !dbg !26
+  %383 = extractelement <128 x i1> %318, i64 111, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %361, i1 %383) #2, !dbg !27
+  %384 = extractelement <128 x i1> %318, i64 110, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %364, i1 %384) #2, !dbg !27
+  %385 = extractelement <128 x i1> %318, i64 109, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %367, i1 %385) #2, !dbg !27
+  %386 = extractelement <128 x i1> %318, i64 108, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %370, i1 %386) #2, !dbg !27
+  %387 = extractelement <128 x i1> %318, i64 107, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %373, i1 %387) #2, !dbg !27
+  %388 = extractelement <128 x i1> %318, i64 106, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %376, i1 %388) #2, !dbg !27
+  %389 = extractelement <128 x i1> %318, i64 105, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %379, i1 %389) #2, !dbg !27
+  %390 = extractelement <128 x i1> %318, i64 104, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %382, i1 %390) #2, !dbg !27
+  %391 = extractelement <128 x i16> %290, i64 103, !dbg !26
+  %392 = zext nneg i16 %391 to i64, !dbg !26
+  %393 = getelementptr bfloat, ptr addrspace(1) %28, i64 %392, !dbg !26
+  %394 = extractelement <128 x i16> %290, i64 102, !dbg !26
+  %395 = zext nneg i16 %394 to i64, !dbg !26
+  %396 = getelementptr bfloat, ptr addrspace(1) %28, i64 %395, !dbg !26
+  %397 = extractelement <128 x i16> %290, i64 101, !dbg !26
+  %398 = zext nneg i16 %397 to i64, !dbg !26
+  %399 = getelementptr bfloat, ptr addrspace(1) %28, i64 %398, !dbg !26
+  %400 = extractelement <128 x i16> %290, i64 100, !dbg !26
+  %401 = zext nneg i16 %400 to i64, !dbg !26
+  %402 = getelementptr bfloat, ptr addrspace(1) %28, i64 %401, !dbg !26
+  %403 = extractelement <128 x i16> %290, i64 99, !dbg !26
+  %404 = zext nneg i16 %403 to i64, !dbg !26
+  %405 = getelementptr bfloat, ptr addrspace(1) %28, i64 %404, !dbg !26
+  %406 = extractelement <128 x i16> %290, i64 98, !dbg !26
+  %407 = zext nneg i16 %406 to i64, !dbg !26
+  %408 = getelementptr bfloat, ptr addrspace(1) %28, i64 %407, !dbg !26
+  %409 = extractelement <128 x i16> %290, i64 97, !dbg !26
+  %410 = zext nneg i16 %409 to i64, !dbg !26
+  %411 = getelementptr bfloat, ptr addrspace(1) %28, i64 %410, !dbg !26
+  %412 = extractelement <128 x i16> %290, i64 96, !dbg !26
+  %413 = zext i16 %412 to i64, !dbg !26
+  %414 = getelementptr bfloat, ptr addrspace(1) %28, i64 %413, !dbg !26
+  %415 = extractelement <128 x i1> %318, i64 103, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %393, i1 %415) #2, !dbg !27
+  %416 = extractelement <128 x i1> %318, i64 102, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %396, i1 %416) #2, !dbg !27
+  %417 = extractelement <128 x i1> %318, i64 101, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %399, i1 %417) #2, !dbg !27
+  %418 = extractelement <128 x i1> %318, i64 100, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %402, i1 %418) #2, !dbg !27
+  %419 = extractelement <128 x i1> %318, i64 99, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %405, i1 %419) #2, !dbg !27
+  %420 = extractelement <128 x i1> %318, i64 98, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %408, i1 %420) #2, !dbg !27
+  %421 = extractelement <128 x i1> %318, i64 97, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %411, i1 %421) #2, !dbg !27
+  %422 = extractelement <128 x i1> %318, i64 96, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %414, i1 %422) #2, !dbg !27
+  %423 = extractelement <128 x i16> %290, i64 95, !dbg !26
+  %424 = zext nneg i16 %423 to i64, !dbg !26
+  %425 = getelementptr bfloat, ptr addrspace(1) %28, i64 %424, !dbg !26
+  %426 = extractelement <128 x i16> %290, i64 94, !dbg !26
+  %427 = zext nneg i16 %426 to i64, !dbg !26
+  %428 = getelementptr bfloat, ptr addrspace(1) %28, i64 %427, !dbg !26
+  %429 = extractelement <128 x i16> %290, i64 93, !dbg !26
+  %430 = zext nneg i16 %429 to i64, !dbg !26
+  %431 = getelementptr bfloat, ptr addrspace(1) %28, i64 %430, !dbg !26
+  %432 = extractelement <128 x i16> %290, i64 92, !dbg !26
+  %433 = zext nneg i16 %432 to i64, !dbg !26
+  %434 = getelementptr bfloat, ptr addrspace(1) %28, i64 %433, !dbg !26
+  %435 = extractelement <128 x i16> %290, i64 91, !dbg !26
+  %436 = zext nneg i16 %435 to i64, !dbg !26
+  %437 = getelementptr bfloat, ptr addrspace(1) %28, i64 %436, !dbg !26
+  %438 = extractelement <128 x i16> %290, i64 90, !dbg !26
+  %439 = zext nneg i16 %438 to i64, !dbg !26
+  %440 = getelementptr bfloat, ptr addrspace(1) %28, i64 %439, !dbg !26
+  %441 = extractelement <128 x i16> %290, i64 89, !dbg !26
+  %442 = zext nneg i16 %441 to i64, !dbg !26
+  %443 = getelementptr bfloat, ptr addrspace(1) %28, i64 %442, !dbg !26
+  %444 = extractelement <128 x i16> %290, i64 88, !dbg !26
+  %445 = zext i16 %444 to i64, !dbg !26
+  %446 = getelementptr bfloat, ptr addrspace(1) %28, i64 %445, !dbg !26
+  %447 = extractelement <128 x i1> %318, i64 95, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %425, i1 %447) #2, !dbg !27
+  %448 = extractelement <128 x i1> %318, i64 94, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %428, i1 %448) #2, !dbg !27
+  %449 = extractelement <128 x i1> %318, i64 93, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %431, i1 %449) #2, !dbg !27
+  %450 = extractelement <128 x i1> %318, i64 92, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %434, i1 %450) #2, !dbg !27
+  %451 = extractelement <128 x i1> %318, i64 91, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %437, i1 %451) #2, !dbg !27
+  %452 = extractelement <128 x i1> %318, i64 90, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %440, i1 %452) #2, !dbg !27
+  %453 = extractelement <128 x i1> %318, i64 89, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %443, i1 %453) #2, !dbg !27
+  %454 = extractelement <128 x i1> %318, i64 88, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %446, i1 %454) #2, !dbg !27
+  %455 = extractelement <128 x i16> %290, i64 87, !dbg !26
+  %456 = zext nneg i16 %455 to i64, !dbg !26
+  %457 = getelementptr bfloat, ptr addrspace(1) %28, i64 %456, !dbg !26
+  %458 = extractelement <128 x i16> %290, i64 86, !dbg !26
+  %459 = zext nneg i16 %458 to i64, !dbg !26
+  %460 = getelementptr bfloat, ptr addrspace(1) %28, i64 %459, !dbg !26
+  %461 = extractelement <128 x i16> %290, i64 85, !dbg !26
+  %462 = zext nneg i16 %461 to i64, !dbg !26
+  %463 = getelementptr bfloat, ptr addrspace(1) %28, i64 %462, !dbg !26
+  %464 = extractelement <128 x i16> %290, i64 84, !dbg !26
+  %465 = zext nneg i16 %464 to i64, !dbg !26
+  %466 = getelementptr bfloat, ptr addrspace(1) %28, i64 %465, !dbg !26
+  %467 = extractelement <128 x i16> %290, i64 83, !dbg !26
+  %468 = zext nneg i16 %467 to i64, !dbg !26
+  %469 = getelementptr bfloat, ptr addrspace(1) %28, i64 %468, !dbg !26
+  %470 = extractelement <128 x i16> %290, i64 82, !dbg !26
+  %471 = zext nneg i16 %470 to i64, !dbg !26
+  %472 = getelementptr bfloat, ptr addrspace(1) %28, i64 %471, !dbg !26
+  %473 = extractelement <128 x i16> %290, i64 81, !dbg !26
+  %474 = zext nneg i16 %473 to i64, !dbg !26
+  %475 = getelementptr bfloat, ptr addrspace(1) %28, i64 %474, !dbg !26
+  %476 = extractelement <128 x i16> %290, i64 80, !dbg !26
+  %477 = zext i16 %476 to i64, !dbg !26
+  %478 = getelementptr bfloat, ptr addrspace(1) %28, i64 %477, !dbg !26
+  %479 = extractelement <128 x i1> %318, i64 87, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %457, i1 %479) #2, !dbg !27
+  %480 = extractelement <128 x i1> %318, i64 86, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %460, i1 %480) #2, !dbg !27
+  %481 = extractelement <128 x i1> %318, i64 85, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %463, i1 %481) #2, !dbg !27
+  %482 = extractelement <128 x i1> %318, i64 84, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %466, i1 %482) #2, !dbg !27
+  %483 = extractelement <128 x i1> %318, i64 83, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %469, i1 %483) #2, !dbg !27
+  %484 = extractelement <128 x i1> %318, i64 82, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %472, i1 %484) #2, !dbg !27
+  %485 = extractelement <128 x i1> %318, i64 81, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %475, i1 %485) #2, !dbg !27
+  %486 = extractelement <128 x i1> %318, i64 80, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %478, i1 %486) #2, !dbg !27
+  %487 = extractelement <128 x i16> %290, i64 79, !dbg !26
+  %488 = zext nneg i16 %487 to i64, !dbg !26
+  %489 = getelementptr bfloat, ptr addrspace(1) %28, i64 %488, !dbg !26
+  %490 = extractelement <128 x i16> %290, i64 78, !dbg !26
+  %491 = zext nneg i16 %490 to i64, !dbg !26
+  %492 = getelementptr bfloat, ptr addrspace(1) %28, i64 %491, !dbg !26
+  %493 = extractelement <128 x i16> %290, i64 77, !dbg !26
+  %494 = zext nneg i16 %493 to i64, !dbg !26
+  %495 = getelementptr bfloat, ptr addrspace(1) %28, i64 %494, !dbg !26
+  %496 = extractelement <128 x i16> %290, i64 76, !dbg !26
+  %497 = zext nneg i16 %496 to i64, !dbg !26
+  %498 = getelementptr bfloat, ptr addrspace(1) %28, i64 %497, !dbg !26
+  %499 = extractelement <128 x i16> %290, i64 75, !dbg !26
+  %500 = zext nneg i16 %499 to i64, !dbg !26
+  %501 = getelementptr bfloat, ptr addrspace(1) %28, i64 %500, !dbg !26
+  %502 = extractelement <128 x i16> %290, i64 74, !dbg !26
+  %503 = zext nneg i16 %502 to i64, !dbg !26
+  %504 = getelementptr bfloat, ptr addrspace(1) %28, i64 %503, !dbg !26
+  %505 = extractelement <128 x i16> %290, i64 73, !dbg !26
+  %506 = zext nneg i16 %505 to i64, !dbg !26
+  %507 = getelementptr bfloat, ptr addrspace(1) %28, i64 %506, !dbg !26
+  %508 = extractelement <128 x i16> %290, i64 72, !dbg !26
+  %509 = zext i16 %508 to i64, !dbg !26
+  %510 = getelementptr bfloat, ptr addrspace(1) %28, i64 %509, !dbg !26
+  %511 = extractelement <128 x i1> %318, i64 79, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %489, i1 %511) #2, !dbg !27
+  %512 = extractelement <128 x i1> %318, i64 78, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %492, i1 %512) #2, !dbg !27
+  %513 = extractelement <128 x i1> %318, i64 77, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %495, i1 %513) #2, !dbg !27
+  %514 = extractelement <128 x i1> %318, i64 76, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %498, i1 %514) #2, !dbg !27
+  %515 = extractelement <128 x i1> %318, i64 75, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %501, i1 %515) #2, !dbg !27
+  %516 = extractelement <128 x i1> %318, i64 74, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %504, i1 %516) #2, !dbg !27
+  %517 = extractelement <128 x i1> %318, i64 73, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %507, i1 %517) #2, !dbg !27
+  %518 = extractelement <128 x i1> %318, i64 72, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %510, i1 %518) #2, !dbg !27
+  %519 = extractelement <128 x i16> %290, i64 71, !dbg !26
+  %520 = zext nneg i16 %519 to i64, !dbg !26
+  %521 = getelementptr bfloat, ptr addrspace(1) %28, i64 %520, !dbg !26
+  %522 = extractelement <128 x i16> %290, i64 70, !dbg !26
+  %523 = zext nneg i16 %522 to i64, !dbg !26
+  %524 = getelementptr bfloat, ptr addrspace(1) %28, i64 %523, !dbg !26
+  %525 = extractelement <128 x i16> %290, i64 69, !dbg !26
+  %526 = zext nneg i16 %525 to i64, !dbg !26
+  %527 = getelementptr bfloat, ptr addrspace(1) %28, i64 %526, !dbg !26
+  %528 = extractelement <128 x i16> %290, i64 68, !dbg !26
+  %529 = zext nneg i16 %528 to i64, !dbg !26
+  %530 = getelementptr bfloat, ptr addrspace(1) %28, i64 %529, !dbg !26
+  %531 = extractelement <128 x i16> %290, i64 67, !dbg !26
+  %532 = zext nneg i16 %531 to i64, !dbg !26
+  %533 = getelementptr bfloat, ptr addrspace(1) %28, i64 %532, !dbg !26
+  %534 = extractelement <128 x i16> %290, i64 66, !dbg !26
+  %535 = zext nneg i16 %534 to i64, !dbg !26
+  %536 = getelementptr bfloat, ptr addrspace(1) %28, i64 %535, !dbg !26
+  %537 = extractelement <128 x i16> %290, i64 65, !dbg !26
+  %538 = zext nneg i16 %537 to i64, !dbg !26
+  %539 = getelementptr bfloat, ptr addrspace(1) %28, i64 %538, !dbg !26
+  %540 = extractelement <128 x i16> %290, i64 64, !dbg !26
+  %541 = zext i16 %540 to i64, !dbg !26
+  %542 = getelementptr bfloat, ptr addrspace(1) %28, i64 %541, !dbg !26
+  %543 = extractelement <128 x i1> %318, i64 71, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %521, i1 %543) #2, !dbg !27
+  %544 = extractelement <128 x i1> %318, i64 70, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %524, i1 %544) #2, !dbg !27
+  %545 = extractelement <128 x i1> %318, i64 69, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %527, i1 %545) #2, !dbg !27
+  %546 = extractelement <128 x i1> %318, i64 68, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %530, i1 %546) #2, !dbg !27
+  %547 = extractelement <128 x i1> %318, i64 67, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %533, i1 %547) #2, !dbg !27
+  %548 = extractelement <128 x i1> %318, i64 66, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %536, i1 %548) #2, !dbg !27
+  %549 = extractelement <128 x i1> %318, i64 65, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %539, i1 %549) #2, !dbg !27
+  %550 = extractelement <128 x i1> %318, i64 64, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %542, i1 %550) #2, !dbg !27
+  %551 = extractelement <128 x i16> %290, i64 63, !dbg !26
+  %552 = zext nneg i16 %551 to i64, !dbg !26
+  %553 = getelementptr bfloat, ptr addrspace(1) %28, i64 %552, !dbg !26
+  %554 = extractelement <128 x i16> %290, i64 62, !dbg !26
+  %555 = zext nneg i16 %554 to i64, !dbg !26
+  %556 = getelementptr bfloat, ptr addrspace(1) %28, i64 %555, !dbg !26
+  %557 = extractelement <128 x i16> %290, i64 61, !dbg !26
+  %558 = zext nneg i16 %557 to i64, !dbg !26
+  %559 = getelementptr bfloat, ptr addrspace(1) %28, i64 %558, !dbg !26
+  %560 = extractelement <128 x i16> %290, i64 60, !dbg !26
+  %561 = zext nneg i16 %560 to i64, !dbg !26
+  %562 = getelementptr bfloat, ptr addrspace(1) %28, i64 %561, !dbg !26
+  %563 = extractelement <128 x i16> %290, i64 59, !dbg !26
+  %564 = zext nneg i16 %563 to i64, !dbg !26
+  %565 = getelementptr bfloat, ptr addrspace(1) %28, i64 %564, !dbg !26
+  %566 = extractelement <128 x i16> %290, i64 58, !dbg !26
+  %567 = zext nneg i16 %566 to i64, !dbg !26
+  %568 = getelementptr bfloat, ptr addrspace(1) %28, i64 %567, !dbg !26
+  %569 = extractelement <128 x i16> %290, i64 57, !dbg !26
+  %570 = zext nneg i16 %569 to i64, !dbg !26
+  %571 = getelementptr bfloat, ptr addrspace(1) %28, i64 %570, !dbg !26
+  %572 = extractelement <128 x i16> %290, i64 56, !dbg !26
+  %573 = zext i16 %572 to i64, !dbg !26
+  %574 = getelementptr bfloat, ptr addrspace(1) %28, i64 %573, !dbg !26
+  %575 = extractelement <128 x i1> %318, i64 63, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %553, i1 %575) #2, !dbg !27
+  %576 = extractelement <128 x i1> %318, i64 62, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %556, i1 %576) #2, !dbg !27
+  %577 = extractelement <128 x i1> %318, i64 61, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %559, i1 %577) #2, !dbg !27
+  %578 = extractelement <128 x i1> %318, i64 60, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %562, i1 %578) #2, !dbg !27
+  %579 = extractelement <128 x i1> %318, i64 59, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %565, i1 %579) #2, !dbg !27
+  %580 = extractelement <128 x i1> %318, i64 58, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %568, i1 %580) #2, !dbg !27
+  %581 = extractelement <128 x i1> %318, i64 57, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %571, i1 %581) #2, !dbg !27
+  %582 = extractelement <128 x i1> %318, i64 56, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %574, i1 %582) #2, !dbg !27
+  %583 = extractelement <128 x i16> %290, i64 55, !dbg !26
+  %584 = zext nneg i16 %583 to i64, !dbg !26
+  %585 = getelementptr bfloat, ptr addrspace(1) %28, i64 %584, !dbg !26
+  %586 = extractelement <128 x i16> %290, i64 54, !dbg !26
+  %587 = zext nneg i16 %586 to i64, !dbg !26
+  %588 = getelementptr bfloat, ptr addrspace(1) %28, i64 %587, !dbg !26
+  %589 = extractelement <128 x i16> %290, i64 53, !dbg !26
+  %590 = zext nneg i16 %589 to i64, !dbg !26
+  %591 = getelementptr bfloat, ptr addrspace(1) %28, i64 %590, !dbg !26
+  %592 = extractelement <128 x i16> %290, i64 52, !dbg !26
+  %593 = zext nneg i16 %592 to i64, !dbg !26
+  %594 = getelementptr bfloat, ptr addrspace(1) %28, i64 %593, !dbg !26
+  %595 = extractelement <128 x i16> %290, i64 51, !dbg !26
+  %596 = zext nneg i16 %595 to i64, !dbg !26
+  %597 = getelementptr bfloat, ptr addrspace(1) %28, i64 %596, !dbg !26
+  %598 = extractelement <128 x i16> %290, i64 50, !dbg !26
+  %599 = zext nneg i16 %598 to i64, !dbg !26
+  %600 = getelementptr bfloat, ptr addrspace(1) %28, i64 %599, !dbg !26
+  %601 = extractelement <128 x i16> %290, i64 49, !dbg !26
+  %602 = zext nneg i16 %601 to i64, !dbg !26
+  %603 = getelementptr bfloat, ptr addrspace(1) %28, i64 %602, !dbg !26
+  %604 = extractelement <128 x i16> %290, i64 48, !dbg !26
+  %605 = zext i16 %604 to i64, !dbg !26
+  %606 = getelementptr bfloat, ptr addrspace(1) %28, i64 %605, !dbg !26
+  %607 = extractelement <128 x i1> %318, i64 55, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %585, i1 %607) #2, !dbg !27
+  %608 = extractelement <128 x i1> %318, i64 54, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %588, i1 %608) #2, !dbg !27
+  %609 = extractelement <128 x i1> %318, i64 53, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %591, i1 %609) #2, !dbg !27
+  %610 = extractelement <128 x i1> %318, i64 52, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %594, i1 %610) #2, !dbg !27
+  %611 = extractelement <128 x i1> %318, i64 51, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %597, i1 %611) #2, !dbg !27
+  %612 = extractelement <128 x i1> %318, i64 50, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %600, i1 %612) #2, !dbg !27
+  %613 = extractelement <128 x i1> %318, i64 49, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %603, i1 %613) #2, !dbg !27
+  %614 = extractelement <128 x i1> %318, i64 48, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %606, i1 %614) #2, !dbg !27
+  %615 = extractelement <128 x i16> %290, i64 47, !dbg !26
+  %616 = zext nneg i16 %615 to i64, !dbg !26
+  %617 = getelementptr bfloat, ptr addrspace(1) %28, i64 %616, !dbg !26
+  %618 = extractelement <128 x i16> %290, i64 46, !dbg !26
+  %619 = zext nneg i16 %618 to i64, !dbg !26
+  %620 = getelementptr bfloat, ptr addrspace(1) %28, i64 %619, !dbg !26
+  %621 = extractelement <128 x i16> %290, i64 45, !dbg !26
+  %622 = zext nneg i16 %621 to i64, !dbg !26
+  %623 = getelementptr bfloat, ptr addrspace(1) %28, i64 %622, !dbg !26
+  %624 = extractelement <128 x i16> %290, i64 44, !dbg !26
+  %625 = zext nneg i16 %624 to i64, !dbg !26
+  %626 = getelementptr bfloat, ptr addrspace(1) %28, i64 %625, !dbg !26
+  %627 = extractelement <128 x i16> %290, i64 43, !dbg !26
+  %628 = zext nneg i16 %627 to i64, !dbg !26
+  %629 = getelementptr bfloat, ptr addrspace(1) %28, i64 %628, !dbg !26
+  %630 = extractelement <128 x i16> %290, i64 42, !dbg !26
+  %631 = zext nneg i16 %630 to i64, !dbg !26
+  %632 = getelementptr bfloat, ptr addrspace(1) %28, i64 %631, !dbg !26
+  %633 = extractelement <128 x i16> %290, i64 41, !dbg !26
+  %634 = zext nneg i16 %633 to i64, !dbg !26
+  %635 = getelementptr bfloat, ptr addrspace(1) %28, i64 %634, !dbg !26
+  %636 = extractelement <128 x i16> %290, i64 40, !dbg !26
+  %637 = zext i16 %636 to i64, !dbg !26
+  %638 = getelementptr bfloat, ptr addrspace(1) %28, i64 %637, !dbg !26
+  %639 = extractelement <128 x i1> %318, i64 47, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %617, i1 %639) #2, !dbg !27
+  %640 = extractelement <128 x i1> %318, i64 46, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %620, i1 %640) #2, !dbg !27
+  %641 = extractelement <128 x i1> %318, i64 45, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %623, i1 %641) #2, !dbg !27
+  %642 = extractelement <128 x i1> %318, i64 44, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %626, i1 %642) #2, !dbg !27
+  %643 = extractelement <128 x i1> %318, i64 43, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %629, i1 %643) #2, !dbg !27
+  %644 = extractelement <128 x i1> %318, i64 42, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %632, i1 %644) #2, !dbg !27
+  %645 = extractelement <128 x i1> %318, i64 41, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %635, i1 %645) #2, !dbg !27
+  %646 = extractelement <128 x i1> %318, i64 40, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %638, i1 %646) #2, !dbg !27
+  %647 = extractelement <128 x i16> %290, i64 39, !dbg !26
+  %648 = zext nneg i16 %647 to i64, !dbg !26
+  %649 = getelementptr bfloat, ptr addrspace(1) %28, i64 %648, !dbg !26
+  %650 = extractelement <128 x i16> %290, i64 38, !dbg !26
+  %651 = zext nneg i16 %650 to i64, !dbg !26
+  %652 = getelementptr bfloat, ptr addrspace(1) %28, i64 %651, !dbg !26
+  %653 = extractelement <128 x i16> %290, i64 37, !dbg !26
+  %654 = zext nneg i16 %653 to i64, !dbg !26
+  %655 = getelementptr bfloat, ptr addrspace(1) %28, i64 %654, !dbg !26
+  %656 = extractelement <128 x i16> %290, i64 36, !dbg !26
+  %657 = zext nneg i16 %656 to i64, !dbg !26
+  %658 = getelementptr bfloat, ptr addrspace(1) %28, i64 %657, !dbg !26
+  %659 = extractelement <128 x i16> %290, i64 35, !dbg !26
+  %660 = zext nneg i16 %659 to i64, !dbg !26
+  %661 = getelementptr bfloat, ptr addrspace(1) %28, i64 %660, !dbg !26
+  %662 = extractelement <128 x i16> %290, i64 34, !dbg !26
+  %663 = zext nneg i16 %662 to i64, !dbg !26
+  %664 = getelementptr bfloat, ptr addrspace(1) %28, i64 %663, !dbg !26
+  %665 = extractelement <128 x i16> %290, i64 33, !dbg !26
+  %666 = zext nneg i16 %665 to i64, !dbg !26
+  %667 = getelementptr bfloat, ptr addrspace(1) %28, i64 %666, !dbg !26
+  %668 = extractelement <128 x i16> %290, i64 32, !dbg !26
+  %669 = zext i16 %668 to i64, !dbg !26
+  %670 = getelementptr bfloat, ptr addrspace(1) %28, i64 %669, !dbg !26
+  %671 = extractelement <128 x i1> %318, i64 39, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %649, i1 %671) #2, !dbg !27
+  %672 = extractelement <128 x i1> %318, i64 38, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %652, i1 %672) #2, !dbg !27
+  %673 = extractelement <128 x i1> %318, i64 37, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %655, i1 %673) #2, !dbg !27
+  %674 = extractelement <128 x i1> %318, i64 36, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %658, i1 %674) #2, !dbg !27
+  %675 = extractelement <128 x i1> %318, i64 35, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %661, i1 %675) #2, !dbg !27
+  %676 = extractelement <128 x i1> %318, i64 34, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %664, i1 %676) #2, !dbg !27
+  %677 = extractelement <128 x i1> %318, i64 33, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %667, i1 %677) #2, !dbg !27
+  %678 = extractelement <128 x i1> %318, i64 32, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %670, i1 %678) #2, !dbg !27
+  %679 = extractelement <128 x i16> %290, i64 31, !dbg !26
+  %680 = zext nneg i16 %679 to i64, !dbg !26
+  %681 = getelementptr bfloat, ptr addrspace(1) %28, i64 %680, !dbg !26
+  %682 = extractelement <128 x i16> %290, i64 30, !dbg !26
+  %683 = zext nneg i16 %682 to i64, !dbg !26
+  %684 = getelementptr bfloat, ptr addrspace(1) %28, i64 %683, !dbg !26
+  %685 = extractelement <128 x i16> %290, i64 29, !dbg !26
+  %686 = zext nneg i16 %685 to i64, !dbg !26
+  %687 = getelementptr bfloat, ptr addrspace(1) %28, i64 %686, !dbg !26
+  %688 = extractelement <128 x i16> %290, i64 28, !dbg !26
+  %689 = zext nneg i16 %688 to i64, !dbg !26
+  %690 = getelementptr bfloat, ptr addrspace(1) %28, i64 %689, !dbg !26
+  %691 = extractelement <128 x i16> %290, i64 27, !dbg !26
+  %692 = zext nneg i16 %691 to i64, !dbg !26
+  %693 = getelementptr bfloat, ptr addrspace(1) %28, i64 %692, !dbg !26
+  %694 = extractelement <128 x i16> %290, i64 26, !dbg !26
+  %695 = zext nneg i16 %694 to i64, !dbg !26
+  %696 = getelementptr bfloat, ptr addrspace(1) %28, i64 %695, !dbg !26
+  %697 = extractelement <128 x i16> %290, i64 25, !dbg !26
+  %698 = zext nneg i16 %697 to i64, !dbg !26
+  %699 = getelementptr bfloat, ptr addrspace(1) %28, i64 %698, !dbg !26
+  %700 = extractelement <128 x i16> %290, i64 24, !dbg !26
+  %701 = zext i16 %700 to i64, !dbg !26
+  %702 = getelementptr bfloat, ptr addrspace(1) %28, i64 %701, !dbg !26
+  %703 = extractelement <128 x i1> %318, i64 31, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %681, i1 %703) #2, !dbg !27
+  %704 = extractelement <128 x i1> %318, i64 30, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %684, i1 %704) #2, !dbg !27
+  %705 = extractelement <128 x i1> %318, i64 29, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %687, i1 %705) #2, !dbg !27
+  %706 = extractelement <128 x i1> %318, i64 28, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %690, i1 %706) #2, !dbg !27
+  %707 = extractelement <128 x i1> %318, i64 27, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %693, i1 %707) #2, !dbg !27
+  %708 = extractelement <128 x i1> %318, i64 26, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %696, i1 %708) #2, !dbg !27
+  %709 = extractelement <128 x i1> %318, i64 25, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %699, i1 %709) #2, !dbg !27
+  %710 = extractelement <128 x i1> %318, i64 24, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %702, i1 %710) #2, !dbg !27
+  %711 = extractelement <128 x i16> %290, i64 23, !dbg !26
+  %712 = zext nneg i16 %711 to i64, !dbg !26
+  %713 = getelementptr bfloat, ptr addrspace(1) %28, i64 %712, !dbg !26
+  %714 = extractelement <128 x i16> %290, i64 22, !dbg !26
+  %715 = zext nneg i16 %714 to i64, !dbg !26
+  %716 = getelementptr bfloat, ptr addrspace(1) %28, i64 %715, !dbg !26
+  %717 = extractelement <128 x i16> %290, i64 21, !dbg !26
+  %718 = zext nneg i16 %717 to i64, !dbg !26
+  %719 = getelementptr bfloat, ptr addrspace(1) %28, i64 %718, !dbg !26
+  %720 = extractelement <128 x i16> %290, i64 20, !dbg !26
+  %721 = zext nneg i16 %720 to i64, !dbg !26
+  %722 = getelementptr bfloat, ptr addrspace(1) %28, i64 %721, !dbg !26
+  %723 = extractelement <128 x i16> %290, i64 19, !dbg !26
+  %724 = zext nneg i16 %723 to i64, !dbg !26
+  %725 = getelementptr bfloat, ptr addrspace(1) %28, i64 %724, !dbg !26
+  %726 = extractelement <128 x i16> %290, i64 18, !dbg !26
+  %727 = zext nneg i16 %726 to i64, !dbg !26
+  %728 = getelementptr bfloat, ptr addrspace(1) %28, i64 %727, !dbg !26
+  %729 = extractelement <128 x i16> %290, i64 17, !dbg !26
+  %730 = zext nneg i16 %729 to i64, !dbg !26
+  %731 = getelementptr bfloat, ptr addrspace(1) %28, i64 %730, !dbg !26
+  %732 = extractelement <128 x i16> %290, i64 16, !dbg !26
+  %733 = zext i16 %732 to i64, !dbg !26
+  %734 = getelementptr bfloat, ptr addrspace(1) %28, i64 %733, !dbg !26
+  %735 = extractelement <128 x i1> %318, i64 23, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %713, i1 %735) #2, !dbg !27
+  %736 = extractelement <128 x i1> %318, i64 22, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %716, i1 %736) #2, !dbg !27
+  %737 = extractelement <128 x i1> %318, i64 21, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %719, i1 %737) #2, !dbg !27
+  %738 = extractelement <128 x i1> %318, i64 20, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %722, i1 %738) #2, !dbg !27
+  %739 = extractelement <128 x i1> %318, i64 19, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %725, i1 %739) #2, !dbg !27
+  %740 = extractelement <128 x i1> %318, i64 18, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %728, i1 %740) #2, !dbg !27
+  %741 = extractelement <128 x i1> %318, i64 17, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %731, i1 %741) #2, !dbg !27
+  %742 = extractelement <128 x i1> %318, i64 16, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %734, i1 %742) #2, !dbg !27
+  %743 = extractelement <128 x i16> %290, i64 15, !dbg !26
+  %744 = zext nneg i16 %743 to i64, !dbg !26
+  %745 = getelementptr bfloat, ptr addrspace(1) %28, i64 %744, !dbg !26
+  %746 = extractelement <128 x i16> %290, i64 14, !dbg !26
+  %747 = zext nneg i16 %746 to i64, !dbg !26
+  %748 = getelementptr bfloat, ptr addrspace(1) %28, i64 %747, !dbg !26
+  %749 = extractelement <128 x i16> %290, i64 13, !dbg !26
+  %750 = zext nneg i16 %749 to i64, !dbg !26
+  %751 = getelementptr bfloat, ptr addrspace(1) %28, i64 %750, !dbg !26
+  %752 = extractelement <128 x i16> %290, i64 12, !dbg !26
+  %753 = zext nneg i16 %752 to i64, !dbg !26
+  %754 = getelementptr bfloat, ptr addrspace(1) %28, i64 %753, !dbg !26
+  %755 = extractelement <128 x i16> %290, i64 11, !dbg !26
+  %756 = zext nneg i16 %755 to i64, !dbg !26
+  %757 = getelementptr bfloat, ptr addrspace(1) %28, i64 %756, !dbg !26
+  %758 = extractelement <128 x i16> %290, i64 10, !dbg !26
+  %759 = zext nneg i16 %758 to i64, !dbg !26
+  %760 = getelementptr bfloat, ptr addrspace(1) %28, i64 %759, !dbg !26
+  %761 = extractelement <128 x i16> %290, i64 9, !dbg !26
+  %762 = zext nneg i16 %761 to i64, !dbg !26
+  %763 = getelementptr bfloat, ptr addrspace(1) %28, i64 %762, !dbg !26
+  %764 = extractelement <128 x i16> %290, i64 8, !dbg !26
+  %765 = zext i16 %764 to i64, !dbg !26
+  %766 = getelementptr bfloat, ptr addrspace(1) %28, i64 %765, !dbg !26
+  %767 = extractelement <128 x i1> %318, i64 15, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %745, i1 %767) #2, !dbg !27
+  %768 = extractelement <128 x i1> %318, i64 14, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %748, i1 %768) #2, !dbg !27
+  %769 = extractelement <128 x i1> %318, i64 13, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %751, i1 %769) #2, !dbg !27
+  %770 = extractelement <128 x i1> %318, i64 12, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %754, i1 %770) #2, !dbg !27
+  %771 = extractelement <128 x i1> %318, i64 11, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %757, i1 %771) #2, !dbg !27
+  %772 = extractelement <128 x i1> %318, i64 10, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %760, i1 %772) #2, !dbg !27
+  %773 = extractelement <128 x i1> %318, i64 9, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %763, i1 %773) #2, !dbg !27
+  %774 = extractelement <128 x i1> %318, i64 8, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %766, i1 %774) #2, !dbg !27
+  %775 = extractelement <128 x i16> %290, i64 7, !dbg !26
+  %776 = zext nneg i16 %775 to i64, !dbg !26
+  %777 = getelementptr bfloat, ptr addrspace(1) %28, i64 %776, !dbg !26
+  %778 = extractelement <128 x i16> %290, i64 6, !dbg !26
+  %779 = zext nneg i16 %778 to i64, !dbg !26
+  %780 = getelementptr bfloat, ptr addrspace(1) %28, i64 %779, !dbg !26
+  %781 = extractelement <128 x i16> %290, i64 5, !dbg !26
+  %782 = zext nneg i16 %781 to i64, !dbg !26
+  %783 = getelementptr bfloat, ptr addrspace(1) %28, i64 %782, !dbg !26
+  %784 = extractelement <128 x i16> %290, i64 4, !dbg !26
+  %785 = zext nneg i16 %784 to i64, !dbg !26
+  %786 = getelementptr bfloat, ptr addrspace(1) %28, i64 %785, !dbg !26
+  %787 = extractelement <128 x i16> %290, i64 3, !dbg !26
+  %788 = zext nneg i16 %787 to i64, !dbg !26
+  %789 = getelementptr bfloat, ptr addrspace(1) %28, i64 %788, !dbg !26
+  %790 = extractelement <128 x i16> %290, i64 2, !dbg !26
+  %791 = zext nneg i16 %790 to i64, !dbg !26
+  %792 = getelementptr bfloat, ptr addrspace(1) %28, i64 %791, !dbg !26
+  %793 = extractelement <128 x i16> %290, i64 1, !dbg !26
+  %794 = zext nneg i16 %793 to i64, !dbg !26
+  %795 = getelementptr bfloat, ptr addrspace(1) %28, i64 %794, !dbg !26
+  %796 = extractelement <128 x i16> %290, i64 0, !dbg !26
+  %797 = zext i16 %796 to i64, !dbg !26
+  %798 = getelementptr bfloat, ptr addrspace(1) %28, i64 %797, !dbg !26
+  %799 = extractelement <128 x i1> %318, i64 7, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %777, i1 %799) #2, !dbg !27
+  %800 = extractelement <128 x i1> %318, i64 6, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %780, i1 %800) #2, !dbg !27
+  %801 = extractelement <128 x i1> %318, i64 5, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %783, i1 %801) #2, !dbg !27
+  %802 = extractelement <128 x i1> %318, i64 4, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %786, i1 %802) #2, !dbg !27
+  %803 = extractelement <128 x i1> %318, i64 3, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %789, i1 %803) #2, !dbg !27
+  %804 = extractelement <128 x i1> %318, i64 2, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %792, i1 %804) #2, !dbg !27
+  %805 = extractelement <128 x i1> %318, i64 1, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %795, i1 %805) #2, !dbg !27
+  %806 = extractelement <128 x i1> %318, i64 0, !dbg !27
+  tail call void asm sideeffect "@$2 st.global.b16 [ $1 + 0 ], { $0 };", "c,l,b"(i16 0, ptr addrspace(1) %798, i1 %806) #2, !dbg !27
+  ret void, !dbg !29
+}
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef range(i32 0, 2147483647) i32 @llvm.nvvm.read.ptx.sreg.ctaid.x() #1
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef range(i32 0, 65535) i32 @llvm.nvvm.read.ptx.sreg.ctaid.y() #1
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef range(i32 0, 65535) i32 @llvm.nvvm.read.ptx.sreg.ctaid.z() #1
+
+; Function Attrs: mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none)
+declare noundef range(i32 0, 1024) i32 @llvm.nvvm.read.ptx.sreg.tid.x() #1
+
+attributes #0 = { nounwind "nvvm.reqntid"="128" }
+attributes #1 = { mustprogress nocallback nofree nosync nounwind speculatable willreturn memory(none) }
+attributes #2 = { nounwind }
+
+!llvm.dbg.cu = !{!0}
+!llvm.module.flags = !{!2, !3}
+
+!0 = distinct !DICompileUnit(language: DW_LANG_C, file: !1, producer: "triton", isOptimized: true, runtimeVersion: 0, emissionKind: LineTablesOnly)
+!1 = !DIFile(filename: "mamba_slot_fused.py", directory: "/sgl-workspace/sglang/python/sglang/srt/mem_cache")
+!2 = !{i32 2, !"Debug Info Version", i32 3}
+!3 = !{i32 4, !"nvvm-reflect-ftz", i32 1}
+!4 = distinct !DISubprogram(name: "_fused_slot_clear_kernel", linkageName: "_fused_slot_clear_kernel", scope: !1, file: !1, line: 40, type: !5, scopeLine: 40, spFlags: DISPFlagDefinition | DISPFlagOptimized, unit: !0)
+!5 = !DISubroutineType(cc: DW_CC_normal, types: !6)
+!6 = !{}
+!7 = !DILocation(line: 49, column: 24, scope: !4)
+!8 = !DILocation(line: 50, column: 24, scope: !4)
+!9 = !DILocation(line: 51, column: 24, scope: !4)
+!10 = !DILocation(line: 52, column: 34, scope: !4)
+!11 = !DILocation(line: 52, column: 24, scope: !4)
+!12 = !DILocation(line: 53, column: 30, scope: !4)
+!13 = !DILocation(line: 53, column: 19, scope: !4)
+!14 = !DILocation(line: 54, column: 31, scope: !4)
+!15 = !DILocation(line: 54, column: 19, scope: !4)
+!16 = !DILocation(line: 55, column: 24, scope: !4)
+!17 = !DILocation(line: 58, column: 43, scope: !4)
+!18 = !DILocation(line: 58, column: 24, scope: !4)
+!19 = !DILocation(line: 58, column: 16, scope: !4)
+!20 = !DILocation(line: 59, column: 43, scope: !4)
+!21 = !DILocation(line: 59, column: 25, scope: !4)
+!22 = !DILocation(line: 59, column: 17, scope: !4)
+!23 = !DILocation(line: 0, scope: !4)
+!24 = !DILocation(line: 63, column: 41, scope: !4)
+!25 = !DILocation(line: 64, column: 48, scope: !4)
+!26 = !DILocation(line: 64, column: 23, scope: !4)
+!27 = !DILocation(line: 64, column: 29, scope: !4)
+!28 = !DILocation(line: 63, column: 28, scope: !4)
+!29 = !DILocation(line: 62, column: 4, scope: !4)

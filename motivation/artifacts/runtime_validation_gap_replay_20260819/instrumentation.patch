@@ -1,0 +1,124 @@
+--- a/mem_cache/unified_cache/components/mamba_component.py
++++ b/mem_cache/unified_cache/components/mamba_component.py
+@@ -1,10 +1,13 @@
+ from __future__ import annotations
+ 
++import logging
+ from collections import defaultdict
+ from typing import TYPE_CHECKING, Callable, Optional, Sequence
+ 
+ import torch
+ 
++logger = logging.getLogger(__name__)
++
+ from sglang.srt.mem_cache.base_prefix_cache import (
+     DecLockRefParams,
+     EvictParams,
+@@ -161,6 +164,18 @@
+             aligned_seqlen if aligned_seqlen > mamba_boundary_len else None
+         )
+ 
++        # [FSVAL] read-only instrumentation: match-end gap accounting.
++        logger.info(
++            "[FSVAL] match_end req=%s full_kv_hit=%s exec_prefix=%s "
++            "mamba_boundary=%s branching=%s gap=%s",
++            getattr(getattr(params, "req", None), "rid", None),
++            result.full_kv_hit_length,
++            len(result.device_indices),
++            mamba_boundary_len,
++            branching_seqlen,
++            result.full_kv_hit_length - len(result.device_indices),
++        )
++
+         # HiCache: if mamba was evicted from device but has host backup,
+         # ensure mamba_host_hit_length >= 1 so load_back is triggered.
+         if self.has_host_value_only(last_node):
+@@ -322,6 +337,13 @@
+             freed = len(cd.value)
+             self.tree_core.component_evictable_size_[self.component_type] -= freed
+             cd.value = None
++            # [FSVAL] read-only instrumentation: mamba tombstone event.
++            logger.info(
++                "[FSVAL] mamba_evict node=%s freed=%s fa_kept=%s",
++                node.id,
++                freed,
++                node.component_data[ComponentType.FULL].value is not None,
++            )
+ 
+         # Host layer
+         host_lru = self.tree_core.host_lru_lists[self.component_type]
+@@ -547,6 +569,15 @@
+                 insert_params.mamba_value = self._commit_int8_checkpoint(active_value)
+             else:
+                 insert_params.mamba_value = active_value
++            # [FSVAL] read-only instrumentation: checkpoint insert position.
++            logger.info(
++                "[FSVAL] insert_ckpt req=%s token_ids_len=%s ckpt_pos=%s "
++                "strategy=%s",
++                getattr(req, "rid", None),
++                token_ids_len,
++                cache_len,
++                "extra_buffer" if self.cache.enable_mamba_extra_buffer else "no_buffer",
++            )
+             return cache_len
+         else:
+             if cache_len is None:
+--- a/mem_cache/unified_cache/unified_tree_core.py
++++ b/mem_cache/unified_cache/unified_tree_core.py
+@@ -950,6 +950,18 @@
+                 step_actions.append(
+                     FreeDeviceKV([value_slice[dup_start:consumed_from]])
+                 )
++                # [FSVAL] read-only instrumentation: duplicate KV rows freed
++                # at insert (old retained rows replaced by recomputed ones).
++                logger.info(
++                    "[FSVAL] dup_free node=%s dup_start=%s consumed_from=%s "
++                    "freed=%s step_prefix_len=%s total_prefix=%s",
++                    node.id,
++                    dup_start,
++                    consumed_from,
++                    consumed_from - dup_start,
++                    prefix_len,
++                    state.total_prefix_length,
++                )
+ 
+         if self._inc_hit_count_and_check(node, state.params.chunked):
+             step_actions.append(self._build_backup_kv_action(node))
+--- a/managers/schedule_batch.py
++++ b/managers/schedule_batch.py
+@@ -2290,6 +2290,18 @@
+         reqs = self.reqs
+         input_ids = [r.get_fill_ids()[len(r.prefix_indices) :] for r in reqs]
+         extend_num_tokens = sum(len(ids) for ids in input_ids)
++        # [FSVAL] read-only instrumentation: extend workload per request.
++        for _r in reqs:
++            logger.info(
++                "[FSVAL] extend req=%s fill_ids=%s prefix_len=%s "
++                "extend_start=%s extend_len=%s extend_end=%s",
++                _r.rid,
++                len(_r.get_fill_ids()),
++                len(_r.prefix_indices),
++                _r.extend_range.start if _r.extend_range is not None else None,
++                _r.extend_range.length if _r.extend_range is not None else None,
++                _r.extend_range.end if _r.extend_range is not None else None,
++            )
+         seq_lens = [r.extend_range.end for r in reqs]
+         orig_seq_lens = [max(r.extend_range.end, len(r.origin_input_ids)) for r in reqs]
+         prefix_lens = [len(r.prefix_indices) for r in reqs]
+@@ -2629,6 +2641,16 @@
+                     # See _force_track_h() for more details.
+                     mamba_track_seqlen = _force_track_h(req.mamba_branching_seqlen)
+                     mamba_track_seqlen_aligned = req.mamba_branching_seqlen
++                    # [FSVAL] read-only instrumentation: branching forced track.
++                    logger.info(
++                        "[FSVAL] forced_track req=%s prefix_len=%s extend_len=%s "
++                        "branching_seqlen=%s last_track_seqlen=%s",
++                        req.rid,
++                        len(req.prefix_indices),
++                        req.extend_range.length,
++                        req.mamba_branching_seqlen,
++                        mamba_track_seqlen_aligned,
++                    )
+             req.mamba_last_track_seqlen = mamba_track_seqlen_aligned
+ 
+         return _MambaRadixCacheV2TrackEntry(

@@ -1,0 +1,14 @@
+{
+  "analytical_question": "How does next-request server TTFT change when the selected target Mamba checkpoint, rather than an off-path decoy, is evicted?",
+  "takeaway": "Fork Parent deletion creates a 32K replay and large TTFT increase; deleting off-path NORMAL A adds no replay or positive recovery penalty, while the observed TTFT difference is small and negative.",
+  "family": "comparison",
+  "variant": "paired point-and-line small multiples",
+  "data_grain": "one formal matched-content pair per repetition; n=5 per experiment",
+  "palette_policy": "hard two-root cap; blue retained, orange evicted, marker shape redundancy",
+  "scales": "independent zero-based y scales, explicitly labeled",
+  "output": [
+    "plot_fork_eviction_latency.png",
+    "plot_fork_eviction_latency.pdf"
+  ],
+  "qa": "passed programmatic checks plus manual PNG/PDF inspection on 2026-08-19 CST"
+}

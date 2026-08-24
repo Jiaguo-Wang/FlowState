@@ -1,0 +1,11 @@
+rep,order,policy,status_complete,state_gate_valid,expected_path,full_kv_hit,exec_prefix,mamba_boundary,gap_tokens,input_len,cached_input_len,output_len,queue_ms,forward_ms,ttft_ms,e2e_ms,branching,log_file
+1,1,prompt_lru,True,True,True,32769,0,0,32769,32832,0,1,0.5,1402.53,1407.742,1407.746,32768,r01_o1_prompt_lru.log
+1,2,workflow_k,True,True,True,32769,32768,32768,1,32832,32768,1,0.53,33.1,38.074,38.077,None,r01_o2_workflow_k.log
+2,1,workflow_k,True,True,True,32769,32768,32768,1,32832,32768,1,0.45,32.19,37.311,37.315,None,r02_o1_workflow_k.log
+2,2,prompt_lru,True,True,True,32769,0,0,32769,32832,0,1,0.59,1402.18,1407.204,1407.208,32768,r02_o2_prompt_lru.log
+3,1,prompt_lru,True,True,True,32769,0,0,32769,32832,0,1,0.58,1407.18,1412.019,1412.023,32768,r03_o1_prompt_lru.log
+3,2,workflow_k,True,True,True,32769,32768,32768,1,32832,32768,1,0.51,33.13,36.726,36.729,None,r03_o2_workflow_k.log
+4,1,workflow_k,True,True,True,32769,32768,32768,1,32832,32768,1,0.75,36.37,42.274,42.278,None,r04_o1_workflow_k.log
+4,2,prompt_lru,True,True,True,32769,0,0,32769,32832,0,1,0.5,1417.65,1423.477,1423.481,32768,r04_o2_prompt_lru.log
+5,1,prompt_lru,True,True,True,32769,0,0,32769,32832,0,1,0.48,1420.04,1424.657,1424.662,32768,r05_o1_prompt_lru.log
+5,2,workflow_k,True,True,True,32769,32768,32768,1,32832,32768,1,0.52,35.31,40.051,40.055,None,r05_o2_workflow_k.log

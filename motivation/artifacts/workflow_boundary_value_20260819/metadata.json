@@ -1,0 +1,112 @@
+{
+  "schema_version": "flowstate.wp3a.metadata.v1",
+  "experiment": "WP3A Workflow Boundary Value Characterization",
+  "workflow_id": "wp3a_controlled_w0",
+  "collection": {
+    "workflow_completed_at": "2026-08-19T15:42:35+08:00",
+    "final_analysis_at": "2026-08-19T16:03:02+08:00",
+    "timezone": "Asia/Shanghai"
+  },
+  "workspace": {
+    "root": "/home/wjg/code/newfind",
+    "git_head": "540774bdb678ce3197c50231bd1b27eca1810dc5",
+    "scoped_git_status": "?? flowstate/motivation/artifacts/workflow_boundary_value_20260819/"
+  },
+  "runtime": {
+    "model": "Qwen3.5-9B",
+    "model_mount": "/home/wjg/models/qwen3.5-9b:/model:ro",
+    "sglang_version": "v0.5.17",
+    "sglang_source_commit": "29481685462732237d80d86076d6563e1f658102",
+    "image_tag": "lmsysorg/sglang:v0.5.17-cu129-runtime",
+    "image_id": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+    "image_repo_digest": "lmsysorg/sglang@sha256:2fa998888b1b48e778e17f6360a6b60f3cc888b56fa35281669af1d007316337",
+    "container_name": "fs-wp3a-boundary-value",
+    "container_id": "c634535ab127153a06aad1f6758f128ecbb3cead9836008620beefc12f26f11c",
+    "container_final_state": "exited",
+    "container_exit_code": 137,
+    "container_exit_note": "Server was intentionally stopped after data collection with docker stop -t 20; the retained container was not deleted.",
+    "gpu_host_device": 1,
+    "gpu_name": "NVIDIA H100 PCIe",
+    "gpu_memory_mib": 81559,
+    "nvidia_driver": "575.57.08",
+    "server": {
+      "host": "127.0.0.1",
+      "port": 49933,
+      "context_length": 45056,
+      "mem_fraction_static": 0.4,
+      "chunked_prefill_size": 45056,
+      "max_mamba_cache_size": 16,
+      "mamba_radix_cache_strategy": "extra_buffer",
+      "disable_cuda_graph": true,
+      "disable_overlap_schedule": true,
+      "hierarchical_cache": false,
+      "concurrency": 1,
+      "max_new_tokens": 1
+    }
+  },
+  "value_model": {
+    "source": "../replay_cost_20260819/fit_metrics.json raw_run_ols",
+    "stored_slope_ms_per_token": 0.0459129,
+    "counterfactual_scope": {
+      "removed_component": "mamba_recurrent_checkpoint_only",
+      "exact_prefix_fa_kv_resident": true,
+      "nearest_shallower_mamba_checkpoint_resident": true,
+      "joint_fa_kv_eviction_out_of_scope": true,
+      "wp2_calibration_fresh_tokens": 1,
+      "wp3a_counterfactual_fresh_tokens": 64,
+      "slope_transfer_assumption": "Marginal replay cost is additive with the 64-token fresh suffix and has no material interaction."
+    }
+  },
+  "commands": [
+    {
+      "stage": "container_create",
+      "command": "docker run -d --name fs-wp3a-boundary-value --gpus device=1 --network host --shm-size 32g -v /home/wjg/models/qwen3.5-9b:/model:ro -v /home/wjg/code/newfind/flowstate/motivation/artifacts:/artifacts -e HF_HUB_OFFLINE=1 -e TRANSFORMERS_OFFLINE=1 lmsysorg/sglang:v0.5.17-cu129-runtime sleep infinity"
+    },
+    {
+      "stage": "probe_dry_run",
+      "command": "docker exec fs-wp3a-boundary-value bash -lc 'cd /sgl-workspace/sglang/python/sglang/srt && patch --dry-run -p1 < /artifacts/runtime_validation_gap_replay_20260819/instrumentation.patch'"
+    },
+    {
+      "stage": "probe_apply",
+      "command": "docker exec fs-wp3a-boundary-value bash -lc 'cd /sgl-workspace/sglang/python/sglang/srt && patch -p1 < /artifacts/runtime_validation_gap_replay_20260819/instrumentation.patch'"
+    },
+    {
+      "stage": "server_launch",
+      "command": "docker exec -d fs-wp3a-boundary-value bash -lc 'exec python3 -m sglang.launch_server --model-path /model --context-length 45056 --mem-fraction-static 0.40 --chunked-prefill-size 45056 --max-mamba-cache-size 16 --mamba-radix-cache-strategy extra_buffer --disable-cuda-graph --disable-overlap-schedule --host 127.0.0.1 --port 49933 --log-level info > /artifacts/workflow_boundary_value_20260819/server_full.log 2>&1'"
+    },
+    {
+      "stage": "workflow",
+      "command": "python3 flowstate/motivation/artifacts/workflow_boundary_value_20260819/driver.py 2>&1 | tee flowstate/motivation/artifacts/workflow_boundary_value_20260819/driver.log"
+    },
+    {
+      "stage": "analysis",
+      "command": "python3 flowstate/motivation/artifacts/workflow_boundary_value_20260819/analyze.py > flowstate/motivation/artifacts/workflow_boundary_value_20260819/analysis_stdout.json"
+    },
+    {
+      "stage": "cleanup",
+      "command": "docker stop -t 20 fs-wp3a-boundary-value"
+    }
+  ],
+  "sha256": {
+    "/home/wjg/models/qwen3.5-9b/config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+    "../runtime_validation_gap_replay_20260819/instrumentation.patch": "58e8a7ab5a7c20322f5148474ce01788e35e9faf10f2c5cc94f274f8df7a2392",
+    "../replay_cost_20260819/fit_metrics.json": "1d823fa67d8a6f563c912ef748f23159ba40abea3ae75d2740c9a926084aea69",
+    "driver.py": "4b8827bc187c8817a55a38d42ac5712c5509fa19ee4824074dd48ab2a00841ca",
+    "analyze.py": "ebbad8191150fa5f6bd847fb5ef8921a3a9c685d4f52de6b2aa43a32ee7edb1b",
+    "driver_events.jsonl": "671512590a95bd6c7d2cea8b746731e137898e05ae16eb14760b70a1cf3d22cf",
+    "driver.log": "476a2f9a94bfd604325b59439e838ef2890d63488df4c63e5c4540af6dc6cea3",
+    "server_full.log": "3ca8d74634b0af40d6de4057ff21b959c4f41ce5fc96a9622f5d249aab67da7a",
+    "workflow_trace.jsonl": "4975c7f1601dac6336ac6862274a8e8027c7710c89a2e1bfad9ebda1fcb795cf",
+    "boundary_events.csv": "719f9aae644cedc0a1460accdebb65d5473c8b9f09b7877d3c5b45e95697a29b",
+    "analysis_summary.json": "5eb7e3a8668d2a61800dd804ee955d0ce036458f5fb6370d3b6bed1d27e2ffec",
+    "analysis_stdout.json": "5eb7e3a8668d2a61800dd804ee955d0ce036458f5fb6370d3b6bed1d27e2ffec",
+    "findings.md": "63189711d7a4411f06bf3bbd1f3a7c428fa034579cb04335bfcc81e758ba0078",
+    "plot_boundary_value.png": "7cf92f93ccf9ca86ab568df0b90c9417cde2bae3520f3c54feb45b2e1eb97341",
+    "plot_boundary_value.pdf": "f49161d9362bd987c79cf0ac7ca455edafa1ef957d86707803c347b3b70f1ec2"
+  },
+  "notes": [
+    "The instrumentation patch only adds logs and does not change cache semantics.",
+    "Startup includes optional TorchCodec import warnings before the successful flush; validation is restricted to server_full.log physical lines 705-744.",
+    "The artifact directory was untracked in the surrounding workspace when captured; unrelated workspace changes were not modified."
+  ]
+}

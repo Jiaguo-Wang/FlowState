@@ -1,0 +1,22 @@
+--- a/python/sglang/srt/managers/tokenizer_manager.py
++++ b/python/sglang/srt/managers/tokenizer_manager.py
+@@ -2431,6 +2431,19 @@
+                     )
+                 state.time_stats.set_finished_time()
+                 meta_info["e2e_latency"] = state.time_stats.get_e2e_latency()
++                # [FSWP2] Read-only timing instrumentation.  For a one-token
++                # response, TTFT is the recovery-to-first-token latency: all
++                # recurrent-state restore/COW/replay and prompt EXTEND work has
++                # completed before this timestamp.
++                meta_info["first_token_latency"] = (
++                    state.time_stats.get_first_token_latency()
++                )
++                logger.info(
++                    "[FSWP2] request_timing req=%s first_token_latency_ms=%.3f "
++                    "e2e_latency_ms=%.3f",
++                    recv_obj.rids[i], meta_info["first_token_latency"] * 1000,
++                    meta_info["e2e_latency"] * 1000,
++                )
+ 
+                 if self.server_args.speculative_algorithm:
+                     self._calculate_spec_decoding_metrics(meta_info, recv_obj, i)

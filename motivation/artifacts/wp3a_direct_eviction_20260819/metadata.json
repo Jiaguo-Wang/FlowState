@@ -1,0 +1,143 @@
+{
+  "schema_version": "flowstate.wp3a.direct_eviction.metadata.v1",
+  "experiment_id": "wp3a_direct_eviction_20260819",
+  "objective": "Directly measure the next-consumer effect of removing only FORK_PARENT@32768 versus off-path NORMAL_A@32832 recurrent checkpoints while exact-prefix Full/FA-KV remains resident.",
+  "collection": {
+    "date": "2026-08-19",
+    "timezone_for_artifact_mtime": "Asia/Shanghai",
+    "container_clock_timezone": "UTC",
+    "pilot_container_started_at": "2026-08-19T08:41:22.429532492Z",
+    "pilot_container_finished_at": "2026-08-19T08:42:46.605408496Z",
+    "formal_container_started_at": "2026-08-19T08:43:25.621090513Z",
+    "formal_window_start_log_time": "2026-08-19T08:44:42Z",
+    "formal_window_end_log_time": "2026-08-19T08:46:09Z",
+    "formal_container_finished_at": "2026-08-19T08:46:12.042016537Z"
+  },
+  "design": {
+    "model": "Qwen3.5-9B",
+    "concurrency": 1,
+    "output_tokens": 1,
+    "temperature": 0,
+    "formal_repetitions_per_pair": 5,
+    "formal_measured_episodes": 20,
+    "excluded_warmup_episodes": 4,
+    "intervention": "scheduler-idle exact-radix-node Mamba-component-only eviction through the existing tombstone/LRU/cascade/allocator-free lifecycle",
+    "control": "Each retained arm evicts one internal off-path decoy; each evicted arm evicts one internal target, matching one-slot occupancy and component-management work.",
+    "episode_reset": "Every arm starts with a successful full cache flush and independently rebuilds target, fallback, and decoy state.",
+    "formal_order_manifest": [
+      ["fork_retained", "fork_evicted", "normal_retained", "normal_evicted"],
+      ["fork_evicted", "fork_retained", "normal_evicted", "normal_retained"],
+      ["normal_retained", "normal_evicted", "fork_evicted", "fork_retained"],
+      ["normal_evicted", "normal_retained", "fork_retained", "fork_evicted"],
+      ["fork_evicted", "normal_retained", "normal_evicted", "fork_retained"]
+    ],
+    "primary_latency": "Server first-token latency; targeted-intervention administrative latency is excluded.",
+    "normal_consumer": "Application-level Join with A/B/C/D output-token serialization; no native sibling recurrent-state merge; Resume was not timed."
+  },
+  "server_config": {
+    "model_path_in_container": "/model",
+    "context_length": 45056,
+    "chunked_prefill_size": 45056,
+    "mem_fraction_static": 0.4,
+    "tp_size": 1,
+    "pp_size": 1,
+    "dp_size": 1,
+    "max_mamba_cache_size": 16,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "disable_overlap_schedule": true,
+    "disable_cuda_graph": true,
+    "enable_hierarchical_cache": false,
+    "enable_int8_mamba_checkpoint": false
+  },
+  "runtime": {
+    "sglang_release": "v0.5.17",
+    "sglang_build_commit": "29481685462732237d80d86076d6563e1f658102",
+    "container_image_tag": "lmsysorg/sglang:v0.5.17-cu129-runtime",
+    "container_image_id": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+    "container_repo_digest": "lmsysorg/sglang@sha256:2fa998888b1b48e778e17f6360a6b60f3cc888b56fa35281669af1d007316337",
+    "cuda_version": "12.9.1",
+    "formal_container_name": "fs-wp3a-direct-formal",
+    "formal_container_id": "44b8c1cc5b45284058d9d06c0b86a6203b37dfcae757e1cd3e3cc9871928f73d",
+    "formal_container_exit_code": 0,
+    "pilot_container_name": "fs-wp3a-direct-pilot",
+    "pilot_container_id": "b832882c773ded49b63b18c69539bdeb8327dd0f09b9097699429b3f9d7b0ec2",
+    "pilot_container_exit_code": 0,
+    "host_network": true,
+    "shm_bytes": 34359738368,
+    "host_gpu_device_id": 1,
+    "gpu_uuid": "GPU-051c9abc-864a-9f31-c4f7-a737aed997ff",
+    "gpu_name": "NVIDIA H100 PCIe",
+    "gpu_memory_mib": 81559,
+    "nvidia_driver": "575.57.08"
+  },
+  "model_identity": {
+    "host_path": "/home/wjg/models/qwen3.5-9b",
+    "container_mount": "/model:ro",
+    "upstream_revision": "not recorded by the local snapshot",
+    "config_json_sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+    "configuration_json_sha256": "2d4464e2ead06bc9bc718c781309ad1e7baded626d66e8dcdc8b469ba185faf0",
+    "tokenizer_json_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config_json_sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "model_safetensors_index_sha256": "26d3539b516be613f39563617cb9d33b3f83d401298125be392c80cefb8f7fe5"
+  },
+  "repository": {
+    "path": "/home/wjg/code/newfind",
+    "git_head": "540774bdb678ce3197c50231bd1b27eca1810dc5",
+    "scoped_status": "The WP2 input patches and the complete WP3A direct-eviction artifact directory were untracked at capture time; unrelated worktree state was preserved.",
+    "container_repo_mount": "/home/wjg/code/newfind:/repo"
+  },
+  "commands": {
+    "formal_container_command": "cd /sgl-workspace/sglang/python/sglang/srt && patch -p1 < /repo/flowstate/motivation/artifacts/runtime_validation_gap_replay_20260819/instrumentation.patch && cd /sgl-workspace/sglang && patch -p1 < /repo/flowstate/motivation/artifacts/replay_cost_20260819/recovery_timing.patch && cd /repo && exec python3 -u flowstate/motivation/artifacts/wp3a_direct_eviction_20260819/driver.py --stage formal --events flowstate/motivation/artifacts/wp3a_direct_eviction_20260819/driver_events.jsonl --overwrite",
+    "pilot_container_command": "Same patch sequence, followed by driver.py --stage pilot --events .../pilot_driver_events.jsonl --overwrite",
+    "analysis_command": "python3 flowstate/motivation/artifacts/wp3a_direct_eviction_20260819/analyze.py",
+    "container_mounts": [
+      "/home/wjg/code/newfind:/repo",
+      "/home/wjg/models/qwen3.5-9b:/model:ro"
+    ],
+    "container_environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "WP3D_CTRL_PORT": "49935",
+      "TRITON_CACHE_DIR": "/repo/flowstate/motivation/artifacts/wp3a_direct_eviction_20260819/.triton_cache",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1"
+    }
+  },
+  "wp2_reference": {
+    "path": "../replay_cost_20260819/fit_metrics.json",
+    "sha256": "1d823fa67d8a6f563c912ef748f23159ba40abea3ae75d2740c9a926084aea69",
+    "fit": "raw_run_ols",
+    "exact_slope_ms_per_token": 0.04591290314221626,
+    "rounded_slope_used_by_analyzer_ms_per_token": 0.0459129,
+    "r_squared": 0.9992816915862661,
+    "n": 30
+  },
+  "input_patch_sha256": {
+    "runtime_validation_gap_replay_20260819/instrumentation.patch": "58e8a7ab5a7c20322f5148474ce01788e35e9faf10f2c5cc94f274f8df7a2392",
+    "replay_cost_20260819/recovery_timing.patch": "c981b4feb63f0e5eaa211267d8129ff3b746b46912640f5dc2ec5452aaaa0e67"
+  },
+  "artifact_sha256": {
+    "driver.py": "a7dba27ff26d732222833cbd0d14e0864e16efc235505aa534df7aaa44cde824",
+    "targeted_probe.py": "91ee22eb58ab9a7096c463a829103c19f263bd67df930c6945d7cc5f4f873287",
+    "eviction_engine.py": "e657454e95959ac951999e52f898d9ba6531146a065b334e0fe53903a9b1d431",
+    "analyze.py": "95d4c283e7bdb59e6090708d46a7c1db9765b73ef141bed86691e7d67986d0ce",
+    "driver_events.jsonl": "fd826c3b683c1e356863fa4cbeb969f3156e0a9ed77c586a320f4f3d3de4ee45",
+    "server_full.log": "b555766d27e3f8c6ad1e9d7a5d96bd6cc0eeed648466125797f0e2336cca623f",
+    "pilot_driver_events.jsonl": "2014b7518a661578cac28f1926e71d88fd89bad2a4b88db599e9eba76ba6586d",
+    "pilot_server.log": "af0a1b3fb0c2796ef297a2cd2bdcd70bfec0dab9c218bf30a5a3826ba26be507",
+    "raw_runs.csv": "df749448073482debb932dda0e665441827d261c7e7e2b6ec560a013265269fa",
+    "paired_effects.csv": "0cf8bee5c39afcd016d5bc5ebf64df1ad0c5bd2780978ba503f0c73b92afbe08",
+    "summary.csv": "0ef1ac0331653cde65063e787725fbec56e89d33fd81ac49b7c0c0c23c3959fc",
+    "analysis_summary.json": "652ffb2810d5f41c3514ca821a5ed126451ed9b8ad4cb47820b66fd693bada50",
+    "chart_notes.json": "e677dbd1cefbeba65c6836b42e88467ae60f2ef5ae7f0b0dc7dccd93025c5b3e",
+    "findings.md": "9efa2c6a8fe9bdd85a6ffa4c0e8d076e18ff8450f8857a50efad65b096232c7f",
+    "plot_fork_eviction_latency.png": "c59fd857148310da3edfbea3f31e580143fececc81471d5ad6d8e36aad9f2107",
+    "plot_fork_eviction_latency.pdf": "0cf3d7f4cd8cef1498a3440deb764d729c095ec972a891ca3813ed6941b017fc"
+  },
+  "analysis_environment": {
+    "python": "3.8.10",
+    "matplotlib": "3.7.5",
+    "ci_method": "paired mean plus t(0.975, df=4); t critical value 2.7764451051977987"
+  },
+  "known_non_experimental_log_noise": "Optional TorchCodec multimodal import tracebacks occur only before the warmup/formal windows; formal validity scans are case-window scoped. The final CUDA IPC shutdown warning occurs after FORMAL_WINDOW_END."
+}
