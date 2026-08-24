@@ -386,7 +386,10 @@ def test_validate_target_rejects_ongoing_transfer() -> None:
 
 def test_evict_mamba_only_preserves_fa_and_tree() -> None:
     cache = FakeCache()
-    adapter = FakeSGLangAdapter(cache)
+    adapter = FakeSGLangAdapter(
+        cache,
+        skip_version_check_for_tests=True,
+    )
     full_value = cache.target.component_data[FakeComponentType.FULL].value
     mamba_value = cache.target.component_data[FakeComponentType.MAMBA].value
     node_count = len(cache.tree_core._node_arena)
@@ -414,7 +417,10 @@ def test_fa_allocator_can_expose_available_count_only() -> None:
     cache = FakeCache()
     allocator = FakeAvailableOnlyAllocator()
     cache.token_to_kv_pool_allocator.full_attn_allocator = allocator
-    adapter = FakeSGLangAdapter(cache)
+    adapter = FakeSGLangAdapter(
+        cache,
+        skip_version_check_for_tests=True,
+    )
 
     adapter.evict_mamba_only(make_handle())
 
@@ -444,7 +450,10 @@ def test_fa_allocator_validates_every_available_counter(
         setattr(allocator, attribute, getattr(allocator, attribute) - 1)
 
     cache._free_values = change_counter_after_free
-    adapter = FakeSGLangAdapter(cache)
+    adapter = FakeSGLangAdapter(
+        cache,
+        skip_version_check_for_tests=True,
+    )
 
     with pytest.raises(RuntimeError, match=message):
         adapter.evict_mamba_only(make_handle())
@@ -459,6 +468,55 @@ def test_fa_allocator_with_two_counters_records_both() -> None:
     assert snapshot.allocator_type == "FakeFullAllocator"
     assert snapshot.available_size == 100
     assert snapshot.allocated_count == 50
+
+
+def test_runtime_capability_preflight_accepts_complete_fake() -> None:
+    adapter = FakeSGLangAdapter(
+        FakeCache(),
+        skip_version_check_for_tests=True,
+    )
+
+    adapter.validate_runtime_capabilities()
+
+
+def test_missing_runtime_capability_fails_before_mutation() -> None:
+    cache = FakeCache()
+    cache.tree_core._evict_component_and_detach_lru = None
+    adapter = FakeSGLangAdapter(
+        cache,
+        skip_version_check_for_tests=True,
+    )
+    mamba_value = cache.target.component_data[FakeComponentType.MAMBA].value
+
+    with pytest.raises(
+        RuntimeError,
+        match="必要能力为空.*_evict_component_and_detach_lru",
+    ):
+        adapter.evict_mamba_only(make_handle())
+
+    assert cache.target.component_data[FakeComponentType.MAMBA].value is mamba_value
+    assert cache.freed_device_values == {}
+    assert cache.tree_core.leaf_update_count == 0
+    assert cache.sanity_check_count == 0
+
+
+def test_wrong_sglang_version_fails_before_mutation(monkeypatch) -> None:
+    cache = FakeCache()
+    adapter = FakeSGLangAdapter(cache)
+    monkeypatch.setattr(
+        adapter,
+        "_read_sglang_version",
+        lambda: "0.5.18",
+    )
+    mamba_value = cache.target.component_data[FakeComponentType.MAMBA].value
+
+    with pytest.raises(RuntimeError, match="仅验证 SGLang 0.5.17"):
+        adapter.evict_mamba_only(make_handle())
+
+    assert cache.target.component_data[FakeComponentType.MAMBA].value is mamba_value
+    assert cache.freed_device_values == {}
+    assert cache.tree_core.leaf_update_count == 0
+    assert cache.sanity_check_count == 0
 
 
 def test_inspect_checkpoint_stays_unimplemented_without_logical_metadata() -> None:

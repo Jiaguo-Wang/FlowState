@@ -6,9 +6,13 @@ from array import array
 from collections import defaultdict
 from dataclasses import dataclass
 import hashlib
+from importlib import metadata
 from typing import Sequence
 
 from ..state_catalog import CheckpointCandidate
+
+
+_SUPPORTED_SGLANG_VERSION = "0.5.17"
 
 
 @dataclass(frozen=True)
@@ -73,8 +77,14 @@ class _TargetSnapshot:
 class SGLangAdapter:
     """在调度器安全时点访问 SGLang 检查点运行时。"""
 
-    def __init__(self, cache: object | None = None) -> None:
+    def __init__(
+        self,
+        cache: object | None = None,
+        *,
+        skip_version_check_for_tests: bool = False,
+    ) -> None:
         self._cache = cache
+        self._skip_version_check_for_tests = skip_version_check_for_tests
 
     def inspect_checkpoint(
         self,
@@ -90,8 +100,14 @@ class SGLangAdapter:
         self,
         handle: RuntimeCheckpointHandle,
     ) -> None:
-        """仅驱逐目标检查点的 Mamba 设备状态，并保留 FA-KV。"""
+        """仅驱逐目标 Mamba 状态，并要求调用方处于调度器安全时点。
+
+        当前适配器只能检查缓存内部的引用与传输状态，不能自行判断整个
+        scheduler 是否完全空闲；正式调用方必须在安全时点调用本方法。
+        当前 runtime gate 由测试传输层保证这一条件。
+        """
         self._validate_handle(handle)
+        self.validate_runtime_capabilities()
         node, path = self._find_exact_node(handle.token_ids, handle.extra_key)
         self._validate_target(handle, node, path)
         before = self._capture_target_snapshot(node, path)
@@ -103,6 +119,174 @@ class SGLangAdapter:
             handle.extra_key,
         )
         self._validate_postconditions(before, after_node, after_path)
+
+    def validate_runtime_capabilities(self) -> None:
+        """在任何状态变更前验证冻结运行时所需的关键能力。"""
+        cache = self._require_cache()
+        self._validate_runtime_version()
+        component_type = self._component_type()
+        evict_layer = self._evict_layer()
+
+        for component_name in ("FULL", "MAMBA"):
+            if not hasattr(component_type, component_name):
+                raise RuntimeError(
+                    f"SGLang ComponentType 缺少 {component_name}"
+                )
+        if not hasattr(evict_layer, "DEVICE"):
+            raise RuntimeError("SGLang EvictLayer 缺少 DEVICE")
+
+        try:
+            radix_key = self._make_radix_key((0,), None)
+        except Exception as error:
+            raise RuntimeError("SGLang 无法构造 RadixKey") from error
+        for method_name in ("child_key", "match"):
+            if not callable(getattr(radix_key, method_name, None)):
+                raise RuntimeError(
+                    f"SGLang RadixKey 缺少 {method_name} 接口"
+                )
+        try:
+            len(radix_key)
+            radix_key[:]
+        except Exception as error:
+            raise RuntimeError("SGLang RadixKey 不支持长度或切片操作") from error
+
+        core = self._require_runtime_attribute(cache, "tree_core", "缓存")
+        components = self._require_runtime_attribute(
+            cache,
+            "components",
+            "缓存",
+        )
+        try:
+            mamba = components[component_type.MAMBA]
+        except (KeyError, TypeError) as error:
+            raise RuntimeError("SGLang 缓存缺少 Mamba component") from error
+        if mamba is None:
+            raise RuntimeError("SGLang 缓存的 Mamba component 为空")
+
+        for owner, owner_name, method_name in (
+            (core, "tree_core", "node_by_id"),
+            (core, "tree_core", "has_ongoing_insert"),
+            (core, "tree_core", "_evict_component_and_detach_lru"),
+            (core, "tree_core", "_update_evictable_leaf_sets"),
+            (cache, "缓存", "_free_values"),
+            (cache, "缓存", "sanity_check"),
+        ):
+            method = self._require_runtime_attribute(
+                owner,
+                method_name,
+                owner_name,
+            )
+            if not callable(method):
+                raise RuntimeError(
+                    f"SGLang {owner_name}.{method_name} 不是可调用接口"
+                )
+
+        page_size = self._require_runtime_attribute(
+            core,
+            "page_size",
+            "tree_core",
+        )
+        if (
+            not isinstance(page_size, int)
+            or isinstance(page_size, bool)
+            or page_size <= 0
+        ):
+            raise RuntimeError("SGLang tree_core.page_size 必须是正整数")
+
+        root = self._require_runtime_attribute(
+            core,
+            "root_node",
+            "tree_core",
+        )
+        for attribute_name in (
+            "id",
+            "key",
+            "parent",
+            "children",
+            "component_data",
+        ):
+            self._require_runtime_attribute(
+                root,
+                attribute_name,
+                "根节点",
+                allow_none=attribute_name == "parent",
+            )
+        if not callable(getattr(root.children, "get", None)):
+            raise RuntimeError("SGLang 节点 children 不支持精确键查找")
+
+        arena = self._require_runtime_attribute(
+            core,
+            "_node_arena",
+            "tree_core",
+        )
+        if not isinstance(arena, dict):
+            raise RuntimeError("SGLang tree_core._node_arena 不是节点字典")
+
+        lru_lists = self._require_runtime_attribute(
+            core,
+            "lru_lists",
+            "tree_core",
+        )
+        try:
+            mamba_lru = lru_lists[component_type.MAMBA]
+        except (KeyError, TypeError) as error:
+            raise RuntimeError("SGLang tree_core 缺少 Mamba LRU") from error
+        if not callable(getattr(mamba_lru, "in_list", None)):
+            raise RuntimeError("SGLang Mamba LRU 缺少 in_list 接口")
+
+        for attribute_name in (
+            "enable_hicache",
+            "enable_session_radix_cache",
+        ):
+            self._require_runtime_attribute(
+                core,
+                attribute_name,
+                "tree_core",
+                allow_none=True,
+            )
+
+        tree_components = self._require_runtime_attribute(
+            cache,
+            "tree_components",
+            "缓存",
+        )
+        if (
+            component_type.FULL not in tree_components
+            or component_type.MAMBA not in tree_components
+        ):
+            raise RuntimeError("SGLang tree_components 缺少 FULL 或 MAMBA")
+
+        request_pool = self._require_runtime_attribute(
+            cache,
+            "req_to_token_pool",
+            "缓存",
+        )
+        self._require_runtime_attribute(
+            request_pool,
+            "mamba_ckpt_pool",
+            "请求令牌池",
+            allow_none=True,
+        )
+        for attribute_name in (
+            "ongoing_write_through",
+            "ongoing_load_back",
+            "ongoing_prefetch",
+            "ongoing_backup",
+        ):
+            self._require_runtime_attribute(
+                cache,
+                attribute_name,
+                "缓存",
+                allow_none=True,
+            )
+        self._require_runtime_attribute(
+            mamba,
+            "is_evict_device_ongoing",
+            "Mamba component",
+            allow_none=True,
+        )
+
+        self._fa_allocator_snapshot(cache)
 
     def _find_exact_node(
         self,
@@ -399,7 +583,11 @@ class SGLangAdapter:
         cache: object,
     ) -> _FAAllocatorSnapshot:
         """读取 FA 分配器的权威可用量及可选已分配量。"""
-        allocator = cache.token_to_kv_pool_allocator
+        allocator = SGLangAdapter._require_runtime_attribute(
+            cache,
+            "token_to_kv_pool_allocator",
+            "缓存",
+        )
         owner = getattr(allocator, "full_attn_allocator", None) or allocator
         available_size = getattr(owner, "available_size", None)
         if not callable(available_size):
@@ -413,6 +601,59 @@ class SGLangAdapter:
                 int(allocated_count()) if callable(allocated_count) else None
             ),
         )
+
+    def _validate_runtime_version(self) -> None:
+        """默认严格拒绝未经验证的 SGLang 版本。"""
+        if self._skip_version_check_for_tests:
+            return
+
+        runtime_version = self._read_sglang_version()
+        if runtime_version != _SUPPORTED_SGLANG_VERSION:
+            raise RuntimeError(
+                f"当前运行时 SGLang 版本为 {runtime_version}；"
+                "当前 FlowState v0.1 仅验证 SGLang 0.5.17"
+            )
+
+    @staticmethod
+    def _read_sglang_version() -> str:
+        """从安装元数据或运行时模块读取 SGLang 版本。"""
+        try:
+            runtime_version = metadata.version("sglang")
+        except metadata.PackageNotFoundError:
+            try:
+                import sglang
+            except ImportError as error:
+                raise RuntimeError(
+                    "无法读取 SGLang 版本；真实运行时不允许跳过版本检查"
+                ) from error
+            runtime_version = getattr(sglang, "__version__", None)
+
+        if not isinstance(runtime_version, str) or not runtime_version:
+            raise RuntimeError(
+                "无法读取 SGLang 版本；真实运行时不允许跳过版本检查"
+            )
+        return runtime_version
+
+    @staticmethod
+    def _require_runtime_attribute(
+        owner: object,
+        attribute_name: str,
+        owner_name: str,
+        *,
+        allow_none: bool = False,
+    ) -> object:
+        """读取必要运行时属性，并对缺失能力给出统一错误。"""
+        try:
+            value = getattr(owner, attribute_name)
+        except Exception as error:
+            raise RuntimeError(
+                f"SGLang {owner_name} 缺少必要能力：{attribute_name}"
+            ) from error
+        if value is None and not allow_none:
+            raise RuntimeError(
+                f"SGLang {owner_name} 的必要能力为空：{attribute_name}"
+            )
+        return value
 
     @staticmethod
     def _token_digest(token_ids: tuple[int, ...]) -> str:

@@ -91,6 +91,22 @@ def test_negative_budget_is_rejected(optimizer: GlobalOptimizer) -> None:
         optimizer.select([], [], -1)
 
 
+def test_duplicate_checkpoint_id_is_rejected(
+    optimizer: GlobalOptimizer,
+) -> None:
+    candidates = (
+        make_checkpoint("重复检查点", workflow_id="W1"),
+        make_checkpoint("重复检查点", workflow_id="W2"),
+    )
+
+    with pytest.raises(ValueError, match="重复检查点"):
+        optimizer.select(
+            [make_continuation()],
+            candidates,
+            2 * CHECKPOINT_SIZE_BYTES,
+        )
+
+
 def test_one_slot_selects_largest_marginal_gain(
     optimizer: GlobalOptimizer,
 ) -> None:

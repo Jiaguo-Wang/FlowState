@@ -5,7 +5,7 @@ from collections.abc import Sequence
 import pytest
 
 from flowstate.adapters.sglang import RuntimeCheckpointHandle
-from flowstate.controller import StateController
+from flowstate.controller import ReconcileExecutionError, StateController
 from flowstate.optimizer import GlobalOptimizer
 from flowstate.recovery_model import RecoveryCostModel
 from flowstate.state_catalog import CheckpointCandidate
@@ -19,10 +19,15 @@ assert CHECKPOINT_SIZE_BYTES == 51_511_296
 
 
 class FakeAdapter:
-    def __init__(self) -> None:
+    def __init__(self, fail_on: str | None = None) -> None:
+        self.fail_on = fail_on
+        self.called_checkpoint_ids: list[str] = []
         self.evicted_checkpoint_ids: list[str] = []
 
     def evict_mamba_only(self, handle: RuntimeCheckpointHandle) -> None:
+        self.called_checkpoint_ids.append(handle.checkpoint_id)
+        if handle.checkpoint_id == self.fail_on:
+            raise RuntimeError(f"注入驱逐失败：{handle.checkpoint_id}")
         self.evicted_checkpoint_ids.append(handle.checkpoint_id)
 
 
@@ -118,6 +123,55 @@ def test_missing_runtime_handle_is_rejected_before_any_eviction() -> None:
         )
 
     assert adapter.evicted_checkpoint_ids == []
+
+
+def test_handle_mapping_key_mismatch_is_rejected_before_selection() -> None:
+    candidates = make_candidates()
+    handles = make_handles(candidates)
+    handles["C1"] = RuntimeCheckpointHandle(
+        checkpoint_id="C2",
+        token_ids=(999,),
+    )
+    adapter = FakeAdapter()
+    controller = make_controller(adapter)
+
+    with pytest.raises(ValueError, match="键 C1，句柄 C2"):
+        controller.reconcile(
+            make_continuations(),
+            candidates,
+            handles,
+            4 * CHECKPOINT_SIZE_BYTES,
+        )
+
+    assert adapter.called_checkpoint_ids == []
+
+
+def test_partial_eviction_failure_reports_progress_and_stops() -> None:
+    continuations = make_continuations()[:3]
+    candidates = tuple(
+        candidate
+        for candidate in make_candidates()
+        if candidate.workflow_id in {"W1", "W2", "W3"}
+    )
+    handles = make_handles(candidates)
+    adapter = FakeAdapter(fail_on="C2")
+    controller = make_controller(adapter)
+
+    with pytest.raises(ReconcileExecutionError) as error_info:
+        controller.reconcile(
+            continuations,
+            candidates,
+            handles,
+            3 * CHECKPOINT_SIZE_BYTES,
+        )
+
+    error = error_info.value
+    assert error.completed_evictions == ("C1",)
+    assert error.failed_checkpoint_id == "C2"
+    assert isinstance(error.cause, RuntimeError)
+    assert adapter.evicted_checkpoint_ids == ["C1"]
+    assert adapter.called_checkpoint_ids == ["C1", "C2"]
+    assert "C3" not in adapter.called_checkpoint_ids
 
 
 def test_non_resident_candidate_is_not_evicted_again() -> None:

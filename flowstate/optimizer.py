@@ -7,7 +7,7 @@ from typing import Sequence
 
 from .executable_state import recovery_gap
 from .recovery_model import RecoveryCostModel
-from .state_catalog import CheckpointCandidate
+from .state_catalog import CheckpointCandidate, validate_unique_checkpoint_ids
 from .workflow import PendingContinuation
 
 
@@ -40,6 +40,7 @@ class GlobalOptimizer:
         """在给定内存预算内选择能最大幅度降低恢复成本的检查点。"""
         if budget_bytes < 0:
             raise ValueError("内存预算必须大于等于零")
+        validate_unique_checkpoint_ids(candidates)
 
         selected: tuple[CheckpointCandidate, ...] = ()
         recovery_cost_before_ms = self._recovery_cost(continuations, selected)

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Sequence
 
 from .workflow import PendingContinuation
 
@@ -24,6 +25,23 @@ class CheckpointCandidate:
             raise ValueError("token_pos must be non-negative")
         if self.memory_bytes <= 0:
             raise ValueError("memory_bytes must be positive")
+
+
+def validate_unique_checkpoint_ids(
+    candidates: Sequence[CheckpointCandidate],
+) -> None:
+    """确认一个决策快照中的检查点标识没有重复。"""
+    seen = set()
+    duplicates = set()
+    for candidate in candidates:
+        checkpoint_id = candidate.checkpoint_id
+        if checkpoint_id in seen:
+            duplicates.add(checkpoint_id)
+        seen.add(checkpoint_id)
+
+    if duplicates:
+        duplicate_ids = ", ".join(sorted(duplicates))
+        raise ValueError(f"checkpoint_id 必须唯一，重复标识：{duplicate_ids}")
 
 
 def is_lineage_prefix(
