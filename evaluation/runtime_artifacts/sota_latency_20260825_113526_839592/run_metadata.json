@@ -1,0 +1,64 @@
+{
+  "end_time": "2026-08-25T17:01:05.109318+00:00",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 45056,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 24,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": "冻结 SGLang Docker runtime",
+  "equivalence_classes": 69,
+  "fatal_error": null,
+  "formal_mutation_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+  "gpu": "NVIDIA H100 PCIe 80 GiB",
+  "maximum_deterministic_retries": 1,
+  "measured_cases_expected": 690,
+  "measured_repetitions": 10,
+  "model": "Qwen3.5-9B",
+  "multiplicity_total": 800,
+  "policies": [
+    "Global-LRU",
+    "KVFlow-style",
+    "Marconi-style",
+    "FlowState"
+  ],
+  "raw_records": 828,
+  "representative_points": [
+    {
+      "K": 4,
+      "scenario": "scalable_multiworkflow_v2_n16"
+    },
+    {
+      "K": 12,
+      "scenario": "scalable_multiworkflow_v2_n16"
+    },
+    {
+      "K": 4,
+      "scenario": "sota_signal_stress_v1"
+    },
+    {
+      "K": 8,
+      "scenario": "sota_signal_stress_v1"
+    }
+  ],
+  "schema_version": "flowstate.sota_latency_metadata.v1",
+  "seed": 20260825,
+  "sglang_version": "0.5.17",
+  "start_time": "2026-08-25T11:35:26.839677+00:00",
+  "status": "PASS",
+  "total_expected_cases": 828,
+  "total_runtime_ms": 19538256.927278,
+  "tp": 1,
+  "warmup_cases_expected": 138,
+  "warmup_repetitions": 2
+}

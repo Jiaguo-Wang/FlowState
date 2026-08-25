@@ -1,0 +1,2626 @@
+{
+  "artifact_directory": "/repo/evaluation/runtime_artifacts/sota_latency_20260825_113526_839592",
+  "correctness": {
+    "E_mismatch": 0,
+    "G_mismatch": 0,
+    "H_mismatch": 0,
+    "safety_failures": 0
+  },
+  "failed": 0,
+  "formal_mutation_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+  "gap_group_summary": [
+    {
+      "gap_tokens": 0,
+      "sample_count": 300,
+      "ttft_weighted_mean_ms": 39.801623748952885,
+      "ttft_weighted_median_ms": 39.646963,
+      "ttft_weighted_p95_ms": 42.392374,
+      "weighted_request_count": 3820.0
+    },
+    {
+      "gap_tokens": 4096,
+      "sample_count": 80,
+      "ttft_weighted_mean_ms": 171.38923137321427,
+      "ttft_weighted_median_ms": 171.009437,
+      "ttft_weighted_p95_ms": 176.019984,
+      "weighted_request_count": 1120.0
+    },
+    {
+      "gap_tokens": 8192,
+      "sample_count": 160,
+      "ttft_weighted_mean_ms": 330.5204846428572,
+      "ttft_weighted_median_ms": 329.041301,
+      "ttft_weighted_p95_ms": 342.114236,
+      "weighted_request_count": 1890.0
+    },
+    {
+      "gap_tokens": 16384,
+      "sample_count": 70,
+      "ttft_weighted_mean_ms": 665.7983432588235,
+      "ttft_weighted_median_ms": 660.08927,
+      "ttft_weighted_p95_ms": 741.484615,
+      "weighted_request_count": 510.0
+    },
+    {
+      "gap_tokens": 32768,
+      "sample_count": 80,
+      "ttft_weighted_mean_ms": 1545.7335314363636,
+      "ttft_weighted_median_ms": 1545.11181,
+      "ttft_weighted_p95_ms": 1570.573544,
+      "weighted_request_count": 660.0
+    }
+  ],
+  "measured_completed": 690,
+  "measured_expected": 690,
+  "oracle_reference": {
+    "scalable_multiworkflow_v2_n16:K=12": {
+      "multiple_optimal_selections": true,
+      "oracle_objective_match": true,
+      "oracle_selection_match": false
+    },
+    "scalable_multiworkflow_v2_n16:K=4": {
+      "multiple_optimal_selections": true,
+      "oracle_objective_match": true,
+      "oracle_selection_match": false
+    },
+    "sota_signal_stress_v1:K=4": {
+      "multiple_optimal_selections": false,
+      "oracle_objective_match": true,
+      "oracle_selection_match": true
+    },
+    "sota_signal_stress_v1:K=8": {
+      "multiple_optimal_selections": true,
+      "oracle_objective_match": true,
+      "oracle_selection_match": false
+    }
+  },
+  "policy_comparisons": [
+    {
+      "K": 4,
+      "baseline": "Global-LRU",
+      "request_latency_reduction": {
+        "weighted_mean": 0.19355788089094733,
+        "weighted_median": 0.4672661526151669,
+        "weighted_p95": -0.03190815726565269
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_reduction": {
+        "weighted_mean": 0.19380232684300935,
+        "weighted_median": 0.46767769914676804,
+        "weighted_p95": -0.0318721845015386
+      }
+    },
+    {
+      "K": 4,
+      "baseline": "KVFlow-style",
+      "request_latency_reduction": {
+        "weighted_mean": 0.19548656612261853,
+        "weighted_median": 0.4684530307899605,
+        "weighted_p95": -0.026639066234615295
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_reduction": {
+        "weighted_mean": 0.19567391322069133,
+        "weighted_median": 0.4688103869562381,
+        "weighted_p95": -0.026616408241348866
+      }
+    },
+    {
+      "K": 4,
+      "baseline": "Marconi-style",
+      "request_latency_reduction": {
+        "weighted_mean": 0.19162069715252297,
+        "weighted_median": 0.469708794990082,
+        "weighted_p95": -0.03615656306126099
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_reduction": {
+        "weighted_mean": 0.1918610056669327,
+        "weighted_median": 0.4700615700894839,
+        "weighted_p95": -0.03613807240888995
+      }
+    },
+    {
+      "K": 12,
+      "baseline": "Global-LRU",
+      "request_latency_reduction": {
+        "weighted_mean": 0.3167165085892995,
+        "weighted_median": 0.026812585439231075,
+        "weighted_p95": 0.012539031140991906
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_reduction": {
+        "weighted_mean": 0.31778112273941883,
+        "weighted_median": 0.028109595946513497,
+        "weighted_p95": 0.012550550062313906
+      }
+    },
+    {
+      "K": 12,
+      "baseline": "KVFlow-style",
+      "request_latency_reduction": {
+        "weighted_mean": 0.31266808606146523,
+        "weighted_median": 0.012668033667645257,
+        "weighted_p95": 0.014486757959663941
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_reduction": {
+        "weighted_mean": 0.3137431906862802,
+        "weighted_median": 0.015348668152818937,
+        "weighted_p95": 0.014576466099071103
+      }
+    },
+    {
+      "K": 12,
+      "baseline": "Marconi-style",
+      "request_latency_reduction": {
+        "weighted_mean": 0.31574158940897623,
+        "weighted_median": 0.04313244239072992,
+        "weighted_p95": 0.016030506269548963
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_reduction": {
+        "weighted_mean": 0.31681051185480347,
+        "weighted_median": 0.04584698067593765,
+        "weighted_p95": 0.016145469156915164
+      }
+    },
+    {
+      "K": 4,
+      "baseline": "Global-LRU",
+      "request_latency_reduction": {
+        "weighted_mean": 0.4022320635811243,
+        "weighted_median": 0.01678796637815375,
+        "weighted_p95": 0.0077706783959444236
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_reduction": {
+        "weighted_mean": 0.40250972405001406,
+        "weighted_median": 0.01673375051731879,
+        "weighted_p95": 0.0077927256454324405
+      }
+    },
+    {
+      "K": 4,
+      "baseline": "KVFlow-style",
+      "request_latency_reduction": {
+        "weighted_mean": 0.525428980853064,
+        "weighted_median": 0.021337350423441103,
+        "weighted_p95": -0.003523678254747444
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_reduction": {
+        "weighted_mean": 0.5257063805531549,
+        "weighted_median": 0.021339335295682514,
+        "weighted_p95": -0.0034813845038318704
+      }
+    },
+    {
+      "K": 4,
+      "baseline": "Marconi-style",
+      "request_latency_reduction": {
+        "weighted_mean": 0.39798509140278965,
+        "weighted_median": 0.012821839420325824,
+        "weighted_p95": -0.004127868372883462
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_reduction": {
+        "weighted_mean": 0.3982623804221067,
+        "weighted_median": 0.013184488134339525,
+        "weighted_p95": -0.004114738318477273
+      }
+    },
+    {
+      "K": 8,
+      "baseline": "Global-LRU",
+      "request_latency_reduction": {
+        "weighted_mean": 0.5510620933588801,
+        "weighted_median": 0.06737442988986007,
+        "weighted_p95": 0.011861355958390017
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_reduction": {
+        "weighted_mean": 0.5514410921707503,
+        "weighted_median": 0.0668951526351922,
+        "weighted_p95": 0.011887389651635489
+      }
+    },
+    {
+      "K": 8,
+      "baseline": "KVFlow-style",
+      "request_latency_reduction": {
+        "weighted_mean": 0.5520766644620169,
+        "weighted_median": 0.0700125310669086,
+        "weighted_p95": 0.013504103802423706
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_reduction": {
+        "weighted_mean": 0.5524529574636687,
+        "weighted_median": 0.06935328604599829,
+        "weighted_p95": 0.013521608149711766
+      }
+    },
+    {
+      "K": 8,
+      "baseline": "Marconi-style",
+      "request_latency_reduction": {
+        "weighted_mean": -0.17340776392709048,
+        "weighted_median": 0.05023261436793922,
+        "weighted_p95": -3.5381253036882523
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_reduction": {
+        "weighted_mean": -0.17386486581352162,
+        "weighted_median": 0.049514281041193875,
+        "weighted_p95": -3.540580382706442
+      }
+    }
+  ],
+  "policy_summaries": [
+    {
+      "K": 4,
+      "measured_case_count": 60,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=4:FlowState:T=16384:E=0:G=16384": {
+          "multiplicity": 3,
+          "request_latency_ms": [
+            664.45029,
+            650.506361,
+            668.786449,
+            659.724957,
+            655.305257,
+            659.109349,
+            662.781454,
+            666.241556,
+            658.572385,
+            688.090839
+          ],
+          "ttft_ms": [
+            664.116124,
+            650.183302,
+            668.456401,
+            659.379293,
+            654.942291,
+            658.758997,
+            662.500228,
+            665.930787,
+            658.229011,
+            687.724358
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:FlowState:T=16384:E=16384:G=0": {
+          "multiplicity": 12,
+          "request_latency_ms": [
+            42.875285,
+            39.26315,
+            41.347737,
+            39.12061,
+            41.668436,
+            40.217421,
+            39.407052,
+            38.987863,
+            39.24016,
+            38.023092
+          ],
+          "ttft_ms": [
+            42.564879,
+            38.922914,
+            41.02455,
+            38.783628,
+            41.258526,
+            39.916935,
+            39.075309,
+            38.635822,
+            38.91167,
+            37.736846
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:FlowState:T=32768:E=0:G=32768": {
+          "multiplicity": 3,
+          "request_latency_ms": [
+            1523.538604,
+            1516.112802,
+            1546.00737,
+            1515.319964,
+            1535.091814,
+            1525.751266,
+            1530.243628,
+            1566.754534,
+            1540.876666,
+            1575.616345
+          ],
+          "ttft_ms": [
+            1523.091807,
+            1515.686066,
+            1545.549022,
+            1514.878549,
+            1534.65089,
+            1525.266555,
+            1529.785711,
+            1566.294253,
+            1540.427127,
+            1575.181241
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:FlowState:T=32768:E=32768:G=0": {
+          "multiplicity": 12,
+          "request_latency_ms": [
+            39.509178,
+            40.602622,
+            42.405329,
+            40.233833,
+            42.834603,
+            42.971585,
+            42.416108,
+            40.227062,
+            39.92929,
+            41.0336
+          ],
+          "ttft_ms": [
+            39.061379,
+            40.200931,
+            42.002005,
+            39.827506,
+            42.418224,
+            42.505942,
+            41.99724,
+            39.758407,
+            39.552406,
+            40.608638
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:FlowState:T=4096:E=0:G=4096": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            172.489891,
+            173.090587,
+            177.030316,
+            170.309915,
+            171.949273,
+            168.066384,
+            171.579214,
+            174.018125,
+            171.013991,
+            174.599032
+          ],
+          "ttft_ms": [
+            172.220023,
+            172.845912,
+            176.75963,
+            170.064628,
+            171.679784,
+            167.796157,
+            171.309643,
+            173.748814,
+            170.769855,
+            174.364347
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:FlowState:T=8192:E=0:G=8192": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            322.729675,
+            325.116367,
+            325.207927,
+            328.445079,
+            327.406928,
+            329.942479,
+            330.633424,
+            332.710659,
+            325.602923,
+            337.414876
+          ],
+          "ttft_ms": [
+            322.434059,
+            324.779834,
+            324.916692,
+            328.155451,
+            327.114997,
+            329.645669,
+            330.340117,
+            332.413552,
+            325.306059,
+            337.149389
+          ]
+        }
+      },
+      "policy": "FlowState",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.19355788089094733,
+          "weighted_median": 0.4672661526151669,
+          "weighted_p95": -0.03190815726565269
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.19380232684300935,
+          "weighted_median": 0.46767769914676804,
+          "weighted_p95": -0.0318721845015386
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 251.524616395,
+        "weighted_median": 171.579214,
+        "weighted_p95": 688.090839
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 251.195800505,
+        "weighted_median": 171.309643,
+        "weighted_p95": 687.724358
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 4,
+      "measured_case_count": 50,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=4:Global-LRU:T=16384:E=0:G=16384": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            655.37945,
+            666.814032,
+            660.31989,
+            660.393898,
+            659.036747,
+            652.032596,
+            652.480194,
+            661.530371,
+            659.792577,
+            683.132131
+          ],
+          "ttft_ms": [
+            655.037649,
+            666.482117,
+            660.08927,
+            660.056623,
+            658.683501,
+            651.670503,
+            652.139788,
+            661.17739,
+            659.436803,
+            682.791162
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Global-LRU:T=32768:E=16384:G=16384": {
+          "multiplicity": 1,
+          "request_latency_ms": [
+            763.326251,
+            753.875388,
+            747.535659,
+            745.987573,
+            739.633349,
+            744.898342,
+            745.040037,
+            754.466906,
+            748.148396,
+            779.623328
+          ],
+          "ttft_ms": [
+            762.895413,
+            753.458974,
+            747.198199,
+            745.568304,
+            739.197226,
+            744.451755,
+            744.602237,
+            754.034494,
+            747.734063,
+            779.161082
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Global-LRU:T=32768:E=32768:G=0": {
+          "multiplicity": 14,
+          "request_latency_ms": [
+            42.175093,
+            39.202601,
+            47.455793,
+            40.062406,
+            42.196754,
+            41.76963,
+            41.339099,
+            39.778846,
+            40.303718,
+            40.438473
+          ],
+          "ttft_ms": [
+            41.736594,
+            38.787633,
+            47.131834,
+            39.703008,
+            41.781265,
+            41.330752,
+            40.855318,
+            39.340995,
+            39.872576,
+            40.023941
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Global-LRU:T=4096:E=0:G=4096": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            167.296494,
+            168.387837,
+            170.309992,
+            170.227409,
+            170.168101,
+            169.491578,
+            172.618801,
+            174.134729,
+            172.469165,
+            176.28389
+          ],
+          "ttft_ms": [
+            167.156156,
+            168.144059,
+            170.163672,
+            169.96172,
+            169.90664,
+            169.222169,
+            172.359011,
+            173.989277,
+            172.199188,
+            176.019984
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Global-LRU:T=8192:E=0:G=8192": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            322.57051,
+            324.03947,
+            326.688774,
+            326.190123,
+            322.073048,
+            322.542325,
+            325.959252,
+            327.896404,
+            323.947386,
+            342.984067
+          ],
+          "ttft_ms": [
+            322.270005,
+            323.751767,
+            326.517351,
+            325.900939,
+            321.815642,
+            322.236326,
+            325.604015,
+            327.577387,
+            323.767385,
+            342.695591
+          ]
+        }
+      },
+      "policy": "Global-LRU",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 311.8941960433333,
+        "weighted_median": 322.073048,
+        "weighted_p95": 666.814032
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 311.58090486833333,
+        "weighted_median": 321.815642,
+        "weighted_p95": 666.482117
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 4,
+      "measured_case_count": 50,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=4:KVFlow-style:T=16384:E=0:G=16384": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            662.702433,
+            660.503715,
+            659.83189,
+            654.338347,
+            654.511358,
+            653.012044,
+            657.824678,
+            661.259532,
+            670.236368,
+            676.462813
+          ],
+          "ttft_ms": [
+            662.353139,
+            660.186119,
+            659.420122,
+            654.006617,
+            654.153129,
+            652.662481,
+            657.483129,
+            660.908848,
+            669.894181,
+            676.098387
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:KVFlow-style:T=32768:E=16384:G=16384": {
+          "multiplicity": 1,
+          "request_latency_ms": [
+            750.778593,
+            741.905348,
+            754.6083,
+            743.79827,
+            750.868368,
+            743.331696,
+            742.065062,
+            745.2851,
+            743.241766,
+            772.919206
+          ],
+          "ttft_ms": [
+            750.321894,
+            741.484615,
+            754.170305,
+            743.381577,
+            750.401256,
+            742.877277,
+            741.610729,
+            744.853812,
+            742.788587,
+            772.466457
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:KVFlow-style:T=32768:E=32768:G=0": {
+          "multiplicity": 14,
+          "request_latency_ms": [
+            40.907476,
+            40.490702,
+            42.286075,
+            42.294705,
+            42.127355,
+            43.027087,
+            41.544624,
+            39.455078,
+            40.720766,
+            39.22232
+          ],
+          "ttft_ms": [
+            40.503057,
+            40.033771,
+            41.866483,
+            41.871502,
+            41.713955,
+            42.526591,
+            41.117053,
+            39.03859,
+            40.2746,
+            38.80035
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:KVFlow-style:T=4096:E=0:G=4096": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            169.7476,
+            170.270446,
+            168.204647,
+            171.88176,
+            173.352887,
+            168.265609,
+            170.346974,
+            171.745729,
+            172.773718,
+            173.760473
+          ],
+          "ttft_ms": [
+            169.480653,
+            170.018924,
+            167.937025,
+            171.657502,
+            173.080433,
+            167.995928,
+            170.072997,
+            171.480438,
+            172.503535,
+            173.490832
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:KVFlow-style:T=8192:E=0:G=8192": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            333.529932,
+            326.973222,
+            330.100742,
+            322.792197,
+            330.61172,
+            324.24793,
+            326.368787,
+            328.552723,
+            343.439509,
+            334.168718
+          ],
+          "ttft_ms": [
+            333.241944,
+            326.679775,
+            329.800501,
+            322.501869,
+            330.299234,
+            323.951569,
+            326.078319,
+            328.258997,
+            343.147623,
+            333.87266
+          ]
+        }
+      },
+      "policy": "KVFlow-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": -0.0023973312942405524,
+          "weighted_median": -0.002232875443834145,
+          "weighted_p95": -0.005132369499986726
+        },
+        "ttft_ms": {
+          "weighted_mean": -0.0023269000079012675,
+          "weighted_median": -0.0021323606140933754,
+          "weighted_p95": -0.005119513206683663
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 312.64190976,
+        "weighted_median": 322.792197,
+        "weighted_p95": 670.236368
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 312.30592247833334,
+        "weighted_median": 322.501869,
+        "weighted_p95": 669.894181
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 4,
+      "measured_case_count": 50,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=4:Marconi-style:T=16384:E=0:G=16384": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            652.048056,
+            664.079989,
+            658.96961,
+            665.326078,
+            648.999623,
+            662.324506,
+            663.171895,
+            663.530861,
+            659.7302,
+            663.744231
+          ],
+          "ttft_ms": [
+            651.713993,
+            663.738141,
+            658.625824,
+            665.030121,
+            648.659391,
+            661.930573,
+            662.793098,
+            663.177926,
+            659.548009,
+            663.493532
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Marconi-style:T=32768:E=16384:G=16384": {
+          "multiplicity": 1,
+          "request_latency_ms": [
+            734.492513,
+            738.719556,
+            756.067575,
+            757.275957,
+            740.959426,
+            742.894093,
+            746.270152,
+            749.644439,
+            750.318,
+            750.000152
+          ],
+          "ttft_ms": [
+            734.055062,
+            738.295289,
+            755.635746,
+            756.781111,
+            740.524265,
+            742.4454,
+            745.824203,
+            749.202309,
+            749.880131,
+            749.567424
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Marconi-style:T=32768:E=32768:G=0": {
+          "multiplicity": 14,
+          "request_latency_ms": [
+            39.602299,
+            40.555,
+            42.43775,
+            39.361132,
+            39.563467,
+            42.864844,
+            40.354891,
+            39.630086,
+            41.66078,
+            38.441707
+          ],
+          "ttft_ms": [
+            39.193536,
+            40.148661,
+            42.024617,
+            38.962744,
+            39.145349,
+            42.36245,
+            40.148235,
+            39.204123,
+            41.235284,
+            38.109635
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Marconi-style:T=4096:E=0:G=4096": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            170.126295,
+            170.288611,
+            169.680971,
+            171.614695,
+            169.843282,
+            176.194951,
+            169.334785,
+            174.263358,
+            171.458943,
+            171.161068
+          ],
+          "ttft_ms": [
+            169.851864,
+            169.987254,
+            169.411752,
+            171.32332,
+            169.585441,
+            175.918646,
+            169.054661,
+            173.999908,
+            171.191025,
+            171.004484
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=4:Marconi-style:T=8192:E=0:G=8192": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            324.468508,
+            324.527584,
+            331.881744,
+            324.559477,
+            326.422105,
+            323.55659,
+            324.923293,
+            325.689446,
+            323.781366,
+            324.885761
+          ],
+          "ttft_ms": [
+            324.173349,
+            324.235142,
+            331.592824,
+            324.339123,
+            326.253856,
+            323.263295,
+            324.630875,
+            325.394248,
+            323.490245,
+            324.571885
+          ]
+        }
+      },
+      "policy": "Marconi-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.0023963796841417685,
+          "weighted_median": -0.004606228336125962,
+          "weighted_p95": 0.004100158168237291
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.0024022119829507143,
+          "weighted_median": -0.004498392281379543,
+          "weighted_p95": 0.004117103715177365
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 311.1467791283333,
+        "weighted_median": 323.55659,
+        "weighted_p95": 664.079989
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 310.832421485,
+        "weighted_median": 323.263295,
+        "weighted_p95": 663.738141
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 12,
+      "measured_case_count": 60,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=12:FlowState:T=16384:E=16384:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            41.143295,
+            39.88279,
+            40.800795,
+            41.471842,
+            38.865504,
+            38.678418,
+            42.518896,
+            40.228659,
+            37.537033,
+            39.13141
+          ],
+          "ttft_ms": [
+            40.822225,
+            39.532499,
+            40.498366,
+            41.126834,
+            38.529823,
+            38.3263,
+            42.172722,
+            39.893378,
+            37.194752,
+            38.786307
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:FlowState:T=32768:E=32768:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            39.701203,
+            39.546406,
+            41.703279,
+            41.234424,
+            38.242965,
+            43.095064,
+            42.807391,
+            39.953886,
+            38.717872,
+            38.98673
+          ],
+          "ttft_ms": [
+            39.280787,
+            39.118965,
+            41.443975,
+            40.793754,
+            37.824113,
+            42.704439,
+            42.392374,
+            39.508345,
+            38.289854,
+            38.512477
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:FlowState:T=4096:E=0:G=4096": {
+          "multiplicity": 7,
+          "request_latency_ms": [
+            171.462966,
+            169.281828,
+            169.296687,
+            171.016484,
+            169.556479,
+            169.345248,
+            173.78065,
+            176.20177,
+            175.32654,
+            170.170803
+          ],
+          "ttft_ms": [
+            171.186438,
+            169.03163,
+            169.146557,
+            170.73731,
+            169.274813,
+            169.072282,
+            173.512284,
+            175.940062,
+            175.055406,
+            169.871237
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:FlowState:T=4096:E=4096:G=0": {
+          "multiplicity": 8,
+          "request_latency_ms": [
+            40.191002,
+            38.107786,
+            42.091551,
+            41.163899,
+            38.222335,
+            39.461527,
+            39.71008,
+            38.444254,
+            38.197052,
+            38.276391
+          ],
+          "ttft_ms": [
+            39.950788,
+            37.864015,
+            41.965701,
+            40.896442,
+            37.951349,
+            39.192686,
+            39.442754,
+            38.219233,
+            37.941997,
+            38.005163
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:FlowState:T=8192:E=0:G=8192": {
+          "multiplicity": 1,
+          "request_latency_ms": [
+            334.132789,
+            322.081762,
+            321.791081,
+            331.088923,
+            321.986307,
+            327.943531,
+            328.521578,
+            327.711702,
+            340.7596,
+            327.787867
+          ],
+          "ttft_ms": [
+            333.842997,
+            321.783644,
+            321.492108,
+            330.773485,
+            321.683526,
+            327.641375,
+            328.224065,
+            327.416855,
+            340.466055,
+            327.487911
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:FlowState:T=8192:E=8192:G=0": {
+          "multiplicity": 14,
+          "request_latency_ms": [
+            38.728414,
+            39.109195,
+            40.452772,
+            40.671079,
+            37.324232,
+            39.248219,
+            40.206515,
+            38.832336,
+            38.326739,
+            37.36188
+          ],
+          "ttft_ms": [
+            38.438128,
+            38.846628,
+            40.248924,
+            40.406512,
+            37.052396,
+            38.93086,
+            39.931338,
+            38.611509,
+            38.057801,
+            37.098121
+          ]
+        }
+      },
+      "policy": "FlowState",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.3167165085892995,
+          "weighted_median": 0.026812585439231075,
+          "weighted_p95": 0.012539031140991906
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.31778112273941883,
+          "weighted_median": 0.028109595946513497,
+          "weighted_p95": 0.012550550062313906
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 59.95030934166667,
+        "weighted_median": 39.88279,
+        "weighted_p95": 173.78065
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 59.633407585,
+        "weighted_median": 39.508345,
+        "weighted_p95": 173.512284
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 12,
+      "measured_case_count": 50,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=12:Global-LRU:T=16384:E=16384:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            38.778578,
+            39.987804,
+            40.519364,
+            41.987157,
+            40.90488,
+            42.669552,
+            39.179221,
+            40.981613,
+            38.894387,
+            38.577358
+          ],
+          "ttft_ms": [
+            38.432737,
+            39.658216,
+            40.209072,
+            41.64469,
+            40.584816,
+            42.330045,
+            38.824427,
+            40.651029,
+            38.547117,
+            38.230606
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Global-LRU:T=32768:E=32768:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            41.966234,
+            40.974366,
+            41.452567,
+            41.207773,
+            44.280203,
+            42.536437,
+            41.963632,
+            39.896159,
+            40.314094,
+            38.109544
+          ],
+          "ttft_ms": [
+            41.550768,
+            40.558411,
+            41.025627,
+            40.715282,
+            43.844315,
+            42.114264,
+            41.586575,
+            39.468997,
+            39.872737,
+            37.626022
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Global-LRU:T=4096:E=0:G=4096": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            171.425331,
+            169.825711,
+            167.746573,
+            172.120853,
+            172.70834,
+            169.921745,
+            169.147117,
+            173.08463,
+            175.987361,
+            174.754549
+          ],
+          "ttft_ms": [
+            171.150994,
+            169.54803,
+            167.475154,
+            171.845862,
+            172.437854,
+            169.645421,
+            169.000188,
+            172.814949,
+            175.717637,
+            174.487529
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Global-LRU:T=8192:E=0:G=8192": {
+          "multiplicity": 3,
+          "request_latency_ms": [
+            330.908239,
+            327.112078,
+            327.290882,
+            327.358159,
+            325.138299,
+            327.299416,
+            328.43492,
+            335.129293,
+            339.960655,
+            343.076324
+          ],
+          "ttft_ms": [
+            330.61727,
+            326.799971,
+            326.960911,
+            327.008292,
+            324.837147,
+            326.971129,
+            328.137857,
+            334.848559,
+            339.668304,
+            342.779203
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Global-LRU:T=8192:E=8192:G=0": {
+          "multiplicity": 12,
+          "request_latency_ms": [
+            37.778424,
+            40.787618,
+            40.624413,
+            40.725928,
+            40.368828,
+            39.665096,
+            39.458799,
+            38.410856,
+            39.111762,
+            37.190274
+          ],
+          "ttft_ms": [
+            37.49183,
+            40.524793,
+            40.331096,
+            40.453455,
+            40.078672,
+            39.377416,
+            39.251436,
+            38.120951,
+            38.841907,
+            36.920113
+          ]
+        }
+      },
+      "policy": "Global-LRU",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 87.73855961,
+        "weighted_median": 40.981613,
+        "weighted_p95": 175.987361
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 87.41096087000001,
+        "weighted_median": 40.651029,
+        "weighted_p95": 175.717637
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 12,
+      "measured_case_count": 50,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=12:KVFlow-style:T=16384:E=16384:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            39.384585,
+            39.804634,
+            39.369019,
+            40.846649,
+            41.475789,
+            39.654378,
+            38.457384,
+            40.017329,
+            38.383336,
+            37.639281
+          ],
+          "ttft_ms": [
+            39.075699,
+            39.556792,
+            39.037426,
+            40.514232,
+            41.137181,
+            39.313532,
+            38.111891,
+            39.669211,
+            38.049342,
+            37.318264
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:KVFlow-style:T=32768:E=32768:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            39.011744,
+            39.556505,
+            40.329613,
+            42.035451,
+            41.269692,
+            40.011806,
+            39.470533,
+            40.652663,
+            39.366718,
+            38.396276
+          ],
+          "ttft_ms": [
+            38.598885,
+            39.132423,
+            39.908007,
+            41.528195,
+            40.848905,
+            39.585792,
+            39.067204,
+            40.216689,
+            38.934358,
+            37.996799
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:KVFlow-style:T=4096:E=0:G=4096": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            170.424717,
+            170.155214,
+            171.087761,
+            170.41759,
+            170.296455,
+            175.849037,
+            171.28426,
+            171.255091,
+            173.396772,
+            176.335175
+          ],
+          "ttft_ms": [
+            170.159026,
+            169.887251,
+            170.815014,
+            170.147726,
+            170.034129,
+            175.58222,
+            171.009437,
+            170.98657,
+            173.126685,
+            176.078892
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:KVFlow-style:T=8192:E=0:G=8192": {
+          "multiplicity": 3,
+          "request_latency_ms": [
+            331.888229,
+            332.824382,
+            321.426867,
+            324.755489,
+            321.974781,
+            320.736512,
+            322.950684,
+            332.8404,
+            332.670831,
+            327.49036
+          ],
+          "ttft_ms": [
+            331.596807,
+            332.526706,
+            321.135493,
+            324.460532,
+            321.678117,
+            320.441342,
+            322.654622,
+            332.542993,
+            332.479089,
+            327.19535
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:KVFlow-style:T=8192:E=8192:G=0": {
+          "multiplicity": 12,
+          "request_latency_ms": [
+            39.589607,
+            40.844066,
+            42.090476,
+            39.285734,
+            41.156994,
+            37.789439,
+            39.891736,
+            40.394509,
+            39.113092,
+            38.999127
+          ],
+          "ttft_ms": [
+            39.299446,
+            40.560932,
+            41.80276,
+            38.996592,
+            40.8312,
+            37.52227,
+            39.59617,
+            40.124198,
+            38.905557,
+            38.730149
+          ]
+        }
+      },
+      "policy": "KVFlow-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.00589005463842944,
+          "weighted_median": 0.014326034458429043,
+          "weighted_p95": -0.0019763578362880256
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.005883995609714528,
+          "weighted_median": 0.012959844140722768,
+          "weighted_p95": -0.0020558835536810677
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 87.2217747,
+        "weighted_median": 40.394509,
+        "weighted_p95": 176.335175
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 86.89663516,
+        "weighted_median": 40.124198,
+        "weighted_p95": 176.078892
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 12,
+      "measured_case_count": 50,
+      "per_class_raw_samples": {
+        "scalable_multiworkflow_v2_n16:K=12:Marconi-style:T=16384:E=16384:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            41.454968,
+            37.992376,
+            42.368671,
+            40.899812,
+            39.399418,
+            42.532926,
+            39.539957,
+            39.4487,
+            38.165501,
+            38.137275
+          ],
+          "ttft_ms": [
+            41.149828,
+            37.651568,
+            42.028782,
+            40.56348,
+            39.077475,
+            42.185649,
+            39.219359,
+            39.132488,
+            37.843182,
+            37.809827
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Marconi-style:T=32768:E=32768:G=0": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            41.962829,
+            37.220024,
+            41.870165,
+            42.366492,
+            44.074974,
+            42.095915,
+            39.685003,
+            38.826325,
+            39.211031,
+            41.614983
+          ],
+          "ttft_ms": [
+            41.539309,
+            36.815597,
+            41.492373,
+            41.939988,
+            43.642235,
+            41.672627,
+            39.252005,
+            38.386472,
+            38.788557,
+            41.183382
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Marconi-style:T=4096:E=0:G=4096": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            168.525916,
+            170.087958,
+            171.896493,
+            170.71267,
+            168.569419,
+            171.968274,
+            172.766466,
+            176.611827,
+            172.87542,
+            174.737797
+          ],
+          "ttft_ms": [
+            168.258302,
+            169.816413,
+            171.635589,
+            170.418419,
+            168.317709,
+            171.697011,
+            172.486536,
+            176.359694,
+            172.605773,
+            174.469562
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Marconi-style:T=8192:E=0:G=8192": {
+          "multiplicity": 3,
+          "request_latency_ms": [
+            331.25668,
+            324.290322,
+            320.687514,
+            328.336294,
+            324.072003,
+            333.002065,
+            324.795465,
+            339.241818,
+            330.663767,
+            339.224906
+          ],
+          "ttft_ms": [
+            330.965317,
+            323.995246,
+            320.391668,
+            327.981112,
+            323.769109,
+            332.708697,
+            324.50572,
+            338.921755,
+            330.341202,
+            338.971543
+          ]
+        },
+        "scalable_multiworkflow_v2_n16:K=12:Marconi-style:T=8192:E=8192:G=0": {
+          "multiplicity": 12,
+          "request_latency_ms": [
+            41.246947,
+            39.366544,
+            41.344613,
+            41.853144,
+            38.382345,
+            41.680575,
+            38.471305,
+            39.407609,
+            36.881324,
+            38.625968
+          ],
+          "ttft_ms": [
+            40.980688,
+            39.052261,
+            41.055879,
+            41.576026,
+            38.111376,
+            41.406718,
+            38.201072,
+            39.093247,
+            36.614312,
+            38.310373
+          ]
+        }
+      },
+      "policy": "Marconi-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.001424782165967333,
+          "weighted_median": -0.01705550242739334,
+          "weighted_p95": -0.0035483570891208056
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.0014207052383819353,
+          "weighted_median": -0.01858966472902806,
+          "weighted_p95": -0.003653913238088867
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 87.613551275,
+        "weighted_median": 41.680575,
+        "weighted_p95": 176.611827
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "ttft_ms": {
+        "weighted_mean": 87.28677566,
+        "weighted_median": 41.406718,
+        "weighted_p95": 176.359694
+      },
+      "weighted_request_count": 600.0
+    },
+    {
+      "K": 4,
+      "measured_case_count": 30,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=4:FlowState:T=32768:E=0:G=32768": {
+          "multiplicity": 4,
+          "request_latency_ms": [
+            1541.168651,
+            1570.19386,
+            1533.051273,
+            1559.481188,
+            1553.346072,
+            1565.56207,
+            1538.524868,
+            1555.545077,
+            1563.505558,
+            1553.388884
+          ],
+          "ttft_ms": [
+            1540.761984,
+            1569.72077,
+            1532.619137,
+            1559.013986,
+            1552.864955,
+            1565.092271,
+            1538.065342,
+            1555.260335,
+            1563.05957,
+            1552.886428
+          ]
+        },
+        "sota_signal_stress_v1:K=4:FlowState:T=32768:E=32768:G=0": {
+          "multiplicity": 16,
+          "request_latency_ms": [
+            40.83226,
+            40.798804,
+            41.369783,
+            40.322698,
+            45.893543,
+            42.778152,
+            41.179703,
+            40.095299,
+            40.168523,
+            40.654429
+          ],
+          "ttft_ms": [
+            40.32883,
+            40.388371,
+            40.949244,
+            39.898062,
+            45.438295,
+            42.304403,
+            40.742856,
+            39.658818,
+            39.743761,
+            40.153238
+          ]
+        },
+        "sota_signal_stress_v1:K=4:FlowState:T=8192:E=0:G=8192": {
+          "multiplicity": 20,
+          "request_latency_ms": [
+            322.402851,
+            329.392879,
+            325.67641,
+            337.295281,
+            325.866834,
+            327.088893,
+            338.570143,
+            337.502237,
+            342.434071,
+            325.199437
+          ],
+          "ttft_ms": [
+            322.116253,
+            329.093695,
+            325.352229,
+            336.987021,
+            325.573161,
+            326.788481,
+            338.267188,
+            337.202888,
+            342.137652,
+            324.900421
+          ]
+        }
+      },
+      "policy": "FlowState",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.4022320635811243,
+          "weighted_median": 0.01678796637815375,
+          "weighted_p95": 0.0077706783959444236
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.40250972405001406,
+          "weighted_median": 0.01673375051731879,
+          "weighted_p95": 0.0077927256454324405
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 337.47285457,
+        "weighted_median": 325.199437,
+        "weighted_p95": 1553.388884
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 337.09863234999995,
+        "weighted_median": 324.900421,
+        "weighted_p95": 1552.886428
+      },
+      "weighted_request_count": 400.0
+    },
+    {
+      "K": 4,
+      "measured_case_count": 30,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=4:Global-LRU:T=32768:E=0:G=32768": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            1565.406861,
+            1554.297422,
+            1550.905283,
+            1554.76428,
+            1521.060472,
+            1532.155056,
+            1565.554303,
+            1530.4724,
+            1596.631285,
+            1566.347506
+          ],
+          "ttft_ms": [
+            1564.971455,
+            1553.849545,
+            1550.438955,
+            1554.306509,
+            1520.599156,
+            1531.673014,
+            1565.082688,
+            1530.054347,
+            1596.1862,
+            1565.912394
+          ]
+        },
+        "sota_signal_stress_v1:K=4:Global-LRU:T=32768:E=32768:G=0": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            40.073823,
+            39.625774,
+            40.635922,
+            41.106483,
+            40.030847,
+            39.464488,
+            39.859298,
+            40.362366,
+            41.467259,
+            38.43438
+          ],
+          "ttft_ms": [
+            39.611578,
+            39.255375,
+            40.204081,
+            40.821198,
+            39.588836,
+            39.014277,
+            39.440897,
+            39.917502,
+            41.03539,
+            37.999704
+          ]
+        },
+        "sota_signal_stress_v1:K=4:Global-LRU:T=8192:E=0:G=8192": {
+          "multiplicity": 20,
+          "request_latency_ms": [
+            324.154251,
+            325.480643,
+            330.752092,
+            331.864469,
+            323.951209,
+            328.664834,
+            340.28579,
+            338.603529,
+            339.356128,
+            338.658539
+          ],
+          "ttft_ms": [
+            323.867698,
+            325.187407,
+            330.42975,
+            331.567499,
+            323.654742,
+            328.40902,
+            339.984969,
+            338.30252,
+            339.070775,
+            338.363938
+          ]
+        }
+      },
+      "policy": "Global-LRU",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 564.5549619,
+        "weighted_median": 330.752092,
+        "weighted_p95": 1565.554303
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 564.190993425,
+        "weighted_median": 330.42975,
+        "weighted_p95": 1565.082688
+      },
+      "weighted_request_count": 400.0
+    },
+    {
+      "K": 4,
+      "measured_case_count": 40,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=4:KVFlow-style:T=32768:E=0:G=32768": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            1547.934461,
+            1542.764344,
+            1521.812519,
+            1565.190246,
+            1530.419464,
+            1541.12893,
+            1526.370393,
+            1530.514829,
+            1545.565854,
+            1546.272095
+          ],
+          "ttft_ms": [
+            1547.498989,
+            1542.337182,
+            1521.374593,
+            1564.715384,
+            1529.907963,
+            1540.663724,
+            1525.921409,
+            1530.050472,
+            1545.098001,
+            1545.767098
+          ]
+        },
+        "sota_signal_stress_v1:K=4:KVFlow-style:T=32768:E=32768:G=0": {
+          "multiplicity": 5,
+          "request_latency_ms": [
+            39.895055,
+            38.615074,
+            41.515369,
+            39.851212,
+            41.061013,
+            41.241196,
+            38.869805,
+            38.09932,
+            39.216896,
+            38.516826
+          ],
+          "ttft_ms": [
+            39.417202,
+            38.203316,
+            41.074747,
+            39.415023,
+            40.643693,
+            40.795917,
+            38.450206,
+            37.65741,
+            38.78436,
+            38.089088
+          ]
+        },
+        "sota_signal_stress_v1:K=4:KVFlow-style:T=8192:E=0:G=8192": {
+          "multiplicity": 15,
+          "request_latency_ms": [
+            330.493626,
+            335.38084,
+            330.244679,
+            328.931783,
+            325.347047,
+            332.289617,
+            323.499461,
+            333.998059,
+            326.294076,
+            336.454452
+          ],
+          "ttft_ms": [
+            330.195308,
+            335.13366,
+            329.948825,
+            328.62974,
+            325.058315,
+            331.984755,
+            323.20191,
+            333.693586,
+            326.001695,
+            336.158513
+          ]
+        },
+        "sota_signal_stress_v1:K=4:KVFlow-style:T=8192:E=8192:G=0": {
+          "multiplicity": 5,
+          "request_latency_ms": [
+            39.323785,
+            39.168219,
+            39.06038,
+            39.566418,
+            39.835866,
+            40.678094,
+            38.004506,
+            37.049848,
+            38.213486,
+            38.408084
+          ],
+          "ttft_ms": [
+            39.013777,
+            38.899712,
+            38.829645,
+            39.270286,
+            39.572528,
+            40.404795,
+            37.712499,
+            36.756634,
+            37.917623,
+            38.13075
+          ]
+        }
+      },
+      "policy": "KVFlow-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": -0.25959637715213224,
+          "weighted_median": -0.004648572260580037,
+          "weighted_p95": 0.011254698713571123
+        },
+        "ttft_ms": {
+          "weighted_mean": -0.25974765725674626,
+          "weighted_median": -0.004706007857948608,
+          "weighted_p95": 0.011234996805485094
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 711.1113847125,
+        "weighted_median": 332.289617,
+        "weighted_p95": 1547.934461
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 710.7382822125,
+        "weighted_median": 331.984755,
+        "weighted_p95": 1547.498989
+      },
+      "weighted_request_count": 400.0
+    },
+    {
+      "K": 4,
+      "measured_case_count": 30,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=4:Marconi-style:T=32768:E=0:G=32768": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            1545.474643,
+            1539.01733,
+            1535.701491,
+            1515.668594,
+            1547.003059,
+            1555.171232,
+            1516.838805,
+            1554.966888,
+            1546.767439,
+            1532.781497
+          ],
+          "ttft_ms": [
+            1545.11181,
+            1538.589202,
+            1535.262122,
+            1515.17237,
+            1546.522891,
+            1554.68088,
+            1516.396843,
+            1554.492936,
+            1546.228413,
+            1532.316403
+          ]
+        },
+        "sota_signal_stress_v1:K=4:Marconi-style:T=32768:E=32768:G=0": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            39.410134,
+            41.078256,
+            42.241859,
+            39.734244,
+            41.08322,
+            39.665598,
+            40.68594,
+            38.35013,
+            40.079467,
+            40.325645
+          ],
+          "ttft_ms": [
+            38.998567,
+            40.675432,
+            41.834032,
+            39.319428,
+            40.680066,
+            39.247859,
+            40.265457,
+            37.91944,
+            39.646963,
+            39.949749
+          ]
+        },
+        "sota_signal_stress_v1:K=4:Marconi-style:T=8192:E=0:G=8192": {
+          "multiplicity": 20,
+          "request_latency_ms": [
+            329.337742,
+            329.423249,
+            328.869777,
+            324.857374,
+            326.572588,
+            333.410378,
+            332.501057,
+            340.847018,
+            332.993499,
+            336.609673
+          ],
+          "ttft_ms": [
+            329.041301,
+            329.241299,
+            328.536379,
+            324.561639,
+            326.277836,
+            333.106427,
+            332.207827,
+            340.529482,
+            332.698978,
+            336.316827
+          ]
+        }
+      },
+      "policy": "Marconi-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.007054596352490262,
+          "weighted_median": 0.00401764049915671,
+          "weighted_p95": 0.011849633043357934
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.007058464502995127,
+          "weighted_median": 0.00359668280474136,
+          "weighted_p95": 0.011858668645627426
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 560.572254525,
+        "weighted_median": 329.423249,
+        "weighted_p95": 1547.003059
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 560.2086713250001,
+        "weighted_median": 329.241299,
+        "weighted_p95": 1546.522891
+      },
+      "weighted_request_count": 400.0
+    },
+    {
+      "K": 8,
+      "measured_case_count": 40,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=8:FlowState:T=32768:E=0:G=32768": {
+          "multiplicity": 4,
+          "request_latency_ms": [
+            1529.730305,
+            1537.363967,
+            1574.32284,
+            1571.790566,
+            1542.986796,
+            1553.419991,
+            1533.719444,
+            1533.949629,
+            1559.897227,
+            1564.306553
+          ],
+          "ttft_ms": [
+            1529.287521,
+            1536.935253,
+            1573.89072,
+            1571.336937,
+            1542.486905,
+            1552.936089,
+            1533.207274,
+            1533.501404,
+            1559.426224,
+            1563.9338
+          ]
+        },
+        "sota_signal_stress_v1:K=8:FlowState:T=32768:E=32768:G=0": {
+          "multiplicity": 16,
+          "request_latency_ms": [
+            40.033543,
+            43.274524,
+            41.416963,
+            41.613306,
+            42.581082,
+            40.82214,
+            38.319739,
+            39.683515,
+            38.929233,
+            38.143482
+          ],
+          "ttft_ms": [
+            39.615626,
+            42.758578,
+            41.001362,
+            41.216128,
+            42.157,
+            40.427038,
+            37.891472,
+            39.25236,
+            38.496825,
+            37.715426
+          ]
+        },
+        "sota_signal_stress_v1:K=8:FlowState:T=8192:E=0:G=8192": {
+          "multiplicity": 4,
+          "request_latency_ms": [
+            337.849602,
+            326.85233,
+            326.518767,
+            342.647465,
+            337.648362,
+            325.829376,
+            333.890121,
+            337.507438,
+            340.180602,
+            341.75933
+          ],
+          "ttft_ms": [
+            337.541414,
+            326.562185,
+            326.229417,
+            342.357238,
+            337.353716,
+            325.515523,
+            333.754807,
+            337.214233,
+            339.888516,
+            341.454721
+          ]
+        },
+        "sota_signal_stress_v1:K=8:FlowState:T=8192:E=8192:G=0": {
+          "multiplicity": 16,
+          "request_latency_ms": [
+            38.561059,
+            37.692654,
+            38.430444,
+            42.859716,
+            38.692116,
+            38.479133,
+            35.917452,
+            39.989025,
+            37.695862,
+            37.205622
+          ],
+          "ttft_ms": [
+            38.271057,
+            37.416091,
+            38.26145,
+            42.561606,
+            38.418294,
+            38.212435,
+            35.784079,
+            39.709393,
+            37.406142,
+            36.935522
+          ]
+        }
+      },
+      "policy": "FlowState",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.5510620933588801,
+          "weighted_median": 0.06737442988986007,
+          "weighted_p95": 0.011861355958390017
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.5514410921707503,
+          "weighted_median": 0.0668951526351922,
+          "weighted_p95": 0.011887389651635489
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 220.13533151,
+        "weighted_median": 39.989025,
+        "weighted_p95": 1542.986796
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 219.78845433000004,
+        "weighted_median": 39.615626,
+        "weighted_p95": 1542.486905
+      },
+      "weighted_request_count": 400.0
+    },
+    {
+      "K": 8,
+      "measured_case_count": 40,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=8:Global-LRU:T=32768:E=0:G=32768": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            1562.536927,
+            1552.616048,
+            1561.508403,
+            1536.735023,
+            1539.734676,
+            1530.958574,
+            1535.05094,
+            1553.509295,
+            1536.324429,
+            1567.047113
+          ],
+          "ttft_ms": [
+            1562.109801,
+            1552.193429,
+            1561.043639,
+            1536.363588,
+            1539.233215,
+            1530.484087,
+            1534.610396,
+            1553.016629,
+            1536.076217,
+            1566.553217
+          ]
+        },
+        "sota_signal_stress_v1:K=8:Global-LRU:T=32768:E=32768:G=0": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            39.055677,
+            40.44094,
+            41.573152,
+            38.6197,
+            42.877899,
+            40.753412,
+            39.80589,
+            38.179309,
+            39.117615,
+            39.813921
+          ],
+          "ttft_ms": [
+            38.627739,
+            40.032105,
+            41.163573,
+            38.178288,
+            42.455707,
+            40.317142,
+            39.370128,
+            37.784276,
+            38.685038,
+            39.381147
+          ]
+        },
+        "sota_signal_stress_v1:K=8:Global-LRU:T=8192:E=0:G=8192": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            327.673408,
+            345.563134,
+            342.376236,
+            341.461451,
+            337.846783,
+            330.182226,
+            325.110756,
+            333.345623,
+            333.822882,
+            327.188337
+          ],
+          "ttft_ms": [
+            327.380382,
+            345.270296,
+            342.114236,
+            341.166845,
+            337.545585,
+            329.891603,
+            324.814048,
+            333.047403,
+            333.52656,
+            326.865558
+          ]
+        },
+        "sota_signal_stress_v1:K=8:Global-LRU:T=8192:E=8192:G=0": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            39.321677,
+            40.351041,
+            41.196714,
+            39.0833,
+            41.044579,
+            40.668228,
+            37.161155,
+            38.085538,
+            38.908826,
+            37.227007
+          ],
+          "ttft_ms": [
+            39.035881,
+            40.062669,
+            40.910942,
+            38.803199,
+            40.747373,
+            40.396067,
+            36.86999,
+            37.809534,
+            38.622038,
+            36.957951
+          ]
+        }
+      },
+      "policy": "Global-LRU",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.0,
+          "weighted_median": 0.0,
+          "weighted_p95": 0.0
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 490.34694609999997,
+        "weighted_median": 42.877899,
+        "weighted_p95": 1561.508403
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 489.98793802499995,
+        "weighted_median": 42.455707,
+        "weighted_p95": 1561.043639
+      },
+      "weighted_request_count": 400.0
+    },
+    {
+      "K": 8,
+      "measured_case_count": 40,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=8:KVFlow-style:T=32768:E=0:G=32768": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            1556.099341,
+            1571.007883,
+            1579.984437,
+            1536.222264,
+            1539.411526,
+            1551.736967,
+            1563.482996,
+            1564.108682,
+            1527.477643,
+            1532.10277
+          ],
+          "ttft_ms": [
+            1555.672949,
+            1570.573544,
+            1579.546343,
+            1535.759274,
+            1538.94083,
+            1551.303401,
+            1563.037838,
+            1563.629693,
+            1527.028657,
+            1531.627844
+          ]
+        },
+        "sota_signal_stress_v1:K=8:KVFlow-style:T=32768:E=32768:G=0": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            40.409375,
+            39.82914,
+            42.875317,
+            39.926736,
+            42.999531,
+            39.525282,
+            40.248411,
+            40.138135,
+            37.614071,
+            41.051111
+          ],
+          "ttft_ms": [
+            39.991836,
+            39.42037,
+            42.43913,
+            39.484023,
+            42.567846,
+            39.09634,
+            39.811858,
+            39.705719,
+            37.190647,
+            40.61225
+          ]
+        },
+        "sota_signal_stress_v1:K=8:KVFlow-style:T=8192:E=0:G=8192": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            340.75517,
+            329.550324,
+            326.682436,
+            338.230663,
+            337.005633,
+            341.073911,
+            326.094027,
+            342.101056,
+            333.747935,
+            327.571208
+          ],
+          "ttft_ms": [
+            340.462372,
+            329.256715,
+            326.389018,
+            337.92595,
+            336.697496,
+            340.762414,
+            325.800055,
+            341.80626,
+            333.584704,
+            327.279498
+          ]
+        },
+        "sota_signal_stress_v1:K=8:KVFlow-style:T=8192:E=8192:G=0": {
+          "multiplicity": 10,
+          "request_latency_ms": [
+            38.452061,
+            40.510132,
+            39.891622,
+            39.739089,
+            38.330093,
+            40.490649,
+            37.560837,
+            38.28711,
+            38.052888,
+            37.925899
+          ],
+          "ttft_ms": [
+            38.176292,
+            40.240953,
+            39.626789,
+            39.458116,
+            38.057351,
+            40.19198,
+            37.291556,
+            37.988152,
+            37.760185,
+            37.634093
+          ]
+        }
+      },
+      "policy": "KVFlow-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": -0.002265055250845871,
+          "weighted_median": -0.002836706154842106,
+          "weighted_p95": -0.001665235355124759
+        },
+        "ttft_ms": {
+          "weighted_mean": -0.0022609138185428895,
+          "weighted_median": -0.002641317455860674,
+          "weighted_p95": -0.0016566186462645736
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 491.457609025,
+        "weighted_median": 42.999531,
+        "weighted_p95": 1564.108682
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 491.095758525,
+        "weighted_median": 42.567846,
+        "weighted_p95": 1563.629693
+      },
+      "weighted_request_count": 400.0
+    },
+    {
+      "K": 8,
+      "measured_case_count": 20,
+      "per_class_raw_samples": {
+        "sota_signal_stress_v1:K=8:Marconi-style:T=32768:E=32768:G=0": {
+          "multiplicity": 20,
+          "request_latency_ms": [
+            40.893323,
+            41.560949,
+            41.439493,
+            42.10402,
+            40.731761,
+            41.101645,
+            39.671642,
+            38.550486,
+            39.463771,
+            39.410714
+          ],
+          "ttft_ms": [
+            40.481384,
+            41.144461,
+            40.941216,
+            41.679349,
+            40.310668,
+            40.667648,
+            39.235491,
+            38.114873,
+            39.033467,
+            38.90268
+          ]
+        },
+        "sota_signal_stress_v1:K=8:Marconi-style:T=8192:E=0:G=8192": {
+          "multiplicity": 20,
+          "request_latency_ms": [
+            338.796462,
+            325.389809,
+            342.801881,
+            325.264504,
+            329.686221,
+            340.005331,
+            339.546695,
+            329.037179,
+            337.327769,
+            339.285119
+          ],
+          "ttft_ms": [
+            338.510194,
+            325.097266,
+            342.500174,
+            324.95366,
+            329.389162,
+            339.711397,
+            339.250678,
+            328.745356,
+            337.039483,
+            338.989113
+          ]
+        }
+      },
+      "policy": "Marconi-style",
+      "relative_to_global_lru": {
+        "request_latency_ms": {
+          "weighted_mean": 0.6174067357977576,
+          "weighted_median": 0.0180484356288073,
+          "weighted_p95": 0.782258404535784
+        },
+        "ttft_ms": {
+          "weighted_mean": 0.6178785813489821,
+          "weighted_median": 0.018286304830584844,
+          "weighted_p95": 0.7823818703635869
+        }
+      },
+      "request_latency_ms": {
+        "weighted_mean": 187.6034387,
+        "weighted_median": 42.10402,
+        "weighted_p95": 340.005331
+      },
+      "scenario": "sota_signal_stress_v1",
+      "ttft_ms": {
+        "weighted_mean": 187.23488600000002,
+        "weighted_median": 41.679349,
+        "weighted_p95": 339.711397
+      },
+      "weighted_request_count": 400.0
+    }
+  ],
+  "retried": 0,
+  "schema_version": "flowstate.sota_latency_runtime.v1",
+  "status": "PASS",
+  "total_runtime_ms": 19538256.927278,
+  "warmup_completed": 138,
+  "warmup_expected": 138
+}
