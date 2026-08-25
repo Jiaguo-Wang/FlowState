@@ -111,6 +111,7 @@ def _summary_for_budget(budget_checkpoints: int) -> dict:
         for row in build_budget_sweep(
             budget_checkpoints=(budget_checkpoints,)
         ).rows
+        if row.policy_name in POLICY_NAMES
     }
     return {
         "status": "PASS",

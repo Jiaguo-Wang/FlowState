@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Sequence
+from itertools import combinations
 
 from flowstate.executable_state import recovery_gap
 from flowstate.recovery_model import RecoveryCostModel
@@ -124,6 +125,85 @@ def select_recovery_only(
         candidate.checkpoint_id
         for _, candidate in ordered[:capacity]
     )
+
+
+def select_workflow_only(
+    continuations: Sequence[PendingContinuation],
+    candidates: Sequence[CheckpointCandidate],
+    budget_bytes: int,
+) -> tuple[str, ...]:
+    """只按尚未覆盖的兼容待续请求数量执行集合依赖贪心。"""
+    eligible, capacity = _eligible_candidates(candidates, budget_bytes)
+    ordered_candidates = tuple(
+        sorted(eligible, key=lambda candidate: candidate.checkpoint_id)
+    )
+    covered: set[int] = set()
+    selected: list[CheckpointCandidate] = []
+
+    while len(selected) < capacity:
+        best_candidate = None
+        best_new_coverage: tuple[int, ...] = ()
+        for candidate in ordered_candidates:
+            if candidate in selected:
+                continue
+            new_coverage = tuple(
+                index
+                for index, continuation in enumerate(continuations)
+                if index not in covered
+                and is_compatible(candidate, continuation)
+            )
+            if len(new_coverage) > len(best_new_coverage):
+                best_candidate = candidate
+                best_new_coverage = new_coverage
+
+        if best_candidate is None or not best_new_coverage:
+            break
+        selected.append(best_candidate)
+        covered.update(best_new_coverage)
+
+    return tuple(candidate.checkpoint_id for candidate in selected)
+
+
+def select_oracle(
+    continuations: Sequence[PendingContinuation],
+    candidates: Sequence[CheckpointCandidate],
+    budget_bytes: int,
+    recovery_cost_model: RecoveryCostModel,
+) -> tuple[str, ...]:
+    """精确搜索预算内恢复成本最低的常驻检查点子集。"""
+    eligible, capacity = _eligible_candidates(candidates, budget_bytes)
+    ordered_candidates = tuple(
+        sorted(eligible, key=lambda candidate: candidate.checkpoint_id)
+    )
+    best_ids: tuple[str, ...] | None = None
+    best_cost: float | None = None
+
+    for subset_size in range(capacity + 1):
+        for subset in combinations(ordered_candidates, subset_size):
+            checkpoint_ids = tuple(
+                candidate.checkpoint_id for candidate in subset
+            )
+            cost = sum(
+                recovery_cost_model.estimate(
+                    recovery_gap(continuation, subset)
+                )
+                for continuation in continuations
+            )
+            if (
+                best_cost is None
+                or cost < best_cost - 1e-9
+                or (
+                    abs(cost - best_cost) <= 1e-9
+                    and (
+                        best_ids is None
+                        or checkpoint_ids < best_ids
+                    )
+                )
+            ):
+                best_ids = checkpoint_ids
+                best_cost = cost
+
+    return best_ids or ()
 
 
 def _eligible_candidates(

@@ -13,13 +13,19 @@ from flowstate.state_catalog import CheckpointCandidate
 from .policies import (
     select_equal_share,
     select_global_lru,
+    select_oracle,
     select_recovery_only,
+    select_workflow_only,
 )
 from .scenario import ControlledScenario, build_scenario
-from .snapshot_cases import POLICY_NAMES
+from .snapshot_cases import POLICY_NAMES as SNAPSHOT_POLICY_NAMES
 
 
 DEFAULT_BUDGET_CHECKPOINTS = (1, 2, 3, 4, 5)
+BUDGET_SWEEP_POLICY_NAMES = SNAPSHOT_POLICY_NAMES + (
+    "Workflow-Only",
+    "Oracle",
+)
 
 
 @dataclass(frozen=True)
@@ -47,11 +53,22 @@ class FlowStateBaselineComparison:
 
 
 @dataclass(frozen=True)
+class FlowStateOracleComparison:
+    """记录 FlowState 目标值与精确 Oracle 目标值的差距。"""
+
+    budget_checkpoints: int
+    oracle_gap_difference: int
+    oracle_cost_difference: float
+    exact_optimal: bool
+
+
+@dataclass(frozen=True)
 class BudgetSweepResult:
     """汇总完整预算扫描和逐基线对比。"""
 
     rows: tuple[BudgetSweepRow, ...]
     comparisons: tuple[FlowStateBaselineComparison, ...]
+    oracle_comparisons: tuple[FlowStateOracleComparison, ...]
 
 
 def build_budget_sweep(
@@ -59,7 +76,7 @@ def build_budget_sweep(
     recovery_cost_model: RecoveryCostModel | None = None,
     budget_checkpoints: Sequence[int] = DEFAULT_BUDGET_CHECKPOINTS,
 ) -> BudgetSweepResult:
-    """对指定 K 值计算四个策略的离线规划结果。"""
+    """对指定 K 值计算六个策略的离线规划结果。"""
     active_scenario = scenario or build_scenario()
     model = recovery_cost_model or RecoveryCostModel()
     k_values = tuple(int(value) for value in budget_checkpoints)
@@ -76,11 +93,12 @@ def build_budget_sweep(
             recovery_cost_model=model,
         )
         for k in sorted(k_values)
-        for policy_name in POLICY_NAMES
+        for policy_name in BUDGET_SWEEP_POLICY_NAMES
     )
     return BudgetSweepResult(
         rows=rows,
         comparisons=_build_comparisons(rows),
+        oracle_comparisons=_build_oracle_comparisons(rows),
     )
 
 
@@ -192,6 +210,19 @@ def _select_checkpoint_ids(
             budget_bytes,
             recovery_cost_model,
         )
+    if policy_name == "Workflow-Only":
+        return select_workflow_only(
+            scenario.continuations,
+            scenario.candidates,
+            budget_bytes,
+        )
+    if policy_name == "Oracle":
+        return select_oracle(
+            scenario.continuations,
+            scenario.candidates,
+            budget_bytes,
+            recovery_cost_model,
+        )
     raise ValueError(f"未知策略：{policy_name}")
 
 
@@ -216,7 +247,7 @@ def _resolve_selected(
 def _build_comparisons(
     rows: Sequence[BudgetSweepRow],
 ) -> tuple[FlowStateBaselineComparison, ...]:
-    """计算每个 K 下 FlowState 相对三个基线的 gap 与成本下降。"""
+    """计算每个 K 下 FlowState 相对五个基线的 gap 与成本下降。"""
     rows_by_key = {
         (row.budget_checkpoints, row.policy_name): row for row in rows
     }
@@ -224,7 +255,7 @@ def _build_comparisons(
     comparisons = []
     for k in k_values:
         flowstate = rows_by_key[(k, "FlowState")]
-        for baseline_name in POLICY_NAMES[1:]:
+        for baseline_name in BUDGET_SWEEP_POLICY_NAMES[1:]:
             baseline = rows_by_key[(k, baseline_name)]
             absolute_gap_reduction = (
                 baseline.total_recovery_gap
@@ -247,6 +278,43 @@ def _build_comparisons(
                     ),
                 )
             )
+    return tuple(comparisons)
+
+
+def _build_oracle_comparisons(
+    rows: Sequence[BudgetSweepRow],
+) -> tuple[FlowStateOracleComparison, ...]:
+    """计算 FlowState 与精确 Oracle 的恢复间隔和目标成本差值。"""
+    rows_by_key = {
+        (row.budget_checkpoints, row.policy_name): row for row in rows
+    }
+    comparisons = []
+    for budget_checkpoints in sorted(
+        {row.budget_checkpoints for row in rows}
+    ):
+        flowstate = rows_by_key[(budget_checkpoints, "FlowState")]
+        oracle = rows_by_key[(budget_checkpoints, "Oracle")]
+        cost_difference = (
+            flowstate.estimated_recovery_cost_ms
+            - oracle.estimated_recovery_cost_ms
+        )
+        if cost_difference < -1e-9:
+            raise RuntimeError("FlowState 恢复成本不能优于精确 Oracle")
+        comparisons.append(
+            FlowStateOracleComparison(
+                budget_checkpoints=budget_checkpoints,
+                oracle_gap_difference=(
+                    flowstate.total_recovery_gap
+                    - oracle.total_recovery_gap
+                ),
+                oracle_cost_difference=(
+                    0.0
+                    if abs(cost_difference) <= 1e-9
+                    else cost_difference
+                ),
+                exact_optimal=abs(cost_difference) <= 1e-9,
+            )
+        )
     return tuple(comparisons)
 
 
