@@ -224,6 +224,7 @@ def compact_state(path: dict) -> dict:
 def build_runtime_workflows(
     engine: FormalEndToEndGateEngine,
     scenario: ControlledScenario,
+    request_namespace: str = "flowstate_step7b",
 ) -> tuple[tuple[RuntimeWorkflow, ...], dict[str, tuple[int, ...]]]:
     """按 scenario 候选位置递增构造真实同 lineage 检查点。"""
     candidates_by_workflow = {
@@ -265,7 +266,7 @@ def build_runtime_workflows(
         current_output, _ = generate(
             engine,
             (
-                f"flowstate_step7b_{workflow.workflow_id.lower()}_"
+                f"{request_namespace}_{workflow.workflow_id.lower()}_"
                 f"{first_candidate.checkpoint_id.lower()}"
             ),
             current_tokens,
@@ -296,7 +297,7 @@ def build_runtime_workflows(
             current_output, _ = generate(
                 engine,
                 (
-                    f"flowstate_step7b_{workflow.workflow_id.lower()}_"
+                    f"{request_namespace}_{workflow.workflow_id.lower()}_"
                     f"{candidate.checkpoint_id.lower()}"
                 ),
                 current_tokens,

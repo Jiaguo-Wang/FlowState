@@ -1,0 +1,163 @@
+{
+  "artifact_directory": "/workspace/evaluation/controlled_multiworkflow_v1/artifacts/snapshot_runtime_20260825_022400_327223",
+  "cases_expected": 28,
+  "cases_failed": 0,
+  "cases_passed": 28,
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 45056,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 16,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "error": null,
+  "failure_stage": null,
+  "formal_mutation_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+  "performance_interpretation": "CORRECTNESS ONLY",
+  "planning_runtime_agreement": true,
+  "runtime_summary": {
+    "Equal-Share": {
+      "estimated_recovery_cost_ms": 536.1868680920452,
+      "executable_hit_tokens": 90112,
+      "executable_prefix_ratio": 0.88,
+      "mean_gap_per_request": 1755.4285714285713,
+      "mean_request_e2e_ms": 96.79354564286768,
+      "n_cases": 7,
+      "per_continuation_runtime_gap": {
+        "W1-A": 0,
+        "W1-B": 0,
+        "W2": 0,
+        "W3": 0,
+        "W4-A": 4096,
+        "W4-B": 4096,
+        "W4-C": 4096
+      },
+      "per_workflow_runtime_gap": {
+        "W1": 0,
+        "W2": 0,
+        "W3": 0,
+        "W4": 12288
+      },
+      "physical_hit_tokens": 102400,
+      "planning_total_gap": 12288,
+      "runtime_total_gap": 12288,
+      "selected_checkpoint_ids": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT"
+      ]
+    },
+    "FlowState": {
+      "estimated_recovery_cost_ms": 378.5894282627851,
+      "executable_hit_tokens": 94208,
+      "executable_prefix_ratio": 0.92,
+      "mean_gap_per_request": 1170.2857142857142,
+      "mean_request_e2e_ms": 189.5375280374927,
+      "n_cases": 7,
+      "per_continuation_runtime_gap": {
+        "W1-A": 0,
+        "W1-B": 0,
+        "W2": 0,
+        "W3": 8192,
+        "W4-A": 0,
+        "W4-B": 0,
+        "W4-C": 0
+      },
+      "per_workflow_runtime_gap": {
+        "W1": 0,
+        "W2": 0,
+        "W3": 8192,
+        "W4": 0
+      },
+      "physical_hit_tokens": 102400,
+      "planning_total_gap": 8192,
+      "runtime_total_gap": 8192,
+      "selected_checkpoint_ids": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT"
+      ]
+    },
+    "Global-LRU": {
+      "estimated_recovery_cost_ms": 2999.0156502462924,
+      "executable_hit_tokens": 36864,
+      "executable_prefix_ratio": 0.36,
+      "mean_gap_per_request": 9362.285714285714,
+      "mean_request_e2e_ms": 438.1695944217167,
+      "n_cases": 7,
+      "per_continuation_runtime_gap": {
+        "W1-A": 32768,
+        "W1-B": 32768,
+        "W2": 0,
+        "W3": 0,
+        "W4-A": 0,
+        "W4-B": 0,
+        "W4-C": 0
+      },
+      "per_workflow_runtime_gap": {
+        "W1": 65536,
+        "W2": 0,
+        "W3": 0,
+        "W4": 0
+      },
+      "physical_hit_tokens": 102400,
+      "planning_total_gap": 65536,
+      "runtime_total_gap": 65536,
+      "selected_checkpoint_ids": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT"
+      ]
+    },
+    "Recovery-Only": {
+      "estimated_recovery_cost_ms": 914.7762963548303,
+      "executable_hit_tokens": 81920,
+      "executable_prefix_ratio": 0.8,
+      "mean_gap_per_request": 2925.714285714286,
+      "mean_request_e2e_ms": 137.0414706678795,
+      "n_cases": 7,
+      "per_continuation_runtime_gap": {
+        "W1-A": 0,
+        "W1-B": 0,
+        "W2": 0,
+        "W3": 8192,
+        "W4-A": 4096,
+        "W4-B": 4096,
+        "W4-C": 4096
+      },
+      "per_workflow_runtime_gap": {
+        "W1": 0,
+        "W2": 0,
+        "W3": 8192,
+        "W4": 12288
+      },
+      "physical_hit_tokens": 102400,
+      "planning_total_gap": 20480,
+      "runtime_total_gap": 20480,
+      "selected_checkpoint_ids": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W1_SHALLOW"
+      ]
+    }
+  },
+  "safety": {
+    "allocator_invariant": true,
+    "cascade_called": false,
+    "fa_preserved": true,
+    "sanity_check": true,
+    "tree_path_invariant": true
+  },
+  "schema_version": "flowstate.controlled_multiworkflow.snapshot.v1",
+  "status": "PASS",
+  "wall_time_ms": 272606.9396750536
+}

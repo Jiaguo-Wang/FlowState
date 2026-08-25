@@ -1,0 +1,5 @@
+policy,n_cases,planning_total_gap,runtime_total_gap,mean_gap_per_request,physical_hit_tokens,executable_hit_tokens,executable_prefix_ratio,estimated_recovery_cost_ms,mean_request_e2e_ms,selected_checkpoint_ids,per_workflow_runtime_gap
+FlowState,7,8192,8192,1170.2857142857142,102400,94208,0.92,378.5894282627851,189.5375280374927,W1_PARENT;W2_PARENT;W4_PARENT,"{""W1"": 0, ""W2"": 0, ""W3"": 8192, ""W4"": 0}"
+Global-LRU,7,65536,65536,9362.285714285714,102400,36864,0.36,2999.0156502462924,438.1695944217167,W4_PARENT;W3_PARENT;W2_PARENT,"{""W1"": 65536, ""W2"": 0, ""W3"": 0, ""W4"": 0}"
+Equal-Share,7,12288,12288,1755.4285714285713,102400,90112,0.88,536.1868680920452,96.79354564286768,W1_PARENT;W2_PARENT;W3_PARENT,"{""W1"": 0, ""W2"": 0, ""W3"": 0, ""W4"": 12288}"
+Recovery-Only,7,20480,20480,2925.714285714286,102400,81920,0.8,914.7762963548303,137.0414706678795,W1_PARENT;W2_PARENT;W1_SHALLOW,"{""W1"": 0, ""W2"": 0, ""W3"": 8192, ""W4"": 12288}"
