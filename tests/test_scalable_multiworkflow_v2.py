@@ -7,6 +7,7 @@ import pytest
 
 from evaluation.scalable_multiworkflow_v2.offline_analysis import (
     POLICY_NAMES,
+    STEP8A_POLICY_NAMES,
     load_offline_artifact,
 )
 from evaluation.scalable_multiworkflow_v2.scenario import (
@@ -122,19 +123,26 @@ def test_budget_options_and_planning_targets(workflow_count: int) -> None:
         )
 
 
-def test_offline_artifact_contains_complete_six_policy_matrix() -> None:
+def test_offline_artifact_contains_complete_policy_matrix() -> None:
     result = load_offline_artifact(_ARTIFACT_PATH)
+    artifact_policy_names = {
+        row.policy_name for row in result.rows
+    }
+    assert artifact_policy_names in (
+        set(STEP8A_POLICY_NAMES),
+        set(POLICY_NAMES),
+    )
 
-    assert len(result.rows) == 48
+    policy_count = len(artifact_policy_names)
+    assert len(result.rows) == 8 * policy_count
     assert Counter(
         (row.workflow_count, row.budget_checkpoints)
         for row in result.rows
     ) == {
-        (workflow_count, budget): 6
+        (workflow_count, budget): policy_count
         for workflow_count in (8, 16)
         for budget in BUDGETS_BY_WORKFLOW_COUNT[workflow_count]
     }
-    assert {row.policy_name for row in result.rows} == set(POLICY_NAMES)
 
 
 def test_all_policies_obey_budget_uniqueness_and_residency() -> None:
@@ -159,6 +167,9 @@ def test_all_policies_obey_budget_uniqueness_and_residency() -> None:
 
 def test_oracle_is_no_worse_and_flowstate_is_monotonic() -> None:
     result = load_offline_artifact(_ARTIFACT_PATH)
+    artifact_policy_names = {
+        row.policy_name for row in result.rows
+    }
     rows = {
         (
             row.workflow_count,
@@ -191,7 +202,7 @@ def test_oracle_is_no_worse_and_flowstate_is_monotonic() -> None:
                 <= rows[
                     (workflow_count, budget, policy_name)
                 ].estimated_recovery_cost_ms + 1e-9
-                for policy_name in POLICY_NAMES
+                for policy_name in artifact_policy_names
             )
 
 

@@ -6,7 +6,7 @@
 
 扫描直接复用 `scenario.py` 中冻结的七个待续请求、五个等大小候选和 evaluation 层策略。检查点大小固定为 51,511,296 bytes，预算依次取 `K=1、2、3、4、5`。本步骤不重新定义 workload，也不改变任何既有策略规则。
 
-离线扫描包含 FlowState、Global-LRU、Equal-Share、Recovery-Only、Workflow-Only 和 Oracle。Workflow-Only 只衡量尚未覆盖的兼容待续请求数量，用于隔离 workflow dependency 的作用；Oracle 精确枚举预算内子集，用 `sum Phi(G)` 给出当前固定快照目标的上界。
+离线扫描包含 FlowState、Global-LRU、Equal-Share、Recovery-Only、Workflow-Only、KVFlow-style、Marconi-style 和 Oracle。Workflow-Only 只衡量尚未覆盖的兼容待续请求数量，用于隔离 workflow dependency 的作用；KVFlow-style 和 Marconi-style 使用 [SOTA_BASELINES.md](../SOTA_BASELINES.md) 中预先冻结的 metadata；Oracle 精确枚举预算内子集，用 `sum Phi(G)` 给出当前固定快照目标的上界。
 
 ## 指标定义
 

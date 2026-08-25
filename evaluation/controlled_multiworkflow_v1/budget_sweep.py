@@ -10,6 +10,12 @@ from flowstate.optimizer import GlobalOptimizer
 from flowstate.recovery_model import RecoveryCostModel
 from flowstate.state_catalog import CheckpointCandidate
 
+from evaluation.sota_metadata import (
+    ControlledSOTAMetadata,
+    build_controlled_sota_metadata,
+)
+from evaluation.sota_policies import KVFlowStylePolicy, MarconiStylePolicy
+
 from .policies import (
     select_equal_share,
     select_global_lru,
@@ -24,6 +30,8 @@ from .snapshot_cases import POLICY_NAMES as SNAPSHOT_POLICY_NAMES
 DEFAULT_BUDGET_CHECKPOINTS = (1, 2, 3, 4, 5)
 BUDGET_SWEEP_POLICY_NAMES = SNAPSHOT_POLICY_NAMES + (
     "Workflow-Only",
+    "KVFlow-style",
+    "Marconi-style",
     "Oracle",
 )
 
@@ -76,7 +84,7 @@ def build_budget_sweep(
     recovery_cost_model: RecoveryCostModel | None = None,
     budget_checkpoints: Sequence[int] = DEFAULT_BUDGET_CHECKPOINTS,
 ) -> BudgetSweepResult:
-    """对指定 K 值计算六个策略的离线规划结果。"""
+    """对指定 K 值计算八个策略的离线规划结果。"""
     active_scenario = scenario or build_scenario()
     model = recovery_cost_model or RecoveryCostModel()
     k_values = tuple(int(value) for value in budget_checkpoints)
@@ -84,6 +92,11 @@ def build_budget_sweep(
         raise ValueError("预算检查点数量必须是非空的正整数序列")
     if len(set(k_values)) != len(k_values):
         raise ValueError("预算检查点数量不能重复")
+    sota_metadata = build_controlled_sota_metadata(
+        active_scenario.continuations,
+        active_scenario.candidates,
+        active_scenario.metadata.checkpoint_recency,
+    )
 
     rows = tuple(
         _build_row(
@@ -91,6 +104,7 @@ def build_budget_sweep(
             policy_name=policy_name,
             scenario=active_scenario,
             recovery_cost_model=model,
+            sota_metadata=sota_metadata,
         )
         for k in sorted(k_values)
         for policy_name in BUDGET_SWEEP_POLICY_NAMES
@@ -125,6 +139,7 @@ def _build_row(
     policy_name: str,
     scenario: ControlledScenario,
     recovery_cost_model: RecoveryCostModel,
+    sota_metadata: ControlledSOTAMetadata,
 ) -> BudgetSweepRow:
     """计算一个预算与策略组合的选择及规划指标。"""
     budget_bytes = (
@@ -135,6 +150,7 @@ def _build_row(
         scenario=scenario,
         budget_bytes=budget_bytes,
         recovery_cost_model=recovery_cost_model,
+        sota_metadata=sota_metadata,
     )
     candidates_by_id = {
         candidate.checkpoint_id: candidate
@@ -179,6 +195,7 @@ def _select_checkpoint_ids(
     scenario: ControlledScenario,
     budget_bytes: int,
     recovery_cost_model: RecoveryCostModel,
+    sota_metadata: ControlledSOTAMetadata,
 ) -> tuple[str, ...]:
     """调用现有 FlowState 或冻结基线策略实现。"""
     if policy_name == "FlowState":
@@ -216,6 +233,22 @@ def _select_checkpoint_ids(
             scenario.candidates,
             budget_bytes,
         )
+    if policy_name == "KVFlow-style":
+        return KVFlowStylePolicy().select(
+            scenario.continuations,
+            scenario.candidates,
+            budget_bytes // scenario.metadata.checkpoint_size_bytes,
+            sota_metadata.kvflow_steps,
+            sota_metadata.last_access_by_checkpoint,
+        ).selected_checkpoint_ids
+    if policy_name == "Marconi-style":
+        return MarconiStylePolicy().select(
+            scenario.candidates,
+            budget_bytes // scenario.metadata.checkpoint_size_bytes,
+            sota_metadata.last_access_by_checkpoint,
+            sota_metadata.marconi_flop_saved,
+            sota_metadata.marconi_alpha,
+        ).selected_checkpoint_ids
     if policy_name == "Oracle":
         return select_oracle(
             scenario.continuations,

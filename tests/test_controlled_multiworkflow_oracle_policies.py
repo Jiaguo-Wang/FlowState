@@ -183,10 +183,10 @@ def test_oracle_reuses_core_recovery_gap(
     assert calls > 0
 
 
-def test_sweep_contains_six_policies_and_oracle_differences() -> None:
+def test_sweep_contains_eight_policies_and_oracle_differences() -> None:
     result = build_budget_sweep()
 
-    assert len(result.rows) == 30
+    assert len(result.rows) == 40
     assert {
         row.policy_name for row in result.rows
     } == set(BUDGET_SWEEP_POLICY_NAMES)

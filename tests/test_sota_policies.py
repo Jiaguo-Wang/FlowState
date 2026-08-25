@@ -64,6 +64,7 @@ def test_kvflow_prefers_smaller_steps_and_reports_result_metadata() -> None:
         candidates,
         budget_k=1,
         steps_to_execution_by_continuation={"soon": 1, "later": 5},
+        last_access_by_checkpoint={"A": 1.0, "B": 100.0},
     )
 
     assert result.policy_name == "KVFlow-style"
@@ -106,19 +107,42 @@ def test_kvflow_tie_break_residency_capacity_and_order_invariance() -> None:
     snapshot = tuple(replace(candidate) for candidate in candidates)
     policy = KVFlowStylePolicy()
     metadata = {"B1": 2}
+    recency = {"A": 1.0, "B": 1.0}
 
-    normal = policy.select((continuation,), candidates, 5, metadata)
+    normal = policy.select(
+        (continuation,),
+        candidates,
+        5,
+        metadata,
+        recency,
+    )
     reversed_result = policy.select(
         (continuation,),
         tuple(reversed(candidates)),
         5,
         metadata,
+        recency,
     )
 
     assert normal.selected_checkpoint_ids == ("A", "B")
     assert reversed_result.selected_checkpoint_ids == normal.selected_checkpoint_ids
     assert len(set(normal.selected_checkpoint_ids)) == 2
     assert candidates == snapshot
+
+
+def test_kvflow_equal_priority_prefers_newer_checkpoint() -> None:
+    continuation = _continuation("B1")
+    candidates = (_candidate("A_OLD"), _candidate("Z_NEW"))
+
+    result = KVFlowStylePolicy().select(
+        (continuation,),
+        candidates,
+        1,
+        {"B1": 1},
+        {"A_OLD": 1.0, "Z_NEW": 2.0},
+    )
+
+    assert result.selected_checkpoint_ids == ("Z_NEW",)
 
 
 def test_kvflow_includes_no_dependency_candidate_only_after_useful_one() -> None:
@@ -133,6 +157,7 @@ def test_kvflow_includes_no_dependency_candidate_only_after_useful_one() -> None
         candidates,
         2,
         {"B1": 3},
+        {"A_UNUSED": 100.0, "Z_USEFUL": 1.0},
     )
 
     assert result.selected_checkpoint_ids == ("Z_USEFUL", "A_UNUSED")
@@ -144,10 +169,34 @@ def test_kvflow_rejects_missing_or_invalid_steps_metadata() -> None:
     candidate = _candidate("A")
 
     with pytest.raises(ValueError, match="B1"):
-        policy.select((continuation,), (candidate,), 1, {})
+        policy.select((continuation,), (candidate,), 1, {}, {"A": 1.0})
     for invalid in (-1, 1.5, True):
         with pytest.raises(ValueError, match="steps-to-execution"):
-            policy.select((continuation,), (candidate,), 1, {"B1": invalid})
+            policy.select(
+                (continuation,),
+                (candidate,),
+                1,
+                {"B1": invalid},
+                {"A": 1.0},
+            )
+
+
+@pytest.mark.parametrize("invalid", (math.nan, math.inf, -math.inf))
+def test_kvflow_rejects_missing_or_nonfinite_recency(invalid: float) -> None:
+    continuation = _continuation("B1")
+    candidate = _candidate("A")
+    policy = KVFlowStylePolicy()
+
+    with pytest.raises(ValueError, match="last_access"):
+        policy.select((continuation,), (candidate,), 1, {"B1": 1}, {})
+    with pytest.raises(ValueError, match="有限数值"):
+        policy.select(
+            (continuation,),
+            (candidate,),
+            1,
+            {"B1": 1},
+            {"A": invalid},
+        )
 
 
 def test_kvflow_does_not_use_flowstate_recovery_objective(
@@ -171,6 +220,7 @@ def test_kvflow_does_not_use_flowstate_recovery_objective(
         (_candidate("A"),),
         1,
         {"B1": 1},
+        {"A": 1.0},
     )
 
     assert result.selected_checkpoint_ids == ("A",)
@@ -188,7 +238,13 @@ def test_kvflow_does_not_score_token_depth_or_coverage_count() -> None:
     )
     steps = {"A1": 3, "A2": 3, "B1": 3}
 
-    result = KVFlowStylePolicy().select(continuations, candidates, 1, steps)
+    result = KVFlowStylePolicy().select(
+        continuations,
+        candidates,
+        1,
+        steps,
+        {"Z_MANY": 1.0, "A_ONE": 1.0},
+    )
 
     assert result.selected_checkpoint_ids == ("A_ONE",)
 
@@ -216,6 +272,7 @@ def test_kvflow_reuses_core_compatibility(
         (_candidate("A"),),
         1,
         {"B1": 1},
+        {"A": 1.0},
     )
 
     assert calls == 1
@@ -444,6 +501,7 @@ def test_both_policies_return_empty_for_zero_budget(policy_name: str) -> None:
             (candidate,),
             0,
             {"B1": 1},
+            {"A": 1.0},
         )
     else:
         result = MarconiStylePolicy().select(
@@ -460,7 +518,7 @@ def test_both_policies_return_empty_for_zero_budget(policy_name: str) -> None:
 @pytest.mark.parametrize("invalid", (-1, 1.5, True))
 def test_both_policies_reject_invalid_budget(invalid: object) -> None:
     with pytest.raises(ValueError, match="budget_k"):
-        KVFlowStylePolicy().select((), (), invalid, {})
+        KVFlowStylePolicy().select((), (), invalid, {}, {})
     with pytest.raises(ValueError, match="budget_k"):
         MarconiStylePolicy().select((), invalid, {}, {}, alpha=0.0)
 
@@ -469,7 +527,7 @@ def test_both_policies_reject_duplicate_checkpoint_ids() -> None:
     candidates = (_candidate("A"), _candidate("A"))
 
     with pytest.raises(ValueError, match="A"):
-        KVFlowStylePolicy().select((), candidates, 1, {})
+        KVFlowStylePolicy().select((), candidates, 1, {}, {})
     with pytest.raises(ValueError, match="A"):
         MarconiStylePolicy().select(
             candidates,

@@ -24,6 +24,8 @@
 
 ## 离线边界
 
-离线分析复用 v1 的 FlowState、Global-LRU、Equal-Share、Recovery-Only、Workflow-Only 和 exact Oracle 实现。输出中的 EPR 是 `sum(E_p)/sum(T_p)`，不是真实 GPU physical-hit EPR。
+离线分析复用 v1 的 FlowState、Global-LRU、Equal-Share、Recovery-Only、Workflow-Only 和 exact Oracle 实现，并接入 KVFlow-style 与 Marconi-style。两个 SOTA-style 策略使用 [SOTA_BASELINES.md](../SOTA_BASELINES.md) 中先于比较冻结的 metadata：所有直接下一步分支的 steps-to-execution 均为 `1`，共同 recency 来自同一 Global-LRU 全序，Marconi FLOP proxy 使用父候选相对的增量 replay-token span，`alpha=1.0`。
+
+输出中的 EPR 是 `sum(E_p)/sum(T_p)`，不是真实 GPU physical-hit EPR。estimated recovery cost 只作为统一 evaluation metric，不参与 KVFlow-style 或 Marconi-style 的选择。
 
 本目录中的 CSV 与 JSON 是 planning/offline artifact，不是 GPU 或在线顺序执行结果。

@@ -23,7 +23,7 @@ def test_budget_sweep_contains_complete_matrix() -> None:
     assert {row.budget_checkpoints for row in result.rows} == set(
         DEFAULT_BUDGET_CHECKPOINTS
     )
-    assert len(result.rows) == 30
+    assert len(result.rows) == 40
     for k in DEFAULT_BUDGET_CHECKPOINTS:
         assert tuple(
             row.policy_name
@@ -260,7 +260,7 @@ def test_existing_four_policy_budget_regression() -> None:
 def test_flowstate_baseline_comparisons_cover_every_budget() -> None:
     result = build_budget_sweep()
 
-    assert len(result.comparisons) == 25
+    assert len(result.comparisons) == 35
     assert {
         (comparison.budget_checkpoints, comparison.baseline_policy_name)
         for comparison in result.comparisons
@@ -291,4 +291,4 @@ def test_sanity_table_uses_planning_epr_label() -> None:
     table = format_sanity_table(build_budget_sweep())
 
     assert "Planning EPR" in table
-    assert table.count("\n") == 31
+    assert table.count("\n") == 41

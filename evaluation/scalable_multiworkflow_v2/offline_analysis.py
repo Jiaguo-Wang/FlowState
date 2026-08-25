@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""执行可扩展受控多工作流 v2 的六策略离线分析。"""
+"""执行可扩展受控多工作流 v2 的八策略离线分析。"""
 
 from __future__ import annotations
 
 import csv
 from dataclasses import asdict, dataclass
+import hashlib
 import json
 from pathlib import Path
 from time import perf_counter
-from typing import Sequence
+from typing import Mapping, Sequence
 
 from evaluation.controlled_multiworkflow_v1.policies import (
     select_equal_share,
@@ -17,6 +18,11 @@ from evaluation.controlled_multiworkflow_v1.policies import (
     select_recovery_only,
     select_workflow_only,
 )
+from evaluation.sota_metadata import (
+    ControlledSOTAMetadata,
+    build_controlled_sota_metadata,
+)
+from evaluation.sota_policies import KVFlowStylePolicy, MarconiStylePolicy
 from evaluation.scalable_multiworkflow_v2.scenario import (
     BUDGETS_BY_WORKFLOW_COUNT,
     FANOUTS_BY_WORKFLOW_COUNT,
@@ -29,7 +35,7 @@ from flowstate.recovery_model import RecoveryCostModel
 from flowstate.state_catalog import CheckpointCandidate
 
 
-POLICY_NAMES = (
+STEP8A_POLICY_NAMES = (
     "FlowState",
     "Global-LRU",
     "Equal-Share",
@@ -37,7 +43,16 @@ POLICY_NAMES = (
     "Workflow-Only",
     "Oracle",
 )
+POLICY_NAMES = STEP8A_POLICY_NAMES[:-1] + (
+    "KVFlow-style",
+    "Marconi-style",
+    "Oracle",
+)
+STEP8A_REGRESSION_DIGEST = (
+    "13fd4b90a341d65594792324e33480a4cccb682eea86c6ffd78b10e099367df2"
+)
 _OUTPUT_DIRECTORY = Path(__file__).resolve().parent
+_OFFLINE_JSON_PATH = _OUTPUT_DIRECTORY / "offline_summary.json"
 
 
 @dataclass(frozen=True)
@@ -80,8 +95,11 @@ def analyze_workload(
     workflow_count: int,
     recovery_cost_model: RecoveryCostModel | None = None,
     budget_options: Sequence[int] | None = None,
+    cached_oracle_selections: Mapping[
+        tuple[int, int], tuple[str, ...]
+    ] | None = None,
 ) -> tuple[OfflineSummaryRow, ...]:
-    """计算一个 workflow 规模下指定预算点的六策略结果。"""
+    """计算一个 workflow 规模下指定预算点的八策略结果。"""
     model = recovery_cost_model or RecoveryCostModel()
     allowed_budgets = BUDGETS_BY_WORKFLOW_COUNT.get(workflow_count)
     if allowed_budgets is None:
@@ -97,16 +115,38 @@ def analyze_workload(
         raise ValueError("预算必须来自 workload 的固定归一化预算集合")
     if len(set(active_budgets)) != len(active_budgets):
         raise ValueError("预算集合不能包含重复值")
+    active_oracle_selections = cached_oracle_selections
+    if active_oracle_selections is None:
+        active_oracle_selections, _ = _load_cached_oracle_data()
+    missing_oracle_budgets = tuple(
+        budget
+        for budget in active_budgets
+        if (workflow_count, budget) not in active_oracle_selections
+    )
+    if missing_oracle_budgets:
+        raise RuntimeError(
+            f"N={workflow_count} 缺少冻结 Oracle selection："
+            f"{missing_oracle_budgets}"
+        )
 
     rows = []
     for budget_checkpoints in sorted(active_budgets):
         scenario = build_scenario(workflow_count, budget_checkpoints)
+        sota_metadata = build_controlled_sota_metadata(
+            scenario.continuations,
+            scenario.candidates,
+            scenario.metadata.checkpoint_recency,
+        )
         for policy_name in POLICY_NAMES:
             started = perf_counter()
             selected_ids = _select_checkpoint_ids(
                 policy_name,
                 scenario,
                 model,
+                sota_metadata,
+                active_oracle_selections[
+                    (workflow_count, budget_checkpoints)
+                ],
             )
             selection_runtime_ms = (perf_counter() - started) * 1_000.0
             rows.append(
@@ -126,27 +166,36 @@ def run_offline_analysis(
 ) -> OfflineAnalysisResult:
     """完成 N=8 与 N=16 的全部固定预算扫描并验证性质。"""
     model = recovery_cost_model or RecoveryCostModel()
+    cached_oracle_selections, cached_oracle_runtimes = (
+        _load_cached_oracle_data()
+    )
+    expected_oracle_keys = {
+        (workflow_count, budget)
+        for workflow_count in (8, 16)
+        for budget in BUDGETS_BY_WORKFLOW_COUNT[workflow_count]
+    }
+    missing_oracle_keys = sorted(
+        expected_oracle_keys - set(cached_oracle_selections)
+    )
+    if missing_oracle_keys:
+        raise RuntimeError(
+            "缺少冻结的 Step 8A Oracle selection，拒绝重新执行固定的 N=16 搜索："
+            f"{missing_oracle_keys}"
+        )
     rows = tuple(
         row
         for workflow_count in (8, 16)
-        for row in analyze_workload(workflow_count, model)
+        for row in analyze_workload(
+            workflow_count,
+            model,
+            cached_oracle_selections=cached_oracle_selections,
+        )
     )
     differences = _build_oracle_differences(rows)
     result = OfflineAnalysisResult(
         rows=rows,
         flowstate_oracle_differences=differences,
-        oracle_runtime_ms_by_workload=tuple(
-            (
-                workflow_count,
-                sum(
-                    row.selection_runtime_ms
-                    for row in rows
-                    if row.workflow_count == workflow_count
-                    and row.policy_name == "Oracle"
-                ),
-            )
-            for workflow_count in (8, 16)
-        ),
+        oracle_runtime_ms_by_workload=cached_oracle_runtimes,
     )
     validate_analysis(result)
     return result
@@ -154,6 +203,19 @@ def run_offline_analysis(
 
 def validate_analysis(result: OfflineAnalysisResult) -> None:
     """验证最优性、单调性、满覆盖和基线分化等离线性质。"""
+    present_policy_names = {
+        row.policy_name for row in result.rows
+    }
+    if present_policy_names not in (
+        set(STEP8A_POLICY_NAMES),
+        set(POLICY_NAMES),
+    ):
+        raise RuntimeError("离线结果的策略集合不完整")
+    active_policy_names = tuple(
+        policy_name
+        for policy_name in POLICY_NAMES
+        if policy_name in present_policy_names
+    )
     rows_by_key = {
         (
             row.workflow_count,
@@ -191,7 +253,7 @@ def validate_analysis(result: OfflineAnalysisResult) -> None:
 
         for budget in budgets:
             oracle = rows_by_key[(workflow_count, budget, "Oracle")]
-            for policy_name in POLICY_NAMES:
+            for policy_name in active_policy_names:
                 policy = rows_by_key[
                     (workflow_count, budget, policy_name)
                 ]
@@ -216,6 +278,10 @@ def validate_analysis(result: OfflineAnalysisResult) -> None:
     )
     if not differentiated:
         raise RuntimeError("Workflow-Only 与 Recovery-Only 没有产生选择分化")
+    if build_step8a_regression_digest(result.rows) != (
+        STEP8A_REGRESSION_DIGEST
+    ):
+        raise RuntimeError("原 Step 8A 六策略语义结果发生回归")
 
 
 def write_offline_artifacts(
@@ -239,7 +305,11 @@ def write_offline_artifacts(
         "selection_runtime_ms",
     )
     with csv_path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            lineterminator="\n",
+        )
         writer.writeheader()
         for row in result.rows:
             values = asdict(row)
@@ -249,7 +319,7 @@ def write_offline_artifacts(
             writer.writerow(values)
 
     payload = {
-        "schema_version": "flowstate.scalable_multiworkflow.offline.v2",
+        "schema_version": "flowstate.scalable_multiworkflow.offline.v3",
         "workload_construction": "FIXED BEFORE POLICY EVALUATION",
         "rows": [asdict(row) for row in result.rows],
         "flowstate_oracle_differences": [
@@ -273,14 +343,15 @@ def write_offline_artifacts(
 
 
 def load_offline_artifact(
-    json_path: Path = _OUTPUT_DIRECTORY / "offline_summary.json",
+    json_path: Path = _OFFLINE_JSON_PATH,
 ) -> OfflineAnalysisResult:
     """读取已冻结的离线 JSON，并重建可验证的分析结果。"""
     with json_path.open("r", encoding="utf-8") as handle:
         payload = json.load(handle)
-    if payload.get("schema_version") != (
-        "flowstate.scalable_multiworkflow.offline.v2"
-    ):
+    if payload.get("schema_version") not in {
+        "flowstate.scalable_multiworkflow.offline.v2",
+        "flowstate.scalable_multiworkflow.offline.v3",
+    }:
         raise ValueError("离线 artifact schema 不匹配")
     rows = tuple(
         OfflineSummaryRow(
@@ -321,8 +392,10 @@ def _select_checkpoint_ids(
     policy_name: str,
     scenario: ScalableScenario,
     recovery_cost_model: RecoveryCostModel,
+    sota_metadata: ControlledSOTAMetadata,
+    cached_oracle_selection: tuple[str, ...] | None = None,
 ) -> tuple[str, ...]:
-    """把六个策略名称分派到现有 evaluation 策略实现。"""
+    """把八个策略名称分派到现有 evaluation 策略实现。"""
     if policy_name == "FlowState":
         result = GlobalOptimizer(recovery_cost_model).select(
             scenario.continuations,
@@ -358,7 +431,25 @@ def _select_checkpoint_ids(
             scenario.candidates,
             scenario.budget_bytes,
         )
+    if policy_name == "KVFlow-style":
+        return KVFlowStylePolicy().select(
+            scenario.continuations,
+            scenario.candidates,
+            scenario.metadata.budget_checkpoints,
+            sota_metadata.kvflow_steps,
+            sota_metadata.last_access_by_checkpoint,
+        ).selected_checkpoint_ids
+    if policy_name == "Marconi-style":
+        return MarconiStylePolicy().select(
+            scenario.candidates,
+            scenario.metadata.budget_checkpoints,
+            sota_metadata.last_access_by_checkpoint,
+            sota_metadata.marconi_flop_saved,
+            sota_metadata.marconi_alpha,
+        ).selected_checkpoint_ids
     if policy_name == "Oracle":
+        if cached_oracle_selection is not None:
+            return cached_oracle_selection
         return select_oracle(
             scenario.continuations,
             scenario.candidates,
@@ -480,6 +571,90 @@ def _build_oracle_differences(
                 )
             )
     return tuple(differences)
+
+
+def build_step8a_regression_digest(
+    rows: Sequence[OfflineSummaryRow],
+) -> str:
+    """计算原六策略 selection 与规划指标的冻结语义摘要。"""
+    semantic_rows = []
+    for row in sorted(
+        (
+            item
+            for item in rows
+            if item.policy_name in STEP8A_POLICY_NAMES
+        ),
+        key=lambda item: (
+            item.workflow_count,
+            item.budget_checkpoints,
+            item.policy_name,
+        ),
+    ):
+        semantic_rows.append(
+            {
+                "workflow_count": row.workflow_count,
+                "budget_checkpoints": row.budget_checkpoints,
+                "policy_name": row.policy_name,
+                "selected_checkpoint_ids": list(
+                    row.selected_checkpoint_ids
+                ),
+                "total_recovery_gap": row.total_recovery_gap,
+                "mean_recovery_gap_per_request": (
+                    row.mean_recovery_gap_per_request
+                ),
+                "planning_executable_prefix_ratio": (
+                    row.planning_executable_prefix_ratio
+                ),
+                "estimated_recovery_cost_ms": (
+                    row.estimated_recovery_cost_ms
+                ),
+            }
+        )
+    payload = json.dumps(
+        semantic_rows,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def _load_cached_oracle_data(
+    json_path: Path = _OFFLINE_JSON_PATH,
+) -> tuple[
+    dict[tuple[int, int], tuple[str, ...]],
+    tuple[tuple[int, float], ...],
+]:
+    """从已有离线 artifact 读取固定 Oracle 选择与原求解耗时。"""
+    if not json_path.exists():
+        return {}, ()
+    with json_path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    if payload.get("schema_version") not in {
+        "flowstate.scalable_multiworkflow.offline.v2",
+        "flowstate.scalable_multiworkflow.offline.v3",
+    }:
+        raise ValueError("Oracle 缓存 artifact schema 不匹配")
+    selections = {
+        (
+            int(row["workflow_count"]),
+            int(row["budget_checkpoints"]),
+        ): tuple(row["selected_checkpoint_ids"])
+        for row in payload["rows"]
+        if row["policy_name"] == "Oracle"
+    }
+    runtimes = tuple(
+        sorted(
+            (
+                int(workflow_count),
+                float(runtime_ms),
+            )
+            for workflow_count, runtime_ms in payload[
+                "oracle_runtime_ms_by_workload"
+            ].items()
+        )
+    )
+    return selections, runtimes
 
 
 def _validate_factorial_independence(

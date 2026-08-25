@@ -73,7 +73,7 @@
         "W08_A32768_F04_MAIN",
         "W08_A16384_F04_MAIN"
       ],
-      "selection_runtime_ms": 1.277263043448329,
+      "selection_runtime_ms": 1.3364620972424746,
       "total_recovery_gap": 110592,
       "workflow_count": 8
     },
@@ -88,7 +88,7 @@
         "W08_A32768_F04_MAIN",
         "W08_A32768_F01_SHALLOW"
       ],
-      "selection_runtime_ms": 0.026333145797252655,
+      "selection_runtime_ms": 0.023239990696310997,
       "total_recovery_gap": 159744,
       "workflow_count": 8
     },
@@ -103,7 +103,7 @@
         "W08_A04096_F01_MAIN",
         "W08_A04096_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.06914581172168255,
+      "selection_runtime_ms": 0.06986898370087147,
       "total_recovery_gap": 286720,
       "workflow_count": 8
     },
@@ -118,7 +118,7 @@
         "W08_A32768_F01_MAIN",
         "W08_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 1.1296870652586222,
+      "selection_runtime_ms": 1.1191428638994694,
       "total_recovery_gap": 143360,
       "workflow_count": 8
     },
@@ -133,8 +133,38 @@
         "W08_A04096_F04_MAIN",
         "W08_A08192_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.21156808361411095,
+      "selection_runtime_ms": 0.2103650476783514,
       "total_recovery_gap": 258048,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 7421.539757866412,
+      "mean_recovery_gap_per_request": 7987.2,
+      "planning_executable_prefix_ratio": 0.48,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.15677697956562042,
+      "total_recovery_gap": 159744,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 7421.539757866412,
+      "mean_recovery_gap_per_request": 7987.2,
+      "planning_executable_prefix_ratio": 0.48,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.07510511204600334,
+      "total_recovery_gap": 159744,
       "workflow_count": 8
     },
     {
@@ -148,7 +178,7 @@
         "W08_A16384_F04_MAIN",
         "W08_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 4.1349721141159534,
+      "selection_runtime_ms": 0.0011380761861801147,
       "total_recovery_gap": 110592,
       "workflow_count": 8
     },
@@ -165,7 +195,7 @@
         "W08_A08192_F04_MAIN",
         "W08_A32768_F01_MAIN"
       ],
-      "selection_runtime_ms": 2.4561670143157244,
+      "selection_runtime_ms": 2.4864710867404938,
       "total_recovery_gap": 45056,
       "workflow_count": 8
     },
@@ -182,7 +212,7 @@
         "W08_A32768_F01_MAIN",
         "W08_A16384_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.02626189962029457,
+      "selection_runtime_ms": 0.020216917619109154,
       "total_recovery_gap": 77824,
       "workflow_count": 8
     },
@@ -199,7 +229,7 @@
         "W08_A08192_F01_MAIN",
         "W08_A08192_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.0789291225373745,
+      "selection_runtime_ms": 0.0666340347379446,
       "total_recovery_gap": 245760,
       "workflow_count": 8
     },
@@ -216,7 +246,7 @@
         "W08_A16384_F01_MAIN",
         "W08_A16384_F04_MAIN"
       ],
-      "selection_runtime_ms": 1.3999838847666979,
+      "selection_runtime_ms": 1.0929428972303867,
       "total_recovery_gap": 61440,
       "workflow_count": 8
     },
@@ -233,8 +263,42 @@
         "W08_A16384_F04_MAIN",
         "W08_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.3710831515491009,
+      "selection_runtime_ms": 0.37448504008352757,
       "total_recovery_gap": 61440,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 3559.083227533847,
+      "mean_recovery_gap_per_request": 3891.2,
+      "planning_executable_prefix_ratio": 0.7466666666666667,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.13862201012670994,
+      "total_recovery_gap": 77824,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 3559.083227533847,
+      "mean_recovery_gap_per_request": 3891.2,
+      "planning_executable_prefix_ratio": 0.7466666666666667,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.06861099973320961,
+      "total_recovery_gap": 77824,
       "workflow_count": 8
     },
     {
@@ -250,7 +314,7 @@
         "W08_A32768_F01_MAIN",
         "W08_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 48.89495484530926,
+      "selection_runtime_ms": 0.0010239891707897186,
       "total_recovery_gap": 45056,
       "workflow_count": 8
     },
@@ -269,7 +333,7 @@
         "W08_A16384_F01_MAIN",
         "W08_A04096_F04_MAIN"
       ],
-      "selection_runtime_ms": 3.6902539432048798,
+      "selection_runtime_ms": 3.6098898854106665,
       "total_recovery_gap": 12288,
       "workflow_count": 8
     },
@@ -288,7 +352,7 @@
         "W08_A16384_F01_SHALLOW",
         "W08_A16384_F01_MAIN"
       ],
-      "selection_runtime_ms": 0.033226097002625465,
+      "selection_runtime_ms": 0.02077617682516575,
       "total_recovery_gap": 61440,
       "workflow_count": 8
     },
@@ -307,7 +371,7 @@
         "W08_A16384_F01_MAIN",
         "W08_A16384_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.07890607230365276,
+      "selection_runtime_ms": 0.06685289554297924,
       "total_recovery_gap": 163840,
       "workflow_count": 8
     },
@@ -326,7 +390,7 @@
         "W08_A32768_F01_SHALLOW",
         "W08_A16384_F01_SHALLOW"
       ],
-      "selection_runtime_ms": 1.0942989028990269,
+      "selection_runtime_ms": 1.0864799842238426,
       "total_recovery_gap": 61440,
       "workflow_count": 8
     },
@@ -345,8 +409,46 @@
         "W08_A04096_F01_MAIN",
         "W08_A08192_F01_MAIN"
       ],
-      "selection_runtime_ms": 0.5040701944380999,
+      "selection_runtime_ms": 0.4827051889151335,
       "total_recovery_gap": 49152,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 2786.591921467334,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "selection_runtime_ms": 0.13690697960555553,
+      "total_recovery_gap": 61440,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 2786.591921467334,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "selection_runtime_ms": 0.06790016777813435,
+      "total_recovery_gap": 61440,
       "workflow_count": 8
     },
     {
@@ -364,7 +466,7 @@
         "W08_A32768_F01_MAIN",
         "W08_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 174.34771498665214,
+      "selection_runtime_ms": 0.001144828274846077,
       "total_recovery_gap": 12288,
       "workflow_count": 8
     },
@@ -385,7 +487,7 @@
         "W08_A08192_F01_MAIN",
         "W08_A04096_F01_MAIN"
       ],
-      "selection_runtime_ms": 4.5169200748205185,
+      "selection_runtime_ms": 4.520837916061282,
       "total_recovery_gap": 0,
       "workflow_count": 8
     },
@@ -406,7 +508,7 @@
         "W08_A08192_F04_MAIN",
         "W08_A08192_F01_SHALLOW"
       ],
-      "selection_runtime_ms": 0.027344096451997757,
+      "selection_runtime_ms": 0.01990492455661297,
       "total_recovery_gap": 24576,
       "workflow_count": 8
     },
@@ -427,7 +529,7 @@
         "W08_A32768_F01_MAIN",
         "W08_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.07209181785583496,
+      "selection_runtime_ms": 0.06617489270865917,
       "total_recovery_gap": 0,
       "workflow_count": 8
     },
@@ -448,7 +550,7 @@
         "W08_A08192_F01_MAIN",
         "W08_A08192_F04_MAIN"
       ],
-      "selection_runtime_ms": 1.0848050005733967,
+      "selection_runtime_ms": 1.0825530625879765,
       "total_recovery_gap": 20480,
       "workflow_count": 8
     },
@@ -469,8 +571,50 @@
         "W08_A16384_F01_MAIN",
         "W08_A32768_F01_MAIN"
       ],
-      "selection_runtime_ms": 0.6106961518526077,
+      "selection_runtime_ms": 0.6010578945279121,
       "total_recovery_gap": 0,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 1072.3737361840904,
+      "mean_recovery_gap_per_request": 1228.8,
+      "planning_executable_prefix_ratio": 0.92,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.13616308569908142,
+      "total_recovery_gap": 24576,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 1072.3737361840904,
+      "mean_recovery_gap_per_request": 1228.8,
+      "planning_executable_prefix_ratio": 0.92,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.06743287667632103,
+      "total_recovery_gap": 24576,
       "workflow_count": 8
     },
     {
@@ -490,7 +634,7 @@
         "W08_A32768_F01_MAIN",
         "W08_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 284.2177760321647,
+      "selection_runtime_ms": 0.0009990762919187546,
       "total_recovery_gap": 0,
       "workflow_count": 8
     },
@@ -507,7 +651,7 @@
         "W16_A32768_F04_MAIN",
         "W16_A16384_F04_MAIN"
       ],
-      "selection_runtime_ms": 12.215962866321206,
+      "selection_runtime_ms": 12.343336129561067,
       "total_recovery_gap": 331776,
       "workflow_count": 16
     },
@@ -524,7 +668,7 @@
         "W16_A32768_F02_MAIN",
         "W16_A32768_F01_SHALLOW"
       ],
-      "selection_runtime_ms": 0.038321828469634056,
+      "selection_runtime_ms": 0.02962886355817318,
       "total_recovery_gap": 446464,
       "workflow_count": 16
     },
@@ -541,7 +685,7 @@
         "W16_A04096_F04_MAIN",
         "W16_A04096_F08_MAIN"
       ],
-      "selection_runtime_ms": 0.20280503667891026,
+      "selection_runtime_ms": 0.192347913980484,
       "total_recovery_gap": 860160,
       "workflow_count": 16
     },
@@ -558,7 +702,7 @@
         "W16_A32768_F04_MAIN",
         "W16_A32768_F08_MAIN"
       ],
-      "selection_runtime_ms": 5.308489082381129,
+      "selection_runtime_ms": 5.3226768504828215,
       "total_recovery_gap": 430080,
       "workflow_count": 16
     },
@@ -575,8 +719,42 @@
         "W16_A16384_F08_MAIN",
         "W16_A32768_F08_MAIN"
       ],
-      "selection_runtime_ms": 1.4649010263383389,
+      "selection_runtime_ms": 1.4568930491805077,
       "total_recovery_gap": 430080,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 20719.63666146621,
+      "mean_recovery_gap_per_request": 7441.066666666667,
+      "planning_executable_prefix_ratio": 0.5155555555555555,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.4453419242054224,
+      "total_recovery_gap": 446464,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 20719.63666146621,
+      "mean_recovery_gap_per_request": 7441.066666666667,
+      "planning_executable_prefix_ratio": 0.5155555555555555,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.10453793220221996,
+      "total_recovery_gap": 446464,
       "workflow_count": 16
     },
     {
@@ -592,7 +770,7 @@
         "W16_A32768_F04_MAIN",
         "W16_A32768_F08_MAIN"
       ],
-      "selection_runtime_ms": 1063.2154420018196,
+      "selection_runtime_ms": 0.001168111339211464,
       "total_recovery_gap": 331776,
       "workflow_count": 16
     },
@@ -613,7 +791,7 @@
         "W16_A16384_F02_MAIN",
         "W16_A08192_F04_MAIN"
       ],
-      "selection_runtime_ms": 16.23866194859147,
+      "selection_runtime_ms": 25.493528926745057,
       "total_recovery_gap": 135168,
       "workflow_count": 16
     },
@@ -634,7 +812,7 @@
         "W16_A16384_F04_MAIN",
         "W16_A16384_F02_MAIN"
       ],
-      "selection_runtime_ms": 0.026804162189364433,
+      "selection_runtime_ms": 0.030035851523280144,
       "total_recovery_gap": 200704,
       "workflow_count": 16
     },
@@ -655,7 +833,7 @@
         "W16_A08192_F04_MAIN",
         "W16_A08192_F08_MAIN"
       ],
-      "selection_runtime_ms": 0.13581686653196812,
+      "selection_runtime_ms": 0.19185198470950127,
       "total_recovery_gap": 737280,
       "workflow_count": 16
     },
@@ -676,7 +854,7 @@
         "W16_A16384_F04_MAIN",
         "W16_A16384_F08_MAIN"
       ],
-      "selection_runtime_ms": 3.8544710259884596,
+      "selection_runtime_ms": 5.338885122910142,
       "total_recovery_gap": 184320,
       "workflow_count": 16
     },
@@ -697,8 +875,50 @@
         "W16_A16384_F04_MAIN",
         "W16_A32768_F04_MAIN"
       ],
-      "selection_runtime_ms": 1.552975969389081,
+      "selection_runtime_ms": 2.3976799566298723,
       "total_recovery_gap": 184320,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 9132.267070468515,
+      "mean_recovery_gap_per_request": 3345.0666666666666,
+      "planning_executable_prefix_ratio": 0.7822222222222223,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "selection_runtime_ms": 0.433801906183362,
+      "total_recovery_gap": 200704,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 9132.267070468515,
+      "mean_recovery_gap_per_request": 3345.0666666666666,
+      "planning_executable_prefix_ratio": 0.7822222222222223,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "selection_runtime_ms": 0.10335608385503292,
+      "total_recovery_gap": 200704,
       "workflow_count": 16
     },
     {
@@ -718,7 +938,7 @@
         "W16_A32768_F04_MAIN",
         "W16_A32768_F08_MAIN"
       ],
-      "selection_runtime_ms": 42991.56522308476,
+      "selection_runtime_ms": 0.0011220108717679977,
       "total_recovery_gap": 135168,
       "workflow_count": 16
     },
@@ -743,7 +963,7 @@
         "W16_A16384_F01_MAIN",
         "W16_A08192_F02_MAIN"
       ],
-      "selection_runtime_ms": 27.965905843302608,
+      "selection_runtime_ms": 38.05789793841541,
       "total_recovery_gap": 36864,
       "workflow_count": 16
     },
@@ -768,7 +988,7 @@
         "W16_A08192_F08_MAIN",
         "W16_A08192_F04_MAIN"
       ],
-      "selection_runtime_ms": 0.07651909254491329,
+      "selection_runtime_ms": 0.029506860300898552,
       "total_recovery_gap": 86016,
       "workflow_count": 16
     },
@@ -793,7 +1013,7 @@
         "W16_A16384_F04_MAIN",
         "W16_A16384_F08_MAIN"
       ],
-      "selection_runtime_ms": 0.1877720933407545,
+      "selection_runtime_ms": 0.19521196372807026,
       "total_recovery_gap": 491520,
       "workflow_count": 16
     },
@@ -818,7 +1038,7 @@
         "W16_A08192_F01_MAIN",
         "W16_A08192_F02_MAIN"
       ],
-      "selection_runtime_ms": 4.044236848130822,
+      "selection_runtime_ms": 5.345167126506567,
       "total_recovery_gap": 159744,
       "workflow_count": 16
     },
@@ -843,8 +1063,58 @@
         "W16_A16384_F02_MAIN",
         "W16_A32768_F02_MAIN"
       ],
-      "selection_runtime_ms": 2.446223981678486,
+      "selection_runtime_ms": 3.1869460362941027,
       "total_recovery_gap": 61440,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 3816.702625248581,
+      "mean_recovery_gap_per_request": 1433.6,
+      "planning_executable_prefix_ratio": 0.9066666666666666,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.4683260340243578,
+      "total_recovery_gap": 86016,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 3816.702625248581,
+      "mean_recovery_gap_per_request": 1433.6,
+      "planning_executable_prefix_ratio": 0.9066666666666666,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.10283803567290306,
+      "total_recovery_gap": 86016,
       "workflow_count": 16
     },
     {
@@ -868,7 +1138,7 @@
         "W16_A32768_F04_MAIN",
         "W16_A32768_F08_MAIN"
       ],
-      "selection_runtime_ms": 176778.98444700986,
+      "selection_runtime_ms": 0.0011690426617860794,
       "total_recovery_gap": 36864,
       "workflow_count": 16
     },
@@ -897,7 +1167,7 @@
         "W16_A04096_F02_MAIN",
         "W16_A04096_F01_MAIN"
       ],
-      "selection_runtime_ms": 35.28080810792744,
+      "selection_runtime_ms": 46.70983296819031,
       "total_recovery_gap": 0,
       "workflow_count": 16
     },
@@ -926,7 +1196,7 @@
         "W16_A08192_F01_MAIN",
         "W16_A04096_F08_MAIN"
       ],
-      "selection_runtime_ms": 0.033167190849781036,
+      "selection_runtime_ms": 0.029237009584903717,
       "total_recovery_gap": 28672,
       "workflow_count": 16
     },
@@ -955,7 +1225,7 @@
         "W16_A32768_F04_MAIN",
         "W16_A32768_F08_MAIN"
       ],
-      "selection_runtime_ms": 0.15570991672575474,
+      "selection_runtime_ms": 0.19141007214784622,
       "total_recovery_gap": 0,
       "workflow_count": 16
     },
@@ -984,7 +1254,7 @@
         "W16_A08192_F01_SHALLOW",
         "W16_A04096_F01_MAIN"
       ],
-      "selection_runtime_ms": 4.047583090141416,
+      "selection_runtime_ms": 5.288684042170644,
       "total_recovery_gap": 57344,
       "workflow_count": 16
     },
@@ -1013,8 +1283,66 @@
         "W16_A16384_F01_MAIN",
         "W16_A32768_F01_MAIN"
       ],
-      "selection_runtime_ms": 2.988565945997834,
+      "selection_runtime_ms": 3.8895970210433006,
       "total_recovery_gap": 0,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 1251.102692214772,
+      "mean_recovery_gap_per_request": 477.8666666666667,
+      "planning_executable_prefix_ratio": 0.9688888888888889,
+      "policy_name": "KVFlow-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "selection_runtime_ms": 0.43730810284614563,
+      "total_recovery_gap": 28672,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 1251.102692214772,
+      "mean_recovery_gap_per_request": 477.8666666666667,
+      "planning_executable_prefix_ratio": 0.9688888888888889,
+      "policy_name": "Marconi-style",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "selection_runtime_ms": 0.10616891086101532,
+      "total_recovery_gap": 28672,
       "workflow_count": 16
     },
     {
@@ -1042,11 +1370,11 @@
         "W16_A32768_F04_MAIN",
         "W16_A32768_F08_MAIN"
       ],
-      "selection_runtime_ms": 218252.6673860848,
+      "selection_runtime_ms": 0.0010600779205560684,
       "total_recovery_gap": 0,
       "workflow_count": 16
     }
   ],
-  "schema_version": "flowstate.scalable_multiworkflow.offline.v2",
+  "schema_version": "flowstate.scalable_multiworkflow.offline.v3",
   "workload_construction": "FIXED BEFORE POLICY EVALUATION"
 }

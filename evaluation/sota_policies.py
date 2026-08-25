@@ -35,8 +35,9 @@ class KVFlowStylePolicy:
         candidates: Sequence[CheckpointCandidate],
         budget_k: int,
         steps_to_execution_by_continuation: Mapping[str, int],
+        last_access_by_checkpoint: Mapping[str, float],
     ) -> PolicySelection:
-        """按最小未来执行步数选择当前常驻循环状态。"""
+        """按未来执行步数优先、时序次优先选择常驻循环状态。"""
         capacity = _validate_budget_k(budget_k)
         validate_unique_checkpoint_ids(candidates)
         _validate_steps_to_execution(
@@ -48,6 +49,10 @@ class KVFlowStylePolicy:
             for candidate in candidates
             if candidate.recurrent_resident
         )
+        recencies = _validate_last_access_metadata(
+            eligible,
+            last_access_by_checkpoint,
+        )
         ordered = sorted(
             eligible,
             key=lambda candidate: (
@@ -56,6 +61,7 @@ class KVFlowStylePolicy:
                     continuations,
                     steps_to_execution_by_continuation,
                 ),
+                -recencies[candidate.checkpoint_id],
                 candidate.checkpoint_id,
             ),
         )
@@ -188,6 +194,23 @@ def _kvflow_priority(
     if not compatible_steps:
         return math.inf
     return float(min(compatible_steps))
+
+
+def _validate_last_access_metadata(
+    candidates: Sequence[CheckpointCandidate],
+    last_access_by_checkpoint: Mapping[str, float],
+) -> dict[str, float]:
+    """验证 eligible 候选具有有限的最近访问 metadata。"""
+    recencies: dict[str, float] = {}
+    for candidate in candidates:
+        checkpoint_id = candidate.checkpoint_id
+        if checkpoint_id not in last_access_by_checkpoint:
+            raise ValueError(f"检查点 {checkpoint_id} 缺少 last_access 元数据")
+        recencies[checkpoint_id] = _validate_finite_number(
+            last_access_by_checkpoint[checkpoint_id],
+            f"检查点 {checkpoint_id} 的 last_access",
+        )
+    return recencies
 
 
 def _build_marconi_metrics(
