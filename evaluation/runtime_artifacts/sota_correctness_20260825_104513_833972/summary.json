@@ -1,0 +1,1220 @@
+{
+  "artifact_directory": "/repo/evaluation/runtime_artifacts/sota_correctness_20260825_104513_833972",
+  "e2e": {
+    "completed": 69,
+    "equivalence_classes": 69,
+    "frontier_mismatch": 0,
+    "gap_mismatch": 0,
+    "max_absolute_gap_difference": 0,
+    "passed": 69
+  },
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 45056,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 24,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "equivalence_class_dry_run": {
+    "expected_e2e_cases": 69,
+    "gpu_allowed_by_case_count": true,
+    "groups": [
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 5,
+        "policy": "Global-LRU",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 5,
+        "policy": "KVFlow-style",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 5,
+        "policy": "Marconi-style",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 6,
+        "policy": "FlowState",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 12,
+        "equivalence_classes": 5,
+        "policy": "Global-LRU",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 12,
+        "equivalence_classes": 5,
+        "policy": "KVFlow-style",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 12,
+        "equivalence_classes": 5,
+        "policy": "Marconi-style",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 12,
+        "equivalence_classes": 6,
+        "policy": "FlowState",
+        "scenario": "scalable_multiworkflow_v2_n16"
+      },
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 3,
+        "policy": "Global-LRU",
+        "scenario": "sota_signal_stress_v1"
+      },
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 4,
+        "policy": "KVFlow-style",
+        "scenario": "sota_signal_stress_v1"
+      },
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 3,
+        "policy": "Marconi-style",
+        "scenario": "sota_signal_stress_v1"
+      },
+      {
+        "budget_checkpoints": 4,
+        "equivalence_classes": 3,
+        "policy": "FlowState",
+        "scenario": "sota_signal_stress_v1"
+      },
+      {
+        "budget_checkpoints": 8,
+        "equivalence_classes": 4,
+        "policy": "Global-LRU",
+        "scenario": "sota_signal_stress_v1"
+      },
+      {
+        "budget_checkpoints": 8,
+        "equivalence_classes": 4,
+        "policy": "KVFlow-style",
+        "scenario": "sota_signal_stress_v1"
+      },
+      {
+        "budget_checkpoints": 8,
+        "equivalence_classes": 2,
+        "policy": "Marconi-style",
+        "scenario": "sota_signal_stress_v1"
+      },
+      {
+        "budget_checkpoints": 8,
+        "equivalence_classes": 4,
+        "policy": "FlowState",
+        "scenario": "sota_signal_stress_v1"
+      }
+    ],
+    "logical_cases_checked": 800,
+    "snapshot_runtime_runs": 16,
+    "total_e2e_cases": 69
+  },
+  "error": null,
+  "failure_stage": null,
+  "formal_mutation_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+  "groups": [
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 5,
+      "mean_request_e2e_ms": 406.0406984295696,
+      "planning_executable_prefix_ratio": 0.5217391304347826,
+      "policy": "Global-LRU",
+      "runtime_executable_prefix_ratio": 0.5217391304347826,
+      "safety_pass_count": 5,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "total_cases": 5,
+      "total_planning_gap": 45056,
+      "total_runtime_gap": 45056
+    },
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 5,
+      "mean_request_e2e_ms": 394.63353720493615,
+      "planning_executable_prefix_ratio": 0.5217391304347826,
+      "policy": "KVFlow-style",
+      "runtime_executable_prefix_ratio": 0.5217391304347826,
+      "safety_pass_count": 5,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "total_cases": 5,
+      "total_planning_gap": 45056,
+      "total_runtime_gap": 45056
+    },
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 5,
+      "mean_request_e2e_ms": 403.88227039948106,
+      "planning_executable_prefix_ratio": 0.5217391304347826,
+      "policy": "Marconi-style",
+      "runtime_executable_prefix_ratio": 0.5217391304347826,
+      "safety_pass_count": 5,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "total_cases": 5,
+      "total_planning_gap": 45056,
+      "total_runtime_gap": 45056
+    },
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 6,
+      "mean_request_e2e_ms": 463.8164535087223,
+      "planning_executable_prefix_ratio": 0.4444444444444444,
+      "policy": "FlowState",
+      "runtime_executable_prefix_ratio": 0.4444444444444444,
+      "safety_pass_count": 6,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN"
+      ],
+      "total_cases": 6,
+      "total_planning_gap": 61440,
+      "total_runtime_gap": 61440
+    },
+    {
+      "budget_checkpoints": 12,
+      "gap_match_count": 5,
+      "mean_request_e2e_ms": 124.0650957915932,
+      "planning_executable_prefix_ratio": 0.8235294117647058,
+      "policy": "Global-LRU",
+      "runtime_executable_prefix_ratio": 0.8235294117647058,
+      "safety_pass_count": 5,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "total_cases": 5,
+      "total_planning_gap": 12288,
+      "total_runtime_gap": 12288
+    },
+    {
+      "budget_checkpoints": 12,
+      "gap_match_count": 5,
+      "mean_request_e2e_ms": 125.4203088581562,
+      "planning_executable_prefix_ratio": 0.8235294117647058,
+      "policy": "KVFlow-style",
+      "runtime_executable_prefix_ratio": 0.8235294117647058,
+      "safety_pass_count": 5,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "total_cases": 5,
+      "total_planning_gap": 12288,
+      "total_runtime_gap": 12288
+    },
+    {
+      "budget_checkpoints": 12,
+      "gap_match_count": 5,
+      "mean_request_e2e_ms": 125.03889854997396,
+      "planning_executable_prefix_ratio": 0.8235294117647058,
+      "policy": "Marconi-style",
+      "runtime_executable_prefix_ratio": 0.8235294117647058,
+      "safety_pass_count": 5,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "total_cases": 5,
+      "total_planning_gap": 12288,
+      "total_runtime_gap": 12288
+    },
+    {
+      "budget_checkpoints": 12,
+      "gap_match_count": 6,
+      "mean_request_e2e_ms": 108.13378177893658,
+      "planning_executable_prefix_ratio": 0.8333333333333334,
+      "policy": "FlowState",
+      "runtime_executable_prefix_ratio": 0.8333333333333334,
+      "safety_pass_count": 6,
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "total_cases": 6,
+      "total_planning_gap": 12288,
+      "total_runtime_gap": 12288
+    },
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 3,
+      "mean_request_e2e_ms": 641.5734977150956,
+      "planning_executable_prefix_ratio": 0.4444444444444444,
+      "policy": "Global-LRU",
+      "runtime_executable_prefix_ratio": 0.4444444444444444,
+      "safety_pass_count": 3,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN"
+      ],
+      "total_cases": 3,
+      "total_planning_gap": 40960,
+      "total_runtime_gap": 40960
+    },
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 4,
+      "mean_request_e2e_ms": 485.63885199837387,
+      "planning_executable_prefix_ratio": 0.5,
+      "policy": "KVFlow-style",
+      "runtime_executable_prefix_ratio": 0.5,
+      "safety_pass_count": 4,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "total_cases": 4,
+      "total_planning_gap": 40960,
+      "total_runtime_gap": 40960
+    },
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 3,
+      "mean_request_e2e_ms": 641.5363970057418,
+      "planning_executable_prefix_ratio": 0.4444444444444444,
+      "policy": "Marconi-style",
+      "runtime_executable_prefix_ratio": 0.4444444444444444,
+      "safety_pass_count": 3,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN"
+      ],
+      "total_cases": 3,
+      "total_planning_gap": 40960,
+      "total_runtime_gap": 40960
+    },
+    {
+      "budget_checkpoints": 4,
+      "gap_match_count": 3,
+      "mean_request_e2e_ms": 640.4293986658255,
+      "planning_executable_prefix_ratio": 0.4444444444444444,
+      "policy": "FlowState",
+      "runtime_executable_prefix_ratio": 0.4444444444444444,
+      "safety_pass_count": 3,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "total_cases": 3,
+      "total_planning_gap": 40960,
+      "total_runtime_gap": 40960
+    },
+    {
+      "budget_checkpoints": 8,
+      "gap_match_count": 4,
+      "mean_request_e2e_ms": 487.65440232818946,
+      "planning_executable_prefix_ratio": 0.5,
+      "policy": "Global-LRU",
+      "runtime_executable_prefix_ratio": 0.5,
+      "safety_pass_count": 4,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "total_cases": 4,
+      "total_planning_gap": 40960,
+      "total_runtime_gap": 40960
+    },
+    {
+      "budget_checkpoints": 8,
+      "gap_match_count": 4,
+      "mean_request_e2e_ms": 487.44532372802496,
+      "planning_executable_prefix_ratio": 0.5,
+      "policy": "KVFlow-style",
+      "runtime_executable_prefix_ratio": 0.5,
+      "safety_pass_count": 4,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN"
+      ],
+      "total_cases": 4,
+      "total_planning_gap": 40960,
+      "total_runtime_gap": 40960
+    },
+    {
+      "budget_checkpoints": 8,
+      "gap_match_count": 2,
+      "mean_request_e2e_ms": 183.72584355529398,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy": "Marconi-style",
+      "runtime_executable_prefix_ratio": 0.8,
+      "safety_pass_count": 2,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN"
+      ],
+      "total_cases": 2,
+      "total_planning_gap": 8192,
+      "total_runtime_gap": 8192
+    },
+    {
+      "budget_checkpoints": 8,
+      "gap_match_count": 4,
+      "mean_request_e2e_ms": 485.28752505080774,
+      "planning_executable_prefix_ratio": 0.5,
+      "policy": "FlowState",
+      "runtime_executable_prefix_ratio": 0.5,
+      "safety_pass_count": 4,
+      "scenario": "sota_signal_stress_v1",
+      "selected_checkpoint_ids": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "total_cases": 4,
+      "total_planning_gap": 40960,
+      "total_runtime_gap": 40960
+    }
+  ],
+  "oracle_report": {
+    "scalable_multiworkflow_v2_n16:K=12": {
+      "multiple_optimal_selections": true,
+      "oracle_objective_match": true,
+      "oracle_selection_match": false
+    },
+    "scalable_multiworkflow_v2_n16:K=4": {
+      "multiple_optimal_selections": true,
+      "oracle_objective_match": true,
+      "oracle_selection_match": false
+    },
+    "sota_signal_stress_v1:K=4": {
+      "multiple_optimal_selections": false,
+      "oracle_objective_match": true,
+      "oracle_selection_match": true
+    },
+    "sota_signal_stress_v1:K=8": {
+      "multiple_optimal_selections": true,
+      "oracle_objective_match": true,
+      "oracle_selection_match": false
+    }
+  },
+  "safety": {
+    "allocator_unchanged": true,
+    "cascade_called": false,
+    "fa_preserved": true,
+    "mamba_selection_respected": true,
+    "node_prefix_tree_preserved": true,
+    "sanity_check": true
+  },
+  "scenario_summaries": {
+    "scalable_multiworkflow_v2_n16": {
+      "artifact_directory": "/repo/evaluation/runtime_artifacts/sota_correctness_20260825_104513_833972",
+      "cases_expected": 42,
+      "cases_failed": 0,
+      "cases_passed": 42,
+      "engine_configuration": {
+        "chunked_prefill_size": 45056,
+        "context_length": 45056,
+        "disable_cuda_graph": true,
+        "disable_overlap_schedule": true,
+        "enable_request_time_stats_logging": true,
+        "log_level": "info",
+        "mamba_max_states_per_path": -1,
+        "mamba_radix_cache_strategy": "extra_buffer",
+        "mamba_track_interval": 256,
+        "max_mamba_cache_size": 24,
+        "mem_fraction_static": 0.4,
+        "model_path": "/model",
+        "stream_interval": 1,
+        "tp_size": 1
+      },
+      "equivalence_class_dry_run": {
+        "expected_e2e_cases": 69,
+        "gpu_allowed_by_case_count": true,
+        "groups": [
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 5,
+            "policy": "Global-LRU",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 5,
+            "policy": "KVFlow-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 5,
+            "policy": "Marconi-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 6,
+            "policy": "FlowState",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 5,
+            "policy": "Global-LRU",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 5,
+            "policy": "KVFlow-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 5,
+            "policy": "Marconi-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 6,
+            "policy": "FlowState",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 3,
+            "policy": "Global-LRU",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 4,
+            "policy": "KVFlow-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 3,
+            "policy": "Marconi-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 3,
+            "policy": "FlowState",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 4,
+            "policy": "Global-LRU",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 4,
+            "policy": "KVFlow-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 2,
+            "policy": "Marconi-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 4,
+            "policy": "FlowState",
+            "scenario": "sota_signal_stress_v1"
+          }
+        ],
+        "logical_cases_checked": 800,
+        "snapshot_runtime_runs": 16,
+        "total_e2e_cases": 69
+      },
+      "error": null,
+      "failure_stage": null,
+      "flowstate_oracle_report": {
+        "scalable_multiworkflow_v2_n16:K=12": {
+          "multiple_optimal_selections": true,
+          "oracle_objective_match": true,
+          "oracle_selection_match": false
+        },
+        "scalable_multiworkflow_v2_n16:K=4": {
+          "multiple_optimal_selections": true,
+          "oracle_objective_match": true,
+          "oracle_selection_match": false
+        }
+      },
+      "formal_mutation_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+      "global_gap_match": true,
+      "groups": [
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 5,
+          "mean_request_e2e_ms": 406.0406984295696,
+          "planning_executable_prefix_ratio": 0.5217391304347826,
+          "policy": "Global-LRU",
+          "runtime_executable_prefix_ratio": 0.5217391304347826,
+          "safety_pass_count": 5,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A32768_F01_SHALLOW"
+          ],
+          "total_cases": 5,
+          "total_planning_gap": 45056,
+          "total_runtime_gap": 45056
+        },
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 5,
+          "mean_request_e2e_ms": 394.63353720493615,
+          "planning_executable_prefix_ratio": 0.5217391304347826,
+          "policy": "KVFlow-style",
+          "runtime_executable_prefix_ratio": 0.5217391304347826,
+          "safety_pass_count": 5,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A32768_F01_SHALLOW"
+          ],
+          "total_cases": 5,
+          "total_planning_gap": 45056,
+          "total_runtime_gap": 45056
+        },
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 5,
+          "mean_request_e2e_ms": 403.88227039948106,
+          "planning_executable_prefix_ratio": 0.5217391304347826,
+          "policy": "Marconi-style",
+          "runtime_executable_prefix_ratio": 0.5217391304347826,
+          "safety_pass_count": 5,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A32768_F01_SHALLOW"
+          ],
+          "total_cases": 5,
+          "total_planning_gap": 45056,
+          "total_runtime_gap": 45056
+        },
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 6,
+          "mean_request_e2e_ms": 463.8164535087223,
+          "planning_executable_prefix_ratio": 0.4444444444444444,
+          "policy": "FlowState",
+          "runtime_executable_prefix_ratio": 0.4444444444444444,
+          "safety_pass_count": 6,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_cases": 6,
+          "total_planning_gap": 61440,
+          "total_runtime_gap": 61440
+        },
+        {
+          "budget_checkpoints": 12,
+          "gap_match_count": 5,
+          "mean_request_e2e_ms": 124.0650957915932,
+          "planning_executable_prefix_ratio": 0.8235294117647058,
+          "policy": "Global-LRU",
+          "runtime_executable_prefix_ratio": 0.8235294117647058,
+          "safety_pass_count": 5,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A32768_F01_SHALLOW",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A16384_F01_SHALLOW",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A08192_F04_MAIN"
+          ],
+          "total_cases": 5,
+          "total_planning_gap": 12288,
+          "total_runtime_gap": 12288
+        },
+        {
+          "budget_checkpoints": 12,
+          "gap_match_count": 5,
+          "mean_request_e2e_ms": 125.4203088581562,
+          "planning_executable_prefix_ratio": 0.8235294117647058,
+          "policy": "KVFlow-style",
+          "runtime_executable_prefix_ratio": 0.8235294117647058,
+          "safety_pass_count": 5,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A32768_F01_SHALLOW",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A16384_F01_SHALLOW",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A08192_F04_MAIN"
+          ],
+          "total_cases": 5,
+          "total_planning_gap": 12288,
+          "total_runtime_gap": 12288
+        },
+        {
+          "budget_checkpoints": 12,
+          "gap_match_count": 5,
+          "mean_request_e2e_ms": 125.03889854997396,
+          "planning_executable_prefix_ratio": 0.8235294117647058,
+          "policy": "Marconi-style",
+          "runtime_executable_prefix_ratio": 0.8235294117647058,
+          "safety_pass_count": 5,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A32768_F01_SHALLOW",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A16384_F01_SHALLOW",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A08192_F04_MAIN"
+          ],
+          "total_cases": 5,
+          "total_planning_gap": 12288,
+          "total_runtime_gap": 12288
+        },
+        {
+          "budget_checkpoints": 12,
+          "gap_match_count": 6,
+          "mean_request_e2e_ms": 108.13378177893658,
+          "planning_executable_prefix_ratio": 0.8333333333333334,
+          "policy": "FlowState",
+          "runtime_executable_prefix_ratio": 0.8333333333333334,
+          "safety_pass_count": 6,
+          "scenario": "scalable_multiworkflow_v2_n16",
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_cases": 6,
+          "total_planning_gap": 12288,
+          "total_runtime_gap": 12288
+        }
+      ],
+      "safety": {
+        "allocator_unchanged": true,
+        "cascade_called": false,
+        "fa_preserved": true,
+        "mamba_selection_respected": true,
+        "sanity_check": true,
+        "tree_identity_preserved": true
+      },
+      "scenario": "scalable_multiworkflow_v2_n16",
+      "schema_version": "flowstate.sota_runtime_correctness.v1",
+      "snapshot_audit": {
+        "candidates_inspected": 160,
+        "logical_continuations_checked": 480,
+        "planning_runtime_frontier_mismatch": 0,
+        "planning_runtime_gap_mismatch": 0,
+        "runtime_snapshots": 8,
+        "runtime_snapshots_passed": 8
+      },
+      "status": "PASS",
+      "timing_interpretation": "仅用于正确性诊断",
+      "wall_time_ms_total_process": 1550884.0360920876
+    },
+    "sota_signal_stress_v1": {
+      "artifact_directory": "/repo/evaluation/runtime_artifacts/sota_correctness_20260825_104513_833972",
+      "cases_expected": 27,
+      "cases_failed": 0,
+      "cases_passed": 27,
+      "engine_configuration": {
+        "chunked_prefill_size": 45056,
+        "context_length": 45056,
+        "disable_cuda_graph": true,
+        "disable_overlap_schedule": true,
+        "enable_request_time_stats_logging": true,
+        "log_level": "info",
+        "mamba_max_states_per_path": -1,
+        "mamba_radix_cache_strategy": "extra_buffer",
+        "mamba_track_interval": 256,
+        "max_mamba_cache_size": 24,
+        "mem_fraction_static": 0.4,
+        "model_path": "/model",
+        "stream_interval": 1,
+        "tp_size": 1
+      },
+      "equivalence_class_dry_run": {
+        "expected_e2e_cases": 69,
+        "gpu_allowed_by_case_count": true,
+        "groups": [
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 5,
+            "policy": "Global-LRU",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 5,
+            "policy": "KVFlow-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 5,
+            "policy": "Marconi-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 6,
+            "policy": "FlowState",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 5,
+            "policy": "Global-LRU",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 5,
+            "policy": "KVFlow-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 5,
+            "policy": "Marconi-style",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 12,
+            "equivalence_classes": 6,
+            "policy": "FlowState",
+            "scenario": "scalable_multiworkflow_v2_n16"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 3,
+            "policy": "Global-LRU",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 4,
+            "policy": "KVFlow-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 3,
+            "policy": "Marconi-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 4,
+            "equivalence_classes": 3,
+            "policy": "FlowState",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 4,
+            "policy": "Global-LRU",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 4,
+            "policy": "KVFlow-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 2,
+            "policy": "Marconi-style",
+            "scenario": "sota_signal_stress_v1"
+          },
+          {
+            "budget_checkpoints": 8,
+            "equivalence_classes": 4,
+            "policy": "FlowState",
+            "scenario": "sota_signal_stress_v1"
+          }
+        ],
+        "logical_cases_checked": 800,
+        "snapshot_runtime_runs": 16,
+        "total_e2e_cases": 69
+      },
+      "error": null,
+      "failure_stage": null,
+      "flowstate_oracle_report": {
+        "sota_signal_stress_v1:K=4": {
+          "multiple_optimal_selections": false,
+          "oracle_objective_match": true,
+          "oracle_selection_match": true
+        },
+        "sota_signal_stress_v1:K=8": {
+          "multiple_optimal_selections": true,
+          "oracle_objective_match": true,
+          "oracle_selection_match": false
+        }
+      },
+      "formal_mutation_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+      "global_gap_match": true,
+      "groups": [
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 3,
+          "mean_request_e2e_ms": 641.5734977150956,
+          "planning_executable_prefix_ratio": 0.4444444444444444,
+          "policy": "Global-LRU",
+          "runtime_executable_prefix_ratio": 0.4444444444444444,
+          "safety_pass_count": 3,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN"
+          ],
+          "total_cases": 3,
+          "total_planning_gap": 40960,
+          "total_runtime_gap": 40960
+        },
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 4,
+          "mean_request_e2e_ms": 485.63885199837387,
+          "planning_executable_prefix_ratio": 0.5,
+          "policy": "KVFlow-style",
+          "runtime_executable_prefix_ratio": 0.5,
+          "safety_pass_count": 4,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F1_S1_Rrecent_MAIN"
+          ],
+          "total_cases": 4,
+          "total_planning_gap": 40960,
+          "total_runtime_gap": 40960
+        },
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 3,
+          "mean_request_e2e_ms": 641.5363970057418,
+          "planning_executable_prefix_ratio": 0.4444444444444444,
+          "policy": "Marconi-style",
+          "runtime_executable_prefix_ratio": 0.4444444444444444,
+          "safety_pass_count": 3,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN"
+          ],
+          "total_cases": 3,
+          "total_planning_gap": 40960,
+          "total_runtime_gap": 40960
+        },
+        {
+          "budget_checkpoints": 4,
+          "gap_match_count": 3,
+          "mean_request_e2e_ms": 640.4293986658255,
+          "planning_executable_prefix_ratio": 0.4444444444444444,
+          "policy": "FlowState",
+          "runtime_executable_prefix_ratio": 0.4444444444444444,
+          "safety_pass_count": 3,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_cases": 3,
+          "total_planning_gap": 40960,
+          "total_runtime_gap": 40960
+        },
+        {
+          "budget_checkpoints": 8,
+          "gap_match_count": 4,
+          "mean_request_e2e_ms": 487.65440232818946,
+          "planning_executable_prefix_ratio": 0.5,
+          "policy": "Global-LRU",
+          "runtime_executable_prefix_ratio": 0.5,
+          "safety_pass_count": 4,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F1_S3_Rrecent_MAIN",
+            "W_A08192_F1_S1_Rrecent_MAIN"
+          ],
+          "total_cases": 4,
+          "total_planning_gap": 40960,
+          "total_runtime_gap": 40960
+        },
+        {
+          "budget_checkpoints": 8,
+          "gap_match_count": 4,
+          "mean_request_e2e_ms": 487.44532372802496,
+          "planning_executable_prefix_ratio": 0.5,
+          "policy": "KVFlow-style",
+          "runtime_executable_prefix_ratio": 0.5,
+          "safety_pass_count": 4,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F1_S1_Rrecent_MAIN",
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F1_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F1_S1_Rold_MAIN"
+          ],
+          "total_cases": 4,
+          "total_planning_gap": 40960,
+          "total_runtime_gap": 40960
+        },
+        {
+          "budget_checkpoints": 8,
+          "gap_match_count": 2,
+          "mean_request_e2e_ms": 183.72584355529398,
+          "planning_executable_prefix_ratio": 0.8,
+          "policy": "Marconi-style",
+          "runtime_executable_prefix_ratio": 0.8,
+          "safety_pass_count": 2,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F1_S3_Rold_MAIN",
+            "W_A32768_F1_S1_Rold_MAIN"
+          ],
+          "total_cases": 2,
+          "total_planning_gap": 8192,
+          "total_runtime_gap": 8192
+        },
+        {
+          "budget_checkpoints": 8,
+          "gap_match_count": 4,
+          "mean_request_e2e_ms": 485.28752505080774,
+          "planning_executable_prefix_ratio": 0.5,
+          "policy": "FlowState",
+          "runtime_executable_prefix_ratio": 0.5,
+          "safety_pass_count": 4,
+          "scenario": "sota_signal_stress_v1",
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_cases": 4,
+          "total_planning_gap": 40960,
+          "total_runtime_gap": 40960
+        }
+      ],
+      "safety": {
+        "allocator_unchanged": true,
+        "cascade_called": false,
+        "fa_preserved": true,
+        "mamba_selection_respected": true,
+        "sanity_check": true,
+        "tree_identity_preserved": true
+      },
+      "scenario": "sota_signal_stress_v1",
+      "schema_version": "flowstate.sota_runtime_correctness.v1",
+      "snapshot_audit": {
+        "candidates_inspected": 128,
+        "logical_continuations_checked": 320,
+        "planning_runtime_frontier_mismatch": 0,
+        "planning_runtime_gap_mismatch": 0,
+        "runtime_snapshots": 8,
+        "runtime_snapshots_passed": 8
+      },
+      "status": "PASS",
+      "timing_interpretation": "仅用于正确性诊断",
+      "wall_time_ms_total_process": 1550884.0360920876
+    }
+  },
+  "schema_version": "flowstate.sota_runtime_correctness.v2",
+  "snapshot_audit": {
+    "candidates_inspected": 288,
+    "frontier_mismatch": 0,
+    "gap_mismatch": 0,
+    "logical_continuations_checked": 800,
+    "max_absolute_gap_difference": 0,
+    "selection_residency_mismatch": 0,
+    "snapshots_completed": 16,
+    "snapshots_expected": 16,
+    "snapshots_passed": 16
+  },
+  "status": "PASS",
+  "timing_interpretation": "仅用于正确性诊断",
+  "total_runtime_ms": 1550884.0360920876
+}
