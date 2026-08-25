@@ -1,0 +1,1052 @@
+{
+  "flowstate_oracle_differences": [
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 2,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 8
+    },
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 4,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 8
+    },
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 6,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 8
+    },
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 8,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 8
+    },
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 4,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 16
+    },
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 8,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 16
+    },
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 12,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 16
+    },
+    {
+      "absolute_objective_gap_ms": 0.0,
+      "budget_checkpoints": 16,
+      "flowstate_exact_optimal": true,
+      "relative_objective_gap": 0.0,
+      "workflow_count": 16
+    }
+  ],
+  "oracle_runtime_ms_by_workload": {
+    "8": 511.59541797824204,
+    "16": 439086.43249818124
+  },
+  "rows": [
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 5058.591052656993,
+      "mean_recovery_gap_per_request": 5529.6,
+      "planning_executable_prefix_ratio": 0.64,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "selection_runtime_ms": 1.277263043448329,
+      "total_recovery_gap": 110592,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 7421.539757866412,
+      "mean_recovery_gap_per_request": 7987.2,
+      "planning_executable_prefix_ratio": 0.48,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.026333145797252655,
+      "total_recovery_gap": 159744,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 13252.942797262222,
+      "mean_recovery_gap_per_request": 14336.0,
+      "planning_executable_prefix_ratio": 0.06666666666666667,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.06914581172168255,
+      "total_recovery_gap": 286720,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 6649.048451799899,
+      "mean_recovery_gap_per_request": 7168.0,
+      "planning_executable_prefix_ratio": 0.5333333333333333,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 1.1296870652586222,
+      "total_recovery_gap": 143360,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 11917.314040241763,
+      "mean_recovery_gap_per_request": 12902.4,
+      "planning_executable_prefix_ratio": 0.16,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.21156808361411095,
+      "total_recovery_gap": 258048,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 2,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 5058.591052656993,
+      "mean_recovery_gap_per_request": 5529.6,
+      "planning_executable_prefix_ratio": 0.64,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 4.1349721141159534,
+      "total_recovery_gap": 110592,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 2044.7255144827068,
+      "mean_recovery_gap_per_request": 2252.8,
+      "planning_executable_prefix_ratio": 0.8533333333333334,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A32768_F01_MAIN"
+      ],
+      "selection_runtime_ms": 2.4561670143157244,
+      "total_recovery_gap": 45056,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 3559.083227533847,
+      "mean_recovery_gap_per_request": 3891.2,
+      "planning_executable_prefix_ratio": 0.7466666666666667,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.02626189962029457,
+      "total_recovery_gap": 77824,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 11359.995655948296,
+      "mean_recovery_gap_per_request": 12288.0,
+      "planning_executable_prefix_ratio": 0.2,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.0789291225373745,
+      "total_recovery_gap": 245760,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 2786.591921467334,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "selection_runtime_ms": 1.3999838847666979,
+      "total_recovery_gap": 61440,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 2829.317515483126,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.3710831515491009,
+      "total_recovery_gap": 61440,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 2044.7255144827068,
+      "mean_recovery_gap_per_request": 2252.8,
+      "planning_executable_prefix_ratio": 0.8533333333333334,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 48.89495484530926,
+      "total_recovery_gap": 45056,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 557.3183842934668,
+      "mean_recovery_gap_per_request": 614.4,
+      "planning_executable_prefix_ratio": 0.96,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN"
+      ],
+      "selection_runtime_ms": 3.6902539432048798,
+      "total_recovery_gap": 12288,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 2786.591921467334,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "selection_runtime_ms": 0.033226097002625465,
+      "total_recovery_gap": 61440,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 7497.539125615731,
+      "mean_recovery_gap_per_request": 8192.0,
+      "planning_executable_prefix_ratio": 0.4666666666666667,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.07890607230365276,
+      "total_recovery_gap": 163840,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 2786.591921467334,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A16384_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 1.0942989028990269,
+      "total_recovery_gap": 61440,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 2271.9991311896592,
+      "mean_recovery_gap_per_request": 2457.6,
+      "planning_executable_prefix_ratio": 0.84,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A04096_F01_MAIN",
+        "W08_A08192_F01_MAIN"
+      ],
+      "selection_runtime_ms": 0.5040701944380999,
+      "total_recovery_gap": 49152,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 6,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 557.3183842934668,
+      "mean_recovery_gap_per_request": 614.4,
+      "planning_executable_prefix_ratio": 0.96,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 174.34771498665214,
+      "total_recovery_gap": 12288,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A04096_F01_MAIN"
+      ],
+      "selection_runtime_ms": 4.5169200748205185,
+      "total_recovery_gap": 0,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 1072.3737361840904,
+      "mean_recovery_gap_per_request": 1228.8,
+      "planning_executable_prefix_ratio": 0.92,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.027344096451997757,
+      "total_recovery_gap": 24576,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.07209181785583496,
+      "total_recovery_gap": 0,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 893.6447801534086,
+      "mean_recovery_gap_per_request": 1024.0,
+      "planning_executable_prefix_ratio": 0.9333333333333333,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "selection_runtime_ms": 1.0848050005733967,
+      "total_recovery_gap": 20480,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A04096_F01_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A32768_F01_MAIN"
+      ],
+      "selection_runtime_ms": 0.6106961518526077,
+      "total_recovery_gap": 0,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 284.2177760321647,
+      "total_recovery_gap": 0,
+      "workflow_count": 8
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 15175.77315797098,
+      "mean_recovery_gap_per_request": 5529.6,
+      "planning_executable_prefix_ratio": 0.64,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN"
+      ],
+      "selection_runtime_ms": 12.215962866321206,
+      "total_recovery_gap": 331776,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 20719.63666146621,
+      "mean_recovery_gap_per_request": 7441.066666666667,
+      "planning_executable_prefix_ratio": 0.5155555555555555,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "selection_runtime_ms": 0.038321828469634056,
+      "total_recovery_gap": 446464,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 39758.828391786665,
+      "mean_recovery_gap_per_request": 14336.0,
+      "planning_executable_prefix_ratio": 0.06666666666666667,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "selection_runtime_ms": 0.20280503667891026,
+      "total_recovery_gap": 860160,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 19947.145355399698,
+      "mean_recovery_gap_per_request": 7168.0,
+      "planning_executable_prefix_ratio": 0.5333333333333333,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "selection_runtime_ms": 5.308489082381129,
+      "total_recovery_gap": 430080,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 19805.222608381882,
+      "mean_recovery_gap_per_request": 7168.0,
+      "planning_executable_prefix_ratio": 0.5333333333333333,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "selection_runtime_ms": 1.4649010263383389,
+      "total_recovery_gap": 430080,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 4,
+      "budget_ratio": 0.25,
+      "estimated_recovery_cost_ms": 15175.77315797098,
+      "mean_recovery_gap_per_request": 5529.6,
+      "planning_executable_prefix_ratio": 0.64,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "selection_runtime_ms": 1063.2154420018196,
+      "total_recovery_gap": 331776,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 6088.70175643824,
+      "mean_recovery_gap_per_request": 2252.8,
+      "planning_executable_prefix_ratio": 0.8533333333333334,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "selection_runtime_ms": 16.23866194859147,
+      "total_recovery_gap": 135168,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 9132.267070468515,
+      "mean_recovery_gap_per_request": 3345.0666666666666,
+      "planning_executable_prefix_ratio": 0.7822222222222223,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "selection_runtime_ms": 0.026804162189364433,
+      "total_recovery_gap": 200704,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 34079.98696784489,
+      "mean_recovery_gap_per_request": 12288.0,
+      "planning_executable_prefix_ratio": 0.2,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN"
+      ],
+      "selection_runtime_ms": 0.13581686653196812,
+      "total_recovery_gap": 737280,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 8359.775764402002,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN"
+      ],
+      "selection_runtime_ms": 3.8544710259884596,
+      "total_recovery_gap": 184320,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 8487.952546449378,
+      "mean_recovery_gap_per_request": 3072.0,
+      "planning_executable_prefix_ratio": 0.8,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN"
+      ],
+      "selection_runtime_ms": 1.552975969389081,
+      "total_recovery_gap": 184320,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 8,
+      "budget_ratio": 0.5,
+      "estimated_recovery_cost_ms": 6088.70175643824,
+      "mean_recovery_gap_per_request": 2252.8,
+      "planning_executable_prefix_ratio": 0.8533333333333334,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "selection_runtime_ms": 42991.56522308476,
+      "total_recovery_gap": 135168,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 1629.6921204775572,
+      "mean_recovery_gap_per_request": 614.4,
+      "planning_executable_prefix_ratio": 0.96,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "selection_runtime_ms": 27.965905843302608,
+      "total_recovery_gap": 36864,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 3816.702625248581,
+      "mean_recovery_gap_per_request": 1433.6,
+      "planning_executable_prefix_ratio": 0.9066666666666666,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "selection_runtime_ms": 0.07651909254491329,
+      "total_recovery_gap": 86016,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 22492.617376847193,
+      "mean_recovery_gap_per_request": 8192.0,
+      "planning_executable_prefix_ratio": 0.4666666666666667,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN"
+      ],
+      "selection_runtime_ms": 0.1877720933407545,
+      "total_recovery_gap": 491520,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 7224.007479613647,
+      "mean_recovery_gap_per_request": 2662.4,
+      "planning_executable_prefix_ratio": 0.8266666666666667,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "selection_runtime_ms": 4.044236848130822,
+      "total_recovery_gap": 159744,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 2829.317515483126,
+      "mean_recovery_gap_per_request": 1024.0,
+      "planning_executable_prefix_ratio": 0.9333333333333333,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A32768_F02_MAIN"
+      ],
+      "selection_runtime_ms": 2.446223981678486,
+      "total_recovery_gap": 61440,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 12,
+      "budget_ratio": 0.75,
+      "estimated_recovery_cost_ms": 1629.6921204775572,
+      "mean_recovery_gap_per_request": 614.4,
+      "planning_executable_prefix_ratio": 0.96,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "selection_runtime_ms": 176778.98444700986,
+      "total_recovery_gap": 36864,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "FlowState",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F01_MAIN"
+      ],
+      "selection_runtime_ms": 35.28080810792744,
+      "total_recovery_gap": 0,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 1251.102692214772,
+      "mean_recovery_gap_per_request": 477.8666666666667,
+      "planning_executable_prefix_ratio": 0.9688888888888889,
+      "policy_name": "Global-LRU",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "selection_runtime_ms": 0.033167190849781036,
+      "total_recovery_gap": 28672,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "Equal-Share",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "selection_runtime_ms": 0.15570991672575474,
+      "total_recovery_gap": 0,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 2502.205384429544,
+      "mean_recovery_gap_per_request": 955.7333333333333,
+      "planning_executable_prefix_ratio": 0.9377777777777778,
+      "policy_name": "Recovery-Only",
+      "selected_checkpoint_ids": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A04096_F01_MAIN"
+      ],
+      "selection_runtime_ms": 4.047583090141416,
+      "total_recovery_gap": 57344,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "Workflow-Only",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A04096_F01_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A32768_F01_MAIN"
+      ],
+      "selection_runtime_ms": 2.988565945997834,
+      "total_recovery_gap": 0,
+      "workflow_count": 16
+    },
+    {
+      "budget_checkpoints": 16,
+      "budget_ratio": 1.0,
+      "estimated_recovery_cost_ms": 0.0,
+      "mean_recovery_gap_per_request": 0.0,
+      "planning_executable_prefix_ratio": 1.0,
+      "policy_name": "Oracle",
+      "selected_checkpoint_ids": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "selection_runtime_ms": 218252.6673860848,
+      "total_recovery_gap": 0,
+      "workflow_count": 16
+    }
+  ],
+  "schema_version": "flowstate.scalable_multiworkflow.offline.v2",
+  "workload_construction": "FIXED BEFORE POLICY EVALUATION"
+}
