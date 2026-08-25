@@ -163,9 +163,15 @@ class PolicyOptimizerAdapter:
 class SnapshotSchedulerRuntimeAdapter:
     """使用 case 唯一标识把 controller 动作送到调度器安全时点。"""
 
-    def __init__(self, client: object, case_id: str) -> None:
+    def __init__(
+        self,
+        client: object,
+        case_id: str,
+        runtime_namespace: str = "flowstate_step7e",
+    ) -> None:
         self._client = client
         self._case_id = case_id
+        self._runtime_namespace = runtime_namespace
         self.evicted_checkpoint_ids: list[str] = []
         self.eviction_responses: list[dict] = []
 
@@ -178,10 +184,13 @@ class SnapshotSchedulerRuntimeAdapter:
             {
                 "op": "checkpoint_control",
                 "nonce": (
-                    f"flowstate_step7e:{self._case_id}:"
+                    f"{self._runtime_namespace}:{self._case_id}:"
                     f"evict:{handle.checkpoint_id}"
                 ),
-                "label": f"flowstate_step7e:{handle.checkpoint_id}",
+                "label": (
+                    f"{self._runtime_namespace}:"
+                    f"{handle.checkpoint_id}"
+                ),
                 "action": "flowstate_evict_mamba_only",
                 "checkpoint_id": handle.checkpoint_id,
                 "token_ids": list(handle.token_ids),
@@ -201,10 +210,16 @@ class CaseArtifactWriter:
     directory: Path
 
     @classmethod
-    def create(cls, root: Path = _ARTIFACT_ROOT) -> "CaseArtifactWriter":
+    def create(
+        cls,
+        root: Path = _ARTIFACT_ROOT,
+        directory_prefix: str = "snapshot_runtime",
+    ) -> "CaseArtifactWriter":
         """创建一个不会覆盖旧结果的时间戳目录。"""
+        if not directory_prefix or "/" in directory_prefix:
+            raise ValueError("artifact 目录前缀必须是非空的单级名称")
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
-        directory = root / f"snapshot_runtime_{timestamp}"
+        directory = root / f"{directory_prefix}_{timestamp}"
         directory.mkdir(parents=True, exist_ok=False)
         return cls(directory)
 
@@ -236,6 +251,7 @@ class CaseArtifactWriter:
 
         csv_path = self.directory / "summary.csv"
         fieldnames = (
+            "budget_checkpoints",
             "policy",
             "n_cases",
             "planning_total_gap",
@@ -257,6 +273,9 @@ class CaseArtifactWriter:
                 if policy is None:
                     continue
                 row = dict(policy)
+                row["budget_checkpoints"] = summary.get(
+                    "budget_checkpoints"
+                )
                 row["policy"] = policy_name
                 row["selected_checkpoint_ids"] = ";".join(
                     policy["selected_checkpoint_ids"]
@@ -543,6 +562,7 @@ def run_snapshot_case(
     client: object,
     scenario: ControlledScenario,
     recovery_cost_model: RecoveryCostModel,
+    runtime_namespace: str = "flowstate_step7e",
 ) -> dict:
     """在一次独立 flush/rebuild 生命周期中执行一个 case。"""
     case_id = _case_id(index, case)
@@ -560,7 +580,7 @@ def run_snapshot_case(
     try:
         engine.flush_cache()
         clean_census = client.census(
-            f"flowstate_step7e:{case_id}:census:after_flush"
+            f"{runtime_namespace}:{case_id}:census:after_flush"
         )
         record["clean_cache"] = validate_clean_cache(clean_census)
 
@@ -568,7 +588,7 @@ def run_snapshot_case(
         runtime_workflows, candidate_tokens = build_runtime_workflows(
             engine,
             scenario,
-            request_namespace=f"flowstate_step7e_{case_id}_build",
+            request_namespace=f"{runtime_namespace}_{case_id}_build",
         )
 
         stage = "验证 allocation 前状态"
@@ -580,7 +600,11 @@ def run_snapshot_case(
         record["checkpoints_before_allocation"] = before_states
 
         stage = "执行策略与 controller"
-        runtime_adapter = SnapshotSchedulerRuntimeAdapter(client, case_id)
+        runtime_adapter = SnapshotSchedulerRuntimeAdapter(
+            client,
+            case_id,
+            runtime_namespace,
+        )
         controller = StateController(
             _optimizer_for_case(case, scenario, recovery_cost_model),
             runtime_adapter,
@@ -648,7 +672,7 @@ def run_snapshot_case(
             raise RuntimeError(f"allocation 安全条件失败：{safety}")
 
         stage = "发送单个待续请求"
-        request_id = f"flowstate_step7e_{case_id}_pending"
+        request_id = f"{runtime_namespace}_{case_id}_pending"
         _, metadata = generate(
             engine,
             request_id,
@@ -692,11 +716,17 @@ def build_summary(
     artifact_directory: Path,
     failure_stage: str | None,
     error: str | None,
+    budget_checkpoints: int | None = None,
+    expected_cases: int = 28,
 ) -> dict:
     """构造成功或提前失败时都可持久化的运行时汇总。"""
+    if expected_cases <= 0:
+        raise ValueError("预期隔离 case 数量必须为正数")
     passed = sum(record.get("status") == "PASS" for record in records)
     failed = sum(record.get("status") == "FAIL" for record in records)
-    status = "PASS" if passed == 28 and failed == 0 else "FAIL"
+    status = (
+        "PASS" if passed == expected_cases and failed == 0 else "FAIL"
+    )
     completed_safety = tuple(
         record["safety"]
         for record in records
@@ -720,12 +750,12 @@ def build_summary(
             not item["cascade_not_called"] for item in completed_safety
         ),
     }
-    return {
+    summary = {
         "schema_version": "flowstate.controlled_multiworkflow.snapshot.v1",
         "status": status,
         "cases_passed": passed,
         "cases_failed": failed,
-        "cases_expected": 28,
+        "cases_expected": expected_cases,
         "runtime_summary": aggregate_case_records(
             records,
             planning_summaries,
@@ -743,6 +773,9 @@ def build_summary(
         "artifact_directory": str(artifact_directory),
         "engine_configuration": ENGINE_CONFIGURATION,
     }
+    if budget_checkpoints is not None:
+        summary["budget_checkpoints"] = budget_checkpoints
+    return summary
 
 
 def main() -> int:
