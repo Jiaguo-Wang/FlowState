@@ -1,0 +1,1602 @@
+{
+  "data_isolation": {
+    "formal_phi_changed": false,
+    "policy_changed": false,
+    "profiler_v2_is_independent_step9d_data": true,
+    "profiler_v2_source": "/home/wjg/code/FlowState/evaluation/recovery_profiler_v2/model_comparison.json",
+    "step9b_data_used_for_optimization": false,
+    "workload_changed": false
+  },
+  "flowstate_generally_robust": false,
+  "most_sensitive_gaps": [
+    8192
+  ],
+  "near_tie_sensitivity_present": true,
+  "perturbation_count_per_point": 21,
+  "points": [
+    {
+      "budget_bytes": 206045184,
+      "candidate_count": 20,
+      "classification": "Moderately sensitive",
+      "continuation_count": 60,
+      "formal": {
+        "model_name": "Old Phi",
+        "objective_ms": 15175.77315797098,
+        "same_as_formal_selection": true,
+        "selected_checkpoint_ids": [
+          "W16_A32768_F08_MAIN",
+          "W16_A16384_F08_MAIN",
+          "W16_A32768_F04_MAIN",
+          "W16_A16384_F04_MAIN"
+        ],
+        "total_gap_tokens": 331776
+      },
+      "local_change_count_by_gap": [
+        [
+          4096,
+          0
+        ],
+        [
+          8192,
+          2
+        ],
+        [
+          16384,
+          2
+        ],
+        [
+          32768,
+          2
+        ]
+      ],
+      "perturbations": [
+        {
+          "model_name": "Profiler-v2 piecewise",
+          "objective_ms": 14755.742628916669,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F02_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi global -10%",
+          "objective_ms": 13658.195842173882,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi global -5%",
+          "objective_ms": 14416.98450007243,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi global +5%",
+          "objective_ms": 15934.561815869529,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi global +10%",
+          "objective_ms": 16693.35047376808,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=4096 -10%",
+          "objective_ms": 14907.679723924957,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=4096 -5%",
+          "objective_ms": 15041.726440947969,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=4096 +5%",
+          "objective_ms": 15309.819874993991,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=4096 +10%",
+          "objective_ms": 15443.866592017002,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=8192 -10%",
+          "objective_ms": 14607.889015576802,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=8192 -5%",
+          "objective_ms": 14891.831086773891,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=8192 +5%",
+          "objective_ms": 15369.529256026726,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A08192_F08_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=8192 +10%",
+          "objective_ms": 15502.035555918701,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A08192_F08_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=16384 -10%",
+          "objective_ms": 14696.279041888192,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A08192_F08_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=16384 -5%",
+          "objective_ms": 14966.650999011472,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A08192_F08_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=16384 +5%",
+          "objective_ms": 15291.646853880957,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=16384 +10%",
+          "objective_ms": 15407.520549790934,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=32768 -10%",
+          "objective_ms": 14725.920810434036,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=32768 -5%",
+          "objective_ms": 14950.846984202508,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=32768 +5%",
+          "objective_ms": 15341.698123246897,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F02_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        },
+        {
+          "model_name": "Old Phi G=32768 +10%",
+          "objective_ms": 15416.673514503054,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F02_MAIN"
+          ],
+          "total_gap_tokens": 331776
+        }
+      ],
+      "point": {
+        "budget_checkpoints": 4,
+        "point_name": "Scalable N16 K4",
+        "scenario_name": "scalable_n16"
+      },
+      "ranking_margin": {
+        "best_checkpoint_ids": [
+          "W16_A32768_F08_MAIN",
+          "W16_A16384_F08_MAIN",
+          "W16_A32768_F04_MAIN",
+          "W16_A16384_F04_MAIN"
+        ],
+        "best_objective_ms": 15175.77315797098,
+        "margin_ms": 61.24979816377163,
+        "relative_margin": 0.004036024888234479,
+        "second_best_checkpoint_ids": [
+          "W16_A08192_F08_MAIN",
+          "W16_A16384_F08_MAIN",
+          "W16_A32768_F04_MAIN",
+          "W16_A32768_F08_MAIN"
+        ],
+        "second_best_objective_ms": 15237.022956134751
+      },
+      "selection_change_count": 7,
+      "selection_stability_rate": 0.6666666666666666
+    },
+    {
+      "budget_bytes": 618135552,
+      "candidate_count": 20,
+      "classification": "Moderately sensitive",
+      "continuation_count": 60,
+      "formal": {
+        "model_name": "Old Phi",
+        "objective_ms": 1629.6921204775572,
+        "same_as_formal_selection": true,
+        "selected_checkpoint_ids": [
+          "W16_A32768_F08_MAIN",
+          "W16_A16384_F08_MAIN",
+          "W16_A32768_F04_MAIN",
+          "W16_A16384_F04_MAIN",
+          "W16_A08192_F08_MAIN",
+          "W16_A32768_F02_MAIN",
+          "W16_A16384_F02_MAIN",
+          "W16_A08192_F04_MAIN",
+          "W16_A32768_F01_MAIN",
+          "W16_A04096_F08_MAIN",
+          "W16_A16384_F01_MAIN",
+          "W16_A08192_F02_MAIN"
+        ],
+        "total_gap_tokens": 36864
+      },
+      "local_change_count_by_gap": [
+        [
+          4096,
+          1
+        ],
+        [
+          8192,
+          1
+        ],
+        [
+          16384,
+          1
+        ],
+        [
+          32768,
+          0
+        ]
+      ],
+      "perturbations": [
+        {
+          "model_name": "Profiler-v2 piecewise",
+          "objective_ms": 1610.015784416667,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi global -10%",
+          "objective_ms": 1466.7229084298015,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi global -5%",
+          "objective_ms": 1548.2075144536793,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi global +5%",
+          "objective_ms": 1711.176726501435,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi global +10%",
+          "objective_ms": 1792.6613325253131,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=4096 -10%",
+          "objective_ms": 1504.58185125608,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=4096 -5%",
+          "objective_ms": 1567.1369858668186,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=4096 +5%",
+          "objective_ms": 1692.2472550882958,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=4096 +10%",
+          "objective_ms": 1725.573839689605,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F04_MAIN",
+            "W16_A16384_F01_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=8192 -10%",
+          "objective_ms": 1558.378324401565,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A04096_F04_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=8192 -5%",
+          "objective_ms": 1610.762649064418,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=8192 +5%",
+          "objective_ms": 1648.6215918906964,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A08192_F02_MAIN",
+            "W16_A16384_F01_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=8192 +10%",
+          "objective_ms": 1667.5510633038357,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A08192_F02_MAIN",
+            "W16_A16384_F01_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=16384 -10%",
+          "objective_ms": 1610.018471814692,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F02_MAIN",
+            "W16_A04096_F04_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=16384 -5%",
+          "objective_ms": 1629.6921204775572,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A08192_F02_MAIN",
+            "W16_A16384_F01_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=16384 +5%",
+          "objective_ms": 1629.6921204775572,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=16384 +10%",
+          "objective_ms": 1629.6921204775572,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=32768 -10%",
+          "objective_ms": 1629.6921204775572,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=32768 -5%",
+          "objective_ms": 1629.6921204775572,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=32768 +5%",
+          "objective_ms": 1629.6921204775572,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        },
+        {
+          "model_name": "Old Phi G=32768 +10%",
+          "objective_ms": 1629.6921204775572,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W16_A32768_F08_MAIN",
+            "W16_A32768_F04_MAIN",
+            "W16_A16384_F08_MAIN",
+            "W16_A32768_F02_MAIN",
+            "W16_A16384_F04_MAIN",
+            "W16_A08192_F08_MAIN",
+            "W16_A32768_F01_MAIN",
+            "W16_A16384_F02_MAIN",
+            "W16_A08192_F04_MAIN",
+            "W16_A04096_F08_MAIN",
+            "W16_A16384_F01_MAIN",
+            "W16_A08192_F02_MAIN"
+          ],
+          "total_gap_tokens": 36864
+        }
+      ],
+      "point": {
+        "budget_checkpoints": 12,
+        "point_name": "Scalable N16 K12",
+        "scenario_name": "scalable_n16"
+      },
+      "ranking_margin": {
+        "best_checkpoint_ids": [
+          "W16_A32768_F08_MAIN",
+          "W16_A16384_F08_MAIN",
+          "W16_A32768_F04_MAIN",
+          "W16_A16384_F04_MAIN",
+          "W16_A08192_F08_MAIN",
+          "W16_A32768_F02_MAIN",
+          "W16_A16384_F02_MAIN",
+          "W16_A08192_F04_MAIN",
+          "W16_A32768_F01_MAIN",
+          "W16_A04096_F08_MAIN",
+          "W16_A16384_F01_MAIN",
+          "W16_A08192_F02_MAIN"
+        ],
+        "best_objective_ms": 1629.6921204775572,
+        "margin_ms": 42.26303240284324,
+        "relative_margin": 0.02593313907074588,
+        "second_best_checkpoint_ids": [
+          "W16_A04096_F04_MAIN",
+          "W16_A04096_F08_MAIN",
+          "W16_A08192_F04_MAIN",
+          "W16_A08192_F08_MAIN",
+          "W16_A16384_F01_MAIN",
+          "W16_A16384_F02_MAIN",
+          "W16_A16384_F04_MAIN",
+          "W16_A16384_F08_MAIN",
+          "W16_A32768_F01_MAIN",
+          "W16_A32768_F02_MAIN",
+          "W16_A32768_F04_MAIN",
+          "W16_A32768_F08_MAIN"
+        ],
+        "second_best_objective_ms": 1671.9551528804004
+      },
+      "selection_change_count": 3,
+      "selection_stability_rate": 0.8571428571428571
+    },
+    {
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "classification": "Stable",
+      "continuation_count": 40,
+      "formal": {
+        "model_name": "Old Phi",
+        "objective_ms": 13569.819865748286,
+        "same_as_formal_selection": true,
+        "selected_checkpoint_ids": [
+          "W_A32768_F4_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rrecent_MAIN",
+          "W_A32768_F4_S3_Rold_MAIN",
+          "W_A32768_F4_S3_Rrecent_MAIN"
+        ],
+        "total_gap_tokens": 294912
+      },
+      "local_change_count_by_gap": [
+        [
+          4096,
+          0
+        ],
+        [
+          8192,
+          0
+        ],
+        [
+          16384,
+          0
+        ],
+        [
+          32768,
+          0
+        ]
+      ],
+      "perturbations": [
+        {
+          "model_name": "Profiler-v2 piecewise",
+          "objective_ms": 13294.236557666663,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi global -10%",
+          "objective_ms": 12212.837879173458,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi global -5%",
+          "objective_ms": 12891.328872460872,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi global +5%",
+          "objective_ms": 14248.3108590357,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi global +10%",
+          "objective_ms": 14926.801852323117,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=4096 -10%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=4096 -5%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=4096 +5%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=4096 +10%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=8192 -10%",
+          "objective_ms": 12812.641009222716,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=8192 -5%",
+          "objective_ms": 13191.230437485501,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=8192 +5%",
+          "objective_ms": 13948.409294011071,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=8192 +10%",
+          "objective_ms": 14326.998722273858,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=16384 -10%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=16384 -5%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=16384 +5%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=16384 +10%",
+          "objective_ms": 13569.819865748286,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=32768 -10%",
+          "objective_ms": 12970.016735699028,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=32768 -5%",
+          "objective_ms": 13269.918300723657,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=32768 +5%",
+          "objective_ms": 13869.721430772915,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        },
+        {
+          "model_name": "Old Phi G=32768 +10%",
+          "objective_ms": 14169.622995797545,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 294912
+        }
+      ],
+      "point": {
+        "budget_checkpoints": 4,
+        "point_name": "SOTA-signal K4",
+        "scenario_name": "sota_signal"
+      },
+      "ranking_margin": {
+        "best_checkpoint_ids": [
+          "W_A32768_F4_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rrecent_MAIN",
+          "W_A32768_F4_S3_Rold_MAIN",
+          "W_A32768_F4_S3_Rrecent_MAIN"
+        ],
+        "best_objective_ms": 13569.819865748286,
+        "margin_ms": 4483.673587441444,
+        "relative_margin": 0.3304151147030867,
+        "second_best_checkpoint_ids": [
+          "W_A08192_F4_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rrecent_MAIN",
+          "W_A32768_F4_S3_Rold_MAIN"
+        ],
+        "second_best_objective_ms": 18053.49345318973
+      },
+      "selection_change_count": 0,
+      "selection_stability_rate": 1.0
+    },
+    {
+      "budget_bytes": 412090368,
+      "candidate_count": 16,
+      "classification": "Moderately sensitive",
+      "continuation_count": 40,
+      "formal": {
+        "model_name": "Old Phi",
+        "objective_ms": 7512.389013543725,
+        "same_as_formal_selection": true,
+        "selected_checkpoint_ids": [
+          "W_A32768_F4_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rrecent_MAIN",
+          "W_A32768_F4_S3_Rold_MAIN",
+          "W_A32768_F4_S3_Rrecent_MAIN",
+          "W_A08192_F4_S1_Rold_MAIN",
+          "W_A08192_F4_S1_Rrecent_MAIN",
+          "W_A08192_F4_S3_Rold_MAIN",
+          "W_A08192_F4_S3_Rrecent_MAIN"
+        ],
+        "total_gap_tokens": 163840
+      },
+      "local_change_count_by_gap": [
+        [
+          4096,
+          0
+        ],
+        [
+          8192,
+          2
+        ],
+        [
+          16384,
+          0
+        ],
+        [
+          32768,
+          2
+        ]
+      ],
+      "perturbations": [
+        {
+          "model_name": "Profiler-v2 piecewise",
+          "objective_ms": 7239.6283749999975,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rold_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rold_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi global -10%",
+          "objective_ms": 6761.1501121893525,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi global -5%",
+          "objective_ms": 7136.769562866539,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi global +5%",
+          "objective_ms": 7888.008464220911,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi global +10%",
+          "objective_ms": 8263.6279148981,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=4096 -10%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=4096 -5%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=4096 +5%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=4096 +10%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=8192 -10%",
+          "objective_ms": 6814.609708730131,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rold_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rold_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=8192 -5%",
+          "objective_ms": 7193.1991369929165,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rold_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rold_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=8192 +5%",
+          "objective_ms": 7588.106899196282,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=8192 +10%",
+          "objective_ms": 7663.824784848839,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=16384 -10%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=16384 -5%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=16384 +5%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=16384 +10%",
+          "objective_ms": 7512.389013543725,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=32768 -10%",
+          "objective_ms": 6912.5858834944665,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=32768 -5%",
+          "objective_ms": 7212.487448519096,
+          "same_as_formal_selection": true,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A08192_F4_S1_Rold_MAIN",
+            "W_A08192_F4_S1_Rrecent_MAIN",
+            "W_A08192_F4_S3_Rold_MAIN",
+            "W_A08192_F4_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=32768 +5%",
+          "objective_ms": 7571.7885652557015,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rold_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rold_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        },
+        {
+          "model_name": "Old Phi G=32768 +10%",
+          "objective_ms": 7571.7885652557015,
+          "same_as_formal_selection": false,
+          "selected_checkpoint_ids": [
+            "W_A32768_F4_S1_Rold_MAIN",
+            "W_A32768_F4_S1_Rrecent_MAIN",
+            "W_A32768_F4_S3_Rold_MAIN",
+            "W_A32768_F4_S3_Rrecent_MAIN",
+            "W_A32768_F1_S1_Rold_MAIN",
+            "W_A32768_F1_S1_Rrecent_MAIN",
+            "W_A32768_F1_S3_Rold_MAIN",
+            "W_A32768_F1_S3_Rrecent_MAIN"
+          ],
+          "total_gap_tokens": 163840
+        }
+      ],
+      "point": {
+        "budget_checkpoints": 8,
+        "point_name": "SOTA-signal K8",
+        "scenario_name": "sota_signal"
+      },
+      "ranking_margin": {
+        "best_checkpoint_ids": [
+          "W_A32768_F4_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rrecent_MAIN",
+          "W_A32768_F4_S3_Rold_MAIN",
+          "W_A32768_F4_S3_Rrecent_MAIN",
+          "W_A08192_F4_S1_Rold_MAIN",
+          "W_A08192_F4_S1_Rrecent_MAIN",
+          "W_A08192_F4_S3_Rold_MAIN",
+          "W_A08192_F4_S3_Rrecent_MAIN"
+        ],
+        "best_objective_ms": 7512.389013543725,
+        "margin_ms": 14.849887927994132,
+        "relative_margin": 0.0019767197759889676,
+        "second_best_checkpoint_ids": [
+          "W_A08192_F4_S1_Rold_MAIN",
+          "W_A08192_F4_S1_Rrecent_MAIN",
+          "W_A08192_F4_S3_Rold_MAIN",
+          "W_A32768_F1_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rold_MAIN",
+          "W_A32768_F4_S1_Rrecent_MAIN",
+          "W_A32768_F4_S3_Rold_MAIN",
+          "W_A32768_F4_S3_Rrecent_MAIN"
+        ],
+        "second_best_objective_ms": 7527.238901471719
+      },
+      "selection_change_count": 5,
+      "selection_stability_rate": 0.7619047619047619
+    }
+  ],
+  "schema_version": "flowstate.cost_model_sensitivity.v1",
+  "sota_k8_counterfactual": {
+    "marconi_checkpoint_ids": [
+      "W_A32768_F4_S3_Rrecent_MAIN",
+      "W_A32768_F4_S1_Rrecent_MAIN",
+      "W_A32768_F1_S3_Rrecent_MAIN",
+      "W_A32768_F1_S1_Rrecent_MAIN",
+      "W_A32768_F4_S3_Rold_MAIN",
+      "W_A32768_F4_S1_Rold_MAIN",
+      "W_A32768_F1_S3_Rold_MAIN",
+      "W_A32768_F1_S1_Rold_MAIN"
+    ],
+    "marconi_objective_under_v2_ms": 7239.6283749999975,
+    "old_phi_checkpoint_ids": [
+      "W_A32768_F4_S1_Rold_MAIN",
+      "W_A32768_F4_S1_Rrecent_MAIN",
+      "W_A32768_F4_S3_Rold_MAIN",
+      "W_A32768_F4_S3_Rrecent_MAIN",
+      "W_A08192_F4_S1_Rold_MAIN",
+      "W_A08192_F4_S1_Rrecent_MAIN",
+      "W_A08192_F4_S3_Rold_MAIN",
+      "W_A08192_F4_S3_Rrecent_MAIN"
+    ],
+    "old_phi_objective_under_v2_ms": 7502.533857666667,
+    "profiler_v2_checkpoint_ids": [
+      "W_A32768_F4_S1_Rold_MAIN",
+      "W_A32768_F4_S1_Rrecent_MAIN",
+      "W_A32768_F4_S3_Rold_MAIN",
+      "W_A32768_F4_S3_Rrecent_MAIN",
+      "W_A32768_F1_S1_Rold_MAIN",
+      "W_A32768_F1_S1_Rrecent_MAIN",
+      "W_A32768_F1_S3_Rold_MAIN",
+      "W_A32768_F1_S3_Rrecent_MAIN"
+    ],
+    "profiler_v2_objective_ms": 7239.6283749999975
+  }
+}
