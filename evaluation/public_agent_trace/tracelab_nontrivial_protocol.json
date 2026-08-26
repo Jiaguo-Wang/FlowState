@@ -1,0 +1,4341 @@
+{
+  "schema_version": "tracelab-nontrivial-policy-protocol-v1",
+  "source": {
+    "audit_path": "/home/wjg/code/FlowState/evaluation/public_agent_trace/tracelab_nontrivial_demand.json",
+    "audit_sha256": "33f315d21fe53ac676149c65377614aa12da51b6fe4bd5d58f150ff4a80d993a",
+    "database_path": "/home/wjg/data/tracelab/v0.0.2/syfi_coding_trace.duckdb",
+    "access_mode": "读取 Step 10C.4 冻结 artifact；未重新查询或修改外部数据库"
+  },
+  "full_c128_characterization": {
+    "X=0": {
+      "count": 1706,
+      "fraction": 0.041763568263604986
+    },
+    "X=1": {
+      "count": 22103,
+      "fraction": 0.5410903571690862
+    },
+    "X>=2": {
+      "count": 17040,
+      "fraction": 0.41714607456730884
+    },
+    "X>=3": {
+      "count": 2350,
+      "fraction": 0.05752894807706431
+    },
+    "X>=4": {
+      "count": 419,
+      "fraction": 0.010257289040123381
+    },
+    "candidate_snapshot_count": 40849,
+    "x_greater_equal_2_fraction_frozen": 0.41714607456730884,
+    "hidden_from_paper": false
+  },
+  "protocol_amendment": {
+    "performed_before_policy_execution": true,
+    "reason": "X=1 不存在多个当前关键循环状态之间的分配竞争；Step 10C.4 在观察任何策略表现前证明 X>=2 并非稀有事件",
+    "old_57_snapshot_protocol_role": "策略执行前的协议审计制品，保留且不覆盖",
+    "old_57_snapshot_evidence": {
+      "snapshot_count": 57,
+      "x_equals_1": 35,
+      "x_greater_equal_2": 22,
+      "x_greater_equal_2_fraction": 0.38596491228070173
+    },
+    "not_post_hoc_performance_tuning": true
+  },
+  "main_policy_cohort": {
+    "rule": "C128 AND X>=2",
+    "c128_max_input_tokens_total": 131072,
+    "minimum_x": 2,
+    "candidate_snapshot_count": 17040,
+    "candidate_snapshot_fraction_of_c128": 0.41714607456730884,
+    "candidate_unique_active_runs": 3372,
+    "selection": {
+      "snapshot_count": 105,
+      "unique_active_runs": 284,
+      "provider_counts": {
+        "claude": 67,
+        "codex": 38
+      },
+      "scale_counts": {
+        "Small": 60,
+        "Medium": 38,
+        "Large": 7
+      },
+      "x_histogram": {
+        "X=2": 83,
+        "X=3": 9,
+        "X=4": 4,
+        "X=5": 1,
+        "X=6": 8,
+        "X>6": 0
+      },
+      "structure": {
+        "W": {
+          "count": 105,
+          "mean": 4.085714285714285,
+          "median": 3,
+          "p90": 7,
+          "p95": 9,
+          "max": 11
+        },
+        "N": {
+          "count": 105,
+          "mean": 29.066666666666666,
+          "median": 19,
+          "p90": 59,
+          "p95": 79,
+          "max": 110
+        },
+        "P": {
+          "count": 105,
+          "mean": 2.4952380952380953,
+          "median": 2,
+          "p90": 4,
+          "p95": 6,
+          "max": 6
+        },
+        "X": {
+          "count": 105,
+          "mean": 2.4952380952380953,
+          "median": 2,
+          "p90": 4,
+          "p95": 6,
+          "max": 6
+        },
+        "N/X": {
+          "count": 105,
+          "mean": 13.467619047619047,
+          "median": 8.5,
+          "p90": 29.5,
+          "p95": 39.5,
+          "max": 55.0
+        }
+      },
+      "duplicate_active_run_set_count": 0
+    },
+    "reason": "FlowState 研究有限循环状态内存下多个当前已知工作流的状态分配；X>=2 才存在多个关键精确父状态的竞争",
+    "threshold_frozen_before_policy_performance": true
+  },
+  "sampling_protocol": {
+    "seed": 20260826,
+    "strata": "provider × context bucket × concurrency scale",
+    "scale_bands": {
+      "Small": "2-4 active workflows",
+      "Medium": "5-8 active workflows",
+      "Large": ">=9 active workflows"
+    },
+    "maximum_snapshots_per_nonempty_stratum": 10,
+    "ranking": "固定 SHA-256 升序",
+    "duplicate_rule": "活动运行集合完全相同时跳过哈希排名后者",
+    "cross_stratum_backfill": false,
+    "phi_used": false,
+    "policy_used": false,
+    "future_round_used": false,
+    "synthetic_concurrency": false,
+    "agent_run_time_shift": false
+  },
+  "sampling_representativeness": {
+    "full_candidate_snapshot_count": 17040,
+    "selected_snapshot_count": 105,
+    "categorical": {
+      "X 分布": {
+        "categories": {
+          "X=2": {
+            "full_count": 14690,
+            "selected_count": 83,
+            "full_fraction": 0.8620892018779343,
+            "selected_fraction": 0.7904761904761904,
+            "fraction_difference": -0.07161301140174381
+          },
+          "X=3": {
+            "full_count": 1931,
+            "selected_count": 9,
+            "full_fraction": 0.11332159624413146,
+            "selected_fraction": 0.08571428571428572,
+            "fraction_difference": -0.027607310529845747
+          },
+          "X=4": {
+            "full_count": 145,
+            "selected_count": 4,
+            "full_fraction": 0.008509389671361502,
+            "selected_fraction": 0.0380952380952381,
+            "fraction_difference": 0.0295858484238766
+          },
+          "X=5": {
+            "full_count": 8,
+            "selected_count": 1,
+            "full_fraction": 0.00046948356807511736,
+            "selected_fraction": 0.009523809523809525,
+            "fraction_difference": 0.009054325955734407
+          },
+          "X=6": {
+            "full_count": 253,
+            "selected_count": 8,
+            "full_fraction": 0.014847417840375587,
+            "selected_fraction": 0.0761904761904762,
+            "fraction_difference": 0.06134305835010061
+          },
+          "X>6": {
+            "full_count": 13,
+            "selected_count": 0,
+            "full_fraction": 0.0007629107981220657,
+            "selected_fraction": 0.0,
+            "fraction_difference": -0.0007629107981220657
+          }
+        },
+        "maximum_absolute_fraction_difference": 0.07161301140174381
+      },
+      "Provider 分布": {
+        "categories": {
+          "claude": {
+            "full_count": 13504,
+            "selected_count": 67,
+            "full_fraction": 0.7924882629107981,
+            "selected_fraction": 0.638095238095238,
+            "fraction_difference": -0.15439302481556005
+          },
+          "codex": {
+            "full_count": 3536,
+            "selected_count": 38,
+            "full_fraction": 0.20751173708920187,
+            "selected_fraction": 0.3619047619047619,
+            "fraction_difference": 0.15439302481556003
+          }
+        },
+        "maximum_absolute_fraction_difference": 0.15439302481556005
+      },
+      "并发分布": {
+        "categories": {
+          "Small": {
+            "full_count": 15868,
+            "selected_count": 60,
+            "full_fraction": 0.9312206572769953,
+            "selected_fraction": 0.5714285714285714,
+            "fraction_difference": -0.3597920858484239
+          },
+          "Medium": {
+            "full_count": 1132,
+            "selected_count": 38,
+            "full_fraction": 0.06643192488262911,
+            "selected_fraction": 0.3619047619047619,
+            "fraction_difference": 0.2954728370221328
+          },
+          "Large": {
+            "full_count": 40,
+            "selected_count": 7,
+            "full_fraction": 0.002347417840375587,
+            "selected_fraction": 0.06666666666666667,
+            "fraction_difference": 0.06431924882629107
+          }
+        },
+        "maximum_absolute_fraction_difference": 0.3597920858484239
+      }
+    },
+    "numeric": {
+      "W": {
+        "full": {
+          "count": 17040,
+          "mean": 2.7317488262910796,
+          "median": 2.0,
+          "p90": 4,
+          "p95": 5,
+          "max": 11
+        },
+        "selected": {
+          "count": 105,
+          "mean": 4.085714285714285,
+          "median": 3,
+          "p90": 7,
+          "p95": 9,
+          "max": 11
+        },
+        "median_difference": 1.0,
+        "median_relative_difference": 0.5
+      },
+      "N": {
+        "full": {
+          "count": 17040,
+          "mean": 27.76244131455399,
+          "median": 20.0,
+          "p90": 61,
+          "p95": 78,
+          "max": 208
+        },
+        "selected": {
+          "count": 105,
+          "mean": 29.066666666666666,
+          "median": 19,
+          "p90": 59,
+          "p95": 79,
+          "max": 110
+        },
+        "median_difference": -1.0,
+        "median_relative_difference": -0.05
+      },
+      "P": {
+        "full": {
+          "count": 17040,
+          "mean": 2.1949530516431923,
+          "median": 2.0,
+          "p90": 3,
+          "p95": 3,
+          "max": 7
+        },
+        "selected": {
+          "count": 105,
+          "mean": 2.4952380952380953,
+          "median": 2,
+          "p90": 4,
+          "p95": 6,
+          "max": 6
+        },
+        "median_difference": 0.0,
+        "median_relative_difference": 0.0
+      },
+      "X": {
+        "full": {
+          "count": 17040,
+          "mean": 2.1949530516431923,
+          "median": 2.0,
+          "p90": 3,
+          "p95": 3,
+          "max": 7
+        },
+        "selected": {
+          "count": 105,
+          "mean": 2.4952380952380953,
+          "median": 2,
+          "p90": 4,
+          "p95": 6,
+          "max": 6
+        },
+        "median_difference": 0.0,
+        "median_relative_difference": 0.0
+      },
+      "N/X": {
+        "full": {
+          "count": 17040,
+          "mean": 13.153489268947016,
+          "median": 9.0,
+          "p90": 29.0,
+          "p95": 38.0,
+          "max": 104.0
+        },
+        "selected": {
+          "count": 105,
+          "mean": 13.467619047619047,
+          "median": 8.5,
+          "p90": 29.5,
+          "p95": 39.5,
+          "max": 55.0
+        },
+        "median_difference": -0.5,
+        "median_relative_difference": -0.05555555555555555
+      }
+    },
+    "maximum_absolute_category_difference": 0.3597920858484239,
+    "maximum_median_relative_difference": 0.5,
+    "all_natural_categories_preserved": false,
+    "all_material_categories_preserved": true,
+    "omitted_natural_categories": [
+      "X 分布:X>6"
+    ],
+    "diagnosis": "WEAK",
+    "interpretation": "确定性分层采样保留所有占比至少 0.1% 的自然类别，仅遗漏占全量 X>=2 事件 0.076% 的 X>6 极稀有档；N、P、X、N/X 中位数接近，但设计上提高了稀有 Medium/Large 与 Codex 层权重。它适合结构覆盖，不是自然事件频率的概率样本",
+    "sampling_changed_after_audit": false
+  },
+  "budget_protocol": {
+    "name": "demand-relative recurrent-state budget",
+    "operationalization": "exact-parent demand X",
+    "formula": "K(r)=max(1, floor(X*r))",
+    "ratios": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "candidate_relative_budget": false,
+    "selected_summary": {
+      "25%": {
+        "k_distribution": {
+          "count": 105,
+          "mean": 1,
+          "median": 1,
+          "p90": 1,
+          "p95": 1,
+          "max": 1
+        },
+        "k_lt_x_fraction": 1.0,
+        "distinct_effective_k_levels": 1
+      },
+      "50%": {
+        "k_distribution": {
+          "count": 105,
+          "mean": 1.2,
+          "median": 1,
+          "p90": 2,
+          "p95": 3,
+          "max": 3
+        },
+        "k_lt_x_fraction": 1.0,
+        "distinct_effective_k_levels": 3
+      },
+      "75%": {
+        "k_distribution": {
+          "count": 105,
+          "mean": 1.4095238095238096,
+          "median": 1,
+          "p90": 3,
+          "p95": 4,
+          "max": 4
+        },
+        "k_lt_x_fraction": 1.0,
+        "distinct_effective_k_levels": 4
+      },
+      "100%": {
+        "k_distribution": {
+          "count": 105,
+          "mean": 2.4952380952380953,
+          "median": 2,
+          "p90": 4,
+          "p95": 6,
+          "max": 6
+        },
+        "k_lt_x_fraction": 0.0,
+        "distinct_effective_k_levels": 5
+      },
+      "constrained_ratio_patterns": {
+        "25=50=75": 83,
+        "25=50!=75": 9,
+        "25_50_75_all_distinct": 13
+      }
+    },
+    "discreteness_interpretation": "小 X 导致比例离散退化是 TraceLab 的真实工作负载属性；不据此修改比例"
+  },
+  "secondary_high_contention_slice": {
+    "label": "high-contention secondary slice",
+    "rule": "C128 AND X>=4",
+    "minimum_x": 4,
+    "not_main_policy_cohort": true,
+    "not_used_for_parameter_selection": true,
+    "not_a_replacement_for_main_result": true,
+    "sampling": "与主集合相同的分层、种子、SHA-256 排名、每层最多 10 个与活动集合去重",
+    "selection": {
+      "snapshot_count": 37,
+      "unique_active_runs": 135,
+      "provider_counts": {
+        "claude": 35,
+        "codex": 2
+      },
+      "scale_counts": {
+        "Small": 15,
+        "Medium": 22,
+        "Large": 0
+      },
+      "x_histogram": {
+        "X=2": 0,
+        "X=3": 0,
+        "X=4": 24,
+        "X=5": 2,
+        "X=6": 9,
+        "X>6": 2
+      },
+      "structure": {
+        "W": {
+          "count": 37,
+          "mean": 5.216216216216216,
+          "median": 5,
+          "p90": 7,
+          "p95": 7,
+          "max": 8
+        },
+        "N": {
+          "count": 37,
+          "mean": 24.10810810810811,
+          "median": 19,
+          "p90": 48,
+          "p95": 59,
+          "max": 59
+        },
+        "P": {
+          "count": 37,
+          "mean": 4.702702702702703,
+          "median": 4,
+          "p90": 6,
+          "p95": 7,
+          "max": 7
+        },
+        "X": {
+          "count": 37,
+          "mean": 4.702702702702703,
+          "median": 4,
+          "p90": 6,
+          "p95": 7,
+          "max": 7
+        },
+        "N/X": {
+          "count": 37,
+          "mean": 5.443114543114543,
+          "median": 4.0,
+          "p90": 10.75,
+          "p95": 14.75,
+          "max": 14.75
+        }
+      },
+      "duplicate_active_run_set_count": 0
+    },
+    "limitation": "自然 X>=4 仅占完整 C128 的 1.026%，且高度偏向 Claude"
+  },
+  "policy_metadata_protocol": {
+    "global_lru": "正式 last_access recency",
+    "kvflow": {
+      "steps_to_execution": 1,
+      "reason": "TraceLab 无显式大模型层级有向无环图",
+      "tie_break": "同优先级时回退到 Global-LRU 新近性"
+    },
+    "marconi": {
+      "recency": "与 Global-LRU 相同",
+      "flop_proxy": "相对父节点的增量 token 区间",
+      "alpha": 1.0
+    },
+    "flowstate": {
+      "inputs": [
+        "已知待处理 continuation",
+        "已知 anchor",
+        "线性 lineage",
+        "冻结 Phi"
+      ],
+      "future_prefix_used": false,
+      "future_round_used": false
+    }
+  },
+  "evaluation_metrics": {
+    "primary": [
+      "total_predicted_recovery_cost_ms",
+      "mean_predicted_recovery_cost_ms_per_pending",
+      "total_recovery_gap_tokens",
+      "mean_recovery_gap_tokens"
+    ],
+    "secondary": [
+      "executable_hit_ratio",
+      "p95_recovery_gap_tokens",
+      "max_recovery_gap_tokens"
+    ],
+    "structural": [
+      "distinct_exact_parent_demand_x",
+      "candidate_count_n",
+      "n_over_x",
+      "active_workflow_count"
+    ]
+  },
+  "recovery_model_requirement": {
+    "validated_gap_required_tokens": 131072,
+    "observed_main_anchor_max_tokens": 130969,
+    "reason": "K<X 且待处理 continuation 无已保留的兼容 checkpoint 时 E=0，gap 可接近已知 anchor",
+    "independent_gpu_profiler_required": true,
+    "validated_to_required_domain": false,
+    "linear_extrapolation_from_32k_allowed": false,
+    "clamp_allowed": false,
+    "substitute_32k_cost_allowed": false,
+    "formal_phi_modified": false
+  },
+  "freeze_declaration": {
+    "C128": "FROZEN",
+    "X>=2 main cohort": "FROZEN",
+    "max10/stratum": "FROZEN",
+    "seed 20260826": "FROZEN",
+    "X-relative budget": "FROZEN",
+    "25/50/75/100 ratios": "FROZEN",
+    "policy set": "FROZEN",
+    "policy metadata": "FROZEN",
+    "primary metrics": "FROZEN",
+    "secondary X>=4 slice": "FROZEN",
+    "future_policy_performance_can_change_protocol": false
+  },
+  "readiness": {
+    "ready_for_recovery_profiler_extension": "PASS",
+    "ready_for_policy_comparison": "NO",
+    "reason": "正式恢复代价模型尚未独立验证至 128K"
+  },
+  "validation": {
+    "c128_violations": 0,
+    "main_x_threshold_violations": 0,
+    "secondary_x_threshold_violations": 0,
+    "max10_stratum_violations": 0,
+    "duplicate_active_run_set_count": 0,
+    "synthetic_concurrency_violations": 0,
+    "future_field_leakage_violations": 0,
+    "budget_formula_violations": 0,
+    "ratio_violations": 0,
+    "source_audit_integrity_violations": 0,
+    "policy_comparison_runs": 0,
+    "phi_calls": 0,
+    "gpu_runs": 0
+  },
+  "execution": {
+    "policy_comparison_executed": false,
+    "phi_called": false,
+    "gpu_executed": false
+  },
+  "selected_main_snapshots": [
+    {
+      "snapshot_id": "c128-small-claude-round-199274",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:aeb6f7dc-2e32-d5ca-b1d0-2d9779b1d198",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 199274,
+      "observed_at": "2026-03-14 13:13:15.444000",
+      "sha256_rank_key": "001d3bc7b75261a35e0b714eedc3bebbb33423aaa36497fa0f742b9c58f1923a",
+      "active_run_ids": [
+        "claude:claude:aeb6f7dc-2e32-d5ca-b1d0-2d9779b1d198:run:000001",
+        "claude:claude:b8f1bd24-225b-8b72-28d0-d906086d3483:run:000017"
+      ],
+      "w": 2,
+      "n": 8,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        49857,
+        49857
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-76189",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:f3e31cff-608e-9b83-c000-5f124105cc8f",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 76189,
+      "observed_at": "2026-04-18 10:55:04.607000",
+      "sha256_rank_key": "00239a45dd9280fc2ac906ed3fb27483f5461af5c8d039aa7775a3e9d32eb645",
+      "active_run_ids": [
+        "claude:claude:f3e31cff-608e-9b83-c000-5f124105cc8f:run:000002",
+        "claude:claude:ff8c91c4-8437-4845-0a15-871d2f5d713c:run:000010"
+      ],
+      "w": 2,
+      "n": 4,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        40965,
+        40965
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-50759",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:91525c21-28fc-0e74-7ad7-8f28a199094e",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 50759,
+      "observed_at": "2026-06-02 00:18:08.282000",
+      "sha256_rank_key": "0076474d694076645449d55be5d8c46a9220b247e569434c59789f0be66cc50d",
+      "active_run_ids": [
+        "claude:claude:33cef4c1-9e02-1a57-a2c4-583f25f89a15:run:000001",
+        "claude:claude:91525c21-28fc-0e74-7ad7-8f28a199094e:run:000001",
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002",
+        "claude:claude:eeab2a86-1724-3f2a-5a31-6cadc465cdd8:run:000063"
+      ],
+      "w": 4,
+      "n": 33,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        23117,
+        40064,
+        69802
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-500407",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:f953948f-a0ad-14ba-3d77-af209e2423ba",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 500407,
+      "observed_at": "2026-05-05 23:20:18.270000",
+      "sha256_rank_key": "009fa01f39889c3456ee70089e196fc07a7428e9e3ae06a33d3af96d478506ce",
+      "active_run_ids": [
+        "claude:claude:92f7e8e5-7154-2c05-b6ee-784acf58c305:run:000002",
+        "claude:claude:f953948f-a0ad-14ba-3d77-af209e2423ba:run:000001"
+      ],
+      "w": 2,
+      "n": 32,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        91445,
+        33603
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-101528",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:f2179f9a-95bb-43eb-cdf9-09ead67ac788",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 101528,
+      "observed_at": "2026-06-02 22:18:35.938000",
+      "sha256_rank_key": "010e437fb9f2f1c18640f5c363e9bd1d5c9c4a1107a2782916334ab0b1b89964",
+      "active_run_ids": [
+        "claude:claude:2b7a0895-2826-3934-5af8-a30c0d9614e7:run:000003",
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002",
+        "claude:claude:f2179f9a-95bb-43eb-cdf9-09ead67ac788:run:000002"
+      ],
+      "w": 3,
+      "n": 17,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        69802,
+        63497
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-79890",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:5f1aa95d-de54-4e89-432e-7d436e2d7072",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 79890,
+      "observed_at": "2026-06-23 23:58:23.066000",
+      "sha256_rank_key": "011fbcbe229e9fee74d3f6767a6a27a9543430e6c95baf41e158937d0c8c70b1",
+      "active_run_ids": [
+        "claude:claude:1ff52f11-bcd5-74e9-050f-702f82ab2b58:run:000003",
+        "claude:claude:5f1aa95d-de54-4e89-432e-7d436e2d7072:run:000001",
+        "claude:claude:e3878e83-7c42-8de5-8f70-8c172504e178:run:000008"
+      ],
+      "w": 3,
+      "n": 6,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        18062,
+        80841
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-514644",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:98c10108-0b3a-5e1f-b6bb-97f9548f18e1",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 514644,
+      "observed_at": "2026-07-01 16:18:17.397000",
+      "sha256_rank_key": "014f91437fa548f3f73ac43fb2b859e5937d3c0427db7d99a9a1bff77281d67e",
+      "active_run_ids": [
+        "claude:claude:9635b41e-6360-b079-1a75-3cea671fb55e:run:000007",
+        "claude:claude:98c10108-0b3a-5e1f-b6bb-97f9548f18e1:run:000002",
+        "claude:claude:adc1be9b-825e-6d4b-3b30-64cd7204af03:run:000001",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098"
+      ],
+      "w": 4,
+      "n": 30,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        50032,
+        67786
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-223068",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:f896e9c5-2605-0968-21da-ee23d0863ee5",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 223068,
+      "observed_at": "2026-06-29 03:17:08.418000",
+      "sha256_rank_key": "01552939e568fa1e5d385c8c0908508bca9d1a3e6ad428bc0d70808eec2ace3e",
+      "active_run_ids": [
+        "claude:claude:08639380-b43d-0a95-e442-21b777dab51f:run:000017",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098",
+        "claude:claude:f896e9c5-2605-0968-21da-ee23d0863ee5:run:000001"
+      ],
+      "w": 3,
+      "n": 12,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        47742,
+        56999
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-52420",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:c839369a-dcd7-6cda-5f47-2b33963bc82d",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 52420,
+      "observed_at": "2026-05-14 14:29:18.298000",
+      "sha256_rank_key": "015826de12484334a18945f6d0a8a120266d0a5875d139c4192fb30b599724a7",
+      "active_run_ids": [
+        "claude:claude:c839369a-dcd7-6cda-5f47-2b33963bc82d:run:000001",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000001"
+      ],
+      "w": 2,
+      "n": 13,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        44067,
+        25750
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-222696",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:48988ec3-e183-673e-16aa-52997f16916b",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 222696,
+      "observed_at": "2026-06-29 07:22:57.028000",
+      "sha256_rank_key": "01672f6c01aaa379b8ac5c2f081ad13ae1541e232910bf6d87a7947767cccc47",
+      "active_run_ids": [
+        "claude:claude:0e74c4eb-c4d6-40c8-3ad7-c1dcfc1dbb2b:run:000001",
+        "claude:claude:48988ec3-e183-673e-16aa-52997f16916b:run:000001",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098"
+      ],
+      "w": 3,
+      "n": 14,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        33700,
+        42244
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-200990",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:66efff1f-065d-17b3-4174-ba4ba359d645",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 200990,
+      "observed_at": "2026-03-22 03:15:33.671000",
+      "sha256_rank_key": "0002fd72de1f7421279d6a4dbc1e44a2fe0bc619f380418e3c9d584f69c78efb",
+      "active_run_ids": [
+        "claude:claude:66efff1f-065d-17b3-4174-ba4ba359d645:run:000001",
+        "claude:claude:bf2020cf-4292-a70c-1d33-81528af4841b:run:000059"
+      ],
+      "w": 2,
+      "n": 62,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        62924,
+        62924
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-176285",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:a53b8922-d6aa-736c-21ff-75e5d443df15",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 176285,
+      "observed_at": "2026-05-11 07:50:39.353000",
+      "sha256_rank_key": "000d910db2d19e8567cca35e950fefc401538cc99fe9b4d5be6fb8e465f50265",
+      "active_run_ids": [
+        "claude:claude:a53b8922-d6aa-736c-21ff-75e5d443df15:run:000004",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000004"
+      ],
+      "w": 2,
+      "n": 66,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        102682,
+        102682
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-539621",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:0a1ef062-4885-4562-5e66-dbe65c8b8764",
+      "trigger_run_ordinal": 3,
+      "trigger_round_pk": 539621,
+      "observed_at": "2026-07-08 02:19:41.258000",
+      "sha256_rank_key": "001cad824e09e5576480b681acb06aa52df392d575e5b9ff2483a539553d7a4c",
+      "active_run_ids": [
+        "claude:claude:0a1ef062-4885-4562-5e66-dbe65c8b8764:run:000003",
+        "claude:claude:4c8c2aa6-c517-faa3-2217-0b3463d76f01:run:000001"
+      ],
+      "w": 2,
+      "n": 13,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        114860,
+        43903
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-27086",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:f3aeefc4-f399-dc7b-ebce-b8d1ad36c669",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 27086,
+      "observed_at": "2026-05-24 04:48:38.429000",
+      "sha256_rank_key": "001e3e8331bc7dd124e9d745701a4f81522ab5e6f88300a1c45df3c0eddc157f",
+      "active_run_ids": [
+        "claude:claude:528d1600-bce6-210c-264a-e688d5e86e30:run:000016",
+        "claude:claude:d4b337e0-c2c2-dc8a-1e7e-31c90a96c161:run:000026",
+        "claude:claude:f3aeefc4-f399-dc7b-ebce-b8d1ad36c669:run:000001"
+      ],
+      "w": 3,
+      "n": 30,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        42080,
+        70022
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-11294",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:170ea3d8-1fd8-da67-8788-dade8658837c",
+      "trigger_run_ordinal": 50,
+      "trigger_round_pk": 11294,
+      "observed_at": "2026-05-14 15:15:48.903000",
+      "sha256_rank_key": "002830b70db457437dac6dff36697aeea1bd57d683cc3c45c9e12101f1251867",
+      "active_run_ids": [
+        "claude:claude:170ea3d8-1fd8-da67-8788-dade8658837c:run:000050",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000001"
+      ],
+      "w": 2,
+      "n": 8,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        68221,
+        25750
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-203445",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:782e940a-6bc5-3168-bcfc-cc5709bfb048",
+      "trigger_run_ordinal": 13,
+      "trigger_round_pk": 203445,
+      "observed_at": "2026-04-09 02:28:01.936000",
+      "sha256_rank_key": "00421d6ae31568780942fd8ac20864976830f6120b078ac9bea1bdea36579713",
+      "active_run_ids": [
+        "claude:claude:782e940a-6bc5-3168-bcfc-cc5709bfb048:run:000013",
+        "claude:claude:cceb75ef-054c-384f-23ef-a2098d12d8b2:run:000003"
+      ],
+      "w": 2,
+      "n": 6,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        73465,
+        73465
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-199317",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:aeb6f7dc-2e32-d5ca-b1d0-2d9779b1d198",
+      "trigger_run_ordinal": 9,
+      "trigger_round_pk": 199317,
+      "observed_at": "2026-03-14 15:08:52.864000",
+      "sha256_rank_key": "0042cae2bd07f1bc5f51781fa4e071938897b91a1ea47465f6596ebe9f550c24",
+      "active_run_ids": [
+        "claude:claude:aeb6f7dc-2e32-d5ca-b1d0-2d9779b1d198:run:000009",
+        "claude:claude:b8f1bd24-225b-8b72-28d0-d906086d3483:run:000025"
+      ],
+      "w": 2,
+      "n": 12,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        78260,
+        78260
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-508819",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930",
+      "trigger_run_ordinal": 11,
+      "trigger_round_pk": 508819,
+      "observed_at": "2026-04-10 04:09:28.187000",
+      "sha256_rank_key": "004f9c15b74ee90bdb48aa1e470ceee4287ef3dc3d8cfe3d3198d44e5222833f",
+      "active_run_ids": [
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000011",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000011",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000011"
+      ],
+      "w": 3,
+      "n": 3,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        72310,
+        72310,
+        72310
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-206611",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:6d8f8845-ca46-dc55-1026-94950395bf27",
+      "trigger_run_ordinal": 55,
+      "trigger_round_pk": 206611,
+      "observed_at": "2026-03-16 09:26:00.165000",
+      "sha256_rank_key": "004fb5fe4db7d9ef3c64140e2ed48cc4e020462d4975836a411730163c5dc722",
+      "active_run_ids": [
+        "claude:claude:428c770a-d94f-7664-3a3b-f6ea7dcf6242:run:000009",
+        "claude:claude:6d8f8845-ca46-dc55-1026-94950395bf27:run:000055"
+      ],
+      "w": 2,
+      "n": 18,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        107699,
+        107699
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-205640",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:6ee130b1-06dc-f74c-491f-641ec746b05c",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 205640,
+      "observed_at": "2026-03-15 20:36:32.783000",
+      "sha256_rank_key": "00582997684ed90d556bc0a1042e5159dffdb34d7a0e06c2ec9e2799a8048772",
+      "active_run_ids": [
+        "claude:claude:6d8f8845-ca46-dc55-1026-94950395bf27:run:000008",
+        "claude:claude:6ee130b1-06dc-f74c-491f-641ec746b05c:run:000002"
+      ],
+      "w": 2,
+      "n": 74,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        118407,
+        118407
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-82694",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:cd95f41c-cc95-6169-aab2-ece806637bb0",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 82694,
+      "observed_at": "2026-05-28 00:08:31.704000",
+      "sha256_rank_key": "008fecc3f2d8298792266d13119dd7d112836a30e172004db94cba04684c2a6f",
+      "active_run_ids": [
+        "claude:claude:0d2bd8f5-c96a-8c73-0b28-4fcc3acdacaa:run:000014",
+        "claude:claude:cd95f41c-cc95-6169-aab2-ece806637bb0:run:000001",
+        "claude:claude:eeab2a86-1724-3f2a-5a31-6cadc465cdd8:run:000046"
+      ],
+      "w": 3,
+      "n": 11,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        90816,
+        27181,
+        100676
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-207805",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:7988925d-bbfa-56ae-bc8c-f4bfd201fb57",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 207805,
+      "observed_at": "2026-04-10 02:49:54.948000",
+      "sha256_rank_key": "013e525740262ef49e9b01cdd3a8ad69f519ca91c6e4a64ad351bb4c985a494d",
+      "active_run_ids": [
+        "claude:claude:7988925d-bbfa-56ae-bc8c-f4bfd201fb57:run:000002",
+        "claude:claude:add8e85b-2d3d-5c65-5f1f-720a20d24325:run:000001"
+      ],
+      "w": 2,
+      "n": 5,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        27846,
+        30776
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-264246",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:1b90b1f7-c8bf-e54d-44f1-05476245883e",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 264246,
+      "observed_at": "2026-05-24 05:30:35.381000",
+      "sha256_rank_key": "0198c13758271b0fda96a362b71c015da353b0cd81ce544d8002c265a1f84286",
+      "active_run_ids": [
+        "claude:claude:1b90b1f7-c8bf-e54d-44f1-05476245883e:run:000001",
+        "claude:claude:59b902a8-f6d9-cb96-2803-a45ca1083aa8:run:000001",
+        "claude:claude:d4b337e0-c2c2-dc8a-1e7e-31c90a96c161:run:000026",
+        "claude:claude:f5eeaa2a-f69f-d8e4-9493-af23c009f03c:run:000021"
+      ],
+      "w": 4,
+      "n": 29,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        18234,
+        76193
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-47730",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:7e0da125-f23a-f073-dde3-c3ae602a5462",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 47730,
+      "observed_at": "2026-05-14 09:50:41.493000",
+      "sha256_rank_key": "041299941974305f24bbb5b87482e207637bb85c58641ed097fbd278cc91a4a6",
+      "active_run_ids": [
+        "claude:claude:7e0da125-f23a-f073-dde3-c3ae602a5462:run:000001",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000001",
+        "claude:claude:dd346930-9ba6-9290-778d-99e08cd0006d:run:000001"
+      ],
+      "w": 3,
+      "n": 5,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        6824,
+        25750
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-19673",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:d6f56720-fdba-781e-c698-cd519730118f",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 19673,
+      "observed_at": "2026-05-16 05:49:41.052000",
+      "sha256_rank_key": "05560c8bbe473f36dbf9f650a813aa2923f5359974edc17e502ca02ba342b31d",
+      "active_run_ids": [
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041",
+        "claude:claude:d6f56720-fdba-781e-c698-cd519730118f:run:000001"
+      ],
+      "w": 2,
+      "n": 3,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        30428,
+        26297
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-36290",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:a840a7c5-d9ca-cc11-ea12-66e4f9e89231",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 36290,
+      "observed_at": "2026-05-15 18:55:30.778000",
+      "sha256_rank_key": "06ac95860dd7872833c3fe43270de00389187b5e46dce9b322ad00210c238a19",
+      "active_run_ids": [
+        "claude:claude:67820f98-8388-6a45-51dd-8a571df4bd54:run:000092",
+        "claude:claude:a840a7c5-d9ca-cc11-ea12-66e4f9e89231:run:000001",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041"
+      ],
+      "w": 3,
+      "n": 8,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        80455,
+        27549,
+        30428
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-198918",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:5f910b0d-09d8-92f9-4203-760a1e78d0ba",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 198918,
+      "observed_at": "2026-04-03 15:57:14.702000",
+      "sha256_rank_key": "079b1c323941a56887414ec5bd68d637c54177dcb36fa6efe29c783e6e224f6a",
+      "active_run_ids": [
+        "claude:claude:5f910b0d-09d8-92f9-4203-760a1e78d0ba:run:000001",
+        "claude:claude:cbfbd16f-0f1a-bbb6-23f7-51192dec6734:run:000001"
+      ],
+      "w": 2,
+      "n": 2,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        23168,
+        23168
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-58315",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:560dde8b-9088-41c1-1d2f-70b242d2a7f3",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 58315,
+      "observed_at": "2026-05-31 21:43:29.950000",
+      "sha256_rank_key": "0801cc9ce751f94724aac50dd7fb13e7c74453f40fd08ad42c4c06e7edbcc8ba",
+      "active_run_ids": [
+        "claude:claude:560dde8b-9088-41c1-1d2f-70b242d2a7f3:run:000001",
+        "claude:claude:5635581b-fd71-9eff-003f-92680479097b:run:000003"
+      ],
+      "w": 2,
+      "n": 43,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        13636,
+        111870
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-28601",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:2a70b8da-34ac-e10e-e7ea-f3182a42d061",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 28601,
+      "observed_at": "2026-05-24 08:01:35.577000",
+      "sha256_rank_key": "08a5cb73a1c0d6d6493f2b39e7413d66789dcf774ec47acb573d819c27816904",
+      "active_run_ids": [
+        "claude:claude:2a70b8da-34ac-e10e-e7ea-f3182a42d061:run:000001",
+        "claude:claude:3cc6b26c-1e50-f02a-0195-a321ef73822e:run:000005",
+        "claude:claude:d4b337e0-c2c2-dc8a-1e7e-31c90a96c161:run:000026"
+      ],
+      "w": 3,
+      "n": 7,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        21504,
+        108164
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-176505",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "claude:a8e981b6-991f-311e-6e2d-453adda9f0de",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 176505,
+      "observed_at": "2026-05-11 07:07:05.107000",
+      "sha256_rank_key": "08cf82e318dd5a9800181b917fa2aa8dc59b41af5613246dfca608fd564a4188",
+      "active_run_ids": [
+        "claude:claude:00664af7-00b3-12b4-067c-809832273fc2:run:000002",
+        "claude:claude:0a4492c9-1767-8b38-cb5c-91fb558a1934:run:000010",
+        "claude:claude:a53b8922-d6aa-736c-21ff-75e5d443df15:run:000002",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000002"
+      ],
+      "w": 4,
+      "n": 6,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        23474,
+        23474,
+        23474
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-353497",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:64fe25a1-92b6-f60d-e9c8-5ac5f7d0d749",
+      "trigger_run_ordinal": 13,
+      "trigger_round_pk": 353497,
+      "observed_at": "2026-03-27 15:21:02.236000",
+      "sha256_rank_key": "00743b06fbff5b4bf0d9c2da1e4fc31c391d561637b99ebcbd22db44c316e921",
+      "active_run_ids": [
+        "codex:codex:64fe25a1-92b6-f60d-e9c8-5ac5f7d0d749:run:000013",
+        "codex:codex:a8045acc-9ecd-7be5-dc1f-db683380bf88:run:000002"
+      ],
+      "w": 2,
+      "n": 14,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        28699,
+        37475
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-428320",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:864283cf-1877-c771-499b-3d3a4092077b",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 428320,
+      "observed_at": "2026-07-24 06:27:21.711000",
+      "sha256_rank_key": "01b7ac72ecf40c8cee63a6e450034fd943aab1915169e5174351943f5b309808",
+      "active_run_ids": [
+        "codex:codex:19f2cc54-9425-2dea-4eb0-28cc629a7310:run:000081",
+        "codex:codex:864283cf-1877-c771-499b-3d3a4092077b:run:000001"
+      ],
+      "w": 2,
+      "n": 22,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        43472,
+        40450
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-609111",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:33e66479-ddde-2933-1e32-60e6164fd4fd",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 609111,
+      "observed_at": "2026-07-16 03:46:38.560000",
+      "sha256_rank_key": "01cd063bedf8489366fbe8691a486285fea79e885026cd729993956d43d7cd3a",
+      "active_run_ids": [
+        "codex:codex:33e66479-ddde-2933-1e32-60e6164fd4fd:run:000002",
+        "codex:codex:b7a147b1-9e82-0cda-43bc-d70908b3f3c3:run:000015"
+      ],
+      "w": 2,
+      "n": 47,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        55027,
+        83564
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-346748",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:3162bead-f089-0e98-5fe3-a184fe8b0543",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 346748,
+      "observed_at": "2026-05-27 06:37:02.367000",
+      "sha256_rank_key": "021b9084b57b936778c95018cedc7a9111ae4c4de91811c8783991923847812e",
+      "active_run_ids": [
+        "codex:codex:3162bead-f089-0e98-5fe3-a184fe8b0543:run:000001",
+        "codex:codex:ace52fe9-4752-0c9f-07c0-1b1b0089c35c:run:000056"
+      ],
+      "w": 2,
+      "n": 23,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        28761,
+        87924
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-588570",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:93f7806c-5e59-c960-122c-888030684eae",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 588570,
+      "observed_at": "2026-05-03 19:28:30.883000",
+      "sha256_rank_key": "022c1361b6d0c91c14bdb39415b18fc43b65d0940894f3e95314ab70d87dee9a",
+      "active_run_ids": [
+        "codex:codex:93f7806c-5e59-c960-122c-888030684eae:run:000001",
+        "codex:codex:e8878a95-026f-90ad-515b-f26988c789d3:run:000001"
+      ],
+      "w": 2,
+      "n": 45,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        34023,
+        68449
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-609117",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:33e66479-ddde-2933-1e32-60e6164fd4fd",
+      "trigger_run_ordinal": 3,
+      "trigger_round_pk": 609117,
+      "observed_at": "2026-07-16 03:48:03.193000",
+      "sha256_rank_key": "02a6017959692b8cfd2ced6ff170a6bc6063bb2f241df594e004105b2b75edf0",
+      "active_run_ids": [
+        "codex:codex:33e66479-ddde-2933-1e32-60e6164fd4fd:run:000003",
+        "codex:codex:b7a147b1-9e82-0cda-43bc-d70908b3f3c3:run:000015"
+      ],
+      "w": 2,
+      "n": 33,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        61011,
+        85061
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-300610",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:7872c043-d334-ea7d-ae26-20e85fa3d09c",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 300610,
+      "observed_at": "2026-06-23 11:52:00.417000",
+      "sha256_rank_key": "032ffde1bc2e0d1cba991f7830f5fb6634c8e771799201a0b918bd96c8089cd2",
+      "active_run_ids": [
+        "codex:codex:7872c043-d334-ea7d-ae26-20e85fa3d09c:run:000004",
+        "codex:codex:fc085ef9-5ce3-db59-fd23-6d877d356f4b:run:000001"
+      ],
+      "w": 2,
+      "n": 8,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        38793,
+        25603
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-555515",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:444b277c-411b-7b02-4ea3-4137d1087792",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 555515,
+      "observed_at": "2026-04-15 16:20:31.209000",
+      "sha256_rank_key": "036459bd9ef7fba9f448d01a389a4e6fc00898b6a2975ed277e1877e29bfd534",
+      "active_run_ids": [
+        "codex:codex:444b277c-411b-7b02-4ea3-4137d1087792:run:000001",
+        "codex:codex:62442c3e-5d75-99dd-dbc6-fc9b8d90bba3:run:000043"
+      ],
+      "w": 2,
+      "n": 48,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        49728,
+        98980
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-574121",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:dc83d2a0-6cdb-9af7-16a2-b3a1ef817bec",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 574121,
+      "observed_at": "2026-05-01 01:57:09.685000",
+      "sha256_rank_key": "03a73e2daf7b8d06b7f49e433e2551a1dd8f4e54e354e7b92bdf08c17a031652",
+      "active_run_ids": [
+        "codex:codex:2d85be05-57cf-95fe-5ecd-09392c7fa6c5:run:000001",
+        "codex:codex:dc83d2a0-6cdb-9af7-16a2-b3a1ef817bec:run:000002"
+      ],
+      "w": 2,
+      "n": 30,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        53270,
+        54815
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-592554",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:62e06897-5599-4bb7-1a11-7772b8823a3e",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 592554,
+      "observed_at": "2026-05-04 15:36:24.143000",
+      "sha256_rank_key": "03b84944b02dea46fd243890d87f72482c319f5d7983b5c56966a906116b2d07",
+      "active_run_ids": [
+        "codex:codex:62e06897-5599-4bb7-1a11-7772b8823a3e:run:000001",
+        "codex:codex:b1406d07-bf4f-ed01-8e11-d585f38cef53:run:000001",
+        "codex:codex:dc07f4ff-9e27-c174-8ff8-5688034dd16a:run:000002"
+      ],
+      "w": 3,
+      "n": 23,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        27526,
+        50505
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-146273",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:84ab0e09-1f6f-5456-a0f7-1908f3c7d15d",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 146273,
+      "observed_at": "2026-06-17 08:04:54.894000",
+      "sha256_rank_key": "00225f802644518f093ef4cc8117a53363bd5243a6ea42ec68a3487f4fe8f01e",
+      "active_run_ids": [
+        "codex:codex:84ab0e09-1f6f-5456-a0f7-1908f3c7d15d:run:000001",
+        "codex:codex:a619265a-1bd1-7aa3-45d5-5e2e342d8a62:run:000003"
+      ],
+      "w": 2,
+      "n": 14,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        69825,
+        81815
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-588599",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:93f7806c-5e59-c960-122c-888030684eae",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 588599,
+      "observed_at": "2026-05-03 20:16:43.663000",
+      "sha256_rank_key": "0026259d4eb75a7c16e75c617fd6f10331fa2a9e8994dd72e539150736edba78",
+      "active_run_ids": [
+        "codex:codex:93f7806c-5e59-c960-122c-888030684eae:run:000002",
+        "codex:codex:b585a389-4ecd-05ca-ba8b-4c1347499a7d:run:000002"
+      ],
+      "w": 2,
+      "n": 18,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        69588,
+        79712
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-591719",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:790fd036-4ae9-da2d-306b-673c17089c83",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 591719,
+      "observed_at": "2026-05-04 15:43:36.748000",
+      "sha256_rank_key": "0037889c9b7a221779b314d331c40ff16925ac4e4464fae117368982a53c537d",
+      "active_run_ids": [
+        "codex:codex:0f9b61e6-65ff-3288-9ade-a781d0b5ef28:run:000158",
+        "codex:codex:790fd036-4ae9-da2d-306b-673c17089c83:run:000002",
+        "codex:codex:b1406d07-bf4f-ed01-8e11-d585f38cef53:run:000001"
+      ],
+      "w": 3,
+      "n": 45,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        110094,
+        56401
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-585061",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:4d14c428-3736-ccd3-93be-d0678f0044f8",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 585061,
+      "observed_at": "2026-05-03 15:31:08.902000",
+      "sha256_rank_key": "0056a8f83e24e77fdd96ec04f44e5f9d76a5c1c48a846145d34fa9d90b4dafad",
+      "active_run_ids": [
+        "codex:codex:0b04c3cd-03ac-6333-c07f-5f3fbcafb7d5:run:000001",
+        "codex:codex:4d14c428-3736-ccd3-93be-d0678f0044f8:run:000001"
+      ],
+      "w": 2,
+      "n": 34,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        39415,
+        51007
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-439198",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:fb67430c-d012-a984-9c64-8cd5000bf9b1",
+      "trigger_run_ordinal": 25,
+      "trigger_round_pk": 439198,
+      "observed_at": "2026-03-04 16:33:16.948000",
+      "sha256_rank_key": "0057f2a6c62ef7e39d88ee5e2590533477e00fc1f95d39459956cea66dc34d5d",
+      "active_run_ids": [
+        "codex:codex:9d118163-ffda-ce06-323f-444b74987dc5:run:000005",
+        "codex:codex:fb67430c-d012-a984-9c64-8cd5000bf9b1:run:000025"
+      ],
+      "w": 2,
+      "n": 71,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        112676,
+        66240
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-423312",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:1e653811-d45d-7d1c-00a0-24e25b2ca5c8",
+      "trigger_run_ordinal": 27,
+      "trigger_round_pk": 423312,
+      "observed_at": "2026-07-20 12:46:09.059000",
+      "sha256_rank_key": "00bfe6bd18d34d2bdc8c3521662a65bd4fe6c692e7de04e4e99dee82bb510e44",
+      "active_run_ids": [
+        "codex:codex:1e653811-d45d-7d1c-00a0-24e25b2ca5c8:run:000027",
+        "codex:codex:bf74c3fa-2130-da6f-a607-c3f8e24828d3:run:000018"
+      ],
+      "w": 2,
+      "n": 101,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        62866,
+        80027
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-157594",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:017d6bfe-577b-13ea-a4f7-638bab8ce777",
+      "trigger_run_ordinal": 207,
+      "trigger_round_pk": 157594,
+      "observed_at": "2026-07-23 15:17:07.041000",
+      "sha256_rank_key": "00e3a775f41c922d344aeecaa2b19a7d74fc6e3ea21aa4e95ffb3f0a75fd30b0",
+      "active_run_ids": [
+        "codex:codex:017d6bfe-577b-13ea-a4f7-638bab8ce777:run:000207",
+        "codex:codex:42bd251c-793b-392d-7163-c08beacefef6:run:000003"
+      ],
+      "w": 2,
+      "n": 18,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        69980,
+        80347
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-545884",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:960676ae-a5a6-ae79-3bb1-6e7aeefcc2c0",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 545884,
+      "observed_at": "2026-04-09 07:35:27.073000",
+      "sha256_rank_key": "00ea589f0615fb83e08cb452024d5fe2fd1894e2d8c5019b2cd884b7cf64b452",
+      "active_run_ids": [
+        "codex:codex:960676ae-a5a6-ae79-3bb1-6e7aeefcc2c0:run:000001",
+        "codex:codex:ca1d5834-9411-d59a-a727-4a7be8bf0612:run:000012"
+      ],
+      "w": 2,
+      "n": 95,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        72326,
+        35134
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-155391",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:017d6bfe-577b-13ea-a4f7-638bab8ce777",
+      "trigger_run_ordinal": 154,
+      "trigger_round_pk": 155391,
+      "observed_at": "2026-07-22 15:20:01.784000",
+      "sha256_rank_key": "0140832e9be70b273434bddcb1e27dea09d62566dd21aa7389d5aa1c81e57299",
+      "active_run_ids": [
+        "codex:codex:017d6bfe-577b-13ea-a4f7-638bab8ce777:run:000154",
+        "codex:codex:8df8ec0e-d125-6252-ea2a-59e28f1821d1:run:000001"
+      ],
+      "w": 2,
+      "n": 96,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        89568,
+        94793
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-585305",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:cebd3d95-46b3-9564-38c2-446c6f0feed8",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 585305,
+      "observed_at": "2026-05-03 15:49:14.617000",
+      "sha256_rank_key": "01446fe5fccb0d264180a4d43d4ddb3a30165054d81eed08beb2de49c755209c",
+      "active_run_ids": [
+        "codex:codex:4d14c428-3736-ccd3-93be-d0678f0044f8:run:000001",
+        "codex:codex:cebd3d95-46b3-9564-38c2-446c6f0feed8:run:000001"
+      ],
+      "w": 2,
+      "n": 79,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        62979,
+        79663
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-267863",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:f5be249d-e3b7-eba8-cb28-52850dd935ec",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 267863,
+      "observed_at": "2025-11-14 04:14:17.130000",
+      "sha256_rank_key": "0038165f8dd5547170be15bf33f97649c94fa5f2b55b23f0b846abc116146413",
+      "active_run_ids": [
+        "codex:codex:f5be249d-e3b7-eba8-cb28-52850dd935ec:run:000001",
+        "codex:codex:fae93d5b-23f0-2715-bee1-ea2c59bf14cf:run:000001"
+      ],
+      "w": 2,
+      "n": 16,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        7762,
+        8644
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-363059",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:f1870125-10e2-5233-42dc-04db2027103c",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 363059,
+      "observed_at": "2026-04-21 06:46:17.191000",
+      "sha256_rank_key": "013679c0bfba95a9cb96deee4728e54515e474fc39c8ffa2faf864278e06f985",
+      "active_run_ids": [
+        "codex:codex:1010d2a4-fe8a-363c-677b-fcd3f952131d:run:000004",
+        "codex:codex:f1870125-10e2-5233-42dc-04db2027103c:run:000001"
+      ],
+      "w": 2,
+      "n": 28,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        80431,
+        24597
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-141005",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:b8aa4a13-fadf-ebb4-fd6e-8cfa2b322dd3",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 141005,
+      "observed_at": "2025-11-23 21:37:02.429000",
+      "sha256_rank_key": "036ad47c2fb905e21434cf1003ac8f11b244d95d189de743fdecff89ff88b2cc",
+      "active_run_ids": [
+        "codex:codex:33dd2fd8-ea91-7367-8d90-7133aec1d710:run:000003",
+        "codex:codex:b8aa4a13-fadf-ebb4-fd6e-8cfa2b322dd3:run:000002"
+      ],
+      "w": 2,
+      "n": 11,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        25170,
+        15584
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-387450",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:f9d6c379-1a97-03e2-5a1b-0afba8ebf7ca",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 387450,
+      "observed_at": "2026-06-15 11:55:13.539000",
+      "sha256_rank_key": "063f6261e57b6d1e43d3c72e904d4e2c71efa02ac3dccc5558e25f4edfaf6284",
+      "active_run_ids": [
+        "codex:codex:02d3f1d1-aeb4-bc34-ecd1-5d5c2810ee54:run:000002",
+        "codex:codex:f9d6c379-1a97-03e2-5a1b-0afba8ebf7ca:run:000001"
+      ],
+      "w": 2,
+      "n": 17,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        73639,
+        13706
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-140906",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:66a6463f-aa72-a482-e27a-618d7ac43379",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 140906,
+      "observed_at": "2025-11-21 10:24:55.564000",
+      "sha256_rank_key": "06dc1dc9d49140f655757e508d8795bc5a4f6ea7c24e75c815fd6ed278dc20d7",
+      "active_run_ids": [
+        "codex:codex:46d9c3a9-3dc4-eb32-f5a1-12866d0394aa:run:000002",
+        "codex:codex:66a6463f-aa72-a482-e27a-618d7ac43379:run:000002",
+        "codex:codex:fbc43db9-989e-04c4-081a-eb301445e117:run:000004"
+      ],
+      "w": 3,
+      "n": 15,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        58897,
+        11869
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-388568",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:3b36cf42-2993-1096-a0d7-694faab0902c",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 388568,
+      "observed_at": "2026-06-25 17:26:57.652000",
+      "sha256_rank_key": "082f57246ac6d4e56d3b3701aaa8f4bac2a1e212bab1ce70103227c4709b9c6f",
+      "active_run_ids": [
+        "codex:codex:3b36cf42-2993-1096-a0d7-694faab0902c:run:000001",
+        "codex:codex:da6a0ed4-62d8-1f7d-c065-66569e06fb86:run:000004"
+      ],
+      "w": 2,
+      "n": 4,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        11091,
+        48177
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-140983",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:b8aa4a13-fadf-ebb4-fd6e-8cfa2b322dd3",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 140983,
+      "observed_at": "2025-11-23 21:33:43.645000",
+      "sha256_rank_key": "0847cba4999bd5792921c15a9f6df9aecd0d5fc062e91dad0806c3d994e5b83f",
+      "active_run_ids": [
+        "codex:codex:33dd2fd8-ea91-7367-8d90-7133aec1d710:run:000002",
+        "codex:codex:b8aa4a13-fadf-ebb4-fd6e-8cfa2b322dd3:run:000001"
+      ],
+      "w": 2,
+      "n": 6,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        17394,
+        8170
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-547271",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:67da2170-c0bd-150d-26b4-644441653041",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 547271,
+      "observed_at": "2026-03-11 00:00:13.528000",
+      "sha256_rank_key": "0b279a02383c182ce7e9096edf86d2c808303dfac1cf46fbe5c28f16188745d5",
+      "active_run_ids": [
+        "codex:codex:0d7af93f-9389-bade-13ce-093d21384bc5:run:000015",
+        "codex:codex:67da2170-c0bd-150d-26b4-644441653041:run:000001"
+      ],
+      "w": 2,
+      "n": 44,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        70627,
+        22485
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-298805",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:ab846ff2-5be2-60fb-b995-0656eced2b87",
+      "trigger_run_ordinal": 17,
+      "trigger_round_pk": 298805,
+      "observed_at": "2026-06-17 12:04:38.699000",
+      "sha256_rank_key": "0c4990535c021357bd62af1618eb6c261d18de6308335bd74127c67a7d034930",
+      "active_run_ids": [
+        "codex:codex:84ab0e09-1f6f-5456-a0f7-1908f3c7d15d:run:000054",
+        "codex:codex:8ea2b537-8f91-7a22-2e9c-d177d4610a23:run:000001",
+        "codex:codex:ab846ff2-5be2-60fb-b995-0656eced2b87:run:000017"
+      ],
+      "w": 3,
+      "n": 9,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        73068,
+        31239
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-333991",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Small",
+      "trigger_session_id": "codex:29c147fd-382c-71c3-1fe5-82e72d27023e",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 333991,
+      "observed_at": "2026-05-12 16:50:06.266000",
+      "sha256_rank_key": "0c49df06a0da687a086fa6ba3d0e81adfe7a9164d0b26e830e1e132e87d32605",
+      "active_run_ids": [
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000046",
+        "codex:codex:29c147fd-382c-71c3-1fe5-82e72d27023e:run:000001"
+      ],
+      "w": 2,
+      "n": 32,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        104558,
+        25874
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508588",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:1845627d-143e-066c-b5ec-10afc3af0e4f",
+      "trigger_run_ordinal": 6,
+      "trigger_round_pk": 508588,
+      "observed_at": "2026-04-10 03:29:02.391000",
+      "sha256_rank_key": "003c355bb052a23a051604903df0ac3a937b9a984668237bacd58cd7769ac2c8",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000006",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000006",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000006",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000006",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000006",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000006"
+      ],
+      "w": 6,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        49932,
+        49932,
+        49932,
+        49932,
+        49932,
+        49932
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508899",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:c94de0ae-308a-2f86-124f-ccfa75430d65",
+      "trigger_run_ordinal": 5,
+      "trigger_round_pk": 508899,
+      "observed_at": "2026-04-10 03:27:02.719000",
+      "sha256_rank_key": "003cf8201b2089cb9471d955d937f546f3ce6b9cbf1782fed39be854b91b73d4",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000005",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000005",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000005",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000005",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000005",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000005"
+      ],
+      "w": 6,
+      "n": 48,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        43626,
+        43626,
+        43626,
+        43626,
+        43626,
+        43626
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-236808",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:14d0532f-4408-42f2-49e1-8d02e4161b9b",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 236808,
+      "observed_at": "2026-06-29 00:54:13.108000",
+      "sha256_rank_key": "01fb59b4ca2ae9d2bcfb27ab9ab664cdd7e594e1998fcd3b9ea6e81b126d8700",
+      "active_run_ids": [
+        "claude:claude:08639380-b43d-0a95-e442-21b777dab51f:run:000017",
+        "claude:claude:14d0532f-4408-42f2-49e1-8d02e4161b9b:run:000004",
+        "claude:claude:86795d92-bf32-f912-fdb1-46d634ed5d4d:run:000019",
+        "claude:claude:9009e9be-f06f-d72d-271c-dddd27f9815b:run:000003",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098"
+      ],
+      "w": 5,
+      "n": 11,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        53006,
+        43180
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-224917",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:7dffadbe-718d-df2d-aac2-561cce850a3a",
+      "trigger_run_ordinal": 3,
+      "trigger_round_pk": 224917,
+      "observed_at": "2026-06-28 23:59:19.279000",
+      "sha256_rank_key": "02047f367ca24656ebdf2e28274368a26db73c3e7b0505c684c44c71a16072c5",
+      "active_run_ids": [
+        "claude:claude:08639380-b43d-0a95-e442-21b777dab51f:run:000017",
+        "claude:claude:3ad23ad6-d817-ec0c-8b17-1b19860d1164:run:000001",
+        "claude:claude:3b3c33eb-b88f-8bc2-3af9-27657f542407:run:000001",
+        "claude:claude:7dffadbe-718d-df2d-aac2-561cce850a3a:run:000003",
+        "claude:claude:86795d92-bf32-f912-fdb1-46d634ed5d4d:run:000003",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098"
+      ],
+      "w": 6,
+      "n": 27,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        77374,
+        34062
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508524",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:15412ff8-3d26-057e-ef32-41d92bef9fb0",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 508524,
+      "observed_at": "2026-04-10 03:21:43.984000",
+      "sha256_rank_key": "067acdd5bfe7cb7dce8f6d90c3abf67d07a56cba4954c76c47ee79a6e61e85dd",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000004",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000004",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000004",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000004",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000004",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000004"
+      ],
+      "w": 6,
+      "n": 24,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        33682,
+        33682,
+        33682,
+        33682,
+        33682,
+        33682
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-38880",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:19d4dce4-feba-e453-2fa7-49ff380ca353",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 38880,
+      "observed_at": "2026-05-13 21:09:39.646000",
+      "sha256_rank_key": "068fbf31c5c541a202e2eb8644ef7a272894eebdfce952abddf63c311f92b7ff",
+      "active_run_ids": [
+        "claude:claude:11c740b8-a671-6c19-bc24-cc6522d8cd2a:run:000001",
+        "claude:claude:19d4dce4-feba-e453-2fa7-49ff380ca353:run:000001",
+        "claude:claude:85cc909a-1863-6147-c1c4-28ebf8c1a3a6:run:000001",
+        "claude:claude:ccaa4e46-918f-b4d5-99a9-e38804d9b90c:run:000008",
+        "claude:claude:dc4b2c1d-c137-d58e-8162-262409456943:run:000001",
+        "claude:claude:e9a88a1b-cc03-10bb-a5e2-d53684c43f2f:run:000001"
+      ],
+      "w": 6,
+      "n": 30,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        39469,
+        39469,
+        39469,
+        39469
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-511247",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:d68a19fe-8554-3d25-3fc2-d20ea8c3350c",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 511247,
+      "observed_at": "2026-07-11 23:53:01.509000",
+      "sha256_rank_key": "07f7cebc1f9e9689ccbfbe6e3211c88e6bc5d34aee26124b2c1517ebbbcfbeea",
+      "active_run_ids": [
+        "claude:claude:292a857b-10dd-70b0-2b8d-450260308f9b:run:000097",
+        "claude:claude:47064b80-6a9c-04b7-7594-969f0eb71cf9:run:000179",
+        "claude:claude:519c2cb7-f7d3-5e6b-c847-197ccc37342e:run:000003",
+        "claude:claude:5690b53e-d869-47b6-a23f-21c4f09a12a1:run:000003",
+        "claude:claude:d68a19fe-8554-3d25-3fc2-d20ea8c3350c:run:000001"
+      ],
+      "w": 5,
+      "n": 9,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        66539,
+        31407
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94304",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 94304,
+      "observed_at": "2026-06-19 12:59:39.910000",
+      "sha256_rank_key": "0973617319ed443df9266a0b280e1e852018aa5a18942cfd21ffe1c95eef4e24",
+      "active_run_ids": [
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000003",
+        "claude:claude:216de16a-f25c-b406-b99c-72e04e3f9a50:run:000002",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000004",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000001"
+      ],
+      "w": 7,
+      "n": 16,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        31246,
+        21859,
+        26985,
+        18797
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-136048",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:1da2d658-912d-bb50-cc2b-23e108b5157a",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 136048,
+      "observed_at": "2026-06-29 08:38:12.633000",
+      "sha256_rank_key": "0a50772239a7cf1b474f4baa57943dfa3b83e8ba8ac636549193be83e57df543",
+      "active_run_ids": [
+        "claude:claude:1a64810f-5e86-53e6-86d5-10c3f9169720:run:000004",
+        "claude:claude:1da2d658-912d-bb50-cc2b-23e108b5157a:run:000001",
+        "claude:claude:9b1860fa-c0e8-383f-682d-61878ab6bfe9:run:000001",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098",
+        "claude:claude:f896e9c5-2605-0968-21da-ee23d0863ee5:run:000065"
+      ],
+      "w": 5,
+      "n": 58,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        31166,
+        96864
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-539936",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:c700b020-a844-7d35-ff8e-120566740820",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 539936,
+      "observed_at": "2026-06-24 03:48:27.989000",
+      "sha256_rank_key": "0b6740a9d03b6bfdb52b1c436afd1adbd943524b8abf9d0ebe7c71b80c4c6fc9",
+      "active_run_ids": [
+        "claude:claude:1c3b9e1a-a3cd-fe01-0995-a7b3c774bf27:run:000001",
+        "claude:claude:1ff52f11-bcd5-74e9-050f-702f82ab2b58:run:000003",
+        "claude:claude:b7144996-a4d6-6889-4aac-ae5affa3ba2a:run:000001",
+        "claude:claude:c700b020-a844-7d35-ff8e-120566740820:run:000001",
+        "claude:claude:c7eb67df-126a-3e3d-bc69-c94682c42ef8:run:000001"
+      ],
+      "w": 5,
+      "n": 42,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        83463,
+        47898
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-540204",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:fec5d3e2-adcf-dc12-bb52-9eba3c620f64",
+      "trigger_run_ordinal": 3,
+      "trigger_round_pk": 540204,
+      "observed_at": "2026-06-24 04:15:54.622000",
+      "sha256_rank_key": "00899abc5bb1273c0209326995e8ff774a70cdd05a3f2d2400c81a5babf3d3e7",
+      "active_run_ids": [
+        "claude:claude:1ff52f11-bcd5-74e9-050f-702f82ab2b58:run:000003",
+        "claude:claude:2e9d091d-107f-435b-b134-89c2fba08817:run:000007",
+        "claude:claude:404fc91e-ebb5-d499-eda1-a97b31698a63:run:000002",
+        "claude:claude:b378d3f4-d97b-0586-2d43-c5d2362daf23:run:000004",
+        "claude:claude:fec5d3e2-adcf-dc12-bb52-9eba3c620f64:run:000003"
+      ],
+      "w": 5,
+      "n": 15,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        109234,
+        101953
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-255147",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:ed45079e-8878-6eaf-6dc4-ee06899ab7b9",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 255147,
+      "observed_at": "2026-06-28 09:50:53.495000",
+      "sha256_rank_key": "00946818b8efa6d8fdbc1780dca75b660984e91a15ef2812e1a0cfaccb8f77ff",
+      "active_run_ids": [
+        "claude:claude:08639380-b43d-0a95-e442-21b777dab51f:run:000017",
+        "claude:claude:1f3d19cb-caca-54e7-fede-0ed2bd453295:run:000002",
+        "claude:claude:d2ece76e-2356-3fc2-438b-3da353755244:run:000001",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098",
+        "claude:claude:ed45079e-8878-6eaf-6dc4-ee06899ab7b9:run:000001"
+      ],
+      "w": 5,
+      "n": 55,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        102054,
+        105254
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-131919",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:5064e95f-d4e1-5ece-33b5-ca696c45bccc",
+      "trigger_run_ordinal": 9,
+      "trigger_round_pk": 131919,
+      "observed_at": "2026-06-28 23:03:57.269000",
+      "sha256_rank_key": "01186743846d694ecf6e390021104dee70548ed5324bb93b5bae95cf393d469c",
+      "active_run_ids": [
+        "claude:claude:08639380-b43d-0a95-e442-21b777dab51f:run:000017",
+        "claude:claude:30480613-a0e1-20ce-5fbc-e6499049d04c:run:000003",
+        "claude:claude:5064e95f-d4e1-5ece-33b5-ca696c45bccc:run:000009",
+        "claude:claude:b75e4aaa-909c-a7a0-ce1a-067783792ebe:run:000001",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098"
+      ],
+      "w": 5,
+      "n": 25,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        53681,
+        123552
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-182500",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:c9cf1a4d-d208-1d05-ba68-07331e77c4c2",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 182500,
+      "observed_at": "2026-07-01 15:42:17.760000",
+      "sha256_rank_key": "013ef0d13204377d9f6c02130fec0627a1fd10bd2c063dfd994460ee147e8c00",
+      "active_run_ids": [
+        "claude:claude:9635b41e-6360-b079-1a75-3cea671fb55e:run:000007",
+        "claude:claude:adc1be9b-825e-6d4b-3b30-64cd7204af03:run:000001",
+        "claude:claude:c9cf1a4d-d208-1d05-ba68-07331e77c4c2:run:000004",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098",
+        "claude:claude:e3ac563c-610f-3af2-02ec-b8d8220d3ed7:run:000398"
+      ],
+      "w": 5,
+      "n": 43,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        67786,
+        124446
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-241503",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:43bf7b5e-bc83-cc0d-7dbf-6a358f43f737",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 241503,
+      "observed_at": "2026-07-12 00:49:53.433000",
+      "sha256_rank_key": "0188dec687535d7df1fa9211773997c1f1a182d5b630dcc146577467ad35001d",
+      "active_run_ids": [
+        "claude:claude:292a857b-10dd-70b0-2b8d-450260308f9b:run:000097",
+        "claude:claude:43bf7b5e-bc83-cc0d-7dbf-6a358f43f737:run:000001",
+        "claude:claude:47064b80-6a9c-04b7-7594-969f0eb71cf9:run:000179",
+        "claude:claude:519c2cb7-f7d3-5e6b-c847-197ccc37342e:run:000003",
+        "claude:claude:5690b53e-d869-47b6-a23f-21c4f09a12a1:run:000003",
+        "claude:claude:6170a268-a97f-0e50-8771-16798fe8dae6:run:000001",
+        "claude:claude:a5073b08-1ea9-fab9-2b1f-855e68bee555:run:000001"
+      ],
+      "w": 7,
+      "n": 11,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        29739,
+        67186
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508916",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:c94de0ae-308a-2f86-124f-ccfa75430d65",
+      "trigger_run_ordinal": 9,
+      "trigger_round_pk": 508916,
+      "observed_at": "2026-04-10 03:36:35.676000",
+      "sha256_rank_key": "01dd9f37c85e4a47565128a80bcaeb8035c5a8c74d22c1c7861e43a2966eb4f9",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000009",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000009",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000009",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000009",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000009",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000009"
+      ],
+      "w": 6,
+      "n": 48,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        63690,
+        63690,
+        63690,
+        63690,
+        63690,
+        63690
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-256527",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:8b7dd409-1870-4cfd-503b-b66c7086c404",
+      "trigger_run_ordinal": 10,
+      "trigger_round_pk": 256527,
+      "observed_at": "2026-06-28 12:07:59.710000",
+      "sha256_rank_key": "01f7fae1998c7d155c98aee3b57fda4b7e4a44f9bb6315fc6c0cb8abc006ffd5",
+      "active_run_ids": [
+        "claude:claude:08639380-b43d-0a95-e442-21b777dab51f:run:000017",
+        "claude:claude:8b7dd409-1870-4cfd-503b-b66c7086c404:run:000010",
+        "claude:claude:d2ece76e-2356-3fc2-438b-3da353755244:run:000001",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098",
+        "claude:claude:e3ac563c-610f-3af2-02ec-b8d8220d3ed7:run:000324"
+      ],
+      "w": 5,
+      "n": 17,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        112908,
+        102054
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-244718",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:a22b300b-6362-b72f-0fde-4aae885fdeda",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 244718,
+      "observed_at": "2026-07-02 06:37:31.101000",
+      "sha256_rank_key": "021c8ba4ef5eff802b1d6f9523f2dae291aa201a3b9f44cd5e9ccab870888070",
+      "active_run_ids": [
+        "claude:claude:05ede653-a5bd-7de5-37f3-5d01b91ab590:run:000001",
+        "claude:claude:892f9c3e-c069-e47c-7e15-bbf58891ee99:run:000002",
+        "claude:claude:9635b41e-6360-b079-1a75-3cea671fb55e:run:000007",
+        "claude:claude:9aff928b-7386-e1f0-5775-761abf37a6de:run:000165",
+        "claude:claude:a22b300b-6362-b72f-0fde-4aae885fdeda:run:000001",
+        "claude:claude:d009e929-c300-e27e-37d6-fca2deed0d2d:run:000106",
+        "claude:claude:dc1fc1da-bc51-716e-de8d-93c2322a5021:run:001098"
+      ],
+      "w": 7,
+      "n": 41,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        24139,
+        57817,
+        81912
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508707",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf",
+      "trigger_run_ordinal": 10,
+      "trigger_round_pk": 508707,
+      "observed_at": "2026-04-10 03:48:34.418000",
+      "sha256_rank_key": "02ace71f2018d3d2d27467d876af4f7f35a27738f337238bd20fe1b9493928aa",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000010",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000010",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000010",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000010",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000010",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000010"
+      ],
+      "w": 6,
+      "n": 18,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        71801,
+        71801,
+        71801,
+        71801,
+        71801,
+        71801
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-239410",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:fe9858e0-f1c6-300c-3bdf-660c08f55fb4",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 239410,
+      "observed_at": "2026-07-03 07:58:45.856000",
+      "sha256_rank_key": "033fb2e9808af8fdb954c7c0aaf3f44b2312c089d952df58d4df5ea8d5934921",
+      "active_run_ids": [
+        "claude:claude:7f9a245d-7818-26e8-1100-050b4bd92d40:run:000001",
+        "claude:claude:9635b41e-6360-b079-1a75-3cea671fb55e:run:000007",
+        "claude:claude:a2711d63-428b-f4c0-1867-330573348c36:run:000001",
+        "claude:claude:bc0cdd3f-5ca0-b500-b88c-0638cae6edfe:run:000001",
+        "claude:claude:fe9858e0-f1c6-300c-3bdf-660c08f55fb4:run:000001"
+      ],
+      "w": 5,
+      "n": 26,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        61827,
+        26138,
+        85930
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508613",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 508613,
+      "observed_at": "2026-04-10 03:19:02.620000",
+      "sha256_rank_key": "06feadcd4912f13253a01126f24d15cae83582b135dc7302571fca4a2cd3efaf",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000001",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000001",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000001",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000001",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000001",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000001"
+      ],
+      "w": 6,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        27738,
+        27738,
+        27738,
+        27738,
+        27738,
+        27738
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508566",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:1845627d-143e-066c-b5ec-10afc3af0e4f",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 508566,
+      "observed_at": "2026-04-10 03:20:52.533000",
+      "sha256_rank_key": "1b117d3b2efc4c4ac8ec597f3b691450f8b108df9354c72d974e7226422bd940",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000002",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000002",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000002",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000002",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000002",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000002"
+      ],
+      "w": 6,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        29700,
+        29700,
+        29700,
+        29700,
+        29700,
+        29700
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508661",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 508661,
+      "observed_at": "2026-04-10 03:18:54.499000",
+      "sha256_rank_key": "1eed1bf01a708892d87798a5a025961036c4b89bf88330c7480a8142849b3df7",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000001",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000001",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000001",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000001",
+        "claude:claude:7988925d-bbfa-56ae-bc8c-f4bfd201fb57:run:000015",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000001",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000001"
+      ],
+      "w": 7,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        26257,
+        26257,
+        26257,
+        26257,
+        26257,
+        26257
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94318",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 94318,
+      "observed_at": "2026-06-19 13:00:25.054000",
+      "sha256_rank_key": "206fc040073e581f6b78276bba30d99f4489abf7da32dcfcc68a41045017e6ce",
+      "active_run_ids": [
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000005",
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:216de16a-f25c-b406-b99c-72e04e3f9a50:run:000004",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000006",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000001"
+      ],
+      "w": 8,
+      "n": 13,
+      "p": 5,
+      "x": 5,
+      "pending_anchors": [
+        18813,
+        29033,
+        29288,
+        30265,
+        25868
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-67076",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:418037d3-5ff1-71e4-2f2f-1ee569fae523",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 67076,
+      "observed_at": "2026-05-15 18:37:59.022000",
+      "sha256_rank_key": "23213a13dd9850391cc8c10091a577f8f55a230b7fe7b239e41c024b348fa265",
+      "active_run_ids": [
+        "claude:claude:05f731c7-2612-7142-5a1a-4f90101cfb4e:run:000001",
+        "claude:claude:418037d3-5ff1-71e4-2f2f-1ee569fae523:run:000001",
+        "claude:claude:67820f98-8388-6a45-51dd-8a571df4bd54:run:000087",
+        "claude:claude:70a26fe3-480b-7608-82fa-33ebaef9a10c:run:000004",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041"
+      ],
+      "w": 5,
+      "n": 24,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        18941,
+        13839,
+        32361,
+        30428
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-18027",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:3697c055-75a9-15b7-76f9-e3c7ea118318",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 18027,
+      "observed_at": "2026-05-14 17:29:27.130000",
+      "sha256_rank_key": "68264f5172536d3c7759c2ee46aaee43c5974e564c0175c44a107cadbdd8190a",
+      "active_run_ids": [
+        "claude:claude:2f68796e-1b00-6b48-522a-cf9824594f7c:run:000002",
+        "claude:claude:3697c055-75a9-15b7-76f9-e3c7ea118318:run:000001",
+        "claude:claude:4c425f1b-635e-78d1-9649-140186150b7a:run:000010",
+        "claude:claude:c839369a-dcd7-6cda-5f47-2b33963bc82d:run:000012",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000001"
+      ],
+      "w": 5,
+      "n": 12,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        28284,
+        90767,
+        118093,
+        25750
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-501399",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:02e089a6-5445-df0b-4189-9413be2310c2",
+      "trigger_run_ordinal": 5,
+      "trigger_round_pk": 501399,
+      "observed_at": "2026-07-08 06:27:35.277000",
+      "sha256_rank_key": "870219ed0402a707280231f41e36da6b322e090ebd933ad22b3ac7411119ab14",
+      "active_run_ids": [
+        "claude:claude:02e089a6-5445-df0b-4189-9413be2310c2:run:000005",
+        "claude:claude:4c8c2aa6-c517-faa3-2217-0b3463d76f01:run:000002",
+        "claude:claude:6efc3b8f-1fda-89c7-4140-3dbe312de4d0:run:000004",
+        "claude:claude:d15bc6b7-371a-8e14-7e72-2cc74cc411ff:run:000001",
+        "claude:claude:dcd2941a-b09e-481e-6dab-3775ec98d79c:run:000001"
+      ],
+      "w": 5,
+      "n": 89,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        30319,
+        88009
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94403",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:216de16a-f25c-b406-b99c-72e04e3f9a50",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 94403,
+      "observed_at": "2026-06-19 12:59:50.625000",
+      "sha256_rank_key": "c5f280476806cdda1ad7592fb277b2dc74f7e249babac1aa9cda8fa78820f8fb",
+      "active_run_ids": [
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000003",
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:216de16a-f25c-b406-b99c-72e04e3f9a50:run:000002",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000004",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000001"
+      ],
+      "w": 8,
+      "n": 18,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        21859,
+        21836
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-18026",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:3697c055-75a9-15b7-76f9-e3c7ea118318",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 18026,
+      "observed_at": "2026-05-14 17:29:16.804000",
+      "sha256_rank_key": "d189019a8692010072b90a992f8cb3010f2d02e42766d2360b66a93c756039be",
+      "active_run_ids": [
+        "claude:claude:2f68796e-1b00-6b48-522a-cf9824594f7c:run:000001",
+        "claude:claude:3697c055-75a9-15b7-76f9-e3c7ea118318:run:000001",
+        "claude:claude:4c425f1b-635e-78d1-9649-140186150b7a:run:000010",
+        "claude:claude:c839369a-dcd7-6cda-5f47-2b33963bc82d:run:000012",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000001"
+      ],
+      "w": 5,
+      "n": 10,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        26144,
+        90767,
+        25750
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-219819",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:ab4a9a4b-03f2-cb6d-15ef-8e1b2532d3cf",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 219819,
+      "observed_at": "2026-07-12 14:11:32.296000",
+      "sha256_rank_key": "f68452fda4290c1e7501405a6b9c76072dfb1408b2972edb1fde011f32421b7f",
+      "active_run_ids": [
+        "claude:claude:292a857b-10dd-70b0-2b8d-450260308f9b:run:000097",
+        "claude:claude:5690b53e-d869-47b6-a23f-21c4f09a12a1:run:000003",
+        "claude:claude:71dd848c-281b-851f-7ffd-fa5a62e4f5fa:run:000001",
+        "claude:claude:885d939d-2c3a-3dd4-b29a-83804d9a1da3:run:000001",
+        "claude:claude:ab4a9a4b-03f2-cb6d-15ef-8e1b2532d3cf:run:000002"
+      ],
+      "w": 5,
+      "n": 6,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        55104,
+        31044
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-333600",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 333600,
+      "observed_at": "2026-05-12 12:23:38.920000",
+      "sha256_rank_key": "511f5b75ce56de0e13b91313fc71ef514a275ac91d3efa6df21c3aa9e07887be",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000003",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000003",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001",
+        "codex:codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5:run:000004"
+      ],
+      "w": 6,
+      "n": 54,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        76939,
+        32403
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-333618",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:02f5db12-e36d-c227-6750-ce255497bcd2",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 333618,
+      "observed_at": "2026-05-12 12:23:00.789000",
+      "sha256_rank_key": "7456da8fa421e771dcc3025ec78303f3d10ccfa6b9e5abfc2a3b9da9bfd48659",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000002",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000003",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001",
+        "codex:codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5:run:000003"
+      ],
+      "w": 6,
+      "n": 49,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        38901,
+        75053
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-333523",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:c7b3443c-0e50-3357-d62e-4829720ce6a1",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 333523,
+      "observed_at": "2026-05-12 12:23:58.778000",
+      "sha256_rank_key": "2254bf89cf80bbc419dfc1ec77abde13ee8fa422d21794113bfae57bd078a9ff",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000003",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000004",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001",
+        "codex:codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5:run:000004"
+      ],
+      "w": 6,
+      "n": 59,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        77885,
+        75279
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-333517",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:c7b3443c-0e50-3357-d62e-4829720ce6a1",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 333517,
+      "observed_at": "2026-05-12 12:22:26.792000",
+      "sha256_rank_key": "28f960cc7534f9c8a20fe0d729174731b72949998253236499ea7dc75879c6aa",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000002",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000002",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001",
+        "codex:codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5:run:000003"
+      ],
+      "w": 6,
+      "n": 44,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        74180,
+        70817
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-331443",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110",
+      "trigger_run_ordinal": 35,
+      "trigger_round_pk": 331443,
+      "observed_at": "2026-05-12 12:23:20.550000",
+      "sha256_rank_key": "4b846bbbcd0b50a5b29c7e5fc7c84228866a5a7af881ac5539e38165c3a35572",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000003",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000003",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001",
+        "codex:codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5:run:000003"
+      ],
+      "w": 6,
+      "n": 48,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        76033,
+        41915
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-333524",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:c7b3443c-0e50-3357-d62e-4829720ce6a1",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 333524,
+      "observed_at": "2026-05-12 12:24:19.717000",
+      "sha256_rank_key": "f7d2ba794083d5f09d4e740a38e6e442b70495cba09a21d7710b90de48c2f5f8",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000004",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000004",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001"
+      ],
+      "w": 5,
+      "n": 58,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        78759,
+        76330
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-333491",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 333491,
+      "observed_at": "2026-05-12 12:19:49.283000",
+      "sha256_rank_key": "07a3f2152356655f513c8ffa7df16a5b61675526a3d1d68123a70380b4eeee4d",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000001",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000001",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001",
+        "codex:codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5:run:000001"
+      ],
+      "w": 6,
+      "n": 15,
+      "p": 3,
+      "x": 3,
+      "pending_anchors": [
+        11472,
+        67981,
+        15693
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-codex-round-333495",
+      "provider": "codex",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 333495,
+      "observed_at": "2026-05-12 12:21:46.127000",
+      "sha256_rank_key": "151772a3131d798c58d5f3b7989757d1492ec07d05621fdcceffafb0509bf0a6",
+      "active_run_ids": [
+        "codex:codex:02f5db12-e36d-c227-6750-ce255497bcd2:run:000001",
+        "codex:codex:1b4d4448-1e11-6633-2a9f-870d8d2a4110:run:000035",
+        "codex:codex:2600000a-2ed2-d67f-636e-5e52e3e57c4c:run:000001",
+        "codex:codex:bf1bc4c5-2ab7-4707-d704-2b87f3849b81:run:000002",
+        "codex:codex:c7b3443c-0e50-3357-d62e-4829720ce6a1:run:000001",
+        "codex:codex:fa0ba0bd-d180-ed58-766a-1cd2130d08e5:run:000002"
+      ],
+      "w": 6,
+      "n": 40,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        71438,
+        18481
+      ]
+    },
+    {
+      "snapshot_id": "c128-large-claude-round-241396",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Large",
+      "trigger_session_id": "claude:908d3fb8-35a1-57b3-665b-1179457469a8",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 241396,
+      "observed_at": "2026-07-12 00:50:54.530000",
+      "sha256_rank_key": "0d70d08219f70a1caeebd165276e97d171e4853b65c868e3782291e904a4ba6f",
+      "active_run_ids": [
+        "claude:claude:292a857b-10dd-70b0-2b8d-450260308f9b:run:000097",
+        "claude:claude:43bf7b5e-bc83-cc0d-7dbf-6a358f43f737:run:000001",
+        "claude:claude:47064b80-6a9c-04b7-7594-969f0eb71cf9:run:000179",
+        "claude:claude:519c2cb7-f7d3-5e6b-c847-197ccc37342e:run:000003",
+        "claude:claude:5690b53e-d869-47b6-a23f-21c4f09a12a1:run:000003",
+        "claude:claude:6170a268-a97f-0e50-8771-16798fe8dae6:run:000001",
+        "claude:claude:78f399f6-b1cd-7787-2699-ff8fd84921c6:run:000001",
+        "claude:claude:7cef1960-1749-5fc7-ff90-b3c523f58142:run:000001",
+        "claude:claude:908d3fb8-35a1-57b3-665b-1179457469a8:run:000001",
+        "claude:claude:a5073b08-1ea9-fab9-2b1f-855e68bee555:run:000001",
+        "claude:claude:d6773ef0-2a5a-8bfc-0378-68fbfcc633fd:run:000001"
+      ],
+      "w": 11,
+      "n": 39,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        67186,
+        32392
+      ]
+    },
+    {
+      "snapshot_id": "c128-large-claude-round-94352",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Large",
+      "trigger_session_id": "claude:6cfa7c68-1703-5556-f6ba-03a378008fdc",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 94352,
+      "observed_at": "2026-06-19 13:00:07.841000",
+      "sha256_rank_key": "1d687f9904ffb8036224efa09ad69544f97b3e0b69a3c1f2db6a48e6a3f9d7a7",
+      "active_run_ids": [
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000004",
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:216de16a-f25c-b406-b99c-72e04e3f9a50:run:000002",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000004",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000005",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000001"
+      ],
+      "w": 9,
+      "n": 17,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        30349,
+        36857
+      ]
+    },
+    {
+      "snapshot_id": "c128-large-claude-round-94422",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Large",
+      "trigger_session_id": "claude:13843e27-0b10-704c-5850-125d97ce1a13",
+      "trigger_run_ordinal": 3,
+      "trigger_round_pk": 94422,
+      "observed_at": "2026-06-19 13:00:05.723000",
+      "sha256_rank_key": "36ba91df127d077ee8f207137a4e9bf90543ee02b90822d1e6cdd8a74568b467",
+      "active_run_ids": [
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000003",
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000004",
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:216de16a-f25c-b406-b99c-72e04e3f9a50:run:000002",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000004",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000001"
+      ],
+      "w": 9,
+      "n": 22,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        32832,
+        30349
+      ]
+    },
+    {
+      "snapshot_id": "c128-large-claude-round-241405",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Large",
+      "trigger_session_id": "claude:d6773ef0-2a5a-8bfc-0378-68fbfcc633fd",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 241405,
+      "observed_at": "2026-07-12 00:50:16.069000",
+      "sha256_rank_key": "a2553e4a275c59c5bf6a09686f6a821767b2f5e1b2c5b7df93dc6691d8e91e32",
+      "active_run_ids": [
+        "claude:claude:292a857b-10dd-70b0-2b8d-450260308f9b:run:000097",
+        "claude:claude:43bf7b5e-bc83-cc0d-7dbf-6a358f43f737:run:000001",
+        "claude:claude:47064b80-6a9c-04b7-7594-969f0eb71cf9:run:000179",
+        "claude:claude:519c2cb7-f7d3-5e6b-c847-197ccc37342e:run:000003",
+        "claude:claude:5690b53e-d869-47b6-a23f-21c4f09a12a1:run:000003",
+        "claude:claude:6170a268-a97f-0e50-8771-16798fe8dae6:run:000001",
+        "claude:claude:78f399f6-b1cd-7787-2699-ff8fd84921c6:run:000001",
+        "claude:claude:7cef1960-1749-5fc7-ff90-b3c523f58142:run:000001",
+        "claude:claude:a5073b08-1ea9-fab9-2b1f-855e68bee555:run:000001",
+        "claude:claude:d6773ef0-2a5a-8bfc-0378-68fbfcc633fd:run:000001"
+      ],
+      "w": 10,
+      "n": 19,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        67186,
+        28889
+      ]
+    },
+    {
+      "snapshot_id": "c128-large-claude-round-241491",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Large",
+      "trigger_session_id": "claude:7cef1960-1749-5fc7-ff90-b3c523f58142",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 241491,
+      "observed_at": "2026-07-12 00:50:10.544000",
+      "sha256_rank_key": "adbc7b0becb034ff250dda055a5cd996ac2755e5c50c835881c2a1c36076b51f",
+      "active_run_ids": [
+        "claude:claude:292a857b-10dd-70b0-2b8d-450260308f9b:run:000097",
+        "claude:claude:43bf7b5e-bc83-cc0d-7dbf-6a358f43f737:run:000001",
+        "claude:claude:47064b80-6a9c-04b7-7594-969f0eb71cf9:run:000179",
+        "claude:claude:519c2cb7-f7d3-5e6b-c847-197ccc37342e:run:000003",
+        "claude:claude:5690b53e-d869-47b6-a23f-21c4f09a12a1:run:000003",
+        "claude:claude:6170a268-a97f-0e50-8771-16798fe8dae6:run:000001",
+        "claude:claude:7cef1960-1749-5fc7-ff90-b3c523f58142:run:000001",
+        "claude:claude:a5073b08-1ea9-fab9-2b1f-855e68bee555:run:000001",
+        "claude:claude:d6773ef0-2a5a-8bfc-0378-68fbfcc633fd:run:000001"
+      ],
+      "w": 9,
+      "n": 16,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        67186,
+        26900
+      ]
+    },
+    {
+      "snapshot_id": "c128-large-claude-round-519609",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Large",
+      "trigger_session_id": "claude:426ff7a4-689a-b39e-6f10-a873ee3debad",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 519609,
+      "observed_at": "2026-07-14 05:28:06.987000",
+      "sha256_rank_key": "2cdffb6ae3714b8623869393e08999ad7ee33b70390782bcb4f4a75ce34da58c",
+      "active_run_ids": [
+        "claude:claude:147240a5-625c-b02d-d8ee-51bc9ec26ba7:run:000001",
+        "claude:claude:1fc23b0a-fc0f-e25d-3b76-12f2872eb418:run:000001",
+        "claude:claude:3a167d7a-696e-af8c-f35c-5e614bc81d1b:run:000001",
+        "claude:claude:426ff7a4-689a-b39e-6f10-a873ee3debad:run:000001",
+        "claude:claude:6929be0f-222a-7e37-839a-d2abbae91679:run:000001",
+        "claude:claude:a253874d-aef5-01b8-4e57-1f8db4df33c5:run:000001",
+        "claude:claude:c3aead70-96b1-85f3-31f5-84688856f8dd:run:000001",
+        "claude:claude:c8305bd5-e309-fbdb-e794-aea3882d3546:run:000001",
+        "claude:claude:d648243e-1e9f-ccae-d35a-336d923ae9c9:run:000001"
+      ],
+      "w": 9,
+      "n": 110,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        58480,
+        73508
+      ]
+    },
+    {
+      "snapshot_id": "c128-large-claude-round-241509",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Large",
+      "trigger_session_id": "claude:43bf7b5e-bc83-cc0d-7dbf-6a358f43f737",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 241509,
+      "observed_at": "2026-07-12 00:51:38.890000",
+      "sha256_rank_key": "a8075587d7d1af300897cfc8fd68433011adf506c7f68ab848ef6219107924e3",
+      "active_run_ids": [
+        "claude:claude:292a857b-10dd-70b0-2b8d-450260308f9b:run:000097",
+        "claude:claude:43bf7b5e-bc83-cc0d-7dbf-6a358f43f737:run:000001",
+        "claude:claude:47064b80-6a9c-04b7-7594-969f0eb71cf9:run:000179",
+        "claude:claude:519c2cb7-f7d3-5e6b-c847-197ccc37342e:run:000003",
+        "claude:claude:5690b53e-d869-47b6-a23f-21c4f09a12a1:run:000003",
+        "claude:claude:6170a268-a97f-0e50-8771-16798fe8dae6:run:000001",
+        "claude:claude:78f399f6-b1cd-7787-2699-ff8fd84921c6:run:000001",
+        "claude:claude:7cef1960-1749-5fc7-ff90-b3c523f58142:run:000001",
+        "claude:claude:908d3fb8-35a1-57b3-665b-1179457469a8:run:000001",
+        "claude:claude:a5073b08-1ea9-fab9-2b1f-855e68bee555:run:000001"
+      ],
+      "w": 10,
+      "n": 52,
+      "p": 2,
+      "x": 2,
+      "pending_anchors": [
+        48903,
+        67186
+      ]
+    }
+  ],
+  "selected_secondary_snapshots": [
+    {
+      "snapshot_id": "c128-small-claude-round-509132",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:7c896336-081d-692e-d0f8-63552d23515e",
+      "trigger_run_ordinal": 3,
+      "trigger_round_pk": 509132,
+      "observed_at": "2026-04-09 23:36:01.692000",
+      "sha256_rank_key": "048b158a48aa43b0730a52be1dabbfde9ffb6dcd4a9e71a43f8c29fac7bf0576",
+      "active_run_ids": [
+        "claude:claude:75c21b62-7ed0-acc6-6a9b-9cc5e8b4543a:run:000003",
+        "claude:claude:7b8febf9-3a9a-0bdf-cc73-c6050a90ec3c:run:000003",
+        "claude:claude:7c896336-081d-692e-d0f8-63552d23515e:run:000003",
+        "claude:claude:f846c407-1280-7ee5-ae39-390ba7092194:run:000003"
+      ],
+      "w": 4,
+      "n": 24,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        50284,
+        50284,
+        50284,
+        50284
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-509119",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:7c896336-081d-692e-d0f8-63552d23515e",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 509119,
+      "observed_at": "2026-04-09 23:27:37.618000",
+      "sha256_rank_key": "056795ff5919e9fec4e6413106332e9999c32e9905715edeb1be1851f7f20954",
+      "active_run_ids": [
+        "claude:claude:75c21b62-7ed0-acc6-6a9b-9cc5e8b4543a:run:000001",
+        "claude:claude:7b8febf9-3a9a-0bdf-cc73-c6050a90ec3c:run:000001",
+        "claude:claude:7c896336-081d-692e-d0f8-63552d23515e:run:000001",
+        "claude:claude:f846c407-1280-7ee5-ae39-390ba7092194:run:000001"
+      ],
+      "w": 4,
+      "n": 4,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        26355,
+        26355,
+        26355,
+        26355
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-58341",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:3d0247a5-bb4a-0134-ee64-eb714ef00131",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 58341,
+      "observed_at": "2026-06-02 00:41:15.722000",
+      "sha256_rank_key": "10a784587eddc62830990fff52a31a340652874afc39ea40f6070072df0003ab",
+      "active_run_ids": [
+        "claude:claude:3b30494d-288c-0853-21f3-6d6d894472df:run:000026",
+        "claude:claude:3d0247a5-bb4a-0134-ee64-eb714ef00131:run:000001",
+        "claude:claude:416d0a1d-4a8e-5080-2565-796e7db676c7:run:000001",
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002"
+      ],
+      "w": 4,
+      "n": 58,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        98457,
+        23549,
+        64954,
+        69802
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-509124",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:7c896336-081d-692e-d0f8-63552d23515e",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 509124,
+      "observed_at": "2026-04-09 23:32:22.327000",
+      "sha256_rank_key": "478a7f19271480492f028fc6338815450ea24d8730192179e2a6313f4feb4c77",
+      "active_run_ids": [
+        "claude:claude:75c21b62-7ed0-acc6-6a9b-9cc5e8b4543a:run:000002",
+        "claude:claude:7b8febf9-3a9a-0bdf-cc73-c6050a90ec3c:run:000002",
+        "claude:claude:7c896336-081d-692e-d0f8-63552d23515e:run:000002",
+        "claude:claude:f846c407-1280-7ee5-ae39-390ba7092194:run:000002"
+      ],
+      "w": 4,
+      "n": 8,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        38745,
+        38745,
+        38745,
+        38745
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-10246",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "claude:f60ef8c5-14b3-6a66-86fd-ec3e51c4d833",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 10246,
+      "observed_at": "2026-06-03 04:24:01.067000",
+      "sha256_rank_key": "8b3496030dab773888aeeaa06c09421c679a063e27b88bd886602bdaec1b31e2",
+      "active_run_ids": [
+        "claude:claude:2ec8c3ca-7df9-33f2-7b67-eefc161410e2:run:000001",
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002",
+        "claude:claude:efb251ca-546a-f519-3e73-10416414b71e:run:000049",
+        "claude:claude:f60ef8c5-14b3-6a66-86fd-ec3e51c4d833:run:000002"
+      ],
+      "w": 4,
+      "n": 33,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        40882,
+        69802,
+        93128,
+        44805
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-509164",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:7b8febf9-3a9a-0bdf-cc73-c6050a90ec3c",
+      "trigger_run_ordinal": 5,
+      "trigger_round_pk": 509164,
+      "observed_at": "2026-04-09 23:43:18.436000",
+      "sha256_rank_key": "114967f3b6b829cfa96c795994a7a9ff298d4c4fd5229f9855d912ffc4581404",
+      "active_run_ids": [
+        "claude:claude:75c21b62-7ed0-acc6-6a9b-9cc5e8b4543a:run:000005",
+        "claude:claude:7b8febf9-3a9a-0bdf-cc73-c6050a90ec3c:run:000005",
+        "claude:claude:7c896336-081d-692e-d0f8-63552d23515e:run:000005",
+        "claude:claude:f846c407-1280-7ee5-ae39-390ba7092194:run:000005"
+      ],
+      "w": 4,
+      "n": 4,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        62718,
+        62718,
+        62718,
+        62718
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-33426",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:45a90e5e-9a50-dc87-94af-a42b44fe8f95",
+      "trigger_run_ordinal": 38,
+      "trigger_round_pk": 33426,
+      "observed_at": "2026-05-14 20:09:42.285000",
+      "sha256_rank_key": "45405228927d373c723cce4a3837a89520fd20bbca5e5017206a735c08f5791a",
+      "active_run_ids": [
+        "claude:claude:45a90e5e-9a50-dc87-94af-a42b44fe8f95:run:000038",
+        "claude:claude:5406ca4b-f6c2-9371-59d5-0863f03e50f4:run:000001",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000004"
+      ],
+      "w": 4,
+      "n": 19,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        121315,
+        60772,
+        30428,
+        74205
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-187944",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:2ec8c3ca-7df9-33f2-7b67-eefc161410e2",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 187944,
+      "observed_at": "2026-06-03 04:36:09.043000",
+      "sha256_rank_key": "53f8baacfa4d773848f05b6e465e47a1b707c716898b3ddb76048eba86e9d2c2",
+      "active_run_ids": [
+        "claude:claude:1b4ef286-1aa9-e3ab-42b7-041d30910f0f:run:000002",
+        "claude:claude:2ec8c3ca-7df9-33f2-7b67-eefc161410e2:run:000002",
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002",
+        "claude:claude:efb251ca-546a-f519-3e73-10416414b71e:run:000049"
+      ],
+      "w": 4,
+      "n": 43,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        44926,
+        87627,
+        69802,
+        93128
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-15311",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:525a47af-f36f-139c-7628-d8af48e97e54",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 15311,
+      "observed_at": "2026-05-11 06:47:47.731000",
+      "sha256_rank_key": "6a6018f0b91adc5a998672914f4afd05bf090730e04524610b5b5b4622ac3641",
+      "active_run_ids": [
+        "claude:claude:00664af7-00b3-12b4-067c-809832273fc2:run:000001",
+        "claude:claude:525a47af-f36f-139c-7628-d8af48e97e54:run:000001",
+        "claude:claude:a53b8922-d6aa-736c-21ff-75e5d443df15:run:000001",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000001"
+      ],
+      "w": 4,
+      "n": 6,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        16147,
+        86843,
+        16147,
+        16147
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-35646",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:ccaa4e46-918f-b4d5-99a9-e38804d9b90c",
+      "trigger_run_ordinal": 12,
+      "trigger_round_pk": 35646,
+      "observed_at": "2026-05-14 19:28:50.066000",
+      "sha256_rank_key": "8e6a5c53606d7392bbf21b80850c04abe123640199483557b1edcc20282737db",
+      "active_run_ids": [
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000004",
+        "claude:claude:ccaa4e46-918f-b4d5-99a9-e38804d9b90c:run:000012",
+        "claude:claude:f585a135-1def-8bd2-1921-866c98426edc:run:000003"
+      ],
+      "w": 4,
+      "n": 11,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        30428,
+        74205,
+        95406,
+        55824
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-187936",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:2ec8c3ca-7df9-33f2-7b67-eefc161410e2",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 187936,
+      "observed_at": "2026-06-03 04:31:44.330000",
+      "sha256_rank_key": "b0fdeb28a047923b41fc680b5e2f68190093d8daca7a4276b618dfd61fc3bdfc",
+      "active_run_ids": [
+        "claude:claude:2ec8c3ca-7df9-33f2-7b67-eefc161410e2:run:000002",
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002",
+        "claude:claude:efb251ca-546a-f519-3e73-10416414b71e:run:000049",
+        "claude:claude:f60ef8c5-14b3-6a66-86fd-ec3e51c4d833:run:000004"
+      ],
+      "w": 4,
+      "n": 39,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        71692,
+        69802,
+        93128,
+        72097
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-187943",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:2ec8c3ca-7df9-33f2-7b67-eefc161410e2",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 187943,
+      "observed_at": "2026-06-03 04:35:30.921000",
+      "sha256_rank_key": "b7c0a8aac99b7a39943934c8a3ae88d3a423be4ee6f83b5fe7a7bbda153414b4",
+      "active_run_ids": [
+        "claude:claude:1b4ef286-1aa9-e3ab-42b7-041d30910f0f:run:000001",
+        "claude:claude:2ec8c3ca-7df9-33f2-7b67-eefc161410e2:run:000002",
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002",
+        "claude:claude:efb251ca-546a-f519-3e73-10416414b71e:run:000049"
+      ],
+      "w": 4,
+      "n": 42,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        36469,
+        85870,
+        69802,
+        93128
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-claude-round-15229",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "claude:b1bad188-de07-b498-658d-479e71c3c061",
+      "trigger_run_ordinal": 74,
+      "trigger_round_pk": 15229,
+      "observed_at": "2026-05-15 18:21:35.110000",
+      "sha256_rank_key": "cf9da8d9311dcb442af4c02c1f88f204ef03cff9c7c3f49d846554677bef6fb5",
+      "active_run_ids": [
+        "claude:claude:05f731c7-2612-7142-5a1a-4f90101cfb4e:run:000001",
+        "claude:claude:2361b3cb-c3c8-c297-d576-c0844d87da50:run:000002",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041",
+        "claude:claude:b1bad188-de07-b498-658d-479e71c3c061:run:000074"
+      ],
+      "w": 4,
+      "n": 32,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        15874,
+        20143,
+        30428,
+        99762
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-347870",
+      "provider": "codex",
+      "context_bucket": "32K-64K",
+      "scale": "Small",
+      "trigger_session_id": "codex:ea44dfe8-c97e-5308-d3a8-469778084651",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 347870,
+      "observed_at": "2026-05-28 06:17:30.992000",
+      "sha256_rank_key": "60bc3899522c4b1e9dbdf82fc688890aa5c166b67608ec93c685f2eb6a0631e0",
+      "active_run_ids": [
+        "codex:codex:37664987-f25e-b83a-0c0a-a0726673e41b:run:000001",
+        "codex:codex:742ff91e-62e3-e5d0-5fbf-16c659913e20:run:000001",
+        "codex:codex:865637d6-bee7-2c75-0a3f-4d944b70e3a8:run:000001",
+        "codex:codex:ea44dfe8-c97e-5308-d3a8-469778084651:run:000001"
+      ],
+      "w": 4,
+      "n": 13,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        64766,
+        58760,
+        87083,
+        51137
+      ]
+    },
+    {
+      "snapshot_id": "c128-small-codex-round-630951",
+      "provider": "codex",
+      "context_bucket": "64K-128K",
+      "scale": "Small",
+      "trigger_session_id": "codex:88885724-17a3-2602-ef65-f3c83023086c",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 630951,
+      "observed_at": "2026-07-22 08:23:06.208000",
+      "sha256_rank_key": "090b418479e6b1848f8a3db760927b297fad6e0d12605615214c0807e480da5c",
+      "active_run_ids": [
+        "codex:codex:0dd82ad6-4913-a9cb-e3b4-dd7c490b32d1:run:000048",
+        "codex:codex:34050cac-19a4-8f15-115b-3f8fa97604d0:run:000002",
+        "codex:codex:543b8748-8192-e1a0-f775-a1cc44c7a8fc:run:000003",
+        "codex:codex:88885724-17a3-2602-ef65-f3c83023086c:run:000001"
+      ],
+      "w": 4,
+      "n": 59,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        104615,
+        124278,
+        66555,
+        89696
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508588",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:1845627d-143e-066c-b5ec-10afc3af0e4f",
+      "trigger_run_ordinal": 6,
+      "trigger_round_pk": 508588,
+      "observed_at": "2026-04-10 03:29:02.391000",
+      "sha256_rank_key": "003c355bb052a23a051604903df0ac3a937b9a984668237bacd58cd7769ac2c8",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000006",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000006",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000006",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000006",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000006",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000006"
+      ],
+      "w": 6,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        49932,
+        49932,
+        49932,
+        49932,
+        49932,
+        49932
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508899",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:c94de0ae-308a-2f86-124f-ccfa75430d65",
+      "trigger_run_ordinal": 5,
+      "trigger_round_pk": 508899,
+      "observed_at": "2026-04-10 03:27:02.719000",
+      "sha256_rank_key": "003cf8201b2089cb9471d955d937f546f3ce6b9cbf1782fed39be854b91b73d4",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000005",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000005",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000005",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000005",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000005",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000005"
+      ],
+      "w": 6,
+      "n": 48,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        43626,
+        43626,
+        43626,
+        43626,
+        43626,
+        43626
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508524",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:15412ff8-3d26-057e-ef32-41d92bef9fb0",
+      "trigger_run_ordinal": 4,
+      "trigger_round_pk": 508524,
+      "observed_at": "2026-04-10 03:21:43.984000",
+      "sha256_rank_key": "067acdd5bfe7cb7dce8f6d90c3abf67d07a56cba4954c76c47ee79a6e61e85dd",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000004",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000004",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000004",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000004",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000004",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000004"
+      ],
+      "w": 6,
+      "n": 24,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        33682,
+        33682,
+        33682,
+        33682,
+        33682,
+        33682
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-38880",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:19d4dce4-feba-e453-2fa7-49ff380ca353",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 38880,
+      "observed_at": "2026-05-13 21:09:39.646000",
+      "sha256_rank_key": "068fbf31c5c541a202e2eb8644ef7a272894eebdfce952abddf63c311f92b7ff",
+      "active_run_ids": [
+        "claude:claude:11c740b8-a671-6c19-bc24-cc6522d8cd2a:run:000001",
+        "claude:claude:19d4dce4-feba-e453-2fa7-49ff380ca353:run:000001",
+        "claude:claude:85cc909a-1863-6147-c1c4-28ebf8c1a3a6:run:000001",
+        "claude:claude:ccaa4e46-918f-b4d5-99a9-e38804d9b90c:run:000008",
+        "claude:claude:dc4b2c1d-c137-d58e-8162-262409456943:run:000001",
+        "claude:claude:e9a88a1b-cc03-10bb-a5e2-d53684c43f2f:run:000001"
+      ],
+      "w": 6,
+      "n": 30,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        39469,
+        39469,
+        39469,
+        39469
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94304",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 94304,
+      "observed_at": "2026-06-19 12:59:39.910000",
+      "sha256_rank_key": "0973617319ed443df9266a0b280e1e852018aa5a18942cfd21ffe1c95eef4e24",
+      "active_run_ids": [
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000003",
+        "claude:claude:216de16a-f25c-b406-b99c-72e04e3f9a50:run:000002",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000004",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000001"
+      ],
+      "w": 7,
+      "n": 16,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        31246,
+        21859,
+        26985,
+        18797
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508506",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:9e7d6537-5b99-4ee9-baeb-ed4c65cacb32",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 508506,
+      "observed_at": "2026-04-10 03:46:27.079000",
+      "sha256_rank_key": "0d79ccf4a1b68b3ed52cb81a2790a28c0f699fb3779a2a87f343ea54dbfbfcb1",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000010",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000010",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000010",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000010",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000010",
+        "claude:claude:9e7d6537-5b99-4ee9-baeb-ed4c65cacb32:run:000001",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000010"
+      ],
+      "w": 7,
+      "n": 15,
+      "p": 7,
+      "x": 7,
+      "pending_anchors": [
+        68761,
+        68761,
+        68761,
+        68761,
+        68761,
+        45799,
+        68761
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-93136",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:efb251ca-546a-f519-3e73-10416414b71e",
+      "trigger_run_ordinal": 68,
+      "trigger_round_pk": 93136,
+      "observed_at": "2026-06-03 06:16:27.165000",
+      "sha256_rank_key": "1c7c90b27f611c0e6d0857fceef9ead7e0d18f26716d890600f7ed6d0afd2c67",
+      "active_run_ids": [
+        "claude:claude:98ae2964-672a-5ea9-5642-1eb8f9f88f4c:run:000002",
+        "claude:claude:efb251ca-546a-f519-3e73-10416414b71e:run:000068",
+        "claude:claude:f60ef8c5-14b3-6a66-86fd-ec3e51c4d833:run:000018",
+        "claude:claude:fe5c8d89-75a8-601f-60c7-5c2022cc3f03:run:000001",
+        "claude:claude:fe5c8d89-75a8-601f-60c7-5c2022cc3f03:run:000006"
+      ],
+      "w": 5,
+      "n": 29,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        69802,
+        60398,
+        107518,
+        53429
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508511",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:9e7d6537-5b99-4ee9-baeb-ed4c65cacb32",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 508511,
+      "observed_at": "2026-04-10 03:47:59.964000",
+      "sha256_rank_key": "2972b0bd0a8d269afcd49d51b5ed83ce669866d5f5e83d7857e85c37c9299a89",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000010",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000010",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000010",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000010",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000010",
+        "claude:claude:9e7d6537-5b99-4ee9-baeb-ed4c65cacb32:run:000002",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000010"
+      ],
+      "w": 7,
+      "n": 9,
+      "p": 7,
+      "x": 7,
+      "pending_anchors": [
+        68761,
+        68761,
+        68761,
+        68761,
+        68761,
+        49719,
+        68761
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94376",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:af70fa19-81cd-b491-9675-5e9df1eecde6",
+      "trigger_run_ordinal": 5,
+      "trigger_round_pk": 94376,
+      "observed_at": "2026-06-19 13:01:48.260000",
+      "sha256_rank_key": "338d0657f722802d6dceb7f619353e5add289af1db9a8a5281a2bbb9bceb798b",
+      "active_run_ids": [
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000008",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000006",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000002"
+      ],
+      "w": 7,
+      "n": 22,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        33435,
+        43146,
+        65629,
+        45179,
+        39749,
+        41252
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94309",
+      "provider": "claude",
+      "context_bucket": "32K-64K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 94309,
+      "observed_at": "2026-06-19 13:01:46.220000",
+      "sha256_rank_key": "7401a9961727b2060771c5f7f429c73caa563aa561f07777d11b7b068e415026",
+      "active_run_ids": [
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000008",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000002"
+      ],
+      "w": 6,
+      "n": 21,
+      "p": 5,
+      "x": 5,
+      "pending_anchors": [
+        33435,
+        43146,
+        65629,
+        45179,
+        41252
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508916",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:c94de0ae-308a-2f86-124f-ccfa75430d65",
+      "trigger_run_ordinal": 9,
+      "trigger_round_pk": 508916,
+      "observed_at": "2026-04-10 03:36:35.676000",
+      "sha256_rank_key": "01dd9f37c85e4a47565128a80bcaeb8035c5a8c74d22c1c7861e43a2966eb4f9",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000009",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000009",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000009",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000009",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000009",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000009"
+      ],
+      "w": 6,
+      "n": 48,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        63690,
+        63690,
+        63690,
+        63690,
+        63690,
+        63690
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508707",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf",
+      "trigger_run_ordinal": 10,
+      "trigger_round_pk": 508707,
+      "observed_at": "2026-04-10 03:48:34.418000",
+      "sha256_rank_key": "02ace71f2018d3d2d27467d876af4f7f35a27738f337238bd20fe1b9493928aa",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000010",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000010",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000010",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000010",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000010",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000010"
+      ],
+      "w": 6,
+      "n": 18,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        71801,
+        71801,
+        71801,
+        71801,
+        71801,
+        71801
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94357",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:6cfa7c68-1703-5556-f6ba-03a378008fdc",
+      "trigger_run_ordinal": 8,
+      "trigger_round_pk": 94357,
+      "observed_at": "2026-06-19 13:01:55.977000",
+      "sha256_rank_key": "0be86a387564b06d31b4e9da32e4d92125ff00b44de4ed2d6f17ceead9e888f8",
+      "active_run_ids": [
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000008",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000006",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000002"
+      ],
+      "w": 6,
+      "n": 17,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        33435,
+        43146,
+        66854,
+        45179
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-35647",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:ccaa4e46-918f-b4d5-99a9-e38804d9b90c",
+      "trigger_run_ordinal": 12,
+      "trigger_round_pk": 35647,
+      "observed_at": "2026-05-14 19:29:01.351000",
+      "sha256_rank_key": "27eae95e6edc5ed630156f38791ae1d813581814de289817b2bd53fe21ce3732",
+      "active_run_ids": [
+        "claude:claude:8accbe54-056a-34a8-474c-24a6fe00f267:run:000001",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000004",
+        "claude:claude:ccaa4e46-918f-b4d5-99a9-e38804d9b90c:run:000012",
+        "claude:claude:f585a135-1def-8bd2-1921-866c98426edc:run:000003"
+      ],
+      "w": 5,
+      "n": 13,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        39727,
+        30428,
+        74205,
+        98807
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-540514",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:59726b4b-1c0c-f2df-6b4b-e1573137b18c",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 540514,
+      "observed_at": "2026-06-24 04:06:05.247000",
+      "sha256_rank_key": "31a65386f5fb63d76d1355251946b018b6cd826c26485b2aa7b57a9d5671e148",
+      "active_run_ids": [
+        "claude:claude:1ff52f11-bcd5-74e9-050f-702f82ab2b58:run:000003",
+        "claude:claude:59726b4b-1c0c-f2df-6b4b-e1573137b18c:run:000002",
+        "claude:claude:b378d3f4-d97b-0586-2d43-c5d2362daf23:run:000004",
+        "claude:claude:bf245c60-3660-e246-e8af-357cd469c763:run:000003",
+        "claude:claude:fec5d3e2-adcf-dc12-bb52-9eba3c620f64:run:000002"
+      ],
+      "w": 5,
+      "n": 31,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        73230,
+        103802,
+        90131,
+        81162
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-539999",
+      "provider": "claude",
+      "context_bucket": "64K-128K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:bf245c60-3660-e246-e8af-357cd469c763",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 539999,
+      "observed_at": "2026-06-24 03:54:36.423000",
+      "sha256_rank_key": "c4485145dc826ae784c4927c74ad241f310c08c7a7e0ec5d02567a67204b169e",
+      "active_run_ids": [
+        "claude:claude:1ff52f11-bcd5-74e9-050f-702f82ab2b58:run:000003",
+        "claude:claude:404fc91e-ebb5-d499-eda1-a97b31698a63:run:000001",
+        "claude:claude:b378d3f4-d97b-0586-2d43-c5d2362daf23:run:000003",
+        "claude:claude:bf245c60-3660-e246-e8af-357cd469c763:run:000002",
+        "claude:claude:fec5d3e2-adcf-dc12-bb52-9eba3c620f64:run:000001"
+      ],
+      "w": 5,
+      "n": 59,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        58692,
+        83177,
+        58777,
+        61451
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508613",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 508613,
+      "observed_at": "2026-04-10 03:19:02.620000",
+      "sha256_rank_key": "06feadcd4912f13253a01126f24d15cae83582b135dc7302571fca4a2cd3efaf",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000001",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000001",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000001",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000001",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000001",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000001"
+      ],
+      "w": 6,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        27738,
+        27738,
+        27738,
+        27738,
+        27738,
+        27738
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508566",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:1845627d-143e-066c-b5ec-10afc3af0e4f",
+      "trigger_run_ordinal": 2,
+      "trigger_round_pk": 508566,
+      "observed_at": "2026-04-10 03:20:52.533000",
+      "sha256_rank_key": "1b117d3b2efc4c4ac8ec597f3b691450f8b108df9354c72d974e7226422bd940",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000002",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000002",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000002",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000002",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000002",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000002"
+      ],
+      "w": 6,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        29700,
+        29700,
+        29700,
+        29700,
+        29700,
+        29700
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-508661",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 508661,
+      "observed_at": "2026-04-10 03:18:54.499000",
+      "sha256_rank_key": "1eed1bf01a708892d87798a5a025961036c4b89bf88330c7480a8142849b3df7",
+      "active_run_ids": [
+        "claude:claude:15412ff8-3d26-057e-ef32-41d92bef9fb0:run:000001",
+        "claude:claude:1845627d-143e-066c-b5ec-10afc3af0e4f:run:000001",
+        "claude:claude:1f1be738-e2f7-a39a-c1bd-ebb5b623a930:run:000001",
+        "claude:claude:3e0c7dbc-ba02-c314-3a2b-d4d64d166dbf:run:000001",
+        "claude:claude:7988925d-bbfa-56ae-bc8c-f4bfd201fb57:run:000015",
+        "claude:claude:8504ca0d-d8a2-ae55-cb1e-82ec43c092f8:run:000001",
+        "claude:claude:c94de0ae-308a-2f86-124f-ccfa75430d65:run:000001"
+      ],
+      "w": 7,
+      "n": 12,
+      "p": 6,
+      "x": 6,
+      "pending_anchors": [
+        26257,
+        26257,
+        26257,
+        26257,
+        26257,
+        26257
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-94318",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 94318,
+      "observed_at": "2026-06-19 13:00:25.054000",
+      "sha256_rank_key": "206fc040073e581f6b78276bba30d99f4489abf7da32dcfcc68a41045017e6ce",
+      "active_run_ids": [
+        "claude:claude:13843e27-0b10-704c-5850-125d97ce1a13:run:000005",
+        "claude:claude:17b06d9b-2281-453a-2180-c2cdc50288d9:run:000001",
+        "claude:claude:216de16a-f25c-b406-b99c-72e04e3f9a50:run:000004",
+        "claude:claude:688e4151-3679-7ee2-226e-a08de7748fbb:run:000001",
+        "claude:claude:6cfa7c68-1703-5556-f6ba-03a378008fdc:run:000006",
+        "claude:claude:a6ef802a-b8c5-31e2-813f-7b9d81661e2a:run:000001",
+        "claude:claude:af70fa19-81cd-b491-9675-5e9df1eecde6:run:000005",
+        "claude:claude:b37fb29b-b5b0-5276-858e-f95b891a0a1a:run:000001"
+      ],
+      "w": 8,
+      "n": 13,
+      "p": 5,
+      "x": 5,
+      "pending_anchors": [
+        18813,
+        29033,
+        29288,
+        30265,
+        25868
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-67076",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:418037d3-5ff1-71e4-2f2f-1ee569fae523",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 67076,
+      "observed_at": "2026-05-15 18:37:59.022000",
+      "sha256_rank_key": "23213a13dd9850391cc8c10091a577f8f55a230b7fe7b239e41c024b348fa265",
+      "active_run_ids": [
+        "claude:claude:05f731c7-2612-7142-5a1a-4f90101cfb4e:run:000001",
+        "claude:claude:418037d3-5ff1-71e4-2f2f-1ee569fae523:run:000001",
+        "claude:claude:67820f98-8388-6a45-51dd-8a571df4bd54:run:000087",
+        "claude:claude:70a26fe3-480b-7608-82fa-33ebaef9a10c:run:000004",
+        "claude:claude:a8e981b6-991f-311e-6e2d-453adda9f0de:run:000041"
+      ],
+      "w": 5,
+      "n": 24,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        18941,
+        13839,
+        32361,
+        30428
+      ]
+    },
+    {
+      "snapshot_id": "c128-medium-claude-round-18027",
+      "provider": "claude",
+      "context_bucket": "<=32K",
+      "scale": "Medium",
+      "trigger_session_id": "claude:3697c055-75a9-15b7-76f9-e3c7ea118318",
+      "trigger_run_ordinal": 1,
+      "trigger_round_pk": 18027,
+      "observed_at": "2026-05-14 17:29:27.130000",
+      "sha256_rank_key": "68264f5172536d3c7759c2ee46aaee43c5974e564c0175c44a107cadbdd8190a",
+      "active_run_ids": [
+        "claude:claude:2f68796e-1b00-6b48-522a-cf9824594f7c:run:000002",
+        "claude:claude:3697c055-75a9-15b7-76f9-e3c7ea118318:run:000001",
+        "claude:claude:4c425f1b-635e-78d1-9649-140186150b7a:run:000010",
+        "claude:claude:c839369a-dcd7-6cda-5f47-2b33963bc82d:run:000012",
+        "claude:claude:cb3adab6-0c60-380d-3403-c4a7905333ea:run:000001"
+      ],
+      "w": 5,
+      "n": 12,
+      "p": 4,
+      "x": 4,
+      "pending_anchors": [
+        28284,
+        90767,
+        118093,
+        25750
+      ]
+    }
+  ]
+}
