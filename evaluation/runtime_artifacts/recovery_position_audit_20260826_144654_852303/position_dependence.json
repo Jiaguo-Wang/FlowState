@@ -1,0 +1,87 @@
+{
+  "discrepancy_classification": "MIXED",
+  "gap_only_assumption": "FAIL",
+  "gap_rows": [
+    {
+      "endpoint_relative_change": 0.5385112118880467,
+      "gap_tokens": 4096,
+      "increments_ms": [
+        43.3308168333333,
+        41.620933166666674,
+        43.28749641666667
+      ],
+      "phi_by_target": {
+        "131072": 302.24542533333334,
+        "32768": 174.0061789166667,
+        "65536": 217.33699575,
+        "98304": 258.9579289166667
+      },
+      "position_range_ratio": 0.5385112118880467,
+      "significant_monotonic_trend": true,
+      "trend": "单调增长"
+    },
+    {
+      "endpoint_relative_change": 0.5238115695935676,
+      "gap_tokens": 8192,
+      "increments_ms": [
+        86.555612,
+        87.06231491666676,
+        85.09869316666664
+      ],
+      "phi_by_target": {
+        "131072": 622.90569875,
+        "32768": 364.18907866666666,
+        "65536": 450.74469066666666,
+        "98304": 537.8070055833334
+      },
+      "position_range_ratio": 0.5238115695935676,
+      "significant_monotonic_trend": true,
+      "trend": "单调增长"
+    },
+    {
+      "endpoint_relative_change": 0.5460291940381545,
+      "gap_tokens": 16384,
+      "increments_ms": [
+        186.97226091666664,
+        176.30881724999983,
+        178.02076100000022
+      ],
+      "phi_by_target": {
+        "131072": 1259.7553484166667,
+        "32768": 718.45350925,
+        "65536": 905.4257701666667,
+        "98304": 1081.7345874166665
+      },
+      "position_range_ratio": 0.5460291940381545,
+      "significant_monotonic_trend": true,
+      "trend": "单调增长"
+    },
+    {
+      "endpoint_relative_change": 0.5221238701544999,
+      "gap_tokens": 32768,
+      "increments_ms": [
+        326.5220015833336,
+        345.58657041666675,
+        340.6283109166666
+      ],
+      "phi_by_target": {
+        "131072": 2449.5437129166667,
+        "32768": 1436.8068299999998,
+        "65536": 1763.3288315833333,
+        "98304": 2108.915402
+      },
+      "position_range_ratio": 0.5221238701544999,
+      "significant_monotonic_trend": true,
+      "trend": "单调增长"
+    }
+  ],
+  "legacy_reproduction": "WEAK",
+  "ready_to_freeze_recovery_model": true,
+  "step10d1_sublinear_consistency": "YES",
+  "thresholds": {
+    "multiple_trends_for_fail": 2,
+    "pass_ratio": 0.05,
+    "significant_trend_endpoint_change": 0.05,
+    "weak_ratio": 0.1
+  }
+}

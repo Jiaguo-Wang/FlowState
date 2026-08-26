@@ -1,0 +1,169 @@
+{
+  "gap_only": {
+    "coefficients": {
+      "beta_gap_ms_per_token": 0.059479890387501434
+    },
+    "formula": "cost = beta_gap * G",
+    "leave_one_position_out": {
+      "folds": [
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.06468618023897059
+          },
+          "held_out_target": 32768,
+          "mae_ms": 320.21582926225494,
+          "mape_percent": 48.20229621643533,
+          "max_absolute_error_ms": 682.8299240705885,
+          "r_squared": 0.33479827730859246,
+          "training_targets": [
+            65536,
+            98304,
+            131072
+          ]
+        },
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.06126198150164037
+          },
+          "held_out_target": 65536,
+          "mae_ms": 106.77496382352939,
+          "mape_percent": 12.873768661796557,
+          "max_absolute_error_ms": 244.10377826241825,
+          "r_squared": 0.9477125154559535,
+          "training_targets": [
+            32768,
+            98304,
+            131072
+          ]
+        },
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.057733265398571536
+          },
+          "held_out_target": 98304,
+          "mae_ms": 110.07077445710789,
+          "mape_percent": 10.898288404598711,
+          "max_absolute_error_ms": 217.111761419608,
+          "r_squared": 0.964834259798628,
+          "training_targets": [
+            32768,
+            65536,
+            131072
+          ]
+        },
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.05423813441082325
+          },
+          "held_out_target": 131072,
+          "mae_ms": 325.51480180392156,
+          "mape_percent": 28.017786410286362,
+          "max_absolute_error_ms": 672.2685245428104,
+          "r_squared": 0.7671628208308141,
+          "training_targets": [
+            32768,
+            65536,
+            98304
+          ]
+        }
+      ],
+      "mae_ms": 215.64409233670344,
+      "mape_percent": 24.998034923279242,
+      "max_absolute_error_ms": 682.8299240705885,
+      "r_squared": 0.8158182800142122
+    },
+    "mae_ms": 161.97332652083335,
+    "mape_percent": 18.782083881258682,
+    "max_absolute_error_ms": 512.2302182176472,
+    "r_squared": 0.8962625017610564
+  },
+  "position_aware": {
+    "coefficients": {
+      "beta_gap_ms_per_token": 0.03332525019686828,
+      "beta_gap_position_ms_per_token": 0.010461856076253249,
+      "position_scale_tokens": 32768.0
+    },
+    "formula": "cost = beta_gap * G + beta_position * G * (T / 32768)",
+    "leave_one_position_out": {
+      "folds": [
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.033078868330293575,
+            "beta_gap_position_ms_per_token": 0.010535770636225694,
+            "position_scale_tokens": 32768.0
+          },
+          "held_out_target": 32768,
+          "mae_ms": 5.7627358276954865,
+          "mape_percent": 1.4077516428544015,
+          "max_absolute_error_ms": 7.6423403450965,
+          "r_squared": 0.9998467478677862,
+          "training_targets": [
+            65536,
+            98304,
+            131072
+          ]
+        },
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.033407639699932684,
+            "beta_gap_position_ms_per_token": 0.010445378175640386,
+            "position_scale_tokens": 32768.0
+          },
+          "held_out_target": 65536,
+          "mae_ms": 10.680831044327732,
+          "mape_percent": 1.5741375676611018,
+          "max_absolute_error_ms": 15.921010222829182,
+          "r_squared": 0.9995959386226563,
+          "training_targets": [
+            32768,
+            98304,
+            131072
+          ]
+        },
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.033325250196868314,
+            "beta_gap_position_ms_per_token": 0.010460577943587087,
+            "position_scale_tokens": 32768.0
+          },
+          "held_out_target": 98304,
+          "mae_ms": 11.696920453711343,
+          "mape_percent": 1.5801631610611735,
+          "max_absolute_error_ms": 21.575361107983554,
+          "r_squared": 0.9996537303840196,
+          "training_targets": [
+            32768,
+            65536,
+            131072
+          ]
+        },
+        {
+          "coefficients": {
+            "beta_gap_ms_per_token": 0.03337938988962612,
+            "beta_gap_position_ms_per_token": 0.01042937226059857,
+            "position_scale_tokens": 32768.0
+          },
+          "held_out_target": 131072,
+          "mae_ms": 13.415589308333352,
+          "mape_percent": 1.4495907876165184,
+          "max_absolute_error_ms": 29.368083994444532,
+          "r_squared": 0.999600779698486,
+          "training_targets": [
+            32768,
+            65536,
+            98304
+          ]
+        }
+      ],
+      "mae_ms": 10.389019158516978,
+      "mape_percent": 1.5029107897982987,
+      "max_absolute_error_ms": 29.368083994444532,
+      "r_squared": 0.9996719363790757
+    },
+    "mae_ms": 9.838238694448506,
+    "mape_percent": 1.4549040693561281,
+    "max_absolute_error_ms": 28.126249377843806,
+    "r_squared": 0.9996870253924494
+  },
+  "status": "仅作维度诊断，未写回正式 Phi"
+}

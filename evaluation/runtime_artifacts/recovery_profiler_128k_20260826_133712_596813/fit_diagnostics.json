@@ -1,0 +1,38 @@
+{
+  "linear": {
+    "full_128k": {
+      "mae_ms": 234.96121991124858,
+      "mape_percent": 10.585524512596393,
+      "max_absolute_error_ms": 546.4890390136297,
+      "r_squared": 0.987755642853383
+    },
+    "slope_ms_per_token": 0.06468554963122276,
+    "within_32k": {
+      "mae_ms": 130.06833641486793,
+      "mape_percent": 14.015468529296223,
+      "max_absolute_error_ms": 322.7437069340922,
+      "r_squared": 0.9591234764501385
+    }
+  },
+  "piecewise_linear": {
+    "fixed_knots": [
+      0,
+      32768,
+      65536,
+      131072
+    ],
+    "full_128k": {
+      "mae_ms": 32.51748710763885,
+      "mape_percent": 1.3320469123024539,
+      "max_absolute_error_ms": 183.9901979999995,
+      "r_squared": 0.9994054707670865
+    },
+    "within_32k": {
+      "mae_ms": 10.587991677083346,
+      "mape_percent": 1.5651989745985557,
+      "max_absolute_error_ms": 35.78140179166667,
+      "r_squared": 0.9996072697235786
+    }
+  },
+  "status": "仅作诊断，未写回正式 Phi"
+}
