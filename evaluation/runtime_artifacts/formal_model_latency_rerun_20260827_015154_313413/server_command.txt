@@ -1,0 +1,21 @@
+容器内入口：
+python3 -m evaluation.formal_model_latency_rerun
+
+SGLang 使用 FormalEndToEndGateEngine 内嵌启动。
+引擎参数：
+{
+  "chunked_prefill_size": 45056,
+  "context_length": 45056,
+  "disable_cuda_graph": true,
+  "disable_overlap_schedule": true,
+  "enable_request_time_stats_logging": true,
+  "log_level": "info",
+  "mamba_max_states_per_path": -1,
+  "mamba_radix_cache_strategy": "extra_buffer",
+  "mamba_track_interval": 256,
+  "max_mamba_cache_size": 24,
+  "mem_fraction_static": 0.4,
+  "model_path": "/model",
+  "stream_interval": 1,
+  "tp_size": 1
+}

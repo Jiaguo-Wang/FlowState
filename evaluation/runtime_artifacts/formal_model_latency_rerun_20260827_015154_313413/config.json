@@ -1,0 +1,71 @@
+{
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 45056,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 24,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "equivalence_classes": 33,
+  "formal_model": {
+    "calibration_artifact": "recovery_model_freeze_20260826_154235_266020",
+    "coefficient_a": 37.82815,
+    "coefficient_b": 0.345974143,
+    "coefficient_c": -0.156201917,
+    "gap_unit": "tokens",
+    "maximum_target_tokens": 131072,
+    "minimum_gap_tokens": 0,
+    "name": "position_aware_quadratic_v1",
+    "output_unit": "ms",
+    "target_unit": "tokens"
+  },
+  "formal_selection_audit": "/repo/evaluation/formal_model_regression/h100_selection_audit.json",
+  "historical_artifact": "/repo/evaluation/runtime_artifacts/sota_latency_20260825_113526_839592",
+  "input_artifact_hashes_before": {
+    "evaluation/formal_model_regression/h100_selection_audit.json": "0b7f50c7c716545633d51e43b0a373d470485c38f46fbae66cc8620a149e5325",
+    "evaluation/runtime_artifacts/sota_latency_20260825_113526_839592/raw_samples.jsonl": "8d7874c3514f5598e4a5fbe16881b387abefe2f89bd586fc8d2bd21c10957a18",
+    "evaluation/runtime_artifacts/sota_latency_20260825_113526_839592/run_metadata.json": "18713650adc7b55c9f50d93616fe20a8be466c38c8378f2c21e1de6c2da067ef",
+    "evaluation/runtime_artifacts/sota_latency_20260825_113526_839592/summary.csv": "bb55ae91a88e619f08ea9ce6f8718e771e56c5c6962f861b79b4f835c7609d8a",
+    "evaluation/runtime_artifacts/sota_latency_20260825_113526_839592/summary.json": "dc6b916e402bcb147dfbc160602a424b31abc7ce2647aa4769801120294a5eb2"
+  },
+  "maximum_deterministic_retries": 1,
+  "measured_cases": 330,
+  "measured_repetitions": 10,
+  "multiplicity_per_repetition": 400,
+  "policies": [
+    "Global-LRU",
+    "KVFlow-style",
+    "Marconi-style",
+    "FlowState"
+  ],
+  "policy_order_seed": 20260825,
+  "protected_source_hashes_before": {
+    "evaluation/controlled_multiworkflow_v1/policies.py": "cbca81712c41bbcadd12a923fb6387c1c2d96976ce2ab38e21a9afcc62b9d375",
+    "evaluation/public_agent_trace/tracelab_final_protocol.json": "e8eeb0808d4db9761754fe5e4db6c7384f3621c992c0e955d103ed6faaeb0a46",
+    "evaluation/sota_policies.py": "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212",
+    "flowstate/optimizer.py": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98",
+    "flowstate/recovery_model.py": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
+  },
+  "schema_version": "flowstate.formal_model_latency_rerun.v1",
+  "target_points": [
+    {
+      "K": 4,
+      "scenario": "scalable_multiworkflow_v2_n16"
+    },
+    {
+      "K": 8,
+      "scenario": "sota_signal_stress_v1"
+    }
+  ],
+  "warmup_cases": 66,
+  "warmup_repetitions": 2
+}
