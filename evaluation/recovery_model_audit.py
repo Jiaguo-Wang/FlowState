@@ -10,7 +10,9 @@ import math
 from pathlib import Path
 from typing import Mapping, Sequence
 
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 
 
 DEFAULT_ARTIFACT_DIRECTORY = (

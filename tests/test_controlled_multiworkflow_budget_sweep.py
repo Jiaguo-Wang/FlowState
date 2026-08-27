@@ -83,7 +83,13 @@ def test_sweep_metrics_reuse_core_frontier_gap_and_recovery_model() -> None:
         )
         assert isclose(
             row.estimated_recovery_cost_ms,
-            sum(model.estimate(gap) for gap in gaps),
+            sum(
+                model.estimate(gap, continuation.planning_target)
+                for continuation, gap in zip(
+                    scenario.continuations,
+                    gaps,
+                )
+            ),
         )
 
 
@@ -159,9 +165,9 @@ def test_existing_four_policy_budget_regression() -> None:
             ("W1_PARENT", "W2_PARENT"),
             20_480,
         ),
-        (2, "Recovery-Only"): (
-            ("W1_PARENT", "W2_PARENT"),
-            20_480,
+            (2, "Recovery-Only"): (
+                ("W1_PARENT", "W1_SHALLOW"),
+                36_864,
         ),
         (3, "FlowState"): (
             ("W1_PARENT", "W2_PARENT", "W4_PARENT"),
@@ -175,9 +181,9 @@ def test_existing_four_policy_budget_regression() -> None:
             ("W1_PARENT", "W2_PARENT", "W3_PARENT"),
             12_288,
         ),
-        (3, "Recovery-Only"): (
-            ("W1_PARENT", "W2_PARENT", "W1_SHALLOW"),
-            20_480,
+            (3, "Recovery-Only"): (
+                ("W1_PARENT", "W1_SHALLOW", "W2_PARENT"),
+                20_480,
         ),
         (4, "FlowState"): (
             (
@@ -208,10 +214,10 @@ def test_existing_four_policy_budget_regression() -> None:
         ),
         (4, "Recovery-Only"): (
             (
-                "W1_PARENT",
-                "W2_PARENT",
-                "W1_SHALLOW",
-                "W3_PARENT",
+                    "W1_PARENT",
+                    "W1_SHALLOW",
+                    "W2_PARENT",
+                    "W3_PARENT",
             ),
             12_288,
         ),
@@ -246,10 +252,10 @@ def test_existing_four_policy_budget_regression() -> None:
         ),
         (5, "Recovery-Only"): (
             (
-                "W1_PARENT",
-                "W2_PARENT",
-                "W1_SHALLOW",
-                "W3_PARENT",
+                    "W1_PARENT",
+                    "W1_SHALLOW",
+                    "W2_PARENT",
+                    "W3_PARENT",
                 "W4_PARENT",
             ),
             0,

@@ -298,7 +298,8 @@ def _total_recovery_cost(
     """用核心恢复间隔和真实 Phi 计算一个 selected set 的总成本。"""
     return sum(
         recovery_cost_model.estimate(
-            recovery_gap(continuation, selected)
+            recovery_gap(continuation, selected),
+            continuation.planning_target,
         )
         for continuation in continuations
     )
@@ -691,7 +692,10 @@ def run_snapshot_case(
             }
         )
         record["estimated_runtime_recovery_cost_ms"] = (
-            recovery_cost_model.estimate(int(record["runtime_gap"]))
+            recovery_cost_model.estimate(
+                int(record["runtime_gap"]),
+                continuation.planning_target,
+            )
         )
         validate_snapshot_runtime_observation(
             anchor_pos=continuation.planning_target,

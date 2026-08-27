@@ -48,7 +48,9 @@ from evaluation.recovery_profiler_v2.profile_runner import (
 )
 from evaluation.sota_latency_runtime import measure_streaming_request
 from flowstate.controller import StateController
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 from flowstate.state_catalog import CheckpointCandidate
 from flowstate.workflow import PendingContinuation
 

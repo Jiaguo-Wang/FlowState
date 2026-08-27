@@ -1,0 +1,163 @@
+{
+  "gpu_rerun_points": [
+    "Scalable N16 K4",
+    "SOTA-signal K8"
+  ],
+  "gpu_rerun_required": true,
+  "points": [
+    {
+      "budget_checkpoints": 4,
+      "classification": "CHANGED",
+      "existing_artifact": "NOT REUSABLE FOR FINAL FLOWSTATE CLAIM",
+      "measured_ttft_unchanged": true,
+      "new_formal_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN"
+      ],
+      "new_selection_formal_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 216.97409766026658,
+        "total_recovery_cost_ms": 13018.445859615995,
+        "total_recovery_gap_tokens": 331776
+      },
+      "old_h100_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN"
+      ],
+      "old_selection_formal_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 220.21287698399996,
+        "total_recovery_cost_ms": 13212.772619039997,
+        "total_recovery_gap_tokens": 331776
+      },
+      "point": "Scalable N16 K4",
+      "scenario": "scalable_multiworkflow_v2_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "classification": "IDENTICAL",
+      "existing_artifact": "REUSABLE",
+      "measured_ttft_unchanged": true,
+      "new_formal_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "new_selection_formal_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 23.253555196266667,
+        "total_recovery_cost_ms": 1395.213311776,
+        "total_recovery_gap_tokens": 36864
+      },
+      "old_h100_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "old_selection_formal_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 23.253555196266667,
+        "total_recovery_cost_ms": 1395.213311776,
+        "total_recovery_gap_tokens": 36864
+      },
+      "point": "Scalable N16 K12",
+      "scenario": "scalable_multiworkflow_v2_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "classification": "IDENTICAL",
+      "existing_artifact": "REUSABLE",
+      "measured_ttft_unchanged": true,
+      "new_formal_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "new_selection_formal_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 297.8680671744,
+        "total_recovery_cost_ms": 11914.722686976,
+        "total_recovery_gap_tokens": 294912
+      },
+      "old_h100_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_selection_formal_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 297.8680671744,
+        "total_recovery_cost_ms": 11914.722686976,
+        "total_recovery_gap_tokens": 294912
+      },
+      "point": "SOTA-signal K4",
+      "scenario": "sota_signal_stress_v1"
+    },
+    {
+      "budget_checkpoints": 8,
+      "classification": "CHANGED",
+      "existing_artifact": "NOT REUSABLE FOR FINAL FLOWSTATE CLAIM",
+      "measured_ttft_unchanged": true,
+      "new_formal_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "new_selection_formal_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 157.38531123199996,
+        "total_recovery_cost_ms": 6295.412449279998,
+        "total_recovery_gap_tokens": 163840
+      },
+      "old_h100_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "old_selection_formal_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 171.95981818880003,
+        "total_recovery_cost_ms": 6878.392727552001,
+        "total_recovery_gap_tokens": 163840
+      },
+      "point": "SOTA-signal K8",
+      "scenario": "sota_signal_stress_v1"
+    }
+  ],
+  "source_correctness_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/sota_correctness_20260825_104513_833972/summary.json",
+  "source_latency_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/sota_latency_20260825_113526_839592"
+}

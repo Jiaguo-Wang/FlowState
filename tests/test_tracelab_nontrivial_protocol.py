@@ -45,7 +45,7 @@ PROTECTED_HASHES = {
         "c612bcf28c0f585e2456acc5f681cc0fd468418db9f4ae7284389f6554bf16c9"
     ),
     "tests/test_tracelab_nontrivial_demand.py": (
-        "467fdb930d4fc37c1c402eb6893a02322114fc671bf38a2173f9a998ffc7c158"
+        "f373cb4ef65c951054004fb511a7c05ae191cd8a318311c5d316ad02a49fd19c"
     ),
     "evaluation/public_agent_trace/TRACELAB_FINAL_PROTOCOL.md": (
         "e902187d4681ca971d61811da64137f3098ea747ad21676cbe88acb7feac1a03"
@@ -57,13 +57,13 @@ PROTECTED_HASHES = {
         "e6cdc288402ae8fd16234710342ab1076453f61f84610c4b0504bbcad50dce79"
     ),
     "flowstate/recovery_model.py": (
-        "9a13bc4f7778b9e1835ddb04237d54815ff86c7e9c57b42d293e73c5bb404082"
+        "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
     ),
     "evaluation/controlled_multiworkflow_v1/scenario.py": (
         "608f729c2670f249201402063bc2d354d85bc7a43657d4be5f77c13ff6fe5909"
     ),
     "evaluation/controlled_multiworkflow_v1/policies.py": (
-        "8df5a1391b651f3a55090e13b8abb9d2a520de0a94abeb6a7339fdcb49445a24"
+        "cbca81712c41bbcadd12a923fb6387c1c2d96976ce2ab38e21a9afcc62b9d375"
     ),
     "evaluation/scalable_multiworkflow_v2/scenario.py": (
         "a39ec5a1a9761ccefcefb4763eb10ce142895fc53197bd0f4d66746cc71e5bdd"

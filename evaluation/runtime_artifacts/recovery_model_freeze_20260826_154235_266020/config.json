@@ -1,0 +1,122 @@
+{
+  "calibration_point_count": 20,
+  "calibration_source_hashes": {
+    "long_gap_summary.csv": "3851934248c49a4db56c2665384a9006f6d7e333fc50171754a2a21f3933b162",
+    "position_matrix_summary.csv": "753b60f626d88dfd3e43378bc398197db3d2c0785e12c18fc75d52805aae1240"
+  },
+  "calibration_sources": {
+    "long_gap": "evaluation/runtime_artifacts/recovery_profiler_128k_20260826_133712_596813",
+    "position_matrix": "evaluation/runtime_artifacts/recovery_position_audit_20260826_144654_852303"
+  },
+  "context_capabilities": {
+    "admission_limit_changed_from_step9d": true,
+    "cache_policy_changed": false,
+    "formal_anchor_tokens": 131072,
+    "formal_request_input_tokens": 131136,
+    "formal_request_with_output_tokens": 131137,
+    "model_advertised_max_context": 262144,
+    "model_semantics_changed": false,
+    "sglang_effective_max_context": 131200,
+    "tokenizer_model_max_length": 262144
+  },
+  "end_time": "2026-08-26T16:08:28.624437+00:00",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 24,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "gpu_memory_gib": 79.1790771484375,
+    "model": "Qwen3.5-9B",
+    "sglang_version": "0.5.17",
+    "tp": 1,
+    "visible_gpu_count": 1
+  },
+  "failure_stage": null,
+  "fatal_error": null,
+  "gates": {
+    "calibration_correctness": true,
+    "formal_recovery_model_unchanged": true,
+    "heldout_semantic_correctness": true,
+    "protected_files_unchanged": true
+  },
+  "heldout_completed_trials": 210,
+  "heldout_gaps_by_target": {
+    "114688": [
+      0,
+      14336,
+      28672,
+      57344,
+      86016
+    ],
+    "49152": [
+      0,
+      6144,
+      12288,
+      24576,
+      36864
+    ],
+    "81920": [
+      0,
+      10240,
+      20480,
+      40960,
+      61440
+    ]
+  },
+  "heldout_targets": [
+    49152,
+    81920,
+    114688
+  ],
+  "heldout_used_for_fit": false,
+  "measured_repetitions": 12,
+  "policy_comparison_executed": false,
+  "protected_hashes_after": {
+    "evaluation/controlled_multiworkflow_v1/policies.py": "8df5a1391b651f3a55090e13b8abb9d2a520de0a94abeb6a7339fdcb49445a24",
+    "evaluation/public_agent_trace/tracelab_nontrivial_protocol.py": "bc39435266dc97fd9c55e9cf13e215f1ece2481e8f0cee85c36512c3a08688d4",
+    "evaluation/sota_metadata.py": "df6582dd9a5dd15e984e9cefdd899e1d0b8bc9292399e7862608d04162a283c2",
+    "evaluation/sota_policies.py": "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212",
+    "flowstate/optimizer.py": "30468ea43225d51f4eb6db470c3c43c1cf85ed2d530b18530e63caee8fe3a645",
+    "flowstate/recovery_model.py": "9a13bc4f7778b9e1835ddb04237d54815ff86c7e9c57b42d293e73c5bb404082",
+    "motivation/README.md": "a066a70f1fb13bba472147fc6847ec8b80f6d7dd8d02fa3d698677abced659a8"
+  },
+  "protected_hashes_before": {
+    "evaluation/controlled_multiworkflow_v1/policies.py": "8df5a1391b651f3a55090e13b8abb9d2a520de0a94abeb6a7339fdcb49445a24",
+    "evaluation/public_agent_trace/tracelab_nontrivial_protocol.py": "bc39435266dc97fd9c55e9cf13e215f1ece2481e8f0cee85c36512c3a08688d4",
+    "evaluation/sota_metadata.py": "df6582dd9a5dd15e984e9cefdd899e1d0b8bc9292399e7862608d04162a283c2",
+    "evaluation/sota_policies.py": "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212",
+    "flowstate/optimizer.py": "30468ea43225d51f4eb6db470c3c43c1cf85ed2d530b18530e63caee8fe3a645",
+    "flowstate/recovery_model.py": "9a13bc4f7778b9e1835ddb04237d54815ff86c7e9c57b42d293e73c5bb404082",
+    "motivation/README.md": "a066a70f1fb13bba472147fc6847ec8b80f6d7dd8d02fa3d698677abced659a8"
+  },
+  "schema_version": "flowstate.recovery_model_freeze.v1",
+  "seed": 20260826,
+  "selection": {
+    "ready_to_freeze_formal_recovery_model": true,
+    "selected_model": "M2",
+    "selection_reason": "只有 M2 通过 MODEL PASS 门禁",
+    "statuses": {
+      "M0": "FAIL",
+      "M1": "WEAK",
+      "M2": "PASS"
+    },
+    "submodular_structure_preserved": true
+  },
+  "start_time": "2026-08-26T15:42:35.272910+00:00",
+  "status": "PASS",
+  "total_runtime_ms": 1553351.411434,
+  "warmup_repetitions": 2
+}

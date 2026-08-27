@@ -28,7 +28,9 @@ from evaluation.objective_robustness import (
     selection_gap_histogram,
 )
 from flowstate.executable_state import recovery_gap
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 
 
 @pytest.fixture(scope="module")

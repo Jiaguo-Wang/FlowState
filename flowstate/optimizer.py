@@ -142,7 +142,8 @@ class GlobalOptimizer:
         """计算所有待续分支在当前选择下的总恢复成本。"""
         return sum(
             self._recovery_cost_model.estimate(
-                recovery_gap(continuation, selected)
+                recovery_gap(continuation, selected),
+                continuation.planning_target,
             )
             for continuation in continuations
         )

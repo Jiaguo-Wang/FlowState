@@ -114,7 +114,14 @@ def build_planning_summaries(
                 recovery_gaps=gaps,
                 total_recovery_gap=sum(gap for _, gap in gaps),
                 estimated_recovery_cost_ms=sum(
-                    model.estimate(gap) for _, gap in gaps
+                    model.estimate(
+                        gap,
+                        continuation.planning_target,
+                    )
+                    for (_, gap), (_, continuation) in zip(
+                        gaps,
+                        _ordered_continuations(active_scenario),
+                    )
                 ),
             )
         )

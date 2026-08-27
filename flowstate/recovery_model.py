@@ -1,7 +1,10 @@
-"""基于 WP2 剖面数据估计恢复成本。"""
+"""定义正式位置感知恢复成本模型与历史单变量模型。"""
+
+from __future__ import annotations
 
 from bisect import bisect_left
 import csv
+from dataclasses import dataclass
 import json
 from pathlib import Path
 from typing import Optional, Tuple, Union
@@ -17,8 +20,94 @@ _DEFAULT_PROFILE_PATH = _ARTIFACT_DIRECTORY / "replay_cost.csv"
 _DEFAULT_FIT_PATH = _ARTIFACT_DIRECTORY / "fit_metrics.json"
 
 
+@dataclass(frozen=True)
+class RecoveryModelMetadata:
+    """记录正式恢复模型的版本、参数、单位与适用域。"""
+
+    name: str
+    coefficient_a: float
+    coefficient_b: float
+    coefficient_c: float
+    gap_unit: str
+    target_unit: str
+    output_unit: str
+    calibration_artifact: str
+    minimum_gap_tokens: int
+    maximum_target_tokens: int
+
+
+FORMAL_RECOVERY_MODEL_METADATA = RecoveryModelMetadata(
+    name="position_aware_quadratic_v1",
+    coefficient_a=37.828150,
+    coefficient_b=0.345974143,
+    coefficient_c=-0.156201917,
+    gap_unit="tokens",
+    target_unit="tokens",
+    output_unit="ms",
+    calibration_artifact="recovery_model_freeze_20260826_154235_266020",
+    minimum_gap_tokens=0,
+    maximum_target_tokens=131_072,
+)
+
+
 class RecoveryCostModel:
-    """使用实测剖面点和既有线性拟合估计额外恢复延迟。"""
+    """估计给定恢复间隔和绝对目标位置对应的恢复延迟。"""
+
+    metadata = FORMAL_RECOVERY_MODEL_METADATA
+
+    def estimate(self, gap_tokens: int, target_tokens: int) -> float:
+        """返回位置感知的额外恢复延迟，单位为毫秒。"""
+        self._validate_inputs(gap_tokens, target_tokens)
+        if gap_tokens == 0:
+            return 0.0
+
+        gap_ki_tokens = gap_tokens / 1024.0
+        target_ki_tokens = target_tokens / 1024.0
+        metadata = self.metadata
+        return (
+            metadata.coefficient_a * gap_ki_tokens
+            + metadata.coefficient_b * gap_ki_tokens * target_ki_tokens
+            + metadata.coefficient_c * gap_ki_tokens * gap_ki_tokens
+        )
+
+    def cost(self, gap_tokens: int, target_tokens: int) -> float:
+        """以显式成本接口返回位置感知恢复延迟。"""
+        return self.estimate(gap_tokens, target_tokens)
+
+    def derivative_ms_per_ki_token(
+        self,
+        gap_tokens: int,
+        target_tokens: int,
+    ) -> float:
+        """返回固定目标位置下对 Ki-token 恢复间隔的一阶导数。"""
+        self._validate_inputs(gap_tokens, target_tokens)
+        gap_ki_tokens = gap_tokens / 1024.0
+        target_ki_tokens = target_tokens / 1024.0
+        metadata = self.metadata
+        return (
+            metadata.coefficient_a
+            + metadata.coefficient_b * target_ki_tokens
+            + 2.0 * metadata.coefficient_c * gap_ki_tokens
+        )
+
+    @classmethod
+    def _validate_inputs(cls, gap_tokens: int, target_tokens: int) -> None:
+        """拒绝超出正式验证域或不满足恢复语义的输入。"""
+        if gap_tokens < 0:
+            raise ValueError("gap_tokens 必须大于等于零")
+        if target_tokens < 0:
+            raise ValueError("target_tokens 必须大于等于零")
+        if gap_tokens > target_tokens:
+            raise ValueError("gap_tokens 不能大于 target_tokens")
+        if target_tokens > cls.metadata.maximum_target_tokens:
+            raise ValueError(
+                "target_tokens 超出正式恢复模型验证域："
+                f"{target_tokens} > {cls.metadata.maximum_target_tokens}"
+            )
+
+
+class HistoricalRecoveryCostModel:
+    """使用 WP2 剖面点复现历史单变量恢复成本。"""
 
     def __init__(
         self,
@@ -86,7 +175,7 @@ class RecoveryCostModel:
             (replay_tokens, 0.0 if replay_tokens == 0 else total_ms - baseline_ms)
             for replay_tokens, total_ms in total_latency_points
         )
-        RecoveryCostModel._validate_monotonic(recovery_points)
+        HistoricalRecoveryCostModel._validate_monotonic(recovery_points)
         return recovery_points
 
     @staticmethod
@@ -122,8 +211,12 @@ class RecoveryCostModel:
             )
         return intercept_ms, slope_ms_per_token
 
-    def estimate(self, replay_tokens: int) -> float:
-        """返回 replay_tokens 对应的额外恢复延迟，单位为毫秒。"""
+    def estimate(
+        self,
+        replay_tokens: int,
+        target_tokens: int | None = None,
+    ) -> float:
+        """返回历史单变量恢复延迟；可忽略显式目标以支持旧审计。"""
         if replay_tokens < 0:
             raise ValueError("replay_tokens 必须大于等于零")
         if replay_tokens == 0:

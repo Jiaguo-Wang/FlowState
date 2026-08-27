@@ -32,7 +32,7 @@ from evaluation.recovery_profiler_128k import build_position_scenario
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_PATH = ROOT / "evaluation" / "recovery_position_audit.py"
-FORMAL_PHI_HASH = "9a13bc4f7778b9e1835ddb04237d54815ff86c7e9c57b42d293e73c5bb404082"
+FORMAL_PHI_HASH = "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
 TRACE_PROTOCOL_HASH = "bc39435266dc97fd9c55e9cf13e215f1ece2481e8f0cee85c36512c3a08688d4"
 
 

@@ -28,7 +28,9 @@ from evaluation.sota_runtime_correctness import (
 from evaluation.sota_signal_stress_v1.scenario import (
     build_scenario as build_signal_scenario,
 )
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 
 
 def test_representative_case_plan_is_complete_and_unique() -> None:

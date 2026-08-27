@@ -27,7 +27,9 @@ from evaluation.cost_model_sensitivity import (
 from evaluation.scalable_multiworkflow_v2.scenario import ScalableScenario
 from evaluation.sota_signal_stress_v1.scenario import SignalScenario
 from flowstate.executable_state import recovery_gap
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 from flowstate.state_catalog import CheckpointCandidate
 from flowstate.workflow import PendingContinuation
 

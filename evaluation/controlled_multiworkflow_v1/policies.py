@@ -185,7 +185,8 @@ def select_oracle(
             )
             cost = sum(
                 recovery_cost_model.estimate(
-                    recovery_gap(continuation, subset)
+                    recovery_gap(continuation, subset),
+                    continuation.planning_target,
                 )
                 for continuation in continuations
             )
@@ -258,8 +259,12 @@ def _maximum_single_continuation_benefit(
         gap_before = recovery_gap(continuation, ())
         gap_after = recovery_gap(continuation, (candidate,))
         benefit = recovery_cost_model.estimate(
-            gap_before
-        ) - recovery_cost_model.estimate(gap_after)
+            gap_before,
+            continuation.planning_target,
+        ) - recovery_cost_model.estimate(
+            gap_after,
+            continuation.planning_target,
+        )
         if benefit < -1e-9:
             raise ValueError(
                 f"检查点 {candidate.checkpoint_id} 的单分支恢复收益为负"

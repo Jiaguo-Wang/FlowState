@@ -51,7 +51,7 @@ PROTECTED_HASHES = {
         "a39ec5a1a9761ccefcefb4763eb10ce142895fc53197bd0f4d66746cc71e5bdd"
     ),
     "flowstate/recovery_model.py": (
-        "9a13bc4f7778b9e1835ddb04237d54815ff86c7e9c57b42d293e73c5bb404082"
+        "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
     ),
 }
 

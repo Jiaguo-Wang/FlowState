@@ -79,7 +79,7 @@ def test_frozen_policy_selections() -> None:
     assert selections == {
         "Global-LRU": ("W4_PARENT", "W3_PARENT", "W2_PARENT"),
         "Equal-Share": ("W1_PARENT", "W2_PARENT", "W3_PARENT"),
-        "Recovery-Only": ("W1_PARENT", "W2_PARENT", "W1_SHALLOW"),
+        "Recovery-Only": ("W1_PARENT", "W1_SHALLOW", "W2_PARENT"),
     }
 
 

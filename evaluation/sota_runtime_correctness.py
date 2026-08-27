@@ -71,7 +71,9 @@ from evaluation.sota_signal_stress_v1.scenario import (
 from flowstate.controller import StateController
 from flowstate.executable_state import executable_frontier, recovery_gap
 from flowstate.optimizer import AllocationResult, GlobalOptimizer
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 from flowstate.state_catalog import CheckpointCandidate
 from flowstate.workflow import PendingContinuation
 
@@ -1219,7 +1221,8 @@ def _total_recovery_cost(
     """使用核心恢复间隔和统一 Phi 计算 selected set 成本。"""
     return sum(
         recovery_cost_model.estimate(
-            recovery_gap(continuation, selected)
+            recovery_gap(continuation, selected),
+            continuation.planning_target,
         )
         for continuation in continuations
     )

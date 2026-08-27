@@ -29,7 +29,9 @@ from evaluation.cost_model_sensitivity import (
 )
 from evaluation.recovery_profiler_v2.analyze import CALIBRATION_GAPS
 from flowstate.executable_state import recovery_gap
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 
 
 def test_profiler_v2_model_only_reads_step9d_artifact(monkeypatch) -> None:

@@ -11,7 +11,9 @@ from pathlib import Path
 import statistics
 from typing import Callable, Mapping, Sequence
 
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 
 
 CALIBRATION_GAPS = (0, 4096, 8192, 16384, 32768)
@@ -33,8 +35,12 @@ class LinearRecoveryModel:
 
     slope_ms_per_token: float
 
-    def estimate(self, gap_tokens: int) -> float:
-        """估计指定 gap 的增量 TTFT。"""
+    def estimate(
+        self,
+        gap_tokens: int,
+        target_tokens: int | None = None,
+    ) -> float:
+        """估计指定 gap 的增量 TTFT；历史诊断忽略目标位置。"""
         if gap_tokens < 0:
             raise ValueError("gap_tokens 必须大于等于零")
         return self.slope_ms_per_token * gap_tokens
@@ -55,8 +61,12 @@ class MonotonePiecewiseRecoveryModel:
             if current[1] < previous[1]:
                 raise ValueError("分段模型的成本必须单调非减")
 
-    def estimate(self, gap_tokens: int) -> float:
-        """在相邻 calibration knots 间做线性插值。"""
+    def estimate(
+        self,
+        gap_tokens: int,
+        target_tokens: int | None = None,
+    ) -> float:
+        """在相邻 knot 间插值；历史诊断忽略目标位置。"""
         if gap_tokens < 0:
             raise ValueError("gap_tokens 必须大于等于零")
         if gap_tokens > self.knots[-1][0]:

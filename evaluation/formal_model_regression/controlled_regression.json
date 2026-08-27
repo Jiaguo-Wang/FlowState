@@ -1,0 +1,5846 @@
+{
+  "baseline_selection_independence": true,
+  "formal_model": {
+    "calibration_artifact": "recovery_model_freeze_20260826_154235_266020",
+    "coefficient_a": 37.82815,
+    "coefficient_b": 0.345974143,
+    "coefficient_c": -0.156201917,
+    "gap_unit": "tokens",
+    "maximum_target_tokens": 131072,
+    "minimum_gap_tokens": 0,
+    "name": "position_aware_quadratic_v1",
+    "output_unit": "ms",
+    "target_unit": "tokens"
+  },
+  "gpu_executed": false,
+  "oracle_regression": [
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 1,
+      "flowstate_objective_ms": 1431.649579168,
+      "flowstate_selection": [
+        "W1_PARENT"
+      ],
+      "oracle_objective_ms": 1431.649579168,
+      "oracle_selection": [
+        "W1_PARENT"
+      ],
+      "relative_regret": 0.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 2,
+      "flowstate_objective_ms": 777.817489312,
+      "flowstate_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "oracle_objective_ms": 777.817489312,
+      "oracle_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "relative_regret": 0.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 3,
+      "flowstate_objective_ms": 314.77062246400004,
+      "flowstate_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT"
+      ],
+      "oracle_objective_ms": 314.77062246400004,
+      "oracle_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT"
+      ],
+      "relative_regret": 0.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 4,
+      "flowstate_objective_ms": 0.0,
+      "flowstate_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "oracle_objective_ms": 0.0,
+      "oracle_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "relative_regret": 0.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 5,
+      "flowstate_objective_ms": 0.0,
+      "flowstate_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "oracle_objective_ms": 0.0,
+      "oracle_selection": [
+        "W1_PARENT",
+        "W1_SHALLOW",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "relative_regret": 0.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 2,
+      "flowstate_objective_ms": 4404.25753968,
+      "flowstate_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "oracle_objective_ms": 4404.25753968,
+      "oracle_selection": [
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 4,
+      "flowstate_objective_ms": 1740.3474904,
+      "flowstate_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "oracle_objective_ms": 1740.3474904,
+      "oracle_selection": [
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 6,
+      "flowstate_objective_ms": 469.11957808,
+      "flowstate_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN"
+      ],
+      "oracle_objective_ms": 469.11957808,
+      "oracle_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 8,
+      "flowstate_objective_ms": 0.0,
+      "flowstate_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A04096_F01_MAIN"
+      ],
+      "oracle_objective_ms": 0.0,
+      "oracle_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 4,
+      "flowstate_objective_ms": 13018.445859615995,
+      "flowstate_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN"
+      ],
+      "oracle_objective_ms": 13018.445859615995,
+      "oracle_selection": [
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 8,
+      "flowstate_objective_ms": 5172.460781343999,
+      "flowstate_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "oracle_objective_ms": 5172.460781343999,
+      "oracle_selection": [
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 12,
+      "flowstate_objective_ms": 1395.213311776,
+      "flowstate_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "oracle_objective_ms": 1395.213311776,
+      "oracle_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 16,
+      "flowstate_objective_ms": 0.0,
+      "flowstate_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F01_MAIN"
+      ],
+      "oracle_objective_ms": 0.0,
+      "oracle_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 4,
+      "flowstate_objective_ms": 11914.722686976,
+      "flowstate_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "oracle_objective_ms": 11914.722686976,
+      "oracle_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "sota_signal"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 8,
+      "flowstate_objective_ms": 6295.412449279998,
+      "flowstate_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "oracle_objective_ms": 6295.412449279998,
+      "oracle_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "sota_signal"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 12,
+      "flowstate_objective_ms": 1259.0824898560002,
+      "flowstate_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "oracle_objective_ms": 1259.0824898560002,
+      "oracle_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "sota_signal"
+    },
+    {
+      "absolute_regret_ms": 0.0,
+      "budget_checkpoints": 16,
+      "flowstate_objective_ms": 0.0,
+      "flowstate_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "oracle_objective_ms": 0.0,
+      "oracle_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "relative_regret": 0.0,
+      "workload": "sota_signal"
+    }
+  ],
+  "policy_rankings": [
+    {
+      "budget_checkpoints": 1,
+      "new_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Oracle",
+        "Recovery-Only",
+        "Marconi-style",
+        "Global-LRU",
+        "KVFlow-style",
+        "Workflow-Only"
+      ],
+      "old_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Oracle",
+        "Recovery-Only",
+        "Marconi-style",
+        "Global-LRU",
+        "KVFlow-style",
+        "Workflow-Only"
+      ],
+      "ranking_changed": false,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Marconi-style",
+        "Oracle",
+        "Workflow-Only",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style"
+      ],
+      "old_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Marconi-style",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style"
+      ],
+      "ranking_changed": true,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Equal-Share",
+        "Marconi-style",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Equal-Share",
+        "Marconi-style",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style"
+      ],
+      "ranking_changed": false,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Global-LRU",
+        "KVFlow-style",
+        "Oracle",
+        "Workflow-Only",
+        "Marconi-style",
+        "Recovery-Only"
+      ],
+      "old_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Global-LRU",
+        "KVFlow-style",
+        "Oracle",
+        "Workflow-Only",
+        "Marconi-style",
+        "Recovery-Only"
+      ],
+      "ranking_changed": false,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only"
+      ],
+      "old_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only"
+      ],
+      "ranking_changed": false,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Workflow-Only",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Equal-Share"
+      ],
+      "ranking_changed": true,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Equal-Share"
+      ],
+      "ranking_changed": true,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only",
+        "Equal-Share"
+      ],
+      "ranking_changed": false,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only"
+      ],
+      "old_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only"
+      ],
+      "ranking_changed": false,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Workflow-Only",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Workflow-Only",
+        "Equal-Share"
+      ],
+      "ranking_changed": false,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Equal-Share"
+      ],
+      "ranking_changed": true,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Recovery-Only",
+        "Equal-Share"
+      ],
+      "ranking_changed": false,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style"
+      ],
+      "old_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style"
+      ],
+      "ranking_changed": false,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Global-LRU",
+        "Marconi-style",
+        "KVFlow-style",
+        "Recovery-Only",
+        "Workflow-Only",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Global-LRU",
+        "Marconi-style",
+        "KVFlow-style",
+        "Workflow-Only",
+        "Recovery-Only",
+        "Equal-Share"
+      ],
+      "ranking_changed": true,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_ranking": [
+        "FlowState",
+        "Marconi-style",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Workflow-Only",
+        "Marconi-style",
+        "Recovery-Only",
+        "Global-LRU",
+        "KVFlow-style",
+        "Equal-Share"
+      ],
+      "ranking_changed": true,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_ranking": [
+        "FlowState",
+        "Oracle",
+        "Global-LRU",
+        "Marconi-style",
+        "Recovery-Only",
+        "Workflow-Only",
+        "KVFlow-style",
+        "Equal-Share"
+      ],
+      "old_ranking": [
+        "FlowState",
+        "Oracle",
+        "Global-LRU",
+        "Marconi-style",
+        "Workflow-Only",
+        "Recovery-Only",
+        "KVFlow-style",
+        "Equal-Share"
+      ],
+      "ranking_changed": true,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only"
+      ],
+      "old_ranking": [
+        "Equal-Share",
+        "FlowState",
+        "Global-LRU",
+        "KVFlow-style",
+        "Marconi-style",
+        "Oracle",
+        "Recovery-Only",
+        "Workflow-Only"
+      ],
+      "ranking_changed": false,
+      "workload": "sota_signal"
+    }
+  ],
+  "schema_version": "flowstate.formal_model_regression.v1",
+  "selection_diffs": [
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 204.5213684525714,
+        "total_recovery_cost_ms": 1431.649579168,
+        "total_recovery_gap_tokens": 36864
+      },
+      "new_selection": [
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 241.03822891733475,
+        "total_recovery_cost_ms": 1687.2676024213433,
+        "total_recovery_gap_tokens": 36864
+      },
+      "old_selection": [
+        "W1_PARENT"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.12,
+        "mean_recovery_cost_ms": 539.7511187382858,
+        "total_recovery_cost_ms": 3778.2578311680004,
+        "total_recovery_gap_tokens": 90112
+      },
+      "new_selection": [
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.12,
+        "mean_recovery_cost_ms": 592.8709120822272,
+        "total_recovery_cost_ms": 4150.0963845755905,
+        "total_recovery_gap_tokens": 90112
+      },
+      "old_selection": [
+        "W4_PARENT"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 204.5213684525714,
+        "total_recovery_cost_ms": 1431.649579168,
+        "total_recovery_gap_tokens": 36864
+      },
+      "new_selection": [
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 241.03822891733475,
+        "total_recovery_cost_ms": 1687.2676024213433,
+        "total_recovery_gap_tokens": 36864
+      },
+      "old_selection": [
+        "W1_PARENT"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 204.5213684525714,
+        "total_recovery_cost_ms": 1431.649579168,
+        "total_recovery_gap_tokens": 36864
+      },
+      "new_selection": [
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 241.03822891733475,
+        "total_recovery_cost_ms": 1687.2676024213433,
+        "total_recovery_gap_tokens": 36864
+      },
+      "old_selection": [
+        "W1_PARENT"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.12,
+        "mean_recovery_cost_ms": 539.7511187382858,
+        "total_recovery_cost_ms": 3778.2578311680004,
+        "total_recovery_gap_tokens": 90112
+      },
+      "new_selection": [
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.12,
+        "mean_recovery_cost_ms": 592.8709120822272,
+        "total_recovery_cost_ms": 4150.0963845755905,
+        "total_recovery_gap_tokens": 90112
+      },
+      "old_selection": [
+        "W4_PARENT"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.12,
+        "mean_recovery_cost_ms": 539.7511187382858,
+        "total_recovery_cost_ms": 3778.2578311680004,
+        "total_recovery_gap_tokens": 90112
+      },
+      "new_selection": [
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.12,
+        "mean_recovery_cost_ms": 592.8709120822272,
+        "total_recovery_cost_ms": 4150.0963845755905,
+        "total_recovery_gap_tokens": 90112
+      },
+      "old_selection": [
+        "W4_PARENT"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 512.49608688,
+        "total_recovery_cost_ms": 3587.4726081599997,
+        "total_recovery_gap_tokens": 86016
+      },
+      "new_selection": [
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 559.1131352287318,
+        "total_recovery_cost_ms": 3913.7919466011226,
+        "total_recovery_gap_tokens": 86016
+      },
+      "old_selection": [
+        "W2_PARENT"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 1,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 204.5213684525714,
+        "total_recovery_cost_ms": 1431.649579168,
+        "total_recovery_gap_tokens": 36864
+      },
+      "new_selection": [
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 241.03822891733475,
+        "total_recovery_cost_ms": 1687.2676024213433,
+        "total_recovery_gap_tokens": 36864
+      },
+      "old_selection": [
+        "W1_PARENT"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 111.11678418742858,
+        "total_recovery_cost_ms": 777.817489312,
+        "total_recovery_gap_tokens": 20480
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 130.68232805069005,
+        "total_recovery_cost_ms": 914.7762963548303,
+        "total_recovery_gap_tokens": 20480
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 494.78388695771434,
+        "total_recovery_cost_ms": 3463.4872087040003,
+        "total_recovery_gap_tokens": 81920
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 538.7867080446865,
+        "total_recovery_cost_ms": 3771.5069563128054,
+        "total_recovery_gap_tokens": 81920
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 111.11678418742858,
+        "total_recovery_cost_ms": 777.817489312,
+        "total_recovery_gap_tokens": 20480
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 130.68232805069005,
+        "total_recovery_cost_ms": 914.7762963548303,
+        "total_recovery_gap_tokens": 20480
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 204.5213684525714,
+        "total_recovery_cost_ms": 1431.649579168,
+        "total_recovery_gap_tokens": 36864
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W1_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 130.68232805069005,
+        "total_recovery_cost_ms": 914.7762963548303,
+        "total_recovery_gap_tokens": 20480
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": true,
+      "selection_jaccard": 0.3333333333333333,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.76,
+        "mean_recovery_cost_ms": 138.37181604571427,
+        "total_recovery_cost_ms": 968.6027123199999,
+        "total_recovery_gap_tokens": 24576
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.76,
+        "mean_recovery_cost_ms": 164.44010490418546,
+        "total_recovery_cost_ms": 1151.0807343292981,
+        "total_recovery_gap_tokens": 24576
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W1_PARENT"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 494.78388695771434,
+        "total_recovery_cost_ms": 3463.4872087040003,
+        "total_recovery_gap_tokens": 81920
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 538.7867080446865,
+        "total_recovery_cost_ms": 3771.5069563128054,
+        "total_recovery_gap_tokens": 81920
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 111.11678418742858,
+        "total_recovery_cost_ms": 777.817489312,
+        "total_recovery_gap_tokens": 20480
+      },
+      "new_selection": [
+        "W2_PARENT",
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 130.68232805069005,
+        "total_recovery_cost_ms": 914.7762963548303,
+        "total_recovery_gap_tokens": 20480
+      },
+      "old_selection": [
+        "W2_PARENT",
+        "W1_PARENT"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 111.11678418742858,
+        "total_recovery_cost_ms": 777.817489312,
+        "total_recovery_gap_tokens": 20480
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 130.68232805069005,
+        "total_recovery_cost_ms": 914.7762963548303,
+        "total_recovery_gap_tokens": 20480
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 44.96723178057143,
+        "total_recovery_cost_ms": 314.77062246400004,
+        "total_recovery_gap_tokens": 8192
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 54.08420403754072,
+        "total_recovery_cost_ms": 378.5894282627851,
+        "total_recovery_gap_tokens": 8192
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.36,
+        "mean_recovery_cost_ms": 401.37930269257146,
+        "total_recovery_cost_ms": 2809.6551188480003,
+        "total_recovery_gap_tokens": 65536
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.36,
+        "mean_recovery_cost_ms": 428.4308071780418,
+        "total_recovery_cost_ms": 2999.0156502462924,
+        "total_recovery_gap_tokens": 65536
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 66.14955240685713,
+        "total_recovery_cost_ms": 463.0468668479999,
+        "total_recovery_gap_tokens": 12288
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 76.59812401314932,
+        "total_recovery_cost_ms": 536.1868680920452,
+        "total_recovery_gap_tokens": 12288
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 111.11678418742858,
+        "total_recovery_cost_ms": 777.817489312,
+        "total_recovery_gap_tokens": 20480
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W1_SHALLOW",
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 130.68232805069005,
+        "total_recovery_cost_ms": 914.7762963548303,
+        "total_recovery_gap_tokens": 20480
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W1_SHALLOW"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 44.96723178057143,
+        "total_recovery_cost_ms": 314.77062246400004,
+        "total_recovery_gap_tokens": 8192
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 54.08420403754072,
+        "total_recovery_cost_ms": 378.5894282627851,
+        "total_recovery_gap_tokens": 8192
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W1_PARENT",
+        "W2_PARENT"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.36,
+        "mean_recovery_cost_ms": 401.37930269257146,
+        "total_recovery_cost_ms": 2809.6551188480003,
+        "total_recovery_gap_tokens": 65536
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.36,
+        "mean_recovery_cost_ms": 428.4308071780418,
+        "total_recovery_cost_ms": 2999.0156502462924,
+        "total_recovery_gap_tokens": 65536
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 66.14955240685713,
+        "total_recovery_cost_ms": 463.0468668479999,
+        "total_recovery_gap_tokens": 12288
+      },
+      "new_selection": [
+        "W2_PARENT",
+        "W1_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 76.59812401314932,
+        "total_recovery_cost_ms": 536.1868680920452,
+        "total_recovery_gap_tokens": 12288
+      },
+      "old_selection": [
+        "W2_PARENT",
+        "W1_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 3,
+      "new_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 44.96723178057143,
+        "total_recovery_cost_ms": 314.77062246400004,
+        "total_recovery_gap_tokens": 8192
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 54.08420403754072,
+        "total_recovery_cost_ms": 378.5894282627851,
+        "total_recovery_gap_tokens": 8192
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 66.14955240685713,
+        "total_recovery_cost_ms": 463.0468668479999,
+        "total_recovery_gap_tokens": 12288
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W1_SHALLOW",
+        "W2_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 76.59812401314932,
+        "total_recovery_cost_ms": 536.1868680920452,
+        "total_recovery_gap_tokens": 12288
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W1_SHALLOW",
+        "W3_PARENT"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 66.14955240685713,
+        "total_recovery_cost_ms": 463.0468668479999,
+        "total_recovery_gap_tokens": 12288
+      },
+      "new_selection": [
+        "W2_PARENT",
+        "W1_PARENT",
+        "W3_PARENT",
+        "W1_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.88,
+        "mean_recovery_cost_ms": 76.59812401314932,
+        "total_recovery_cost_ms": 536.1868680920452,
+        "total_recovery_gap_tokens": 12288
+      },
+      "old_selection": [
+        "W2_PARENT",
+        "W1_PARENT",
+        "W3_PARENT",
+        "W1_SHALLOW"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W4_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT",
+        "W1_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT",
+        "W1_SHALLOW"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT",
+        "W1_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT",
+        "W1_SHALLOW"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W1_SHALLOW",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W2_PARENT",
+        "W1_SHALLOW",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W1_PARENT",
+        "W2_PARENT",
+        "W3_PARENT"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT",
+        "W1_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W4_PARENT",
+        "W3_PARENT",
+        "W2_PARENT",
+        "W1_PARENT",
+        "W1_SHALLOW"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W2_PARENT",
+        "W1_PARENT",
+        "W3_PARENT",
+        "W1_SHALLOW",
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W2_PARENT",
+        "W1_PARENT",
+        "W3_PARENT",
+        "W1_SHALLOW",
+        "W4_PARENT"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 5,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W1_PARENT",
+        "W1_SHALLOW",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W1_PARENT",
+        "W1_SHALLOW",
+        "W2_PARENT",
+        "W3_PARENT",
+        "W4_PARENT"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "controlled_v1"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 220.21287698400002,
+        "total_recovery_cost_ms": 4404.25753968,
+        "total_recovery_gap_tokens": 110592
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 252.92955263284966,
+        "total_recovery_cost_ms": 5058.591052656993,
+        "total_recovery_gap_tokens": 110592
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.48,
+        "mean_recovery_cost_ms": 317.8579905072,
+        "total_recovery_cost_ms": 6357.1598101439995,
+        "total_recovery_gap_tokens": 159744
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.48,
+        "mean_recovery_cost_ms": 371.0769878933206,
+        "total_recovery_cost_ms": 7421.539757866412,
+        "total_recovery_gap_tokens": 159744
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.06666666666666667,
+        "mean_recovery_cost_ms": 593.357567936,
+        "total_recovery_cost_ms": 11867.15135872,
+        "total_recovery_gap_tokens": 286720
+      },
+      "new_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.06666666666666667,
+        "mean_recovery_cost_ms": 662.6471398631111,
+        "total_recovery_cost_ms": 13252.942797262222,
+        "total_recovery_gap_tokens": 286720
+      },
+      "old_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.5333333333333333,
+        "mean_recovery_cost_ms": 280.737916984,
+        "total_recovery_cost_ms": 5614.758339679999,
+        "total_recovery_gap_tokens": 143360
+      },
+      "new_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5333333333333333,
+        "mean_recovery_cost_ms": 332.45242258999497,
+        "total_recovery_cost_ms": 6649.048451799899,
+        "total_recovery_gap_tokens": 143360
+      },
+      "old_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 538.120891224,
+        "total_recovery_cost_ms": 10762.41782448,
+        "total_recovery_gap_tokens": 258048
+      },
+      "new_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 595.8657020120881,
+        "total_recovery_cost_ms": 11917.314040241763,
+        "total_recovery_gap_tokens": 258048
+      },
+      "old_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.48,
+        "mean_recovery_cost_ms": 317.8579905072,
+        "total_recovery_cost_ms": 6357.1598101439995,
+        "total_recovery_gap_tokens": 159744
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.48,
+        "mean_recovery_cost_ms": 371.0769878933206,
+        "total_recovery_cost_ms": 7421.539757866412,
+        "total_recovery_gap_tokens": 159744
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.48,
+        "mean_recovery_cost_ms": 317.8579905072,
+        "total_recovery_cost_ms": 6357.1598101439995,
+        "total_recovery_gap_tokens": 159744
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.48,
+        "mean_recovery_cost_ms": 371.0769878933206,
+        "total_recovery_cost_ms": 7421.539757866412,
+        "total_recovery_gap_tokens": 159744
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 2,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 220.21287698400002,
+        "total_recovery_cost_ms": 4404.25753968,
+        "total_recovery_gap_tokens": 110592
+      },
+      "new_selection": [
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 252.92955263284966,
+        "total_recovery_cost_ms": 5058.591052656993,
+        "total_recovery_gap_tokens": 110592
+      },
+      "old_selection": [
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 87.01737452,
+        "total_recovery_cost_ms": 1740.3474904,
+        "total_recovery_gap_tokens": 45056
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 102.23627572413534,
+        "total_recovery_cost_ms": 2044.7255144827068,
+        "total_recovery_gap_tokens": 45056
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A32768_F01_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.7466666666666667,
+        "mean_recovery_cost_ms": 149.97149901280002,
+        "total_recovery_cost_ms": 2999.4299802560004,
+        "total_recovery_gap_tokens": 77824
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.7466666666666667,
+        "mean_recovery_cost_ms": 177.95416137669235,
+        "total_recovery_cost_ms": 3559.083227533847,
+        "total_recovery_gap_tokens": 77824
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 514.6649123200001,
+        "total_recovery_cost_ms": 10293.298246400002,
+        "total_recovery_gap_tokens": 245760
+      },
+      "new_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 567.9997827974148,
+        "total_recovery_cost_ms": 11359.995655948296,
+        "total_recovery_gap_tokens": 245760
+      },
+      "old_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.5866666666666667,
+        "mean_recovery_cost_ms": 248.04631249119998,
+        "total_recovery_cost_ms": 4960.926249824,
+        "total_recovery_gap_tokens": 126976
+      },
+      "new_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 139.3295960733667,
+        "total_recovery_cost_ms": 2786.591921467334,
+        "total_recovery_gap_tokens": 61440
+      },
+      "old_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": true,
+      "selection_jaccard": 0.6,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 126.388961368,
+        "total_recovery_cost_ms": 2527.77922736,
+        "total_recovery_gap_tokens": 61440
+      },
+      "new_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 141.4658757741563,
+        "total_recovery_cost_ms": 2829.317515483126,
+        "total_recovery_gap_tokens": 61440
+      },
+      "old_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.7466666666666667,
+        "mean_recovery_cost_ms": 149.97149901280002,
+        "total_recovery_cost_ms": 2999.4299802560004,
+        "total_recovery_gap_tokens": 77824
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.7466666666666667,
+        "mean_recovery_cost_ms": 177.95416137669235,
+        "total_recovery_cost_ms": 3559.083227533847,
+        "total_recovery_gap_tokens": 77824
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.7466666666666667,
+        "mean_recovery_cost_ms": 149.97149901280002,
+        "total_recovery_cost_ms": 2999.4299802560004,
+        "total_recovery_gap_tokens": 77824
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.7466666666666667,
+        "mean_recovery_cost_ms": 177.95416137669235,
+        "total_recovery_cost_ms": 3559.083227533847,
+        "total_recovery_gap_tokens": 77824
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 87.01737452,
+        "total_recovery_cost_ms": 1740.3474904,
+        "total_recovery_gap_tokens": 45056
+      },
+      "new_selection": [
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 102.23627572413534,
+        "total_recovery_cost_ms": 2044.7255144827068,
+        "total_recovery_gap_tokens": 45056
+      },
+      "old_selection": [
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 23.455978904,
+        "total_recovery_cost_ms": 469.11957808,
+        "total_recovery_gap_tokens": 12288
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 27.86591921467334,
+        "total_recovery_cost_ms": 557.3183842934668,
+        "total_recovery_gap_tokens": 12288
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 117.27989452000001,
+        "total_recovery_cost_ms": 2345.5978904000003,
+        "total_recovery_gap_tokens": 61440
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 139.3295960733667,
+        "total_recovery_cost_ms": 2786.591921467334,
+        "total_recovery_gap_tokens": 61440
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.4666666666666667,
+        "mean_recovery_cost_ms": 351.20688985600003,
+        "total_recovery_cost_ms": 7024.137797120001,
+        "total_recovery_gap_tokens": 163840
+      },
+      "new_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.4666666666666667,
+        "mean_recovery_cost_ms": 374.87695628078654,
+        "total_recovery_cost_ms": 7497.539125615731,
+        "total_recovery_gap_tokens": 163840
+      },
+      "old_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 117.27989452000001,
+        "total_recovery_cost_ms": 2345.5978904000003,
+        "total_recovery_gap_tokens": 61440
+      },
+      "new_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 139.3295960733667,
+        "total_recovery_cost_ms": 2786.591921467334,
+        "total_recovery_gap_tokens": 61440
+      },
+      "old_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A16384_F01_SHALLOW"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.84,
+        "mean_recovery_cost_ms": 102.93298246399999,
+        "total_recovery_cost_ms": 2058.65964928,
+        "total_recovery_gap_tokens": 49152
+      },
+      "new_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A04096_F01_MAIN",
+        "W08_A08192_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.84,
+        "mean_recovery_cost_ms": 113.59995655948296,
+        "total_recovery_cost_ms": 2271.9991311896592,
+        "total_recovery_gap_tokens": 49152
+      },
+      "old_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A04096_F01_MAIN",
+        "W08_A08192_F01_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 117.27989452000001,
+        "total_recovery_cost_ms": 2345.5978904000003,
+        "total_recovery_gap_tokens": 61440
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 139.3295960733667,
+        "total_recovery_cost_ms": 2786.591921467334,
+        "total_recovery_gap_tokens": 61440
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 117.27989452000001,
+        "total_recovery_cost_ms": 2345.5978904000003,
+        "total_recovery_gap_tokens": 61440
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 139.3295960733667,
+        "total_recovery_cost_ms": 2786.591921467334,
+        "total_recovery_gap_tokens": 61440
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 6,
+      "new_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 23.455978904,
+        "total_recovery_cost_ms": 469.11957808,
+        "total_recovery_gap_tokens": 12288
+      },
+      "new_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 27.86591921467334,
+        "total_recovery_cost_ms": 557.3183842934668,
+        "total_recovery_gap_tokens": 12288
+      },
+      "old_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A04096_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A04096_F01_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 46.5814659992,
+        "total_recovery_cost_ms": 931.629319984,
+        "total_recovery_gap_tokens": 24576
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 53.61868680920452,
+        "total_recovery_cost_ms": 1072.3737361840904,
+        "total_recovery_gap_tokens": 24576
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.9333333333333333,
+        "mean_recovery_cost_ms": 38.587238903999996,
+        "total_recovery_cost_ms": 771.74477808,
+        "total_recovery_gap_tokens": 20480
+      },
+      "new_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9333333333333333,
+        "mean_recovery_cost_ms": 44.68223900767043,
+        "total_recovery_cost_ms": 893.6447801534086,
+        "total_recovery_gap_tokens": 20480
+      },
+      "old_selection": [
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A04096_F01_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A32768_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F04_MAIN",
+        "W08_A04096_F01_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A32768_F01_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 46.5814659992,
+        "total_recovery_cost_ms": 931.629319984,
+        "total_recovery_gap_tokens": 24576
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 53.61868680920452,
+        "total_recovery_cost_ms": 1072.3737361840904,
+        "total_recovery_gap_tokens": 24576
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 46.5814659992,
+        "total_recovery_cost_ms": 931.629319984,
+        "total_recovery_gap_tokens": 24576
+      },
+      "new_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.92,
+        "mean_recovery_cost_ms": 53.61868680920452,
+        "total_recovery_cost_ms": 1072.3737361840904,
+        "total_recovery_gap_tokens": 24576
+      },
+      "old_selection": [
+        "W08_A32768_F04_MAIN",
+        "W08_A32768_F01_SHALLOW",
+        "W08_A32768_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A16384_F01_SHALLOW",
+        "W08_A16384_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A08192_F01_SHALLOW"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W08_A04096_F01_MAIN",
+        "W08_A04096_F04_MAIN",
+        "W08_A08192_F01_MAIN",
+        "W08_A08192_F04_MAIN",
+        "W08_A16384_F01_MAIN",
+        "W08_A16384_F04_MAIN",
+        "W08_A32768_F01_MAIN",
+        "W08_A32768_F04_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n8"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 216.97409766026658,
+        "total_recovery_cost_ms": 13018.445859615995,
+        "total_recovery_gap_tokens": 331776
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 252.92955263284966,
+        "total_recovery_cost_ms": 15175.77315797098,
+        "total_recovery_gap_tokens": 331776
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": true,
+      "selection_jaccard": 0.6,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.5155555555555555,
+        "mean_recovery_cost_ms": 293.1112748250665,
+        "total_recovery_cost_ms": 17586.676489503992,
+        "total_recovery_gap_tokens": 446464
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5155555555555555,
+        "mean_recovery_cost_ms": 345.3272776911035,
+        "total_recovery_cost_ms": 20719.63666146621,
+        "total_recovery_gap_tokens": 446464
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.06666666666666667,
+        "mean_recovery_cost_ms": 593.3575679359999,
+        "total_recovery_cost_ms": 35601.45407615999,
+        "total_recovery_gap_tokens": 860160
+      },
+      "new_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.06666666666666667,
+        "mean_recovery_cost_ms": 662.6471398631111,
+        "total_recovery_cost_ms": 39758.828391786665,
+        "total_recovery_gap_tokens": 860160
+      },
+      "old_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.5333333333333333,
+        "mean_recovery_cost_ms": 280.73791698399987,
+        "total_recovery_cost_ms": 16844.275019039993,
+        "total_recovery_gap_tokens": 430080
+      },
+      "new_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5333333333333333,
+        "mean_recovery_cost_ms": 332.45242258999497,
+        "total_recovery_cost_ms": 19947.145355399698,
+        "total_recovery_gap_tokens": 430080
+      },
+      "old_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.5333333333333333,
+        "mean_recovery_cost_ms": 294.90757652533335,
+        "total_recovery_cost_ms": 17694.45459152,
+        "total_recovery_gap_tokens": 430080
+      },
+      "new_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5333333333333333,
+        "mean_recovery_cost_ms": 330.0870434730314,
+        "total_recovery_cost_ms": 19805.222608381882,
+        "total_recovery_gap_tokens": 430080
+      },
+      "old_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.5155555555555555,
+        "mean_recovery_cost_ms": 293.1112748250665,
+        "total_recovery_cost_ms": 17586.676489503992,
+        "total_recovery_gap_tokens": 446464
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5155555555555555,
+        "mean_recovery_cost_ms": 345.3272776911035,
+        "total_recovery_cost_ms": 20719.63666146621,
+        "total_recovery_gap_tokens": 446464
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.5155555555555555,
+        "mean_recovery_cost_ms": 293.1112748250665,
+        "total_recovery_cost_ms": 17586.676489503992,
+        "total_recovery_gap_tokens": 446464
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5155555555555555,
+        "mean_recovery_cost_ms": 345.3272776911035,
+        "total_recovery_cost_ms": 20719.63666146621,
+        "total_recovery_gap_tokens": 446464
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 216.97409766026658,
+        "total_recovery_cost_ms": 13018.445859615995,
+        "total_recovery_gap_tokens": 331776
+      },
+      "new_selection": [
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 252.92955263284966,
+        "total_recovery_cost_ms": 15175.77315797098,
+        "total_recovery_gap_tokens": 331776
+      },
+      "old_selection": [
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": true,
+      "selection_jaccard": 0.6,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 86.20767968906665,
+        "total_recovery_cost_ms": 5172.460781343999,
+        "total_recovery_gap_tokens": 135168
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 101.478362607304,
+        "total_recovery_cost_ms": 6088.70175643824,
+        "total_recovery_gap_tokens": 135168
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": true,
+      "selection_jaccard": 0.7777777777777778,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.7822222222222223,
+        "mean_recovery_cost_ms": 128.17709601759992,
+        "total_recovery_cost_ms": 7690.625761055996,
+        "total_recovery_gap_tokens": 200704
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.7822222222222223,
+        "mean_recovery_cost_ms": 152.20445117447525,
+        "total_recovery_cost_ms": 9132.267070468515,
+        "total_recovery_gap_tokens": 200704
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 514.66491232,
+        "total_recovery_cost_ms": 30879.8947392,
+        "total_recovery_gap_tokens": 737280
+      },
+      "new_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 567.9997827974148,
+        "total_recovery_cost_ms": 34079.98696784489,
+        "total_recovery_gap_tokens": 737280
+      },
+      "old_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.6577777777777778,
+        "mean_recovery_cost_ms": 204.4575065007999,
+        "total_recovery_cost_ms": 12267.450390047994,
+        "total_recovery_gap_tokens": 315392
+      },
+      "new_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 139.3295960733667,
+        "total_recovery_cost_ms": 8359.775764402002,
+        "total_recovery_gap_tokens": 184320
+      },
+      "old_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": true,
+      "selection_jaccard": 0.7777777777777778,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 126.38896136800003,
+        "total_recovery_cost_ms": 7583.337682080001,
+        "total_recovery_gap_tokens": 184320
+      },
+      "new_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 141.4658757741563,
+        "total_recovery_cost_ms": 8487.952546449378,
+        "total_recovery_gap_tokens": 184320
+      },
+      "old_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.7822222222222223,
+        "mean_recovery_cost_ms": 128.17709601759992,
+        "total_recovery_cost_ms": 7690.625761055996,
+        "total_recovery_gap_tokens": 200704
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.7822222222222223,
+        "mean_recovery_cost_ms": 152.20445117447525,
+        "total_recovery_cost_ms": 9132.267070468515,
+        "total_recovery_gap_tokens": 200704
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.7822222222222223,
+        "mean_recovery_cost_ms": 128.17709601759992,
+        "total_recovery_cost_ms": 7690.625761055996,
+        "total_recovery_gap_tokens": 200704
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.7822222222222223,
+        "mean_recovery_cost_ms": 152.20445117447525,
+        "total_recovery_cost_ms": 9132.267070468515,
+        "total_recovery_gap_tokens": 200704
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 86.20767968906665,
+        "total_recovery_cost_ms": 5172.460781343999,
+        "total_recovery_gap_tokens": 135168
+      },
+      "new_selection": [
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8533333333333334,
+        "mean_recovery_cost_ms": 101.478362607304,
+        "total_recovery_cost_ms": 6088.70175643824,
+        "total_recovery_gap_tokens": 135168
+      },
+      "old_selection": [
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": true,
+      "selection_jaccard": 0.7777777777777778,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 23.253555196266667,
+        "total_recovery_cost_ms": 1395.213311776,
+        "total_recovery_gap_tokens": 36864
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 27.16153534129262,
+        "total_recovery_cost_ms": 1629.6921204775572,
+        "total_recovery_gap_tokens": 36864
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.9066666666666666,
+        "mean_recovery_cost_ms": 54.325770027199994,
+        "total_recovery_cost_ms": 3259.546201632,
+        "total_recovery_gap_tokens": 86016
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9066666666666666,
+        "mean_recovery_cost_ms": 63.611710420809686,
+        "total_recovery_cost_ms": 3816.702625248581,
+        "total_recovery_gap_tokens": 86016
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.4666666666666667,
+        "mean_recovery_cost_ms": 351.20688985600003,
+        "total_recovery_cost_ms": 21072.41339136,
+        "total_recovery_gap_tokens": 491520
+      },
+      "new_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.4666666666666667,
+        "mean_recovery_cost_ms": 374.87695628078654,
+        "total_recovery_cost_ms": 22492.617376847193,
+        "total_recovery_gap_tokens": 491520
+      },
+      "old_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.8266666666666667,
+        "mean_recovery_cost_ms": 101.54136339679995,
+        "total_recovery_cost_ms": 6092.4818038079975,
+        "total_recovery_gap_tokens": 159744
+      },
+      "new_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8266666666666667,
+        "mean_recovery_cost_ms": 120.40012466022745,
+        "total_recovery_cost_ms": 7224.007479613647,
+        "total_recovery_gap_tokens": 159744
+      },
+      "old_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.9333333333333333,
+        "mean_recovery_cost_ms": 42.12965378933333,
+        "total_recovery_cost_ms": 2527.77922736,
+        "total_recovery_gap_tokens": 61440
+      },
+      "new_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A32768_F02_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9333333333333333,
+        "mean_recovery_cost_ms": 47.15529192471877,
+        "total_recovery_cost_ms": 2829.317515483126,
+        "total_recovery_gap_tokens": 61440
+      },
+      "old_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A32768_F02_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.9066666666666666,
+        "mean_recovery_cost_ms": 54.325770027199994,
+        "total_recovery_cost_ms": 3259.546201632,
+        "total_recovery_gap_tokens": 86016
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9066666666666666,
+        "mean_recovery_cost_ms": 63.611710420809686,
+        "total_recovery_cost_ms": 3816.702625248581,
+        "total_recovery_gap_tokens": 86016
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.9066666666666666,
+        "mean_recovery_cost_ms": 54.325770027199994,
+        "total_recovery_cost_ms": 3259.546201632,
+        "total_recovery_gap_tokens": 86016
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9066666666666666,
+        "mean_recovery_cost_ms": 63.611710420809686,
+        "total_recovery_cost_ms": 3816.702625248581,
+        "total_recovery_gap_tokens": 86016
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 23.253555196266667,
+        "total_recovery_cost_ms": 1395.213311776,
+        "total_recovery_gap_tokens": 36864
+      },
+      "new_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 27.16153534129262,
+        "total_recovery_cost_ms": 1629.6921204775572,
+        "total_recovery_gap_tokens": 36864
+      },
+      "old_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F01_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 0.9688888888888889,
+        "mean_recovery_cost_ms": 18.007378155199998,
+        "total_recovery_cost_ms": 1080.4426893119999,
+        "total_recovery_gap_tokens": 28672
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9688888888888889,
+        "mean_recovery_cost_ms": 20.85171153691287,
+        "total_recovery_cost_ms": 1251.102692214772,
+        "total_recovery_gap_tokens": 28672
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 0.9377777777777778,
+        "mean_recovery_cost_ms": 36.014756310399996,
+        "total_recovery_cost_ms": 2160.8853786239997,
+        "total_recovery_gap_tokens": 57344
+      },
+      "new_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A04096_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9377777777777778,
+        "mean_recovery_cost_ms": 41.70342307382574,
+        "total_recovery_cost_ms": 2502.205384429544,
+        "total_recovery_gap_tokens": 57344
+      },
+      "old_selection": [
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A04096_F01_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A04096_F01_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A32768_F01_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F08_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A04096_F01_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A32768_F01_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 0.9688888888888889,
+        "mean_recovery_cost_ms": 18.007378155199998,
+        "total_recovery_cost_ms": 1080.4426893119999,
+        "total_recovery_gap_tokens": 28672
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9688888888888889,
+        "mean_recovery_cost_ms": 20.85171153691287,
+        "total_recovery_cost_ms": 1251.102692214772,
+        "total_recovery_gap_tokens": 28672
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 0.9688888888888889,
+        "mean_recovery_cost_ms": 18.007378155199998,
+        "total_recovery_cost_ms": 1080.4426893119999,
+        "total_recovery_gap_tokens": 28672
+      },
+      "new_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9688888888888889,
+        "mean_recovery_cost_ms": 20.85171153691287,
+        "total_recovery_cost_ms": 1251.102692214772,
+        "total_recovery_gap_tokens": 28672
+      },
+      "old_selection": [
+        "W16_A32768_F08_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F01_SHALLOW",
+        "W16_A32768_F01_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F01_SHALLOW",
+        "W16_A16384_F01_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F01_SHALLOW",
+        "W16_A08192_F01_MAIN",
+        "W16_A04096_F08_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W16_A04096_F01_MAIN",
+        "W16_A04096_F02_MAIN",
+        "W16_A04096_F04_MAIN",
+        "W16_A04096_F08_MAIN",
+        "W16_A08192_F01_MAIN",
+        "W16_A08192_F02_MAIN",
+        "W16_A08192_F04_MAIN",
+        "W16_A08192_F08_MAIN",
+        "W16_A16384_F01_MAIN",
+        "W16_A16384_F02_MAIN",
+        "W16_A16384_F04_MAIN",
+        "W16_A16384_F08_MAIN",
+        "W16_A32768_F01_MAIN",
+        "W16_A32768_F02_MAIN",
+        "W16_A32768_F04_MAIN",
+        "W16_A32768_F08_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "scalable_n16"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 297.8680671744,
+        "total_recovery_cost_ms": 11914.722686976,
+        "total_recovery_gap_tokens": 294912
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 339.24549664370716,
+        "total_recovery_cost_ms": 13569.819865748286,
+        "total_recovery_gap_tokens": 294912
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.4,
+        "mean_recovery_cost_ms": 508.592201088,
+        "total_recovery_cost_ms": 20343.68804352,
+        "total_recovery_gap_tokens": 491520
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.4,
+        "mean_recovery_cost_ms": 564.1716704121791,
+        "total_recovery_cost_ms": 22566.866816487163,
+        "total_recovery_gap_tokens": 491520
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.04,
+        "mean_recovery_cost_ms": 828.3220286976,
+        "total_recovery_cost_ms": 33132.881147904,
+        "total_recovery_gap_tokens": 786432
+      },
+      "new_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.04,
+        "mean_recovery_cost_ms": 901.1896838666871,
+        "total_recovery_cost_ms": 36047.587354667485,
+        "total_recovery_gap_tokens": 786432
+      },
+      "old_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 719.3163350016,
+        "total_recovery_cost_ms": 28772.653400064002,
+        "total_recovery_gap_tokens": 688128
+      },
+      "new_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 789.097844180651,
+        "total_recovery_cost_ms": 31563.91376722604,
+        "total_recovery_gap_tokens": 688128
+      },
+      "old_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 733.8908419584002,
+        "total_recovery_cost_ms": 29355.633678336006,
+        "total_recovery_gap_tokens": 688128
+      },
+      "new_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.16,
+        "mean_recovery_cost_ms": 787.6128553878516,
+        "total_recovery_cost_ms": 31504.514215514064,
+        "total_recovery_gap_tokens": 688128
+      },
+      "old_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.25,
+        "mean_recovery_cost_ms": 644.8493182080001,
+        "total_recovery_cost_ms": 25793.972728320005,
+        "total_recovery_gap_tokens": 614400
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.25,
+        "mean_recovery_cost_ms": 704.2864700197242,
+        "total_recovery_cost_ms": 28171.45880078897,
+        "total_recovery_gap_tokens": 614400
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.4,
+        "mean_recovery_cost_ms": 508.592201088,
+        "total_recovery_cost_ms": 20343.68804352,
+        "total_recovery_gap_tokens": 491520
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.4,
+        "mean_recovery_cost_ms": 564.1716704121791,
+        "total_recovery_cost_ms": 22566.866816487163,
+        "total_recovery_gap_tokens": 491520
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 4,
+      "new_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 297.8680671744,
+        "total_recovery_cost_ms": 11914.722686976,
+        "total_recovery_gap_tokens": 294912
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.64,
+        "mean_recovery_cost_ms": 339.24549664370716,
+        "total_recovery_cost_ms": 13569.819865748286,
+        "total_recovery_gap_tokens": 294912
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 157.38531123199996,
+        "total_recovery_cost_ms": 6295.412449279998,
+        "total_recovery_gap_tokens": 163840
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 187.80972533859313,
+        "total_recovery_cost_ms": 7512.389013543725,
+        "total_recovery_gap_tokens": 163840
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": true,
+      "selection_jaccard": 0.3333333333333333,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.5,
+        "mean_recovery_cost_ms": 429.89954547200006,
+        "total_recovery_cost_ms": 17195.98181888,
+        "total_recovery_gap_tokens": 409600
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5,
+        "mean_recovery_cost_ms": 469.5243133464828,
+        "total_recovery_cost_ms": 18780.972533859313,
+        "total_recovery_gap_tokens": 409600
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 702.4137797120001,
+        "total_recovery_cost_ms": 28096.551188480003,
+        "total_recovery_gap_tokens": 655360
+      },
+      "new_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.2,
+        "mean_recovery_cost_ms": 749.7539125615731,
+        "total_recovery_cost_ms": 29990.156502462924,
+        "total_recovery_gap_tokens": 655360
+      },
+      "old_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 157.38531123199996,
+        "total_recovery_cost_ms": 6295.412449279998,
+        "total_recovery_gap_tokens": 163840
+      },
+      "new_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 189.29471413139254,
+        "total_recovery_cost_ms": 7571.7885652557015,
+        "total_recovery_gap_tokens": 163840
+      },
+      "old_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 171.95981818880003,
+        "total_recovery_cost_ms": 6878.392727552001,
+        "total_recovery_gap_tokens": 163840
+      },
+      "new_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 187.80972533859313,
+        "total_recovery_cost_ms": 7512.389013543725,
+        "total_recovery_gap_tokens": 163840
+      },
+      "old_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.5,
+        "mean_recovery_cost_ms": 429.89954547200006,
+        "total_recovery_cost_ms": 17195.98181888,
+        "total_recovery_gap_tokens": 409600
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.5,
+        "mean_recovery_cost_ms": 469.5243133464828,
+        "total_recovery_cost_ms": 18780.972533859313,
+        "total_recovery_gap_tokens": 409600
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 157.38531123199996,
+        "total_recovery_cost_ms": 6295.412449279998,
+        "total_recovery_gap_tokens": 163840
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 189.29471413139254,
+        "total_recovery_cost_ms": 7571.7885652557015,
+        "total_recovery_gap_tokens": 163840
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 8,
+      "new_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 157.38531123199996,
+        "total_recovery_cost_ms": 6295.412449279998,
+        "total_recovery_gap_tokens": 163840
+      },
+      "new_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.8,
+        "mean_recovery_cost_ms": 187.80972533859313,
+        "total_recovery_cost_ms": 7512.389013543725,
+        "total_recovery_gap_tokens": 163840
+      },
+      "old_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": true,
+      "selection_jaccard": 0.3333333333333333,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 31.477062246400003,
+        "total_recovery_cost_ms": 1259.0824898560002,
+        "total_recovery_gap_tokens": 32768
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 37.85894282627851,
+        "total_recovery_cost_ms": 1514.3577130511403,
+        "total_recovery_gap_tokens": 32768
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.9,
+        "mean_recovery_cost_ms": 78.69265561600001,
+        "total_recovery_cost_ms": 3147.7062246400005,
+        "total_recovery_gap_tokens": 81920
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9,
+        "mean_recovery_cost_ms": 94.64735706569627,
+        "total_recovery_cost_ms": 3785.8942826278508,
+        "total_recovery_gap_tokens": 81920
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.36,
+        "mean_recovery_cost_ms": 561.9310237696001,
+        "total_recovery_cost_ms": 22477.240950784002,
+        "total_recovery_gap_tokens": 524288
+      },
+      "new_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.36,
+        "mean_recovery_cost_ms": 599.8031300492585,
+        "total_recovery_cost_ms": 23992.12520197034,
+        "total_recovery_gap_tokens": 524288
+      },
+      "old_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.84,
+        "mean_recovery_cost_ms": 125.9082489856,
+        "total_recovery_cost_ms": 5036.329959424,
+        "total_recovery_gap_tokens": 131072
+      },
+      "new_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.84,
+        "mean_recovery_cost_ms": 151.43577130511403,
+        "total_recovery_cost_ms": 6057.430852204561,
+        "total_recovery_gap_tokens": 131072
+      },
+      "old_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.84,
+        "mean_recovery_cost_ms": 140.48275594240002,
+        "total_recovery_cost_ms": 5619.3102376960005,
+        "total_recovery_gap_tokens": 131072
+      },
+      "new_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.84,
+        "mean_recovery_cost_ms": 149.95078251231462,
+        "total_recovery_cost_ms": 5998.031300492585,
+        "total_recovery_gap_tokens": 131072
+      },
+      "old_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.75,
+        "mean_recovery_cost_ms": 214.94977273600003,
+        "total_recovery_cost_ms": 8597.99090944,
+        "total_recovery_gap_tokens": 204800
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.75,
+        "mean_recovery_cost_ms": 234.7621566732414,
+        "total_recovery_cost_ms": 9390.486266929656,
+        "total_recovery_gap_tokens": 204800
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.9,
+        "mean_recovery_cost_ms": 78.69265561600001,
+        "total_recovery_cost_ms": 3147.7062246400005,
+        "total_recovery_gap_tokens": 81920
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.9,
+        "mean_recovery_cost_ms": 94.64735706569627,
+        "total_recovery_cost_ms": 3785.8942826278508,
+        "total_recovery_gap_tokens": 81920
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 12,
+      "new_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 31.477062246400003,
+        "total_recovery_cost_ms": 1259.0824898560002,
+        "total_recovery_gap_tokens": 32768
+      },
+      "new_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 0.96,
+        "mean_recovery_cost_ms": 37.85894282627851,
+        "total_recovery_cost_ms": 1514.3577130511403,
+        "total_recovery_gap_tokens": 32768
+      },
+      "old_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "FlowState",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN"
+      ],
+      "policy_name": "Global-LRU",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Equal-Share",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Recovery-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Workflow-Only",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN"
+      ],
+      "policy_name": "KVFlow-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A32768_F4_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S1_Rold_MAIN"
+      ],
+      "policy_name": "Marconi-style",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    },
+    {
+      "budget_checkpoints": 16,
+      "new_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "new_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "old_metric": {
+        "executable_hit_ratio": 1.0,
+        "mean_recovery_cost_ms": 0.0,
+        "total_recovery_cost_ms": 0.0,
+        "total_recovery_gap_tokens": 0
+      },
+      "old_selection": [
+        "W_A08192_F1_S1_Rold_MAIN",
+        "W_A08192_F1_S1_Rrecent_MAIN",
+        "W_A08192_F1_S3_Rold_MAIN",
+        "W_A08192_F1_S3_Rrecent_MAIN",
+        "W_A08192_F4_S1_Rold_MAIN",
+        "W_A08192_F4_S1_Rrecent_MAIN",
+        "W_A08192_F4_S3_Rold_MAIN",
+        "W_A08192_F4_S3_Rrecent_MAIN",
+        "W_A32768_F1_S1_Rold_MAIN",
+        "W_A32768_F1_S1_Rrecent_MAIN",
+        "W_A32768_F1_S3_Rold_MAIN",
+        "W_A32768_F1_S3_Rrecent_MAIN",
+        "W_A32768_F4_S1_Rold_MAIN",
+        "W_A32768_F4_S1_Rrecent_MAIN",
+        "W_A32768_F4_S3_Rold_MAIN",
+        "W_A32768_F4_S3_Rrecent_MAIN"
+      ],
+      "policy_name": "Oracle",
+      "selection_changed": false,
+      "selection_jaccard": 1.0,
+      "workload": "sota_signal"
+    }
+  ],
+  "trace_policy_comparison_executed": false
+}

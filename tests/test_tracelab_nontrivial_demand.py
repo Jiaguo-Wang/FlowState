@@ -39,13 +39,13 @@ PROTECTED_HASHES = {
         "e6cdc288402ae8fd16234710342ab1076453f61f84610c4b0504bbcad50dce79"
     ),
     "tests/test_tracelab_final_protocol.py": (
-        "2bec1b87cbc6835daafb8128cf62e24be383cf0232d610cd3d1ac300b6d880b4"
+        "985d1d6907027065eb9ebc0e838be8217416b5ea694eaf30f3f007c548eb9fd2"
     ),
     "flowstate/recovery_model.py": (
-        "9a13bc4f7778b9e1835ddb04237d54815ff86c7e9c57b42d293e73c5bb404082"
+        "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
     ),
     "evaluation/controlled_multiworkflow_v1/policies.py": (
-        "8df5a1391b651f3a55090e13b8abb9d2a520de0a94abeb6a7339fdcb49445a24"
+        "cbca81712c41bbcadd12a923fb6387c1c2d96976ce2ab38e21a9afcc62b9d375"
     ),
     "evaluation/sota_policies.py": (
         "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212"

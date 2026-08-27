@@ -25,7 +25,9 @@ from evaluation.recovery_profiler_v2.profile_runner import (
     build_profile_schedule,
     validate_runtime_gap,
 )
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 
 
 def _synthetic_measurement_rows(

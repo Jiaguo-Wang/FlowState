@@ -97,7 +97,10 @@ def total_recovery_cost(
     selected: Sequence[CheckpointCandidate],
 ) -> float:
     return sum(
-        model.estimate(recovery_gap(continuation, selected))
+        model.estimate(
+            recovery_gap(continuation, selected),
+            continuation.planning_target,
+        )
         for continuation in continuations
     )
 
@@ -117,7 +120,10 @@ def test_recovery_profile_and_initial_candidate_benefits(
     scenario: OfflineScenario,
 ) -> None:
     phi = {
-        replay_tokens: recovery_cost_model.estimate(replay_tokens)
+        replay_tokens: recovery_cost_model.estimate(
+            replay_tokens,
+            replay_tokens,
+        )
         for replay_tokens in (4_096, 8_192, 16_384, 32_768)
     }
     benefits = {
@@ -132,7 +138,11 @@ def test_recovery_profile_and_initial_candidate_benefits(
     assert phi[4_096] < phi[8_192] < phi[16_384] < phi[32_768]
     assert benefits["W1_PARENT"] == pytest.approx(2 * phi[32_768])
     assert benefits["W1_SHALLOW"] == pytest.approx(
-        2 * (phi[32_768] - phi[16_384])
+        2
+        * (
+            phi[32_768]
+            - recovery_cost_model.estimate(16_384, 32_768)
+        )
     )
     assert benefits["W2_PARENT"] == pytest.approx(phi[16_384])
     assert benefits["W3_PARENT"] == pytest.approx(phi[8_192])
@@ -186,7 +196,7 @@ def test_global_budget_selects_highest_total_recovery_benefit(
         "W4-C": 0,
     }
     assert result.recovery_cost_after_ms == pytest.approx(
-        recovery_cost_model.estimate(8_192)
+        recovery_cost_model.estimate(8_192, 8_192)
     )
 
 

@@ -1,17 +1,15 @@
+from __future__ import annotations
+
 import csv
 import json
 from pathlib import Path
 
 import pytest
 
-from flowstate.recovery_model import RecoveryCostModel
-
-
-_ARTIFACT_DIRECTORY = (
-    Path(__file__).resolve().parents[1]
-    / "motivation"
-    / "artifacts"
-    / "replay_cost_20260819"
+from flowstate.recovery_model import (
+    FORMAL_RECOVERY_MODEL_METADATA,
+    HistoricalRecoveryCostModel,
+    RecoveryCostModel,
 )
 
 
@@ -20,63 +18,93 @@ def model() -> RecoveryCostModel:
     return RecoveryCostModel()
 
 
-def test_zero_replay_has_zero_cost(model: RecoveryCostModel) -> None:
-    assert model.estimate(0) == 0.0
+def test_formal_metadata_is_frozen() -> None:
+    metadata = FORMAL_RECOVERY_MODEL_METADATA
+    assert metadata.name == "position_aware_quadratic_v1"
+    assert metadata.coefficient_a == 37.828150
+    assert metadata.coefficient_b == 0.345974143
+    assert metadata.coefficient_c == -0.156201917
+    assert metadata.calibration_artifact == (
+        "recovery_model_freeze_20260826_154235_266020"
+    )
+    assert metadata.maximum_target_tokens == 131_072
+    assert metadata.output_unit == "ms"
+
+
+def test_zero_gap_is_exact_zero(model: RecoveryCostModel) -> None:
+    for target_tokens in (0, 32_768, 65_536, 131_072):
+        assert model.estimate(0, target_tokens) == 0.0
+        assert model.cost(0, target_tokens) == 0.0
+
+
+def test_exact_m2_formula_and_ki_token_conversion(
+    model: RecoveryCostModel,
+) -> None:
+    gap_tokens = 8_192
+    target_tokens = 65_536
+    gap_ki_tokens = 8.0
+    target_ki_tokens = 64.0
+    expected = (
+        37.828150 * gap_ki_tokens
+        + 0.345974143 * gap_ki_tokens * target_ki_tokens
+        - 0.156201917 * gap_ki_tokens * gap_ki_tokens
+    )
+    assert model.estimate(gap_tokens, target_tokens) == pytest.approx(expected)
 
 
 @pytest.mark.parametrize(
-    ("replay_tokens", "expected_cost_ms"),
+    ("gap_tokens", "target_tokens", "message"),
     [
-        (1024, 31.80306009016931),
-        (4096, 178.72895603068173),
-        (8192, 378.5894282627851),
-        (16384, 772.4913060665131),
-        (32768, 1499.5078251231462),
+        (-1, 0, "gap_tokens"),
+        (0, -1, "target_tokens"),
+        (4_096, 2_048, "不能大于"),
+        (4_096, 131_073, "超出"),
     ],
 )
-def test_profile_points_have_positive_recovery_cost(
+def test_invalid_inputs_are_rejected(
     model: RecoveryCostModel,
-    replay_tokens: int,
-    expected_cost_ms: float,
+    gap_tokens: int,
+    target_tokens: int,
+    message: str,
 ) -> None:
-    cost_ms = model.estimate(replay_tokens)
-    assert cost_ms > 0.0
-    assert cost_ms == pytest.approx(expected_cost_ms)
+    with pytest.raises(ValueError, match=message):
+        model.estimate(gap_tokens, target_tokens)
 
 
-def test_cost_is_monotonic_non_decreasing(model: RecoveryCostModel) -> None:
-    replay_lengths = [0, 1024, 2048, 4096, 8192, 16384, 32768, 40000]
-    costs = [model.estimate(replay_tokens) for replay_tokens in replay_lengths]
-    assert costs == sorted(costs)
-
-
-def test_interpolation_for_middle_value(model: RecoveryCostModel) -> None:
-    lower_cost = model.estimate(1024)
-    middle_cost = model.estimate(2048)
-    upper_cost = model.estimate(4096)
-    assert lower_cost < middle_cost < upper_cost
-
-
-def test_extrapolation_uses_existing_fit(model: RecoveryCostModel) -> None:
-    with (_ARTIFACT_DIRECTORY / "fit_metrics.json").open(
-        "r", encoding="utf-8"
-    ) as handle:
-        fit_metrics = json.load(handle)
-    slope = float(fit_metrics["raw_run_ols"]["slope_ms_per_token"])
-
-    cost_ms = model.estimate(40000)
-    assert cost_ms > 0.0
-    assert cost_ms == pytest.approx(slope * 40000)
-
-
-def test_negative_replay_tokens_raise_value_error(
+def test_formal_domain_is_nonnegative_and_fixed_target_monotonic(
     model: RecoveryCostModel,
 ) -> None:
-    with pytest.raises(ValueError, match="必须大于等于零"):
-        model.estimate(-1)
+    for target_tokens in range(0, 131_073, 4_096):
+        gaps = tuple(range(0, target_tokens + 1, 4_096))
+        costs = tuple(
+            model.estimate(gap_tokens, target_tokens)
+            for gap_tokens in gaps
+        )
+        assert all(cost >= 0.0 for cost in costs)
+        assert costs == tuple(sorted(costs))
 
 
-def test_non_monotonic_profile_is_rejected(tmp_path: Path) -> None:
+def test_derivative_is_positive_over_continuous_domain(
+    model: RecoveryCostModel,
+) -> None:
+    for target_tokens in range(0, 131_073, 4_096):
+        for gap_tokens in range(0, target_tokens + 1, 4_096):
+            assert (
+                model.derivative_ms_per_ki_token(
+                    gap_tokens,
+                    target_tokens,
+                )
+                > 0.0
+            )
+
+
+def test_historical_model_remains_explicitly_available() -> None:
+    historical = HistoricalRecoveryCostModel()
+    assert historical.estimate(0) == 0.0
+    assert historical.estimate(32_768) == pytest.approx(1499.5078251231462)
+
+
+def test_historical_non_monotonic_profile_is_rejected(tmp_path: Path) -> None:
     profile_path = tmp_path / "replay_cost.csv"
     with profile_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(
@@ -103,7 +131,6 @@ def test_non_monotonic_profile_is_rejected(tmp_path: Path) -> None:
                 },
             ]
         )
-
     fit_path = tmp_path / "fit_metrics.json"
     fit_path.write_text(
         json.dumps(
@@ -118,10 +145,4 @@ def test_non_monotonic_profile_is_rejected(tmp_path: Path) -> None:
     )
 
     with pytest.raises(ValueError, match="1024 token.*4096 token"):
-        RecoveryCostModel(profile_path, fit_path)
-
-
-def test_wp3b_recovery_sanity(model: RecoveryCostModel) -> None:
-    penalty_ms = model.estimate(32768) - model.estimate(0)
-    print(f"WP3B 恢复成本校验：Phi(32768) - Phi(0) = {penalty_ms:.3f} ms")
-    assert 1000.0 < penalty_ms < 2000.0
+        HistoricalRecoveryCostModel(profile_path, fit_path)

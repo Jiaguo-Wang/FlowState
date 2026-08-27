@@ -55,7 +55,9 @@ from evaluation.sota_runtime_correctness import (
 )
 from flowstate.controller import StateController
 from flowstate.optimizer import GlobalOptimizer
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[1]

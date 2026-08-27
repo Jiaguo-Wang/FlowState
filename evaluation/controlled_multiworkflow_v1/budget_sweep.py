@@ -184,7 +184,14 @@ def _build_row(
             sum(frontiers) / total_target if total_target > 0 else 0.0
         ),
         estimated_recovery_cost_ms=sum(
-            recovery_cost_model.estimate(gap) for gap in gaps
+            recovery_cost_model.estimate(
+                gap,
+                continuation.planning_target,
+            )
+            for continuation, gap in zip(
+                scenario.continuations,
+                gaps,
+            )
         ),
     )
 

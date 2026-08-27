@@ -66,9 +66,11 @@ def test_expected_gaps_are_derived_from_core_recovery_gap() -> None:
 
 def test_planning_totals_and_estimated_costs() -> None:
     model = RecoveryCostModel()
+    scenario = build_scenario()
     summaries = {
         summary.policy_name: summary
         for summary in build_planning_summaries(
+            scenario=scenario,
             recovery_cost_model=model,
         )
     }
@@ -125,7 +127,14 @@ def test_planning_totals_and_estimated_costs() -> None:
     }
     for summary in summaries.values():
         expected_cost = sum(
-            model.estimate(gap) for _, gap in summary.recovery_gaps
+            model.estimate(
+                gap,
+                continuation.planning_target,
+            )
+            for continuation, (_, gap) in zip(
+                scenario.continuations,
+                summary.recovery_gaps,
+            )
         )
         assert isclose(
             summary.estimated_recovery_cost_ms,

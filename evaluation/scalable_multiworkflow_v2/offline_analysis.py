@@ -18,6 +18,7 @@ from evaluation.controlled_multiworkflow_v1.policies import (
     select_recovery_only,
     select_workflow_only,
 )
+from evaluation.formal_model_regression import exact_oracle_selection
 from evaluation.sota_metadata import (
     ControlledSOTAMetadata,
     build_controlled_sota_metadata,
@@ -117,7 +118,15 @@ def analyze_workload(
         raise ValueError("预算集合不能包含重复值")
     active_oracle_selections = cached_oracle_selections
     if active_oracle_selections is None:
-        active_oracle_selections, _ = _load_cached_oracle_data()
+        active_oracle_selections = {
+            (workflow_count, budget): exact_oracle_selection(
+                build_scenario(workflow_count, budget).continuations,
+                build_scenario(workflow_count, budget).candidates,
+                budget,
+                model,
+            )
+            for budget in active_budgets
+        }
     missing_oracle_budgets = tuple(
         budget
         for budget in active_budgets
@@ -167,21 +176,8 @@ def run_offline_analysis(
     """完成 N=8 与 N=16 的全部固定预算扫描并验证性质。"""
     model = recovery_cost_model or RecoveryCostModel()
     cached_oracle_selections, cached_oracle_runtimes = (
-        _load_cached_oracle_data()
+        _build_formal_oracle_data(model)
     )
-    expected_oracle_keys = {
-        (workflow_count, budget)
-        for workflow_count in (8, 16)
-        for budget in BUDGETS_BY_WORKFLOW_COUNT[workflow_count]
-    }
-    missing_oracle_keys = sorted(
-        expected_oracle_keys - set(cached_oracle_selections)
-    )
-    if missing_oracle_keys:
-        raise RuntimeError(
-            "缺少冻结的 Step 8A Oracle selection，拒绝重新执行固定的 N=16 搜索："
-            f"{missing_oracle_keys}"
-        )
     rows = tuple(
         row
         for workflow_count in (8, 16)
@@ -201,7 +197,11 @@ def run_offline_analysis(
     return result
 
 
-def validate_analysis(result: OfflineAnalysisResult) -> None:
+def validate_analysis(
+    result: OfflineAnalysisResult,
+    *,
+    require_step8a_regression: bool = False,
+) -> None:
     """验证最优性、单调性、满覆盖和基线分化等离线性质。"""
     present_policy_names = {
         row.policy_name for row in result.rows
@@ -278,7 +278,7 @@ def validate_analysis(result: OfflineAnalysisResult) -> None:
     )
     if not differentiated:
         raise RuntimeError("Workflow-Only 与 Recovery-Only 没有产生选择分化")
-    if build_step8a_regression_digest(result.rows) != (
+    if require_step8a_regression and build_step8a_regression_digest(result.rows) != (
         STEP8A_REGRESSION_DIGEST
     ):
         raise RuntimeError("原 Step 8A 六策略语义结果发生回归")
@@ -384,7 +384,7 @@ def load_offline_artifact(
         flowstate_oracle_differences=differences,
         oracle_runtime_ms_by_workload=runtimes,
     )
-    validate_analysis(result)
+    validate_analysis(result, require_step8a_regression=True)
     return result
 
 
@@ -507,7 +507,14 @@ def _build_summary_row(
             sum(frontiers) / total_target if total_target else 0.0
         ),
         estimated_recovery_cost_ms=sum(
-            recovery_cost_model.estimate(gap) for gap in gaps
+            recovery_cost_model.estimate(
+                gap,
+                continuation.planning_target,
+            )
+            for continuation, gap in zip(
+                scenario.continuations,
+                gaps,
+            )
         ),
         selection_runtime_ms=selection_runtime_ms,
     )
@@ -617,6 +624,31 @@ def build_step8a_regression_digest(
         separators=(",", ":"),
     )
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def _build_formal_oracle_data(
+    recovery_cost_model: RecoveryCostModel,
+) -> tuple[
+    dict[tuple[int, int], tuple[str, ...]],
+    tuple[tuple[int, float], ...],
+]:
+    """用正式目标精确求解全部预算，并记录每个规模的总耗时。"""
+    selections = {}
+    runtimes = []
+    for workflow_count in (8, 16):
+        started = perf_counter()
+        for budget in BUDGETS_BY_WORKFLOW_COUNT[workflow_count]:
+            scenario = build_scenario(workflow_count, budget)
+            selections[(workflow_count, budget)] = exact_oracle_selection(
+                scenario.continuations,
+                scenario.candidates,
+                budget,
+                recovery_cost_model,
+            )
+        runtimes.append(
+            (workflow_count, (perf_counter() - started) * 1_000.0)
+        )
+    return selections, tuple(runtimes)
 
 
 def _load_cached_oracle_data(

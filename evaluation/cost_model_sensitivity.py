@@ -28,7 +28,9 @@ from evaluation.sota_signal_stress_v1.scenario import (
 )
 from flowstate.executable_state import recovery_gap
 from flowstate.optimizer import GlobalOptimizer
-from flowstate.recovery_model import RecoveryCostModel
+from flowstate.recovery_model import (
+    HistoricalRecoveryCostModel as RecoveryCostModel,
+)
 from flowstate.state_catalog import CheckpointCandidate
 from flowstate.workflow import PendingContinuation
 
@@ -57,7 +59,11 @@ EXPECTED_PERTURBATION_COUNT = 21
 class CostModel(Protocol):
     """描述敏感性分析所需的最小恢复成本接口。"""
 
-    def estimate(self, replay_tokens: int) -> float:
+    def estimate(
+        self,
+        replay_tokens: int,
+        target_tokens: int | None = None,
+    ) -> float:
         """返回指定恢复间隔的估计成本。"""
 
 
@@ -143,9 +149,13 @@ class ScaledCostModel:
     base_model: CostModel
     scale: float
 
-    def estimate(self, replay_tokens: int) -> float:
+    def estimate(
+        self,
+        replay_tokens: int,
+        target_tokens: int | None = None,
+    ) -> float:
         """保持零点不变，并缩放全部非零恢复成本。"""
-        value = self.base_model.estimate(replay_tokens)
+        value = self.base_model.estimate(replay_tokens, target_tokens)
         return 0.0 if replay_tokens == 0 else value * self.scale
 
 
@@ -157,9 +167,13 @@ class ExactGapPerturbedCostModel:
     target_gap: int
     scale: float
 
-    def estimate(self, replay_tokens: int) -> float:
+    def estimate(
+        self,
+        replay_tokens: int,
+        target_tokens: int | None = None,
+    ) -> float:
         """只在 replay_tokens 精确命中目标 knot 时应用比例。"""
-        value = self.base_model.estimate(replay_tokens)
+        value = self.base_model.estimate(replay_tokens, target_tokens)
         if replay_tokens == self.target_gap:
             return value * self.scale
         return value

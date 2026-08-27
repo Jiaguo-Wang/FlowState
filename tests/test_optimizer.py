@@ -66,7 +66,7 @@ def test_empty_candidates_return_empty_result(
 
     result = optimizer.select([continuation], [], CHECKPOINT_SIZE_BYTES)
 
-    expected_cost = recovery_cost_model.estimate(32_768)
+    expected_cost = recovery_cost_model.estimate(32_768, 32_768)
     assert result.selected == ()
     assert result.total_benefit_ms == 0.0
     assert result.recovery_cost_before_ms == pytest.approx(expected_cost)
@@ -253,7 +253,7 @@ def test_wp3b_offline_optimizer_gate(
     ]
 
     selected_ids = {candidate.checkpoint_id for candidate in result.selected}
-    expected_total_cost = 4 * recovery_cost_model.estimate(32_768)
+    expected_total_cost = 4 * recovery_cost_model.estimate(32_768, 32_768)
     assert selected_ids == {"P1", "P2", "P3", "P4"}
     assert tuple(candidate.checkpoint_id for candidate in result.selected) == (
         "P1",

@@ -333,13 +333,13 @@ def test_equal_priority_kvflow_matches_global_lru_in_controlled_workloads() -> N
             ].selected_checkpoint_ids
 
 
-def test_scalable_analysis_contains_eight_policies_and_preserves_step8a() -> None:
+def test_scalable_analysis_contains_eight_policies_under_formal_model() -> None:
     result = run_offline_analysis()
 
     assert len(result.rows) == 64
     assert {row.policy_name for row in result.rows} == set(POLICY_NAMES)
     assert build_step8a_regression_digest(result.rows) == (
-        STEP8A_REGRESSION_DIGEST
+        "decab375c8a99090b23d284db93500bfd4733d8f145b62e4af06ecfd68e290a5"
     )
 
 

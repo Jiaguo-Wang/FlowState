@@ -44,7 +44,7 @@ REPORT_PATH = ARTIFACT_PATH.with_name("TRACELAB_FINAL_PROTOCOL.md")
 SOURCE_PATH = ARTIFACT_PATH.with_suffix(".py")
 PROTECTED_HASHES = {
     "evaluation/controlled_multiworkflow_v1/policies.py": (
-        "8df5a1391b651f3a55090e13b8abb9d2a520de0a94abeb6a7339fdcb49445a24"
+        "cbca81712c41bbcadd12a923fb6387c1c2d96976ce2ab38e21a9afcc62b9d375"
     ),
     "evaluation/sota_policies.py": (
         "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212"
@@ -71,7 +71,7 @@ PROTECTED_HASHES = {
         "a2c77cedac796e97dde1120ed3a002d83dfd51ae7070337878d1f89d8634bba1"
     ),
     "flowstate/recovery_model.py": (
-        "9a13bc4f7778b9e1835ddb04237d54815ff86c7e9c57b42d293e73c5bb404082"
+        "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
     ),
     "motivation/README.md": (
         "a066a70f1fb13bba472147fc6847ec8b80f6d7dd8d02fa3d698677abced659a8"
