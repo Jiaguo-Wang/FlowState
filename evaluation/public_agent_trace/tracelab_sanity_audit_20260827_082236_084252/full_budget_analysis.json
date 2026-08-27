@@ -1,0 +1,46 @@
+{
+  "claim_boundary": "DEMAND-SUFFICIENT SANITY POINT, NOT CORE PERFORMANCE CLAIM",
+  "condition": "K=X",
+  "flowstate_all_gaps_zero": true,
+  "flowstate_exact_parent_set_violations": 0,
+  "interpretation": "K=X 恰好足以保留每个 distinct exact-parent demand。FlowState 的正式目标使其选择这些 demand，因而 E=T、G=0、EHR=100%。baseline 可能把相同 K 用于较浅兼容状态或与当前 pending 无关的历史状态。该点验证 demand sufficiency，不是独立 latency 性能结论。",
+  "policies": {
+    "FlowState": {
+      "mean_total_cost_ms_per_snapshot": 0.0,
+      "missing_exact_parent_demands": 0,
+      "selected_checkpoint_count": 262,
+      "selected_compatible_non_exact_count": 0,
+      "selected_exact_parent_count": 262,
+      "selected_without_pending_compatibility_count": 0,
+      "snapshots_with_all_exact_parent_demands_covered": 105
+    },
+    "Global-LRU": {
+      "mean_total_cost_ms_per_snapshot": 1972.5747953186471,
+      "missing_exact_parent_demands": 67,
+      "selected_checkpoint_count": 262,
+      "selected_compatible_non_exact_count": 49,
+      "selected_exact_parent_count": 195,
+      "selected_without_pending_compatibility_count": 18,
+      "snapshots_with_all_exact_parent_demands_covered": 42
+    },
+    "KVFlow-style": {
+      "mean_total_cost_ms_per_snapshot": 1723.8625580874914,
+      "missing_exact_parent_demands": 60,
+      "selected_checkpoint_count": 262,
+      "selected_compatible_non_exact_count": 60,
+      "selected_exact_parent_count": 202,
+      "selected_without_pending_compatibility_count": 0,
+      "snapshots_with_all_exact_parent_demands_covered": 49
+    },
+    "Marconi-style": {
+      "mean_total_cost_ms_per_snapshot": 2701.85076466719,
+      "missing_exact_parent_demands": 170,
+      "selected_checkpoint_count": 262,
+      "selected_compatible_non_exact_count": 134,
+      "selected_exact_parent_count": 92,
+      "selected_without_pending_compatibility_count": 36,
+      "snapshots_with_all_exact_parent_demands_covered": 6
+    }
+  },
+  "snapshot_count": 105
+}

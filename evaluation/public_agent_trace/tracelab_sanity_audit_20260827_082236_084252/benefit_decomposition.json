@@ -1,0 +1,68 @@
+{
+  "by_budget": {
+    "100%": {
+      "compatible_checkpoint_depth_gain_cases": 99,
+      "different_selection_cases": 99,
+      "exact_parent_coverage_gain_cases": 99,
+      "flowstate_cost_advantage_cases": 99,
+      "no_listed_factor_cases": 0,
+      "objective_tie_cases": 0,
+      "redundant_checkpoint_avoidance_cases": 47
+    },
+    "25%": {
+      "compatible_checkpoint_depth_gain_cases": 98,
+      "different_selection_cases": 98,
+      "exact_parent_coverage_gain_cases": 98,
+      "flowstate_cost_advantage_cases": 95,
+      "no_listed_factor_cases": 0,
+      "objective_tie_cases": 3,
+      "redundant_checkpoint_avoidance_cases": 0
+    },
+    "50%": {
+      "compatible_checkpoint_depth_gain_cases": 99,
+      "different_selection_cases": 99,
+      "exact_parent_coverage_gain_cases": 99,
+      "flowstate_cost_advantage_cases": 96,
+      "no_listed_factor_cases": 0,
+      "objective_tie_cases": 3,
+      "redundant_checkpoint_avoidance_cases": 0
+    },
+    "75%": {
+      "compatible_checkpoint_depth_gain_cases": 101,
+      "different_selection_cases": 101,
+      "exact_parent_coverage_gain_cases": 101,
+      "flowstate_cost_advantage_cases": 99,
+      "no_listed_factor_cases": 0,
+      "objective_tie_cases": 2,
+      "redundant_checkpoint_avoidance_cases": 2
+    }
+  },
+  "counts": {
+    "compatible_checkpoint_depth_gain_cases": 397,
+    "different_selection_cases": 397,
+    "exact_parent_coverage_gain_cases": 397,
+    "flowstate_cost_advantage_cases": 389,
+    "no_listed_factor_cases": 0,
+    "objective_tie_cases": 8,
+    "redundant_checkpoint_avoidance_cases": 49
+  },
+  "definitions": {
+    "compatible_checkpoint_depth_gain": "至少一个 continuation 的 FlowState E 高于 Marconi E",
+    "exact_parent_coverage_gain": "FlowState 使更多 continuation 达到 E=T，而 Marconi 对应 G>0",
+    "overlap_allowed": true,
+    "redundant_checkpoint_avoidance": "Marconi 中对当前 pending 兼容但移除后所有 E 均不变的 selected checkpoint 更多"
+  },
+  "fractions_among_different_selections": {
+    "compatible_checkpoint_depth_gain": 1.0,
+    "exact_parent_coverage_gain": 1.0,
+    "redundant_checkpoint_avoidance": 0.12342569269521411
+  },
+  "interpretation": "该分解只描述冻结 selection 的结构差异，不是重新运行策略或因果 ablation",
+  "overlap_combinations": {
+    "exact_parent_coverage_gain+compatible_checkpoint_depth_gain": 348,
+    "exact_parent_coverage_gain+compatible_checkpoint_depth_gain+redundant_checkpoint_avoidance": 49
+  },
+  "total_continuations_with_deeper_frontier": 517,
+  "total_exact_parent_demands_gained": 517,
+  "total_redundant_selected_checkpoints_avoided": 49
+}

@@ -1,0 +1,46 @@
+{
+  "budgets": {
+    "25%": {
+      "flowstate_exact_parent_coverage": 0.18840579710144928,
+      "flowstate_mean_executable_frontier_tokens": 8664.63768115942,
+      "flowstate_mean_gap_tokens": 32307.08695652174,
+      "flowstate_mean_total_cost_ms_per_snapshot": 7804.05290233419,
+      "marconi_exact_parent_coverage": 0.07246376811594203,
+      "marconi_mean_executable_frontier_tokens": 7838.376811594203,
+      "marconi_mean_gap_tokens": 33133.34782608696,
+      "marconi_mean_total_cost_ms_per_snapshot": 8020.3626741564585,
+      "mean_k": 1,
+      "mean_k_over_x": 0.19487179487179487,
+      "relative_cost_reduction": 0.026970073625133074
+    },
+    "50%": {
+      "flowstate_exact_parent_coverage": 0.4927536231884058,
+      "flowstate_mean_executable_frontier_tokens": 21849.985507246376,
+      "flowstate_mean_gap_tokens": 19121.739130434784,
+      "flowstate_mean_total_cost_ms_per_snapshot": 4571.729536333402,
+      "marconi_exact_parent_coverage": 0.11594202898550725,
+      "marconi_mean_executable_frontier_tokens": 18477.840579710144,
+      "marconi_mean_gap_tokens": 22493.884057971016,
+      "marconi_mean_total_cost_ms_per_snapshot": 5487.250696609145,
+      "mean_k": 2.6153846153846154,
+      "mean_k_over_x": 0.49230769230769234,
+      "relative_cost_reduction": 0.1668451490363818
+    },
+    "75%": {
+      "flowstate_exact_parent_coverage": 0.6811594202898551,
+      "flowstate_mean_executable_frontier_tokens": 28864.652173913044,
+      "flowstate_mean_gap_tokens": 12107.072463768116,
+      "flowstate_mean_total_cost_ms_per_snapshot": 2902.29606025125,
+      "marconi_exact_parent_coverage": 0.17391304347826086,
+      "marconi_mean_executable_frontier_tokens": 24060.985507246376,
+      "marconi_mean_gap_tokens": 16910.739130434784,
+      "marconi_mean_total_cost_ms_per_snapshot": 4155.660979659706,
+      "mean_k": 3.6153846153846154,
+      "mean_k_over_x": 0.6871794871794872,
+      "relative_cost_reduction": 0.30160422747263904
+    }
+  },
+  "interpretation": "25% 时所有 X>=4 快照均只有 K=1，平均 K/X 很低；两策略都只能覆盖少量需求，主要总成本由共同未覆盖需求决定。预算增加后，FlowState 可按位置感知边际成本连续覆盖更昂贵需求，而 Marconi 仍按 recency 与 FLOP efficiency 分配。",
+  "mean_x": 5.3076923076923075,
+  "snapshot_count": 13
+}
