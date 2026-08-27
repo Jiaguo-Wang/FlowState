@@ -1,0 +1,51 @@
+{
+  "bootstrap_iterations": 10000,
+  "bootstrap_sampling_unit": "snapshot",
+  "bootstrap_seed": 20260827,
+  "budget_formula": "K(r)=max(1,floor(X*r))",
+  "budget_ratios": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "checkpoint_memory_bytes": 51511296,
+  "created_at": "2026-08-27T07:55:48.356751+00:00",
+  "database_access": "read_only=True",
+  "database_path": "/home/wjg/data/tracelab/v0.0.2/syfi_coding_trace.duckdb",
+  "executable_hit_definition": "G_p=0",
+  "formal_model": {
+    "calibration_artifact": "recovery_model_freeze_20260826_154235_266020",
+    "coefficient_a": 37.82815,
+    "coefficient_b": 0.345974143,
+    "coefficient_c": -0.156201917,
+    "gap_unit": "tokens",
+    "maximum_target_tokens": 131072,
+    "minimum_gap_tokens": 0,
+    "name": "position_aware_quadratic_v1",
+    "output_unit": "ms",
+    "target_unit": "tokens"
+  },
+  "gpu_executed": false,
+  "main_snapshot_weight": "equal",
+  "policies": [
+    "Global-LRU",
+    "KVFlow-style",
+    "Marconi-style",
+    "FlowState"
+  ],
+  "protected_source_hashes": {
+    "evaluation/controlled_multiworkflow_v1/policies.py": "cbca81712c41bbcadd12a923fb6387c1c2d96976ce2ab38e21a9afcc62b9d375",
+    "evaluation/public_agent_trace/tracelab_final_protocol.json": "e8eeb0808d4db9761754fe5e4db6c7384f3621c992c0e955d103ed6faaeb0a46",
+    "evaluation/public_agent_trace/tracelab_nontrivial_demand.json": "33f315d21fe53ac676149c65377614aa12da51b6fe4bd5d58f150ff4a80d993a",
+    "evaluation/public_agent_trace/tracelab_nontrivial_protocol.json": "2307a3d2cd5c77e27f3a3f4d525b4455e8804bfba46fab75ec5d8e37ec119269",
+    "evaluation/public_agent_trace/tracelab_to_flowstate.py": "445b8b1064449a76c9c2bfba9b3710af90f10853bb46c34aec9af7673d9de2e0",
+    "evaluation/sota_policies.py": "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212",
+    "flowstate/optimizer.py": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98",
+    "flowstate/recovery_model.py": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
+  },
+  "protocol_path": "/home/wjg/code/FlowState/evaluation/public_agent_trace/tracelab_nontrivial_protocol.json",
+  "protocol_sha256": "2307a3d2cd5c77e27f3a3f4d525b4455e8804bfba46fab75ec5d8e37ec119269",
+  "schema_version": "flowstate.tracelab.formal_policy_comparison.v1",
+  "source_audit_sha256": "33f315d21fe53ac676149c65377614aa12da51b6fe4bd5d58f150ff4a80d993a"
+}
