@@ -1,0 +1,4120 @@
+{
+  "active_recurrent_only_interventions": [
+    "B2",
+    "D2"
+  ],
+  "all_requests_completed": true,
+  "artifact": "evaluation/runtime_artifacts/openhands_recurrent_only_causal_gate_20260831_052756_001767",
+  "census_count": 15,
+  "checkpoint_states_after_intervention": {
+    "A": {
+      "expected_mamba_present": true,
+      "node_id": 23,
+      "path_full_all_present": true,
+      "response": {
+        "after": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 23,
+            "parent_node_id": 18,
+            "path_full_all_present": true,
+            "path_full_rows": 4480,
+            "path_full_sha256": "43f3dab3ca7672346ad1ac6769f6a8be9accf85e7f7e16f4df55badb06f6c4c5",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 18,
+                "position": 3968,
+                "slots": [
+                  3
+                ]
+              },
+              {
+                "node_id": 23,
+                "position": 4480,
+                "slots": [
+                  12
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              18,
+              23
+            ],
+            "prefix_sha256": "7367ae061b34bbfa7909db2763540b8e63c248aac9087f6f611b0a794d20bcbe",
+            "prefix_tokens": 4480,
+            "segment_lengths": [
+              2432,
+              5,
+              1531,
+              512
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 512,
+            "target_full_value_sha256": "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": true,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": true,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": [
+              12
+            ]
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "before": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 23,
+            "parent_node_id": 18,
+            "path_full_all_present": true,
+            "path_full_rows": 4480,
+            "path_full_sha256": "43f3dab3ca7672346ad1ac6769f6a8be9accf85e7f7e16f4df55badb06f6c4c5",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 18,
+                "position": 3968,
+                "slots": [
+                  3
+                ]
+              },
+              {
+                "node_id": 23,
+                "position": 4480,
+                "slots": [
+                  12
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              18,
+              23
+            ],
+            "prefix_sha256": "7367ae061b34bbfa7909db2763540b8e63c248aac9087f6f611b0a794d20bcbe",
+            "prefix_tokens": 4480,
+            "segment_lengths": [
+              2432,
+              5,
+              1531,
+              512
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 512,
+            "target_full_value_sha256": "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": true,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": true,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": [
+              12
+            ]
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "label": "flowstate_step7b:OPENHANDS_CAUSAL_A_TURN_002_FINAL",
+        "mutation": {
+          "action": "inspect",
+          "device_freed": 0,
+          "host_freed": 0,
+          "tracker_full": 0,
+          "tracker_mamba": 0
+        },
+        "nonce": "flowstate_step7b:inspect:OPENHANDS_CAUSAL_A_TURN_002_FINAL:2433400423483885",
+        "ok": true,
+        "proof": {
+          "changed_mamba_node_ids": [],
+          "full_allocator_unchanged": true,
+          "full_path_unchanged": true,
+          "full_tree_unchanged": true,
+          "mamba_available_delta": 0,
+          "mamba_evictable_delta": 0,
+          "mamba_node_count_delta": 0,
+          "only_target_mamba_changed": true,
+          "prefix_digest_verified": true,
+          "same_node_id": true,
+          "sanity_check_passed": true,
+          "structure_unchanged": true
+        },
+        "scope": {
+          "cache_type": "UnifiedRadixCache",
+          "chunked_request_present": false,
+          "dp_size": 1,
+          "enable_hicache": false,
+          "enable_session_radix_cache": false,
+          "page_size": 1,
+          "pp_size": 1,
+          "running_requests": 0,
+          "scheduler_fully_idle": true,
+          "tp_size": 1,
+          "tree_core_type": "UnifiedTreeCore",
+          "waiting_requests": 0
+        }
+      },
+      "slots_before": [
+        12
+      ],
+      "target_full_present": true,
+      "target_mamba_present": true,
+      "token_position": 4480,
+      "turn": 2,
+      "valid": true,
+      "workflow": "A"
+    },
+    "B": {
+      "expected_mamba_present": false,
+      "node_id": 24,
+      "path_full_all_present": true,
+      "response": {
+        "after": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 24,
+            "parent_node_id": 19,
+            "path_full_all_present": true,
+            "path_full_rows": 3776,
+            "path_full_sha256": "42c9dea6e6ac14c66e079bdf81b3c4af71b99a5271065e34b84813963e520630",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              24
+            ],
+            "prefix_sha256": "8e988968c0bc80d0cbef8acf2320e977cb0c5b03f7b5d64dac331ddaf6e9b092",
+            "prefix_tokens": 3776,
+            "segment_lengths": [
+              2432,
+              5,
+              1339
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1339,
+            "target_full_value_sha256": "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": false,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": false,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": []
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "before": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 24,
+            "parent_node_id": 19,
+            "path_full_all_present": true,
+            "path_full_rows": 3776,
+            "path_full_sha256": "42c9dea6e6ac14c66e079bdf81b3c4af71b99a5271065e34b84813963e520630",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              24
+            ],
+            "prefix_sha256": "8e988968c0bc80d0cbef8acf2320e977cb0c5b03f7b5d64dac331ddaf6e9b092",
+            "prefix_tokens": 3776,
+            "segment_lengths": [
+              2432,
+              5,
+              1339
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1339,
+            "target_full_value_sha256": "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": false,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": false,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": []
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "label": "flowstate_step7b:OPENHANDS_CAUSAL_B_TURN_002_FINAL",
+        "mutation": {
+          "action": "inspect",
+          "device_freed": 0,
+          "host_freed": 0,
+          "tracker_full": 0,
+          "tracker_mamba": 0
+        },
+        "nonce": "flowstate_step7b:inspect:OPENHANDS_CAUSAL_B_TURN_002_FINAL:2433400916919590",
+        "ok": true,
+        "proof": {
+          "changed_mamba_node_ids": [],
+          "full_allocator_unchanged": true,
+          "full_path_unchanged": true,
+          "full_tree_unchanged": true,
+          "mamba_available_delta": 0,
+          "mamba_evictable_delta": 0,
+          "mamba_node_count_delta": 0,
+          "only_target_mamba_changed": true,
+          "prefix_digest_verified": true,
+          "same_node_id": true,
+          "sanity_check_passed": true,
+          "structure_unchanged": true
+        },
+        "scope": {
+          "cache_type": "UnifiedRadixCache",
+          "chunked_request_present": false,
+          "dp_size": 1,
+          "enable_hicache": false,
+          "enable_session_radix_cache": false,
+          "page_size": 1,
+          "pp_size": 1,
+          "running_requests": 0,
+          "scheduler_fully_idle": true,
+          "tp_size": 1,
+          "tree_core_type": "UnifiedTreeCore",
+          "waiting_requests": 0
+        }
+      },
+      "slots_before": [
+        14
+      ],
+      "target_full_present": true,
+      "target_mamba_present": false,
+      "token_position": 3776,
+      "turn": 2,
+      "valid": true,
+      "workflow": "B"
+    },
+    "C": {
+      "expected_mamba_present": true,
+      "node_id": 25,
+      "path_full_all_present": true,
+      "response": {
+        "after": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 25,
+            "parent_node_id": 21,
+            "path_full_all_present": true,
+            "path_full_rows": 4864,
+            "path_full_sha256": "9db9e3b94756ff4d9d29838aa4dc1ca5baadcc45e4037f6ea2fb696371662bde",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 21,
+                "position": 3712,
+                "slots": [
+                  8
+                ]
+              },
+              {
+                "node_id": 25,
+                "position": 4864,
+                "slots": [
+                  16
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              21,
+              25
+            ],
+            "prefix_sha256": "b94fa070403ffb1e4c5cbd1dc61f9ede2f144a78b8734582c89fcece1f743c25",
+            "prefix_tokens": 4864,
+            "segment_lengths": [
+              2432,
+              5,
+              1275,
+              1152
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1152,
+            "target_full_value_sha256": "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": true,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": true,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": [
+              16
+            ]
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "before": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 25,
+            "parent_node_id": 21,
+            "path_full_all_present": true,
+            "path_full_rows": 4864,
+            "path_full_sha256": "9db9e3b94756ff4d9d29838aa4dc1ca5baadcc45e4037f6ea2fb696371662bde",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 21,
+                "position": 3712,
+                "slots": [
+                  8
+                ]
+              },
+              {
+                "node_id": 25,
+                "position": 4864,
+                "slots": [
+                  16
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              21,
+              25
+            ],
+            "prefix_sha256": "b94fa070403ffb1e4c5cbd1dc61f9ede2f144a78b8734582c89fcece1f743c25",
+            "prefix_tokens": 4864,
+            "segment_lengths": [
+              2432,
+              5,
+              1275,
+              1152
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1152,
+            "target_full_value_sha256": "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": true,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": true,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": [
+              16
+            ]
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "label": "flowstate_step7b:OPENHANDS_CAUSAL_C_TURN_002_FINAL",
+        "mutation": {
+          "action": "inspect",
+          "device_freed": 0,
+          "host_freed": 0,
+          "tracker_full": 0,
+          "tracker_mamba": 0
+        },
+        "nonce": "flowstate_step7b:inspect:OPENHANDS_CAUSAL_C_TURN_002_FINAL:2433401056979348",
+        "ok": true,
+        "proof": {
+          "changed_mamba_node_ids": [],
+          "full_allocator_unchanged": true,
+          "full_path_unchanged": true,
+          "full_tree_unchanged": true,
+          "mamba_available_delta": 0,
+          "mamba_evictable_delta": 0,
+          "mamba_node_count_delta": 0,
+          "only_target_mamba_changed": true,
+          "prefix_digest_verified": true,
+          "same_node_id": true,
+          "sanity_check_passed": true,
+          "structure_unchanged": true
+        },
+        "scope": {
+          "cache_type": "UnifiedRadixCache",
+          "chunked_request_present": false,
+          "dp_size": 1,
+          "enable_hicache": false,
+          "enable_session_radix_cache": false,
+          "page_size": 1,
+          "pp_size": 1,
+          "running_requests": 0,
+          "scheduler_fully_idle": true,
+          "tp_size": 1,
+          "tree_core_type": "UnifiedTreeCore",
+          "waiting_requests": 0
+        }
+      },
+      "slots_before": [
+        16
+      ],
+      "target_full_present": true,
+      "target_mamba_present": true,
+      "token_position": 4864,
+      "turn": 2,
+      "valid": true,
+      "workflow": "C"
+    },
+    "D": {
+      "expected_mamba_present": false,
+      "node_id": 26,
+      "path_full_all_present": true,
+      "response": {
+        "after": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 26,
+            "parent_node_id": 22,
+            "path_full_all_present": true,
+            "path_full_rows": 3904,
+            "path_full_sha256": "1e252e4e985d620c17d959bd97f0f44aa3f4acfe922893c1971e0affb83415f6",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 22,
+                "position": 3520,
+                "slots": [
+                  10
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              22,
+              26
+            ],
+            "prefix_sha256": "5c44e591056864cbaab68a14f2af8fa8797c9b62c1939b08eddbbc19a367d7d7",
+            "prefix_tokens": 3904,
+            "segment_lengths": [
+              2432,
+              5,
+              1083,
+              384
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 384,
+            "target_full_value_sha256": "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": false,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": false,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": []
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "before": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 26,
+            "parent_node_id": 22,
+            "path_full_all_present": true,
+            "path_full_rows": 3904,
+            "path_full_sha256": "1e252e4e985d620c17d959bd97f0f44aa3f4acfe922893c1971e0affb83415f6",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 22,
+                "position": 3520,
+                "slots": [
+                  10
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              22,
+              26
+            ],
+            "prefix_sha256": "5c44e591056864cbaab68a14f2af8fa8797c9b62c1939b08eddbbc19a367d7d7",
+            "prefix_tokens": 3904,
+            "segment_lengths": [
+              2432,
+              5,
+              1083,
+              384
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 384,
+            "target_full_value_sha256": "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": false,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": false,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": []
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "label": "flowstate_step7b:OPENHANDS_CAUSAL_D_TURN_002_FINAL",
+        "mutation": {
+          "action": "inspect",
+          "device_freed": 0,
+          "host_freed": 0,
+          "tracker_full": 0,
+          "tracker_mamba": 0
+        },
+        "nonce": "flowstate_step7b:inspect:OPENHANDS_CAUSAL_D_TURN_002_FINAL:2433401068962629",
+        "ok": true,
+        "proof": {
+          "changed_mamba_node_ids": [],
+          "full_allocator_unchanged": true,
+          "full_path_unchanged": true,
+          "full_tree_unchanged": true,
+          "mamba_available_delta": 0,
+          "mamba_evictable_delta": 0,
+          "mamba_node_count_delta": 0,
+          "only_target_mamba_changed": true,
+          "prefix_digest_verified": true,
+          "same_node_id": true,
+          "sanity_check_passed": true,
+          "structure_unchanged": true
+        },
+        "scope": {
+          "cache_type": "UnifiedRadixCache",
+          "chunked_request_present": false,
+          "dp_size": 1,
+          "enable_hicache": false,
+          "enable_session_radix_cache": false,
+          "page_size": 1,
+          "pp_size": 1,
+          "running_requests": 0,
+          "scheduler_fully_idle": true,
+          "tp_size": 1,
+          "tree_core_type": "UnifiedTreeCore",
+          "waiting_requests": 0
+        }
+      },
+      "slots_before": [
+        18
+      ],
+      "target_full_present": true,
+      "target_mamba_present": false,
+      "token_position": 3904,
+      "turn": 2,
+      "valid": true,
+      "workflow": "D"
+    }
+  },
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "earlier_natural_nonzero_gap_audit": {
+    "B1": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 0,
+      "g": 2437,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        }
+      ]
+    },
+    "B2": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 2432,
+      "g": 5,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 3425,
+          "request": "B1",
+          "same_workflow": true
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "C1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "D1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "A2",
+          "same_workflow": false
+        }
+      ]
+    },
+    "C1": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 2432,
+      "g": 5,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "B1",
+          "same_workflow": false
+        }
+      ]
+    },
+    "D1": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 2432,
+      "g": 5,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "B1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "C1",
+          "same_workflow": false
+        }
+      ]
+    }
+  },
+  "engine": "FormalEndToEndGateEngine",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T05:27:56.001989+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "evicted_workflows_show_h_gt_e": {
+    "B": true,
+    "D": true
+  },
+  "eviction_targets": [
+    "B2",
+    "D2"
+  ],
+  "evictions": [
+    {
+      "checkpoint_id": "OPENHANDS_CAUSAL_B_TURN_002",
+      "correctness_pass": true,
+      "formal_response": {
+        "after": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 21,
+            "mamba_evictable": 7,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "9464c77d26f3b12976550a1022a47cd47db88034126fbbc03e7c8990c49003d4",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 21
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 24,
+            "parent_node_id": 19,
+            "path_full_all_present": true,
+            "path_full_rows": 3776,
+            "path_full_sha256": "42c9dea6e6ac14c66e079bdf81b3c4af71b99a5271065e34b84813963e520630",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              24
+            ],
+            "prefix_sha256": "8e988968c0bc80d0cbef8acf2320e977cb0c5b03f7b5d64dac331ddaf6e9b092",
+            "prefix_tokens": 3776,
+            "segment_lengths": [
+              2432,
+              5,
+              1339
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1339,
+            "target_full_value_sha256": "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": false,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": false,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": []
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 7,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ],
+              [
+                26,
+                [
+                  18
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "9aa2214c2689bbc0cb444e891e5b54f0edc764b8b1bde39b277717a16e74bc42",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "before": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 20,
+            "mamba_evictable": 8,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              15,
+              17,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 20
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 24,
+            "parent_node_id": 19,
+            "path_full_all_present": true,
+            "path_full_rows": 3776,
+            "path_full_sha256": "42c9dea6e6ac14c66e079bdf81b3c4af71b99a5271065e34b84813963e520630",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 24,
+                "position": 3776,
+                "slots": [
+                  14
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              24
+            ],
+            "prefix_sha256": "8e988968c0bc80d0cbef8acf2320e977cb0c5b03f7b5d64dac331ddaf6e9b092",
+            "prefix_tokens": 3776,
+            "segment_lengths": [
+              2432,
+              5,
+              1339
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1339,
+            "target_full_value_sha256": "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": true,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": true,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": [
+              14
+            ]
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 8,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                24,
+                [
+                  14
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ],
+              [
+                26,
+                [
+                  18
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "831edc20103412c0bb92c52675fd8907b2dbfbd6c695d61482a87e3cf3418c8f",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "formal_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+        "nonce": "flowstate_step7b:evict:OPENHANDS_CAUSAL_B_TURN_002",
+        "ok": true,
+        "proof": {
+          "cascade_called": false,
+          "fa_identity_unchanged": true,
+          "fa_unchanged": true,
+          "only_target_mamba_changed": true,
+          "path_unchanged": true,
+          "same_node": true,
+          "sanity_check": true,
+          "tree_unchanged": true
+        },
+        "scope": {
+          "cache_type": "UnifiedRadixCache",
+          "chunked_request_present": false,
+          "dp_size": 1,
+          "enable_hicache": false,
+          "enable_session_radix_cache": false,
+          "page_size": 1,
+          "pp_size": 1,
+          "running_requests": 0,
+          "scheduler_fully_idle": true,
+          "tp_size": 1,
+          "tree_core_type": "UnifiedTreeCore",
+          "waiting_requests": 0
+        }
+      },
+      "node_id": 24,
+      "pre_request_metrics": {
+        "e": 2432,
+        "g": 5,
+        "h": 2437
+      },
+      "token_position": 3776,
+      "turn": 2,
+      "workflow": "B"
+    },
+    {
+      "checkpoint_id": "OPENHANDS_CAUSAL_D_TURN_002",
+      "correctness_pass": true,
+      "formal_response": {
+        "after": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 22,
+            "mamba_evictable": 6,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "14639aee69c542d74828c5b0920696248cb15c5abf47daee174062690ff527ff",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 22
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 26,
+            "parent_node_id": 22,
+            "path_full_all_present": true,
+            "path_full_rows": 3904,
+            "path_full_sha256": "1e252e4e985d620c17d959bd97f0f44aa3f4acfe922893c1971e0affb83415f6",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 22,
+                "position": 3520,
+                "slots": [
+                  10
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              22,
+              26
+            ],
+            "prefix_sha256": "5c44e591056864cbaab68a14f2af8fa8797c9b62c1939b08eddbbc19a367d7d7",
+            "prefix_tokens": 3904,
+            "segment_lengths": [
+              2432,
+              5,
+              1083,
+              384
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 384,
+            "target_full_value_sha256": "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": false,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": false,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": []
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 6,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "79edc65f0ad36da07ed14a3fbe43ef8ef5bb63813cafe14ea94fc5e3574bf355",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "before": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 375338
+            },
+            "full_evictable": 9713,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 21,
+            "mamba_evictable": 7,
+            "mamba_free_slots": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              9,
+              11,
+              13,
+              14,
+              15,
+              17,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ],
+            "mamba_free_slots_sha256": "9464c77d26f3b12976550a1022a47cd47db88034126fbbc03e7c8990c49003d4",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 21
+          },
+          "path": {
+            "child_node_ids": [],
+            "extra_key": null,
+            "is_device_leaf": true,
+            "n_children": 0,
+            "node_id": 26,
+            "parent_node_id": 22,
+            "path_full_all_present": true,
+            "path_full_rows": 3904,
+            "path_full_sha256": "1e252e4e985d620c17d959bd97f0f44aa3f4acfe922893c1971e0affb83415f6",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 22,
+                "position": 3520,
+                "slots": [
+                  10
+                ]
+              },
+              {
+                "node_id": 26,
+                "position": 3904,
+                "slots": [
+                  18
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              22,
+              26
+            ],
+            "prefix_sha256": "5c44e591056864cbaab68a14f2af8fa8797c9b62c1939b08eddbbc19a367d7d7",
+            "prefix_tokens": 3904,
+            "segment_lengths": [
+              2432,
+              5,
+              1083,
+              384
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 384,
+            "target_full_value_sha256": "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": true,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": true,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": [
+              18
+            ]
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1531,
+                "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                1275,
+                "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+              ],
+              [
+                22,
+                1083,
+                "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+              ],
+              [
+                23,
+                512,
+                "aeaf6dcefdb5bfa776bcb160614b37b2c74afbe25f93aac8b32adc74a10f1aba"
+              ],
+              [
+                24,
+                1339,
+                "cc1536e3df723f9aef714461854daaf5ceed796c7c83e715f2c8c9fa4e2cb3ab"
+              ],
+              [
+                25,
+                1152,
+                "d78904a0f7301adc93e1f9031f17379e4377be33c130f5545c862e451dc33e17"
+              ],
+              [
+                26,
+                384,
+                "8aa7b4fe354a9c8dfd3d6082920eab8ed9dd8f3dc7a8b95639986f8333fdd5e5"
+              ]
+            ],
+            "full_tree_sha256": "65f9d2daf4d06e8b945702ae4a71f9fced4a2471332f339013b09ae6e0dab223",
+            "mamba_node_count": 7,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  16
+                ]
+              ],
+              [
+                26,
+                [
+                  18
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "9aa2214c2689bbc0cb444e891e5b54f0edc764b8b1bde39b277717a16e74bc42",
+            "node_count": 10,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1531
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  21,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                19,
+                [
+                  25
+                ],
+                1275
+              ],
+              [
+                22,
+                19,
+                [
+                  26
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [],
+                512
+              ],
+              [
+                24,
+                19,
+                [],
+                1339
+              ],
+              [
+                25,
+                21,
+                [],
+                1152
+              ],
+              [
+                26,
+                22,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "fe7eae635d8ce978d11afbec955aceaafa1741e411eb5eed56188f8f85816ea0"
+          }
+        },
+        "formal_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+        "nonce": "flowstate_step7b:evict:OPENHANDS_CAUSAL_D_TURN_002",
+        "ok": true,
+        "proof": {
+          "cascade_called": false,
+          "fa_identity_unchanged": true,
+          "fa_unchanged": true,
+          "only_target_mamba_changed": true,
+          "path_unchanged": true,
+          "same_node": true,
+          "sanity_check": true,
+          "tree_unchanged": true
+        },
+        "scope": {
+          "cache_type": "UnifiedRadixCache",
+          "chunked_request_present": false,
+          "dp_size": 1,
+          "enable_hicache": false,
+          "enable_session_radix_cache": false,
+          "page_size": 1,
+          "pp_size": 1,
+          "running_requests": 0,
+          "scheduler_fully_idle": true,
+          "tp_size": 1,
+          "tree_core_type": "UnifiedTreeCore",
+          "waiting_requests": 0
+        }
+      },
+      "node_id": 26,
+      "pre_request_metrics": {
+        "e": 3520,
+        "g": 0,
+        "h": 3520
+      },
+      "token_position": 3904,
+      "turn": 2,
+      "workflow": "D"
+    }
+  ],
+  "fa_kv_cascade_eviction_observed": false,
+  "fa_kv_preserved": true,
+  "fatal_error": null,
+  "intervention_after": "D2",
+  "logical_k_allocator_executed": false,
+  "native_mamba_capacity_eviction_observed": false,
+  "non_evicted_workflows_remain_valid": {
+    "A": true,
+    "C": true
+  },
+  "oom": false,
+  "policy_executed": false,
+  "recorded_n_turns": {
+    "A": 84,
+    "B": 62,
+    "C": 66,
+    "D": 86
+  },
+  "recurrent_only_eviction_success": true,
+  "request_count": 12,
+  "requests": [
+    {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "e": 0,
+      "error": null,
+      "exact_adjacent_lcp": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 0,
+      "offline_input_tokens": 4012,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 22903.758849,
+      "request_ordinal": 1,
+      "rid": "openhands-causal-gate-a-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4012,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 22903.36878,
+      "turn": 1,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "e": 0,
+      "error": null,
+      "exact_adjacent_lcp": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 2437,
+      "h": 2437,
+      "offline_input_tokens": 3426,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 148.431763,
+      "request_ordinal": 2,
+      "rid": "openhands-causal-gate-b-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3426,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 148.138932,
+      "turn": 1,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 2432,
+      "completion_tokens": 1,
+      "e": 2432,
+      "error": null,
+      "exact_adjacent_lcp": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 5,
+      "h": 2437,
+      "offline_input_tokens": 3733,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 1188.519699,
+      "request_ordinal": 3,
+      "rid": "openhands-causal-gate-c-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3733,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 1188.189556,
+      "turn": 1,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 2432,
+      "completion_tokens": 1,
+      "e": 2432,
+      "error": null,
+      "exact_adjacent_lcp": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 5,
+      "h": 2437,
+      "offline_input_tokens": 3535,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 58.217136,
+      "request_ordinal": 4,
+      "rid": "openhands-causal-gate-d-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3535,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 57.92544,
+      "turn": 1,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    },
+    {
+      "cached_tokens": 3968,
+      "completion_tokens": 1,
+      "e": 3968,
+      "error": null,
+      "exact_adjacent_lcp": 4011,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3968,
+      "offline_input_tokens": 4491,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 100.27163,
+      "request_ordinal": 5,
+      "rid": "openhands-causal-gate-a-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4491,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 99.932156,
+      "turn": 2,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 2432,
+      "completion_tokens": 1,
+      "e": 2432,
+      "error": null,
+      "exact_adjacent_lcp": 3425,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 5,
+      "h": 2437,
+      "offline_input_tokens": 3794,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 62.782159,
+      "request_ordinal": 6,
+      "rid": "openhands-causal-gate-b-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3794,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 62.495758,
+      "turn": 2,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 3712,
+      "completion_tokens": 1,
+      "e": 3712,
+      "error": null,
+      "exact_adjacent_lcp": 3732,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3712,
+      "offline_input_tokens": 4879,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 57.871643,
+      "request_ordinal": 7,
+      "rid": "openhands-causal-gate-c-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4879,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 57.567639,
+      "turn": 2,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 3520,
+      "completion_tokens": 1,
+      "e": 3520,
+      "error": null,
+      "exact_adjacent_lcp": 3534,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3520,
+      "offline_input_tokens": 3946,
+      "oom": false,
+      "phase": "pre_eviction",
+      "request_completed": true,
+      "request_latency_ms": 43.294073,
+      "request_ordinal": 8,
+      "rid": "openhands-causal-gate-d-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3946,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 42.938278,
+      "turn": 2,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    },
+    {
+      "cached_tokens": 4480,
+      "completion_tokens": 1,
+      "e": 4480,
+      "error": null,
+      "exact_adjacent_lcp": 4490,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 4480,
+      "offline_input_tokens": 5238,
+      "oom": false,
+      "phase": "post_eviction",
+      "request_completed": true,
+      "request_latency_ms": 43.254738,
+      "request_ordinal": 9,
+      "rid": "openhands-causal-gate-a-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5238,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 42.935686,
+      "turn": 3,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 2432,
+      "completion_tokens": 1,
+      "e": 2432,
+      "error": null,
+      "exact_adjacent_lcp": 3793,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 1344,
+      "h": 3776,
+      "offline_input_tokens": 5160,
+      "oom": false,
+      "phase": "post_eviction",
+      "request_completed": true,
+      "request_latency_ms": 115.155764,
+      "request_ordinal": 10,
+      "rid": "openhands-causal-gate-b-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5160,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 114.848823,
+      "turn": 3,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 4864,
+      "completion_tokens": 1,
+      "e": 4864,
+      "error": null,
+      "exact_adjacent_lcp": 4878,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 4864,
+      "offline_input_tokens": 5136,
+      "oom": false,
+      "phase": "post_eviction",
+      "request_completed": true,
+      "request_latency_ms": 249.728211,
+      "request_ordinal": 11,
+      "rid": "openhands-causal-gate-c-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5136,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 249.379327,
+      "turn": 3,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 3520,
+      "completion_tokens": 1,
+      "e": 3520,
+      "error": null,
+      "exact_adjacent_lcp": 3945,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 384,
+      "h": 3904,
+      "offline_input_tokens": 4312,
+      "oom": false,
+      "phase": "post_eviction",
+      "request_completed": true,
+      "request_latency_ms": 43.403724,
+      "request_ordinal": 12,
+      "rid": "openhands-causal-gate-d-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4312,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 43.138317,
+      "turn": 3,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    }
+  ],
+  "retained_checkpoint_state_valid": true,
+  "retained_targets": [
+    "A2",
+    "C2"
+  ],
+  "runtime_semantic_checks": "PASS",
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1",
+    "A2",
+    "B2",
+    "C2",
+    "D2",
+    "A3",
+    "B3",
+    "C3",
+    "D3"
+  ],
+  "schema_version": "flowstate.openhands_recurrent_only_causal_gate.v1",
+  "status": "PASS",
+  "token_correctness": true,
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "truncation_or_clipping": false,
+  "workflows": {
+    "A": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c",
+    "B": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c",
+    "C": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb",
+    "D": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+  }
+}

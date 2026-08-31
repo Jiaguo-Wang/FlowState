@@ -1,0 +1,183 @@
+{
+  "active_eviction_executed": false,
+  "concurrency": 1,
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T05:08:31.071949+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "logical_budget_k": null,
+  "offline_input_tokens": [
+    {
+      "tokens": 4012,
+      "turn": 1,
+      "workflow": "A"
+    },
+    {
+      "tokens": 3426,
+      "turn": 1,
+      "workflow": "B"
+    },
+    {
+      "tokens": 3733,
+      "turn": 1,
+      "workflow": "C"
+    },
+    {
+      "tokens": 3535,
+      "turn": 1,
+      "workflow": "D"
+    },
+    {
+      "tokens": 4491,
+      "turn": 2,
+      "workflow": "A"
+    },
+    {
+      "tokens": 3794,
+      "turn": 2,
+      "workflow": "B"
+    },
+    {
+      "tokens": 4879,
+      "turn": 2,
+      "workflow": "C"
+    },
+    {
+      "tokens": 3946,
+      "turn": 2,
+      "workflow": "D"
+    },
+    {
+      "tokens": 5238,
+      "turn": 3,
+      "workflow": "A"
+    },
+    {
+      "tokens": 5160,
+      "turn": 3,
+      "workflow": "B"
+    },
+    {
+      "tokens": 5136,
+      "turn": 3,
+      "workflow": "C"
+    },
+    {
+      "tokens": 4312,
+      "turn": 3,
+      "workflow": "D"
+    },
+    {
+      "tokens": 5373,
+      "turn": 4,
+      "workflow": "A"
+    },
+    {
+      "tokens": 6260,
+      "turn": 4,
+      "workflow": "B"
+    },
+    {
+      "tokens": 5633,
+      "turn": 4,
+      "workflow": "C"
+    },
+    {
+      "tokens": 5475,
+      "turn": 4,
+      "workflow": "D"
+    },
+    {
+      "tokens": 6398,
+      "turn": 5,
+      "workflow": "A"
+    },
+    {
+      "tokens": 7081,
+      "turn": 5,
+      "workflow": "B"
+    },
+    {
+      "tokens": 5759,
+      "turn": 5,
+      "workflow": "C"
+    },
+    {
+      "tokens": 7139,
+      "turn": 5,
+      "workflow": "D"
+    }
+  ],
+  "physical_mamba_pool_memory": {
+    "additional_bytes_vs_24": 206045184,
+    "bytes_per_slot": 51511296,
+    "pool_bytes": 1493827584
+  },
+  "policy_executed": false,
+  "recorded_n_turns": {
+    "A": 84,
+    "B": 62,
+    "C": 66,
+    "D": 86
+  },
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1",
+    "A2",
+    "B2",
+    "C2",
+    "D2",
+    "A3",
+    "B3",
+    "C3",
+    "D3",
+    "A4",
+    "B4",
+    "C4",
+    "D4",
+    "A5",
+    "B5",
+    "C5",
+    "D5"
+  ],
+  "selection_rationale": {
+    "expected_persistent_checkpoints": 20,
+    "explicit_spare_slots": 4,
+    "runtime_working_slot_reserve": 4
+  },
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "workflows": {
+    "A": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c",
+    "B": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c",
+    "C": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb",
+    "D": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+  }
+}

@@ -1,0 +1,1103 @@
+{
+  "active_flowstate_eviction_executed": false,
+  "all_gaps_zero": false,
+  "all_requests_completed": true,
+  "artifact": "evaluation/runtime_artifacts/openhands_4workflow_occupancy_calibration_20260831_050831_071744",
+  "baseline_census_clean": true,
+  "census_count": 21,
+  "concurrency": 1,
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "e_max": 6208,
+  "e_min": 0,
+  "engine": "FormalEndToEndGateEngine",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T05:08:31.071949+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fa_kv_cascade_eviction_observed": false,
+  "fatal_error": null,
+  "final_attribution": {
+    "all_workflows_have_exclusive_resident_state": true,
+    "all_workflows_have_resident_state": true,
+    "checkpoints": {
+      "A": [
+        {
+          "node_id": 18,
+          "request_ordinal": 1,
+          "slots": [
+            3
+          ],
+          "token_position": 3968,
+          "turn": 1
+        },
+        {
+          "node_id": 23,
+          "request_ordinal": 5,
+          "slots": [
+            12
+          ],
+          "token_position": 4480,
+          "turn": 2
+        },
+        {
+          "node_id": 27,
+          "request_ordinal": 9,
+          "slots": [
+            20
+          ],
+          "token_position": 5184,
+          "turn": 3
+        },
+        {
+          "node_id": 31,
+          "request_ordinal": 13,
+          "slots": [
+            28
+          ],
+          "token_position": 5312,
+          "turn": 4
+        },
+        {
+          "node_id": 35,
+          "request_ordinal": 17,
+          "slots": [
+            13
+          ],
+          "token_position": 6336,
+          "turn": 5
+        }
+      ],
+      "B": [
+        {
+          "node_id": 20,
+          "request_ordinal": 2,
+          "slots": [
+            6
+          ],
+          "token_position": 2432,
+          "turn": 1
+        },
+        {
+          "node_id": 24,
+          "request_ordinal": 6,
+          "slots": [
+            14
+          ],
+          "token_position": 3776,
+          "turn": 2
+        },
+        {
+          "node_id": 28,
+          "request_ordinal": 10,
+          "slots": [
+            22
+          ],
+          "token_position": 5120,
+          "turn": 3
+        },
+        {
+          "node_id": 32,
+          "request_ordinal": 14,
+          "slots": [
+            2
+          ],
+          "token_position": 6208,
+          "turn": 4
+        },
+        {
+          "node_id": 36,
+          "request_ordinal": 18,
+          "slots": [
+            17
+          ],
+          "token_position": 7040,
+          "turn": 5
+        }
+      ],
+      "C": [
+        {
+          "node_id": 21,
+          "request_ordinal": 3,
+          "slots": [
+            8
+          ],
+          "token_position": 3712,
+          "turn": 1
+        },
+        {
+          "node_id": 25,
+          "request_ordinal": 7,
+          "slots": [
+            16
+          ],
+          "token_position": 4864,
+          "turn": 2
+        },
+        {
+          "node_id": 29,
+          "request_ordinal": 11,
+          "slots": [
+            24
+          ],
+          "token_position": 5120,
+          "turn": 3
+        },
+        {
+          "node_id": 33,
+          "request_ordinal": 15,
+          "slots": [
+            5
+          ],
+          "token_position": 5632,
+          "turn": 4
+        },
+        {
+          "node_id": 37,
+          "request_ordinal": 19,
+          "slots": [
+            21
+          ],
+          "token_position": 5696,
+          "turn": 5
+        }
+      ],
+      "D": [
+        {
+          "node_id": 22,
+          "request_ordinal": 4,
+          "slots": [
+            10
+          ],
+          "token_position": 3520,
+          "turn": 1
+        },
+        {
+          "node_id": 26,
+          "request_ordinal": 8,
+          "slots": [
+            18
+          ],
+          "token_position": 3904,
+          "turn": 2
+        },
+        {
+          "node_id": 30,
+          "request_ordinal": 12,
+          "slots": [
+            26
+          ],
+          "token_position": 4288,
+          "turn": 3
+        },
+        {
+          "node_id": 34,
+          "request_ordinal": 16,
+          "slots": [
+            9
+          ],
+          "token_position": 5440,
+          "turn": 4
+        },
+        {
+          "node_id": 38,
+          "request_ordinal": 20,
+          "slots": [
+            25
+          ],
+          "token_position": 7104,
+          "turn": 5
+        }
+      ]
+    },
+    "method": "逐请求 census 新增节点与最终驻留集合",
+    "resident_checkpoint_counts": {
+      "A": 5,
+      "B": 5,
+      "C": 5,
+      "D": 5
+    }
+  },
+  "g_max": 2437,
+  "g_min": 0,
+  "growing_workflows": true,
+  "h_max": 6208,
+  "h_min": 0,
+  "logical_budget_k": null,
+  "minimum_available_mamba_slots": 8,
+  "multiple_workflows_simultaneously_resident": true,
+  "native_eviction_log_count": 0,
+  "native_eviction_log_evidence": [],
+  "native_mamba_capacity_eviction_count": 0,
+  "native_mamba_capacity_eviction_observed": false,
+  "oom": false,
+  "peak_mamba_node_count": 20,
+  "peak_resident_mamba_slots": 20,
+  "physical_headroom": "SUFFICIENT",
+  "physical_mamba_pool_memory": {
+    "additional_bytes_vs_24": 206045184,
+    "additional_mib_vs_24": 196.5,
+    "allocated_slots_including_dummy": 29,
+    "bytes_per_slot": 51511296,
+    "mib_per_slot": 49.125,
+    "pool_bytes": 1493827584,
+    "pool_gib": 1.3912353515625
+  },
+  "policy_executed": false,
+  "recorded_n_turns": {
+    "A": 84,
+    "B": 62,
+    "C": 66,
+    "D": 86
+  },
+  "removed_full_device_node_count": 0,
+  "request_count": 20,
+  "requests": [
+    {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "e": 0,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 0,
+      "offline_input_tokens": 4012,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 3968/4012 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_A_TURN_001:2432232161420874\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 3968/4012 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 4012,
+        "request_ordinal": 1,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 23030.926672,
+      "request_ordinal": 1,
+      "rid": "openhands-occupancy-a-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4012,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 23030.585006,
+      "turn": 1,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "e": 0,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 2437,
+      "h": 2437,
+      "offline_input_tokens": 3426,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 2437/3426 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_B_TURN_001:2432232516057385\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 2437/3426 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 3426,
+        "request_ordinal": 2,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 142.776554,
+      "request_ordinal": 2,
+      "rid": "openhands-occupancy-b-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3426,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 142.477821,
+      "turn": 1,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 2432,
+      "completion_tokens": 1,
+      "e": 2432,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 5,
+      "h": 2437,
+      "offline_input_tokens": 3733,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 3712/3733 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_C_TURN_001:2432233899076098\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 3712/3733 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 3733,
+        "request_ordinal": 3,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 885.067904,
+      "request_ordinal": 3,
+      "rid": "openhands-occupancy-c-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3733,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 884.754183,
+      "turn": 1,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 2432,
+      "completion_tokens": 1,
+      "e": 2432,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 5,
+      "h": 2437,
+      "offline_input_tokens": 3535,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 3520/3535 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_D_TURN_001:2432234430651630\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 3520/3535 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 3535,
+        "request_ordinal": 4,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 55.994712,
+      "request_ordinal": 4,
+      "rid": "openhands-occupancy-d-turn-001",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3535,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 55.734007,
+      "turn": 1,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    },
+    {
+      "cached_tokens": 3968,
+      "completion_tokens": 1,
+      "e": 3968,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3968,
+      "offline_input_tokens": 4491,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 4480/4491 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_A_TURN_002:2432235460193740\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 4480/4491 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 4491,
+        "request_ordinal": 5,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 93.401197,
+      "request_ordinal": 5,
+      "rid": "openhands-occupancy-a-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4491,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 93.098766,
+      "turn": 2,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 2432,
+      "completion_tokens": 1,
+      "e": 2432,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 5,
+      "h": 2437,
+      "offline_input_tokens": 3794,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 3776/3794 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_B_TURN_002:2432235597881376\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 3776/3794 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 3794,
+        "request_ordinal": 6,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 62.250475,
+      "request_ordinal": 6,
+      "rid": "openhands-occupancy-b-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3794,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 61.990098,
+      "turn": 2,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 3712,
+      "completion_tokens": 1,
+      "e": 3712,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3712,
+      "offline_input_tokens": 4879,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 4864/4879 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_C_TURN_002:2432235695543612\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 4864/4879 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 4879,
+        "request_ordinal": 7,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 56.432125,
+      "request_ordinal": 7,
+      "rid": "openhands-occupancy-c-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4879,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 56.123356,
+      "turn": 2,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 3520,
+      "completion_tokens": 1,
+      "e": 3520,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3520,
+      "offline_input_tokens": 3946,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 3904/3946 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_D_TURN_002:2432235767997081\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 3904/3946 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 3946,
+        "request_ordinal": 8,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 44.295723,
+      "request_ordinal": 8,
+      "rid": "openhands-occupancy-d-turn-002",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 3946,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 44.037119,
+      "turn": 2,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    },
+    {
+      "cached_tokens": 4480,
+      "completion_tokens": 1,
+      "e": 4480,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 4480,
+      "offline_input_tokens": 5238,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 5184/5238 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_A_TURN_003:2432235844196162\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 5184/5238 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 5238,
+        "request_ordinal": 9,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 40.796469,
+      "request_ordinal": 9,
+      "rid": "openhands-occupancy-a-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5238,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 40.525811,
+      "turn": 3,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 3776,
+      "completion_tokens": 1,
+      "e": 3776,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3776,
+      "offline_input_tokens": 5160,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 5120/5160 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_B_TURN_003:2432235975557048\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 5120/5160 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 5160,
+        "request_ordinal": 10,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 64.249773,
+      "request_ordinal": 10,
+      "rid": "openhands-occupancy-b-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5160,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 63.945439,
+      "turn": 3,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 4864,
+      "completion_tokens": 1,
+      "e": 4864,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 4864,
+      "offline_input_tokens": 5136,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 5120/5136 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_C_TURN_003:2432236260780264\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 5120/5136 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 5136,
+        "request_ordinal": 11,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 233.269888,
+      "request_ordinal": 11,
+      "rid": "openhands-occupancy-c-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5136,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 232.938711,
+      "turn": 3,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 3904,
+      "completion_tokens": 1,
+      "e": 3904,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 3904,
+      "offline_input_tokens": 4312,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 4288/4312 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_D_TURN_003:2432236358808761\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 4288/4312 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 4312,
+        "request_ordinal": 12,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 43.392405,
+      "request_ordinal": 12,
+      "rid": "openhands-occupancy-d-turn-003",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 4312,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 43.12578,
+      "turn": 3,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    },
+    {
+      "cached_tokens": 5184,
+      "completion_tokens": 1,
+      "e": 5184,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 5184,
+      "offline_input_tokens": 5373,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 5312/5373 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_A_TURN_004:2432236426619182\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 5312/5373 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 5373,
+        "request_ordinal": 13,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 46.07391,
+      "request_ordinal": 13,
+      "rid": "openhands-occupancy-a-turn-004",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5373,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 45.78796,
+      "turn": 4,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 5120,
+      "completion_tokens": 1,
+      "e": 5120,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 5120,
+      "offline_input_tokens": 6260,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 6208/6260 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_B_TURN_004:2432236529892086\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 6208/6260 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 6260,
+        "request_ordinal": 14,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 54.135702,
+      "request_ordinal": 14,
+      "rid": "openhands-occupancy-b-turn-004",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 6260,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 53.817051,
+      "turn": 4,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 5120,
+      "completion_tokens": 1,
+      "e": 5120,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 5120,
+      "offline_input_tokens": 5633,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 5632/5633 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_C_TURN_004:2432236653832722\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 5632/5633 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 5633,
+        "request_ordinal": 15,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 41.848508,
+      "request_ordinal": 15,
+      "rid": "openhands-occupancy-c-turn-004",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5633,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 41.570142,
+      "turn": 4,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 4288,
+      "completion_tokens": 1,
+      "e": 4288,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 4288,
+      "offline_input_tokens": 5475,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 5440/5475 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_D_TURN_004:2432236778188034\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 5440/5475 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 5475,
+        "request_ordinal": 16,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 56.069562,
+      "request_ordinal": 16,
+      "rid": "openhands-occupancy-d-turn-004",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5475,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 55.79134,
+      "turn": 4,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    },
+    {
+      "cached_tokens": 5312,
+      "completion_tokens": 1,
+      "e": 5312,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 5312,
+      "offline_input_tokens": 6398,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 6336/6398 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_A_TURN_005:2432237129838505\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 6336/6398 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 6398,
+        "request_ordinal": 17,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 53.570565,
+      "request_ordinal": 17,
+      "rid": "openhands-occupancy-a-turn-005",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 6398,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 53.244968,
+      "turn": 5,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 6208,
+      "completion_tokens": 1,
+      "e": 6208,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 6208,
+      "offline_input_tokens": 7081,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 7040/7081 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_B_TURN_005:2432237619335358\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 7040/7081 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 7081,
+        "request_ordinal": 18,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 47.240586,
+      "request_ordinal": 18,
+      "rid": "openhands-occupancy-b-turn-005",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 7081,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 46.910828,
+      "turn": 5,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+    },
+    {
+      "cached_tokens": 5632,
+      "completion_tokens": 1,
+      "e": 5632,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 5632,
+      "offline_input_tokens": 5759,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 5696/5759 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_C_TURN_005:2432239048045489\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 5696/5759 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 5759,
+        "request_ordinal": 19,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 43.987696,
+      "request_ordinal": 19,
+      "rid": "openhands-occupancy-c-turn-005",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 5759,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 43.673428,
+      "turn": 5,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+    },
+    {
+      "cached_tokens": 5440,
+      "completion_tokens": 1,
+      "e": 5440,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "g": 0,
+      "h": 5440,
+      "offline_input_tokens": 7139,
+      "oom": false,
+      "path_inspection": {
+        "available": false,
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"AssertionError(\\'exact prefix path missing after 7104/7139 tokens\\')\", \\'nonce\\': \\'flowstate_step7b:inspect:OPENHANDS_OCCUPANCY_D_TURN_005:2432239866931564\\', \\'ok\\': False, \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 506, in drain_one\\\\n    result = _run_checkpoint_control(scheduler, request)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/wp3b_end_to_end_transport.py\", line 86, in _run_checkpoint_control\\\\n    result = _single_node_transport._run_formal_checkpoint_control(\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/tests/runtime/single_node_eviction_transport.py\", line 34, in _run_formal_checkpoint_control\\\\n    return _ORIGINAL_CHECKPOINT_CONTROL(scheduler, request)\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 330, in _run_checkpoint_control\\\\n    before = _snapshot(cache, token_ids, extra_key)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 261, in _snapshot\\\\n    \"path\": _path_snapshot(cache, token_ids, extra_key),\\\\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 177, in _path_snapshot\\\\n    node, path = _find_exact_node(cache, token_ids, extra_key)\\\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/workspace/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 155, in _find_exact_node\\\\n    raise AssertionError(\\\\nAssertionError: exact prefix path missing after 7104/7139 tokens\\\\n\\'}')",
+        "node_id": null,
+        "path_mamba_positions": [],
+        "prefix_tokens": 7139,
+        "request_ordinal": 20,
+        "target_mamba_host_present": null,
+        "target_mamba_present": null
+      },
+      "request_completed": true,
+      "request_latency_ms": 73.072917,
+      "request_ordinal": 20,
+      "rid": "openhands-occupancy-d-turn-005",
+      "runtime_metrics_available": true,
+      "runtime_metrics_error": null,
+      "runtime_metrics_valid": true,
+      "server_prompt_tokens": 7139,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 72.705005,
+      "turn": 5,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+    }
+  ],
+  "runtime_metrics_available": true,
+  "runtime_semantic_checks": "PASS",
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1",
+    "A2",
+    "B2",
+    "C2",
+    "D2",
+    "A3",
+    "B3",
+    "C3",
+    "D3",
+    "A4",
+    "B4",
+    "C4",
+    "D4",
+    "A5",
+    "B5",
+    "C5",
+    "D5"
+  ],
+  "schema_version": "flowstate.openhands_4workflow_occupancy_calibration.v1",
+  "selection_rationale": {
+    "calibration_slots": 28,
+    "default_slots": 24,
+    "expected_persistent_checkpoints": 20,
+    "explicit_spare_slots": 4,
+    "runtime_working_slot_reserve": 4
+  },
+  "status": "PASS",
+  "token_correctness": true,
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "truncation_or_clipping": false,
+  "workflows": {
+    "A": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c",
+    "B": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c",
+    "C": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb",
+    "D": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T05:39:16.747651+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "independent_engine_per_trial": true,
+  "measured_request": "B3",
+  "offline_requests": {
+    "B1": {
+      "exact_adjacent_lcp": null,
+      "input_tokens": 3426
+    },
+    "B2": {
+      "exact_adjacent_lcp": 3425,
+      "input_tokens": 3794
+    },
+    "B3": {
+      "exact_adjacent_lcp": 3793,
+      "input_tokens": 5160
+    }
+  },
+  "policy_executed": false,
+  "recorded_n_turns": 62,
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "significance_test": false,
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "trial_order": [
+    "CONTROL-1",
+    "EVICT-1",
+    "CONTROL-2",
+    "EVICT-2",
+    "CONTROL-3",
+    "EVICT-3",
+    "CONTROL-4",
+    "EVICT-4",
+    "CONTROL-5",
+    "EVICT-5"
+  ],
+  "workflow": "B",
+  "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+}

@@ -1,0 +1,116 @@
+{
+  "all_requests_completed": true,
+  "artifact": "evaluation/runtime_artifacts/openhands_single_workflow_smoke_20260831_024414_329640",
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "engine": "FormalEndToEndGateEngine",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 24,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T02:44:14.329791+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fatal_error": null,
+  "growing_input": true,
+  "offline_server_token_counts_exact": true,
+  "oom": false,
+  "recorded_n_turns": 84,
+  "request_count": 3,
+  "requests": [
+    {
+      "cached_tokens": 0,
+      "completion_tokens": 1,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "offline_input_tokens": 4012,
+      "oom": false,
+      "request_completed": true,
+      "request_latency_ms": 23500.978144,
+      "rid": "openhands-smoke-a-turn-001",
+      "server_prompt_tokens": 4012,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 23500.780168,
+      "turn": 1,
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 3968,
+      "completion_tokens": 1,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "offline_input_tokens": 4491,
+      "oom": false,
+      "request_completed": true,
+      "request_latency_ms": 1179.252397,
+      "rid": "openhands-smoke-a-turn-002",
+      "server_prompt_tokens": 4491,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 1179.088997,
+      "turn": 2,
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    },
+    {
+      "cached_tokens": 4480,
+      "completion_tokens": 1,
+      "error": null,
+      "finish_reason": {
+        "length": 1,
+        "type": "length"
+      },
+      "offline_input_tokens": 5238,
+      "oom": false,
+      "request_completed": true,
+      "request_latency_ms": 44.95898,
+      "rid": "openhands-smoke-a-turn-003",
+      "server_prompt_tokens": 5238,
+      "status": "PASS",
+      "token_count_exact": true,
+      "truncation_or_clipping": false,
+      "ttft_ms": 44.832485,
+      "turn": 3,
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+    }
+  ],
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "schema_version": "flowstate.openhands_single_workflow_smoke.v1",
+  "status": "PASS",
+  "target_turns": [
+    1,
+    2,
+    3
+  ],
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "truncation_or_clipping": false,
+  "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+}

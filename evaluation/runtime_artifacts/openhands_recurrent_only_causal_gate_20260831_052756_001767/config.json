@@ -1,0 +1,249 @@
+{
+  "concurrency": 1,
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "earlier_natural_nonzero_gap_audit": {
+    "B1": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 0,
+      "g": 2437,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        }
+      ]
+    },
+    "B2": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 2432,
+      "g": 5,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 3425,
+          "request": "B1",
+          "same_workflow": true
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "C1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "D1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "A2",
+          "same_workflow": false
+        }
+      ]
+    },
+    "C1": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 2432,
+      "g": 5,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "B1",
+          "same_workflow": false
+        }
+      ]
+    },
+    "D1": {
+      "causal_source_proven": false,
+      "cross_workflow_prefix_possible": true,
+      "e": 2432,
+      "g": 5,
+      "h": 2437,
+      "interpretation": "POSSIBLE_CROSS_WORKFLOW_COMMON_PREFIX",
+      "max_cross_workflow_lcp": 2437,
+      "prior_exact_lcps": [
+        {
+          "exact_lcp": 2437,
+          "request": "A1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "B1",
+          "same_workflow": false
+        },
+        {
+          "exact_lcp": 2437,
+          "request": "C1",
+          "same_workflow": false
+        }
+      ]
+    }
+  },
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T05:27:56.001989+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "intervention": {
+    "after": "D2",
+    "evict_recurrent_only": [
+      "B2",
+      "D2"
+    ],
+    "formal_policy": false,
+    "retain": [
+      "A2",
+      "C2"
+    ]
+  },
+  "logical_k_allocator_executed": false,
+  "offline_input_tokens": [
+    {
+      "exact_adjacent_lcp": null,
+      "tokens": 4012,
+      "turn": 1,
+      "workflow": "A"
+    },
+    {
+      "exact_adjacent_lcp": null,
+      "tokens": 3426,
+      "turn": 1,
+      "workflow": "B"
+    },
+    {
+      "exact_adjacent_lcp": null,
+      "tokens": 3733,
+      "turn": 1,
+      "workflow": "C"
+    },
+    {
+      "exact_adjacent_lcp": null,
+      "tokens": 3535,
+      "turn": 1,
+      "workflow": "D"
+    },
+    {
+      "exact_adjacent_lcp": 4011,
+      "tokens": 4491,
+      "turn": 2,
+      "workflow": "A"
+    },
+    {
+      "exact_adjacent_lcp": 3425,
+      "tokens": 3794,
+      "turn": 2,
+      "workflow": "B"
+    },
+    {
+      "exact_adjacent_lcp": 3732,
+      "tokens": 4879,
+      "turn": 2,
+      "workflow": "C"
+    },
+    {
+      "exact_adjacent_lcp": 3534,
+      "tokens": 3946,
+      "turn": 2,
+      "workflow": "D"
+    },
+    {
+      "exact_adjacent_lcp": 4490,
+      "tokens": 5238,
+      "turn": 3,
+      "workflow": "A"
+    },
+    {
+      "exact_adjacent_lcp": 3793,
+      "tokens": 5160,
+      "turn": 3,
+      "workflow": "B"
+    },
+    {
+      "exact_adjacent_lcp": 4878,
+      "tokens": 5136,
+      "turn": 3,
+      "workflow": "C"
+    },
+    {
+      "exact_adjacent_lcp": 3945,
+      "tokens": 4312,
+      "turn": 3,
+      "workflow": "D"
+    }
+  ],
+  "policy_executed": false,
+  "recorded_n_turns": {
+    "A": 84,
+    "B": 62,
+    "C": 66,
+    "D": 86
+  },
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1",
+    "A2",
+    "B2",
+    "C2",
+    "D2",
+    "A3",
+    "B3",
+    "C3",
+    "D3"
+  ],
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "workflows": {
+    "A": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c",
+    "B": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c",
+    "C": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb",
+    "D": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+  }
+}
