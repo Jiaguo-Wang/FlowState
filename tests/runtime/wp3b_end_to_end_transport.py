@@ -10,9 +10,16 @@ from sglang.srt.managers import scheduler as _scheduler_module
 import single_node_eviction_transport as _single_node_transport
 import targeted_probe as _probe
 
+from evaluation.barrier_fa_frontier_control import (
+    inspect_resident_fa_frontier,
+    semantic_cache_snapshot,
+    semantic_snapshot_differences,
+)
+
 
 _RUNTIME_METRICS_ACTION = "flowstate_runtime_metrics"
 _FORMAL_ACTION = "flowstate_evict_mamba_only"
+_INSPECT_FA_FRONTIER_ACTION = "inspect_fa_frontier"
 _MATCH_RECORDS: dict[str, list[dict[str, object]]] = {}
 _ORIGINAL_RUN_SCHEDULER_PROCESS = (
     _scheduler_module.run_scheduler_process
@@ -81,6 +88,50 @@ def _run_checkpoint_control(scheduler: object, request: dict) -> dict:
             "nonce": request.get("nonce"),
             "record_count": len(records),
             "metrics": records[-1],
+        }
+
+    if action == _INSPECT_FA_FRONTIER_ACTION:
+        from sglang.srt.mem_cache.unified_cache.component_type import (
+            ComponentType,
+        )
+
+        cache = scheduler.tree_cache
+        scope_before = _probe._validate_runtime_scope(scheduler, cache)
+        before = semantic_cache_snapshot(
+            cache,
+            component_type=ComponentType,
+            tree_snapshot=_probe._global_maps(cache),
+            accounting_snapshot=_probe._accounting_snapshot(cache),
+        )
+        result = inspect_resident_fa_frontier(
+            cache,
+            request.get("token_ids") or (),
+            extra_key=request.get("extra_key"),
+            limit=request.get("limit"),
+        )
+        after = semantic_cache_snapshot(
+            cache,
+            component_type=ComponentType,
+            tree_snapshot=_probe._global_maps(cache),
+            accounting_snapshot=_probe._accounting_snapshot(cache),
+        )
+        scope_after = _probe._validate_runtime_scope(scheduler, cache)
+        changed_fields = semantic_snapshot_differences(before, after)
+        return {
+            "ok": True,
+            "nonce": request.get("nonce"),
+            "scope_before": scope_before,
+            "scope_after": scope_after,
+            **result,
+            "state_equal": not changed_fields,
+            "changed_fields": changed_fields,
+            "semantic_snapshot_before": before,
+            "semantic_snapshot_after": after,
+            "excluded_nonsemantic_fields": [
+                "控制请求nonce",
+                "控制请求往返时间",
+                "日志时间",
+            ],
         }
 
     result = _single_node_transport._run_formal_checkpoint_control(

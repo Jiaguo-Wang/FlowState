@@ -1,0 +1,6 @@
+PID                 PPID                USER                ELAPSED             COMMAND
+2136933             2136902             root                04:18               python3 -m sglang.launch_server --model-path /model --tokenizer-path /model --host 0.0.0.0 --port 30000 --tp-size 1 --served-model-name Qwen3.5-9B --context-length 131072
+2137201             2136933             root                03:58               /usr/bin/python3 -c from multiprocessing.resource_tracker import main;main(27)
+2137202             2136933             root                03:58               sglang::scheduler
+2137203             2136933             root                03:58               sglang::detokenizer
+2137949             2137202             root                03:00               /usr/bin/python3 /usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=32 --parent=214 --read-fd=94 --write-fd=97 --torch-key=y2ybbusAwpnY1dg5alZo6xRju+EVvTumvrsLGU9fCcw=

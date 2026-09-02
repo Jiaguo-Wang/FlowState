@@ -1,0 +1,175 @@
+{
+  "candidate_ids_by_policy_input": {
+    "FlowState": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ],
+    "LRU": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ],
+    "Marconi": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ]
+  },
+  "common_candidate_universe": true,
+  "flowstate": {
+    "continuations": [
+      {
+        "continuation_id": "OPENHANDS_BARRIER_A_TURN_002",
+        "cost_after_ms": 0.0,
+        "cost_before_ms": 149.43362983103125,
+        "e_after": 3968,
+        "e_before": 0,
+        "g_after": 0,
+        "g_before": 3968,
+        "planning_target": 3968,
+        "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+      },
+      {
+        "continuation_id": "OPENHANDS_BARRIER_B_TURN_002",
+        "cost_after_ms": 91.10140395591259,
+        "cost_before_ms": 91.10140395591259,
+        "e_after": 0,
+        "e_before": 0,
+        "g_after": 2437,
+        "g_before": 2437,
+        "planning_target": 2437,
+        "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+      },
+      {
+        "continuation_id": "OPENHANDS_BARRIER_C_TURN_002",
+        "cost_after_ms": 0.0,
+        "cost_before_ms": 139.62076940728127,
+        "e_after": 3712,
+        "e_before": 0,
+        "g_after": 0,
+        "g_before": 3712,
+        "planning_target": 3712,
+        "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+      },
+      {
+        "continuation_id": "OPENHANDS_BARRIER_D_TURN_002",
+        "cost_after_ms": 132.2766913423828,
+        "cost_before_ms": 132.2766913423828,
+        "e_after": 0,
+        "e_before": 0,
+        "g_after": 3520,
+        "g_before": 3520,
+        "planning_target": 3520,
+        "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+      }
+    ],
+    "per_step_marginal_trace": "NOT EXPOSED",
+    "recovery_cost_after_ms": 223.3780952982954,
+    "recovery_cost_before_ms": 512.4324945366079,
+    "selected_checkpoint_ids": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001"
+    ],
+    "selected_count": 2,
+    "total_benefit_ms": 289.0543992383125,
+    "used_bytes": 103022592
+  },
+  "flowstate_budget_valid": true,
+  "lru": {
+    "ranking_metadata": [
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+        "creation_order": 1,
+        "last_access_order": 1
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+        "creation_order": 2,
+        "last_access_order": 2
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+        "creation_order": 3,
+        "last_access_order": 3
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+        "creation_order": 4,
+        "last_access_order": 4
+      }
+    ],
+    "selected_checkpoint_ids": [
+      "OPENHANDS_BARRIER_D_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001"
+    ],
+    "selected_count": 2
+  },
+  "marconi": {
+    "alpha": 1.0,
+    "normalization": "PASS",
+    "scores": [
+      {
+        "alpha": 1.0,
+        "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+        "final_score": 1.0,
+        "incremental_span": 3968.0,
+        "normalized_flop_efficiency": 1.0,
+        "normalized_recency": 0.0,
+        "raw_flop_efficiency": 7.70316475826972e-05,
+        "raw_recency": 1.0
+      },
+      {
+        "alpha": 1.0,
+        "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+        "final_score": 0.3333333333333333,
+        "incremental_span": 2432.0,
+        "normalized_flop_efficiency": 0.0,
+        "normalized_recency": 0.3333333333333333,
+        "raw_flop_efficiency": 4.721294529262087e-05,
+        "raw_recency": 2.0
+      },
+      {
+        "alpha": 1.0,
+        "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+        "final_score": 1.4999999999999998,
+        "incremental_span": 3712.0,
+        "normalized_flop_efficiency": 0.8333333333333331,
+        "normalized_recency": 0.6666666666666666,
+        "raw_flop_efficiency": 7.206186386768447e-05,
+        "raw_recency": 3.0
+      },
+      {
+        "alpha": 1.0,
+        "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+        "final_score": 1.7083333333333335,
+        "incremental_span": 3520.0,
+        "normalized_flop_efficiency": 0.7083333333333334,
+        "normalized_recency": 1.0,
+        "raw_flop_efficiency": 6.833452608142494e-05,
+        "raw_recency": 4.0
+      }
+    ],
+    "selected_checkpoint_ids": [
+      "OPENHANDS_BARRIER_D_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001"
+    ],
+    "selected_count": 2
+  },
+  "ordered_candidate_ids": [
+    "OPENHANDS_BARRIER_A_TURN_001",
+    "OPENHANDS_BARRIER_B_TURN_001",
+    "OPENHANDS_BARRIER_C_TURN_001",
+    "OPENHANDS_BARRIER_D_TURN_001"
+  ],
+  "selection_comparison": {
+    "at_least_two_policies_differ": true,
+    "lru_vs_flowstate_same": false,
+    "lru_vs_marconi_same": true,
+    "marconi_vs_flowstate_same": false
+  },
+  "selection_valid": true
+}

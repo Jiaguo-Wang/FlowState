@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "case_id": "node_boundary",
+      "expected_h": 320,
+      "expected_partial_match": false,
+      "pending_input_tokens": 385,
+      "pending_rid": "barrier-fa-boundary-pending",
+      "setup_input_tokens": 321,
+      "setup_rid": "barrier-fa-boundary-setup"
+    },
+    {
+      "case_id": "partial_node",
+      "expected_h": 333,
+      "expected_partial_match": true,
+      "pending_input_tokens": 430,
+      "pending_rid": "barrier-fa-partial-pending",
+      "setup_input_tokens": 513,
+      "setup_rid": "barrier-fa-partial-setup"
+    }
+  ],
+  "effective_request_prefix_limit": "len(input_ids) - 1",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 24,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T08:51:50.534961+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "policy_executed": false,
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  }
+}

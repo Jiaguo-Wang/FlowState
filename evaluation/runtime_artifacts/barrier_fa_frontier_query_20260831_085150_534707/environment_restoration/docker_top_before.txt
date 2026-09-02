@@ -1,0 +1,6 @@
+USER                PID                 PPID                STARTED             COMMAND
+root                1354876             1354843             Fri                 Aug 28 23:35:18 2026 python3 -m sglang.launch_server --model-path /model --tokenizer-path /model --host 0.0.0.0 --port 30000 --tp-size 1 --served-model-name Qwen3.5-9B --context-length 131072
+root                1355180             1354876             Fri                 Aug 28 23:35:38 2026 /usr/bin/python3 -c from multiprocessing.resource_tracker import main;main(27)
+root                1355181             1354876             Fri                 Aug 28 23:35:38 2026 sglang::scheduler
+root                1355182             1354876             Fri                 Aug 28 23:35:38 2026 sglang::detokenizer
+root                1355967             1355181             Fri                 Aug 28 23:36:36 2026 /usr/bin/python3 /usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_worker/__main__.py --pickler=torch._inductor.compile_worker.subproc_pool.SubprocPickler --kind=fork --workers=32 --parent=216 --read-fd=94 --write-fd=97 --torch-key=y2ybbusAwpnY1dg5alZo6xRju+EVvTumvrsLGU9fCcw=

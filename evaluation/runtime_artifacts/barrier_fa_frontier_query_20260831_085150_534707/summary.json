@@ -1,0 +1,160 @@
+{
+  "artifact": "evaluation/runtime_artifacts/barrier_fa_frontier_query_20260831_085150_534707",
+  "cases": [
+    {
+      "case_id": "node_boundary",
+      "changed_fields": [],
+      "e": 320,
+      "effective_lookup_limit": 384,
+      "excluded_nonsemantic_fields": [
+        "控制请求nonce",
+        "控制请求往返时间",
+        "日志时间"
+      ],
+      "expected_h": 320,
+      "expected_partial_match": false,
+      "g": 0,
+      "h_actual": 320,
+      "h_pred": 320,
+      "h_pred_equals_h_actual": true,
+      "matched_segments": [
+        {
+          "full_device_resident": true,
+          "matched_length": 320,
+          "node_id": 18,
+          "segment_length": 320
+        }
+      ],
+      "partial_match": false,
+      "pending_input_tokens": 385,
+      "pending_rid": "barrier-fa-boundary-pending",
+      "runtime_metrics": {
+        "executable_prefix": 320,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 320,
+        "replay_gap": 0,
+        "request_id": "barrier-fa-boundary-pending"
+      },
+      "scope_unchanged": true,
+      "server_prompt_tokens": 385,
+      "setup_input_tokens": 321,
+      "setup_rid": "barrier-fa-boundary-setup",
+      "side_effect_checks": {
+        "fa_allocator_unchanged": true,
+        "fa_recency_unchanged": true,
+        "full_residency_unchanged": true,
+        "mamba_allocator_unchanged": true,
+        "mamba_lru_unchanged": true,
+        "mamba_residency_unchanged": true,
+        "reference_state_unchanged": true,
+        "tree_structure_unchanged": true
+      },
+      "state_equal": true,
+      "status": "PASS",
+      "stop_reason": "没有匹配子节点",
+      "traversed_node_ids": [
+        18
+      ],
+      "tree_identity_unchanged": true
+    },
+    {
+      "case_id": "partial_node",
+      "changed_fields": [],
+      "e": 0,
+      "effective_lookup_limit": 429,
+      "excluded_nonsemantic_fields": [
+        "控制请求nonce",
+        "控制请求往返时间",
+        "日志时间"
+      ],
+      "expected_h": 333,
+      "expected_partial_match": true,
+      "g": 333,
+      "h_actual": 333,
+      "h_pred": 333,
+      "h_pred_equals_h_actual": true,
+      "matched_segments": [
+        {
+          "full_device_resident": true,
+          "matched_length": 333,
+          "node_id": 20,
+          "segment_length": 512
+        }
+      ],
+      "partial_match": true,
+      "pending_input_tokens": 430,
+      "pending_rid": "barrier-fa-partial-pending",
+      "runtime_metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": 320,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 333,
+        "replay_gap": 333,
+        "request_id": "barrier-fa-partial-pending"
+      },
+      "scope_unchanged": true,
+      "server_prompt_tokens": 430,
+      "setup_input_tokens": 513,
+      "setup_rid": "barrier-fa-partial-setup",
+      "side_effect_checks": {
+        "fa_allocator_unchanged": true,
+        "fa_recency_unchanged": true,
+        "full_residency_unchanged": true,
+        "mamba_allocator_unchanged": true,
+        "mamba_lru_unchanged": true,
+        "mamba_residency_unchanged": true,
+        "reference_state_unchanged": true,
+        "tree_structure_unchanged": true
+      },
+      "state_equal": true,
+      "status": "PASS",
+      "stop_reason": "在节点分段内部结束或分叉",
+      "traversed_node_ids": [
+        20
+      ],
+      "tree_identity_unchanged": true
+    }
+  ],
+  "effective_request_prefix_limit": "len(input_ids) - 1",
+  "enable_hicache": false,
+  "engine": "FormalEndToEndGateEngine",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 24,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T08:51:50.534961+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fatal_error": null,
+  "future_leakage_safe": true,
+  "interface": "checkpoint_control(action='inspect_fa_frontier')",
+  "page_size": 1,
+  "policy_executed": false,
+  "recurrent_absence_case": "NOT RUN",
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "schema_version": "flowstate.barrier_fa_frontier_query.v1",
+  "status": "PASS",
+  "verdict": "READY"
+}

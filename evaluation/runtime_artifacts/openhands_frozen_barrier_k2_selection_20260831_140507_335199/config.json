@@ -1,0 +1,140 @@
+{
+  "budget_bytes": 103022592,
+  "controller_reconcile_executed": false,
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-08-31T14:05:07.335412+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "executed_schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1"
+  ],
+  "logical_k": 2,
+  "online_information_boundary": [
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "A"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "B"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "C"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "D"
+    }
+  ],
+  "pending_requests_executed": false,
+  "pending_schedule": [
+    "A2",
+    "B2",
+    "C2",
+    "D2"
+  ],
+  "recurrent_eviction_performed": false,
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "visible_request_metadata": [
+    {
+      "input_token_digest": "21d6d6680f7f78b7444d71185769e5fbd2fba7fc46cc5a3ca02032963e45e8de",
+      "input_tokens": 4012,
+      "turn": 1,
+      "workflow": "A"
+    },
+    {
+      "input_token_digest": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+      "input_tokens": 4491,
+      "turn": 2,
+      "workflow": "A"
+    },
+    {
+      "input_token_digest": "221a8a45762a03d8abf437f33da92fa44de7d4d2bb5f184e33598887326b8a3e",
+      "input_tokens": 3426,
+      "turn": 1,
+      "workflow": "B"
+    },
+    {
+      "input_token_digest": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+      "input_tokens": 3794,
+      "turn": 2,
+      "workflow": "B"
+    },
+    {
+      "input_token_digest": "e79142b814a07b7913b6fad82aff4582aeb4f6cafad341ded92303fe9c508da1",
+      "input_tokens": 3733,
+      "turn": 1,
+      "workflow": "C"
+    },
+    {
+      "input_token_digest": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+      "input_tokens": 4879,
+      "turn": 2,
+      "workflow": "C"
+    },
+    {
+      "input_token_digest": "0216ee93a332cf3ec8494c73387c16ae3c4088809b5844a68c6c0d4b5f3a5038",
+      "input_tokens": 3535,
+      "turn": 1,
+      "workflow": "D"
+    },
+    {
+      "input_token_digest": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9",
+      "input_tokens": 3946,
+      "turn": 2,
+      "workflow": "D"
+    }
+  ],
+  "workflows": {
+    "A": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c",
+    "B": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c",
+    "C": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb",
+    "D": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+  }
+}
