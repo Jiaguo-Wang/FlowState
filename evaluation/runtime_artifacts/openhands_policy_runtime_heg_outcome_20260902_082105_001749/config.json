@@ -1,0 +1,116 @@
+{
+  "a2_prediction_equality_required": true,
+  "barrier_h_pred_source": "inspect_fa_frontier",
+  "budget_bytes": 103022592,
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-09-02T08:21:05.002051+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "expected_evictions": {
+    "F": [
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ],
+    "LM": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001"
+    ]
+  },
+  "later_prediction_equality_required": false,
+  "logical_k": 2,
+  "online_information_boundary": [
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "A"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "B"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "C"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "D"
+    }
+  ],
+  "outcome_schedule": [
+    "A2",
+    "B2",
+    "C2",
+    "D2"
+  ],
+  "run_order": [
+    "LM",
+    "F"
+  ],
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "selected_sets": {
+    "F": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001"
+    ],
+    "LM": [
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ]
+  },
+  "setup_schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1"
+  ],
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "ttft_compared": false,
+  "ttft_telemetry_saved_only": true,
+  "workflows": {
+    "A": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c",
+    "B": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c",
+    "C": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb",
+    "D": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+  }
+}

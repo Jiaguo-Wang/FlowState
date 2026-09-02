@@ -1,0 +1,23 @@
+{
+  "service_stopped": true,
+  "original_service": "aiperf-weka-sglang-smoke",
+  "ownership_confirmed": true,
+  "ownership_evidence": "停止前容器 ID 与 Step 12H.5 恢复记录中的 restored_container_id 完全一致",
+  "original_state_captured": true,
+  "auto_remove": true,
+  "original_container_id": "616d54088aad5ca7ddc1bebbfba3e718ee3ade592ea5bdca97a3498d8f43b447",
+  "restored_container_id": "fe72ae598f2613e8c89cb16daa6340a595f02691c27ccce7e0ce5490f13362af",
+  "restored": true,
+  "equivalent_configuration_restored": true,
+  "configuration_diff_empty": true,
+  "port_30000": "PASS",
+  "gpu_0_service": "PASS",
+  "health_check": "PASS",
+  "health_http_code": 200,
+  "startup_error": false,
+  "gpu_1_service": "dsparse-sglang",
+  "gpu_1_operated_by_this_task": false,
+  "gpu_1_impacted_by_this_task": false,
+  "unexpected_impact": "NONE",
+  "environment_note": "恢复服务初始化期间健康端点短暂返回连接拒绝和 503，模型加载完成后稳定返回 HTTP 200；GPU 1 的 dsparse-sglang 容器和 scheduler PID 未变化。"
+}

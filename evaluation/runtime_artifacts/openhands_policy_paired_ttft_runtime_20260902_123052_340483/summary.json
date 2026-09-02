@@ -1,0 +1,1050 @@
+{
+  "artifact": "evaluation/runtime_artifacts/openhands_policy_paired_ttft_runtime_20260902_123052_340483",
+  "budget_bytes": 103022592,
+  "engine": "FormalEndToEndGateEngine",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "engine_lifecycle_count_expected": 10,
+  "engine_lifecycle_count_observed": 10,
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-09-02T12:30:52.340669+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fresh_engine_per_policy_per_trial": true,
+  "future_leakage": false,
+  "logical_k": 2,
+  "online_information_boundary": [
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "A"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "B"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "C"
+    },
+    {
+      "maximum_assistant_turn_consumed": 2,
+      "pending_assistant_output_read": false,
+      "r_plus_2_message_consumed": false,
+      "r_plus_2_request_materialized": false,
+      "raw_items_iterated_through_pending_marker": 5,
+      "workflow": "D"
+    }
+  ],
+  "paired_summary": {
+    "flowstate_aggregate_ttft_ms": {
+      "max": 326.849896,
+      "mean": 321.70314840000003,
+      "median": 320.812041,
+      "min": 318.713084,
+      "sample_std": 3.164600824944014,
+      "values": [
+        322.30210400000004,
+        318.713084,
+        319.838617,
+        320.812041,
+        326.849896
+      ]
+    },
+    "flowstate_faster_count": 5,
+    "lm_aggregate_ttft_ms": {
+      "max": 486.238361,
+      "mean": 450.3539242,
+      "median": 440.383104,
+      "min": 438.319565,
+      "sample_std": 20.452845661764496,
+      "values": [
+        486.238361,
+        440.383104,
+        438.319565,
+        448.158915,
+        438.669676
+      ]
+    },
+    "negative_delta_meaning": "FlowState 更快",
+    "paired_delta_definition": "FlowState 聚合 TTFT 减去 LM 聚合 TTFT",
+    "paired_delta_ms": {
+      "max": -111.81977999999998,
+      "mean": -128.6507758,
+      "median": -121.67002000000002,
+      "min": -163.93625699999996,
+      "sample_std": 20.507340832370843,
+      "values": [
+        -163.93625699999996,
+        -121.67002000000002,
+        -118.48094800000001,
+        -127.34687399999996,
+        -111.81977999999998
+      ]
+    },
+    "relative_mean_difference_percent": -28.566593713718095,
+    "relative_mean_improvement_percent": 28.566593713718095
+  },
+  "policy_order_per_trial": [
+    "LM",
+    "F"
+  ],
+  "runtime_correctness": {
+    "all_g_equals_h_minus_e": true,
+    "fa_kv_cascade": false,
+    "future_information_used": false,
+    "native_mamba_capacity_eviction": false,
+    "policy_specific_heg_reproduced": true,
+    "same_candidate_positions_across_trials": true,
+    "same_request_inputs_across_trials": true
+  },
+  "schema_version": "flowstate.openhands_policy_paired_ttft.v1",
+  "statistical_significance_claim": false,
+  "statistical_significance_test_performed": false,
+  "status": "PASS",
+  "trial_count_completed": 5,
+  "trial_count_requested": 5,
+  "trials": [
+    {
+      "engine_lifecycles": [
+        1,
+        2
+      ],
+      "flowstate": {
+        "aggregate_g": 3525,
+        "aggregate_latency_ms": 323.458119,
+        "aggregate_ttft_ms": 322.30210400000004,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "F",
+        "g_by_workflow": {
+          "A": 0,
+          "B": 2437,
+          "C": 0,
+          "D": 1088
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 49.515448,
+          "B": 148.050226,
+          "C": 59.598744,
+          "D": 66.293701
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 3968,
+            "e": 3968,
+            "g": 0,
+            "h": 3968,
+            "request_latency_ms": 49.515448,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 49.235819
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 148.050226,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 147.759822
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 59.598744,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 59.298293
+          },
+          "D": {
+            "cached_tokens": 2432,
+            "e": 2432,
+            "g": 1088,
+            "h": 3520,
+            "request_latency_ms": 66.293701,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 66.00817
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 49.235819,
+          "B": 147.759822,
+          "C": 59.298293,
+          "D": 66.00817
+        }
+      },
+      "flowstate_faster": true,
+      "lm": {
+        "aggregate_g": 6405,
+        "aggregate_latency_ms": 486.732554,
+        "aggregate_ttft_ms": 486.238361,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "LM",
+        "g_by_workflow": {
+          "A": 3968,
+          "B": 2437,
+          "C": 0,
+          "D": 0
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 173.618735,
+          "B": 148.870086,
+          "C": 58.433798,
+          "D": 105.809935
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 3968,
+            "h": 3968,
+            "request_latency_ms": 173.618735,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 173.487428
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 148.870086,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 148.753258
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 58.433798,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 58.327181
+          },
+          "D": {
+            "cached_tokens": 3520,
+            "e": 3520,
+            "g": 0,
+            "h": 3520,
+            "request_latency_ms": 105.809935,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 105.670494
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 173.487428,
+          "B": 148.753258,
+          "C": 58.327181,
+          "D": 105.670494
+        }
+      },
+      "paired_delta_ms": -163.93625699999996,
+      "runtime_correctness": {
+        "all_g_equals_h_minus_e": true,
+        "candidate_positions_equal": true,
+        "fa_kv_cascade": false,
+        "future_information_used": false,
+        "native_mamba_capacity_eviction": false,
+        "policy_specific_heg_reproduced": true,
+        "request_input_ids_equal": true,
+        "selected_residency_exact": true,
+        "status": "PASS",
+        "workflow_semantics": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": true
+        }
+      },
+      "statistical_significance_claim": false,
+      "status": "PASS",
+      "trial": 1,
+      "workflow_paired_delta_ms": {
+        "A": -124.251609,
+        "B": -0.9934359999999742,
+        "C": 0.971111999999998,
+        "D": -39.662324
+      }
+    },
+    {
+      "engine_lifecycles": [
+        3,
+        4
+      ],
+      "flowstate": {
+        "aggregate_g": 3525,
+        "aggregate_latency_ms": 319.920563,
+        "aggregate_ttft_ms": 318.713084,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "F",
+        "g_by_workflow": {
+          "A": 0,
+          "B": 2437,
+          "C": 0,
+          "D": 1088
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 50.982392,
+          "B": 142.814816,
+          "C": 59.618768,
+          "D": 66.504587
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 3968,
+            "e": 3968,
+            "g": 0,
+            "h": 3968,
+            "request_latency_ms": 50.982392,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 50.671135
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 142.814816,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 142.517365
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 59.618768,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 59.312231
+          },
+          "D": {
+            "cached_tokens": 2432,
+            "e": 2432,
+            "g": 1088,
+            "h": 3520,
+            "request_latency_ms": 66.504587,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 66.212353
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 50.671135,
+          "B": 142.517365,
+          "C": 59.312231,
+          "D": 66.212353
+        }
+      },
+      "flowstate_faster": true,
+      "lm": {
+        "aggregate_g": 6405,
+        "aggregate_latency_ms": 441.638473,
+        "aggregate_ttft_ms": 440.383104,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "LM",
+        "g_by_workflow": {
+          "A": 3968,
+          "B": 2437,
+          "C": 0,
+          "D": 0
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 180.535284,
+          "B": 152.951927,
+          "C": 59.129997,
+          "D": 49.021265
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 3968,
+            "h": 3968,
+            "request_latency_ms": 180.535284,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 180.230028
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 152.951927,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 152.575409
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 59.129997,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 58.852134
+          },
+          "D": {
+            "cached_tokens": 3520,
+            "e": 3520,
+            "g": 0,
+            "h": 3520,
+            "request_latency_ms": 49.021265,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 48.725533
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 180.230028,
+          "B": 152.575409,
+          "C": 58.852134,
+          "D": 48.725533
+        }
+      },
+      "paired_delta_ms": -121.67002000000002,
+      "runtime_correctness": {
+        "all_g_equals_h_minus_e": true,
+        "candidate_positions_equal": true,
+        "fa_kv_cascade": false,
+        "future_information_used": false,
+        "native_mamba_capacity_eviction": false,
+        "policy_specific_heg_reproduced": true,
+        "request_input_ids_equal": true,
+        "selected_residency_exact": true,
+        "status": "PASS",
+        "workflow_semantics": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": true
+        }
+      },
+      "statistical_significance_claim": false,
+      "status": "PASS",
+      "trial": 2,
+      "workflow_paired_delta_ms": {
+        "A": -129.558893,
+        "B": -10.058043999999995,
+        "C": 0.46009699999999754,
+        "D": 17.486819999999994
+      }
+    },
+    {
+      "engine_lifecycles": [
+        5,
+        6
+      ],
+      "flowstate": {
+        "aggregate_g": 3525,
+        "aggregate_latency_ms": 321.059085,
+        "aggregate_ttft_ms": 319.838617,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "F",
+        "g_by_workflow": {
+          "A": 0,
+          "B": 2437,
+          "C": 0,
+          "D": 1088
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 49.53189,
+          "B": 146.594599,
+          "C": 57.445019,
+          "D": 67.487577
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 3968,
+            "e": 3968,
+            "g": 0,
+            "h": 3968,
+            "request_latency_ms": 49.53189,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 49.222368
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 146.594599,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 146.304421
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 57.445019,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 57.126854
+          },
+          "D": {
+            "cached_tokens": 2432,
+            "e": 2432,
+            "g": 1088,
+            "h": 3520,
+            "request_latency_ms": 67.487577,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 67.184974
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 49.222368,
+          "B": 146.304421,
+          "C": 57.126854,
+          "D": 67.184974
+        }
+      },
+      "flowstate_faster": true,
+      "lm": {
+        "aggregate_g": 6405,
+        "aggregate_latency_ms": 439.568804,
+        "aggregate_ttft_ms": 438.319565,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "LM",
+        "g_by_workflow": {
+          "A": 3968,
+          "B": 2437,
+          "C": 0,
+          "D": 0
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 181.711109,
+          "B": 149.671539,
+          "C": 59.541161,
+          "D": 48.644995
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 3968,
+            "h": 3968,
+            "request_latency_ms": 181.711109,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 181.376609
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 149.671539,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 149.376903
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 59.541161,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 59.212919
+          },
+          "D": {
+            "cached_tokens": 3520,
+            "e": 3520,
+            "g": 0,
+            "h": 3520,
+            "request_latency_ms": 48.644995,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 48.353134
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 181.376609,
+          "B": 149.376903,
+          "C": 59.212919,
+          "D": 48.353134
+        }
+      },
+      "paired_delta_ms": -118.48094800000001,
+      "runtime_correctness": {
+        "all_g_equals_h_minus_e": true,
+        "candidate_positions_equal": true,
+        "fa_kv_cascade": false,
+        "future_information_used": false,
+        "native_mamba_capacity_eviction": false,
+        "policy_specific_heg_reproduced": true,
+        "request_input_ids_equal": true,
+        "selected_residency_exact": true,
+        "status": "PASS",
+        "workflow_semantics": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": true
+        }
+      },
+      "statistical_significance_claim": false,
+      "status": "PASS",
+      "trial": 3,
+      "workflow_paired_delta_ms": {
+        "A": -132.154241,
+        "B": -3.072482000000008,
+        "C": -2.086064999999998,
+        "D": 18.83184
+      }
+    },
+    {
+      "engine_lifecycles": [
+        7,
+        8
+      ],
+      "flowstate": {
+        "aggregate_g": 3525,
+        "aggregate_latency_ms": 322.042241,
+        "aggregate_ttft_ms": 320.812041,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "F",
+        "g_by_workflow": {
+          "A": 0,
+          "B": 2437,
+          "C": 0,
+          "D": 1088
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 50.300849,
+          "B": 146.384693,
+          "C": 59.505311,
+          "D": 65.851388
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 3968,
+            "e": 3968,
+            "g": 0,
+            "h": 3968,
+            "request_latency_ms": 50.300849,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 50.016273
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 146.384693,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 146.089374
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 59.505311,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 59.208062
+          },
+          "D": {
+            "cached_tokens": 2432,
+            "e": 2432,
+            "g": 1088,
+            "h": 3520,
+            "request_latency_ms": 65.851388,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 65.498332
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 50.016273,
+          "B": 146.089374,
+          "C": 59.208062,
+          "D": 65.498332
+        }
+      },
+      "flowstate_faster": true,
+      "lm": {
+        "aggregate_g": 6405,
+        "aggregate_latency_ms": 449.44469300000003,
+        "aggregate_ttft_ms": 448.158915,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "LM",
+        "g_by_workflow": {
+          "A": 3968,
+          "B": 2437,
+          "C": 0,
+          "D": 0
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 184.751864,
+          "B": 152.26601,
+          "C": 59.213404,
+          "D": 53.213415
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 3968,
+            "h": 3968,
+            "request_latency_ms": 184.751864,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 184.410081
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 152.26601,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 151.96069
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 59.213404,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 58.889366
+          },
+          "D": {
+            "cached_tokens": 3520,
+            "e": 3520,
+            "g": 0,
+            "h": 3520,
+            "request_latency_ms": 53.213415,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 52.898778
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 184.410081,
+          "B": 151.96069,
+          "C": 58.889366,
+          "D": 52.898778
+        }
+      },
+      "paired_delta_ms": -127.34687399999996,
+      "runtime_correctness": {
+        "all_g_equals_h_minus_e": true,
+        "candidate_positions_equal": true,
+        "fa_kv_cascade": false,
+        "future_information_used": false,
+        "native_mamba_capacity_eviction": false,
+        "policy_specific_heg_reproduced": true,
+        "request_input_ids_equal": true,
+        "selected_residency_exact": true,
+        "status": "PASS",
+        "workflow_semantics": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": true
+        }
+      },
+      "statistical_significance_claim": false,
+      "status": "PASS",
+      "trial": 4,
+      "workflow_paired_delta_ms": {
+        "A": -134.39380799999998,
+        "B": -5.871316000000007,
+        "C": 0.31869599999999565,
+        "D": 12.599554000000005
+      }
+    },
+    {
+      "engine_lifecycles": [
+        9,
+        10
+      ],
+      "flowstate": {
+        "aggregate_g": 3525,
+        "aggregate_latency_ms": 328.003376,
+        "aggregate_ttft_ms": 326.849896,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "F",
+        "g_by_workflow": {
+          "A": 0,
+          "B": 2437,
+          "C": 0,
+          "D": 1088
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 50.416172,
+          "B": 150.868726,
+          "C": 59.153016,
+          "D": 67.565462
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 3968,
+            "e": 3968,
+            "g": 0,
+            "h": 3968,
+            "request_latency_ms": 50.416172,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 50.133223
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 150.868726,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 150.577472
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 59.153016,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 58.87786
+          },
+          "D": {
+            "cached_tokens": 2432,
+            "e": 2432,
+            "g": 1088,
+            "h": 3520,
+            "request_latency_ms": 67.565462,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 67.261341
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 50.133223,
+          "B": 150.577472,
+          "C": 58.87786,
+          "D": 67.261341
+        }
+      },
+      "flowstate_faster": true,
+      "lm": {
+        "aggregate_g": 6405,
+        "aggregate_latency_ms": 439.985019,
+        "aggregate_ttft_ms": 438.669676,
+        "candidate_positions": {
+          "A": 3968,
+          "B": 2432,
+          "C": 3712,
+          "D": 3520
+        },
+        "condition": "LM",
+        "g_by_workflow": {
+          "A": 3968,
+          "B": 2437,
+          "C": 0,
+          "D": 0
+        },
+        "input_token_digests": {
+          "A": "e2c9efcd5919ba6e45021132f7b9cb625e18087be1908aead7073ed47863bc53",
+          "B": "92e46b4387d2b01e26305167abaf5195104e937c8985cad619bc570feea1ea70",
+          "C": "4cd16bf8f216bd0c2c8d9570830247ef7db771b3c93eeb80717a90ae33668ec0",
+          "D": "1e8e498f271c81d90e8fce49e3d205a5a9a825c513569654f8388af0fe230fa9"
+        },
+        "latency_ms_by_workflow": {
+          "A": 179.911513,
+          "B": 150.668773,
+          "C": 58.95357,
+          "D": 50.451163
+        },
+        "outcomes": {
+          "A": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 3968,
+            "h": 3968,
+            "request_latency_ms": 179.911513,
+            "server_prompt_tokens": 4491,
+            "ttft_ms": 179.456018
+          },
+          "B": {
+            "cached_tokens": 0,
+            "e": 0,
+            "g": 2437,
+            "h": 2437,
+            "request_latency_ms": 150.668773,
+            "server_prompt_tokens": 3794,
+            "ttft_ms": 150.37026
+          },
+          "C": {
+            "cached_tokens": 3712,
+            "e": 3712,
+            "g": 0,
+            "h": 3712,
+            "request_latency_ms": 58.95357,
+            "server_prompt_tokens": 4879,
+            "ttft_ms": 58.65624
+          },
+          "D": {
+            "cached_tokens": 3520,
+            "e": 3520,
+            "g": 0,
+            "h": 3520,
+            "request_latency_ms": 50.451163,
+            "server_prompt_tokens": 3946,
+            "ttft_ms": 50.187158
+          }
+        },
+        "ttft_ms_by_workflow": {
+          "A": 179.456018,
+          "B": 150.37026,
+          "C": 58.65624,
+          "D": 50.187158
+        }
+      },
+      "paired_delta_ms": -111.81977999999998,
+      "runtime_correctness": {
+        "all_g_equals_h_minus_e": true,
+        "candidate_positions_equal": true,
+        "fa_kv_cascade": false,
+        "future_information_used": false,
+        "native_mamba_capacity_eviction": false,
+        "policy_specific_heg_reproduced": true,
+        "request_input_ids_equal": true,
+        "selected_residency_exact": true,
+        "status": "PASS",
+        "workflow_semantics": {
+          "A": true,
+          "B": true,
+          "C": true,
+          "D": true
+        }
+      },
+      "statistical_significance_claim": false,
+      "status": "PASS",
+      "trial": 5,
+      "workflow_paired_delta_ms": {
+        "A": -129.32279499999999,
+        "B": 0.2072119999999984,
+        "C": 0.22162000000000148,
+        "D": 17.074183000000005
+      }
+    }
+  ],
+  "valid_pair_count": 5,
+  "verdict": "READY"
+}
