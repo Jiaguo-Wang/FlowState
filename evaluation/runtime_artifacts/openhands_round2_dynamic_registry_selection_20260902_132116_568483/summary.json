@@ -1,0 +1,139 @@
+{
+  "artifact": "evaluation/runtime_artifacts/openhands_round2_dynamic_registry_selection_20260902_132116_568483",
+  "barrier_2_pending_schedule": [
+    "A3",
+    "B3",
+    "C3",
+    "D3"
+  ],
+  "barrier_2_selection_applied": false,
+  "budget_bytes": 103022592,
+  "candidate_universe_equality_required_at_barrier_2": false,
+  "candidate_universe_path_dependent": true,
+  "eligible_registry_by_policy": {
+    "LRU": []
+  },
+  "engine": "FormalEndToEndGateEngine",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "engine_lifecycle_count": 1,
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-09-02T13:21:16.568651+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fa_kv_cascade": false,
+  "fresh_engine_per_policy": true,
+  "future_leakage": false,
+  "logical_k": 2,
+  "native_mamba_capacity_eviction": false,
+  "online_information_boundary": [
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "A"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "B"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "C"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "D"
+    }
+  ],
+  "policy_order": [
+    "LRU",
+    "Marconi",
+    "FlowState"
+  ],
+  "round_1_schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1"
+  ],
+  "round_2_schedule": [
+    "A2",
+    "B2",
+    "C2",
+    "D2"
+  ],
+  "round_3_requests_executed": false,
+  "runs": [
+    {
+      "barrier_1_post_eviction_residency": {},
+      "barrier_2_metadata": [],
+      "barrier_2_pending": [],
+      "barrier_2_registry": [],
+      "barrier_2_selection_applied": false,
+      "engine_lifecycle": "independent_fresh",
+      "engine_ordinal": 1,
+      "engine_shutdown_error": null,
+      "fa_kv_cascade": false,
+      "fatal_error": "OSError(\"Repo id must use alphanumeric chars, '-', '_' or '.'. The name cannot start or end with '-' or '.' and the maximum length is 96: '/model'.\")",
+      "future_leakage": false,
+      "native_mamba_capacity_eviction": false,
+      "policy": "LRU",
+      "registry_events": [],
+      "round_1_mapping_invariants": null,
+      "round_1_selection": null,
+      "round_2_requests": [],
+      "round_2_selection": null,
+      "round_3_requests_executed": false,
+      "status": "FAIL"
+    }
+  ],
+  "schema_version": "flowstate.openhands_round2_dynamic_registry.v1",
+  "selections_valid": false,
+  "status": "FAIL",
+  "verdict": "PARTIAL"
+}

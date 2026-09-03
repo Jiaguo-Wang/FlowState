@@ -1,0 +1,39 @@
+{
+  "attempt": 1,
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-09-03T02:35:55.580559+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fatal_error": "OSError(\"Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/home/wjg/models/qwen3.5-9b'. Use `repo_type` argument if needed.\")",
+  "first_selection": null,
+  "policy": "LRU",
+  "rematerializations": {},
+  "request_count": 0,
+  "schema_version": "flowstate.openhands_rematerialization_trace.v1",
+  "second_plan": null,
+  "second_selection": null,
+  "shutdown_error": null,
+  "stage_rows": [],
+  "status": "BLOCKED",
+  "trace_complete": false
+}

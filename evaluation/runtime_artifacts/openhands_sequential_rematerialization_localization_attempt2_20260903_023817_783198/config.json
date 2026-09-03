@@ -1,0 +1,35 @@
+{
+  "attempt": 2,
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "eviction_order": [
+    "OPENHANDS_BARRIER_A_TURN_001",
+    "OPENHANDS_BARRIER_B_TURN_001",
+    "OPENHANDS_BARRIER_C_TURN_001",
+    "OPENHANDS_BARRIER_C_TURN_002"
+  ],
+  "policy": "LRU",
+  "repair_enabled": false,
+  "tracked_checkpoints": [
+    "OPENHANDS_BARRIER_A_TURN_001",
+    "OPENHANDS_BARRIER_B_TURN_001",
+    "OPENHANDS_BARRIER_C_TURN_001",
+    "OPENHANDS_BARRIER_C_TURN_002",
+    "OPENHANDS_BARRIER_D_TURN_001",
+    "OPENHANDS_BARRIER_D_TURN_002"
+  ]
+}

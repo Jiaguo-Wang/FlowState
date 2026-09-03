@@ -1,0 +1,879 @@
+{
+  "attempt": 1,
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-09-03T02:37:09.749067+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fatal_error": null,
+  "first_selection": {
+    "eligible_candidate_ids": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ],
+    "policy": "LRU",
+    "ranking_metadata": [
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+        "creation_order": 1,
+        "last_access_order": 1
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+        "creation_order": 2,
+        "last_access_order": 2
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+        "creation_order": 3,
+        "last_access_order": 3
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+        "creation_order": 4,
+        "last_access_order": 4
+      }
+    ],
+    "selected_checkpoint_ids": [
+      "OPENHANDS_BARRIER_D_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001"
+    ],
+    "selected_count": 2,
+    "selection_valid": true
+  },
+  "policy": "LRU",
+  "rematerializations": {
+    "OPENHANDS_BARRIER_A_TURN_001": null,
+    "OPENHANDS_BARRIER_B_TURN_001": null
+  },
+  "request_count": 8,
+  "schema_version": "flowstate.openhands_rematerialization_trace.v1",
+  "second_plan": {
+    "eligible_candidate_ids": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_002",
+      "OPENHANDS_BARRIER_D_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_002"
+    ],
+    "expected_evicted_ids": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_002"
+    ],
+    "expected_eviction_count": 4,
+    "matches_step12h8_candidate_universe": true,
+    "matches_step12h8_selection": true,
+    "policy": "LRU",
+    "selected_checkpoint_ids": [
+      "OPENHANDS_BARRIER_D_TURN_002",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ]
+  },
+  "second_selection": {
+    "eligible_candidate_ids": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_002",
+      "OPENHANDS_BARRIER_D_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_002"
+    ],
+    "policy": "LRU",
+    "ranking_metadata": [
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+        "creation_order": 5,
+        "last_access_order": 5
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+        "creation_order": 6,
+        "last_access_order": 6
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+        "creation_order": 3,
+        "last_access_order": 7
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+        "creation_order": 7,
+        "last_access_order": 7
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+        "creation_order": 4,
+        "last_access_order": 8
+      },
+      {
+        "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+        "creation_order": 8,
+        "last_access_order": 8
+      }
+    ],
+    "selected_checkpoint_ids": [
+      "OPENHANDS_BARRIER_D_TURN_002",
+      "OPENHANDS_BARRIER_D_TURN_001"
+    ],
+    "selected_count": 2,
+    "selection_valid": true
+  },
+  "shutdown_error": null,
+  "stage_rows": [
+    {
+      "boundary": "S0",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            16
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 20,
+          "recurrent_present": true,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 23,
+        "evictable_slots": 5,
+        "protected_slots": 0
+      },
+      "runtime_operation": "开始目标驱逐前",
+      "sequence": 5,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001"
+    },
+    {
+      "boundary": "S1",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            16
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 20,
+          "recurrent_present": true,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 23,
+        "evictable_slots": 5,
+        "protected_slots": 0
+      },
+      "runtime_operation": "精确句柄与目标查找后",
+      "sequence": 6,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001"
+    },
+    {
+      "boundary": "S2",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 20,
+          "recurrent_present": false,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 24,
+        "evictable_slots": 4,
+        "protected_slots": 0
+      },
+      "runtime_operation": "循环状态驱逐原语完成后",
+      "sequence": 7,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001"
+    },
+    {
+      "boundary": "S3",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 20,
+          "recurrent_present": false,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 24,
+        "evictable_slots": 4,
+        "protected_slots": 0
+      },
+      "runtime_operation": "驱逐后证明与检查完成后",
+      "sequence": 8,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001"
+    },
+    {
+      "boundary": "S4",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 20,
+          "recurrent_present": false,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 24,
+        "evictable_slots": 4,
+        "protected_slots": 0
+      },
+      "runtime_operation": "进入 OPENHANDS_BARRIER_C_TURN_001 驱逐前",
+      "sequence": 9,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001"
+    },
+    {
+      "boundary": "S0",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 20,
+          "recurrent_present": false,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 24,
+        "evictable_slots": 4,
+        "protected_slots": 0
+      },
+      "runtime_operation": "开始目标驱逐前",
+      "sequence": 10,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001"
+    },
+    {
+      "boundary": "S1",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 20,
+          "recurrent_present": false,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 24,
+        "evictable_slots": 4,
+        "protected_slots": 0
+      },
+      "runtime_operation": "精确句柄与目标查找后",
+      "sequence": 11,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001"
+    },
+    {
+      "boundary": "S2",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 20,
+          "recurrent_present": false,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 21,
+          "recurrent_present": false,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 25,
+        "evictable_slots": 3,
+        "protected_slots": 0
+      },
+      "runtime_operation": "循环状态驱逐原语完成后",
+      "sequence": 12,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001"
+    },
+    {
+      "boundary": "S3",
+      "checkpoints": {
+        "OPENHANDS_BARRIER_A_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3968
+        },
+        "OPENHANDS_BARRIER_B_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 20,
+          "recurrent_present": false,
+          "token_position": 2432
+        },
+        "OPENHANDS_BARRIER_C_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 21,
+          "recurrent_present": false,
+          "token_position": 3712
+        },
+        "OPENHANDS_BARRIER_C_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4864
+        },
+        "OPENHANDS_BARRIER_D_TURN_001": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "OPENHANDS_BARRIER_D_TURN_002": {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 24,
+          "recurrent_present": true,
+          "token_position": 3904
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 25,
+        "evictable_slots": 3,
+        "protected_slots": 0
+      },
+      "runtime_operation": "驱逐后证明与检查完成后",
+      "sequence": 13,
+      "target_checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001"
+    }
+  ],
+  "status": "NOT_REPRODUCED",
+  "trace_complete": true
+}

@@ -1,0 +1,2437 @@
+{
+  "artifact": "evaluation/runtime_artifacts/openhands_barrier2_second_reconcile_20260902_164017_956808",
+  "budget_bytes": 103022592,
+  "candidate_universe_equality_required": false,
+  "candidate_universe_path_dependent": true,
+  "eligible_registry_by_policy": {
+    "LRU": [
+      "OPENHANDS_BARRIER_A_TURN_001",
+      "OPENHANDS_BARRIER_B_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_001",
+      "OPENHANDS_BARRIER_C_TURN_002",
+      "OPENHANDS_BARRIER_D_TURN_001",
+      "OPENHANDS_BARRIER_D_TURN_002"
+    ]
+  },
+  "engine": "FormalEndToEndGateEngine",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "engine_lifecycle_count": 1,
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-09-02T16:40:17.957012+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fa_kv_cascade": false,
+  "fresh_engine_per_policy": true,
+  "future_leakage": false,
+  "logical_k": 2,
+  "native_mamba_capacity_eviction": false,
+  "online_information_boundary": [
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "A"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "B"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "C"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "D"
+    }
+  ],
+  "policy_order": [
+    "LRU",
+    "Marconi",
+    "FlowState"
+  ],
+  "round_1_schedule": [
+    "A1",
+    "B1",
+    "C1",
+    "D1"
+  ],
+  "round_2_schedule": [
+    "A2",
+    "B2",
+    "C2",
+    "D2"
+  ],
+  "round_3_requests_executed": false,
+  "runs": [
+    {
+      "barrier_2_fa_query_state_unchanged": true,
+      "barrier_2_pending": [
+        {
+          "anchor_pos": 5238,
+          "continuation_id": "OPENHANDS_BARRIER_A_TURN_003",
+          "input_token_digest": "e86138b7e1434208eb34581976bf7d7dac8b38483d811629fbc3aa31acfcb784",
+          "lineage_path": [
+            "openhands",
+            "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+          ],
+          "planning_target": 3968,
+          "query_changed_fields": [],
+          "query_state_equal": true,
+          "resident_fa_frontier": 3968,
+          "traversed_node_ids": [
+            20,
+            19,
+            18
+          ],
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c",
+          "workflow_label": "A"
+        },
+        {
+          "anchor_pos": 5160,
+          "continuation_id": "OPENHANDS_BARRIER_B_TURN_003",
+          "input_token_digest": "4fa023a84b1f8828bf2878c9f21e7fda49c21635460ead2b3072a473a4c2e0d6",
+          "lineage_path": [
+            "openhands",
+            "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+          ],
+          "planning_target": 2437,
+          "query_changed_fields": [],
+          "query_state_equal": true,
+          "resident_fa_frontier": 2437,
+          "traversed_node_ids": [
+            20,
+            19
+          ],
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c",
+          "workflow_label": "B"
+        },
+        {
+          "anchor_pos": 5136,
+          "continuation_id": "OPENHANDS_BARRIER_C_TURN_003",
+          "input_token_digest": "401e5baf5ef1295d105a57ff2de1fd908ebfca5c38ae9cf1c3bd3e38535bb505",
+          "lineage_path": [
+            "openhands",
+            "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+          ],
+          "planning_target": 4864,
+          "query_changed_fields": [],
+          "query_state_equal": true,
+          "resident_fa_frontier": 4864,
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            23
+          ],
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb",
+          "workflow_label": "C"
+        },
+        {
+          "anchor_pos": 4312,
+          "continuation_id": "OPENHANDS_BARRIER_D_TURN_003",
+          "input_token_digest": "b9b6b923eeb868b4a51f55897c6887202f13522ab1892e42e4427a06c2ef1163",
+          "lineage_path": [
+            "openhands",
+            "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+          ],
+          "planning_target": 3904,
+          "query_changed_fields": [],
+          "query_state_equal": true,
+          "resident_fa_frontier": 3904,
+          "traversed_node_ids": [
+            20,
+            19,
+            22,
+            24
+          ],
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae",
+          "workflow_label": "D"
+        }
+      ],
+      "engine_lifecycle": "independent_fresh",
+      "engine_ordinal": 1,
+      "engine_shutdown_error": null,
+      "fa_kv_cascade": false,
+      "fatal_error": "RuntimeError('LRU 的 Barrier 2 reconcile 失败')",
+      "future_leakage": false,
+      "native_mamba_capacity_eviction": false,
+      "policy": "LRU",
+      "registry_events": [
+        {
+          "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+          "event_order": 5,
+          "executable_frontier": 0,
+          "kind": "REMATERIALIZED",
+          "node_id": 18,
+          "token_pos": 3968,
+          "turn": 2,
+          "workflow_label": "A"
+        },
+        {
+          "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+          "event_order": 6,
+          "executable_frontier": 0,
+          "kind": "REMATERIALIZED",
+          "node_id": 20,
+          "token_pos": 2432,
+          "turn": 2,
+          "workflow_label": "B"
+        },
+        {
+          "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+          "event_order": 7,
+          "executable_frontier": 3712,
+          "kind": "CREATED",
+          "node_id": 23,
+          "token_pos": 4864,
+          "turn": 2,
+          "workflow_label": "C"
+        },
+        {
+          "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+          "event_order": 8,
+          "executable_frontier": 3520,
+          "kind": "CREATED",
+          "node_id": 24,
+          "token_pos": 3904,
+          "turn": 2,
+          "workflow_label": "D"
+        }
+      ],
+      "round_1_mapping": {
+        "actual_evicted_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001"
+        ],
+        "actual_retained_ids": [
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_001"
+        ],
+        "actuator_responses_valid": true,
+        "candidate_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_001"
+        ],
+        "controller_exact": true,
+        "expected_evicted_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001"
+        ],
+        "expected_released_slots": 2,
+        "expected_removed_node_ids": [
+          18,
+          20
+        ],
+        "fa_allocator_unchanged": true,
+        "fa_kv_cascade": false,
+        "fa_residency_preserved": true,
+        "mamba_available_slot_delta": 2,
+        "mamba_node_count_delta": 2,
+        "native_mamba_capacity_eviction": false,
+        "node_identity_unchanged": true,
+        "observed_changed_node_ids": [],
+        "observed_removed_node_ids": [
+          18,
+          20
+        ],
+        "prefix_digest_unchanged": true,
+        "recurrent_change_exact": true,
+        "resident_mamba_slot_delta": 2,
+        "selected_ids": [
+          "OPENHANDS_BARRIER_D_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001"
+        ],
+        "selected_residency_exact": true,
+        "status": "PASS",
+        "tree_unchanged": true
+      },
+      "round_1_selection": {
+        "eligible_candidate_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_001"
+        ],
+        "policy": "LRU",
+        "ranking_metadata": [
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+            "creation_order": 1,
+            "last_access_order": 1
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+            "creation_order": 2,
+            "last_access_order": 2
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+            "creation_order": 3,
+            "last_access_order": 3
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+            "creation_order": 4,
+            "last_access_order": 4
+          }
+        ],
+        "selected_checkpoint_ids": [
+          "OPENHANDS_BARRIER_D_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001"
+        ],
+        "selected_count": 2,
+        "selection_valid": true
+      },
+      "round_2_requests": [
+        {
+          "cached_tokens": 0,
+          "completion_tokens": 1,
+          "e": 0,
+          "error": null,
+          "finish_reason": {
+            "length": 1,
+            "type": "length"
+          },
+          "g": 3968,
+          "h": 3968,
+          "offline_input_tokens": 4491,
+          "oom": false,
+          "policy": "LRU",
+          "request_completed": true,
+          "request_latency_ms": 180.798566,
+          "request_ordinal": 5,
+          "rid": "openhands-dynamic-a-turn-002",
+          "runtime_metrics_available": true,
+          "runtime_metrics_error": null,
+          "runtime_metrics_valid": true,
+          "server_prompt_tokens": 4491,
+          "status": "PASS",
+          "token_count_exact": true,
+          "truncation_or_clipping": false,
+          "ttft_ms": 180.492674,
+          "turn": 2,
+          "workflow": "A",
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0063c3ccef5e68d790c496c97203112c"
+        },
+        {
+          "cached_tokens": 0,
+          "completion_tokens": 1,
+          "e": 0,
+          "error": null,
+          "finish_reason": {
+            "length": 1,
+            "type": "length"
+          },
+          "g": 2437,
+          "h": 2437,
+          "offline_input_tokens": 3794,
+          "oom": false,
+          "policy": "LRU",
+          "request_completed": true,
+          "request_latency_ms": 151.209588,
+          "request_ordinal": 6,
+          "rid": "openhands-dynamic-b-turn-002",
+          "runtime_metrics_available": true,
+          "runtime_metrics_error": null,
+          "runtime_metrics_valid": true,
+          "server_prompt_tokens": 3794,
+          "status": "PASS",
+          "token_count_exact": true,
+          "truncation_or_clipping": false,
+          "ttft_ms": 150.918809,
+          "turn": 2,
+          "workflow": "B",
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-001958ec05de484109affffb7e57723c"
+        },
+        {
+          "cached_tokens": 3712,
+          "completion_tokens": 1,
+          "e": 3712,
+          "error": null,
+          "finish_reason": {
+            "length": 1,
+            "type": "length"
+          },
+          "g": 0,
+          "h": 3712,
+          "offline_input_tokens": 4879,
+          "oom": false,
+          "policy": "LRU",
+          "request_completed": true,
+          "request_latency_ms": 59.998775,
+          "request_ordinal": 7,
+          "rid": "openhands-dynamic-c-turn-002",
+          "runtime_metrics_available": true,
+          "runtime_metrics_error": null,
+          "runtime_metrics_valid": true,
+          "server_prompt_tokens": 4879,
+          "status": "PASS",
+          "token_count_exact": true,
+          "truncation_or_clipping": false,
+          "ttft_ms": 59.702481,
+          "turn": 2,
+          "workflow": "C",
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-00f5b1870a29222c1c6ab527e7726cfb"
+        },
+        {
+          "cached_tokens": 3520,
+          "completion_tokens": 1,
+          "e": 3520,
+          "error": null,
+          "finish_reason": {
+            "length": 1,
+            "type": "length"
+          },
+          "g": 0,
+          "h": 3520,
+          "offline_input_tokens": 3946,
+          "oom": false,
+          "policy": "LRU",
+          "request_completed": true,
+          "request_latency_ms": 99.635659,
+          "request_ordinal": 8,
+          "rid": "openhands-dynamic-d-turn-002",
+          "runtime_metrics_available": true,
+          "runtime_metrics_error": null,
+          "runtime_metrics_valid": true,
+          "server_prompt_tokens": 3946,
+          "status": "PASS",
+          "token_count_exact": true,
+          "truncation_or_clipping": false,
+          "ttft_ms": 99.316644,
+          "turn": 2,
+          "workflow": "D",
+          "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-0069c298d0f1b6ce337cf5dae899deae"
+        }
+      ],
+      "round_2_selection": {
+        "eligible_candidate_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002",
+          "OPENHANDS_BARRIER_D_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_002"
+        ],
+        "policy": "LRU",
+        "ranking_metadata": [
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_A_TURN_001",
+            "creation_order": 5,
+            "last_access_order": 5
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_B_TURN_001",
+            "creation_order": 6,
+            "last_access_order": 6
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_001",
+            "creation_order": 3,
+            "last_access_order": 7
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_C_TURN_002",
+            "creation_order": 7,
+            "last_access_order": 7
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_001",
+            "creation_order": 4,
+            "last_access_order": 8
+          },
+          {
+            "checkpoint_id": "OPENHANDS_BARRIER_D_TURN_002",
+            "creation_order": 8,
+            "last_access_order": 8
+          }
+        ],
+        "selected_checkpoint_ids": [
+          "OPENHANDS_BARRIER_D_TURN_002",
+          "OPENHANDS_BARRIER_D_TURN_001"
+        ],
+        "selected_count": 2,
+        "selection_valid": true
+      },
+      "round_3_requests_executed": false,
+      "second_controller_report": {
+        "controller_return_type": "AllocationResult",
+        "failed_evictions": [],
+        "formal_responses": [
+          {
+            "after": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 378725
+                },
+                "full_evictable": 6326,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 25,
+                "mamba_evictable": 3,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  7,
+                  9,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "964bfcc67d4d09fe57f7b12e1af78b8e224bda8dc318b1d47ea78667bdcc6eb4",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 25
+              },
+              "path": {
+                "child_node_ids": [],
+                "extra_key": null,
+                "is_device_leaf": true,
+                "n_children": 0,
+                "node_id": 18,
+                "parent_node_id": 19,
+                "path_full_all_present": true,
+                "path_full_rows": 3968,
+                "path_full_sha256": "63f5b55bff78f51ab3c42237c5d48afec57e9fa98ab45c2f474cb0848deb62ed",
+                "path_mamba_positions": [
+                  {
+                    "node_id": 20,
+                    "position": 2432,
+                    "slots": [
+                      6
+                    ]
+                  }
+                ],
+                "path_node_ids": [
+                  20,
+                  19,
+                  18
+                ],
+                "prefix_sha256": "7dac052e7de7d3d6af79d9288a686ab71cbe13045a05f5be8412e462a20d5726",
+                "prefix_tokens": 3968,
+                "segment_lengths": [
+                  2432,
+                  5,
+                  1531
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 1531,
+                "target_full_value_sha256": "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": false,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": false,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": []
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ]
+                ],
+                "full_tree_sha256": "57260d960f60e5aa034acb26e7ad5dd866e8c3bd0f7762a05f6f17deab510573",
+                "mamba_node_count": 3,
+                "mamba_rows": [
+                  [
+                    20,
+                    [
+                      6
+                    ]
+                  ],
+                  [
+                    21,
+                    [
+                      8
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "929f0b5a2472fd23469eaa96a84d8230432538109145851d9c48f09303dd7075",
+                "node_count": 6,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [],
+                    1083
+                  ]
+                ],
+                "structure_sha256": "f791088da14b8681b1e898bea4347d80e01ae99dc503829fd4b0c23dbb4bb729"
+              }
+            },
+            "before": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 378725
+                },
+                "full_evictable": 6326,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 24,
+                "mamba_evictable": 4,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  4,
+                  5,
+                  7,
+                  9,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "10e99e6ffb88e8ccf156131cc45cbb955ea68690f46e5ecb16753e03ce0943b9",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 24
+              },
+              "path": {
+                "child_node_ids": [],
+                "extra_key": null,
+                "is_device_leaf": true,
+                "n_children": 0,
+                "node_id": 18,
+                "parent_node_id": 19,
+                "path_full_all_present": true,
+                "path_full_rows": 3968,
+                "path_full_sha256": "63f5b55bff78f51ab3c42237c5d48afec57e9fa98ab45c2f474cb0848deb62ed",
+                "path_mamba_positions": [
+                  {
+                    "node_id": 20,
+                    "position": 2432,
+                    "slots": [
+                      6
+                    ]
+                  },
+                  {
+                    "node_id": 18,
+                    "position": 3968,
+                    "slots": [
+                      3
+                    ]
+                  }
+                ],
+                "path_node_ids": [
+                  20,
+                  19,
+                  18
+                ],
+                "prefix_sha256": "7dac052e7de7d3d6af79d9288a686ab71cbe13045a05f5be8412e462a20d5726",
+                "prefix_tokens": 3968,
+                "segment_lengths": [
+                  2432,
+                  5,
+                  1531
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 1531,
+                "target_full_value_sha256": "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": true,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": true,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": [
+                  3
+                ]
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ]
+                ],
+                "full_tree_sha256": "57260d960f60e5aa034acb26e7ad5dd866e8c3bd0f7762a05f6f17deab510573",
+                "mamba_node_count": 4,
+                "mamba_rows": [
+                  [
+                    18,
+                    [
+                      3
+                    ]
+                  ],
+                  [
+                    20,
+                    [
+                      6
+                    ]
+                  ],
+                  [
+                    21,
+                    [
+                      8
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "41d7e957b0b7c874482b909af27fc058014e59fdfb5c257bd5880e60cd57e91c",
+                "node_count": 6,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [],
+                    1083
+                  ]
+                ],
+                "structure_sha256": "f791088da14b8681b1e898bea4347d80e01ae99dc503829fd4b0c23dbb4bb729"
+              }
+            },
+            "formal_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+            "nonce": "flowstate_step7b:evict:OPENHANDS_BARRIER_A_TURN_001",
+            "ok": true,
+            "proof": {
+              "cascade_called": false,
+              "fa_identity_unchanged": true,
+              "fa_unchanged": true,
+              "only_target_mamba_changed": true,
+              "path_unchanged": true,
+              "same_node": true,
+              "sanity_check": true,
+              "tree_unchanged": true
+            },
+            "scope": {
+              "cache_type": "UnifiedRadixCache",
+              "chunked_request_present": false,
+              "dp_size": 1,
+              "enable_hicache": false,
+              "enable_session_radix_cache": false,
+              "page_size": 1,
+              "pp_size": 1,
+              "running_requests": 0,
+              "scheduler_fully_idle": true,
+              "tp_size": 1,
+              "tree_core_type": "UnifiedTreeCore",
+              "waiting_requests": 0
+            }
+          },
+          {
+            "after": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 378725
+                },
+                "full_evictable": 6326,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 26,
+                "mamba_evictable": 2,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  9,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "89066b9bb17d5540460e6d60b0d5fae5e462ab25b0488202e9f0f95a2da6ce6e",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 26
+              },
+              "path": {
+                "child_node_ids": [
+                  19
+                ],
+                "extra_key": null,
+                "is_device_leaf": false,
+                "n_children": 1,
+                "node_id": 20,
+                "parent_node_id": 9,
+                "path_full_all_present": true,
+                "path_full_rows": 2432,
+                "path_full_sha256": "22f483dd173eb7e903495a1fcadf0169565e1396c2ef0d4adc8ef63fc636f4c6",
+                "path_mamba_positions": [],
+                "path_node_ids": [
+                  20
+                ],
+                "prefix_sha256": "23711558018cb78d78b5075fe959b41b9cd356493862b43167c53b43bbc43674",
+                "prefix_tokens": 2432,
+                "segment_lengths": [
+                  2432
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 2432,
+                "target_full_value_sha256": "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": false,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": false,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": []
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ]
+                ],
+                "full_tree_sha256": "57260d960f60e5aa034acb26e7ad5dd866e8c3bd0f7762a05f6f17deab510573",
+                "mamba_node_count": 2,
+                "mamba_rows": [
+                  [
+                    21,
+                    [
+                      8
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "d6031d9545c905c76e8690ee4907f78c8b1698281d29fb47e471fa294fa88f60",
+                "node_count": 6,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [],
+                    1083
+                  ]
+                ],
+                "structure_sha256": "f791088da14b8681b1e898bea4347d80e01ae99dc503829fd4b0c23dbb4bb729"
+              }
+            },
+            "before": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 378725
+                },
+                "full_evictable": 6326,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 25,
+                "mamba_evictable": 3,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  7,
+                  9,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "964bfcc67d4d09fe57f7b12e1af78b8e224bda8dc318b1d47ea78667bdcc6eb4",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 25
+              },
+              "path": {
+                "child_node_ids": [
+                  19
+                ],
+                "extra_key": null,
+                "is_device_leaf": false,
+                "n_children": 1,
+                "node_id": 20,
+                "parent_node_id": 9,
+                "path_full_all_present": true,
+                "path_full_rows": 2432,
+                "path_full_sha256": "22f483dd173eb7e903495a1fcadf0169565e1396c2ef0d4adc8ef63fc636f4c6",
+                "path_mamba_positions": [
+                  {
+                    "node_id": 20,
+                    "position": 2432,
+                    "slots": [
+                      6
+                    ]
+                  }
+                ],
+                "path_node_ids": [
+                  20
+                ],
+                "prefix_sha256": "23711558018cb78d78b5075fe959b41b9cd356493862b43167c53b43bbc43674",
+                "prefix_tokens": 2432,
+                "segment_lengths": [
+                  2432
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 2432,
+                "target_full_value_sha256": "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": true,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": true,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": [
+                  6
+                ]
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ]
+                ],
+                "full_tree_sha256": "57260d960f60e5aa034acb26e7ad5dd866e8c3bd0f7762a05f6f17deab510573",
+                "mamba_node_count": 3,
+                "mamba_rows": [
+                  [
+                    20,
+                    [
+                      6
+                    ]
+                  ],
+                  [
+                    21,
+                    [
+                      8
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "929f0b5a2472fd23469eaa96a84d8230432538109145851d9c48f09303dd7075",
+                "node_count": 6,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [],
+                    1083
+                  ]
+                ],
+                "structure_sha256": "f791088da14b8681b1e898bea4347d80e01ae99dc503829fd4b0c23dbb4bb729"
+              }
+            },
+            "formal_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+            "nonce": "flowstate_step7b:evict:OPENHANDS_BARRIER_B_TURN_001",
+            "ok": true,
+            "proof": {
+              "cascade_called": false,
+              "fa_identity_unchanged": true,
+              "fa_unchanged": true,
+              "only_target_mamba_changed": true,
+              "path_unchanged": true,
+              "same_node": true,
+              "sanity_check": true,
+              "tree_unchanged": true
+            },
+            "scope": {
+              "cache_type": "UnifiedRadixCache",
+              "chunked_request_present": false,
+              "dp_size": 1,
+              "enable_hicache": false,
+              "enable_session_radix_cache": false,
+              "page_size": 1,
+              "pp_size": 1,
+              "running_requests": 0,
+              "scheduler_fully_idle": true,
+              "tp_size": 1,
+              "tree_core_type": "UnifiedTreeCore",
+              "waiting_requests": 0
+            }
+          },
+          {
+            "after": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 377189
+                },
+                "full_evictable": 7862,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 23,
+                "mamba_evictable": 5,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  12,
+                  14,
+                  15,
+                  17,
+                  19,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "bdb5bed2f0e772d1be82be927b8e516f2a2641d888be52204d81306beb34f957",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 23
+              },
+              "path": {
+                "child_node_ids": [
+                  23
+                ],
+                "extra_key": null,
+                "is_device_leaf": false,
+                "n_children": 1,
+                "node_id": 21,
+                "parent_node_id": 19,
+                "path_full_all_present": true,
+                "path_full_rows": 3712,
+                "path_full_sha256": "77ad2c591d4e96c5d09115d369c05ff8197a5824bffdfda1abdec89e17fbb2bf",
+                "path_mamba_positions": [
+                  {
+                    "node_id": 20,
+                    "position": 2432,
+                    "slots": [
+                      16
+                    ]
+                  }
+                ],
+                "path_node_ids": [
+                  20,
+                  19,
+                  21
+                ],
+                "prefix_sha256": "e88d7bf5358f791dce7b749bd21c7cc94169f478b1b7fc4b7b42ff6db663d9fd",
+                "prefix_tokens": 3712,
+                "segment_lengths": [
+                  2432,
+                  5,
+                  1275
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 1275,
+                "target_full_value_sha256": "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": false,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": false,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": []
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ],
+                  [
+                    23,
+                    1152,
+                    "923e68537c708ca48d6d34a6251f7785cd91f6475a02a09edf532cc6aa6aec02"
+                  ],
+                  [
+                    24,
+                    384,
+                    "f063e76093150d72195cdd614c3b356da6a0550b099f6dc381541d8dab1931ba"
+                  ]
+                ],
+                "full_tree_sha256": "708cea5880c9e9e835712edc2105d9300acf93de64bca7116da01bc178c135c6",
+                "mamba_node_count": 5,
+                "mamba_rows": [
+                  [
+                    18,
+                    [
+                      13
+                    ]
+                  ],
+                  [
+                    20,
+                    [
+                      16
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ],
+                  [
+                    23,
+                    [
+                      18
+                    ]
+                  ],
+                  [
+                    24,
+                    [
+                      20
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "74c8e8e3eee74d7381744e3d2393ff7615e9d52cb7b8118faece679dd47705f0",
+                "node_count": 8,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [
+                      23
+                    ],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [
+                      24
+                    ],
+                    1083
+                  ],
+                  [
+                    23,
+                    21,
+                    [],
+                    1152
+                  ],
+                  [
+                    24,
+                    22,
+                    [],
+                    384
+                  ]
+                ],
+                "structure_sha256": "c0c3e1cdba91fc72fddd85831f9b8b820e9b8f9ddc6fd0383b8c5a8dec4d93a7"
+              }
+            },
+            "before": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 377189
+                },
+                "full_evictable": 7862,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 22,
+                "mamba_evictable": 6,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  9,
+                  11,
+                  12,
+                  14,
+                  15,
+                  17,
+                  19,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "428147de93233e4d52b14d87d827e31d2be7fdda12761b2e4d3ad49a15fe569d",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 22
+              },
+              "path": {
+                "child_node_ids": [
+                  23
+                ],
+                "extra_key": null,
+                "is_device_leaf": false,
+                "n_children": 1,
+                "node_id": 21,
+                "parent_node_id": 19,
+                "path_full_all_present": true,
+                "path_full_rows": 3712,
+                "path_full_sha256": "77ad2c591d4e96c5d09115d369c05ff8197a5824bffdfda1abdec89e17fbb2bf",
+                "path_mamba_positions": [
+                  {
+                    "node_id": 20,
+                    "position": 2432,
+                    "slots": [
+                      16
+                    ]
+                  },
+                  {
+                    "node_id": 21,
+                    "position": 3712,
+                    "slots": [
+                      8
+                    ]
+                  }
+                ],
+                "path_node_ids": [
+                  20,
+                  19,
+                  21
+                ],
+                "prefix_sha256": "e88d7bf5358f791dce7b749bd21c7cc94169f478b1b7fc4b7b42ff6db663d9fd",
+                "prefix_tokens": 3712,
+                "segment_lengths": [
+                  2432,
+                  5,
+                  1275
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 1275,
+                "target_full_value_sha256": "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": true,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": true,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": [
+                  8
+                ]
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ],
+                  [
+                    23,
+                    1152,
+                    "923e68537c708ca48d6d34a6251f7785cd91f6475a02a09edf532cc6aa6aec02"
+                  ],
+                  [
+                    24,
+                    384,
+                    "f063e76093150d72195cdd614c3b356da6a0550b099f6dc381541d8dab1931ba"
+                  ]
+                ],
+                "full_tree_sha256": "708cea5880c9e9e835712edc2105d9300acf93de64bca7116da01bc178c135c6",
+                "mamba_node_count": 6,
+                "mamba_rows": [
+                  [
+                    18,
+                    [
+                      13
+                    ]
+                  ],
+                  [
+                    20,
+                    [
+                      16
+                    ]
+                  ],
+                  [
+                    21,
+                    [
+                      8
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ],
+                  [
+                    23,
+                    [
+                      18
+                    ]
+                  ],
+                  [
+                    24,
+                    [
+                      20
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "447a5ad8c61041a3cfbe5b9543726a5b12bd19346a845e42980a3b33a2ea00de",
+                "node_count": 8,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [
+                      23
+                    ],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [
+                      24
+                    ],
+                    1083
+                  ],
+                  [
+                    23,
+                    21,
+                    [],
+                    1152
+                  ],
+                  [
+                    24,
+                    22,
+                    [],
+                    384
+                  ]
+                ],
+                "structure_sha256": "c0c3e1cdba91fc72fddd85831f9b8b820e9b8f9ddc6fd0383b8c5a8dec4d93a7"
+              }
+            },
+            "formal_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+            "nonce": "flowstate_step7b:evict:OPENHANDS_BARRIER_C_TURN_001",
+            "ok": true,
+            "proof": {
+              "cascade_called": false,
+              "fa_identity_unchanged": true,
+              "fa_unchanged": true,
+              "only_target_mamba_changed": true,
+              "path_unchanged": true,
+              "same_node": true,
+              "sanity_check": true,
+              "tree_unchanged": true
+            },
+            "scope": {
+              "cache_type": "UnifiedRadixCache",
+              "chunked_request_present": false,
+              "dp_size": 1,
+              "enable_hicache": false,
+              "enable_session_radix_cache": false,
+              "page_size": 1,
+              "pp_size": 1,
+              "running_requests": 0,
+              "scheduler_fully_idle": true,
+              "tp_size": 1,
+              "tree_core_type": "UnifiedTreeCore",
+              "waiting_requests": 0
+            }
+          },
+          {
+            "after": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 377189
+                },
+                "full_evictable": 7862,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 24,
+                "mamba_evictable": 4,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  12,
+                  14,
+                  15,
+                  17,
+                  18,
+                  19,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "bde96cdfb672f419ac3d6cf584b222c5aabeaf0326ac3df3e49e7410a37f9d76",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 24
+              },
+              "path": {
+                "child_node_ids": [],
+                "extra_key": null,
+                "is_device_leaf": true,
+                "n_children": 0,
+                "node_id": 23,
+                "parent_node_id": 21,
+                "path_full_all_present": true,
+                "path_full_rows": 4864,
+                "path_full_sha256": "e23eb1e9699a98ae88031e0dc044214825c0579253bd5cb00d75ffd2c5c3eb21",
+                "path_mamba_positions": [
+                  {
+                    "node_id": 20,
+                    "position": 2432,
+                    "slots": [
+                      16
+                    ]
+                  }
+                ],
+                "path_node_ids": [
+                  20,
+                  19,
+                  21,
+                  23
+                ],
+                "prefix_sha256": "b94fa070403ffb1e4c5cbd1dc61f9ede2f144a78b8734582c89fcece1f743c25",
+                "prefix_tokens": 4864,
+                "segment_lengths": [
+                  2432,
+                  5,
+                  1275,
+                  1152
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 1152,
+                "target_full_value_sha256": "923e68537c708ca48d6d34a6251f7785cd91f6475a02a09edf532cc6aa6aec02",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": false,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": false,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": []
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ],
+                  [
+                    23,
+                    1152,
+                    "923e68537c708ca48d6d34a6251f7785cd91f6475a02a09edf532cc6aa6aec02"
+                  ],
+                  [
+                    24,
+                    384,
+                    "f063e76093150d72195cdd614c3b356da6a0550b099f6dc381541d8dab1931ba"
+                  ]
+                ],
+                "full_tree_sha256": "708cea5880c9e9e835712edc2105d9300acf93de64bca7116da01bc178c135c6",
+                "mamba_node_count": 4,
+                "mamba_rows": [
+                  [
+                    18,
+                    [
+                      13
+                    ]
+                  ],
+                  [
+                    20,
+                    [
+                      16
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ],
+                  [
+                    24,
+                    [
+                      20
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "e66a826ebf13fc0ea6be70949c4279c53f81cf218e681289000b584bd9297521",
+                "node_count": 8,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [
+                      23
+                    ],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [
+                      24
+                    ],
+                    1083
+                  ],
+                  [
+                    23,
+                    21,
+                    [],
+                    1152
+                  ],
+                  [
+                    24,
+                    22,
+                    [],
+                    384
+                  ]
+                ],
+                "structure_sha256": "c0c3e1cdba91fc72fddd85831f9b8b820e9b8f9ddc6fd0383b8c5a8dec4d93a7"
+              }
+            },
+            "before": {
+              "accounting": {
+                "full_allocator": {
+                  "allocated": null,
+                  "allocator_type": "TokenToKVPoolAllocator",
+                  "available": 377189
+                },
+                "full_evictable": 7862,
+                "full_protected": 0,
+                "mamba_allocator_type": "MambaSlotAllocator",
+                "mamba_available": 23,
+                "mamba_evictable": 5,
+                "mamba_free_slots": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  11,
+                  12,
+                  14,
+                  15,
+                  17,
+                  19,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28
+                ],
+                "mamba_free_slots_sha256": "bdb5bed2f0e772d1be82be927b8e516f2a2641d888be52204d81306beb34f957",
+                "mamba_protected": 0,
+                "mamba_schedulable_available": 23
+              },
+              "path": {
+                "child_node_ids": [],
+                "extra_key": null,
+                "is_device_leaf": true,
+                "n_children": 0,
+                "node_id": 23,
+                "parent_node_id": 21,
+                "path_full_all_present": true,
+                "path_full_rows": 4864,
+                "path_full_sha256": "e23eb1e9699a98ae88031e0dc044214825c0579253bd5cb00d75ffd2c5c3eb21",
+                "path_mamba_positions": [
+                  {
+                    "node_id": 20,
+                    "position": 2432,
+                    "slots": [
+                      16
+                    ]
+                  },
+                  {
+                    "node_id": 23,
+                    "position": 4864,
+                    "slots": [
+                      18
+                    ]
+                  }
+                ],
+                "path_node_ids": [
+                  20,
+                  19,
+                  21,
+                  23
+                ],
+                "prefix_sha256": "b94fa070403ffb1e4c5cbd1dc61f9ede2f144a78b8734582c89fcece1f743c25",
+                "prefix_tokens": 4864,
+                "segment_lengths": [
+                  2432,
+                  5,
+                  1275,
+                  1152
+                ],
+                "target_full_lock_ref": 0,
+                "target_full_present": true,
+                "target_full_value_len": 1152,
+                "target_full_value_sha256": "923e68537c708ca48d6d34a6251f7785cd91f6475a02a09edf532cc6aa6aec02",
+                "target_mamba_host_lock_ref": 0,
+                "target_mamba_host_present": false,
+                "target_mamba_in_lru": true,
+                "target_mamba_lock_ref": 0,
+                "target_mamba_present": true,
+                "target_mamba_session_ref": 0,
+                "target_mamba_slots": [
+                  18
+                ]
+              },
+              "tree": {
+                "full_rows": [
+                  [
+                    9,
+                    0,
+                    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  ],
+                  [
+                    18,
+                    1531,
+                    "a6afc06c56745009d0e7bce044a530a203924794ef8997014181e7ee483fdd9a"
+                  ],
+                  [
+                    19,
+                    5,
+                    "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+                  ],
+                  [
+                    20,
+                    2432,
+                    "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+                  ],
+                  [
+                    21,
+                    1275,
+                    "bb4059e79785697b598d7e424be1bc6681e7c03dbebd63a5cc9edea2b6a6349d"
+                  ],
+                  [
+                    22,
+                    1083,
+                    "b63c8fe2cf5121380594b9ceeff4cb76f87c1a4192595268760a8fe2ab96fbc8"
+                  ],
+                  [
+                    23,
+                    1152,
+                    "923e68537c708ca48d6d34a6251f7785cd91f6475a02a09edf532cc6aa6aec02"
+                  ],
+                  [
+                    24,
+                    384,
+                    "f063e76093150d72195cdd614c3b356da6a0550b099f6dc381541d8dab1931ba"
+                  ]
+                ],
+                "full_tree_sha256": "708cea5880c9e9e835712edc2105d9300acf93de64bca7116da01bc178c135c6",
+                "mamba_node_count": 5,
+                "mamba_rows": [
+                  [
+                    18,
+                    [
+                      13
+                    ]
+                  ],
+                  [
+                    20,
+                    [
+                      16
+                    ]
+                  ],
+                  [
+                    22,
+                    [
+                      10
+                    ]
+                  ],
+                  [
+                    23,
+                    [
+                      18
+                    ]
+                  ],
+                  [
+                    24,
+                    [
+                      20
+                    ]
+                  ]
+                ],
+                "mamba_tree_sha256": "74c8e8e3eee74d7381744e3d2393ff7615e9d52cb7b8118faece679dd47705f0",
+                "node_count": 8,
+                "structure_rows": [
+                  [
+                    9,
+                    null,
+                    [
+                      20
+                    ],
+                    0
+                  ],
+                  [
+                    18,
+                    19,
+                    [],
+                    1531
+                  ],
+                  [
+                    19,
+                    20,
+                    [
+                      18,
+                      21,
+                      22
+                    ],
+                    5
+                  ],
+                  [
+                    20,
+                    9,
+                    [
+                      19
+                    ],
+                    2432
+                  ],
+                  [
+                    21,
+                    19,
+                    [
+                      23
+                    ],
+                    1275
+                  ],
+                  [
+                    22,
+                    19,
+                    [
+                      24
+                    ],
+                    1083
+                  ],
+                  [
+                    23,
+                    21,
+                    [],
+                    1152
+                  ],
+                  [
+                    24,
+                    22,
+                    [],
+                    384
+                  ]
+                ],
+                "structure_sha256": "c0c3e1cdba91fc72fddd85831f9b8b820e9b8f9ddc6fd0383b8c5a8dec4d93a7"
+              }
+            },
+            "formal_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+            "nonce": "flowstate_step7b:evict:OPENHANDS_BARRIER_C_TURN_002",
+            "ok": true,
+            "proof": {
+              "cascade_called": false,
+              "fa_identity_unchanged": true,
+              "fa_unchanged": true,
+              "only_target_mamba_changed": true,
+              "path_unchanged": true,
+              "same_node": true,
+              "sanity_check": true,
+              "tree_unchanged": true
+            },
+            "scope": {
+              "cache_type": "UnifiedRadixCache",
+              "chunked_request_present": false,
+              "dp_size": 1,
+              "enable_hicache": false,
+              "enable_session_radix_cache": false,
+              "page_size": 1,
+              "pp_size": 1,
+              "running_requests": 0,
+              "scheduler_fully_idle": true,
+              "tp_size": 1,
+              "tree_core_type": "UnifiedTreeCore",
+              "waiting_requests": 0
+            }
+          }
+        ],
+        "requested_eviction_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002"
+        ],
+        "selected_checkpoint_ids": [
+          "OPENHANDS_BARRIER_D_TURN_002",
+          "OPENHANDS_BARRIER_D_TURN_001"
+        ],
+        "successful_eviction_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002"
+        ]
+      },
+      "second_mapping_invariants": {
+        "actual_evicted_ids": [
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002"
+        ],
+        "actual_retained_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_002"
+        ],
+        "actuator_responses_valid": true,
+        "candidate_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002",
+          "OPENHANDS_BARRIER_D_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_002"
+        ],
+        "controller_exact": true,
+        "expected_evicted_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002"
+        ],
+        "expected_released_slots": 4,
+        "expected_removed_node_ids": [
+          18,
+          20,
+          21,
+          23
+        ],
+        "fa_allocator_unchanged": true,
+        "fa_kv_cascade": false,
+        "fa_residency_preserved": true,
+        "mamba_available_slot_delta": 2,
+        "mamba_node_count_delta": 2,
+        "native_mamba_capacity_eviction": true,
+        "node_identity_unchanged": true,
+        "observed_changed_node_ids": [],
+        "observed_removed_node_ids": [
+          21,
+          23
+        ],
+        "prefix_digest_unchanged": true,
+        "recurrent_change_exact": false,
+        "resident_mamba_slot_delta": 2,
+        "selected_ids": [
+          "OPENHANDS_BARRIER_D_TURN_002",
+          "OPENHANDS_BARRIER_D_TURN_001"
+        ],
+        "selected_residency_exact": false,
+        "status": "FAIL",
+        "tree_unchanged": true
+      },
+      "second_reconcile_plan": {
+        "eligible_candidate_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002",
+          "OPENHANDS_BARRIER_D_TURN_001",
+          "OPENHANDS_BARRIER_D_TURN_002"
+        ],
+        "expected_evicted_ids": [
+          "OPENHANDS_BARRIER_A_TURN_001",
+          "OPENHANDS_BARRIER_B_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_001",
+          "OPENHANDS_BARRIER_C_TURN_002"
+        ],
+        "expected_eviction_count": 4,
+        "matches_step12h8_candidate_universe": true,
+        "matches_step12h8_selection": true,
+        "policy": "LRU",
+        "selected_checkpoint_ids": [
+          "OPENHANDS_BARRIER_D_TURN_002",
+          "OPENHANDS_BARRIER_D_TURN_001"
+        ]
+      },
+      "second_selection_applied": true,
+      "status": "FAIL"
+    }
+  ],
+  "schema_version": "flowstate.openhands_barrier2_mapping.v1",
+  "second_reconcile_mappings_exact": false,
+  "status": "FAIL",
+  "verdict": "PARTIAL"
+}

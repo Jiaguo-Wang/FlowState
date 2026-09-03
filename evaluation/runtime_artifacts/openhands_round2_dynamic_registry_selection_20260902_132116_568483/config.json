@@ -1,0 +1,97 @@
+{
+  "barrier_2_selection_applied": false,
+  "budget_bytes": 103022592,
+  "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "engine_configuration": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  },
+  "engine_lifecycle_count": 3,
+  "environment": {
+    "gpu": "NVIDIA H100 PCIe",
+    "pyarrow_version": "25.0.0",
+    "sglang_version": "0.5.17",
+    "timestamp": "2026-09-02T13:21:16.568651+00:00",
+    "transformers_version": "5.12.1",
+    "visible_gpu_count": 1
+  },
+  "fresh_engine_per_policy": true,
+  "logical_k": 2,
+  "online_information_boundary": [
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "A"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "B"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "C"
+    },
+    {
+      "future_checkpoint_read": false,
+      "future_timing_read": false,
+      "maximum_assistant_turn_consumed": 3,
+      "raw_items_iterated_through_pending_marker": 7,
+      "round_3_assistant_output_read": false,
+      "round_3_request_materialized": true,
+      "round_4_message_consumed": false,
+      "round_4_request_materialized": false,
+      "workflow": "D"
+    }
+  ],
+  "policies": [
+    "LRU",
+    "Marconi",
+    "FlowState"
+  ],
+  "round_3_assistant_output_read": false,
+  "round_3_requests_executed": false,
+  "round_4_or_later_materialized": false,
+  "sampling_parameters": {
+    "ignore_eos": true,
+    "max_new_tokens": 1,
+    "temperature": 0
+  },
+  "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+  "visible_turns": [
+    1,
+    2,
+    3
+  ]
+}
