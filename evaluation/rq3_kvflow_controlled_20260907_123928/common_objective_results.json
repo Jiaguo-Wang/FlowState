@@ -1,0 +1,170 @@
+{
+  "common_input_digest": "c21a8ceb00f0fa9f1cb4d18a4c0184ee692d4d1200001b65aa3f031f03aa6a23",
+  "common_objective": "C(S)=sum_p Phi(T_p-E_p(S),T_p)",
+  "comparisons": {
+    "flowstate_minus_exact_ms": 0.0,
+    "kvflow_minus_flowstate_ms": 1249.941478864,
+    "marconi_minus_flowstate_ms": 0.0
+  },
+  "exact_subset_evaluations": 4,
+  "recovery_model": {
+    "formula": "Phi(G,T)=37.828150*g+0.345974143*g*tau-0.156201917*g^2",
+    "g_definition": "G/1024",
+    "name": "position_aware_quadratic_v1",
+    "output_unit": "ms",
+    "tau_definition": "T/1024"
+  },
+  "results": {
+    "Exact": {
+      "per_continuation": [
+        {
+          "E_tokens": 0,
+          "G_tokens": 8192,
+          "T_tokens": 8192,
+          "continuation_id": "PENDING_NEAR",
+          "cost_ms": 314.77062246400004,
+          "workflow_id": "WF_NEAR"
+        },
+        {
+          "E_tokens": 0,
+          "G_tokens": 16384,
+          "T_tokens": 16384,
+          "continuation_id": "PENDING_MID",
+          "cost_ms": 653.8320898559999,
+          "workflow_id": "WF_MID"
+        },
+        {
+          "E_tokens": 32768,
+          "G_tokens": 0,
+          "T_tokens": 32768,
+          "continuation_id": "PENDING_FAR",
+          "cost_ms": 0.0,
+          "workflow_id": "WF_FAR"
+        }
+      ],
+      "selected_checkpoint_ids": [
+        "CP_FAR"
+      ],
+      "total_cost_ms": 968.6027123199999,
+      "total_gap_tokens": 24576
+    },
+    "FlowState": {
+      "per_continuation": [
+        {
+          "E_tokens": 0,
+          "G_tokens": 8192,
+          "T_tokens": 8192,
+          "continuation_id": "PENDING_NEAR",
+          "cost_ms": 314.77062246400004,
+          "workflow_id": "WF_NEAR"
+        },
+        {
+          "E_tokens": 0,
+          "G_tokens": 16384,
+          "T_tokens": 16384,
+          "continuation_id": "PENDING_MID",
+          "cost_ms": 653.8320898559999,
+          "workflow_id": "WF_MID"
+        },
+        {
+          "E_tokens": 32768,
+          "G_tokens": 0,
+          "T_tokens": 32768,
+          "continuation_id": "PENDING_FAR",
+          "cost_ms": 0.0,
+          "workflow_id": "WF_FAR"
+        }
+      ],
+      "selected_checkpoint_ids": [
+        "CP_FAR"
+      ],
+      "total_cost_ms": 968.6027123199999,
+      "total_gap_tokens": 24576
+    },
+    "KVFlow Adaptation": {
+      "per_continuation": [
+        {
+          "E_tokens": 4096,
+          "G_tokens": 4096,
+          "T_tokens": 8192,
+          "continuation_id": "PENDING_NEAR",
+          "cost_ms": 159.884541904,
+          "workflow_id": "WF_NEAR"
+        },
+        {
+          "E_tokens": 0,
+          "G_tokens": 16384,
+          "T_tokens": 16384,
+          "continuation_id": "PENDING_MID",
+          "cost_ms": 653.8320898559999,
+          "workflow_id": "WF_MID"
+        },
+        {
+          "E_tokens": 0,
+          "G_tokens": 32768,
+          "T_tokens": 32768,
+          "continuation_id": "PENDING_FAR",
+          "cost_ms": 1404.8275594240001,
+          "workflow_id": "WF_FAR"
+        }
+      ],
+      "selected_checkpoint_ids": [
+        "CP_NEAR"
+      ],
+      "total_cost_ms": 2218.544191184,
+      "total_gap_tokens": 53248
+    },
+    "Marconi Adaptation": {
+      "per_continuation": [
+        {
+          "E_tokens": 0,
+          "G_tokens": 8192,
+          "T_tokens": 8192,
+          "continuation_id": "PENDING_NEAR",
+          "cost_ms": 314.77062246400004,
+          "workflow_id": "WF_NEAR"
+        },
+        {
+          "E_tokens": 0,
+          "G_tokens": 16384,
+          "T_tokens": 16384,
+          "continuation_id": "PENDING_MID",
+          "cost_ms": 653.8320898559999,
+          "workflow_id": "WF_MID"
+        },
+        {
+          "E_tokens": 32768,
+          "G_tokens": 0,
+          "T_tokens": 32768,
+          "continuation_id": "PENDING_FAR",
+          "cost_ms": 0.0,
+          "workflow_id": "WF_FAR"
+        }
+      ],
+      "selected_checkpoint_ids": [
+        "CP_FAR"
+      ],
+      "total_cost_ms": 968.6027123199999,
+      "total_gap_tokens": 24576
+    }
+  },
+  "source_integrity": {
+    "after": {
+      "evaluation/rq3_kvflow_controlled_comparison.py": "dfde5534ebfe1d0d7b0f8377419e8d38dadcdd45d53731d1615182eb55260c53",
+      "evaluation/sota_policies.py": "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212",
+      "flowstate/executable_state.py": "42fc42bd3eb9cd38af9d92cc1dbc10ce6d22cd9fca2e1af4e86dd135b2b62dc4",
+      "flowstate/optimizer.py": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98",
+      "flowstate/recovery_model.py": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5",
+      "flowstate/state_catalog.py": "e3a639cbd74ed92cd8c214a4926cd8d6bf065e91fe9c4e8532595ea5a16c2601"
+    },
+    "before": {
+      "evaluation/rq3_kvflow_controlled_comparison.py": "dfde5534ebfe1d0d7b0f8377419e8d38dadcdd45d53731d1615182eb55260c53",
+      "evaluation/sota_policies.py": "b276aff22d2dc1adcdb33b15a7a94dc608fa916789ba0f2e5d5fbe0b3189d212",
+      "flowstate/executable_state.py": "42fc42bd3eb9cd38af9d92cc1dbc10ce6d22cd9fca2e1af4e86dd135b2b62dc4",
+      "flowstate/optimizer.py": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98",
+      "flowstate/recovery_model.py": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5",
+      "flowstate/state_catalog.py": "e3a639cbd74ed92cd8c214a4926cd8d6bf065e91fe9c4e8532595ea5a16c2601"
+    },
+    "pass": true
+  }
+}

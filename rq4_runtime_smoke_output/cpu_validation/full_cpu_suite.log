@@ -1,0 +1,166 @@
+............ss..................F..F..........................F...F..... [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 25%]
+........................................................................ [ 34%]
+........................................................................ [ 42%]
+........................................................................ [ 51%]
+........................................................................ [ 59%]
+........................................................................ [ 68%]
+........................................................................ [ 77%]
+........................................................................ [ 85%]
+........................................................................ [ 94%]
+.................................................                        [100%]
+=================================== FAILURES ===================================
+__________________ test_deterministic_artifact_serialization ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_deterministic_artifact_se0')
+
+    def test_deterministic_artifact_serialization(tmp_path: Path) -> None:
+        """同一输入两次 run_census 产生相同的高层指标。"""
+        trace = _synthetic_fork_trace()
+        tc = _detect_and_build_conversations(trace["id"], trace["block_size"], trace["requests"])
+        with tempfile.TemporaryDirectory() as td:
+>           r1 = run_census(Path(td) / "a", _trace_conversations=[tc])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_agentx_runtime_population_census.py:315: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evaluation/agentx_runtime_population_census.py:788: in run_census
+    repo_report_path.write_text(report, encoding="utf-8")
+/usr/lib/python3.12/pathlib.py:1049: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/code/FlowState/STEP_13G_B1_AGENTX_RUNTIME_POPULATION_FINAL_REPORT.md')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 30] Read-only file system: '/home/wjg/code/FlowState/STEP_13G_B1_AGENTX_RUNTIME_POPULATION_FINAL_REPORT.md'
+
+/usr/lib/python3.12/pathlib.py:1015: OSError
+_________________________ test_run_census_integration __________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_run_census_integration0')
+
+    @pytest.mark.skipif(
+        not FROZEN_AGENTX_PATH.exists(),
+        reason="Frozen AgentX corpus not present on this host",
+    )
+    def test_run_census_integration(tmp_path: Path) -> None:
+        """端到端 census：artifact 齐全且 validation gate 通过。"""
+>       root = run_census(tmp_path / "census")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_agentx_runtime_population_census.py:352: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+evaluation/agentx_runtime_population_census.py:788: in run_census
+    repo_report_path.write_text(report, encoding="utf-8")
+/usr/lib/python3.12/pathlib.py:1049: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/code/FlowState/STEP_13G_B1_AGENTX_RUNTIME_POPULATION_FINAL_REPORT.md')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 30] Read-only file system: '/home/wjg/code/FlowState/STEP_13G_B1_AGENTX_RUNTIME_POPULATION_FINAL_REPORT.md'
+
+/usr/lib/python3.12/pathlib.py:1015: OSError
+_________________________ test_canonical_artifact_root _________________________
+
+    def test_canonical_artifact_root() -> None:
+        """正式 artifact root 必须位于持久目录，而不是 pytest temp。"""
+        if not FROZEN_AGENTX_PATH.exists():
+            pytest.skip("Frozen AgentX corpus not present")
+>       root = _cached_audit_root()
+               ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_agentx_structure_audit.py:380: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_agentx_structure_audit.py:59: in _cached_audit_root
+    _CACHE["audit_root"] = run_audit()
+                           ^^^^^^^^^^^
+evaluation/agentx_structure_audit.py:1697: in run_audit
+    output_root.mkdir(parents=True, exist_ok=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/data/agentx/audits/agentx_online_compatibility_20260907_102115')
+mode = 511, parents = True, exist_ok = True
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           OSError: [Errno 30] Read-only file system: '/home/wjg/data/agentx/audits/agentx_online_compatibility_20260907_102115'
+
+/usr/lib/python3.12/pathlib.py:1313: OSError
+__________________________ test_run_audit_integration __________________________
+
+    @pytest.mark.skipif(
+        not FROZEN_AGENTX_PATH.exists(),
+        reason="Frozen AgentX corpus not present on this host",
+    )
+    def test_run_audit_integration() -> None:
+        """端到端审计：验证所有 required artifact 均存在且 frozen gate 通过。"""
+>       artifact_root = _cached_audit_root()
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_agentx_structure_audit.py:430: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_agentx_structure_audit.py:59: in _cached_audit_root
+    _CACHE["audit_root"] = run_audit()
+                           ^^^^^^^^^^^
+evaluation/agentx_structure_audit.py:1697: in run_audit
+    output_root.mkdir(parents=True, exist_ok=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/data/agentx/audits/agentx_online_compatibility_20260907_102121')
+mode = 511, parents = True, exist_ok = True
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           OSError: [Errno 30] Read-only file system: '/home/wjg/data/agentx/audits/agentx_online_compatibility_20260907_102121'
+
+/usr/lib/python3.12/pathlib.py:1313: OSError
+=============================== warnings summary ===============================
+tests/test_rq3_formal_policy_evaluation.py:417
+  /home/wjg/code/FlowState/tests/test_rq3_formal_policy_evaluation.py:417: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tests/test_rq3_formal_policy_evaluation.py:418
+  /home/wjg/code/FlowState/tests/test_rq3_formal_policy_evaluation.py:418: PytestUnknownMarkWarning: Unknown pytest.mark.timeout - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.timeout(600)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_agentx_runtime_population_census.py::test_deterministic_artifact_serialization
+FAILED tests/test_agentx_runtime_population_census.py::test_run_census_integration
+FAILED tests/test_agentx_structure_audit.py::test_canonical_artifact_root - O...
+FAILED tests/test_agentx_structure_audit.py::test_run_audit_integration - OSE...
+4 failed, 835 passed, 2 skipped, 2 warnings in 743.46s (0:12:23)

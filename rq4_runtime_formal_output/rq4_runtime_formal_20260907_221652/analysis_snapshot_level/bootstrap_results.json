@@ -1,0 +1,30 @@
+{
+  "comparisons": {
+    "LRU": {
+      "mean_absolute_reduction_95_ci": [
+        63.80624342916667,
+        78.30026933342013
+      ],
+      "mean_relative_reduction_95_ci": [
+        0.39940313838563396,
+        0.46066374318516917
+      ]
+    },
+    "Marconi": {
+      "mean_absolute_reduction_95_ci": [
+        27.670502396180556,
+        43.17481909583333
+      ],
+      "mean_relative_reduction_95_ci": [
+        0.17740918867181718,
+        0.3132158202220823
+      ]
+    }
+  },
+  "percentile_method": "相邻秩线性插值的 2.5% 与 97.5% 分位数",
+  "repetitions": 10000,
+  "sampling": "每个 round 内有放回抽取 6 个 snapshots，再合并四个 round",
+  "schema_version": "flowstate.rq4_snapshot_bootstrap.v1",
+  "seed": 20260907,
+  "statistical_unit": "snapshot"
+}

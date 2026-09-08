@@ -1,0 +1,89 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "CP_FAR",
+      "compatibility_source": "显式 workflow/lineage metadata",
+      "compatible_pending_ids": [
+        "PENDING_FAR"
+      ],
+      "cost_if_selected_alone_ms": 968.6027123199999,
+      "flowstate_benefit_from_empty_ms": 1404.8275594240001,
+      "last_access": 1.0,
+      "marconi_flop_saved": 32768.0,
+      "marconi_utility": 1.0,
+      "memory_bytes": 51511296,
+      "steps_to_execution": 5.0,
+      "token_position": 32768,
+      "workflow_id": "WF_FAR"
+    },
+    {
+      "candidate_id": "CP_MID",
+      "compatibility_source": "显式 workflow/lineage metadata",
+      "compatible_pending_ids": [
+        "PENDING_MID"
+      ],
+      "cost_if_selected_alone_ms": 2056.511149504,
+      "flowstate_benefit_from_empty_ms": 316.91912224,
+      "last_access": 1.0,
+      "marconi_flop_saved": 8192.0,
+      "marconi_utility": 0.14285714285714288,
+      "memory_bytes": 51511296,
+      "steps_to_execution": 3.0,
+      "token_position": 8192,
+      "workflow_id": "WF_MID"
+    },
+    {
+      "candidate_id": "CP_NEAR",
+      "compatibility_source": "显式 workflow/lineage metadata",
+      "compatible_pending_ids": [
+        "PENDING_NEAR"
+      ],
+      "cost_if_selected_alone_ms": 2218.544191184,
+      "flowstate_benefit_from_empty_ms": 154.8860805600002,
+      "last_access": 1.0,
+      "marconi_flop_saved": 4096.0,
+      "marconi_utility": 0.0,
+      "memory_bytes": 51511296,
+      "steps_to_execution": 1.0,
+      "token_position": 4096,
+      "workflow_id": "WF_NEAR"
+    }
+  ],
+  "kvflow_ste_sensitivity_probe": {
+    "near_far_steps_swapped": {
+      "PENDING_FAR": 1,
+      "PENDING_MID": 3,
+      "PENDING_NEAR": 5
+    },
+    "original_selected": [
+      "CP_NEAR"
+    ],
+    "original_steps": {
+      "PENDING_FAR": 5,
+      "PENDING_MID": 3,
+      "PENDING_NEAR": 1
+    },
+    "probe_only_not_main_result": true,
+    "selection_changed": true,
+    "swapped_selected": [
+      "CP_FAR"
+    ]
+  },
+  "rankings": {
+    "FlowState marginal order": [
+      "CP_FAR",
+      "CP_MID",
+      "CP_NEAR"
+    ],
+    "KVFlow Adaptation": [
+      "CP_NEAR",
+      "CP_MID",
+      "CP_FAR"
+    ],
+    "Marconi Adaptation": [
+      "CP_FAR",
+      "CP_MID",
+      "CP_NEAR"
+    ]
+  }
+}

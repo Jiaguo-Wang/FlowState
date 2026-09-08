@@ -1,0 +1,130 @@
+{
+  "artifact_root": "/output/rq4_runtime_smoke_20260907_144500",
+  "completed_runs": 1,
+  "cross_run_contamination": false,
+  "fa_cascade": 0,
+  "fa_preserved": false,
+  "final_gpu": {
+    "final_used_mib": 17,
+    "observations": [
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 0.101,
+        "used_mib": 17
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 5.182,
+        "used_mib": 17
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 10.302,
+        "used_mib": 17
+      }
+    ],
+    "stable": true
+  },
+  "future_leakage": 0,
+  "g_equals_h_minus_e_count": 0,
+  "handle_mapping_pass": false,
+  "heg_telemetry_pass": false,
+  "mean_engine_init_s": null,
+  "mean_pending_resume_s": null,
+  "mean_reconcile_s": null,
+  "mean_replay_s": null,
+  "mean_total_run_s": null,
+  "mean_worker_process_wall_s": null,
+  "native_recurrent_eviction": 0,
+  "oom": 0,
+  "passed_runs": 0,
+  "pending_completed": 0,
+  "planned_runs": 6,
+  "recovery_latency_telemetry": "PARTIAL",
+  "reestimated_216_run_gpu_hours": null,
+  "residency_validation_pass": false,
+  "runs": [
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "fatal_error": {
+        "error": "worker 未生成 result.json",
+        "phase": "worker_process"
+      },
+      "gpu_wait_after": {
+        "final_used_mib": 17,
+        "observations": [
+          {
+            "clean": true,
+            "compute_processes": [],
+            "elapsed_s": 0.081,
+            "used_mib": 17
+          },
+          {
+            "clean": true,
+            "compute_processes": [],
+            "elapsed_s": 5.167,
+            "used_mib": 17
+          },
+          {
+            "clean": true,
+            "compute_processes": [],
+            "elapsed_s": 10.254,
+            "used_mib": 17
+          }
+        ],
+        "stable": true
+      },
+      "gpu_wait_before": {
+        "final_used_mib": 17,
+        "observations": [
+          {
+            "clean": true,
+            "compute_processes": [],
+            "elapsed_s": 0.101,
+            "used_mib": 17
+          },
+          {
+            "clean": true,
+            "compute_processes": [],
+            "elapsed_s": 5.209,
+            "used_mib": 17
+          },
+          {
+            "clean": true,
+            "compute_processes": [],
+            "elapsed_s": 10.316,
+            "used_mib": 17
+          }
+        ],
+        "stable": true
+      },
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g016_round2_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G016_D_TURN_001",
+        "RQ3_G016_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2",
+      "status": "INVALID",
+      "worker_exit_code": -9,
+      "worker_log": "/output/rq4_runtime_smoke_20260907_144500/workers/g016_round2_marconi_rep01.log",
+      "worker_process_wall_s": 63.509663057979196,
+      "worker_timed_out": false
+    }
+  ],
+  "schema_version": "flowstate.rq4_runtime_smoke.v1",
+  "status": "RQ4_RUNTIME_SMOKE_BLOCKED",
+  "truncation": 0,
+  "ttft_telemetry_pass": false,
+  "unexpected_rematerialization": 0
+}

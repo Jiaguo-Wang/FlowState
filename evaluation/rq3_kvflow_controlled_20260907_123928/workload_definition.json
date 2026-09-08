@@ -1,0 +1,155 @@
+{
+  "budget": {
+    "K": 1,
+    "budget_bytes": 51511296,
+    "checkpoint_size_bytes": 51511296
+  },
+  "common_candidate_ids": [
+    "CP_FAR",
+    "CP_MID",
+    "CP_NEAR"
+  ],
+  "common_pending_ids": [
+    "PENDING_FAR",
+    "PENDING_MID",
+    "PENDING_NEAR"
+  ],
+  "decision_epoch": "CONTROLLED_DECISION_0",
+  "design_rule": "使用近、中、远三档公开执行链和 8K、16K、32K 目标；所有候选等大小、同时序，隔离 STE、增量计算量与恢复收益。",
+  "execution_mode": "CPU-only 离线确定性比较",
+  "provenance": {
+    "agentx_23_snapshots_run": false,
+    "external_population_snapshot_used": false,
+    "gpu_used": false,
+    "hidden_future_trajectory_used": false,
+    "openhands_168_snapshots_run": false,
+    "policy_output_used_to_construct_workload": false,
+    "radix_tree_used_for_ancestry": false,
+    "token_lcp_used_for_ancestry": false,
+    "workload_parameters_tuned_for_flowstate_win": false
+  },
+  "schema_version": "flowstate.rq3_kvflow_controlled.v1",
+  "workflows": [
+    {
+      "ancestry_source": "显式 workflow_id 与 lineage_path metadata",
+      "candidate_id": "CP_NEAR",
+      "checkpoint_tokens": 4096,
+      "continuation_id": "PENDING_NEAR",
+      "graph_edges": [
+        [
+          "decision",
+          "execute"
+        ]
+      ],
+      "graph_nodes": [
+        "decision",
+        "execute"
+      ],
+      "last_access": 1.0,
+      "lineage_path": [
+        "WF_NEAR_ROOT"
+      ],
+      "pending_known_at_decision": true,
+      "pending_lineage_path": [
+        "WF_NEAR_ROOT",
+        "NEAR_CONTINUATION"
+      ],
+      "pending_materialized_at_decision": true,
+      "steps_source": "显式 workflow graph 中 decision 到 execute 的最短边数",
+      "steps_to_execution": 1,
+      "target_tokens": 8192,
+      "workflow_id": "WF_NEAR"
+    },
+    {
+      "ancestry_source": "显式 workflow_id 与 lineage_path metadata",
+      "candidate_id": "CP_MID",
+      "checkpoint_tokens": 8192,
+      "continuation_id": "PENDING_MID",
+      "graph_edges": [
+        [
+          "decision",
+          "prepare"
+        ],
+        [
+          "prepare",
+          "review"
+        ],
+        [
+          "review",
+          "execute"
+        ]
+      ],
+      "graph_nodes": [
+        "decision",
+        "prepare",
+        "review",
+        "execute"
+      ],
+      "last_access": 1.0,
+      "lineage_path": [
+        "WF_MID_ROOT"
+      ],
+      "pending_known_at_decision": true,
+      "pending_lineage_path": [
+        "WF_MID_ROOT",
+        "MID_CONTINUATION"
+      ],
+      "pending_materialized_at_decision": true,
+      "steps_source": "显式 workflow graph 中 decision 到 execute 的最短边数",
+      "steps_to_execution": 3,
+      "target_tokens": 16384,
+      "workflow_id": "WF_MID"
+    },
+    {
+      "ancestry_source": "显式 workflow_id 与 lineage_path metadata",
+      "candidate_id": "CP_FAR",
+      "checkpoint_tokens": 32768,
+      "continuation_id": "PENDING_FAR",
+      "graph_edges": [
+        [
+          "decision",
+          "prepare"
+        ],
+        [
+          "prepare",
+          "tool"
+        ],
+        [
+          "tool",
+          "review"
+        ],
+        [
+          "review",
+          "merge"
+        ],
+        [
+          "merge",
+          "execute"
+        ]
+      ],
+      "graph_nodes": [
+        "decision",
+        "prepare",
+        "tool",
+        "review",
+        "merge",
+        "execute"
+      ],
+      "last_access": 1.0,
+      "lineage_path": [
+        "WF_FAR_ROOT"
+      ],
+      "pending_known_at_decision": true,
+      "pending_lineage_path": [
+        "WF_FAR_ROOT",
+        "FAR_CONTINUATION"
+      ],
+      "pending_materialized_at_decision": true,
+      "steps_source": "显式 workflow graph 中 decision 到 execute 的最短边数",
+      "steps_to_execution": 5,
+      "target_tokens": 32768,
+      "workflow_id": "WF_FAR"
+    }
+  ],
+  "workload_name": "workflow_distance_sensitive_three_tier_v1"
+}

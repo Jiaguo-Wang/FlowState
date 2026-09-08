@@ -1,0 +1,35 @@
+{
+  "budget_k": 1,
+  "common_input_digest": "c21a8ceb00f0fa9f1cb4d18a4c0184ee692d4d1200001b65aa3f031f03aa6a23",
+  "determinism": {
+    "pass": true,
+    "repetitions": 20
+  },
+  "pass_gates": {
+    "common_candidate_set_and_budget": true,
+    "common_objective_evaluator": true,
+    "kvflow_ranking_ste_sensitive": true,
+    "near_lower_ste_lower_recovery_value": true,
+    "no_future_leakage": true,
+    "no_policy_directed_tuning": true,
+    "policy_deterministic": true,
+    "source_integrity": true,
+    "three_distinct_ste_values": true,
+    "workflow_semantics_explicit": true
+  },
+  "selections": {
+    "Exact": [
+      "CP_FAR"
+    ],
+    "FlowState": [
+      "CP_FAR"
+    ],
+    "KVFlow Adaptation": [
+      "CP_NEAR"
+    ],
+    "Marconi Adaptation": [
+      "CP_FAR"
+    ]
+  },
+  "status": "RQ3_KVFLOW_CONTROLLED_READY"
+}

@@ -1,0 +1,4067 @@
+{
+  "budget_ratio": 0.25,
+  "budget_rule": "K = max(1, floor(0.25 * |C|))",
+  "created_at": "2026-09-07T14:17:59.039617+00:00",
+  "cuda_visible_devices": null,
+  "formal_root": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017",
+  "fresh_process_and_engine_per_run": true,
+  "initial_gpu_used_mib": 14,
+  "input_dataset": {
+    "path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+    "sha256": "e261707f53e1ae7bcacca1c28d56423b342a0a6082fc51a76fe0572e7e864049"
+  },
+  "mode": "formal",
+  "physical_gpu_index": 0,
+  "policies": [
+    "LRU",
+    "Marconi",
+    "FlowState"
+  ],
+  "pre_existing_compute_processes": [],
+  "recovery_latency_telemetry": "PARTIAL",
+  "repetitions": 3,
+  "runs": [
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g016_round2_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G016_D_TURN_001",
+        "RQ3_G016_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g016_round2_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G016_A_TURN_002",
+        "RQ3_G016_B_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g016_round2_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G016_D_TURN_002",
+        "RQ3_G016_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g156_round2_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_002",
+        "RQ3_G156_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g156_round2_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_001",
+        "RQ3_G156_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g156_round2_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_002",
+        "RQ3_G156_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g112_round2_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_001",
+        "RQ3_G112_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g112_round2_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_002",
+        "RQ3_G112_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g112_round2_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_002",
+        "RQ3_G112_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g176_round2_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G176_D_TURN_002",
+        "RQ3_G176_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g176_round2_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G176_D_TURN_001",
+        "RQ3_G176_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g176_round2_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G176_A_TURN_002",
+        "RQ3_G176_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g172_round2_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_002",
+        "RQ3_G172_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g172_round2_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_001",
+        "RQ3_G172_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g172_round2_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_002",
+        "RQ3_G172_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g184_round2_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G184_D_TURN_002",
+        "RQ3_G184_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g184_round2_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G184_D_TURN_001",
+        "RQ3_G184_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g184_round2_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G184_B_TURN_002",
+        "RQ3_G184_C_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g037_round3_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_001",
+        "RQ3_G037_C_TURN_001",
+        "RQ3_G037_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g037_round3_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_003",
+        "RQ3_G037_B_TURN_003",
+        "RQ3_G037_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g037_round3_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_003",
+        "RQ3_G037_D_TURN_002",
+        "RQ3_G037_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g157_round3_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_D_TURN_002",
+        "RQ3_G157_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g157_round3_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_001",
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g157_round3_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_C_TURN_003",
+        "RQ3_G157_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g177_round3_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G177_D_TURN_001",
+        "RQ3_G177_D_TURN_003",
+        "RQ3_G177_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g177_round3_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G177_A_TURN_003",
+        "RQ3_G177_B_TURN_003",
+        "RQ3_G177_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g177_round3_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G177_D_TURN_003",
+        "RQ3_G177_D_TURN_002",
+        "RQ3_G177_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g165_round3_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_A_TURN_003",
+        "RQ3_G165_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g165_round3_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_D_TURN_002",
+        "RQ3_G165_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g165_round3_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_001",
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g069_round3_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G069_A_TURN_003",
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g069_round3_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_D_TURN_002",
+        "RQ3_G069_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g069_round3_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G069_D_TURN_001",
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g005_round3_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G005_C_TURN_003",
+        "RQ3_G005_A_TURN_003",
+        "RQ3_G005_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g005_round3_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G005_D_TURN_003",
+        "RQ3_G005_D_TURN_002",
+        "RQ3_G005_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g005_round3_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G005_C_TURN_003",
+        "RQ3_G005_D_TURN_001",
+        "RQ3_G005_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g122_round4_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_A_TURN_004",
+        "RQ3_G122_D_TURN_004",
+        "RQ3_G122_B_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g122_round4_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G122_D_TURN_004",
+        "RQ3_G122_D_TURN_003",
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g122_round4_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_A_TURN_004",
+        "RQ3_G122_D_TURN_001",
+        "RQ3_G122_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g050_round4_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_D_TURN_001",
+        "RQ3_G050_C_TURN_001",
+        "RQ3_G050_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g050_round4_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G050_B_TURN_004",
+        "RQ3_G050_A_TURN_004",
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g050_round4_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_D_TURN_003",
+        "RQ3_G050_C_TURN_004",
+        "RQ3_G050_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g058_round4_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G058_B_TURN_004",
+        "RQ3_G058_A_TURN_004",
+        "RQ3_G058_B_TURN_003",
+        "RQ3_G058_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g058_round4_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G058_B_TURN_004",
+        "RQ3_G058_A_TURN_004",
+        "RQ3_G058_D_TURN_004",
+        "RQ3_G058_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g058_round4_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G058_D_TURN_004",
+        "RQ3_G058_D_TURN_003",
+        "RQ3_G058_C_TURN_004",
+        "RQ3_G058_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g078_round4_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_D_TURN_001",
+        "RQ3_G078_D_TURN_003",
+        "RQ3_G078_A_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g078_round4_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_D_TURN_004",
+        "RQ3_G078_A_TURN_004",
+        "RQ3_G078_B_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g078_round4_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G078_D_TURN_004",
+        "RQ3_G078_D_TURN_003",
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g070_round4_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G070_D_TURN_004",
+        "RQ3_G070_D_TURN_003",
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g070_round4_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G070_B_TURN_004",
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_D_TURN_001",
+        "RQ3_G070_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g070_round4_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_B_TURN_004",
+        "RQ3_G070_D_TURN_004",
+        "RQ3_G070_A_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g094_round4_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G094_C_TURN_003",
+        "RQ3_G094_B_TURN_004",
+        "RQ3_G094_D_TURN_004",
+        "RQ3_G094_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g094_round4_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G094_C_TURN_004",
+        "RQ3_G094_B_TURN_004",
+        "RQ3_G094_A_TURN_004",
+        "RQ3_G094_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g094_round4_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G094_D_TURN_004",
+        "RQ3_G094_D_TURN_003",
+        "RQ3_G094_C_TURN_004",
+        "RQ3_G094_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g171_round5_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_A_TURN_005",
+        "RQ3_G171_B_TURN_005",
+        "RQ3_G171_B_TURN_004",
+        "RQ3_G171_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g171_round5_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_A_TURN_005",
+        "RQ3_G171_B_TURN_005",
+        "RQ3_G171_C_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g171_round5_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_D_TURN_004",
+        "RQ3_G171_C_TURN_005",
+        "RQ3_G171_C_TURN_004",
+        "RQ3_G171_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g199_round5_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G199_A_TURN_005",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_B_TURN_005",
+        "RQ3_G199_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g199_round5_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G199_D_TURN_005",
+        "RQ3_G199_D_TURN_004",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_C_TURN_004",
+        "RQ3_G199_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g199_round5_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G199_A_TURN_005",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_D_TURN_005",
+        "RQ3_G199_C_TURN_004",
+        "RQ3_G199_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g167_round5_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G167_B_TURN_004",
+        "RQ3_G167_B_TURN_003",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_D_TURN_004",
+        "RQ3_G167_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g167_round5_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G167_B_TURN_005",
+        "RQ3_G167_D_TURN_005",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_A_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g167_round5_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G167_D_TURN_005",
+        "RQ3_G167_D_TURN_004",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_C_TURN_004",
+        "RQ3_G167_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g043_round5_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G043_B_TURN_005",
+        "RQ3_G043_A_TURN_005",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_D_TURN_005",
+        "RQ3_G043_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g043_round5_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G043_B_TURN_005",
+        "RQ3_G043_A_TURN_005",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g043_round5_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G043_D_TURN_005",
+        "RQ3_G043_D_TURN_004",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_C_TURN_004",
+        "RQ3_G043_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g015_round5_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_A_TURN_005",
+        "RQ3_G015_C_TURN_004",
+        "RQ3_G015_B_TURN_005",
+        "RQ3_G015_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g015_round5_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_A_TURN_005",
+        "RQ3_G015_B_TURN_005",
+        "RQ3_G015_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g015_round5_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G015_D_TURN_005",
+        "RQ3_G015_D_TURN_004",
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_C_TURN_004",
+        "RQ3_G015_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 1,
+      "run_id": "g119_round5_marconi_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G119_A_TURN_005",
+        "RQ3_G119_D_TURN_004",
+        "RQ3_G119_C_TURN_005",
+        "RQ3_G119_B_TURN_005",
+        "RQ3_G119_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 1,
+      "run_id": "g119_round5_flowstate_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G119_A_TURN_005",
+        "RQ3_G119_B_TURN_005",
+        "RQ3_G119_D_TURN_005",
+        "RQ3_G119_C_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 1,
+      "run_id": "g119_round5_lru_rep01",
+      "selected_candidate_ids": [
+        "RQ3_G119_D_TURN_005",
+        "RQ3_G119_D_TURN_004",
+        "RQ3_G119_C_TURN_005",
+        "RQ3_G119_C_TURN_004",
+        "RQ3_G119_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g016_round2_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G016_A_TURN_002",
+        "RQ3_G016_B_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g016_round2_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G016_D_TURN_002",
+        "RQ3_G016_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g016_round2_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G016_D_TURN_001",
+        "RQ3_G016_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g156_round2_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_001",
+        "RQ3_G156_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g156_round2_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_002",
+        "RQ3_G156_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g156_round2_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_002",
+        "RQ3_G156_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g112_round2_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_002",
+        "RQ3_G112_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g112_round2_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_002",
+        "RQ3_G112_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g112_round2_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_001",
+        "RQ3_G112_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g176_round2_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G176_D_TURN_001",
+        "RQ3_G176_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g176_round2_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G176_A_TURN_002",
+        "RQ3_G176_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g176_round2_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G176_D_TURN_002",
+        "RQ3_G176_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g172_round2_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_001",
+        "RQ3_G172_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g172_round2_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_002",
+        "RQ3_G172_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g172_round2_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_002",
+        "RQ3_G172_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g184_round2_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G184_D_TURN_001",
+        "RQ3_G184_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g184_round2_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G184_B_TURN_002",
+        "RQ3_G184_C_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g184_round2_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G184_D_TURN_002",
+        "RQ3_G184_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g037_round3_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_003",
+        "RQ3_G037_B_TURN_003",
+        "RQ3_G037_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g037_round3_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_003",
+        "RQ3_G037_D_TURN_002",
+        "RQ3_G037_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g037_round3_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_001",
+        "RQ3_G037_C_TURN_001",
+        "RQ3_G037_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g157_round3_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_001",
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g157_round3_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_C_TURN_003",
+        "RQ3_G157_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g157_round3_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_D_TURN_002",
+        "RQ3_G157_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g177_round3_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G177_A_TURN_003",
+        "RQ3_G177_B_TURN_003",
+        "RQ3_G177_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g177_round3_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G177_D_TURN_003",
+        "RQ3_G177_D_TURN_002",
+        "RQ3_G177_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g177_round3_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G177_D_TURN_001",
+        "RQ3_G177_D_TURN_003",
+        "RQ3_G177_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g165_round3_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_D_TURN_002",
+        "RQ3_G165_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g165_round3_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_001",
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g165_round3_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_A_TURN_003",
+        "RQ3_G165_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g069_round3_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_D_TURN_002",
+        "RQ3_G069_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g069_round3_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G069_D_TURN_001",
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g069_round3_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G069_A_TURN_003",
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g005_round3_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G005_D_TURN_003",
+        "RQ3_G005_D_TURN_002",
+        "RQ3_G005_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g005_round3_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G005_C_TURN_003",
+        "RQ3_G005_D_TURN_001",
+        "RQ3_G005_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g005_round3_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G005_C_TURN_003",
+        "RQ3_G005_A_TURN_003",
+        "RQ3_G005_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g122_round4_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G122_D_TURN_004",
+        "RQ3_G122_D_TURN_003",
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g122_round4_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_A_TURN_004",
+        "RQ3_G122_D_TURN_001",
+        "RQ3_G122_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g122_round4_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_A_TURN_004",
+        "RQ3_G122_D_TURN_004",
+        "RQ3_G122_B_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g050_round4_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G050_B_TURN_004",
+        "RQ3_G050_A_TURN_004",
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g050_round4_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_D_TURN_003",
+        "RQ3_G050_C_TURN_004",
+        "RQ3_G050_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g050_round4_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_D_TURN_001",
+        "RQ3_G050_C_TURN_001",
+        "RQ3_G050_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g058_round4_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G058_B_TURN_004",
+        "RQ3_G058_A_TURN_004",
+        "RQ3_G058_D_TURN_004",
+        "RQ3_G058_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g058_round4_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G058_D_TURN_004",
+        "RQ3_G058_D_TURN_003",
+        "RQ3_G058_C_TURN_004",
+        "RQ3_G058_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g058_round4_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G058_B_TURN_004",
+        "RQ3_G058_A_TURN_004",
+        "RQ3_G058_B_TURN_003",
+        "RQ3_G058_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g078_round4_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_D_TURN_004",
+        "RQ3_G078_A_TURN_004",
+        "RQ3_G078_B_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g078_round4_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G078_D_TURN_004",
+        "RQ3_G078_D_TURN_003",
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g078_round4_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_D_TURN_001",
+        "RQ3_G078_D_TURN_003",
+        "RQ3_G078_A_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g070_round4_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G070_B_TURN_004",
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_D_TURN_001",
+        "RQ3_G070_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g070_round4_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_B_TURN_004",
+        "RQ3_G070_D_TURN_004",
+        "RQ3_G070_A_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g070_round4_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G070_D_TURN_004",
+        "RQ3_G070_D_TURN_003",
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g094_round4_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G094_C_TURN_004",
+        "RQ3_G094_B_TURN_004",
+        "RQ3_G094_A_TURN_004",
+        "RQ3_G094_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g094_round4_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G094_D_TURN_004",
+        "RQ3_G094_D_TURN_003",
+        "RQ3_G094_C_TURN_004",
+        "RQ3_G094_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g094_round4_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G094_C_TURN_003",
+        "RQ3_G094_B_TURN_004",
+        "RQ3_G094_D_TURN_004",
+        "RQ3_G094_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g171_round5_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_A_TURN_005",
+        "RQ3_G171_B_TURN_005",
+        "RQ3_G171_C_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g171_round5_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_D_TURN_004",
+        "RQ3_G171_C_TURN_005",
+        "RQ3_G171_C_TURN_004",
+        "RQ3_G171_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g171_round5_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_A_TURN_005",
+        "RQ3_G171_B_TURN_005",
+        "RQ3_G171_B_TURN_004",
+        "RQ3_G171_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g199_round5_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G199_D_TURN_005",
+        "RQ3_G199_D_TURN_004",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_C_TURN_004",
+        "RQ3_G199_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g199_round5_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G199_A_TURN_005",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_D_TURN_005",
+        "RQ3_G199_C_TURN_004",
+        "RQ3_G199_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g199_round5_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G199_A_TURN_005",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_B_TURN_005",
+        "RQ3_G199_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g167_round5_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G167_B_TURN_005",
+        "RQ3_G167_D_TURN_005",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_A_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g167_round5_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G167_D_TURN_005",
+        "RQ3_G167_D_TURN_004",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_C_TURN_004",
+        "RQ3_G167_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g167_round5_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G167_B_TURN_004",
+        "RQ3_G167_B_TURN_003",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_D_TURN_004",
+        "RQ3_G167_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g043_round5_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G043_B_TURN_005",
+        "RQ3_G043_A_TURN_005",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g043_round5_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G043_D_TURN_005",
+        "RQ3_G043_D_TURN_004",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_C_TURN_004",
+        "RQ3_G043_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g043_round5_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G043_B_TURN_005",
+        "RQ3_G043_A_TURN_005",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_D_TURN_005",
+        "RQ3_G043_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g015_round5_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_A_TURN_005",
+        "RQ3_G015_B_TURN_005",
+        "RQ3_G015_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g015_round5_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G015_D_TURN_005",
+        "RQ3_G015_D_TURN_004",
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_C_TURN_004",
+        "RQ3_G015_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g015_round5_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_A_TURN_005",
+        "RQ3_G015_C_TURN_004",
+        "RQ3_G015_B_TURN_005",
+        "RQ3_G015_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 2,
+      "run_id": "g119_round5_flowstate_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G119_A_TURN_005",
+        "RQ3_G119_B_TURN_005",
+        "RQ3_G119_D_TURN_005",
+        "RQ3_G119_C_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 2,
+      "run_id": "g119_round5_lru_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G119_D_TURN_005",
+        "RQ3_G119_D_TURN_004",
+        "RQ3_G119_C_TURN_005",
+        "RQ3_G119_C_TURN_004",
+        "RQ3_G119_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 2,
+      "run_id": "g119_round5_marconi_rep02",
+      "selected_candidate_ids": [
+        "RQ3_G119_A_TURN_005",
+        "RQ3_G119_D_TURN_004",
+        "RQ3_G119_C_TURN_005",
+        "RQ3_G119_B_TURN_005",
+        "RQ3_G119_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g016_round2_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G016_D_TURN_002",
+        "RQ3_G016_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g016_round2_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G016_D_TURN_001",
+        "RQ3_G016_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 16,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g016_round2_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G016_A_TURN_002",
+        "RQ3_G016_B_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+      "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+      "snapshot_id": "rq3-openhands-main-g016-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g156_round2_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_002",
+        "RQ3_G156_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g156_round2_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_002",
+        "RQ3_G156_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 156,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g156_round2_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G156_D_TURN_001",
+        "RQ3_G156_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g156_54383899c610.json",
+      "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+      "snapshot_id": "rq3-openhands-main-g156-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g112_round2_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_002",
+        "RQ3_G112_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g112_round2_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_001",
+        "RQ3_G112_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 112,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g112_round2_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G112_D_TURN_002",
+        "RQ3_G112_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g112_f7ecca9b94c2.json",
+      "snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+      "snapshot_id": "rq3-openhands-main-g112-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g176_round2_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G176_A_TURN_002",
+        "RQ3_G176_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g176_round2_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G176_D_TURN_002",
+        "RQ3_G176_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 176,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g176_round2_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G176_D_TURN_001",
+        "RQ3_G176_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g176_937b24cac66a.json",
+      "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+      "snapshot_id": "rq3-openhands-main-g176-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g172_round2_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_002",
+        "RQ3_G172_A_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g172_round2_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_002",
+        "RQ3_G172_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 172,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g172_round2_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G172_D_TURN_001",
+        "RQ3_G172_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g172_53835b494fed.json",
+      "snapshot_digest": "53835b494fed837bd17dce0d8a4a16b8e5114b8f9d8fc02735fc695d8de3c607",
+      "snapshot_id": "rq3-openhands-main-g172-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g184_round2_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G184_B_TURN_002",
+        "RQ3_G184_C_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g184_round2_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G184_D_TURN_002",
+        "RQ3_G184_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 2,
+      "budget_bytes": 103022592,
+      "candidate_count": 8,
+      "group_ordinal": 184,
+      "logical_k": 2,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g184_round2_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G184_D_TURN_001",
+        "RQ3_G184_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g184_aa63fb2c5103.json",
+      "snapshot_digest": "aa63fb2c5103232492da46e4003d2106da1cc331ec14603a4d3c6241b030014d",
+      "snapshot_id": "rq3-openhands-main-g184-round2"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g037_round3_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_003",
+        "RQ3_G037_D_TURN_002",
+        "RQ3_G037_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g037_round3_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_001",
+        "RQ3_G037_C_TURN_001",
+        "RQ3_G037_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 37,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g037_round3_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G037_D_TURN_003",
+        "RQ3_G037_B_TURN_003",
+        "RQ3_G037_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g037_2146ecc9039b.json",
+      "snapshot_digest": "2146ecc9039b22287d45c7d4066ae0936258f653f4d5f5fd71d7bb9ae19f441e",
+      "snapshot_id": "rq3-openhands-main-g037-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g157_round3_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_C_TURN_003",
+        "RQ3_G157_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g157_round3_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_D_TURN_002",
+        "RQ3_G157_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 157,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g157_round3_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G157_D_TURN_001",
+        "RQ3_G157_D_TURN_003",
+        "RQ3_G157_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g157_962163440874.json",
+      "snapshot_digest": "962163440874310b32143dcc25a3e64fcdaf74d66fbece4908450f73f3aa9bb2",
+      "snapshot_id": "rq3-openhands-main-g157-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g177_round3_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G177_D_TURN_003",
+        "RQ3_G177_D_TURN_002",
+        "RQ3_G177_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g177_round3_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G177_D_TURN_001",
+        "RQ3_G177_D_TURN_003",
+        "RQ3_G177_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 177,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g177_round3_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G177_A_TURN_003",
+        "RQ3_G177_B_TURN_003",
+        "RQ3_G177_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g177_a4200b586ef4.json",
+      "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+      "snapshot_id": "rq3-openhands-main-g177-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g165_round3_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_001",
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g165_round3_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_A_TURN_003",
+        "RQ3_G165_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 165,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g165_round3_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G165_D_TURN_003",
+        "RQ3_G165_D_TURN_002",
+        "RQ3_G165_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g165_15b8bbe7e807.json",
+      "snapshot_digest": "15b8bbe7e80750ed9cbef1286f23c9f6d336595f20d757c1f7d8afca31476c6e",
+      "snapshot_id": "rq3-openhands-main-g165-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g069_round3_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G069_D_TURN_001",
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_D_TURN_002"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g069_round3_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G069_A_TURN_003",
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 69,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g069_round3_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G069_D_TURN_003",
+        "RQ3_G069_D_TURN_002",
+        "RQ3_G069_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g069_5854b62123d5.json",
+      "snapshot_digest": "5854b62123d591e92ebeeb377e37f7b2c47b5793e57030882a4f6d12409ba6a0",
+      "snapshot_id": "rq3-openhands-main-g069-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g005_round3_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G005_C_TURN_003",
+        "RQ3_G005_D_TURN_001",
+        "RQ3_G005_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g005_round3_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G005_C_TURN_003",
+        "RQ3_G005_A_TURN_003",
+        "RQ3_G005_B_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 3,
+      "budget_bytes": 154533888,
+      "candidate_count": 12,
+      "group_ordinal": 5,
+      "logical_k": 3,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g005_round3_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G005_D_TURN_003",
+        "RQ3_G005_D_TURN_002",
+        "RQ3_G005_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g005_81b79dbbbd4a.json",
+      "snapshot_digest": "81b79dbbbd4a33de055660f26f087b3d817a4216d2b16501db5d00b47e38b09d",
+      "snapshot_id": "rq3-openhands-main-g005-round3"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g122_round4_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_A_TURN_004",
+        "RQ3_G122_D_TURN_001",
+        "RQ3_G122_C_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g122_round4_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_A_TURN_004",
+        "RQ3_G122_D_TURN_004",
+        "RQ3_G122_B_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 122,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g122_round4_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G122_D_TURN_004",
+        "RQ3_G122_D_TURN_003",
+        "RQ3_G122_C_TURN_004",
+        "RQ3_G122_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g122_5d4287b6261e.json",
+      "snapshot_digest": "5d4287b6261e664eb199b8d6e4d64cb92fcb567acd9978e672fa1a67289a435a",
+      "snapshot_id": "rq3-openhands-main-g122-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g050_round4_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_D_TURN_003",
+        "RQ3_G050_C_TURN_004",
+        "RQ3_G050_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g050_round4_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_D_TURN_001",
+        "RQ3_G050_C_TURN_001",
+        "RQ3_G050_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 50,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g050_round4_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G050_B_TURN_004",
+        "RQ3_G050_A_TURN_004",
+        "RQ3_G050_D_TURN_004",
+        "RQ3_G050_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g050_018fbd6f97ed.json",
+      "snapshot_digest": "018fbd6f97edfabc65f49f92ab7d7b940abb604447c179fba1b39baab454b1db",
+      "snapshot_id": "rq3-openhands-main-g050-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g058_round4_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G058_D_TURN_004",
+        "RQ3_G058_D_TURN_003",
+        "RQ3_G058_C_TURN_004",
+        "RQ3_G058_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g058_round4_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G058_B_TURN_004",
+        "RQ3_G058_A_TURN_004",
+        "RQ3_G058_B_TURN_003",
+        "RQ3_G058_D_TURN_001"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 58,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g058_round4_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G058_B_TURN_004",
+        "RQ3_G058_A_TURN_004",
+        "RQ3_G058_D_TURN_004",
+        "RQ3_G058_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g058_d80217197622.json",
+      "snapshot_digest": "d8021719762228f07d09abe65fe0d1d3e9976c1c5ae1a2bd5aa6cab28c06fcde",
+      "snapshot_id": "rq3-openhands-main-g058-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g078_round4_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G078_D_TURN_004",
+        "RQ3_G078_D_TURN_003",
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g078_round4_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_D_TURN_001",
+        "RQ3_G078_D_TURN_003",
+        "RQ3_G078_A_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 78,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g078_round4_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G078_C_TURN_004",
+        "RQ3_G078_D_TURN_004",
+        "RQ3_G078_A_TURN_004",
+        "RQ3_G078_B_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g078_536dc3ef5be1.json",
+      "snapshot_digest": "536dc3ef5be128f1729fa68149dbd38f3da66672322462b4f9e5fd23ea1ce29d",
+      "snapshot_id": "rq3-openhands-main-g078-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g070_round4_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_B_TURN_004",
+        "RQ3_G070_D_TURN_004",
+        "RQ3_G070_A_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g070_round4_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G070_D_TURN_004",
+        "RQ3_G070_D_TURN_003",
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 70,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g070_round4_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G070_B_TURN_004",
+        "RQ3_G070_C_TURN_004",
+        "RQ3_G070_D_TURN_001",
+        "RQ3_G070_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g070_d4807a0a91ff.json",
+      "snapshot_digest": "d4807a0a91ff7acb10847dfab08ac57b935adc2565813f19cd928d7e513cfcf1",
+      "snapshot_id": "rq3-openhands-main-g070-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g094_round4_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G094_D_TURN_004",
+        "RQ3_G094_D_TURN_003",
+        "RQ3_G094_C_TURN_004",
+        "RQ3_G094_C_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g094_round4_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G094_C_TURN_003",
+        "RQ3_G094_B_TURN_004",
+        "RQ3_G094_D_TURN_004",
+        "RQ3_G094_D_TURN_003"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 4,
+      "budget_bytes": 206045184,
+      "candidate_count": 16,
+      "group_ordinal": 94,
+      "logical_k": 4,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g094_round4_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G094_C_TURN_004",
+        "RQ3_G094_B_TURN_004",
+        "RQ3_G094_A_TURN_004",
+        "RQ3_G094_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g094_33bf4056625e.json",
+      "snapshot_digest": "33bf4056625e626955c9c0067d993824cb5830450d9e71b50558b693400ef9e8",
+      "snapshot_id": "rq3-openhands-main-g094-round4"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g171_round5_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_D_TURN_004",
+        "RQ3_G171_C_TURN_005",
+        "RQ3_G171_C_TURN_004",
+        "RQ3_G171_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g171_round5_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_A_TURN_005",
+        "RQ3_G171_B_TURN_005",
+        "RQ3_G171_B_TURN_004",
+        "RQ3_G171_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 171,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g171_round5_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G171_D_TURN_005",
+        "RQ3_G171_A_TURN_005",
+        "RQ3_G171_B_TURN_005",
+        "RQ3_G171_C_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g171_07b976a3787d.json",
+      "snapshot_digest": "07b976a3787d710e6f7ee67c0ab16141cf61e288a4cde5d100488031d46a3910",
+      "snapshot_id": "rq3-openhands-main-g171-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g199_round5_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G199_A_TURN_005",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_D_TURN_005",
+        "RQ3_G199_C_TURN_004",
+        "RQ3_G199_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g199_round5_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G199_A_TURN_005",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_B_TURN_005",
+        "RQ3_G199_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 199,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g199_round5_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G199_D_TURN_005",
+        "RQ3_G199_D_TURN_004",
+        "RQ3_G199_C_TURN_005",
+        "RQ3_G199_C_TURN_004",
+        "RQ3_G199_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g199_3a276a1afbcb.json",
+      "snapshot_digest": "3a276a1afbcb73eed4178fe3bdeca8a576dfc47cbd6d93e3f5bd496f01983012",
+      "snapshot_id": "rq3-openhands-main-g199-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g167_round5_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G167_D_TURN_005",
+        "RQ3_G167_D_TURN_004",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_C_TURN_004",
+        "RQ3_G167_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g167_round5_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G167_B_TURN_004",
+        "RQ3_G167_B_TURN_003",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_D_TURN_004",
+        "RQ3_G167_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 167,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g167_round5_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G167_B_TURN_005",
+        "RQ3_G167_D_TURN_005",
+        "RQ3_G167_C_TURN_005",
+        "RQ3_G167_A_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g167_882ab0678902.json",
+      "snapshot_digest": "882ab06789023d56698600f8189c74315ec775f9420b8051da6b628b83742dc3",
+      "snapshot_id": "rq3-openhands-main-g167-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g043_round5_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G043_D_TURN_005",
+        "RQ3_G043_D_TURN_004",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_C_TURN_004",
+        "RQ3_G043_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g043_round5_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G043_B_TURN_005",
+        "RQ3_G043_A_TURN_005",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_D_TURN_005",
+        "RQ3_G043_C_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 43,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g043_round5_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G043_B_TURN_005",
+        "RQ3_G043_A_TURN_005",
+        "RQ3_G043_C_TURN_005",
+        "RQ3_G043_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g043_3060e5fe9d8c.json",
+      "snapshot_digest": "3060e5fe9d8caa4e0fe4e2d8ccc4a4c37ff18f1c9e98e219dd65f5d3d02cb27a",
+      "snapshot_id": "rq3-openhands-main-g043-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g015_round5_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G015_D_TURN_005",
+        "RQ3_G015_D_TURN_004",
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_C_TURN_004",
+        "RQ3_G015_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g015_round5_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_A_TURN_005",
+        "RQ3_G015_C_TURN_004",
+        "RQ3_G015_B_TURN_005",
+        "RQ3_G015_D_TURN_004"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 15,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g015_round5_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G015_C_TURN_005",
+        "RQ3_G015_A_TURN_005",
+        "RQ3_G015_B_TURN_005",
+        "RQ3_G015_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g015_c82d419666cc.json",
+      "snapshot_digest": "c82d419666cca78f55d8de2c605258baac57787c26e7c4dcc74a0e963aefe73e",
+      "snapshot_id": "rq3-openhands-main-g015-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "LRU",
+      "repetition": 3,
+      "run_id": "g119_round5_lru_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G119_D_TURN_005",
+        "RQ3_G119_D_TURN_004",
+        "RQ3_G119_C_TURN_005",
+        "RQ3_G119_C_TURN_004",
+        "RQ3_G119_B_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "Marconi",
+      "repetition": 3,
+      "run_id": "g119_round5_marconi_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G119_A_TURN_005",
+        "RQ3_G119_D_TURN_004",
+        "RQ3_G119_C_TURN_005",
+        "RQ3_G119_B_TURN_005",
+        "RQ3_G119_D_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    },
+    {
+      "allocation_round": 5,
+      "budget_bytes": 257556480,
+      "candidate_count": 20,
+      "group_ordinal": 119,
+      "logical_k": 5,
+      "policy": "FlowState",
+      "repetition": 3,
+      "run_id": "g119_round5_flowstate_rep03",
+      "selected_candidate_ids": [
+        "RQ3_G119_A_TURN_005",
+        "RQ3_G119_B_TURN_005",
+        "RQ3_G119_D_TURN_005",
+        "RQ3_G119_C_TURN_005"
+      ],
+      "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g119_194c48cfe2fa.json",
+      "snapshot_digest": "194c48cfe2fa9eb37fa7ac59933f3c4584230ad32df553b014edf12c7c7c0489",
+      "snapshot_id": "rq3-openhands-main-g119-round5"
+    }
+  ],
+  "runtime_visible_gpu_index": 0,
+  "sampling_seed": 20260907,
+  "schema_version": "flowstate.rq4_runtime_formal_manifest.v1",
+  "snapshot_ids": [
+    "rq3-openhands-main-g016-round2",
+    "rq3-openhands-main-g156-round2",
+    "rq3-openhands-main-g112-round2",
+    "rq3-openhands-main-g176-round2",
+    "rq3-openhands-main-g172-round2",
+    "rq3-openhands-main-g184-round2",
+    "rq3-openhands-main-g037-round3",
+    "rq3-openhands-main-g157-round3",
+    "rq3-openhands-main-g177-round3",
+    "rq3-openhands-main-g165-round3",
+    "rq3-openhands-main-g069-round3",
+    "rq3-openhands-main-g005-round3",
+    "rq3-openhands-main-g122-round4",
+    "rq3-openhands-main-g050-round4",
+    "rq3-openhands-main-g058-round4",
+    "rq3-openhands-main-g078-round4",
+    "rq3-openhands-main-g070-round4",
+    "rq3-openhands-main-g094-round4",
+    "rq3-openhands-main-g171-round5",
+    "rq3-openhands-main-g199-round5",
+    "rq3-openhands-main-g167-round5",
+    "rq3-openhands-main-g043-round5",
+    "rq3-openhands-main-g015-round5",
+    "rq3-openhands-main-g119-round5"
+  ],
+  "source_files": [
+    {
+      "path": "/home/wjg/code/FlowState/evaluation/rq3_frozen_snapshot_evaluator.py",
+      "sha256": "589c2d65f70b38f38c38d07aaa7fe19230e86509e52b5d20f35a31ed2ccc1b32"
+    },
+    {
+      "path": "/home/wjg/code/FlowState/evaluation/rq3_formal_policy_evaluation.py",
+      "sha256": "6a2650239a76f2bf2c3c504cbbb7ae01cf0490945d6f211f69ace30b1a49dbe8"
+    },
+    {
+      "path": "/home/wjg/code/FlowState/evaluation/rq3_openhands_neutral_collector.py",
+      "sha256": "7222431f16fbcad1cf540e28856a18736338b39f3f36e4df74eb454574db2f44"
+    },
+    {
+      "path": "/home/wjg/code/FlowState/evaluation/openhands_policy_to_actuator_mapping_gate.py",
+      "sha256": "3fb80b7175adbbeac8a7aea35944faa23a931e4da3a658653a7e1a8918dfaa4a"
+    },
+    {
+      "path": "/home/wjg/code/FlowState/flowstate/optimizer.py",
+      "sha256": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98"
+    },
+    {
+      "path": "/home/wjg/code/FlowState/flowstate/recovery_model.py",
+      "sha256": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
+    },
+    {
+      "path": "/home/wjg/code/FlowState/evaluation/rq4_unified_runtime_harness.py",
+      "sha256": "88a34a4cb2b7404f135104d9389b38e391067cea62df5e0202d8a9c9a4e3bf8d"
+    }
+  ],
+  "versions": {
+    "pyarrow": "25.0.0",
+    "sglang": "0.5.17",
+    "transformers": "5.12.1"
+  }
+}
