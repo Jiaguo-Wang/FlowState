@@ -1,0 +1,67 @@
+{
+  "budget_ratio": 0.25,
+  "candidate_count": 8,
+  "correctness": {
+    "gpu_cleanup_pass": true
+  },
+  "cross_run_contamination": true,
+  "fatal_error": {
+    "error": "OSError(\"Repo id must use alphanumeric chars, '-', '_' or '.'. The name cannot start or end with '-' or '.' and the maximum length is 96: '/model'.\")",
+    "phase": "Engine 初始化",
+    "traceback": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py\", line 437, in cached_files\n    hf_hub_download(\n  File \"/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py\", line 84, in _inner_fn\n    validate_repo_id(arg_value)\n  File \"/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py\", line 138, in validate_repo_id\n    raise HFValidationError(\nhuggingface_hub.errors.HFValidationError: Repo id must use alphanumeric chars, '-', '_' or '.'. The name cannot start or end with '-' or '.' and the maximum length is 96: '/model'.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/wjg/code/FlowState/evaluation/rq6_runtime_overhead.py\", line 226, in _run_worker\n    engine = SequentialEvictionTraceGateEngine(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/sgl-workspace/sglang/python/sglang/srt/entrypoints/engine.py\", line 235, in __init__\n    server_args = self.server_args_class(**kwargs)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 461, in __init__\n  File \"/sgl-workspace/sglang/python/sglang/srt/server_args.py\", line 3506, in __post_init__\n    self._apply_inkling_prefill_cuda_graph_default()\n  File \"/sgl-workspace/sglang/python/sglang/srt/server_args.py\", line 4224, in _apply_inkling_prefill_cuda_graph_default\n    arch = self.get_model_config().hf_config.architectures[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/sgl-workspace/sglang/python/sglang/srt/server_args.py\", line 8534, in get_model_config\n    self.model_config = ModelConfig.from_server_args(self)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/sgl-workspace/sglang/python/sglang/srt/configs/model_config.py\", line 549, in from_server_args\n    return ModelConfig(\n           ^^^^^^^^^^^^\n  File \"/sgl-workspace/sglang/python/sglang/srt/configs/model_config.py\", line 298, in __init__\n    get_config(\n  File \"/sgl-workspace/sglang/python/sglang/srt/utils/common.py\", line 4020, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/sgl-workspace/sglang/python/sglang/srt/utils/hf_transformers/config.py\", line 252, in get_config\n    config = parser.parse(\n             ^^^^^^^^^^^^^\n  File \"/sgl-workspace/sglang/python/sglang/srt/utils/hf_transformers/config.py\", line 84, in parse\n    config = _try_load_longcat_config(model, revision, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/sgl-workspace/sglang/python/sglang/srt/utils/hf_transformers/config.py\", line 63, in _try_load_longcat_config\n    config_dict, _ = PretrainedConfig.get_config_dict(\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py\", line 687, in get_config_dict\n    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py\", line 742, in _get_config_dict\n    resolved_config_file = cached_file(\n                           ^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py\", line 293, in cached_file\n    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py\", line 488, in cached_files\n    raise OSError(f\"{e}\") from e\nOSError: Repo id must use alphanumeric chars, '-', '_' or '.'. The name cannot start or end with '-' or '.' and the maximum length is 96: '/model'.\n"
+  },
+  "future_leakage": false,
+  "gpu_cleanup": {
+    "final_used_mib": 17,
+    "observations": [
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 0.128,
+        "used_mib": 17
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 5.243,
+        "used_mib": 17
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 10.354,
+        "used_mib": 17
+      }
+    ],
+    "stable": true
+  },
+  "heg_equivalent": false,
+  "instrumentation_equivalent": false,
+  "k": 2,
+  "pending_count": 4,
+  "population": "RQ4-OpenHands",
+  "record_kind": "runtime_control",
+  "reference_selected_checkpoint_ids": [
+    "RQ3_G016_A_TURN_002",
+    "RQ3_G016_B_TURN_002"
+  ],
+  "run_id": "g016_round2_flowstate_rep01",
+  "schema_version": "flowstate.rq6_per_epoch_overhead.v1",
+  "selected_checkpoint_ids": [
+    "RQ3_G016_A_TURN_002",
+    "RQ3_G016_B_TURN_002"
+  ],
+  "shutdown_error": null,
+  "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+  "snapshot_id": "rq3-openhands-main-g016-round2",
+  "snapshot_immutable": false,
+  "status": "INVALID",
+  "timing_repetition": 0,
+  "timings_ns": {
+    "allocation": null,
+    "construction": null,
+    "introspection": null,
+    "reconciliation": null,
+    "total_control": null
+  }
+}

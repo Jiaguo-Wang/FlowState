@@ -1,0 +1,76 @@
+{
+  "budget_ratio": 0.25,
+  "candidate_count": 8,
+  "correctness": {
+    "fa_cascade_zero": true,
+    "fa_preserved": true,
+    "fresh_engine_empty": true,
+    "future_leakage_zero": true,
+    "gpu_cleanup_pass": true,
+    "handle_mapping_pass": true,
+    "native_recurrent_eviction_zero": true,
+    "oom_zero": true,
+    "recurrent_residency_validation_pass": true,
+    "truncation_zero": true,
+    "unexpected_rematerialization_zero": true
+  },
+  "cross_run_contamination": false,
+  "fatal_error": null,
+  "fresh_engine_empty": true,
+  "future_leakage": false,
+  "gpu_cleanup": {
+    "final_used_mib": 14,
+    "observations": [
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 0.118,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 5.226,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 10.343,
+        "used_mib": 14
+      }
+    ],
+    "stable": true
+  },
+  "heg_equivalent": true,
+  "instrumentation_equivalent": true,
+  "k": 2,
+  "pending_count": 4,
+  "population": "RQ4-OpenHands",
+  "record_kind": "runtime_control",
+  "reference_selected_checkpoint_ids": [
+    "RQ3_G176_A_TURN_002",
+    "RQ3_G176_D_TURN_002"
+  ],
+  "run_id": "g176_round2_flowstate_rep03",
+  "schema_version": "flowstate.rq6_per_epoch_overhead.v1",
+  "selected_checkpoint_ids": [
+    "RQ3_G176_A_TURN_002",
+    "RQ3_G176_D_TURN_002"
+  ],
+  "shutdown_error": null,
+  "snapshot_digest": "937b24cac66ad97b26364247ae17437e2a9d1fd0793a80bbe2cabae486ce3961",
+  "snapshot_id": "rq3-openhands-main-g176-round2",
+  "snapshot_immutable": true,
+  "status": "PASS",
+  "timing_repetition": 2,
+  "timings_ns": {
+    "allocation": 307094,
+    "construction": 204980,
+    "introspection": 203729682,
+    "reconciliation": 986801421,
+    "total_control": 1192077036
+  },
+  "worker_exit_code": 0,
+  "worker_timed_out": false
+}

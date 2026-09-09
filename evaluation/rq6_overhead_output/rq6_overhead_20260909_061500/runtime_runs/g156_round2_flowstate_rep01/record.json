@@ -1,0 +1,76 @@
+{
+  "budget_ratio": 0.25,
+  "candidate_count": 8,
+  "correctness": {
+    "fa_cascade_zero": true,
+    "fa_preserved": true,
+    "fresh_engine_empty": true,
+    "future_leakage_zero": true,
+    "gpu_cleanup_pass": true,
+    "handle_mapping_pass": true,
+    "native_recurrent_eviction_zero": true,
+    "oom_zero": true,
+    "recurrent_residency_validation_pass": true,
+    "truncation_zero": true,
+    "unexpected_rematerialization_zero": true
+  },
+  "cross_run_contamination": false,
+  "fatal_error": null,
+  "fresh_engine_empty": true,
+  "future_leakage": false,
+  "gpu_cleanup": {
+    "final_used_mib": 14,
+    "observations": [
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 0.111,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 5.263,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 10.398,
+        "used_mib": 14
+      }
+    ],
+    "stable": true
+  },
+  "heg_equivalent": true,
+  "instrumentation_equivalent": true,
+  "k": 2,
+  "pending_count": 4,
+  "population": "RQ4-OpenHands",
+  "record_kind": "runtime_control",
+  "reference_selected_checkpoint_ids": [
+    "RQ3_G156_D_TURN_002",
+    "RQ3_G156_A_TURN_002"
+  ],
+  "run_id": "g156_round2_flowstate_rep01",
+  "schema_version": "flowstate.rq6_per_epoch_overhead.v1",
+  "selected_checkpoint_ids": [
+    "RQ3_G156_D_TURN_002",
+    "RQ3_G156_A_TURN_002"
+  ],
+  "shutdown_error": null,
+  "snapshot_digest": "54383899c61098073a5eca7b64b8109c80127defa5bfe31798768c1b23d6321c",
+  "snapshot_id": "rq3-openhands-main-g156-round2",
+  "snapshot_immutable": true,
+  "status": "PASS",
+  "timing_repetition": 0,
+  "timings_ns": {
+    "allocation": 315842,
+    "construction": 140997,
+    "introspection": 1092589710,
+    "reconciliation": 1943734699,
+    "total_control": 3037619272
+  },
+  "worker_exit_code": 0,
+  "worker_timed_out": false
+}

@@ -770,13 +770,41 @@ def _report(
         for ratio, entry in aggregate[population]["budgets"].items():
             position = entry["full_vs_without_position_aware"]
             marginal = entry["full_vs_without_set_dependent"]
+            full = entry["variants"]["full"]
+            no_position = entry["variants"]["without_position_aware"]
+            no_marginal = entry["variants"]["without_set_dependent"]
             lines.append(
-                f"- {ratio}：Full mean/median C={entry['variants']['full']['common_cost_ms']['mean']:.6f}/"
-                f"{entry['variants']['full']['common_cost_ms']['median']:.6f} ms；"
-                f"相对无位置感知 mean reduction={position['mean_relative_reduction']:.6%}，"
+                f"- {ratio} 成本：Full mean/median={full['common_cost_ms']['mean']:.6f}/"
+                f"{full['common_cost_ms']['median']:.6f} ms；无位置感知="
+                f"{no_position['common_cost_ms']['mean']:.6f}/{no_position['common_cost_ms']['median']:.6f} ms；"
+                f"无集合边际={no_marginal['common_cost_ms']['mean']:.6f}/{no_marginal['common_cost_ms']['median']:.6f} ms。"
+            )
+            lines.append(
+                f"  - Full 相对无位置感知：mean absolute/relative reduction="
+                f"{position['mean_absolute_reduction_ms']:.6f} ms/{position['mean_relative_reduction']:.6%}；"
+                f"relative 95% CI=[{position['relative_reduction_bootstrap_95_ci']['ci_low']:.6%}, "
+                f"{position['relative_reduction_bootstrap_95_ci']['ci_high']:.6%}]；"
                 f"W/T/L={position['win_tie_loss']['win']}/{position['win_tie_loss']['tie']}/{position['win_tie_loss']['loss']}；"
-                f"相对无集合边际 mean reduction={marginal['mean_relative_reduction']:.6%}，"
-                f"W/T/L={marginal['win_tie_loss']['win']}/{marginal['win_tie_loss']['tie']}/{marginal['win_tie_loss']['loss']}。"
+                f"选集差异率={position['selected_set_difference_rate']:.6%}。"
+            )
+            lines.append(
+                f"  - Full 相对无集合边际：mean absolute/relative reduction="
+                f"{marginal['mean_absolute_reduction_ms']:.6f} ms/{marginal['mean_relative_reduction']:.6%}；"
+                f"absolute 95% CI=[{marginal['absolute_reduction_bootstrap_95_ci']['ci_low']:.6f}, "
+                f"{marginal['absolute_reduction_bootstrap_95_ci']['ci_high']:.6f}] ms；"
+                f"relative 95% CI=[{marginal['relative_reduction_bootstrap_95_ci']['ci_low']:.6%}, "
+                f"{marginal['relative_reduction_bootstrap_95_ci']['ci_high']:.6%}]；"
+                f"W/T/L={marginal['win_tie_loss']['win']}/{marginal['win_tie_loss']['tie']}/{marginal['win_tie_loss']['loss']}；"
+                f"选集差异率={marginal['selected_set_difference_rate']:.6%}。"
+            )
+            lines.append(
+                f"  - 零当前边际率 Full/无位置感知/无集合边际="
+                f"{full['zero_current_marginal_selection_rate']:.6%}/"
+                f"{no_position['zero_current_marginal_selection_rate']:.6%}/"
+                f"{no_marginal['zero_current_marginal_selection_rate']:.6%}；"
+                f"完整覆盖率={full['full_coverage_ratio']:.6%}/"
+                f"{no_position['full_coverage_ratio']:.6%}/"
+                f"{no_marginal['full_coverage_ratio']:.6%}。"
             )
         lines.append("")
     lines.extend(
@@ -788,9 +816,11 @@ def _report(
             f"- AgentX 跨 pending 边际事件：`{effects['AgentX']['cross_pending_overlap_events']}`；"
             f"单 pending 冗余事件：`{effects['AgentX']['same_pending_redundancy_events']}`。",
             "- 结构解释：OpenHands 的候选基本各自只服务一个 pending，集合边际主要消除同一 pending 内重复覆盖；AgentX 的 inherited-FORK 候选可同时覆盖多个 pending，因此额外出现跨 pending overlap。",
+            "- 成本归因：AgentX 的六个跨 pending case 虽然都改变了选集，但公共 C(S) 全部持平；观察到的严格成本收益来自同一 pending 冗余 case，不能把跨 pending 选集变化表述成已验证的成本改进。",
+            "- 位置归因：M0 与 M2 会改变部分静态候选尾部排序，但首选与最终选集在 573 个 case 中完全一致，因而本次冻结 population 上的最终 C(S) 没有变化。",
             "- 以上是冻结 workload 上的 paired allocation 结果，不使用 future information，也不把 M0 升级为正式模型。",
             "",
-            f"- artifact root：`{output_root}`",
+            f"- artifact root：`{output_root.relative_to(REPOSITORY_ROOT) if output_root.is_relative_to(REPOSITORY_ROOT) else output_root}`",
             "",
         ]
     )

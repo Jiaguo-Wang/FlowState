@@ -1,0 +1,69 @@
+{
+  "budget_ratio": 0.25,
+  "candidate_count": 8,
+  "correctness": {
+    "gpu_cleanup_pass": true
+  },
+  "cross_run_contamination": false,
+  "fatal_error": {
+    "error": "NameError(\"name 'evaluate_objective' is not defined\")",
+    "phase": "控制路径",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/wjg/code/FlowState/evaluation/rq6_runtime_overhead.py\", line 357, in _run_worker\n    reference_objective = evaluate_objective(snapshot_k, reference_ids)\n                          ^^^^^^^^^^^^^^^^^^\nNameError: name 'evaluate_objective' is not defined\n"
+  },
+  "future_leakage": false,
+  "gpu_cleanup": {
+    "final_used_mib": 14,
+    "observations": [
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 0.085,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 5.167,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 10.25,
+        "used_mib": 14
+      }
+    ],
+    "stable": true
+  },
+  "heg_equivalent": false,
+  "instrumentation_equivalent": false,
+  "k": 2,
+  "pending_count": 4,
+  "population": "RQ4-OpenHands",
+  "record_kind": "runtime_control",
+  "reference_selected_checkpoint_ids": [
+    "RQ3_G016_A_TURN_002",
+    "RQ3_G016_B_TURN_002"
+  ],
+  "run_id": "g016_round2_flowstate_rep01",
+  "schema_version": "flowstate.rq6_per_epoch_overhead.v1",
+  "selected_checkpoint_ids": [
+    "RQ3_G016_A_TURN_002",
+    "RQ3_G016_B_TURN_002"
+  ],
+  "shutdown_error": null,
+  "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+  "snapshot_id": "rq3-openhands-main-g016-round2",
+  "snapshot_immutable": false,
+  "status": "INVALID",
+  "timing_repetition": 0,
+  "timings_ns": {
+    "allocation": null,
+    "construction": null,
+    "introspection": null,
+    "reconciliation": null,
+    "total_control": null
+  },
+  "worker_exit_code": 1,
+  "worker_timed_out": false
+}
