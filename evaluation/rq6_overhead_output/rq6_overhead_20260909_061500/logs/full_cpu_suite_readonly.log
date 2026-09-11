@@ -1,0 +1,90 @@
+............ss................................................F...F..... [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 33%]
+........................................................................ [ 41%]
+........................................................................ [ 49%]
+........................................................................ [ 58%]
+........................................................................ [ 66%]
+........................................................................ [ 74%]
+........................................................................ [ 82%]
+........................................................................ [ 91%]
+........................................................................ [ 99%]
+....                                                                     [100%]
+=================================== FAILURES ===================================
+_________________________ test_canonical_artifact_root _________________________
+
+    def test_canonical_artifact_root() -> None:
+        """正式 artifact root 必须位于持久目录，而不是 pytest temp。"""
+        if not FROZEN_AGENTX_PATH.exists():
+            pytest.skip("Frozen AgentX corpus not present")
+>       root = _cached_audit_root()
+               ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_agentx_structure_audit.py:380: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_agentx_structure_audit.py:59: in _cached_audit_root
+    _CACHE["audit_root"] = run_audit()
+                           ^^^^^^^^^^^
+evaluation/agentx_structure_audit.py:1697: in run_audit
+    output_root.mkdir(parents=True, exist_ok=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/data/agentx/audits/agentx_online_compatibility_20260909_120813')
+mode = 511, parents = True, exist_ok = True
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           OSError: [Errno 30] Read-only file system: '/home/wjg/data/agentx/audits/agentx_online_compatibility_20260909_120813'
+
+/usr/lib/python3.12/pathlib.py:1313: OSError
+__________________________ test_run_audit_integration __________________________
+
+    @pytest.mark.skipif(
+        not FROZEN_AGENTX_PATH.exists(),
+        reason="Frozen AgentX corpus not present on this host",
+    )
+    def test_run_audit_integration() -> None:
+        """端到端审计：验证所有 required artifact 均存在且 frozen gate 通过。"""
+>       artifact_root = _cached_audit_root()
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_agentx_structure_audit.py:430: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_agentx_structure_audit.py:59: in _cached_audit_root
+    _CACHE["audit_root"] = run_audit()
+                           ^^^^^^^^^^^
+evaluation/agentx_structure_audit.py:1697: in run_audit
+    output_root.mkdir(parents=True, exist_ok=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/data/agentx/audits/agentx_online_compatibility_20260909_120820')
+mode = 511, parents = True, exist_ok = True
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           OSError: [Errno 30] Read-only file system: '/home/wjg/data/agentx/audits/agentx_online_compatibility_20260909_120820'
+
+/usr/lib/python3.12/pathlib.py:1313: OSError
+=============================== warnings summary ===============================
+tests/test_rq3_formal_policy_evaluation.py:417
+  /home/wjg/code/FlowState/tests/test_rq3_formal_policy_evaluation.py:417: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tests/test_rq3_formal_policy_evaluation.py:418
+  /home/wjg/code/FlowState/tests/test_rq3_formal_policy_evaluation.py:418: PytestUnknownMarkWarning: Unknown pytest.mark.timeout - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.timeout(600)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_agentx_structure_audit.py::test_canonical_artifact_root - O...
+FAILED tests/test_agentx_structure_audit.py::test_run_audit_integration - OSE...
+2 failed, 864 passed, 2 skipped, 2 warnings in 800.86s (0:13:20)

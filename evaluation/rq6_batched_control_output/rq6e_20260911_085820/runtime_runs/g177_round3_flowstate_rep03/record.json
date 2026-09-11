@@ -1,0 +1,130 @@
+{
+  "budget_ratio": 0.25,
+  "candidate_count": 12,
+  "correctness": {
+    "fa_cascade_zero": true,
+    "fa_preserved": true,
+    "fresh_engine_empty": true,
+    "future_leakage_zero": true,
+    "gpu_cleanup_pass": true,
+    "handle_mapping_pass": true,
+    "native_recurrent_eviction_zero": true,
+    "oom_zero": true,
+    "recurrent_residency_validation_pass": true,
+    "truncation_zero": true,
+    "unexpected_rematerialization_zero": true
+  },
+  "cross_run_contamination": false,
+  "fatal_error": null,
+  "fresh_engine_empty": true,
+  "future_leakage": false,
+  "gpu_cleanup": {
+    "final_used_mib": 14,
+    "observations": [
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 0.123,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 5.239,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 10.338,
+        "used_mib": 14
+      }
+    ],
+    "stable": true
+  },
+  "heg_batched": [
+    [
+      5312,
+      5312,
+      0
+    ],
+    [
+      4672,
+      4672,
+      0
+    ],
+    [
+      4352,
+      0,
+      4352
+    ],
+    [
+      4480,
+      4480,
+      0
+    ]
+  ],
+  "heg_equivalent": true,
+  "heg_reference": [
+    [
+      5312,
+      5312,
+      0
+    ],
+    [
+      4672,
+      4672,
+      0
+    ],
+    [
+      4352,
+      0,
+      4352
+    ],
+    [
+      4480,
+      4480,
+      0
+    ]
+  ],
+  "instrumentation_equivalent": true,
+  "k": 3,
+  "pending_count": 4,
+  "population": "RQ4-OpenHands",
+  "record_kind": "runtime_control",
+  "reference_selected_checkpoint_ids": [
+    "RQ3_G177_A_TURN_003",
+    "RQ3_G177_B_TURN_003",
+    "RQ3_G177_D_TURN_003"
+  ],
+  "rpc_counts": {
+    "after": 2,
+    "batched_introspection": 1,
+    "batched_reconciliation": 1,
+    "before": 44,
+    "post_validation": 1,
+    "worker_internal_evictions": 9
+  },
+  "run_id": "g177_round3_flowstate_rep03",
+  "schema_version": "flowstate.rq6e_batched_control.v1",
+  "selected_checkpoint_ids": [
+    "RQ3_G177_A_TURN_003",
+    "RQ3_G177_B_TURN_003",
+    "RQ3_G177_D_TURN_003"
+  ],
+  "shutdown_error": null,
+  "snapshot_digest": "a4200b586ef41a4c89c29db57c851b1d472a43fcb4e26bfc2998f47901d01310",
+  "snapshot_id": "rq3-openhands-main-g177-round3",
+  "snapshot_immutable": true,
+  "status": "PASS",
+  "timing_repetition": 2,
+  "timings_ns": {
+    "allocation": 1015619,
+    "construction": 241366,
+    "introspection": 28544880,
+    "reconciliation": 66822403,
+    "total_control": 98105467
+  },
+  "worker_exit_code": 0,
+  "worker_timed_out": false
+}

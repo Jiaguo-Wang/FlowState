@@ -1,0 +1,38 @@
+{
+  "task": "RQ6-D",
+  "说明": "仅诊断同步运行时控制路径，不改变策略、恢复模型、运行时原语或正式协议。",
+  "formal_reference": "evaluation/rq6_overhead_output/rq6_overhead_20260909_061500",
+  "formal_population": {"snapshots": 24, "runs": 72},
+  "diagnostic_population": {
+    "selection_rule": "只按候选数和最小组编号选样，不读取延迟后选样",
+    "candidate_counts": [8, 12, 20],
+    "group_ordinals": [16, 5, 15],
+    "modes": ["one", "multiple"],
+    "runs": 6,
+    "noop_repetitions_per_run": 20,
+    "sequence": ["冻结 barrier 重放", "只读全局证明前快照", "空载往返", "正式只读查询", "只读全局证明后快照", "全部保留的零驱逐控制器及验证", "一个或正式多个驱逐及验证", "引擎关闭和设备清理"]
+  },
+  "budget_definition": {
+    "multiple": "使用冻结 RQ4 的 K 与预算字节数及 selected set；20 候选的选择有4个，实际驱逐16个",
+    "one": "诊断条件保留除一个目标外的全部候选，容量临时覆盖全部候选；仅用于隔离驱逐次数，不作为策略质量比较",
+    "zero": "诊断条件保留全部候选，控制器无驱逐消息；完整执行后置 census、逐候选检查及不变量验证"
+  },
+  "timing_definition": {
+    "clock": "同一主机 perf_counter_ns 单调时钟",
+    "noop": "经过同一 TCP、提交队列、scheduler 空闲安全点和响应路径，无 introspection 或状态变更",
+    "introspection": "一次正式 census 加每候选一次正式 inspect，并保留原有请求前缀摘要验证",
+    "reconciliation": "冻结控制器和连续 S0-S4 trace 加后置 census、逐候选检查与不变量验证",
+    "remove_free": "工作线程内真实 detach 与 _free_values 的主机调用时间，不插入 GPU 同步；设备工作完成时间未测量",
+    "percentile": "样本排序后的线性插值 P95；120 个 no-op 来自6个独立引擎，不能视为120个独立 workload",
+    "limits": "每规模每驱逐条件仅一个独立 run；不得将不同 run 的差值当作无噪声单次驱逐因果成本"
+  },
+  "artifact_classification": {
+    "runs": "初步诊断；状态正确性通过，但包装遗漏冗余请求摘要字段，最终结论不用此计时",
+    "wait_probe": "探针安装失败的排错记录；首个 no-op 即失败，未驱逐，设备清理通过",
+    "final_diagnostic": "修正请求摘要和 scheduler 探针安装后的最终诊断；与冻结正式结果分开报告"
+  },
+  "frozen_protection": "所有 GPU 容器仓库、模型及数据均只读挂载，只有本目录可写；完整 CPU 测试在仓库和 AgentX audits 的独立副本中运行",
+  "optimization_performed": false,
+  "formal_benchmark_rerun": false,
+  "kimi_started": false
+}

@@ -1,0 +1,149 @@
+............ss.......................................................... [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 33%]
+........................................................................ [ 41%]
+........................................................................ [ 49%]
+....F.FF................................................................ [ 58%]
+........................................................................ [ 66%]
+........................................................................ [ 74%]
+........................................................................ [ 82%]
+........................................................................ [ 91%]
+........................................................................ [ 99%]
+....                                                                     [100%]
+=================================== FAILURES ===================================
+_____________ test_real_formal_snapshot_assembly_has_frozen_counts _____________
+
+    def test_real_formal_snapshot_assembly_has_frozen_counts():
+>       snapshots, audit = _formal_inputs()
+                           ^^^^^^^^^^^^^^^^
+
+tests/test_rq3_agentx_formal_policy_evaluation.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rq3_agentx_formal_policy_evaluation.py:35: in _formal_inputs
+    return build_agentx_formal_snapshots()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/rq3_agentx_formal_policy_evaluation.py:323: in build_agentx_formal_snapshots
+    _validate_b2_runtime_summary(b2_root)
+evaluation/rq3_agentx_formal_policy_evaluation.py:296: in _validate_b2_runtime_summary
+    summary = _read_json(b2_root / "runtime_correctness.json")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/rq3_agentx_formal_policy_evaluation.py:120: in _read_json
+    return json.loads(path.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_correctness.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_correctness.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+______ test_small_real_snapshot_evaluates_three_budgets_without_mutation _______
+
+    def test_small_real_snapshot_evaluates_three_budgets_without_mutation():
+>       snapshots, _audit = _formal_inputs()
+                            ^^^^^^^^^^^^^^^^
+
+tests/test_rq3_agentx_formal_policy_evaluation.py:119: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rq3_agentx_formal_policy_evaluation.py:35: in _formal_inputs
+    return build_agentx_formal_snapshots()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/rq3_agentx_formal_policy_evaluation.py:323: in build_agentx_formal_snapshots
+    _validate_b2_runtime_summary(b2_root)
+evaluation/rq3_agentx_formal_policy_evaluation.py:296: in _validate_b2_runtime_summary
+    summary = _read_json(b2_root / "runtime_correctness.json")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/rq3_agentx_formal_policy_evaluation.py:120: in _read_json
+    return json.loads(path.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_correctness.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_correctness.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+______ test_agentx_aggregate_contains_exact_shared_and_standalone_metrics ______
+
+    def test_agentx_aggregate_contains_exact_shared_and_standalone_metrics():
+>       snapshots, _audit = _formal_inputs()
+                            ^^^^^^^^^^^^^^^^
+
+tests/test_rq3_agentx_formal_policy_evaluation.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rq3_agentx_formal_policy_evaluation.py:35: in _formal_inputs
+    return build_agentx_formal_snapshots()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/rq3_agentx_formal_policy_evaluation.py:323: in build_agentx_formal_snapshots
+    _validate_b2_runtime_summary(b2_root)
+evaluation/rq3_agentx_formal_policy_evaluation.py:296: in _validate_b2_runtime_summary
+    summary = _read_json(b2_root / "runtime_correctness.json")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/rq3_agentx_formal_policy_evaluation.py:120: in _read_json
+    return json.loads(path.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_correctness.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_correctness.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=============================== warnings summary ===============================
+tests/test_rq3_formal_policy_evaluation.py:417
+  /home/wjg/code/FlowState/tests/test_rq3_formal_policy_evaluation.py:417: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tests/test_rq3_formal_policy_evaluation.py:418
+  /home/wjg/code/FlowState/tests/test_rq3_formal_policy_evaluation.py:418: PytestUnknownMarkWarning: Unknown pytest.mark.timeout - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.timeout(600)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_rq3_agentx_formal_policy_evaluation.py::test_real_formal_snapshot_assembly_has_frozen_counts
+FAILED tests/test_rq3_agentx_formal_policy_evaluation.py::test_small_real_snapshot_evaluates_three_budgets_without_mutation
+FAILED tests/test_rq3_agentx_formal_policy_evaluation.py::test_agentx_aggregate_contains_exact_shared_and_standalone_metrics
+3 failed, 863 passed, 2 skipped, 2 warnings in 916.78s (0:15:16)

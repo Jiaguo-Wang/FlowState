@@ -1,0 +1,3483 @@
+{
+  "budget_bytes": 1030225920,
+  "controller_and_trace_ns": 252099194,
+  "controller_report": {
+    "controller_return_type": "AllocationResult",
+    "failed_evictions": [],
+    "formal_responses": [
+      {
+        "after": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 354539
+            },
+            "full_evictable": 30512,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 9,
+            "mamba_evictable": 19,
+            "mamba_free_slots": [
+              1,
+              3,
+              4,
+              7,
+              11,
+              15,
+              19,
+              23,
+              27
+            ],
+            "mamba_free_slots_sha256": "cd878ec42009ec71d01de4cce4d793650bb1748988aefe368c15e0be41208b2b",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 9
+          },
+          "path": {
+            "child_node_ids": [
+              23
+            ],
+            "extra_key": null,
+            "is_device_leaf": false,
+            "n_children": 1,
+            "node_id": 18,
+            "parent_node_id": 19,
+            "path_full_all_present": true,
+            "path_full_rows": 3776,
+            "path_full_sha256": "9d065cb253c55d2f8875f5406cb8a2ccdbbbf5b4224efae294afd97a5e6fe6e7",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              18
+            ],
+            "prefix_sha256": "eab40c96e98bceffafbcfb20a8f49eba8a5c341eb3af76c6f4c474b607cc8469",
+            "prefix_tokens": 3776,
+            "segment_lengths": [
+              2432,
+              5,
+              1339
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1339,
+            "target_full_value_sha256": "8f5e4d0aa7a254b298bca4511aa931fc8fe11458839a030c11c9251227a6d78f",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": false,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": false,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": []
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1339,
+                "8f5e4d0aa7a254b298bca4511aa931fc8fe11458839a030c11c9251227a6d78f"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                954,
+                "58b2b555eb3cdc973382f4ad283822cd033d700ced91ee52ef15103e925733fe"
+              ],
+              [
+                22,
+                1083,
+                "fbdcc8cb08caacd3786739e05fd988cb49ac8b4664b7fc9937035e40c70df804"
+              ],
+              [
+                23,
+                384,
+                "5596caf9b087331074236244095df210805bf9231656de5237496df5e365c044"
+              ],
+              [
+                24,
+                1,
+                "31a853e945f5697743325d6c99fa28db892619cdd5ac3e588c2f382708442d58"
+              ],
+              [
+                25,
+                1658,
+                "03ee2940617526964ce42b1181e3c487b63434f3214d7120ba46fa91218e2e04"
+              ],
+              [
+                26,
+                384,
+                "10d7d540f8a674a7db9432b8cbef924afde5748bbc5182f5c851ab53ec458917"
+              ],
+              [
+                27,
+                448,
+                "789571636a0ae163c60b8d91902f49171f3ac74bdff464c929352c631d002779"
+              ],
+              [
+                28,
+                640,
+                "33b1ba0a8b0605370cf51cf5a54dd26f9a18dd73eac5f8735c836ee42593cb19"
+              ],
+              [
+                29,
+                512,
+                "76f68d5e5052e1ca38001de903cfc772c782c900d212bb1f13e02cecb80fdafd"
+              ],
+              [
+                30,
+                448,
+                "b846f01e7a109155c43e36a4540a09866addee9e6fa4af6e3c217ae693600c99"
+              ],
+              [
+                31,
+                1408,
+                "2112b32f341264805f7d23bf4d271143c2ce2f73b8883a997a51366e5886b36b"
+              ],
+              [
+                32,
+                128,
+                "9040599a4300bd66282338a584298d6c505be83e72c1ac0dd9797448972c67f0"
+              ],
+              [
+                33,
+                128,
+                "bdbfa626a5c15b4539269082f274712ea143f7c5faa51d1a0354b04c62eb2860"
+              ],
+              [
+                34,
+                1984,
+                "4325ef548b804389958bf24c06199411b64926503ed63c6bf04b1a04b184e195"
+              ],
+              [
+                35,
+                576,
+                "fd121a8c19b49f2e00d22e5cfd52f01bcd13cb8ef6360e5c52de20c6d3ac37df"
+              ],
+              [
+                36,
+                6208,
+                "5af7a0d749e5c58ec9d1fe989c3b3589c6d162af9044587b223fabef9505dc0e"
+              ],
+              [
+                37,
+                1984,
+                "66654513aa8cb7993f70f780cb5264eced4e287ff2a67d30b7205d2fc319f0bf"
+              ],
+              [
+                38,
+                7424,
+                "93e2a151f04a833cc8c463a87b673ec8c83157a9932141b35f79f947cb27d1da"
+              ],
+              [
+                39,
+                384,
+                "f5724f58c9763bb940dcd3115dbe138be4ff60001f920c2d389a830c6585e613"
+              ]
+            ],
+            "full_tree_sha256": "a7501f23fd39dec18e8f705d36bc85ad00e066ea8a1001cde6c7d4beccb73ac8",
+            "mamba_node_count": 19,
+            "mamba_rows": [
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  14
+                ]
+              ],
+              [
+                26,
+                [
+                  16
+                ]
+              ],
+              [
+                27,
+                [
+                  18
+                ]
+              ],
+              [
+                28,
+                [
+                  20
+                ]
+              ],
+              [
+                29,
+                [
+                  22
+                ]
+              ],
+              [
+                30,
+                [
+                  24
+                ]
+              ],
+              [
+                31,
+                [
+                  26
+                ]
+              ],
+              [
+                32,
+                [
+                  28
+                ]
+              ],
+              [
+                33,
+                [
+                  2
+                ]
+              ],
+              [
+                34,
+                [
+                  5
+                ]
+              ],
+              [
+                35,
+                [
+                  9
+                ]
+              ],
+              [
+                36,
+                [
+                  13
+                ]
+              ],
+              [
+                37,
+                [
+                  17
+                ]
+              ],
+              [
+                38,
+                [
+                  21
+                ]
+              ],
+              [
+                39,
+                [
+                  25
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "b3066d5a845629f5de00e7172798c69bd52b38294c7f74c4bed9c03a1e3c0967",
+            "node_count": 23,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1339
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                24,
+                [
+                  26
+                ],
+                954
+              ],
+              [
+                22,
+                19,
+                [
+                  27
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [
+                  28
+                ],
+                384
+              ],
+              [
+                24,
+                19,
+                [
+                  21,
+                  25
+                ],
+                1
+              ],
+              [
+                25,
+                24,
+                [
+                  29
+                ],
+                1658
+              ],
+              [
+                26,
+                21,
+                [
+                  30
+                ],
+                384
+              ],
+              [
+                27,
+                22,
+                [
+                  31
+                ],
+                448
+              ],
+              [
+                28,
+                23,
+                [
+                  32
+                ],
+                640
+              ],
+              [
+                29,
+                25,
+                [
+                  33
+                ],
+                512
+              ],
+              [
+                30,
+                26,
+                [
+                  34
+                ],
+                448
+              ],
+              [
+                31,
+                27,
+                [
+                  35
+                ],
+                1408
+              ],
+              [
+                32,
+                28,
+                [
+                  36
+                ],
+                128
+              ],
+              [
+                33,
+                29,
+                [
+                  37
+                ],
+                128
+              ],
+              [
+                34,
+                30,
+                [
+                  38
+                ],
+                1984
+              ],
+              [
+                35,
+                31,
+                [
+                  39
+                ],
+                576
+              ],
+              [
+                36,
+                32,
+                [],
+                6208
+              ],
+              [
+                37,
+                33,
+                [],
+                1984
+              ],
+              [
+                38,
+                34,
+                [],
+                7424
+              ],
+              [
+                39,
+                35,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "0379cf394e423bf6127de015a9236d4c50989b8d53e68a82c9d63402019d032b"
+          }
+        },
+        "before": {
+          "accounting": {
+            "full_allocator": {
+              "allocated": null,
+              "allocator_type": "TokenToKVPoolAllocator",
+              "available": 354539
+            },
+            "full_evictable": 30512,
+            "full_protected": 0,
+            "mamba_allocator_type": "MambaSlotAllocator",
+            "mamba_available": 8,
+            "mamba_evictable": 20,
+            "mamba_free_slots": [
+              1,
+              4,
+              7,
+              11,
+              15,
+              19,
+              23,
+              27
+            ],
+            "mamba_free_slots_sha256": "9090ed60f1b182a11934cdd60805c2156b7ca527bd84ef20ee7e98af2ef4baef",
+            "mamba_protected": 0,
+            "mamba_schedulable_available": 8
+          },
+          "path": {
+            "child_node_ids": [
+              23
+            ],
+            "extra_key": null,
+            "is_device_leaf": false,
+            "n_children": 1,
+            "node_id": 18,
+            "parent_node_id": 19,
+            "path_full_all_present": true,
+            "path_full_rows": 3776,
+            "path_full_sha256": "9d065cb253c55d2f8875f5406cb8a2ccdbbbf5b4224efae294afd97a5e6fe6e7",
+            "path_mamba_positions": [
+              {
+                "node_id": 20,
+                "position": 2432,
+                "slots": [
+                  6
+                ]
+              },
+              {
+                "node_id": 18,
+                "position": 3776,
+                "slots": [
+                  3
+                ]
+              }
+            ],
+            "path_node_ids": [
+              20,
+              19,
+              18
+            ],
+            "prefix_sha256": "eab40c96e98bceffafbcfb20a8f49eba8a5c341eb3af76c6f4c474b607cc8469",
+            "prefix_tokens": 3776,
+            "segment_lengths": [
+              2432,
+              5,
+              1339
+            ],
+            "target_full_lock_ref": 0,
+            "target_full_present": true,
+            "target_full_value_len": 1339,
+            "target_full_value_sha256": "8f5e4d0aa7a254b298bca4511aa931fc8fe11458839a030c11c9251227a6d78f",
+            "target_mamba_host_lock_ref": 0,
+            "target_mamba_host_present": false,
+            "target_mamba_in_lru": true,
+            "target_mamba_lock_ref": 0,
+            "target_mamba_present": true,
+            "target_mamba_session_ref": 0,
+            "target_mamba_slots": [
+              3
+            ]
+          },
+          "tree": {
+            "full_rows": [
+              [
+                9,
+                0,
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+              ],
+              [
+                18,
+                1339,
+                "8f5e4d0aa7a254b298bca4511aa931fc8fe11458839a030c11c9251227a6d78f"
+              ],
+              [
+                19,
+                5,
+                "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+              ],
+              [
+                20,
+                2432,
+                "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+              ],
+              [
+                21,
+                954,
+                "58b2b555eb3cdc973382f4ad283822cd033d700ced91ee52ef15103e925733fe"
+              ],
+              [
+                22,
+                1083,
+                "fbdcc8cb08caacd3786739e05fd988cb49ac8b4664b7fc9937035e40c70df804"
+              ],
+              [
+                23,
+                384,
+                "5596caf9b087331074236244095df210805bf9231656de5237496df5e365c044"
+              ],
+              [
+                24,
+                1,
+                "31a853e945f5697743325d6c99fa28db892619cdd5ac3e588c2f382708442d58"
+              ],
+              [
+                25,
+                1658,
+                "03ee2940617526964ce42b1181e3c487b63434f3214d7120ba46fa91218e2e04"
+              ],
+              [
+                26,
+                384,
+                "10d7d540f8a674a7db9432b8cbef924afde5748bbc5182f5c851ab53ec458917"
+              ],
+              [
+                27,
+                448,
+                "789571636a0ae163c60b8d91902f49171f3ac74bdff464c929352c631d002779"
+              ],
+              [
+                28,
+                640,
+                "33b1ba0a8b0605370cf51cf5a54dd26f9a18dd73eac5f8735c836ee42593cb19"
+              ],
+              [
+                29,
+                512,
+                "76f68d5e5052e1ca38001de903cfc772c782c900d212bb1f13e02cecb80fdafd"
+              ],
+              [
+                30,
+                448,
+                "b846f01e7a109155c43e36a4540a09866addee9e6fa4af6e3c217ae693600c99"
+              ],
+              [
+                31,
+                1408,
+                "2112b32f341264805f7d23bf4d271143c2ce2f73b8883a997a51366e5886b36b"
+              ],
+              [
+                32,
+                128,
+                "9040599a4300bd66282338a584298d6c505be83e72c1ac0dd9797448972c67f0"
+              ],
+              [
+                33,
+                128,
+                "bdbfa626a5c15b4539269082f274712ea143f7c5faa51d1a0354b04c62eb2860"
+              ],
+              [
+                34,
+                1984,
+                "4325ef548b804389958bf24c06199411b64926503ed63c6bf04b1a04b184e195"
+              ],
+              [
+                35,
+                576,
+                "fd121a8c19b49f2e00d22e5cfd52f01bcd13cb8ef6360e5c52de20c6d3ac37df"
+              ],
+              [
+                36,
+                6208,
+                "5af7a0d749e5c58ec9d1fe989c3b3589c6d162af9044587b223fabef9505dc0e"
+              ],
+              [
+                37,
+                1984,
+                "66654513aa8cb7993f70f780cb5264eced4e287ff2a67d30b7205d2fc319f0bf"
+              ],
+              [
+                38,
+                7424,
+                "93e2a151f04a833cc8c463a87b673ec8c83157a9932141b35f79f947cb27d1da"
+              ],
+              [
+                39,
+                384,
+                "f5724f58c9763bb940dcd3115dbe138be4ff60001f920c2d389a830c6585e613"
+              ]
+            ],
+            "full_tree_sha256": "a7501f23fd39dec18e8f705d36bc85ad00e066ea8a1001cde6c7d4beccb73ac8",
+            "mamba_node_count": 20,
+            "mamba_rows": [
+              [
+                18,
+                [
+                  3
+                ]
+              ],
+              [
+                20,
+                [
+                  6
+                ]
+              ],
+              [
+                21,
+                [
+                  8
+                ]
+              ],
+              [
+                22,
+                [
+                  10
+                ]
+              ],
+              [
+                23,
+                [
+                  12
+                ]
+              ],
+              [
+                25,
+                [
+                  14
+                ]
+              ],
+              [
+                26,
+                [
+                  16
+                ]
+              ],
+              [
+                27,
+                [
+                  18
+                ]
+              ],
+              [
+                28,
+                [
+                  20
+                ]
+              ],
+              [
+                29,
+                [
+                  22
+                ]
+              ],
+              [
+                30,
+                [
+                  24
+                ]
+              ],
+              [
+                31,
+                [
+                  26
+                ]
+              ],
+              [
+                32,
+                [
+                  28
+                ]
+              ],
+              [
+                33,
+                [
+                  2
+                ]
+              ],
+              [
+                34,
+                [
+                  5
+                ]
+              ],
+              [
+                35,
+                [
+                  9
+                ]
+              ],
+              [
+                36,
+                [
+                  13
+                ]
+              ],
+              [
+                37,
+                [
+                  17
+                ]
+              ],
+              [
+                38,
+                [
+                  21
+                ]
+              ],
+              [
+                39,
+                [
+                  25
+                ]
+              ]
+            ],
+            "mamba_tree_sha256": "d248ea5c2e155076addd726422cdd94a4b2d60ea57d5fa7d422842b9cdf22ed9",
+            "node_count": 23,
+            "structure_rows": [
+              [
+                9,
+                null,
+                [
+                  20
+                ],
+                0
+              ],
+              [
+                18,
+                19,
+                [
+                  23
+                ],
+                1339
+              ],
+              [
+                19,
+                20,
+                [
+                  18,
+                  22,
+                  24
+                ],
+                5
+              ],
+              [
+                20,
+                9,
+                [
+                  19
+                ],
+                2432
+              ],
+              [
+                21,
+                24,
+                [
+                  26
+                ],
+                954
+              ],
+              [
+                22,
+                19,
+                [
+                  27
+                ],
+                1083
+              ],
+              [
+                23,
+                18,
+                [
+                  28
+                ],
+                384
+              ],
+              [
+                24,
+                19,
+                [
+                  21,
+                  25
+                ],
+                1
+              ],
+              [
+                25,
+                24,
+                [
+                  29
+                ],
+                1658
+              ],
+              [
+                26,
+                21,
+                [
+                  30
+                ],
+                384
+              ],
+              [
+                27,
+                22,
+                [
+                  31
+                ],
+                448
+              ],
+              [
+                28,
+                23,
+                [
+                  32
+                ],
+                640
+              ],
+              [
+                29,
+                25,
+                [
+                  33
+                ],
+                512
+              ],
+              [
+                30,
+                26,
+                [
+                  34
+                ],
+                448
+              ],
+              [
+                31,
+                27,
+                [
+                  35
+                ],
+                1408
+              ],
+              [
+                32,
+                28,
+                [
+                  36
+                ],
+                128
+              ],
+              [
+                33,
+                29,
+                [
+                  37
+                ],
+                128
+              ],
+              [
+                34,
+                30,
+                [
+                  38
+                ],
+                1984
+              ],
+              [
+                35,
+                31,
+                [
+                  39
+                ],
+                576
+              ],
+              [
+                36,
+                32,
+                [],
+                6208
+              ],
+              [
+                37,
+                33,
+                [],
+                1984
+              ],
+              [
+                38,
+                34,
+                [],
+                7424
+              ],
+              [
+                39,
+                35,
+                [],
+                384
+              ]
+            ],
+            "structure_sha256": "0379cf394e423bf6127de015a9236d4c50989b8d53e68a82c9d63402019d032b"
+          }
+        },
+        "diagnostic_timing": {
+          "client_sent_ns": 3288038987819806,
+          "profile": {
+            "counts": {
+              "_accounting_snapshot": 6,
+              "_accounting_snapshot:_tensor_ids": 6,
+              "_evict_component_and_detach_lru": 1,
+              "_find_exact_node": 82,
+              "_free_values": 1,
+              "_global_maps": 2,
+              "_global_maps:_tensor_ids": 41,
+              "_global_maps:_tensor_sha256": 46,
+              "_path_snapshot": 82,
+              "_path_snapshot:_tensor_ids": 375,
+              "_path_snapshot:_tensor_sha256": 500,
+              "_update_evictable_leaf_sets": 1,
+              "_validate_runtime_scope": 1,
+              "adapter_primitive": 1,
+              "sanity_check": 1
+            },
+            "inclusive_ns": {
+              "_accounting_snapshot": 161197,
+              "_accounting_snapshot:_tensor_ids": 87448,
+              "_evict_component_and_detach_lru": 28858,
+              "_find_exact_node": 23463279,
+              "_free_values": 109704,
+              "_global_maps": 1705492,
+              "_global_maps:_tensor_ids": 494832,
+              "_global_maps:_tensor_sha256": 994336,
+              "_path_snapshot": 64674150,
+              "_path_snapshot:_tensor_ids": 5722016,
+              "_path_snapshot:_tensor_sha256": 10848520,
+              "_update_evictable_leaf_sets": 6950,
+              "_validate_runtime_scope": 15944,
+              "adapter_primitive": 258863,
+              "sanity_check": 91633
+            }
+          },
+          "server_ended_ns": 3288039093862192,
+          "server_started_ns": 3288039012814676,
+          "server_total_ns": 81047516,
+          "submit_enter_ns": 3288039012718071,
+          "submit_exit_ns": 3288039094631630
+        },
+        "formal_primitive": "flowstate.adapters.sglang.SGLangAdapter.evict_mamba_only",
+        "nonce": "g015_one:one:evict:RQ3_G015_A_TURN_001",
+        "ok": true,
+        "proof": {
+          "cascade_called": false,
+          "fa_identity_unchanged": true,
+          "fa_unchanged": true,
+          "only_target_mamba_changed": true,
+          "path_unchanged": true,
+          "same_node": true,
+          "sanity_check": true,
+          "tree_unchanged": true
+        },
+        "scope": {
+          "cache_type": "UnifiedRadixCache",
+          "chunked_request_present": false,
+          "dp_size": 1,
+          "enable_hicache": false,
+          "enable_session_radix_cache": false,
+          "page_size": 1,
+          "pp_size": 1,
+          "running_requests": 0,
+          "scheduler_fully_idle": true,
+          "tp_size": 1,
+          "tree_core_type": "UnifiedTreeCore",
+          "waiting_requests": 0
+        },
+        "trace_rows": [
+          {
+            "boundary": "S0",
+            "checkpoints": {
+              "RQ3_G015_A_TURN_001": {
+                "checkpoint_id": "RQ3_G015_A_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  3
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 18,
+                "recurrent_present": true,
+                "token_position": 3776
+              },
+              "RQ3_G015_A_TURN_002": {
+                "checkpoint_id": "RQ3_G015_A_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  12
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 23,
+                "recurrent_present": true,
+                "token_position": 4160
+              },
+              "RQ3_G015_A_TURN_003": {
+                "checkpoint_id": "RQ3_G015_A_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  20
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 28,
+                "recurrent_present": true,
+                "token_position": 4800
+              },
+              "RQ3_G015_A_TURN_004": {
+                "checkpoint_id": "RQ3_G015_A_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  28
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 32,
+                "recurrent_present": true,
+                "token_position": 4928
+              },
+              "RQ3_G015_A_TURN_005": {
+                "checkpoint_id": "RQ3_G015_A_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  13
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 36,
+                "recurrent_present": true,
+                "token_position": 11136
+              },
+              "RQ3_G015_B_TURN_001": {
+                "checkpoint_id": "RQ3_G015_B_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  6
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 20,
+                "recurrent_present": true,
+                "token_position": 2432
+              },
+              "RQ3_G015_B_TURN_002": {
+                "checkpoint_id": "RQ3_G015_B_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  14
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 25,
+                "recurrent_present": true,
+                "token_position": 4096
+              },
+              "RQ3_G015_B_TURN_003": {
+                "checkpoint_id": "RQ3_G015_B_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  22
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 29,
+                "recurrent_present": true,
+                "token_position": 4608
+              },
+              "RQ3_G015_B_TURN_004": {
+                "checkpoint_id": "RQ3_G015_B_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  2
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 33,
+                "recurrent_present": true,
+                "token_position": 4736
+              },
+              "RQ3_G015_B_TURN_005": {
+                "checkpoint_id": "RQ3_G015_B_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  17
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 37,
+                "recurrent_present": true,
+                "token_position": 6720
+              },
+              "RQ3_G015_C_TURN_001": {
+                "checkpoint_id": "RQ3_G015_C_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  8
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 21,
+                "recurrent_present": true,
+                "token_position": 3392
+              },
+              "RQ3_G015_C_TURN_002": {
+                "checkpoint_id": "RQ3_G015_C_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  16
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 26,
+                "recurrent_present": true,
+                "token_position": 3776
+              },
+              "RQ3_G015_C_TURN_003": {
+                "checkpoint_id": "RQ3_G015_C_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  24
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 30,
+                "recurrent_present": true,
+                "token_position": 4224
+              },
+              "RQ3_G015_C_TURN_004": {
+                "checkpoint_id": "RQ3_G015_C_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  5
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 34,
+                "recurrent_present": true,
+                "token_position": 6208
+              },
+              "RQ3_G015_C_TURN_005": {
+                "checkpoint_id": "RQ3_G015_C_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  21
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 38,
+                "recurrent_present": true,
+                "token_position": 13632
+              },
+              "RQ3_G015_D_TURN_001": {
+                "checkpoint_id": "RQ3_G015_D_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  10
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 22,
+                "recurrent_present": true,
+                "token_position": 3520
+              },
+              "RQ3_G015_D_TURN_002": {
+                "checkpoint_id": "RQ3_G015_D_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  18
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 27,
+                "recurrent_present": true,
+                "token_position": 3968
+              },
+              "RQ3_G015_D_TURN_003": {
+                "checkpoint_id": "RQ3_G015_D_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  26
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 31,
+                "recurrent_present": true,
+                "token_position": 5376
+              },
+              "RQ3_G015_D_TURN_004": {
+                "checkpoint_id": "RQ3_G015_D_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  9
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 35,
+                "recurrent_present": true,
+                "token_position": 5952
+              },
+              "RQ3_G015_D_TURN_005": {
+                "checkpoint_id": "RQ3_G015_D_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  25
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 39,
+                "recurrent_present": true,
+                "token_position": 6336
+              }
+            },
+            "mamba_allocator": {
+              "available_slots": 8,
+              "evictable_slots": 20,
+              "protected_slots": 0
+            },
+            "runtime_operation": "开始目标驱逐前",
+            "sequence": 0,
+            "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+          },
+          {
+            "boundary": "S1",
+            "checkpoints": {
+              "RQ3_G015_A_TURN_001": {
+                "checkpoint_id": "RQ3_G015_A_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  3
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 18,
+                "recurrent_present": true,
+                "token_position": 3776
+              },
+              "RQ3_G015_A_TURN_002": {
+                "checkpoint_id": "RQ3_G015_A_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  12
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 23,
+                "recurrent_present": true,
+                "token_position": 4160
+              },
+              "RQ3_G015_A_TURN_003": {
+                "checkpoint_id": "RQ3_G015_A_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  20
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 28,
+                "recurrent_present": true,
+                "token_position": 4800
+              },
+              "RQ3_G015_A_TURN_004": {
+                "checkpoint_id": "RQ3_G015_A_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  28
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 32,
+                "recurrent_present": true,
+                "token_position": 4928
+              },
+              "RQ3_G015_A_TURN_005": {
+                "checkpoint_id": "RQ3_G015_A_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  13
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 36,
+                "recurrent_present": true,
+                "token_position": 11136
+              },
+              "RQ3_G015_B_TURN_001": {
+                "checkpoint_id": "RQ3_G015_B_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  6
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 20,
+                "recurrent_present": true,
+                "token_position": 2432
+              },
+              "RQ3_G015_B_TURN_002": {
+                "checkpoint_id": "RQ3_G015_B_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  14
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 25,
+                "recurrent_present": true,
+                "token_position": 4096
+              },
+              "RQ3_G015_B_TURN_003": {
+                "checkpoint_id": "RQ3_G015_B_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  22
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 29,
+                "recurrent_present": true,
+                "token_position": 4608
+              },
+              "RQ3_G015_B_TURN_004": {
+                "checkpoint_id": "RQ3_G015_B_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  2
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 33,
+                "recurrent_present": true,
+                "token_position": 4736
+              },
+              "RQ3_G015_B_TURN_005": {
+                "checkpoint_id": "RQ3_G015_B_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  17
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 37,
+                "recurrent_present": true,
+                "token_position": 6720
+              },
+              "RQ3_G015_C_TURN_001": {
+                "checkpoint_id": "RQ3_G015_C_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  8
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 21,
+                "recurrent_present": true,
+                "token_position": 3392
+              },
+              "RQ3_G015_C_TURN_002": {
+                "checkpoint_id": "RQ3_G015_C_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  16
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 26,
+                "recurrent_present": true,
+                "token_position": 3776
+              },
+              "RQ3_G015_C_TURN_003": {
+                "checkpoint_id": "RQ3_G015_C_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  24
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 30,
+                "recurrent_present": true,
+                "token_position": 4224
+              },
+              "RQ3_G015_C_TURN_004": {
+                "checkpoint_id": "RQ3_G015_C_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  5
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 34,
+                "recurrent_present": true,
+                "token_position": 6208
+              },
+              "RQ3_G015_C_TURN_005": {
+                "checkpoint_id": "RQ3_G015_C_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  21
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 38,
+                "recurrent_present": true,
+                "token_position": 13632
+              },
+              "RQ3_G015_D_TURN_001": {
+                "checkpoint_id": "RQ3_G015_D_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  10
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 22,
+                "recurrent_present": true,
+                "token_position": 3520
+              },
+              "RQ3_G015_D_TURN_002": {
+                "checkpoint_id": "RQ3_G015_D_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  18
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 27,
+                "recurrent_present": true,
+                "token_position": 3968
+              },
+              "RQ3_G015_D_TURN_003": {
+                "checkpoint_id": "RQ3_G015_D_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  26
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 31,
+                "recurrent_present": true,
+                "token_position": 5376
+              },
+              "RQ3_G015_D_TURN_004": {
+                "checkpoint_id": "RQ3_G015_D_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  9
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 35,
+                "recurrent_present": true,
+                "token_position": 5952
+              },
+              "RQ3_G015_D_TURN_005": {
+                "checkpoint_id": "RQ3_G015_D_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  25
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 39,
+                "recurrent_present": true,
+                "token_position": 6336
+              }
+            },
+            "mamba_allocator": {
+              "available_slots": 8,
+              "evictable_slots": 20,
+              "protected_slots": 0
+            },
+            "runtime_operation": "精确句柄与目标查找后",
+            "sequence": 1,
+            "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+          },
+          {
+            "boundary": "S2",
+            "checkpoints": {
+              "RQ3_G015_A_TURN_001": {
+                "checkpoint_id": "RQ3_G015_A_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": false,
+                "mamba_slots": [],
+                "mamba_status": "完全缺失",
+                "node_id": 18,
+                "recurrent_present": false,
+                "token_position": 3776
+              },
+              "RQ3_G015_A_TURN_002": {
+                "checkpoint_id": "RQ3_G015_A_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  12
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 23,
+                "recurrent_present": true,
+                "token_position": 4160
+              },
+              "RQ3_G015_A_TURN_003": {
+                "checkpoint_id": "RQ3_G015_A_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  20
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 28,
+                "recurrent_present": true,
+                "token_position": 4800
+              },
+              "RQ3_G015_A_TURN_004": {
+                "checkpoint_id": "RQ3_G015_A_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  28
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 32,
+                "recurrent_present": true,
+                "token_position": 4928
+              },
+              "RQ3_G015_A_TURN_005": {
+                "checkpoint_id": "RQ3_G015_A_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  13
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 36,
+                "recurrent_present": true,
+                "token_position": 11136
+              },
+              "RQ3_G015_B_TURN_001": {
+                "checkpoint_id": "RQ3_G015_B_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  6
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 20,
+                "recurrent_present": true,
+                "token_position": 2432
+              },
+              "RQ3_G015_B_TURN_002": {
+                "checkpoint_id": "RQ3_G015_B_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  14
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 25,
+                "recurrent_present": true,
+                "token_position": 4096
+              },
+              "RQ3_G015_B_TURN_003": {
+                "checkpoint_id": "RQ3_G015_B_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  22
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 29,
+                "recurrent_present": true,
+                "token_position": 4608
+              },
+              "RQ3_G015_B_TURN_004": {
+                "checkpoint_id": "RQ3_G015_B_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  2
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 33,
+                "recurrent_present": true,
+                "token_position": 4736
+              },
+              "RQ3_G015_B_TURN_005": {
+                "checkpoint_id": "RQ3_G015_B_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  17
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 37,
+                "recurrent_present": true,
+                "token_position": 6720
+              },
+              "RQ3_G015_C_TURN_001": {
+                "checkpoint_id": "RQ3_G015_C_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  8
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 21,
+                "recurrent_present": true,
+                "token_position": 3392
+              },
+              "RQ3_G015_C_TURN_002": {
+                "checkpoint_id": "RQ3_G015_C_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  16
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 26,
+                "recurrent_present": true,
+                "token_position": 3776
+              },
+              "RQ3_G015_C_TURN_003": {
+                "checkpoint_id": "RQ3_G015_C_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  24
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 30,
+                "recurrent_present": true,
+                "token_position": 4224
+              },
+              "RQ3_G015_C_TURN_004": {
+                "checkpoint_id": "RQ3_G015_C_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  5
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 34,
+                "recurrent_present": true,
+                "token_position": 6208
+              },
+              "RQ3_G015_C_TURN_005": {
+                "checkpoint_id": "RQ3_G015_C_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  21
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 38,
+                "recurrent_present": true,
+                "token_position": 13632
+              },
+              "RQ3_G015_D_TURN_001": {
+                "checkpoint_id": "RQ3_G015_D_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  10
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 22,
+                "recurrent_present": true,
+                "token_position": 3520
+              },
+              "RQ3_G015_D_TURN_002": {
+                "checkpoint_id": "RQ3_G015_D_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  18
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 27,
+                "recurrent_present": true,
+                "token_position": 3968
+              },
+              "RQ3_G015_D_TURN_003": {
+                "checkpoint_id": "RQ3_G015_D_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  26
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 31,
+                "recurrent_present": true,
+                "token_position": 5376
+              },
+              "RQ3_G015_D_TURN_004": {
+                "checkpoint_id": "RQ3_G015_D_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  9
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 35,
+                "recurrent_present": true,
+                "token_position": 5952
+              },
+              "RQ3_G015_D_TURN_005": {
+                "checkpoint_id": "RQ3_G015_D_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  25
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 39,
+                "recurrent_present": true,
+                "token_position": 6336
+              }
+            },
+            "mamba_allocator": {
+              "available_slots": 9,
+              "evictable_slots": 19,
+              "protected_slots": 0
+            },
+            "runtime_operation": "循环状态驱逐原语完成后",
+            "sequence": 2,
+            "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+          },
+          {
+            "boundary": "S3",
+            "checkpoints": {
+              "RQ3_G015_A_TURN_001": {
+                "checkpoint_id": "RQ3_G015_A_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": false,
+                "mamba_slots": [],
+                "mamba_status": "完全缺失",
+                "node_id": 18,
+                "recurrent_present": false,
+                "token_position": 3776
+              },
+              "RQ3_G015_A_TURN_002": {
+                "checkpoint_id": "RQ3_G015_A_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  12
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 23,
+                "recurrent_present": true,
+                "token_position": 4160
+              },
+              "RQ3_G015_A_TURN_003": {
+                "checkpoint_id": "RQ3_G015_A_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  20
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 28,
+                "recurrent_present": true,
+                "token_position": 4800
+              },
+              "RQ3_G015_A_TURN_004": {
+                "checkpoint_id": "RQ3_G015_A_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  28
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 32,
+                "recurrent_present": true,
+                "token_position": 4928
+              },
+              "RQ3_G015_A_TURN_005": {
+                "checkpoint_id": "RQ3_G015_A_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  13
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 36,
+                "recurrent_present": true,
+                "token_position": 11136
+              },
+              "RQ3_G015_B_TURN_001": {
+                "checkpoint_id": "RQ3_G015_B_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  6
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 20,
+                "recurrent_present": true,
+                "token_position": 2432
+              },
+              "RQ3_G015_B_TURN_002": {
+                "checkpoint_id": "RQ3_G015_B_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  14
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 25,
+                "recurrent_present": true,
+                "token_position": 4096
+              },
+              "RQ3_G015_B_TURN_003": {
+                "checkpoint_id": "RQ3_G015_B_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  22
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 29,
+                "recurrent_present": true,
+                "token_position": 4608
+              },
+              "RQ3_G015_B_TURN_004": {
+                "checkpoint_id": "RQ3_G015_B_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  2
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 33,
+                "recurrent_present": true,
+                "token_position": 4736
+              },
+              "RQ3_G015_B_TURN_005": {
+                "checkpoint_id": "RQ3_G015_B_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  17
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 37,
+                "recurrent_present": true,
+                "token_position": 6720
+              },
+              "RQ3_G015_C_TURN_001": {
+                "checkpoint_id": "RQ3_G015_C_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  8
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 21,
+                "recurrent_present": true,
+                "token_position": 3392
+              },
+              "RQ3_G015_C_TURN_002": {
+                "checkpoint_id": "RQ3_G015_C_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  16
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 26,
+                "recurrent_present": true,
+                "token_position": 3776
+              },
+              "RQ3_G015_C_TURN_003": {
+                "checkpoint_id": "RQ3_G015_C_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  24
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 30,
+                "recurrent_present": true,
+                "token_position": 4224
+              },
+              "RQ3_G015_C_TURN_004": {
+                "checkpoint_id": "RQ3_G015_C_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  5
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 34,
+                "recurrent_present": true,
+                "token_position": 6208
+              },
+              "RQ3_G015_C_TURN_005": {
+                "checkpoint_id": "RQ3_G015_C_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  21
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 38,
+                "recurrent_present": true,
+                "token_position": 13632
+              },
+              "RQ3_G015_D_TURN_001": {
+                "checkpoint_id": "RQ3_G015_D_TURN_001",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  10
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 22,
+                "recurrent_present": true,
+                "token_position": 3520
+              },
+              "RQ3_G015_D_TURN_002": {
+                "checkpoint_id": "RQ3_G015_D_TURN_002",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  18
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 27,
+                "recurrent_present": true,
+                "token_position": 3968
+              },
+              "RQ3_G015_D_TURN_003": {
+                "checkpoint_id": "RQ3_G015_D_TURN_003",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  26
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 31,
+                "recurrent_present": true,
+                "token_position": 5376
+              },
+              "RQ3_G015_D_TURN_004": {
+                "checkpoint_id": "RQ3_G015_D_TURN_004",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  9
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 35,
+                "recurrent_present": true,
+                "token_position": 5952
+              },
+              "RQ3_G015_D_TURN_005": {
+                "checkpoint_id": "RQ3_G015_D_TURN_005",
+                "host_present": false,
+                "in_mamba_lru": true,
+                "mamba_slots": [
+                  25
+                ],
+                "mamba_status": "设备驻留",
+                "node_id": 39,
+                "recurrent_present": true,
+                "token_position": 6336
+              }
+            },
+            "mamba_allocator": {
+              "available_slots": 9,
+              "evictable_slots": 19,
+              "protected_slots": 0
+            },
+            "runtime_operation": "驱逐后证明与检查完成后",
+            "sequence": 3,
+            "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+          }
+        ]
+      }
+    ],
+    "requested_eviction_ids": [
+      "RQ3_G015_A_TURN_001"
+    ],
+    "selected_checkpoint_ids": [
+      "RQ3_G015_A_TURN_002",
+      "RQ3_G015_A_TURN_003",
+      "RQ3_G015_A_TURN_004",
+      "RQ3_G015_A_TURN_005",
+      "RQ3_G015_B_TURN_001",
+      "RQ3_G015_B_TURN_002",
+      "RQ3_G015_B_TURN_003",
+      "RQ3_G015_B_TURN_004",
+      "RQ3_G015_B_TURN_005",
+      "RQ3_G015_C_TURN_001",
+      "RQ3_G015_C_TURN_002",
+      "RQ3_G015_C_TURN_003",
+      "RQ3_G015_C_TURN_004",
+      "RQ3_G015_C_TURN_005",
+      "RQ3_G015_D_TURN_001",
+      "RQ3_G015_D_TURN_002",
+      "RQ3_G015_D_TURN_003",
+      "RQ3_G015_D_TURN_004",
+      "RQ3_G015_D_TURN_005"
+    ],
+    "successful_eviction_ids": [
+      "RQ3_G015_A_TURN_001"
+    ]
+  },
+  "elapsed_ns": 2402077264,
+  "eviction_count": 1,
+  "invariants": {
+    "actual_evicted_ids": [
+      "RQ3_G015_A_TURN_001"
+    ],
+    "actual_retained_ids": [
+      "RQ3_G015_A_TURN_002",
+      "RQ3_G015_A_TURN_003",
+      "RQ3_G015_A_TURN_004",
+      "RQ3_G015_A_TURN_005",
+      "RQ3_G015_B_TURN_001",
+      "RQ3_G015_B_TURN_002",
+      "RQ3_G015_B_TURN_003",
+      "RQ3_G015_B_TURN_004",
+      "RQ3_G015_B_TURN_005",
+      "RQ3_G015_C_TURN_001",
+      "RQ3_G015_C_TURN_002",
+      "RQ3_G015_C_TURN_003",
+      "RQ3_G015_C_TURN_004",
+      "RQ3_G015_C_TURN_005",
+      "RQ3_G015_D_TURN_001",
+      "RQ3_G015_D_TURN_002",
+      "RQ3_G015_D_TURN_003",
+      "RQ3_G015_D_TURN_004",
+      "RQ3_G015_D_TURN_005"
+    ],
+    "actuator_responses_valid": true,
+    "candidate_ids": [
+      "RQ3_G015_A_TURN_001",
+      "RQ3_G015_A_TURN_002",
+      "RQ3_G015_A_TURN_003",
+      "RQ3_G015_A_TURN_004",
+      "RQ3_G015_A_TURN_005",
+      "RQ3_G015_B_TURN_001",
+      "RQ3_G015_B_TURN_002",
+      "RQ3_G015_B_TURN_003",
+      "RQ3_G015_B_TURN_004",
+      "RQ3_G015_B_TURN_005",
+      "RQ3_G015_C_TURN_001",
+      "RQ3_G015_C_TURN_002",
+      "RQ3_G015_C_TURN_003",
+      "RQ3_G015_C_TURN_004",
+      "RQ3_G015_C_TURN_005",
+      "RQ3_G015_D_TURN_001",
+      "RQ3_G015_D_TURN_002",
+      "RQ3_G015_D_TURN_003",
+      "RQ3_G015_D_TURN_004",
+      "RQ3_G015_D_TURN_005"
+    ],
+    "controller_exact": true,
+    "expected_evicted_ids": [
+      "RQ3_G015_A_TURN_001"
+    ],
+    "expected_released_slots": 1,
+    "expected_removed_node_ids": [
+      18
+    ],
+    "fa_allocator_unchanged": true,
+    "fa_kv_cascade": false,
+    "fa_residency_preserved": true,
+    "mamba_available_slot_delta": 1,
+    "mamba_node_count_delta": 1,
+    "native_mamba_capacity_eviction": false,
+    "node_identity_unchanged": true,
+    "observed_changed_node_ids": [],
+    "observed_removed_node_ids": [
+      18
+    ],
+    "prefix_digest_unchanged": true,
+    "recurrent_change_exact": true,
+    "resident_mamba_slot_delta": 1,
+    "selected_ids": [
+      "RQ3_G015_A_TURN_002",
+      "RQ3_G015_A_TURN_003",
+      "RQ3_G015_A_TURN_004",
+      "RQ3_G015_A_TURN_005",
+      "RQ3_G015_B_TURN_001",
+      "RQ3_G015_B_TURN_002",
+      "RQ3_G015_B_TURN_003",
+      "RQ3_G015_B_TURN_004",
+      "RQ3_G015_B_TURN_005",
+      "RQ3_G015_C_TURN_001",
+      "RQ3_G015_C_TURN_002",
+      "RQ3_G015_C_TURN_003",
+      "RQ3_G015_C_TURN_004",
+      "RQ3_G015_C_TURN_005",
+      "RQ3_G015_D_TURN_001",
+      "RQ3_G015_D_TURN_002",
+      "RQ3_G015_D_TURN_003",
+      "RQ3_G015_D_TURN_004",
+      "RQ3_G015_D_TURN_005"
+    ],
+    "selected_residency_exact": true,
+    "status": "PASS",
+    "tree_unchanged": true
+  },
+  "phase": "g015_one:one",
+  "post_validation_ns": 2149978070,
+  "trace_rows": [
+    {
+      "boundary": "S0",
+      "checkpoints": {
+        "RQ3_G015_A_TURN_001": {
+          "checkpoint_id": "RQ3_G015_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            3
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 18,
+          "recurrent_present": true,
+          "token_position": 3776
+        },
+        "RQ3_G015_A_TURN_002": {
+          "checkpoint_id": "RQ3_G015_A_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            12
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4160
+        },
+        "RQ3_G015_A_TURN_003": {
+          "checkpoint_id": "RQ3_G015_A_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 28,
+          "recurrent_present": true,
+          "token_position": 4800
+        },
+        "RQ3_G015_A_TURN_004": {
+          "checkpoint_id": "RQ3_G015_A_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            28
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 32,
+          "recurrent_present": true,
+          "token_position": 4928
+        },
+        "RQ3_G015_A_TURN_005": {
+          "checkpoint_id": "RQ3_G015_A_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            13
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 36,
+          "recurrent_present": true,
+          "token_position": 11136
+        },
+        "RQ3_G015_B_TURN_001": {
+          "checkpoint_id": "RQ3_G015_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            6
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 20,
+          "recurrent_present": true,
+          "token_position": 2432
+        },
+        "RQ3_G015_B_TURN_002": {
+          "checkpoint_id": "RQ3_G015_B_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            14
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 25,
+          "recurrent_present": true,
+          "token_position": 4096
+        },
+        "RQ3_G015_B_TURN_003": {
+          "checkpoint_id": "RQ3_G015_B_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            22
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 29,
+          "recurrent_present": true,
+          "token_position": 4608
+        },
+        "RQ3_G015_B_TURN_004": {
+          "checkpoint_id": "RQ3_G015_B_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            2
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 33,
+          "recurrent_present": true,
+          "token_position": 4736
+        },
+        "RQ3_G015_B_TURN_005": {
+          "checkpoint_id": "RQ3_G015_B_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            17
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 37,
+          "recurrent_present": true,
+          "token_position": 6720
+        },
+        "RQ3_G015_C_TURN_001": {
+          "checkpoint_id": "RQ3_G015_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3392
+        },
+        "RQ3_G015_C_TURN_002": {
+          "checkpoint_id": "RQ3_G015_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            16
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 26,
+          "recurrent_present": true,
+          "token_position": 3776
+        },
+        "RQ3_G015_C_TURN_003": {
+          "checkpoint_id": "RQ3_G015_C_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            24
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 30,
+          "recurrent_present": true,
+          "token_position": 4224
+        },
+        "RQ3_G015_C_TURN_004": {
+          "checkpoint_id": "RQ3_G015_C_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            5
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 34,
+          "recurrent_present": true,
+          "token_position": 6208
+        },
+        "RQ3_G015_C_TURN_005": {
+          "checkpoint_id": "RQ3_G015_C_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            21
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 38,
+          "recurrent_present": true,
+          "token_position": 13632
+        },
+        "RQ3_G015_D_TURN_001": {
+          "checkpoint_id": "RQ3_G015_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "RQ3_G015_D_TURN_002": {
+          "checkpoint_id": "RQ3_G015_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 27,
+          "recurrent_present": true,
+          "token_position": 3968
+        },
+        "RQ3_G015_D_TURN_003": {
+          "checkpoint_id": "RQ3_G015_D_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            26
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 31,
+          "recurrent_present": true,
+          "token_position": 5376
+        },
+        "RQ3_G015_D_TURN_004": {
+          "checkpoint_id": "RQ3_G015_D_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            9
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 35,
+          "recurrent_present": true,
+          "token_position": 5952
+        },
+        "RQ3_G015_D_TURN_005": {
+          "checkpoint_id": "RQ3_G015_D_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            25
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 39,
+          "recurrent_present": true,
+          "token_position": 6336
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 8,
+        "evictable_slots": 20,
+        "protected_slots": 0
+      },
+      "runtime_operation": "开始目标驱逐前",
+      "sequence": 0,
+      "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+    },
+    {
+      "boundary": "S1",
+      "checkpoints": {
+        "RQ3_G015_A_TURN_001": {
+          "checkpoint_id": "RQ3_G015_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            3
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 18,
+          "recurrent_present": true,
+          "token_position": 3776
+        },
+        "RQ3_G015_A_TURN_002": {
+          "checkpoint_id": "RQ3_G015_A_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            12
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4160
+        },
+        "RQ3_G015_A_TURN_003": {
+          "checkpoint_id": "RQ3_G015_A_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 28,
+          "recurrent_present": true,
+          "token_position": 4800
+        },
+        "RQ3_G015_A_TURN_004": {
+          "checkpoint_id": "RQ3_G015_A_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            28
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 32,
+          "recurrent_present": true,
+          "token_position": 4928
+        },
+        "RQ3_G015_A_TURN_005": {
+          "checkpoint_id": "RQ3_G015_A_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            13
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 36,
+          "recurrent_present": true,
+          "token_position": 11136
+        },
+        "RQ3_G015_B_TURN_001": {
+          "checkpoint_id": "RQ3_G015_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            6
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 20,
+          "recurrent_present": true,
+          "token_position": 2432
+        },
+        "RQ3_G015_B_TURN_002": {
+          "checkpoint_id": "RQ3_G015_B_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            14
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 25,
+          "recurrent_present": true,
+          "token_position": 4096
+        },
+        "RQ3_G015_B_TURN_003": {
+          "checkpoint_id": "RQ3_G015_B_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            22
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 29,
+          "recurrent_present": true,
+          "token_position": 4608
+        },
+        "RQ3_G015_B_TURN_004": {
+          "checkpoint_id": "RQ3_G015_B_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            2
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 33,
+          "recurrent_present": true,
+          "token_position": 4736
+        },
+        "RQ3_G015_B_TURN_005": {
+          "checkpoint_id": "RQ3_G015_B_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            17
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 37,
+          "recurrent_present": true,
+          "token_position": 6720
+        },
+        "RQ3_G015_C_TURN_001": {
+          "checkpoint_id": "RQ3_G015_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3392
+        },
+        "RQ3_G015_C_TURN_002": {
+          "checkpoint_id": "RQ3_G015_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            16
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 26,
+          "recurrent_present": true,
+          "token_position": 3776
+        },
+        "RQ3_G015_C_TURN_003": {
+          "checkpoint_id": "RQ3_G015_C_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            24
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 30,
+          "recurrent_present": true,
+          "token_position": 4224
+        },
+        "RQ3_G015_C_TURN_004": {
+          "checkpoint_id": "RQ3_G015_C_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            5
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 34,
+          "recurrent_present": true,
+          "token_position": 6208
+        },
+        "RQ3_G015_C_TURN_005": {
+          "checkpoint_id": "RQ3_G015_C_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            21
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 38,
+          "recurrent_present": true,
+          "token_position": 13632
+        },
+        "RQ3_G015_D_TURN_001": {
+          "checkpoint_id": "RQ3_G015_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "RQ3_G015_D_TURN_002": {
+          "checkpoint_id": "RQ3_G015_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 27,
+          "recurrent_present": true,
+          "token_position": 3968
+        },
+        "RQ3_G015_D_TURN_003": {
+          "checkpoint_id": "RQ3_G015_D_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            26
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 31,
+          "recurrent_present": true,
+          "token_position": 5376
+        },
+        "RQ3_G015_D_TURN_004": {
+          "checkpoint_id": "RQ3_G015_D_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            9
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 35,
+          "recurrent_present": true,
+          "token_position": 5952
+        },
+        "RQ3_G015_D_TURN_005": {
+          "checkpoint_id": "RQ3_G015_D_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            25
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 39,
+          "recurrent_present": true,
+          "token_position": 6336
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 8,
+        "evictable_slots": 20,
+        "protected_slots": 0
+      },
+      "runtime_operation": "精确句柄与目标查找后",
+      "sequence": 1,
+      "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+    },
+    {
+      "boundary": "S2",
+      "checkpoints": {
+        "RQ3_G015_A_TURN_001": {
+          "checkpoint_id": "RQ3_G015_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3776
+        },
+        "RQ3_G015_A_TURN_002": {
+          "checkpoint_id": "RQ3_G015_A_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            12
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4160
+        },
+        "RQ3_G015_A_TURN_003": {
+          "checkpoint_id": "RQ3_G015_A_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 28,
+          "recurrent_present": true,
+          "token_position": 4800
+        },
+        "RQ3_G015_A_TURN_004": {
+          "checkpoint_id": "RQ3_G015_A_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            28
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 32,
+          "recurrent_present": true,
+          "token_position": 4928
+        },
+        "RQ3_G015_A_TURN_005": {
+          "checkpoint_id": "RQ3_G015_A_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            13
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 36,
+          "recurrent_present": true,
+          "token_position": 11136
+        },
+        "RQ3_G015_B_TURN_001": {
+          "checkpoint_id": "RQ3_G015_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            6
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 20,
+          "recurrent_present": true,
+          "token_position": 2432
+        },
+        "RQ3_G015_B_TURN_002": {
+          "checkpoint_id": "RQ3_G015_B_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            14
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 25,
+          "recurrent_present": true,
+          "token_position": 4096
+        },
+        "RQ3_G015_B_TURN_003": {
+          "checkpoint_id": "RQ3_G015_B_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            22
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 29,
+          "recurrent_present": true,
+          "token_position": 4608
+        },
+        "RQ3_G015_B_TURN_004": {
+          "checkpoint_id": "RQ3_G015_B_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            2
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 33,
+          "recurrent_present": true,
+          "token_position": 4736
+        },
+        "RQ3_G015_B_TURN_005": {
+          "checkpoint_id": "RQ3_G015_B_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            17
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 37,
+          "recurrent_present": true,
+          "token_position": 6720
+        },
+        "RQ3_G015_C_TURN_001": {
+          "checkpoint_id": "RQ3_G015_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3392
+        },
+        "RQ3_G015_C_TURN_002": {
+          "checkpoint_id": "RQ3_G015_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            16
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 26,
+          "recurrent_present": true,
+          "token_position": 3776
+        },
+        "RQ3_G015_C_TURN_003": {
+          "checkpoint_id": "RQ3_G015_C_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            24
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 30,
+          "recurrent_present": true,
+          "token_position": 4224
+        },
+        "RQ3_G015_C_TURN_004": {
+          "checkpoint_id": "RQ3_G015_C_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            5
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 34,
+          "recurrent_present": true,
+          "token_position": 6208
+        },
+        "RQ3_G015_C_TURN_005": {
+          "checkpoint_id": "RQ3_G015_C_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            21
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 38,
+          "recurrent_present": true,
+          "token_position": 13632
+        },
+        "RQ3_G015_D_TURN_001": {
+          "checkpoint_id": "RQ3_G015_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "RQ3_G015_D_TURN_002": {
+          "checkpoint_id": "RQ3_G015_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 27,
+          "recurrent_present": true,
+          "token_position": 3968
+        },
+        "RQ3_G015_D_TURN_003": {
+          "checkpoint_id": "RQ3_G015_D_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            26
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 31,
+          "recurrent_present": true,
+          "token_position": 5376
+        },
+        "RQ3_G015_D_TURN_004": {
+          "checkpoint_id": "RQ3_G015_D_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            9
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 35,
+          "recurrent_present": true,
+          "token_position": 5952
+        },
+        "RQ3_G015_D_TURN_005": {
+          "checkpoint_id": "RQ3_G015_D_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            25
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 39,
+          "recurrent_present": true,
+          "token_position": 6336
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 9,
+        "evictable_slots": 19,
+        "protected_slots": 0
+      },
+      "runtime_operation": "循环状态驱逐原语完成后",
+      "sequence": 2,
+      "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+    },
+    {
+      "boundary": "S3",
+      "checkpoints": {
+        "RQ3_G015_A_TURN_001": {
+          "checkpoint_id": "RQ3_G015_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3776
+        },
+        "RQ3_G015_A_TURN_002": {
+          "checkpoint_id": "RQ3_G015_A_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            12
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4160
+        },
+        "RQ3_G015_A_TURN_003": {
+          "checkpoint_id": "RQ3_G015_A_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 28,
+          "recurrent_present": true,
+          "token_position": 4800
+        },
+        "RQ3_G015_A_TURN_004": {
+          "checkpoint_id": "RQ3_G015_A_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            28
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 32,
+          "recurrent_present": true,
+          "token_position": 4928
+        },
+        "RQ3_G015_A_TURN_005": {
+          "checkpoint_id": "RQ3_G015_A_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            13
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 36,
+          "recurrent_present": true,
+          "token_position": 11136
+        },
+        "RQ3_G015_B_TURN_001": {
+          "checkpoint_id": "RQ3_G015_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            6
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 20,
+          "recurrent_present": true,
+          "token_position": 2432
+        },
+        "RQ3_G015_B_TURN_002": {
+          "checkpoint_id": "RQ3_G015_B_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            14
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 25,
+          "recurrent_present": true,
+          "token_position": 4096
+        },
+        "RQ3_G015_B_TURN_003": {
+          "checkpoint_id": "RQ3_G015_B_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            22
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 29,
+          "recurrent_present": true,
+          "token_position": 4608
+        },
+        "RQ3_G015_B_TURN_004": {
+          "checkpoint_id": "RQ3_G015_B_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            2
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 33,
+          "recurrent_present": true,
+          "token_position": 4736
+        },
+        "RQ3_G015_B_TURN_005": {
+          "checkpoint_id": "RQ3_G015_B_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            17
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 37,
+          "recurrent_present": true,
+          "token_position": 6720
+        },
+        "RQ3_G015_C_TURN_001": {
+          "checkpoint_id": "RQ3_G015_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3392
+        },
+        "RQ3_G015_C_TURN_002": {
+          "checkpoint_id": "RQ3_G015_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            16
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 26,
+          "recurrent_present": true,
+          "token_position": 3776
+        },
+        "RQ3_G015_C_TURN_003": {
+          "checkpoint_id": "RQ3_G015_C_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            24
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 30,
+          "recurrent_present": true,
+          "token_position": 4224
+        },
+        "RQ3_G015_C_TURN_004": {
+          "checkpoint_id": "RQ3_G015_C_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            5
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 34,
+          "recurrent_present": true,
+          "token_position": 6208
+        },
+        "RQ3_G015_C_TURN_005": {
+          "checkpoint_id": "RQ3_G015_C_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            21
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 38,
+          "recurrent_present": true,
+          "token_position": 13632
+        },
+        "RQ3_G015_D_TURN_001": {
+          "checkpoint_id": "RQ3_G015_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "RQ3_G015_D_TURN_002": {
+          "checkpoint_id": "RQ3_G015_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 27,
+          "recurrent_present": true,
+          "token_position": 3968
+        },
+        "RQ3_G015_D_TURN_003": {
+          "checkpoint_id": "RQ3_G015_D_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            26
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 31,
+          "recurrent_present": true,
+          "token_position": 5376
+        },
+        "RQ3_G015_D_TURN_004": {
+          "checkpoint_id": "RQ3_G015_D_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            9
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 35,
+          "recurrent_present": true,
+          "token_position": 5952
+        },
+        "RQ3_G015_D_TURN_005": {
+          "checkpoint_id": "RQ3_G015_D_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            25
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 39,
+          "recurrent_present": true,
+          "token_position": 6336
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 9,
+        "evictable_slots": 19,
+        "protected_slots": 0
+      },
+      "runtime_operation": "驱逐后证明与检查完成后",
+      "sequence": 3,
+      "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+    },
+    {
+      "boundary": "S4",
+      "checkpoints": {
+        "RQ3_G015_A_TURN_001": {
+          "checkpoint_id": "RQ3_G015_A_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": false,
+          "mamba_slots": [],
+          "mamba_status": "完全缺失",
+          "node_id": 18,
+          "recurrent_present": false,
+          "token_position": 3776
+        },
+        "RQ3_G015_A_TURN_002": {
+          "checkpoint_id": "RQ3_G015_A_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            12
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 23,
+          "recurrent_present": true,
+          "token_position": 4160
+        },
+        "RQ3_G015_A_TURN_003": {
+          "checkpoint_id": "RQ3_G015_A_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            20
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 28,
+          "recurrent_present": true,
+          "token_position": 4800
+        },
+        "RQ3_G015_A_TURN_004": {
+          "checkpoint_id": "RQ3_G015_A_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            28
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 32,
+          "recurrent_present": true,
+          "token_position": 4928
+        },
+        "RQ3_G015_A_TURN_005": {
+          "checkpoint_id": "RQ3_G015_A_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            13
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 36,
+          "recurrent_present": true,
+          "token_position": 11136
+        },
+        "RQ3_G015_B_TURN_001": {
+          "checkpoint_id": "RQ3_G015_B_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            6
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 20,
+          "recurrent_present": true,
+          "token_position": 2432
+        },
+        "RQ3_G015_B_TURN_002": {
+          "checkpoint_id": "RQ3_G015_B_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            14
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 25,
+          "recurrent_present": true,
+          "token_position": 4096
+        },
+        "RQ3_G015_B_TURN_003": {
+          "checkpoint_id": "RQ3_G015_B_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            22
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 29,
+          "recurrent_present": true,
+          "token_position": 4608
+        },
+        "RQ3_G015_B_TURN_004": {
+          "checkpoint_id": "RQ3_G015_B_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            2
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 33,
+          "recurrent_present": true,
+          "token_position": 4736
+        },
+        "RQ3_G015_B_TURN_005": {
+          "checkpoint_id": "RQ3_G015_B_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            17
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 37,
+          "recurrent_present": true,
+          "token_position": 6720
+        },
+        "RQ3_G015_C_TURN_001": {
+          "checkpoint_id": "RQ3_G015_C_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            8
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 21,
+          "recurrent_present": true,
+          "token_position": 3392
+        },
+        "RQ3_G015_C_TURN_002": {
+          "checkpoint_id": "RQ3_G015_C_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            16
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 26,
+          "recurrent_present": true,
+          "token_position": 3776
+        },
+        "RQ3_G015_C_TURN_003": {
+          "checkpoint_id": "RQ3_G015_C_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            24
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 30,
+          "recurrent_present": true,
+          "token_position": 4224
+        },
+        "RQ3_G015_C_TURN_004": {
+          "checkpoint_id": "RQ3_G015_C_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            5
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 34,
+          "recurrent_present": true,
+          "token_position": 6208
+        },
+        "RQ3_G015_C_TURN_005": {
+          "checkpoint_id": "RQ3_G015_C_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            21
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 38,
+          "recurrent_present": true,
+          "token_position": 13632
+        },
+        "RQ3_G015_D_TURN_001": {
+          "checkpoint_id": "RQ3_G015_D_TURN_001",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            10
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 22,
+          "recurrent_present": true,
+          "token_position": 3520
+        },
+        "RQ3_G015_D_TURN_002": {
+          "checkpoint_id": "RQ3_G015_D_TURN_002",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            18
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 27,
+          "recurrent_present": true,
+          "token_position": 3968
+        },
+        "RQ3_G015_D_TURN_003": {
+          "checkpoint_id": "RQ3_G015_D_TURN_003",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            26
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 31,
+          "recurrent_present": true,
+          "token_position": 5376
+        },
+        "RQ3_G015_D_TURN_004": {
+          "checkpoint_id": "RQ3_G015_D_TURN_004",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            9
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 35,
+          "recurrent_present": true,
+          "token_position": 5952
+        },
+        "RQ3_G015_D_TURN_005": {
+          "checkpoint_id": "RQ3_G015_D_TURN_005",
+          "host_present": false,
+          "in_mamba_lru": true,
+          "mamba_slots": [
+            25
+          ],
+          "mamba_status": "设备驻留",
+          "node_id": 39,
+          "recurrent_present": true,
+          "token_position": 6336
+        }
+      },
+      "mamba_allocator": {
+        "available_slots": 9,
+        "evictable_slots": 19,
+        "protected_slots": 0
+      },
+      "runtime_operation": "结束连续驱逐序列前",
+      "sequence": 4,
+      "target_checkpoint_id": "RQ3_G015_A_TURN_001"
+    }
+  ],
+  "unexpected_rematerialization": false
+}

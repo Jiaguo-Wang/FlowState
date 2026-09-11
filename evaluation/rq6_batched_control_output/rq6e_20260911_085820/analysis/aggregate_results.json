@@ -1,0 +1,84 @@
+{
+  "formal_runs": 72,
+  "gates": {
+    "fa_preservation": true,
+    "formal_runs": true,
+    "gpu_cleanup": true,
+    "heg_equivalence": true,
+    "no_cross_run_contamination": true,
+    "no_fa_cascade": true,
+    "no_future_leakage": true,
+    "no_native_recurrent_eviction": true,
+    "no_unexpected_rematerialization": true,
+    "recurrent_residency": true,
+    "selected_set_equivalence": true,
+    "snapshot_immutable": true,
+    "two_rpc_per_epoch": true
+  },
+  "performance": {
+    "introspection": {
+      "after_mean_ms": 322.57272415277777,
+      "before_mean_ms": 1913.301,
+      "reduction_percent": 83.14051348152864,
+      "speedup": 5.931378745754762
+    },
+    "reconciliation": {
+      "after_mean_ms": 304.78507512500005,
+      "before_mean_ms": 6483.256,
+      "reduction_percent": 95.29888878173251,
+      "speedup": 21.27156652057537
+    },
+    "total_control": {
+      "after_mean_ms": 629.8267051805556,
+      "before_mean_ms": 8398.847,
+      "reduction_percent": 92.50103371116826,
+      "speedup": 13.335171295399835
+    }
+  },
+  "rpc": {
+    "after_mean_per_epoch": 2.0,
+    "after_total": 144,
+    "before_mean_per_epoch": 51.5,
+    "before_total": 3708,
+    "reduction_percent": 96.11650485436893
+  },
+  "snapshots": 24,
+  "stages_ms": {
+    "allocation": {
+      "count": 72,
+      "max": 1.534885,
+      "mean": 0.6104287500000001,
+      "median": 0.591808,
+      "p95": 0.9496609
+    },
+    "construction": {
+      "count": 72,
+      "max": 0.333356,
+      "mean": 0.1698715,
+      "median": 0.13506,
+      "p95": 0.2939195
+    },
+    "introspection": {
+      "count": 72,
+      "max": 3380.404025,
+      "mean": 322.57272415277777,
+      "median": 55.4948485,
+      "p95": 1612.8446170000002
+    },
+    "reconciliation": {
+      "count": 72,
+      "max": 4757.324708,
+      "mean": 304.78507512500005,
+      "median": 83.8357555,
+      "p95": 1237.1271742000026
+    },
+    "total_control": {
+      "count": 72,
+      "max": 6305.151674,
+      "mean": 629.8267051805556,
+      "median": 215.22941550000002,
+      "p95": 2708.593429700003
+    }
+  },
+  "status": "RQ6_BATCHED_CONTROL_READY"
+}

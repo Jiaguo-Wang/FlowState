@@ -1,0 +1,292 @@
+{
+  "manifest": {
+    "blocks": [
+      {
+        "body": "# RQ6-D 运行时控制瓶颈诊断",
+        "id": "title",
+        "type": "markdown"
+      },
+      {
+        "body": "## 主要结论\n\n状态：RQ6_RUNTIME_BOTTLENECK_PARTIAL。主要时间已经定位到同步控制传输和线程交接；真正recurrent槽位remove/free的主机调用平均仅0.090111 ms。三个最终多驱逐诊断的RPC总时间中，工作线程控制处理函数之外占87.79%。这不能直接当作冻结72-run内部比例。",
+        "id": "section_0",
+        "type": "markdown"
+      },
+      {
+        "body": "## 口径与数据\n\n冻结RQ6仍为24个snapshot、72次独立运行，控制段均值8398.847 ms。新增诊断只取候选数8、12、20的三个组（g016、g005、g015），每组一个单次驱逐与一个多次驱逐run。每run先测20次空载往返、完整只读查询及全部保留的零驱逐验证。所有数值单位为ms。\n主机使用同一perf_counter_ns时钟；P95采用冻结线性插值定义。空载120个样本聚集于6个引擎，不是120个独立workload。零驱逐与单次驱逐是诊断条件，多次驱逐沿用正式K及selected set。",
+        "id": "section_1",
+        "type": "markdown"
+      },
+      {
+        "body": "## 空载与只读查询\n\n无状态读取或变更的no-op往返：mean=39.908214，P95=128.027844，median=30.031593，n=120。每次依然经过TCP、提交队列、scheduler安全点和响应。不能拿空载均值乘消息数，宣称精确重建带大量令牌/trace材料的请求成本。\n六run introspection平均957.544924：入队前650.147875、队列等待0.803696、worker处理43.303316、事件返回232.900615、其后响应传输9.932058、controller本地工作20.457364。\nworker处理包含精确路径查找与FA/recurrent路径事实19.675362、全树证明18.139746、分配器事实0.802967、scope验证0.165637。其中嵌套FA索引摘要14.301964、recurrent槽位读取6.865050、共享精确路径查找6.982375。这些是嵌套时间，不能再次加入总时间。布尔驻留读取与路径循环耦合，未单独逐属性计时；冻结控制段没有独立inspect_fa_frontier调用，该步骤位于先前barrier重放。",
+        "id": "section_2",
+        "type": "markdown"
+      },
+      {
+        "chartId": "introspection_chart",
+        "id": "introspection_chart",
+        "type": "chart"
+      },
+      {
+        "body": "## 零、单次和多次驱逐的直接测量\n\n\n零驱逐不发actuator消息；单纯保留全部的controller部分平均0.173715，后置验证平均956.253098。后置验证包括census、C次inspect和不变量验证。controller+trace与后置验证已分别计时，详见每run的zero.json和changed.json。各条件只有一个独立run，跨run抖动明显；不能用表格差值拟合无噪声的每次驱逐成本。",
+        "id": "section_3",
+        "type": "markdown"
+      },
+      {
+        "id": "diagnostic_table",
+        "tableId": "diagnostic_table",
+        "type": "table"
+      },
+      {
+        "body": "## 真正的状态操作及控制消息\n\n34次真实驱逐的detach+free主机调用：mean=0.090111，P95=0.159448，max=0.205132。adapter完整原语还包含leaf-set更新及sanity检查；这些分量分别保存。没有插入GPU synchronize；设备异步完成时间为UNSUPPORTED。free归还预分配池中的槽位索引，不是向驱动释放整块checkpoint显存。\n正式每epoch同步RPC数量为2C+2N+2：两次census、2C次候选inspect、N次驱逐、N次S4。C=8/12/16/20对应N=6/9/12/16、RPC=30/44/58/74。每RPC一个请求及响应、一条scheduler命令和一次Event.wait；不存在额外远程worker跳转。\n每个驱逐保留S0到S4共5个全候选trace快照。正式每epoch的probe路径快照数为4C+2N+5NC，四档分别284/606/1048/1712。这是调用次数，不是GPU同步次数。实测诊断RPC计数与源码推导逐条件一致。",
+        "id": "section_4",
+        "type": "markdown"
+      },
+      {
+        "body": "## 等待与同步的路径证据\n\nEvent.wait上限180秒和socket超时240秒在关键路径上，但均为超时上限。sleep_on_idle默认False，源码中的poll(1000)未启用；启动等待、进程join以及GPU清理轮询均在正式计时外。控制动作显式GPU/NCCL同步为0；tensor.cpu/tolist可能隐式等待设备，其实际同步次数为UNSUPPORTED。\n队列探针保留原提交逻辑，直接记录提交入口、处理开始、处理结束及提交返回。入队前区间包含controller编码、TCP连接与传输、服务线程读行和解码；处理后至提交返回包含事件置位及线程重新运行。GIL/操作系统调度竞争是合理候选原因，但没有单独测量，不能写为已证实根因。",
+        "id": "section_5",
+        "type": "markdown"
+      },
+      {
+        "body": "## 相关性与请求可见性\n\n冻结total_control与C、驱逐数、handle数、RPC数、scope验证数的Spearman均为0.810536。这些变量在正式population中单调共变，不能用相关系数区分各自因果贡献。\nrequest-visible blocking=PARTIAL：RQ4同步reconcile和验证完成后才进入pending_resume并提交execute_request，因此workflow恢复被阻塞；控制时scheduler要求完全空闲，没有这些pending的在途请求。冻结TTFT从后续提交开始，不含这段8.4秒。\n冻结introspection+reconciliation可归属总控制均值的99.9727%；最终诊断RPC的分解在纳秒级严格闭合，处理函数外等待占87.7892%。未观测冻结运行的内部时间，不能把诊断比例或样本均值替换正式8.4秒结果。",
+        "id": "section_6",
+        "type": "markdown"
+      },
+      {
+        "body": "## 正确性、限制与未关闭项\n\n最终6/6隔离运行通过handle映射、精确recurrent驻留、FA及结构保持、仅目标recurrent变化、无原生驱逐、无重驻留和无级联检查。重放通过冻结snapshot验证，未来信息未读取；只读阶段全局树和分配器前后相等。每run清理后设备回到14 MiB、无compute process。\n源文件摘要前后相同，冻结RQ6的476项历史摘要全部匹配；所有冻结输入在运行容器中只读挂载。初步6-run与一次探针安装失败记录均保留并排除最终计时。首次失败只到no-op，没有状态变更。\nRQ6相关测试：55 passed in 10.19s；完整CPU测试：878 passed, 2 warnings in 3922.67s (1:05:22)。未新增skip或xfail。\n目前仍未将入队前传输区间拆成JSON、socket和线程竞争；设备完成时间及隐式同步次数未测量。因此返回PARTIAL，不把时间区间定位包装成更细层面的因果结论。",
+        "id": "section_7",
+        "type": "markdown"
+      },
+      {
+        "body": "## 下一步最小优化方向\n\n只针对现有同步控制通道的线程交接/唤醒做最小改动验证，首先降低空载往返成本，并以完全相同的状态语义和正确性门禁验收。本轮未实施。",
+        "id": "section_8",
+        "type": "markdown"
+      }
+    ],
+    "cards": [],
+    "charts": [
+      {
+        "dataset": "introspection",
+        "encodings": {
+          "x": {
+            "field": "stage"
+          },
+          "y": {
+            "field": "mean_ms"
+          }
+        },
+        "id": "introspection_chart",
+        "sourceId": "introspection",
+        "subtitle": "六次最终诊断；单位ms；各段不重叠，不代表冻结72次运行的分解",
+        "title": "只读查询的分段平均耗时",
+        "type": "bar"
+      }
+    ],
+    "description": "同步控制路径的CPU与运行时分段证据",
+    "generatedAt": "2026-09-11T00:38:33.065516+00:00",
+    "sources": [
+      {
+        "id": "diagnostic",
+        "label": "RQ6-D最终六次诊断条件表",
+        "path": "final_diagnostic/diagnostic_summary.json",
+        "query": {
+          "description": "直接投影已验证的六次诊断条件，不重算或修改实验数据。",
+          "engine": "SQLite 内存投影",
+          "language": "sql",
+          "sql": "SELECT run, C, N, mode, introspection_ms, zero_ms, reconciliation_ms FROM diagnostic ORDER BY C, rowid"
+        }
+      },
+      {
+        "id": "introspection",
+        "label": "RQ6-D最终六次只读查询的分段均值",
+        "path": "introspection_decomposition.json",
+        "query": {
+          "description": "按调用顺序投影已验证的不重叠分段均值。",
+          "engine": "SQLite 内存投影",
+          "language": "sql",
+          "sql": "SELECT stage, mean_ms, total_ms, run_count, \"order\" FROM introspection ORDER BY \"order\""
+        }
+      }
+    ],
+    "surface": "report",
+    "tables": [
+      {
+        "columns": [
+          {
+            "field": "run",
+            "label": "运行",
+            "type": "text"
+          },
+          {
+            "field": "C",
+            "label": "候选数"
+          },
+          {
+            "field": "N",
+            "label": "驱逐数"
+          },
+          {
+            "field": "introspection_ms",
+            "label": "只读查询ms"
+          },
+          {
+            "field": "zero_ms",
+            "label": "零驱逐ms"
+          },
+          {
+            "field": "reconciliation_ms",
+            "label": "驱逐条件ms"
+          }
+        ],
+        "dataset": "diagnostic",
+        "defaultSort": {
+          "direction": "asc",
+          "field": "C"
+        },
+        "id": "diagnostic_table",
+        "sourceId": "diagnostic",
+        "subtitle": "单位ms；零驱逐和驱逐条件均包含验证，每条件一个独立run",
+        "title": "六个独立条件的直接计时"
+      }
+    ],
+    "title": "RQ6-D 运行时控制瓶颈诊断",
+    "version": 1
+  },
+  "snapshot": {
+    "accessIssues": [
+      {
+        "id": "waiting_detail",
+        "message": "入队前时间尚未进一步拆分为JSON处理、socket等待与线程竞争。"
+      }
+    ],
+    "datasets": {
+      "diagnostic": [
+        {
+          "C": 8,
+          "N": 1,
+          "introspection_ms": 168.019692,
+          "mode": "单次驱逐",
+          "reconciliation_ms": 284.165633,
+          "run": "g016_one",
+          "zero_ms": 216.343397
+        },
+        {
+          "C": 8,
+          "N": 6,
+          "introspection_ms": 164.789371,
+          "mode": "多次驱逐",
+          "reconciliation_ms": 1672.387538,
+          "run": "g016_multiple",
+          "zero_ms": 195.652711
+        },
+        {
+          "C": 12,
+          "N": 1,
+          "introspection_ms": 423.890783,
+          "mode": "单次驱逐",
+          "reconciliation_ms": 502.313939,
+          "run": "g005_one",
+          "zero_ms": 344.031753
+        },
+        {
+          "C": 12,
+          "N": 9,
+          "introspection_ms": 340.26533,
+          "mode": "多次驱逐",
+          "reconciliation_ms": 2484.857078,
+          "run": "g005_multiple",
+          "zero_ms": 472.500639
+        },
+        {
+          "C": 20,
+          "N": 1,
+          "introspection_ms": 2599.129657,
+          "mode": "单次驱逐",
+          "reconciliation_ms": 2402.077264,
+          "run": "g015_one",
+          "zero_ms": 2606.829787
+        },
+        {
+          "C": 20,
+          "N": 16,
+          "introspection_ms": 2049.174712,
+          "mode": "多次驱逐",
+          "reconciliation_ms": 14777.551774,
+          "run": "g015_multiple",
+          "zero_ms": 1903.202593
+        }
+      ],
+      "introspection": [
+        {
+          "mean_ms": 650.1478745000001,
+          "order": 0,
+          "run_count": 6,
+          "stage": "入队前",
+          "total_ms": 957.5449241666666
+        },
+        {
+          "mean_ms": 0.8036961666666667,
+          "order": 1,
+          "run_count": 6,
+          "stage": "队列等待",
+          "total_ms": 957.5449241666666
+        },
+        {
+          "mean_ms": 43.30331616666666,
+          "order": 2,
+          "run_count": 6,
+          "stage": "处理函数",
+          "total_ms": 957.5449241666666
+        },
+        {
+          "mean_ms": 232.900615,
+          "order": 3,
+          "run_count": 6,
+          "stage": "事件返回",
+          "total_ms": 957.5449241666666
+        },
+        {
+          "mean_ms": 9.932058166666666,
+          "order": 4,
+          "run_count": 6,
+          "stage": "响应传输",
+          "total_ms": 957.5449241666666
+        },
+        {
+          "mean_ms": 20.457364166666668,
+          "order": 5,
+          "run_count": 6,
+          "stage": "本地工作",
+          "total_ms": 957.5449241666666
+        }
+      ]
+    },
+    "generatedAt": "2026-09-11T00:38:33.065516+00:00",
+    "status": "partial",
+    "version": 1
+  },
+  "sources": [
+    {
+      "id": "diagnostic",
+      "label": "RQ6-D最终六次诊断条件表",
+      "path": "final_diagnostic/diagnostic_summary.json",
+      "query": {
+        "description": "直接投影已验证的六次诊断条件，不重算或修改实验数据。",
+        "engine": "SQLite 内存投影",
+        "language": "sql",
+        "sql": "SELECT run, C, N, mode, introspection_ms, zero_ms, reconciliation_ms FROM diagnostic ORDER BY C, rowid"
+      }
+    },
+    {
+      "id": "introspection",
+      "label": "RQ6-D最终六次只读查询的分段均值",
+      "path": "introspection_decomposition.json",
+      "query": {
+        "description": "按调用顺序投影已验证的不重叠分段均值。",
+        "engine": "SQLite 内存投影",
+        "language": "sql",
+        "sql": "SELECT stage, mean_ms, total_ms, run_count, \"order\" FROM introspection ORDER BY \"order\""
+      }
+    }
+  ],
+  "surface": "report"
+}

@@ -1,0 +1,42 @@
+{
+  "actual_evictions": 34,
+  "canonical_diagnostic_root": "final_diagnostic",
+  "canonical_runs": 6,
+  "excluded_pilot_runs": 6,
+  "excluded_probe_setup_failures": 1,
+  "formal_reference": "/home/wjg/code/FlowState/evaluation/rq6_overhead_output/rq6_overhead_20260909_061500",
+  "formal_runs_read": 72,
+  "frozen_artifact_integrity": "PASS",
+  "generated_at": "2026-09-11T00:38:33.065516+00:00",
+  "gpu_state": "final_gpu_state.json",
+  "noop_samples": 120,
+  "portable_report": "report.html",
+  "report": "final_report.md",
+  "source_integrity": "PASS",
+  "source_sha256": {
+    "evaluation/rq6_bottleneck_analysis.py": "ab80951f6f4ffd69a2a34d55b10c61878a87a3ded0a953f452100432b8756d67",
+    "evaluation/rq6_bottleneck_diagnosis.py": "398bd580f447e087a142ea2325831cd53491415b3fecbb335f0d600f509c08e6",
+    "evaluation/rq6_bottleneck_report.py": "287d5292fd12ec39ec0e2dda3659304051f7defea75f2d4571dd03089fe44189",
+    "evaluation/rq6_wait_diagnosis.py": "40dfa2dcc6248e35c44f272924af0b9c5ef0c95d0465563b65d3c2869c8974db",
+    "evaluation/run_rq6d_cpu_tests.sh": "ea5947901177f918ab555add8fab03d18ad6d9ee34e496020e7ce264223d63a9",
+    "tests/runtime/rq6_bottleneck_transport.py": "2c93d52af0568c3a50934af38403480217d69e3100d44631c69ca6b6684f6db0",
+    "tests/test_rq6_bottleneck_diagnosis.py": "b136e9bd10e0a967af46d9e006f612386fc33b581a3005ddd8a911b655c2c5dc"
+  },
+  "status": "RQ6_RUNTIME_BOTTLENECK_PARTIAL",
+  "task": "RQ6-D",
+  "tests": {
+    "environment": "冻结SGLang 0.5.17镜像中的Python 3.12.3；无GPU；完整仓库与AgentX审计副本",
+    "full_cpu": {
+      "log": "full_cpu_suite.log",
+      "status": "PASS",
+      "summary": "878 passed, 2 warnings in 3922.67s (1:05:22)"
+    },
+    "new_skip_xfail": false,
+    "related": {
+      "log": "related_tests_scheduler_probe.log",
+      "status": "PASS",
+      "summary": "55 passed in 10.19s"
+    }
+  },
+  "说明": "新建独立诊断产物；没有优化、重跑72次正式benchmark、启动Kimi或修改冻结产物。"
+}

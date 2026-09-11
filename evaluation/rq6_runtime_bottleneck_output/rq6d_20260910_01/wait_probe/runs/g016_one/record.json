@@ -1,0 +1,46 @@
+{
+  "gpu_cleanup": {
+    "final_used_mib": 14,
+    "observations": [
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 0.109,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 5.244,
+        "used_mib": 14
+      },
+      {
+        "clean": true,
+        "compute_processes": [],
+        "elapsed_s": 10.33,
+        "used_mib": 14
+      }
+    ],
+    "stable": true
+  },
+  "plan": {
+    "allocation_round": 2,
+    "budget_bytes": 103022592,
+    "candidate_count": 8,
+    "group_ordinal": 16,
+    "logical_k": 2,
+    "mode": "one",
+    "policy": "FlowState",
+    "repetition": 1,
+    "run_id": "g016_one",
+    "selected_candidate_ids": [
+      "RQ3_G016_A_TURN_002",
+      "RQ3_G016_B_TURN_002"
+    ],
+    "snapshot_artifact": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/snapshots/g016_d1ba01117f0c.json",
+    "snapshot_digest": "d1ba01117f0cd2314f26466c2fc3319dee3c1d00eb47b29dfbb93c8d17263e84",
+    "snapshot_id": "rq3-openhands-main-g016-round2"
+  },
+  "status": "INVALID",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/wjg/code/FlowState/evaluation/rq6_bottleneck_diagnosis.py\", line 189, in worker\n    client._call({\"op\": \"checkpoint_control\", \"action\": \"flowstate_rq6d_noop\",\n  File \"/home/wjg/code/FlowState/evaluation/rq6_wait_diagnosis.py\", line 39, in _call\n    self.rows[-1][\"pre_submit_ns\"] = timing[\"submit_enter_ns\"] - start\n                                     ~~~~~~^^^^^^^^^^^^^^^^^^^\nKeyError: 'submit_enter_ns'\n"
+}

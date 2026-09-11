@@ -1,0 +1,75 @@
+{
+  "说明": "根据冻结镜像实际源码与控制器调用顺序审核；静态存在不等于本次实际发生。",
+  "runtime_source_sha256": {
+    "sglang/srt/managers/scheduler.py": "1d4a7683e32f0862cf5b03be33e5ec23f9d112e59546d391e28fa222fcd1619b",
+    "sglang/srt/managers/scheduler_components/idle_sleeper.py": "031821b3f74435835dd9d40007eff027eff912375eeefbc7724210150f505082",
+    "sglang/srt/server_args.py": "79d9bbb61b429574e31e7a7e319831fcd129a83a475e6ffe2b7e8a5e8eb06b0f",
+    "sglang/srt/mem_cache/allocator/mamba.py": "b3d4561b7f96aa55f615c491b3d5a8c8e72e156fd7e6cf639ee7f87cfd80674c",
+    "sglang/srt/mem_cache/unified_radix_cache.py": "05d5615fcfb70c636a19ca6ff321bec6e864a54c276f24295e4f225f5b418117"
+  },
+  "findings": [
+    {
+      "operation": "threading.Event.wait",
+      "source": "motivation/artifacts/wp3b_gate_20260820/targeted_probe.py:ProbeState.submit",
+      "configured_timeout_s": 180,
+      "critical_path": true,
+      "interpretation": "每个同步控制请求一次事件等待；180秒为上限，不是固定休眠。最终诊断区分提交到处理器开始的队列等待，以及处理完成到提交线程返回的唤醒时间。"
+    },
+    {
+      "operation": "socket.create_connection/sendall/readline",
+      "source": "motivation/artifacts/wp3b_gate_20260820/targeted_probe.py:ControlClient._call",
+      "configured_timeout_s": 240,
+      "critical_path": true,
+      "interpretation": "每次请求新建一个本机 TCP 连接，发送一行 JSON，并同步读取一行响应；240秒是异常上限，不代表实际等待。"
+    },
+    {
+      "operation": "queue.get_nowait + scheduler.on_idle",
+      "source": "tests/runtime/sequential_eviction_trace_transport.py:_wrapped_run_scheduler_process",
+      "critical_path": true,
+      "interpretation": "仅在 scheduler 完全空闲时每轮取一个控制命令；TCP服务线程只入队，状态操作由 scheduler 线程执行，没有额外远程模型 worker RPC。空闲循环迭代数未逐次计量。"
+    },
+    {
+      "operation": "IdleSleeper.poll(1000)",
+      "source": "sglang/srt/managers/scheduler_components/idle_sleeper.py:35",
+      "critical_path": false,
+      "interpretation": "冻结 engine configuration 未设置 sleep_on_idle，冻结镜像默认值为 False；不能将源码中的1秒 poll认定为本次8.4秒来源。"
+    },
+    {
+      "operation": "scheduler idle sanity_check",
+      "source": "sglang/srt/managers/scheduler.py:3925",
+      "critical_path": "可能影响排队或线程竞争，未单独逐轮计时",
+      "interpretation": "原 on_idle 在处理控制命令后继续执行 pool检查、tree sanity、metrics及负载发布。没有修改此行为；其耗时不能从服务端控制处理函数耗时直接推出。"
+    },
+    {
+      "operation": "tensor.cpu / tensor.tolist",
+      "source": "motivation/artifacts/wp3b_gate_20260820/targeted_probe.py:_tensor_sha256/_tensor_ids",
+      "critical_path": true,
+      "interpretation": "FA索引摘要和recurrent槽位读取可能隐式等待设备。诊断记录函数调用次数及耗时；没有插入CUDA同步，不能把这些调用次数等同于GPU同步次数。"
+    },
+    {
+      "operation": "GPU synchronize / NCCL barrier",
+      "source": "sglang/srt/managers/scheduler.py:329,4323",
+      "critical_path": false,
+      "interpretation": "初始化同步位于重放和计时之前；控制动作不调用分布式barrier，TP/PP/DP均为1且overlap关闭。控制动作显式同步调用为0；底层隐式同步次数为UNSUPPORTED。"
+    },
+    {
+      "operation": "sleep(0.25) / GPU cleanup polling / process.wait(timeout)",
+      "source": "evaluation/controlled_multiworkflow_v1/runtime_gate.py:wait_for_transport; evaluation/rq6_runtime_overhead.py:_execute_worker",
+      "critical_path": false,
+      "interpretation": "启动探针等待在重放前，进程等待及设备稳定轮询在worker外，均不属于冻结total_control区间。"
+    },
+    {
+      "operation": "recurrent remove/free",
+      "source": "flowstate/adapters/sglang.py:_evict_mamba_component_only; sglang/srt/mem_cache/allocator/mamba.py:MambaSlotAllocator.free",
+      "critical_path": true,
+      "interpretation": "真实detach、LRU移除和池槽位回收；free通过torch.cat追加空闲槽位索引，不是cudaFree整块checkpoint。计时限定主机调用，设备异步完成时间UNSUPPORTED。"
+    }
+  ],
+  "request_visible": {
+    "classification": "PARTIAL",
+    "pending_dispatch_blocked": true,
+    "included_in_frozen_request_ttft": false,
+    "source": "evaluation/rq4_unified_runtime_harness.py:592-712",
+    "interpretation": "同步reconcile、trace及验证全部结束后才进入pending_resume并调用execute_request；因此会阻塞workflow恢复/请求提交。scheduler控制安全点要求无在途请求，冻结请求TTFT从稍后的请求提交计时开始，未包含这段控制开销。"
+  }
+}
