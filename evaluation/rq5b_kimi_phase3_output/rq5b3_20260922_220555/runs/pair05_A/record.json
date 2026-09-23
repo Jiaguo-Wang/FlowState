@@ -1,0 +1,62 @@
+{
+  "pair": 5,
+  "condition": "A",
+  "status": "PASS",
+  "checks": {
+    "heg_before": true,
+    "heg_actual_match": true,
+    "tp_consistency": true,
+    "mla_preserved_by_intervention": true,
+    "mla_history_preserved_after_resume": true,
+    "actual_prefill_work": true,
+    "no_native_eviction": true,
+    "only_expected_evictions": true,
+    "positive_finite_latency": true,
+    "no_retraction": true,
+    "one_output_token": true,
+    "fresh_lifecycle": true,
+    "read_only_observation": true,
+    "engine_shutdown": true
+  },
+  "expected_H_E_G": {
+    "H": 16384,
+    "E": 16384,
+    "G": 0
+  },
+  "actual_H_E_G": {
+    "0": {
+      "H": 16384,
+      "E": 16384,
+      "G": 0
+    },
+    "1": {
+      "H": 16384,
+      "E": 16384,
+      "G": 0
+    }
+  },
+  "resume_latency_ms": 69.784901,
+  "forward_cuda_ms": 68.29376220703125,
+  "per_rank_resume_ms": {
+    "0": 69.784901,
+    "1": 69.58749
+  },
+  "client_request_ms": 74.086937,
+  "server_e2e_ms": 72.54099287092686,
+  "actual_extend_tokens": {
+    "0": 256,
+    "1": 256
+  },
+  "mla_before_digest_per_rank": {
+    "0": "88224e997f3d1f33c23a1bde09492e9128728925ede49d00de090e01ea8b0615",
+    "1": "88224e997f3d1f33c23a1bde09492e9128728925ede49d00de090e01ea8b0615"
+  },
+  "common_recurrent_digest_per_rank": {
+    "0": "888b69476b27f0ac0f35f57cb3260145f7c3e8ade5bf934f7d5d1a7b01911fc7",
+    "1": "888b69476b27f0ac0f35f57cb3260145f7c3e8ade5bf934f7d5d1a7b01911fc7"
+  },
+  "output_ids": [
+    74
+  ],
+  "说明": "主指标取两个 TP rank 调度器内部恢复时延的最大值；不将客户端时延或纯 CUDA 时间冒充主指标。"
+}

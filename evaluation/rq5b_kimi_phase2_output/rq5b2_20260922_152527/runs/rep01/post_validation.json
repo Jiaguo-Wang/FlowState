@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "run_id": "rep01",
+  "checks": {
+    "batched_introspection": true,
+    "read_only_observation": true,
+    "executable_state_construction": true,
+    "batched_kda_reconciliation": true,
+    "selected_set_realization": true,
+    "heg_consistency": true,
+    "mla_preservation": true,
+    "recurrent_only_mutation": true,
+    "tp_rank_consistency": true,
+    "no_native_eviction": true,
+    "no_rematerialization": true,
+    "no_attention_cascade": true,
+    "no_future_leakage": true,
+    "no_cross_run_contamination": true,
+    "aggregate_post_validation": true,
+    "gpu_cleanup": true,
+    "allocator_unchanged": true,
+    "source_unchanged": true
+  },
+  "selected_ids": [
+    "A2",
+    "B2"
+  ],
+  "actual_H_E_G": {
+    "0": [
+      {
+        "continuation_id": "A1:pending",
+        "H": 2048,
+        "compatible_candidate_ids": [
+          "A1"
+        ],
+        "E": 0,
+        "G": 2048
+      },
+      {
+        "continuation_id": "A2:pending",
+        "H": 4096,
+        "compatible_candidate_ids": [
+          "A1",
+          "A2"
+        ],
+        "E": 4096,
+        "G": 0
+      },
+      {
+        "continuation_id": "B1:pending",
+        "H": 2048,
+        "compatible_candidate_ids": [
+          "B1"
+        ],
+        "E": 0,
+        "G": 2048
+      },
+      {
+        "continuation_id": "B2:pending",
+        "H": 4096,
+        "compatible_candidate_ids": [
+          "B1",
+          "B2"
+        ],
+        "E": 4096,
+        "G": 0
+      }
+    ],
+    "1": [
+      {
+        "continuation_id": "A1:pending",
+        "H": 2048,
+        "compatible_candidate_ids": [
+          "A1"
+        ],
+        "E": 0,
+        "G": 2048
+      },
+      {
+        "continuation_id": "A2:pending",
+        "H": 4096,
+        "compatible_candidate_ids": [
+          "A1",
+          "A2"
+        ],
+        "E": 4096,
+        "G": 0
+      },
+      {
+        "continuation_id": "B1:pending",
+        "H": 2048,
+        "compatible_candidate_ids": [
+          "B1"
+        ],
+        "E": 0,
+        "G": 2048
+      },
+      {
+        "continuation_id": "B2:pending",
+        "H": 4096,
+        "compatible_candidate_ids": [
+          "B1",
+          "B2"
+        ],
+        "E": 4096,
+        "G": 0
+      }
+    ]
+  },
+  "predicted_H_E_G": [
+    {
+      "continuation_id": "A1:pending",
+      "H": 2048,
+      "compatible_candidate_ids": [
+        "A1"
+      ],
+      "E": 0,
+      "G": 2048
+    },
+    {
+      "continuation_id": "A2:pending",
+      "H": 4096,
+      "compatible_candidate_ids": [
+        "A1",
+        "A2"
+      ],
+      "E": 4096,
+      "G": 0
+    },
+    {
+      "continuation_id": "B1:pending",
+      "H": 2048,
+      "compatible_candidate_ids": [
+        "B1"
+      ],
+      "E": 0,
+      "G": 2048
+    },
+    {
+      "continuation_id": "B2:pending",
+      "H": 4096,
+      "compatible_candidate_ids": [
+        "B1",
+        "B2"
+      ],
+      "E": 4096,
+      "G": 0
+    }
+  ],
+  "rpc_counts": {
+    "introspection": 1,
+    "reconciliation": 1,
+    "rank_rpc": 4
+  },
+  "workload_sha256": "d4379dd068c14c46e4e8f9b080f80ae86c4e34816d6af1884c6a78991571158f",
+  "说明": "根据 engine shutdown 后的 record.json 最终化聚合验证状态；GPU 清理由宿主机独立核验。",
+  "engine_shutdown": true
+}

@@ -1,0 +1,88 @@
+{
+  "0": {
+    "batches": [
+      {
+        "cuda_ms": 68.29376220703125,
+        "extend_tokens": 256
+      }
+    ],
+    "eviction_events": [
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 22
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 23
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 24
+      }
+    ],
+    "forward_cuda_ms": 68.29376220703125,
+    "matches": [
+      {
+        "E": 16384,
+        "G": 0,
+        "H": 16384,
+        "cow_mamba": true,
+        "mamba_branching_seqlen": null
+      }
+    ],
+    "ok": true,
+    "output_ids": [
+      74
+    ],
+    "request_id": "measured_resume",
+    "resume_latency_ms": 69.784901,
+    "tp_rank": 0,
+    "说明": "主指标为调度器首次实际前缀匹配至单令牌请求完成的墙钟时延，含恢复、固定后缀前向及结果处理；不含引擎启动、历史物化、状态观测或驱逐。CUDA 累计前向时间仅作辅助。"
+  },
+  "1": {
+    "batches": [
+      {
+        "cuda_ms": 68.15532684326172,
+        "extend_tokens": 256
+      }
+    ],
+    "eviction_events": [
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 22
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 23
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 24
+      }
+    ],
+    "forward_cuda_ms": 68.15532684326172,
+    "matches": [
+      {
+        "E": 16384,
+        "G": 0,
+        "H": 16384,
+        "cow_mamba": true,
+        "mamba_branching_seqlen": null
+      }
+    ],
+    "ok": true,
+    "output_ids": [
+      74
+    ],
+    "request_id": "measured_resume",
+    "resume_latency_ms": 69.58749,
+    "tp_rank": 1,
+    "说明": "主指标为调度器首次实际前缀匹配至单令牌请求完成的墙钟时延，含恢复、固定后缀前向及结果处理；不含引擎启动、历史物化、状态观测或驱逐。CUDA 累计前向时间仅作辅助。"
+  }
+}

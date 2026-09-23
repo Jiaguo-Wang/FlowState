@@ -1,0 +1,141 @@
+{
+  "candidates": [
+    {
+      "checkpoint_id": "A1",
+      "workflow_id": "A",
+      "lineage_path": [
+        "A"
+      ],
+      "token_pos": 2048,
+      "memory_bytes": 43417600,
+      "recurrent_resident": true,
+      "fa_resident": true
+    },
+    {
+      "checkpoint_id": "A2",
+      "workflow_id": "A",
+      "lineage_path": [
+        "A"
+      ],
+      "token_pos": 4096,
+      "memory_bytes": 43417600,
+      "recurrent_resident": true,
+      "fa_resident": true
+    },
+    {
+      "checkpoint_id": "B1",
+      "workflow_id": "B",
+      "lineage_path": [
+        "B"
+      ],
+      "token_pos": 2048,
+      "memory_bytes": 43417600,
+      "recurrent_resident": true,
+      "fa_resident": true
+    },
+    {
+      "checkpoint_id": "B2",
+      "workflow_id": "B",
+      "lineage_path": [
+        "B"
+      ],
+      "token_pos": 4096,
+      "memory_bytes": 43417600,
+      "recurrent_resident": true,
+      "fa_resident": true
+    }
+  ],
+  "pending": [
+    {
+      "continuation_id": "A1:pending",
+      "workflow_id": "A",
+      "lineage_path": [
+        "A"
+      ],
+      "anchor_pos": 2048,
+      "resident_fa_frontier": 2048
+    },
+    {
+      "continuation_id": "A2:pending",
+      "workflow_id": "A",
+      "lineage_path": [
+        "A"
+      ],
+      "anchor_pos": 4096,
+      "resident_fa_frontier": 4096
+    },
+    {
+      "continuation_id": "B1:pending",
+      "workflow_id": "B",
+      "lineage_path": [
+        "B"
+      ],
+      "anchor_pos": 2048,
+      "resident_fa_frontier": 2048
+    },
+    {
+      "continuation_id": "B2:pending",
+      "workflow_id": "B",
+      "lineage_path": [
+        "B"
+      ],
+      "anchor_pos": 4096,
+      "resident_fa_frontier": 4096
+    }
+  ],
+  "H_E_G": [
+    {
+      "continuation_id": "A1:pending",
+      "H": 2048,
+      "compatible_candidate_ids": [
+        "A1"
+      ],
+      "E": 2048,
+      "G": 0
+    },
+    {
+      "continuation_id": "A2:pending",
+      "H": 4096,
+      "compatible_candidate_ids": [
+        "A1",
+        "A2"
+      ],
+      "E": 4096,
+      "G": 0
+    },
+    {
+      "continuation_id": "B1:pending",
+      "H": 2048,
+      "compatible_candidate_ids": [
+        "B1"
+      ],
+      "E": 2048,
+      "G": 0
+    },
+    {
+      "continuation_id": "B2:pending",
+      "H": 4096,
+      "compatible_candidate_ids": [
+        "B1",
+        "B2"
+      ],
+      "E": 4096,
+      "G": 0
+    }
+  ],
+  "budget_bytes": 86835200,
+  "logical_k": 2,
+  "recovery_model": {
+    "name": "position_aware_quadratic_v1",
+    "coefficient_a": 37.82815,
+    "coefficient_b": 0.345974143,
+    "coefficient_c": -0.156201917,
+    "gap_unit": "tokens",
+    "target_unit": "tokens",
+    "output_unit": "ms",
+    "calibration_artifact": "recovery_model_freeze_20260826_154235_266020",
+    "minimum_gap_tokens": 0,
+    "maximum_target_tokens": 131072
+  },
+  "说明": "冻结恢复成本仅用于接口功能验证，不作为 Kimi 实测延迟。"
+}

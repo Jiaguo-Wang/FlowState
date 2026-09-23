@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "final_status": "RQ5B_KIMI_FROZEN",
+  "created_at_utc": "2026-09-23T01:04:08.678137+00:00",
+  "phase_manifests": {
+    "phase1": {
+      "status": "PASS",
+      "manifest_entries_verified": 47,
+      "current_noncache_files": 48,
+      "artifact_root": "/home/wjg/code/FlowState/evaluation/rq5b_kimi_phase1_output/rq5b_20260922_064043"
+    },
+    "phase2": {
+      "status": "PASS",
+      "manifest_entries_verified": 100,
+      "current_noncache_files": 101,
+      "artifact_root": "/home/wjg/code/FlowState/evaluation/rq5b_kimi_phase2_output/rq5b2_20260922_152527"
+    },
+    "phase3": {
+      "status": "PASS",
+      "manifest_entries_verified": 159,
+      "current_noncache_files": 160,
+      "artifact_root": "/home/wjg/code/FlowState/evaluation/rq5b_kimi_phase3_output/rq5b3_20260922_220555"
+    }
+  },
+  "historical_protected_files_verified": 5267,
+  "unique_existing_files_verified": 5435,
+  "changed_existing_files": [],
+  "historical_tests": {
+    "phase2": "62/62 PASS",
+    "phase3": "46 PASS"
+  },
+  "historical_lifecycles_verified": 18,
+  "historical_gpu_cleanup": "18/18 PASS",
+  "gpu_experiments_started_this_session": 0,
+  "phase_reruns_this_session": 0,
+  "test_reruns_this_session": 0,
+  "algorithm_modified": false,
+  "phase1_frontier_evidence": [
+    {
+      "run_id": "smoke",
+      "rank": 0,
+      "resident_ancestor_E": 14336
+    },
+    {
+      "run_id": "smoke",
+      "rank": 1,
+      "resident_ancestor_E": 14336
+    },
+    {
+      "run_id": "rep01",
+      "rank": 0,
+      "resident_ancestor_E": 14336
+    },
+    {
+      "run_id": "rep01",
+      "rank": 1,
+      "resident_ancestor_E": 14336
+    },
+    {
+      "run_id": "rep02",
+      "rank": 0,
+      "resident_ancestor_E": 14336
+    },
+    {
+      "run_id": "rep02",
+      "rank": 1,
+      "resident_ancestor_E": 14336
+    },
+    {
+      "run_id": "rep03",
+      "rank": 0,
+      "resident_ancestor_E": 14336
+    },
+    {
+      "run_id": "rep03",
+      "rank": 1,
+      "resident_ancestor_E": 14336
+    }
+  ],
+  "说明": "测试和 GPU 清理结论来自已存记录，本轮只核验文件与证据。Phase 1 的两候选逻辑视图不代表完整物理路径的实际回退点；真正 8K 回退由 Phase 3 规范化公共准备和实际请求匹配证明。编译缓存与模型权重不纳入本次清单。"
+}

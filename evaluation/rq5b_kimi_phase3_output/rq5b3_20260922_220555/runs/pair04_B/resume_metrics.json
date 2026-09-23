@@ -1,0 +1,130 @@
+{
+  "0": {
+    "batches": [
+      {
+        "cuda_ms": 153.60818481445312,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 174.5182647705078,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 198.38803100585938,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 225.60809326171875,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 69.90345764160156,
+        "extend_tokens": 256
+      }
+    ],
+    "eviction_events": [
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 22
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 23
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 24
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 25
+      }
+    ],
+    "forward_cuda_ms": 822.0260314941406,
+    "matches": [
+      {
+        "E": 8192,
+        "G": 8192,
+        "H": 16384,
+        "cow_mamba": true,
+        "mamba_branching_seqlen": 16384
+      }
+    ],
+    "ok": true,
+    "output_ids": [
+      74
+    ],
+    "request_id": "measured_resume",
+    "resume_latency_ms": 834.938277,
+    "tp_rank": 0,
+    "说明": "主指标为调度器首次实际前缀匹配至单令牌请求完成的墙钟时延，含恢复、固定后缀前向及结果处理；不含引擎启动、历史物化、状态观测或驱逐。CUDA 累计前向时间仅作辅助。"
+  },
+  "1": {
+    "batches": [
+      {
+        "cuda_ms": 154.64979553222656,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 175.06361389160156,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 199.14390563964844,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 226.10581970214844,
+        "extend_tokens": 2048
+      },
+      {
+        "cuda_ms": 70.30137634277344,
+        "extend_tokens": 256
+      }
+    ],
+    "eviction_events": [
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 22
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 23
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 24
+      },
+      {
+        "authorized": true,
+        "component": "MambaComponent",
+        "node_id": 25
+      }
+    ],
+    "forward_cuda_ms": 825.2645111083984,
+    "matches": [
+      {
+        "E": 8192,
+        "G": 8192,
+        "H": 16384,
+        "cow_mamba": true,
+        "mamba_branching_seqlen": 16384
+      }
+    ],
+    "ok": true,
+    "output_ids": [
+      74
+    ],
+    "request_id": "measured_resume",
+    "resume_latency_ms": 834.645974,
+    "tp_rank": 1,
+    "说明": "主指标为调度器首次实际前缀匹配至单令牌请求完成的墙钟时延，含恢复、固定后缀前向及结果处理；不含引擎启动、历史物化、状态观测或驱逐。CUDA 累计前向时间仅作辅助。"
+  }
+}

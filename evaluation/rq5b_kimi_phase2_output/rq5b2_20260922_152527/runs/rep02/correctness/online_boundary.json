@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "candidate_fields": [
+    "checkpoint_id",
+    "fa_resident",
+    "lineage_path",
+    "memory_bytes",
+    "recurrent_resident",
+    "token_pos",
+    "workflow_id"
+  ],
+  "pending_fields": [
+    "anchor_pos",
+    "continuation_id",
+    "lineage_path",
+    "resident_fa_frontier",
+    "workflow_id"
+  ],
+  "说明": "分配输入仅含当前候选驻留、workflow、lineage、历史锚点及当前 MLA 前沿；待续元数据在物化前冻结，未执行协调后的请求，未引入未来内容、长度、访问次序或延迟。"
+}

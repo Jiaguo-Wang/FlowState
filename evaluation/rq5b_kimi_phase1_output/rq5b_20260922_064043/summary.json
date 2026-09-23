@@ -1,0 +1,67 @@
+{
+  "最终状态": "RQ5B_KIMI_PHASE1_READY",
+  "模型路径": "/data1/models/Kimi-Linear-48B-A3B-Instruct",
+  "模型完整性": "PASS：配置、tokenizer、索引与20个分片的20493个张量头部及长度匹配；未发现未完成下载文件。未进行98.25GB全量内容哈希。",
+  "SGLang": {
+    "版本": "0.5.17",
+    "commit": "29481685462732237d80d86076d6563e1f658102",
+    "镜像": "lmsysorg/sglang:v0.5.17-cu129-runtime"
+  },
+  "硬件": "2 × NVIDIA H100 PCIe，单卡81559 MiB",
+  "TP": 2,
+  "运行配置": {
+    "model_path": "/model",
+    "trust_remote_code": true,
+    "tp_size": 2,
+    "context_length": 32768,
+    "attention_backend": "triton",
+    "linear_attn_backend": "triton",
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "mamba_max_states_per_path": -1,
+    "max_mamba_cache_size": 16,
+    "disable_overlap_schedule": true,
+    "cuda_graph_backend_decode": "disabled",
+    "cuda_graph_backend_prefill": "disabled",
+    "chunked_prefill_size": 2048,
+    "mem_fraction_static": 0.8,
+    "log_level": "info"
+  },
+  "Kimi模型加载": "PASS：TP0与TP1均报告KimiLinearForCausalLM加载结束。",
+  "KDA跟踪": "PASS：双rank前缀缓存与256令牌跟踪间隔启用；8K和16K检查点实际驻留。",
+  "MLA驻留观测": "PASS",
+  "KDA驻留观测": "PASS",
+  "组件隔离初始smoke": "PASS",
+  "独立复现": {
+    "通过": 3,
+    "计划": 3
+  },
+  "TP rank一致性": "PASS",
+  "H_E_G变化": {
+    "驱逐前": {
+      "H": 16384,
+      "E": 16384,
+      "G": 0
+    },
+    "驱逐后": {
+      "H": 16384,
+      "E": 8192,
+      "G": 8192
+    }
+  },
+  "attention侧保持": "PASS：两rank的FULL树摘要及分配器计数均保持不变。",
+  "仅recurrent驱逐": "PASS：每个rank仅c2目标节点的MAMBA组件改变，c1槽位保持。",
+  "无原生recurrent驱逐": "PASS：全树recurrent差分仅包含c2目标节点。",
+  "无意外重物化": "PASS",
+  "无attention侧级联": "PASS",
+  "无跨运行污染": "PASS：四个独立引擎的初始recurrent节点数均为0。",
+  "GPU清理": "PASS：四次关闭后均观测到双卡14 MiB、无compute进程。",
+  "运行标识": [
+    "smoke",
+    "rep01",
+    "rep02",
+    "rep03"
+  ],
+  "范围": "仅完成Phase 1；未运行分配实验、恢复成本拟合、基线比较或RQ6实验，未修改冻结artifact。",
+  "结论": "Kimi Linear上的KDA检查点可通过相同的循环状态驱逐边界独立删除，MLA/attention侧状态保持驻留；该Phase 1结果支持组件控制抽象跨Hybrid架构复用。"
+}

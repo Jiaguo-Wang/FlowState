@@ -1,0 +1,298 @@
+{
+  "0": {
+    "scope": {
+      "attention_backend": "triton",
+      "cache_strategy": "extra_buffer",
+      "checks": {
+        "cache_type": true,
+        "full_component": true,
+        "hybrid_prefix_enabled": true,
+        "no_hicache": true,
+        "no_int8_pool": true,
+        "no_pending_insert": true,
+        "overlap_disabled": true,
+        "radix_enabled": true,
+        "recurrent_component": true,
+        "scheduler_idle": true,
+        "tp_rank": true,
+        "tp_size": true,
+        "tracking_enabled": true
+      },
+      "linear_attn_backend": "triton",
+      "tp_rank": 0,
+      "tp_size": 2,
+      "track_interval": 256
+    },
+    "H_E_G": {
+      "H": 16384,
+      "E": 8192,
+      "G": 8192
+    },
+    "tree_structure_digest": "0e46629e64874534a06bacd56797e620b82f57cb974a69482055e1a235cf29d7",
+    "attention_tree_digest": "88224e997f3d1f33c23a1bde09492e9128728925ede49d00de090e01ea8b0615",
+    "recurrent_tree_digest": "1105239613d9d4eb8d197ca118d06228264c7307172425d0e85145abcce0def9",
+    "checkpoints": {
+      "c1": {
+        "node_id": 21,
+        "prefix_sha256": "198b9b89f09c77f24a50cf1048fcfac3bbcb3a4fafaf066aa40c19bb7631cb01",
+        "attention_resident": true,
+        "recurrent_resident": true,
+        "recurrent_slots": [
+          6
+        ],
+        "path_node_ids": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "path_recurrent_positions": [
+          {
+            "node_id": 18,
+            "position": 2048,
+            "slots": [
+              3
+            ]
+          },
+          {
+            "node_id": 19,
+            "position": 4096,
+            "slots": [
+              4
+            ]
+          },
+          {
+            "node_id": 20,
+            "position": 6144,
+            "slots": [
+              5
+            ]
+          },
+          {
+            "node_id": 21,
+            "position": 8192,
+            "slots": [
+              6
+            ]
+          }
+        ]
+      },
+      "c2": {
+        "node_id": 25,
+        "prefix_sha256": "5917611154f7c47e06c47f0085d4dc91067ed40fe85c62730c2d27e0087d7237",
+        "attention_resident": true,
+        "recurrent_resident": false,
+        "recurrent_slots": [],
+        "path_node_ids": [
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "path_recurrent_positions": [
+          {
+            "node_id": 18,
+            "position": 2048,
+            "slots": [
+              3
+            ]
+          },
+          {
+            "node_id": 19,
+            "position": 4096,
+            "slots": [
+              4
+            ]
+          },
+          {
+            "node_id": 20,
+            "position": 6144,
+            "slots": [
+              5
+            ]
+          },
+          {
+            "node_id": 21,
+            "position": 8192,
+            "slots": [
+              6
+            ]
+          },
+          {
+            "node_id": 22,
+            "position": 10240,
+            "slots": [
+              7
+            ]
+          },
+          {
+            "node_id": 23,
+            "position": 12288,
+            "slots": [
+              8
+            ]
+          },
+          {
+            "node_id": 24,
+            "position": 14336,
+            "slots": [
+              9
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "1": {
+    "scope": {
+      "attention_backend": "triton",
+      "cache_strategy": "extra_buffer",
+      "checks": {
+        "cache_type": true,
+        "full_component": true,
+        "hybrid_prefix_enabled": true,
+        "no_hicache": true,
+        "no_int8_pool": true,
+        "no_pending_insert": true,
+        "overlap_disabled": true,
+        "radix_enabled": true,
+        "recurrent_component": true,
+        "scheduler_idle": true,
+        "tp_rank": true,
+        "tp_size": true,
+        "tracking_enabled": true
+      },
+      "linear_attn_backend": "triton",
+      "tp_rank": 1,
+      "tp_size": 2,
+      "track_interval": 256
+    },
+    "H_E_G": {
+      "H": 16384,
+      "E": 8192,
+      "G": 8192
+    },
+    "tree_structure_digest": "0e46629e64874534a06bacd56797e620b82f57cb974a69482055e1a235cf29d7",
+    "attention_tree_digest": "88224e997f3d1f33c23a1bde09492e9128728925ede49d00de090e01ea8b0615",
+    "recurrent_tree_digest": "1105239613d9d4eb8d197ca118d06228264c7307172425d0e85145abcce0def9",
+    "checkpoints": {
+      "c1": {
+        "node_id": 21,
+        "prefix_sha256": "198b9b89f09c77f24a50cf1048fcfac3bbcb3a4fafaf066aa40c19bb7631cb01",
+        "attention_resident": true,
+        "recurrent_resident": true,
+        "recurrent_slots": [
+          6
+        ],
+        "path_node_ids": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "path_recurrent_positions": [
+          {
+            "node_id": 18,
+            "position": 2048,
+            "slots": [
+              3
+            ]
+          },
+          {
+            "node_id": 19,
+            "position": 4096,
+            "slots": [
+              4
+            ]
+          },
+          {
+            "node_id": 20,
+            "position": 6144,
+            "slots": [
+              5
+            ]
+          },
+          {
+            "node_id": 21,
+            "position": 8192,
+            "slots": [
+              6
+            ]
+          }
+        ]
+      },
+      "c2": {
+        "node_id": 25,
+        "prefix_sha256": "5917611154f7c47e06c47f0085d4dc91067ed40fe85c62730c2d27e0087d7237",
+        "attention_resident": true,
+        "recurrent_resident": false,
+        "recurrent_slots": [],
+        "path_node_ids": [
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "path_recurrent_positions": [
+          {
+            "node_id": 18,
+            "position": 2048,
+            "slots": [
+              3
+            ]
+          },
+          {
+            "node_id": 19,
+            "position": 4096,
+            "slots": [
+              4
+            ]
+          },
+          {
+            "node_id": 20,
+            "position": 6144,
+            "slots": [
+              5
+            ]
+          },
+          {
+            "node_id": 21,
+            "position": 8192,
+            "slots": [
+              6
+            ]
+          },
+          {
+            "node_id": 22,
+            "position": 10240,
+            "slots": [
+              7
+            ]
+          },
+          {
+            "node_id": 23,
+            "position": 12288,
+            "slots": [
+              8
+            ]
+          },
+          {
+            "node_id": 24,
+            "position": 14336,
+            "slots": [
+              9
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

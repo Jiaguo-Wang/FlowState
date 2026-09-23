@@ -1,0 +1,14 @@
+实际运行命令（初始 smoke；三次复现仅将末尾运行标识依次改为 rep01、rep02、rep03）：
+docker run --rm --pull never --gpus '"device=0,1"' --network host --shm-size 32g \
+  --mount type=bind,src=/home/wjg/code/FlowState,dst=/home/wjg/code/FlowState,readonly \
+  --mount type=bind,src=/data1/models/Kimi-Linear-48B-A3B-Instruct,dst=/model,readonly \
+  --mount type=bind,src=/home/wjg/code/FlowState/evaluation/rq5b_kimi_phase1_output/rq5b_20260922_064043,dst=/output \
+  --env HF_HOME=/output/cache/huggingface --env HF_HUB_OFFLINE=1 --env TRANSFORMERS_OFFLINE=1 \
+  --env PYTHONDONTWRITEBYTECODE=1 \
+  --env PYTHONPATH=/home/wjg/code/FlowState:/home/wjg/code/FlowState/tests/runtime:/home/wjg/code/FlowState/motivation/artifacts/wp3b_gate_20260820 \
+  --env TRITON_CACHE_DIR=/output/cache/triton --env TORCHINDUCTOR_CACHE_DIR=/output/cache/torchinductor \
+  --env FLOWSTATE_RQ5B_PORT=49961 --workdir /home/wjg/code/FlowState \
+  --entrypoint python3 lmsysorg/sglang:v0.5.17-cu129-runtime \
+  -m evaluation.rq5b_kimi_phase1 --output-root /output --run-id smoke
+
+内部引擎启动参数见 runs/smoke/engine_args.json。采用 Engine API；所有对应的 CLI 参数均已通过 launch_server_help.txt 核实。本轮未启动独立 HTTP 服务。

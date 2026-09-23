@@ -1,0 +1,41 @@
+{
+  "run_id": "rep03",
+  "status": "PASS",
+  "phase": "完成",
+  "checks": {
+    "runtime_gate": true,
+    "rank_consistency_before": true,
+    "rank_consistency_after": true,
+    "heg_before": true,
+    "heg_after": true,
+    "recurrent_only_eviction": true,
+    "attention_preserved": true,
+    "no_native_recurrent_eviction": true,
+    "no_unexpected_rematerialization": true
+  },
+  "heg_before": {
+    "0": {
+      "H": 16384,
+      "E": 16384,
+      "G": 0
+    },
+    "1": {
+      "H": 16384,
+      "E": 16384,
+      "G": 0
+    }
+  },
+  "heg_after": {
+    "0": {
+      "H": 16384,
+      "E": 8192,
+      "G": 8192
+    },
+    "1": {
+      "H": 16384,
+      "E": 8192,
+      "G": 8192
+    }
+  },
+  "engine_shutdown": "PASS"
+}

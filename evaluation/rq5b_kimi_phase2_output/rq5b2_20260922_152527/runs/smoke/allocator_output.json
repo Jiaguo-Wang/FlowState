@@ -1,0 +1,97 @@
+{
+  "selected": [
+    {
+      "checkpoint_id": "A2",
+      "workflow_id": "A",
+      "lineage_path": [
+        "A"
+      ],
+      "token_pos": 4096,
+      "memory_bytes": 43417600,
+      "recurrent_resident": true,
+      "fa_resident": true
+    },
+    {
+      "checkpoint_id": "B2",
+      "workflow_id": "B",
+      "lineage_path": [
+        "B"
+      ],
+      "token_pos": 4096,
+      "memory_bytes": 43417600,
+      "recurrent_resident": true,
+      "fa_resident": true
+    }
+  ],
+  "total_benefit_ms": 308.69791123199997,
+  "recovery_cost_before_ms": 461.52868903999996,
+  "recovery_cost_after_ms": 152.830777808,
+  "used_bytes": 86835200,
+  "selected_ids": [
+    "A2",
+    "B2"
+  ],
+  "candidate_count": 4,
+  "candidate_ids": [
+    "A1",
+    "A2",
+    "B1",
+    "B2"
+  ],
+  "logical_k": 2,
+  "marginal_selection_sequence": [
+    {
+      "checkpoint_id": "A2",
+      "before_ms": 461.52868903999996,
+      "after_ms": 307.179733424,
+      "marginal_gain_ms": 154.34895561599996
+    },
+    {
+      "checkpoint_id": "B2",
+      "before_ms": 307.179733424,
+      "after_ms": 152.830777808,
+      "marginal_gain_ms": 154.348955616
+    }
+  ],
+  "predicted_H_E_G": [
+    {
+      "continuation_id": "A1:pending",
+      "H": 2048,
+      "compatible_candidate_ids": [
+        "A1"
+      ],
+      "E": 0,
+      "G": 2048
+    },
+    {
+      "continuation_id": "A2:pending",
+      "H": 4096,
+      "compatible_candidate_ids": [
+        "A1",
+        "A2"
+      ],
+      "E": 4096,
+      "G": 0
+    },
+    {
+      "continuation_id": "B1:pending",
+      "H": 2048,
+      "compatible_candidate_ids": [
+        "B1"
+      ],
+      "E": 0,
+      "G": 2048
+    },
+    {
+      "continuation_id": "B2:pending",
+      "H": 4096,
+      "compatible_candidate_ids": [
+        "B1",
+        "B2"
+      ],
+      "E": 4096,
+      "G": 0
+    }
+  ],
+  "current_resident_objective_ms": 0.0
+}
