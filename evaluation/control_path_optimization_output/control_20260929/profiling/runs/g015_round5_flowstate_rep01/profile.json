@@ -1,0 +1,2328 @@
+[
+  {
+    "phase": "common",
+    "action": "flowstate_batch_introspection",
+    "request_bytes": 593683,
+    "response_bytes": 28529,
+    "client_start_ns": 4895656203573599,
+    "connected_ns": 4895656203645069,
+    "encode_ns": 7573568,
+    "sent_ns": 4895656211345993,
+    "received_ns": 4895656257483249,
+    "decode_ns": 672041,
+    "client_end_ns": 4895656258213596,
+    "operations": {
+      "rq6_batched_control_transport._batch_view": {
+        "count": 1,
+        "exclusive_ns": 36194,
+        "inclusive_ns": 16850595
+      },
+      "rq6_batched_control_transport._batch_view/rq6_batched_control_transport._canonical_digest": {
+        "count": 1,
+        "exclusive_ns": 255114,
+        "inclusive_ns": 255114
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot": {
+        "count": 1,
+        "exclusive_ns": 13658,
+        "inclusive_ns": 30003
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 16345,
+        "inclusive_ns": 16345
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps": {
+        "count": 1,
+        "exclusive_ns": 119328,
+        "inclusive_ns": 879640
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 20,
+        "exclusive_ns": 259461,
+        "inclusive_ns": 259461
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 23,
+        "exclusive_ns": 498341,
+        "inclusive_ns": 500851
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 2510,
+        "inclusive_ns": 2510
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot": {
+        "count": 20,
+        "exclusive_ns": 5914305,
+        "inclusive_ns": 15637570
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 20,
+        "exclusive_ns": 5772657,
+        "inclusive_ns": 5772657
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 95,
+        "exclusive_ns": 1263326,
+        "inclusive_ns": 1263326
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 123,
+        "exclusive_ns": 2687282,
+        "inclusive_ns": 2687282
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 12074,
+        "inclusive_ns": 12074
+      },
+      "rq6_batched_control_transport._parse_handles": {
+        "count": 1,
+        "exclusive_ns": 9816416,
+        "inclusive_ns": 9816416
+      }
+    },
+    "server_end_ns": 4895656255325293,
+    "server_start_ns": 4895656228307111,
+    "submit_end_ns": 4895656256100866,
+    "submit_start_ns": 4895656228257809
+  },
+  {
+    "phase": "policy",
+    "action": "inspect_fa_frontier",
+    "request_bytes": 61760,
+    "response_bytes": 12510,
+    "client_start_ns": 4895656261205708,
+    "connected_ns": 4895656261272057,
+    "encode_ns": 774887,
+    "sent_ns": 4895656262067721,
+    "received_ns": 4895656348706491,
+    "decode_ns": 2658211,
+    "client_end_ns": 4895656351419198,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 24134,
+        "inclusive_ns": 57409
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 33275,
+        "inclusive_ns": 33275
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 236371,
+        "inclusive_ns": 1923053
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 40,
+        "exclusive_ns": 544740,
+        "inclusive_ns": 544740
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 1137462,
+        "inclusive_ns": 1141942
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 4480,
+        "inclusive_ns": 4480
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 2,
+        "exclusive_ns": 18527,
+        "inclusive_ns": 18527
+      },
+      "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+        "count": 1,
+        "exclusive_ns": 852747,
+        "inclusive_ns": 852747
+      },
+      "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+        "count": 2,
+        "exclusive_ns": 58899,
+        "inclusive_ns": 58899
+      },
+      "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+        "count": 1,
+        "exclusive_ns": 407570,
+        "inclusive_ns": 407570
+      }
+    },
+    "server_end_ns": 4895656344990555,
+    "server_start_ns": 4895656341596799,
+    "submit_end_ns": 4895656348269847,
+    "submit_start_ns": 4895656341532935
+  },
+  {
+    "phase": "policy",
+    "action": "inspect_fa_frontier",
+    "request_bytes": 39971,
+    "response_bytes": 12503,
+    "client_start_ns": 4895656352740175,
+    "connected_ns": 4895656352834744,
+    "encode_ns": 696673,
+    "sent_ns": 4895656353551433,
+    "received_ns": 4895656440176509,
+    "decode_ns": 448600,
+    "client_end_ns": 4895656440683984,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 23232,
+        "inclusive_ns": 57838
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 34606,
+        "inclusive_ns": 34606
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 232968,
+        "inclusive_ns": 1808017
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 40,
+        "exclusive_ns": 535071,
+        "inclusive_ns": 535071
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 1035419,
+        "inclusive_ns": 1039978
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 4559,
+        "inclusive_ns": 4559
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 2,
+        "exclusive_ns": 17763,
+        "inclusive_ns": 17763
+      },
+      "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+        "count": 1,
+        "exclusive_ns": 617654,
+        "inclusive_ns": 617654
+      },
+      "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+        "count": 2,
+        "exclusive_ns": 55830,
+        "inclusive_ns": 55830
+      },
+      "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+        "count": 1,
+        "exclusive_ns": 411699,
+        "inclusive_ns": 411699
+      }
+    },
+    "server_end_ns": 4895656439605146,
+    "server_start_ns": 4895656436563913,
+    "submit_end_ns": 4895656439804042,
+    "submit_start_ns": 4895656436519443
+  },
+  {
+    "phase": "policy",
+    "action": "inspect_fa_frontier",
+    "request_bytes": 74970,
+    "response_bytes": 12605,
+    "client_start_ns": 4895656443738283,
+    "connected_ns": 4895656443848935,
+    "encode_ns": 971054,
+    "sent_ns": 4895656444847797,
+    "received_ns": 4895656556578542,
+    "decode_ns": 1000627,
+    "client_end_ns": 4895656557634652,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 24367,
+        "inclusive_ns": 57822
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 33455,
+        "inclusive_ns": 33455
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 238530,
+        "inclusive_ns": 2001696
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 40,
+        "exclusive_ns": 541011,
+        "inclusive_ns": 541011
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 1213845,
+        "inclusive_ns": 1222155
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 8310,
+        "inclusive_ns": 8310
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 2,
+        "exclusive_ns": 17487,
+        "inclusive_ns": 17487
+      },
+      "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+        "count": 1,
+        "exclusive_ns": 1069894,
+        "inclusive_ns": 1069894
+      },
+      "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+        "count": 2,
+        "exclusive_ns": 55224,
+        "inclusive_ns": 55224
+      },
+      "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+        "count": 1,
+        "exclusive_ns": 416457,
+        "inclusive_ns": 416457
+      }
+    },
+    "server_end_ns": 4895656512686223,
+    "server_start_ns": 4895656508994913,
+    "submit_end_ns": 4895656556176634,
+    "submit_start_ns": 4895656508943643
+  },
+  {
+    "phase": "policy",
+    "action": "inspect_fa_frontier",
+    "request_bytes": 36262,
+    "response_bytes": 12507,
+    "client_start_ns": 4895656559291633,
+    "connected_ns": 4895656559372645,
+    "encode_ns": 602938,
+    "sent_ns": 4895656559999224,
+    "received_ns": 4895656624560562,
+    "decode_ns": 457265,
+    "client_end_ns": 4895656625075008,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 23355,
+        "inclusive_ns": 56277
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32922,
+        "inclusive_ns": 32922
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 227344,
+        "inclusive_ns": 1798735
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 40,
+        "exclusive_ns": 533358,
+        "inclusive_ns": 533358
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 1033795,
+        "inclusive_ns": 1038033
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 4238,
+        "inclusive_ns": 4238
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 2,
+        "exclusive_ns": 17142,
+        "inclusive_ns": 17142
+      },
+      "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+        "count": 1,
+        "exclusive_ns": 548767,
+        "inclusive_ns": 548767
+      },
+      "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+        "count": 2,
+        "exclusive_ns": 51539,
+        "inclusive_ns": 51539
+      },
+      "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+        "count": 1,
+        "exclusive_ns": 410834,
+        "inclusive_ns": 410834
+      }
+    },
+    "server_end_ns": 4895656619531056,
+    "server_start_ns": 4895656616576639,
+    "submit_end_ns": 4895656624160470,
+    "submit_start_ns": 4895656616542782
+  },
+  {
+    "phase": "reconciliation",
+    "action": "flowstate_batch_reconciliation",
+    "request_bytes": 593889,
+    "response_bytes": 54383,
+    "client_start_ns": 4895656633515470,
+    "connected_ns": 4895656633585097,
+    "encode_ns": 7705626,
+    "sent_ns": 4895656641412299,
+    "received_ns": 4895656881432226,
+    "decode_ns": 2753435,
+    "client_end_ns": 4895656884225587,
+    "operations": {
+      "SGLangAdapter.evict_mamba_only": {
+        "count": 16,
+        "exclusive_ns": 155559,
+        "inclusive_ns": 16701180
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter._capture_target_snapshot": {
+        "count": 16,
+        "exclusive_ns": 251106,
+        "inclusive_ns": 251106
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter._evict_mamba_component_only": {
+        "count": 16,
+        "exclusive_ns": 818695,
+        "inclusive_ns": 1997929
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter._evict_mamba_component_only/UnifiedRadixCache.sanity_check": {
+        "count": 16,
+        "exclusive_ns": 1179234,
+        "inclusive_ns": 1179234
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter._find_exact_node": {
+        "count": 32,
+        "exclusive_ns": 2963527,
+        "inclusive_ns": 2963527
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter._validate_postconditions": {
+        "count": 16,
+        "exclusive_ns": 261194,
+        "inclusive_ns": 261194
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter._validate_target": {
+        "count": 16,
+        "exclusive_ns": 3824086,
+        "inclusive_ns": 3824086
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter.validate_runtime_capabilities": {
+        "count": 16,
+        "exclusive_ns": 324351,
+        "inclusive_ns": 7247779
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version": {
+        "count": 16,
+        "exclusive_ns": 41667,
+        "inclusive_ns": 6923428
+      },
+      "SGLangAdapter.evict_mamba_only/SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version/SGLangAdapter._read_sglang_version": {
+        "count": 16,
+        "exclusive_ns": 6881761,
+        "inclusive_ns": 6881761
+      },
+      "SGLangAdapter.validate_runtime_capabilities": {
+        "count": 1,
+        "exclusive_ns": 45238,
+        "inclusive_ns": 795618
+      },
+      "SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version": {
+        "count": 1,
+        "exclusive_ns": 3659,
+        "inclusive_ns": 750380
+      },
+      "SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version/SGLangAdapter._read_sglang_version": {
+        "count": 1,
+        "exclusive_ns": 746721,
+        "inclusive_ns": 746721
+      },
+      "UnifiedRadixCache.sanity_check": {
+        "count": 1,
+        "exclusive_ns": 59751,
+        "inclusive_ns": 59751
+      },
+      "rq6_batched_control_transport._batch_view": {
+        "count": 2,
+        "exclusive_ns": 64407,
+        "inclusive_ns": 33923375
+      },
+      "rq6_batched_control_transport._batch_view/rq6_batched_control_transport._canonical_digest": {
+        "count": 2,
+        "exclusive_ns": 452786,
+        "inclusive_ns": 452786
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 26758,
+        "inclusive_ns": 64747
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 37989,
+        "inclusive_ns": 37989
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 218728,
+        "inclusive_ns": 1515122
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 24,
+        "exclusive_ns": 312349,
+        "inclusive_ns": 312349
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 979477,
+        "inclusive_ns": 984045
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 4568,
+        "inclusive_ns": 4568
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot": {
+        "count": 40,
+        "exclusive_ns": 12734301,
+        "inclusive_ns": 31806074
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 40,
+        "exclusive_ns": 11962120,
+        "inclusive_ns": 11962120
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 119,
+        "exclusive_ns": 1488318,
+        "inclusive_ns": 1488318
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 246,
+        "exclusive_ns": 5621335,
+        "inclusive_ns": 5621335
+      },
+      "rq6_batched_control_transport._batch_view/targeted_probe._validate_runtime_scope": {
+        "count": 2,
+        "exclusive_ns": 20239,
+        "inclusive_ns": 20239
+      },
+      "rq6_batched_control_transport._parse_handles": {
+        "count": 1,
+        "exclusive_ns": 9796004,
+        "inclusive_ns": 9796004
+      },
+      "rq6_batched_control_transport._proof": {
+        "count": 1,
+        "exclusive_ns": 35096,
+        "inclusive_ns": 35096
+      },
+      "rq6_batched_control_transport._validate_identity_and_residency": {
+        "count": 1,
+        "exclusive_ns": 8360,
+        "inclusive_ns": 8360
+      }
+    },
+    "server_end_ns": 4895656878738344,
+    "server_start_ns": 4895656816513719,
+    "submit_end_ns": 4895656879177405,
+    "submit_start_ns": 4895656816456552
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 21119,
+    "response_bytes": 10716,
+    "client_start_ns": 4895656885233190,
+    "connected_ns": 4895656885299682,
+    "encode_ns": 280285,
+    "sent_ns": 4895656885590561,
+    "received_ns": 4895656924564971,
+    "decode_ns": 329675,
+    "client_end_ns": 4895656924949891,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21810,
+        "inclusive_ns": 53886
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32076,
+        "inclusive_ns": 32076
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 185509,
+        "inclusive_ns": 1278677
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 8,
+        "exclusive_ns": 106722,
+        "inclusive_ns": 106722
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 982756,
+        "inclusive_ns": 986446
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3690,
+        "inclusive_ns": 3690
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 444947,
+        "inclusive_ns": 1093648
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 415819,
+        "inclusive_ns": 415819
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1525,
+        "inclusive_ns": 1525
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 8,
+        "exclusive_ns": 231357,
+        "inclusive_ns": 231357
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9430,
+        "inclusive_ns": 9430
+      }
+    },
+    "server_end_ns": 4895656911942098,
+    "server_start_ns": 4895656909207381,
+    "submit_end_ns": 4895656924176141,
+    "submit_start_ns": 4895656909161482
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 23259,
+    "response_bytes": 10735,
+    "client_start_ns": 4895656926932833,
+    "connected_ns": 4895656927098115,
+    "encode_ns": 980230,
+    "sent_ns": 4895656928108778,
+    "received_ns": 4895656956293036,
+    "decode_ns": 282995,
+    "client_end_ns": 4895656956600294,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21755,
+        "inclusive_ns": 53873
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32118,
+        "inclusive_ns": 32118
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 190043,
+        "inclusive_ns": 1283602
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 8,
+        "exclusive_ns": 107019,
+        "inclusive_ns": 107019
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 981462,
+        "inclusive_ns": 986540
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 5078,
+        "inclusive_ns": 5078
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 478112,
+        "inclusive_ns": 1181939
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 445849,
+        "inclusive_ns": 445849
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1338,
+        "inclusive_ns": 1338
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 10,
+        "exclusive_ns": 256640,
+        "inclusive_ns": 256640
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 10598,
+        "inclusive_ns": 10598
+      }
+    },
+    "server_end_ns": 4895656954492286,
+    "server_start_ns": 4895656951644447,
+    "submit_end_ns": 4895656956098229,
+    "submit_start_ns": 4895656951602731
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 26850,
+    "response_bytes": 10755,
+    "client_start_ns": 4895656958756147,
+    "connected_ns": 4895656958855401,
+    "encode_ns": 1081177,
+    "sent_ns": 4895656959961154,
+    "received_ns": 4895657012525060,
+    "decode_ns": 325112,
+    "client_end_ns": 4895657012905313,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22470,
+        "inclusive_ns": 54544
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32074,
+        "inclusive_ns": 32074
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 197261,
+        "inclusive_ns": 1381395
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 8,
+        "exclusive_ns": 107549,
+        "inclusive_ns": 107549
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 1072807,
+        "inclusive_ns": 1076585
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3778,
+        "inclusive_ns": 3778
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 543019,
+        "inclusive_ns": 1351772
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 511343,
+        "inclusive_ns": 511343
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1414,
+        "inclusive_ns": 1414
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 12,
+        "exclusive_ns": 295996,
+        "inclusive_ns": 295996
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 10382,
+        "inclusive_ns": 10382
+      }
+    },
+    "server_end_ns": 4895657007640626,
+    "server_start_ns": 4895657004483786,
+    "submit_end_ns": 4895657012182080,
+    "submit_start_ns": 4895657004432512
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 27559,
+    "response_bytes": 10769,
+    "client_start_ns": 4895657014857601,
+    "connected_ns": 4895657014921619,
+    "encode_ns": 407505,
+    "sent_ns": 4895657015339976,
+    "received_ns": 4895657048316041,
+    "decode_ns": 554382,
+    "client_end_ns": 4895657048891781,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22154,
+        "inclusive_ns": 54451
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32297,
+        "inclusive_ns": 32297
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 186759,
+        "inclusive_ns": 1282805
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 8,
+        "exclusive_ns": 107169,
+        "inclusive_ns": 107169
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 985209,
+        "inclusive_ns": 988877
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3668,
+        "inclusive_ns": 3668
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 558986,
+        "inclusive_ns": 1428181
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 548179,
+        "inclusive_ns": 548179
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1432,
+        "inclusive_ns": 1432
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 14,
+        "exclusive_ns": 319584,
+        "inclusive_ns": 319584
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9175,
+        "inclusive_ns": 9175
+      }
+    },
+    "server_end_ns": 4895657035450420,
+    "server_start_ns": 4895657032320773,
+    "submit_end_ns": 4895657048094010,
+    "submit_start_ns": 4895657032280362
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 61058,
+    "response_bytes": 10892,
+    "client_start_ns": 4895657052649188,
+    "connected_ns": 4895657052694477,
+    "encode_ns": 766755,
+    "sent_ns": 4895657053477467,
+    "received_ns": 4895657072338019,
+    "decode_ns": 284808,
+    "client_end_ns": 4895657072642003,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 23700,
+        "inclusive_ns": 53574
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 29874,
+        "inclusive_ns": 29874
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 186581,
+        "inclusive_ns": 1276704
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 8,
+        "exclusive_ns": 107285,
+        "inclusive_ns": 107285
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 46,
+        "exclusive_ns": 979029,
+        "inclusive_ns": 982838
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3809,
+        "inclusive_ns": 3809
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 1199765,
+        "inclusive_ns": 2882664
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 1130001,
+        "inclusive_ns": 1130001
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 4,
+        "exclusive_ns": 57140,
+        "inclusive_ns": 57140
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 16,
+        "exclusive_ns": 495758,
+        "inclusive_ns": 495758
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9714,
+        "inclusive_ns": 9714
+      }
+    },
+    "server_end_ns": 4895657065525989,
+    "server_start_ns": 4895657060616945,
+    "submit_end_ns": 4895657072097266,
+    "submit_start_ns": 4895657060570737
+  },
+  {
+    "phase": "request_validation",
+    "action": "flowstate_runtime_metrics",
+    "request_bytes": 190,
+    "response_bytes": 556,
+    "client_start_ns": 4895657119806917,
+    "connected_ns": 4895657119944852,
+    "encode_ns": 35000,
+    "sent_ns": 4895657120050911,
+    "received_ns": 4895657122148635,
+    "decode_ns": 22407,
+    "client_end_ns": 4895657122181220,
+    "operations": {
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 11660,
+        "inclusive_ns": 11660
+      }
+    },
+    "server_end_ns": 4895657121655255,
+    "server_start_ns": 4895657121579224,
+    "submit_end_ns": 4895657121980824,
+    "submit_start_ns": 4895657121473310
+  },
+  {
+    "phase": "request_validation",
+    "action": "census",
+    "request_bytes": 91,
+    "response_bytes": 4712,
+    "client_start_ns": 4895657122207469,
+    "connected_ns": 4895657122247500,
+    "encode_ns": 10010,
+    "sent_ns": 4895657122266233,
+    "received_ns": 4895657132216516,
+    "decode_ns": 127207,
+    "client_end_ns": 4895657132360551,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 1,
+        "exclusive_ns": 21131,
+        "inclusive_ns": 80757
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 59626,
+        "inclusive_ns": 59626
+      },
+      "targeted_probe._global_maps": {
+        "count": 1,
+        "exclusive_ns": 125877,
+        "inclusive_ns": 782223
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 5,
+        "exclusive_ns": 73023,
+        "inclusive_ns": 73023
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 24,
+        "exclusive_ns": 580962,
+        "inclusive_ns": 583323
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 2361,
+        "inclusive_ns": 2361
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 8565,
+        "inclusive_ns": 8565
+      }
+    },
+    "server_end_ns": 4895657123934438,
+    "server_start_ns": 4895657123004440,
+    "submit_end_ns": 4895657132084895,
+    "submit_start_ns": 4895657122926921
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 13918,
+    "response_bytes": 10898,
+    "client_start_ns": 4895657133552744,
+    "connected_ns": 4895657133630243,
+    "encode_ns": 284087,
+    "sent_ns": 4895657133925271,
+    "received_ns": 4895657144388680,
+    "decode_ns": 182702,
+    "client_end_ns": 4895657144581561,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21647,
+        "inclusive_ns": 60289
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 38642,
+        "inclusive_ns": 38642
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 196499,
+        "inclusive_ns": 1355360
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 10,
+        "exclusive_ns": 133782,
+        "inclusive_ns": 133782
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 48,
+        "exclusive_ns": 1021468,
+        "inclusive_ns": 1025079
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3611,
+        "inclusive_ns": 3611
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 285245,
+        "inclusive_ns": 710966
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 259723,
+        "inclusive_ns": 259723
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1619,
+        "inclusive_ns": 1619
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 4,
+        "exclusive_ns": 164379,
+        "inclusive_ns": 164379
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9742,
+        "inclusive_ns": 9742
+      }
+    },
+    "server_end_ns": 4895657140397850,
+    "server_start_ns": 4895657138032955,
+    "submit_end_ns": 4895657144122618,
+    "submit_start_ns": 4895657137944341
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 22734,
+    "response_bytes": 10950,
+    "client_start_ns": 4895657145768757,
+    "connected_ns": 4895657145825117,
+    "encode_ns": 555220,
+    "sent_ns": 4895657146394810,
+    "received_ns": 4895657184435063,
+    "decode_ns": 562827,
+    "client_end_ns": 4895657185016740,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21375,
+        "inclusive_ns": 53910
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32535,
+        "inclusive_ns": 32535
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 198375,
+        "inclusive_ns": 1349878
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 10,
+        "exclusive_ns": 132810,
+        "inclusive_ns": 132810
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 48,
+        "exclusive_ns": 1015120,
+        "inclusive_ns": 1018693
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3573,
+        "inclusive_ns": 3573
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 462346,
+        "inclusive_ns": 1169856
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 437033,
+        "inclusive_ns": 437033
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1440,
+        "inclusive_ns": 1440
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 10,
+        "exclusive_ns": 269037,
+        "inclusive_ns": 269037
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9659,
+        "inclusive_ns": 9659
+      }
+    },
+    "server_end_ns": 4895657179413733,
+    "server_start_ns": 4895657176514153,
+    "submit_end_ns": 4895657184187383,
+    "submit_start_ns": 4895657176458629
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 25650,
+    "response_bytes": 10966,
+    "client_start_ns": 4895657187039292,
+    "connected_ns": 4895657187122134,
+    "encode_ns": 547076,
+    "sent_ns": 4895657187677915,
+    "received_ns": 4895657204416718,
+    "decode_ns": 284456,
+    "client_end_ns": 4895657204717587,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21508,
+        "inclusive_ns": 53869
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32361,
+        "inclusive_ns": 32361
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 196578,
+        "inclusive_ns": 1421220
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 10,
+        "exclusive_ns": 132928,
+        "inclusive_ns": 132928
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 48,
+        "exclusive_ns": 1087934,
+        "inclusive_ns": 1091714
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3780,
+        "inclusive_ns": 3780
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 518237,
+        "inclusive_ns": 1309908
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 501076,
+        "inclusive_ns": 501076
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1391,
+        "inclusive_ns": 1391
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 12,
+        "exclusive_ns": 289204,
+        "inclusive_ns": 289204
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9634,
+        "inclusive_ns": 9634
+      }
+    },
+    "server_end_ns": 4895657199523651,
+    "server_start_ns": 4895657196390040,
+    "submit_end_ns": 4895657204215115,
+    "submit_start_ns": 4895657196343695
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 26375,
+    "response_bytes": 10984,
+    "client_start_ns": 4895657206761965,
+    "connected_ns": 4895657206837423,
+    "encode_ns": 850934,
+    "sent_ns": 4895657207699309,
+    "received_ns": 4895657280438279,
+    "decode_ns": 332904,
+    "client_end_ns": 4895657280827665,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22081,
+        "inclusive_ns": 54185
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32104,
+        "inclusive_ns": 32104
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 197209,
+        "inclusive_ns": 1349822
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 10,
+        "exclusive_ns": 132126,
+        "inclusive_ns": 132126
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 48,
+        "exclusive_ns": 1016675,
+        "inclusive_ns": 1020487
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3812,
+        "inclusive_ns": 3812
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 532924,
+        "inclusive_ns": 1356087
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 505915,
+        "inclusive_ns": 505915
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1493,
+        "inclusive_ns": 1493
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 14,
+        "exclusive_ns": 315755,
+        "inclusive_ns": 315755
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9882,
+        "inclusive_ns": 9882
+      }
+    },
+    "server_end_ns": 4895657247625732,
+    "server_start_ns": 4895657244511052,
+    "submit_end_ns": 4895657280121300,
+    "submit_start_ns": 4895657244463913
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 37161,
+    "response_bytes": 11098,
+    "client_start_ns": 4895657283063275,
+    "connected_ns": 4895657283126606,
+    "encode_ns": 489268,
+    "sent_ns": 4895657283635167,
+    "received_ns": 4895657308469137,
+    "decode_ns": 307497,
+    "client_end_ns": 4895657308796710,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22270,
+        "inclusive_ns": 51810
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 29540,
+        "inclusive_ns": 29540
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 196060,
+        "inclusive_ns": 1349133
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 10,
+        "exclusive_ns": 131594,
+        "inclusive_ns": 131594
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 48,
+        "exclusive_ns": 1017877,
+        "inclusive_ns": 1021479
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3602,
+        "inclusive_ns": 3602
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 760626,
+        "inclusive_ns": 1913824
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 701215,
+        "inclusive_ns": 701215
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 4,
+        "exclusive_ns": 55980,
+        "inclusive_ns": 55980
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 16,
+        "exclusive_ns": 396003,
+        "inclusive_ns": 396003
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9540,
+        "inclusive_ns": 9540
+      }
+    },
+    "server_end_ns": 4895657300378177,
+    "server_start_ns": 4895657296597969,
+    "submit_end_ns": 4895657308252087,
+    "submit_start_ns": 4895657296548577
+  },
+  {
+    "phase": "request_validation",
+    "action": "flowstate_runtime_metrics",
+    "request_bytes": 190,
+    "response_bytes": 554,
+    "client_start_ns": 4895657349348154,
+    "connected_ns": 4895657349512974,
+    "encode_ns": 39298,
+    "sent_ns": 4895657349582621,
+    "received_ns": 4895657351364953,
+    "decode_ns": 23158,
+    "client_end_ns": 4895657351398972,
+    "operations": {
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 11176,
+        "inclusive_ns": 11176
+      }
+    },
+    "server_end_ns": 4895657351036576,
+    "server_start_ns": 4895657350961579,
+    "submit_end_ns": 4895657351204345,
+    "submit_start_ns": 4895657350850163
+  },
+  {
+    "phase": "request_validation",
+    "action": "census",
+    "request_bytes": 91,
+    "response_bytes": 4820,
+    "client_start_ns": 4895657351423621,
+    "connected_ns": 4895657351453562,
+    "encode_ns": 7914,
+    "sent_ns": 4895657351467554,
+    "received_ns": 4895657380306006,
+    "decode_ns": 143572,
+    "client_end_ns": 4895657380468674,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 1,
+        "exclusive_ns": 21763,
+        "inclusive_ns": 86017
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 64254,
+        "inclusive_ns": 64254
+      },
+      "targeted_probe._global_maps": {
+        "count": 1,
+        "exclusive_ns": 136039,
+        "inclusive_ns": 845273
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 6,
+        "exclusive_ns": 88675,
+        "inclusive_ns": 88675
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 25,
+        "exclusive_ns": 617861,
+        "inclusive_ns": 620559
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 2698,
+        "inclusive_ns": 2698
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9180,
+        "inclusive_ns": 9180
+      }
+    },
+    "server_end_ns": 4895657353425194,
+    "server_start_ns": 4895657352425156,
+    "submit_end_ns": 4895657380176478,
+    "submit_start_ns": 4895657352345673
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 18959,
+    "response_bytes": 11162,
+    "client_start_ns": 4895657382230307,
+    "connected_ns": 4895657382319085,
+    "encode_ns": 799494,
+    "sent_ns": 4895657383140716,
+    "received_ns": 4895657456544086,
+    "decode_ns": 320614,
+    "client_end_ns": 4895657456928909,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21646,
+        "inclusive_ns": 53379
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 31733,
+        "inclusive_ns": 31733
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 204179,
+        "inclusive_ns": 1410583
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 12,
+        "exclusive_ns": 157915,
+        "inclusive_ns": 157915
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 50,
+        "exclusive_ns": 1044922,
+        "inclusive_ns": 1048489
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3567,
+        "inclusive_ns": 3567
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 396520,
+        "inclusive_ns": 1031016
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 376580,
+        "inclusive_ns": 376580
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1601,
+        "inclusive_ns": 1601
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 10,
+        "exclusive_ns": 256315,
+        "inclusive_ns": 256315
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9260,
+        "inclusive_ns": 9260
+      }
+    },
+    "server_end_ns": 4895657443267430,
+    "server_start_ns": 4895657440478317,
+    "submit_end_ns": 4895657456194837,
+    "submit_start_ns": 4895657440424263
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 21077,
+    "response_bytes": 11180,
+    "client_start_ns": 4895657458256474,
+    "connected_ns": 4895657458358658,
+    "encode_ns": 498716,
+    "sent_ns": 4895657458875204,
+    "received_ns": 4895657512701604,
+    "decode_ns": 326430,
+    "client_end_ns": 4895657513089421,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21599,
+        "inclusive_ns": 53340
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 31741,
+        "inclusive_ns": 31741
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 201043,
+        "inclusive_ns": 1413747
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 12,
+        "exclusive_ns": 158789,
+        "inclusive_ns": 158789
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 50,
+        "exclusive_ns": 1050402,
+        "inclusive_ns": 1053915
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3513,
+        "inclusive_ns": 3513
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 439655,
+        "inclusive_ns": 1138734
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 416283,
+        "inclusive_ns": 416283
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1289,
+        "inclusive_ns": 1289
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 12,
+        "exclusive_ns": 281507,
+        "inclusive_ns": 281507
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9273,
+        "inclusive_ns": 9273
+      }
+    },
+    "server_end_ns": 4895657511293491,
+    "server_start_ns": 4895657508372450,
+    "submit_end_ns": 4895657512382019,
+    "submit_start_ns": 4895657508325832
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 23488,
+    "response_bytes": 11198,
+    "client_start_ns": 4895657515081507,
+    "connected_ns": 4895657515246991,
+    "encode_ns": 574717,
+    "sent_ns": 4895657515833926,
+    "received_ns": 4895657576546540,
+    "decode_ns": 329352,
+    "client_end_ns": 4895657576936952,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 23587,
+        "inclusive_ns": 55297
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 31710,
+        "inclusive_ns": 31710
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 220041,
+        "inclusive_ns": 1810150
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 12,
+        "exclusive_ns": 530350,
+        "inclusive_ns": 530350
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 50,
+        "exclusive_ns": 1055390,
+        "inclusive_ns": 1059759
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 4369,
+        "inclusive_ns": 4369
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 484635,
+        "inclusive_ns": 1267839
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 465049,
+        "inclusive_ns": 465049
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1470,
+        "inclusive_ns": 1470
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 14,
+        "exclusive_ns": 316685,
+        "inclusive_ns": 316685
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9577,
+        "inclusive_ns": 9577
+      }
+    },
+    "server_end_ns": 4895657567948341,
+    "server_start_ns": 4895657564478636,
+    "submit_end_ns": 4895657576204899,
+    "submit_start_ns": 4895657564430251
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 34145,
+    "response_bytes": 11220,
+    "client_start_ns": 4895657578968960,
+    "connected_ns": 4895657579032037,
+    "encode_ns": 437512,
+    "sent_ns": 4895657579489410,
+    "received_ns": 4895657632615659,
+    "decode_ns": 797348,
+    "client_end_ns": 4895657633468487,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21722,
+        "inclusive_ns": 53363
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 31641,
+        "inclusive_ns": 31641
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 208392,
+        "inclusive_ns": 1420018
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 12,
+        "exclusive_ns": 160135,
+        "inclusive_ns": 160135
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 50,
+        "exclusive_ns": 1047836,
+        "inclusive_ns": 1051491
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3655,
+        "inclusive_ns": 3655
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 676276,
+        "inclusive_ns": 1717912
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 651531,
+        "inclusive_ns": 651531
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1549,
+        "inclusive_ns": 1549
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 16,
+        "exclusive_ns": 388556,
+        "inclusive_ns": 388556
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9093,
+        "inclusive_ns": 9093
+      }
+    },
+    "server_end_ns": 4895657632082774,
+    "server_start_ns": 4895657628473943,
+    "submit_end_ns": 4895657632279364,
+    "submit_start_ns": 4895657628438663
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 72552,
+    "response_bytes": 11341,
+    "client_start_ns": 4895657636349177,
+    "connected_ns": 4895657636414018,
+    "encode_ns": 950764,
+    "sent_ns": 4895657637391847,
+    "received_ns": 4895657732545008,
+    "decode_ns": 354777,
+    "client_end_ns": 4895657732955551,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 24592,
+        "inclusive_ns": 54039
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 29447,
+        "inclusive_ns": 29447
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 209915,
+        "inclusive_ns": 1424299
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 12,
+        "exclusive_ns": 159126,
+        "inclusive_ns": 159126
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 50,
+        "exclusive_ns": 1051190,
+        "inclusive_ns": 1055258
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 4068,
+        "inclusive_ns": 4068
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 1451650,
+        "inclusive_ns": 3465182
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 1376961,
+        "inclusive_ns": 1376961
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 4,
+        "exclusive_ns": 56981,
+        "inclusive_ns": 56981
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 18,
+        "exclusive_ns": 579590,
+        "inclusive_ns": 579590
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9687,
+        "inclusive_ns": 9687
+      }
+    },
+    "server_end_ns": 4895657702701312,
+    "server_start_ns": 4895657696920616,
+    "submit_end_ns": 4895657732202185,
+    "submit_start_ns": 4895657696870506
+  },
+  {
+    "phase": "request_validation",
+    "action": "flowstate_runtime_metrics",
+    "request_bytes": 190,
+    "response_bytes": 556,
+    "client_start_ns": 4895657775369900,
+    "connected_ns": 4895657775500625,
+    "encode_ns": 18374,
+    "sent_ns": 4895657775532588,
+    "received_ns": 4895657777434403,
+    "decode_ns": 23992,
+    "client_end_ns": 4895657777468726,
+    "operations": {
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 10551,
+        "inclusive_ns": 10551
+      }
+    },
+    "server_end_ns": 4895657776943869,
+    "server_start_ns": 4895657776874755,
+    "submit_end_ns": 4895657777275936,
+    "submit_start_ns": 4895657776770464
+  },
+  {
+    "phase": "request_validation",
+    "action": "census",
+    "request_bytes": 91,
+    "response_bytes": 4930,
+    "client_start_ns": 4895657777494210,
+    "connected_ns": 4895657777537381,
+    "encode_ns": 11237,
+    "sent_ns": 4895657777557170,
+    "received_ns": 4895657780526180,
+    "decode_ns": 56355,
+    "client_end_ns": 4895657780590376,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 1,
+        "exclusive_ns": 20570,
+        "inclusive_ns": 80212
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 59642,
+        "inclusive_ns": 59642
+      },
+      "targeted_probe._global_maps": {
+        "count": 1,
+        "exclusive_ns": 135487,
+        "inclusive_ns": 852639
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 7,
+        "exclusive_ns": 100531,
+        "inclusive_ns": 100531
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 26,
+        "exclusive_ns": 614425,
+        "inclusive_ns": 616621
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 2196,
+        "inclusive_ns": 2196
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 8591,
+        "inclusive_ns": 8591
+      }
+    },
+    "server_end_ns": 4895657779700084,
+    "server_start_ns": 4895657778699676,
+    "submit_end_ns": 4895657780261015,
+    "submit_start_ns": 4895657778627937
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 19704,
+    "response_bytes": 11367,
+    "client_start_ns": 4895657781221653,
+    "connected_ns": 4895657781252098,
+    "encode_ns": 276111,
+    "sent_ns": 4895657781535698,
+    "received_ns": 4895657796447505,
+    "decode_ns": 301164,
+    "client_end_ns": 4895657796768447,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 21922,
+        "inclusive_ns": 55905
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 33983,
+        "inclusive_ns": 33983
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 214208,
+        "inclusive_ns": 1493063
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 14,
+        "exclusive_ns": 185483,
+        "inclusive_ns": 185483
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 52,
+        "exclusive_ns": 1089934,
+        "inclusive_ns": 1093372
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3438,
+        "inclusive_ns": 3438
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 406803,
+        "inclusive_ns": 1013254
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 382448,
+        "inclusive_ns": 382448
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1557,
+        "inclusive_ns": 1557
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 8,
+        "exclusive_ns": 222446,
+        "inclusive_ns": 222446
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9176,
+        "inclusive_ns": 9176
+      }
+    },
+    "server_end_ns": 4895657791360756,
+    "server_start_ns": 4895657788504795,
+    "submit_end_ns": 4895657796211042,
+    "submit_start_ns": 4895657788452629
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 22249,
+    "response_bytes": 11384,
+    "client_start_ns": 4895657798562715,
+    "connected_ns": 4895657798643694,
+    "encode_ns": 732346,
+    "sent_ns": 4895657799384047,
+    "received_ns": 4895657836583162,
+    "decode_ns": 324793,
+    "client_end_ns": 4895657836968135,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22038,
+        "inclusive_ns": 55112
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 33074,
+        "inclusive_ns": 33074
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 218893,
+        "inclusive_ns": 1484963
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 14,
+        "exclusive_ns": 184429,
+        "inclusive_ns": 184429
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 52,
+        "exclusive_ns": 1078114,
+        "inclusive_ns": 1081641
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3527,
+        "inclusive_ns": 3527
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 452840,
+        "inclusive_ns": 1134716
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 425426,
+        "inclusive_ns": 425426
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1469,
+        "inclusive_ns": 1469
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 10,
+        "exclusive_ns": 254981,
+        "inclusive_ns": 254981
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9245,
+        "inclusive_ns": 9245
+      }
+    },
+    "server_end_ns": 4895657831360524,
+    "server_start_ns": 4895657828367500,
+    "submit_end_ns": 4895657836204079,
+    "submit_start_ns": 4895657828317245
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 30352,
+    "response_bytes": 11406,
+    "client_start_ns": 4895657838891757,
+    "connected_ns": 4895657839017525,
+    "encode_ns": 867715,
+    "sent_ns": 4895657839908730,
+    "received_ns": 4895657924499563,
+    "decode_ns": 681314,
+    "client_end_ns": 4895657925237596,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22825,
+        "inclusive_ns": 56423
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 33598,
+        "inclusive_ns": 33598
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 231363,
+        "inclusive_ns": 1598708
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 14,
+        "exclusive_ns": 187635,
+        "inclusive_ns": 187635
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 52,
+        "exclusive_ns": 1175641,
+        "inclusive_ns": 1179710
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 4069,
+        "inclusive_ns": 4069
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 597592,
+        "inclusive_ns": 1481847
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 570739,
+        "inclusive_ns": 570739
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1595,
+        "inclusive_ns": 1595
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 12,
+        "exclusive_ns": 311921,
+        "inclusive_ns": 311921
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9466,
+        "inclusive_ns": 9466
+      }
+    },
+    "server_end_ns": 4895657896172064,
+    "server_start_ns": 4895657892634412,
+    "submit_end_ns": 4895657924171154,
+    "submit_start_ns": 4895657892582960
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 33432,
+    "response_bytes": 11422,
+    "client_start_ns": 4895657927952988,
+    "connected_ns": 4895657928139566,
+    "encode_ns": 659406,
+    "sent_ns": 4895657928819875,
+    "received_ns": 4895657976524792,
+    "decode_ns": 340982,
+    "client_end_ns": 4895657976920469,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22348,
+        "inclusive_ns": 55319
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 32971,
+        "inclusive_ns": 32971
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 212675,
+        "inclusive_ns": 1491432
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 14,
+        "exclusive_ns": 186171,
+        "inclusive_ns": 186171
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 52,
+        "exclusive_ns": 1088832,
+        "inclusive_ns": 1092586
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3754,
+        "inclusive_ns": 3754
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 667778,
+        "inclusive_ns": 1632616
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 627579,
+        "inclusive_ns": 627579
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 1344,
+        "inclusive_ns": 1344
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 14,
+        "exclusive_ns": 335915,
+        "inclusive_ns": 335915
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9415,
+        "inclusive_ns": 9415
+      }
+    },
+    "server_end_ns": 4895657964087962,
+    "server_start_ns": 4895657960482856,
+    "submit_end_ns": 4895657976244388,
+    "submit_start_ns": 4895657960432933
+  },
+  {
+    "phase": "request_validation",
+    "action": "inspect",
+    "request_bytes": 35585,
+    "response_bytes": 11532,
+    "client_start_ns": 4895657979512826,
+    "connected_ns": 4895657979579195,
+    "encode_ns": 449742,
+    "sent_ns": 4895657980048398,
+    "received_ns": 4895658044528299,
+    "decode_ns": 355564,
+    "client_end_ns": 4895658044939078,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 2,
+        "exclusive_ns": 22285,
+        "inclusive_ns": 52659
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 30374,
+        "inclusive_ns": 30374
+      },
+      "targeted_probe._global_maps": {
+        "count": 2,
+        "exclusive_ns": 215261,
+        "inclusive_ns": 1494336
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 14,
+        "exclusive_ns": 182977,
+        "inclusive_ns": 182977
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 52,
+        "exclusive_ns": 1092238,
+        "inclusive_ns": 1096098
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 2,
+        "exclusive_ns": 3860,
+        "inclusive_ns": 3860
+      },
+      "targeted_probe._path_snapshot": {
+        "count": 2,
+        "exclusive_ns": 694055,
+        "inclusive_ns": 1786223
+      },
+      "targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+        "count": 2,
+        "exclusive_ns": 670147,
+        "inclusive_ns": 670147
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+        "count": 4,
+        "exclusive_ns": 56291,
+        "inclusive_ns": 56291
+      },
+      "targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+        "count": 16,
+        "exclusive_ns": 365730,
+        "inclusive_ns": 365730
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9602,
+        "inclusive_ns": 9602
+      }
+    },
+    "server_end_ns": 4895658020417286,
+    "server_start_ns": 4895658016647296,
+    "submit_end_ns": 4895658044188216,
+    "submit_start_ns": 4895658016599181
+  },
+  {
+    "phase": "request_validation",
+    "action": "flowstate_runtime_metrics",
+    "request_bytes": 190,
+    "response_bytes": 554,
+    "client_start_ns": 4895658088123235,
+    "connected_ns": 4895658088274779,
+    "encode_ns": 37755,
+    "sent_ns": 4895658088341630,
+    "received_ns": 4895658090231858,
+    "decode_ns": 50400,
+    "client_end_ns": 4895658090301533,
+    "operations": {
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 12018,
+        "inclusive_ns": 12018
+      }
+    },
+    "server_end_ns": 4895658089681516,
+    "server_start_ns": 4895658089605897,
+    "submit_end_ns": 4895658090040114,
+    "submit_start_ns": 4895658089516137
+  },
+  {
+    "phase": "request_validation",
+    "action": "census",
+    "request_bytes": 91,
+    "response_bytes": 5038,
+    "client_start_ns": 4895658090353155,
+    "connected_ns": 4895658090438333,
+    "encode_ns": 22464,
+    "sent_ns": 4895658090478866,
+    "received_ns": 4895658096381983,
+    "decode_ns": 65573,
+    "client_end_ns": 4895658096454581,
+    "operations": {
+      "targeted_probe._accounting_snapshot": {
+        "count": 1,
+        "exclusive_ns": 20266,
+        "inclusive_ns": 78504
+      },
+      "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 58238,
+        "inclusive_ns": 58238
+      },
+      "targeted_probe._global_maps": {
+        "count": 1,
+        "exclusive_ns": 141541,
+        "inclusive_ns": 895830
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+        "count": 8,
+        "exclusive_ns": 120553,
+        "inclusive_ns": 120553
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+        "count": 27,
+        "exclusive_ns": 631536,
+        "inclusive_ns": 633736
+      },
+      "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+        "count": 1,
+        "exclusive_ns": 2200,
+        "inclusive_ns": 2200
+      },
+      "targeted_probe._validate_runtime_scope": {
+        "count": 1,
+        "exclusive_ns": 9165,
+        "inclusive_ns": 9165
+      }
+    },
+    "server_end_ns": 4895658092142860,
+    "server_start_ns": 4895658091099713,
+    "submit_end_ns": 4895658096224958,
+    "submit_start_ns": 4895658091020838
+  }
+]

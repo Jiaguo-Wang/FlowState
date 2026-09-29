@@ -1,0 +1,6 @@
+{
+  "说明": "仅计时探针；不修改冻结实现、状态操作、检查或请求。24快照乘3次FlowState独立生命周期。",
+  "baseline": "/home/wjg/code/FlowState/evaluation/resume_epoch_e2e_output/resume_epoch_final_20260928",
+  "统计口径": "每子步骤先累计每epoch，再报告72个epoch的均值/P50/P95；嵌套包含时间不重复相加。",
+  "限制": "探针自身增加计时与响应字节；新测量不能伪称历史293.093ms的精确内部重建。"
+}

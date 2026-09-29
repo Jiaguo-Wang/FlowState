@@ -1,0 +1,7550 @@
+{
+  "replay_validation": {
+    "logical_universe_exact": true,
+    "full_snapshot_digest_exact": true,
+    "frozen_snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+    "rebuilt_snapshot_digest": "f7ecca9b94c2d6bf0158cd368d19e5d7bffe7ad07aeba884646a91bd1dbbf8b6",
+    "candidate_universe_exact": true,
+    "pending_universe_exact": true
+  },
+  "common": {
+    "_control_profile": {
+      "operations": {
+        "rq6_batched_control_transport._batch_view": {
+          "count": 1,
+          "exclusive_ns": 23183,
+          "inclusive_ns": 6079202
+        },
+        "rq6_batched_control_transport._batch_view/rq6_batched_control_transport._canonical_digest": {
+          "count": 1,
+          "exclusive_ns": 115250,
+          "inclusive_ns": 115250
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot": {
+          "count": 1,
+          "exclusive_ns": 18967,
+          "inclusive_ns": 37305
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+          "count": 1,
+          "exclusive_ns": 18338,
+          "inclusive_ns": 18338
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps": {
+          "count": 1,
+          "exclusive_ns": 90595,
+          "inclusive_ns": 1116653
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_ids": {
+          "count": 8,
+          "exclusive_ns": 107494,
+          "inclusive_ns": 107494
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+          "count": 11,
+          "exclusive_ns": 916039,
+          "inclusive_ns": 918564
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+          "count": 1,
+          "exclusive_ns": 2525,
+          "inclusive_ns": 2525
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot": {
+          "count": 8,
+          "exclusive_ns": 1785615,
+          "inclusive_ns": 4773662
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+          "count": 8,
+          "exclusive_ns": 1689285,
+          "inclusive_ns": 1689285
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+          "count": 26,
+          "exclusive_ns": 363606,
+          "inclusive_ns": 363606
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+          "count": 37,
+          "exclusive_ns": 935156,
+          "inclusive_ns": 935156
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._validate_runtime_scope": {
+          "count": 1,
+          "exclusive_ns": 13149,
+          "inclusive_ns": 13149
+        },
+        "rq6_batched_control_transport._parse_handles": {
+          "count": 1,
+          "exclusive_ns": 2939802,
+          "inclusive_ns": 2939802
+        }
+      },
+      "server_end_ns": 4897540311015280,
+      "server_start_ns": 4897540301800396,
+      "submit_end_ns": 4897540311177048,
+      "submit_start_ns": 4897540301757762
+    },
+    "candidate_ids": [
+      "RQ3_G112_A_TURN_001",
+      "RQ3_G112_A_TURN_002",
+      "RQ3_G112_B_TURN_001",
+      "RQ3_G112_B_TURN_002",
+      "RQ3_G112_C_TURN_001",
+      "RQ3_G112_C_TURN_002",
+      "RQ3_G112_D_TURN_001",
+      "RQ3_G112_D_TURN_002"
+    ],
+    "nonce": "g112_round2_flowstate_rep03:common",
+    "ok": true,
+    "state_mutated": false,
+    "view": {
+      "accounting": {
+        "full_allocator": {
+          "allocated": null,
+          "allocator_type": "TokenToKVPoolAllocator",
+          "available": 374771
+        },
+        "full_evictable": 10279,
+        "full_protected": 0,
+        "mamba_allocator_type": "MambaSlotAllocator",
+        "mamba_available": 20,
+        "mamba_evictable": 8,
+        "mamba_free_slots": [
+          1,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+        "mamba_protected": 0,
+        "mamba_schedulable_available": 20
+      },
+      "paths": {
+        "RQ3_G112_A_TURN_001": {
+          "child_node_ids": [
+            24
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 18,
+          "parent_node_id": 19,
+          "path_full_all_present": true,
+          "path_full_rows": 3456,
+          "path_full_sha256": "280d80c0c0c330b3d849ef90d57836a71a8c291bb1c4822f206a90261bfc03f9",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 18,
+              "position": 3456,
+              "slots": [
+                3
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            18
+          ],
+          "prefix_sha256": "4c25a53ce12119e393436dbec4a57b5f97bb7e20eb71765946ed39607623178d",
+          "prefix_tokens": 3456,
+          "segment_lengths": [
+            2432,
+            5,
+            1019
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1019,
+          "target_full_value_sha256": "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            3
+          ]
+        },
+        "RQ3_G112_A_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 24,
+          "parent_node_id": 18,
+          "path_full_all_present": true,
+          "path_full_rows": 4352,
+          "path_full_sha256": "e48491ce01a1657dbc70fbff422883ad89c15f3d0d52a3e7dcdf9f094409c7f7",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 18,
+              "position": 3456,
+              "slots": [
+                3
+              ]
+            },
+            {
+              "node_id": 24,
+              "position": 4352,
+              "slots": [
+                12
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            18,
+            24
+          ],
+          "prefix_sha256": "c98e00bb7522177755f0c69ab8373f18104d86bfd0888b9ff68ec0126627aab2",
+          "prefix_tokens": 4352,
+          "segment_lengths": [
+            2432,
+            5,
+            1019,
+            896
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 896,
+          "target_full_value_sha256": "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            12
+          ]
+        },
+        "RQ3_G112_B_TURN_001": {
+          "child_node_ids": [
+            19
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 20,
+          "parent_node_id": 9,
+          "path_full_all_present": true,
+          "path_full_rows": 2432,
+          "path_full_sha256": "22f483dd173eb7e903495a1fcadf0169565e1396c2ef0d4adc8ef63fc636f4c6",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20
+          ],
+          "prefix_sha256": "23711558018cb78d78b5075fe959b41b9cd356493862b43167c53b43bbc43674",
+          "prefix_tokens": 2432,
+          "segment_lengths": [
+            2432
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 2432,
+          "target_full_value_sha256": "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            6
+          ]
+        },
+        "RQ3_G112_B_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 25,
+          "parent_node_id": 19,
+          "path_full_all_present": true,
+          "path_full_rows": 4096,
+          "path_full_sha256": "132ffd0c93205b833c44dc5b4270fe9c5dfbccbe30e58d3dfa6fff454dd59cf3",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 25,
+              "position": 4096,
+              "slots": [
+                14
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            25
+          ],
+          "prefix_sha256": "3d3138f272e26bbd7a0d17bdbe9f403348c64ba3a9605e6194ca8b59bbc4da9b",
+          "prefix_tokens": 4096,
+          "segment_lengths": [
+            2432,
+            5,
+            1659
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1659,
+          "target_full_value_sha256": "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            14
+          ]
+        },
+        "RQ3_G112_C_TURN_001": {
+          "child_node_ids": [
+            26
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 21,
+          "parent_node_id": 22,
+          "path_full_all_present": true,
+          "path_full_rows": 3712,
+          "path_full_sha256": "c62adb06dd5352e416c8ef473572e88eb980fe09d127a647f9294ed0373f976f",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 21,
+              "position": 3712,
+              "slots": [
+                8
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            21
+          ],
+          "prefix_sha256": "551c1c8e34d1f398f8544cfc98ee2fc7e1888c4b5d2a3e3ea1473787125ccc86",
+          "prefix_tokens": 3712,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            1265
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1265,
+          "target_full_value_sha256": "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            8
+          ]
+        },
+        "RQ3_G112_C_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 26,
+          "parent_node_id": 21,
+          "path_full_all_present": true,
+          "path_full_rows": 4032,
+          "path_full_sha256": "b3a77da6c391e07624f3ee66bc52757a22e41042c232ad9b4229f570110e3155",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 21,
+              "position": 3712,
+              "slots": [
+                8
+              ]
+            },
+            {
+              "node_id": 26,
+              "position": 4032,
+              "slots": [
+                16
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            21,
+            26
+          ],
+          "prefix_sha256": "c670ecfa5d6fa49f1043ed8d57d0f8bdd675a252d493e6e7db06fa0eb82fb263",
+          "prefix_tokens": 4032,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            1265,
+            320
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 320,
+          "target_full_value_sha256": "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            16
+          ]
+        },
+        "RQ3_G112_D_TURN_001": {
+          "child_node_ids": [
+            27
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 23,
+          "parent_node_id": 22,
+          "path_full_all_present": true,
+          "path_full_rows": 4800,
+          "path_full_sha256": "d646a18d772405f9162e62fc5f15ceba3b309d2d0853ed7257bf8f352ccdecd4",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 23,
+              "position": 4800,
+              "slots": [
+                10
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            23
+          ],
+          "prefix_sha256": "be0c8776dccf53936150c65d0483d8e41148fee7371d59630231cc2a0510c910",
+          "prefix_tokens": 4800,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            2353
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 2353,
+          "target_full_value_sha256": "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            10
+          ]
+        },
+        "RQ3_G112_D_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 27,
+          "parent_node_id": 23,
+          "path_full_all_present": true,
+          "path_full_rows": 5120,
+          "path_full_sha256": "2bde726f5b087b05a75d888cf64d27ca716062e692a1c006f08de38c6a4423e6",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 23,
+              "position": 4800,
+              "slots": [
+                10
+              ]
+            },
+            {
+              "node_id": 27,
+              "position": 5120,
+              "slots": [
+                18
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            23,
+            27
+          ],
+          "prefix_sha256": "38daec34dcf538f94177098cdacfac6696bcc573a9757b68d3c4c284252b782b",
+          "prefix_tokens": 5120,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            2353,
+            320
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 320,
+          "target_full_value_sha256": "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            18
+          ]
+        }
+      },
+      "scope": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "tree": {
+        "full_rows": [
+          [
+            9,
+            0,
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ],
+          [
+            18,
+            1019,
+            "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+          ],
+          [
+            19,
+            5,
+            "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+          ],
+          [
+            20,
+            2432,
+            "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+          ],
+          [
+            21,
+            1265,
+            "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+          ],
+          [
+            22,
+            10,
+            "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+          ],
+          [
+            23,
+            2353,
+            "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+          ],
+          [
+            24,
+            896,
+            "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+          ],
+          [
+            25,
+            1659,
+            "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+          ],
+          [
+            26,
+            320,
+            "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+          ],
+          [
+            27,
+            320,
+            "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+          ]
+        ],
+        "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+        "mamba_node_count": 8,
+        "mamba_rows": [
+          [
+            18,
+            [
+              3
+            ]
+          ],
+          [
+            20,
+            [
+              6
+            ]
+          ],
+          [
+            21,
+            [
+              8
+            ]
+          ],
+          [
+            23,
+            [
+              10
+            ]
+          ],
+          [
+            24,
+            [
+              12
+            ]
+          ],
+          [
+            25,
+            [
+              14
+            ]
+          ],
+          [
+            26,
+            [
+              16
+            ]
+          ],
+          [
+            27,
+            [
+              18
+            ]
+          ]
+        ],
+        "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+        "node_count": 11,
+        "structure_rows": [
+          [
+            9,
+            null,
+            [
+              20
+            ],
+            0
+          ],
+          [
+            18,
+            19,
+            [
+              24
+            ],
+            1019
+          ],
+          [
+            19,
+            20,
+            [
+              18,
+              22,
+              25
+            ],
+            5
+          ],
+          [
+            20,
+            9,
+            [
+              19
+            ],
+            2432
+          ],
+          [
+            21,
+            22,
+            [
+              26
+            ],
+            1265
+          ],
+          [
+            22,
+            19,
+            [
+              21,
+              23
+            ],
+            10
+          ],
+          [
+            23,
+            22,
+            [
+              27
+            ],
+            2353
+          ],
+          [
+            24,
+            18,
+            [],
+            896
+          ],
+          [
+            25,
+            19,
+            [],
+            1659
+          ],
+          [
+            26,
+            21,
+            [],
+            320
+          ],
+          [
+            27,
+            23,
+            [],
+            320
+          ]
+        ],
+        "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+      }
+    },
+    "view_digest": "a5339a9cf2185e37642ce9a4bc38a67da6ebf7baf457026aeeb5842ed6580625",
+    "worker_ns": 9027936
+  },
+  "policy_observation": [
+    {
+      "_control_profile": {
+        "operations": {
+          "targeted_probe._accounting_snapshot": {
+            "count": 2,
+            "exclusive_ns": 23339,
+            "inclusive_ns": 56370
+          },
+          "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 33031,
+            "inclusive_ns": 33031
+          },
+          "targeted_probe._global_maps": {
+            "count": 2,
+            "exclusive_ns": 137820,
+            "inclusive_ns": 845412
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+            "count": 16,
+            "exclusive_ns": 219773,
+            "inclusive_ns": 219773
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+            "count": 22,
+            "exclusive_ns": 483859,
+            "inclusive_ns": 487819
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 3960,
+            "inclusive_ns": 3960
+          },
+          "targeted_probe._validate_runtime_scope": {
+            "count": 2,
+            "exclusive_ns": 17047,
+            "inclusive_ns": 17047
+          },
+          "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+            "count": 1,
+            "exclusive_ns": 388281,
+            "inclusive_ns": 388281
+          },
+          "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+            "count": 2,
+            "exclusive_ns": 33538,
+            "inclusive_ns": 33538
+          },
+          "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+            "count": 1,
+            "exclusive_ns": 226388,
+            "inclusive_ns": 226388
+          }
+        },
+        "server_end_ns": 4897540330372963,
+        "server_start_ns": 4897540328728786,
+        "submit_end_ns": 4897540332256305,
+        "submit_start_ns": 4897540328693897
+      },
+      "changed_fields": [],
+      "effective_lookup_limit": 4752,
+      "excluded_nonsemantic_fields": [
+        "控制请求nonce",
+        "控制请求往返时间",
+        "日志时间"
+      ],
+      "extra_key": null,
+      "input_token_count": 4753,
+      "matched_segments": [
+        {
+          "full_device_resident": true,
+          "matched_length": 2432,
+          "node_id": 20,
+          "segment_length": 2432
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 5,
+          "node_id": 19,
+          "segment_length": 5
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 1019,
+          "node_id": 18,
+          "segment_length": 1019
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 896,
+          "node_id": 24,
+          "segment_length": 896
+        }
+      ],
+      "nonce": "g112_round2_flowstate_rep03:frontier:A",
+      "ok": true,
+      "page_size": 1,
+      "partial_match": false,
+      "resident_fa_frontier": 4352,
+      "scope_after": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "scope_before": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "semantic_snapshot_after": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "semantic_snapshot_before": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "state_equal": true,
+      "stop_reason": "没有匹配子节点",
+      "traversed_node_ids": [
+        20,
+        19,
+        18,
+        24
+      ]
+    },
+    {
+      "_control_profile": {
+        "operations": {
+          "targeted_probe._accounting_snapshot": {
+            "count": 2,
+            "exclusive_ns": 24301,
+            "inclusive_ns": 59148
+          },
+          "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 34847,
+            "inclusive_ns": 34847
+          },
+          "targeted_probe._global_maps": {
+            "count": 2,
+            "exclusive_ns": 141933,
+            "inclusive_ns": 844057
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+            "count": 16,
+            "exclusive_ns": 220844,
+            "inclusive_ns": 220844
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+            "count": 22,
+            "exclusive_ns": 477296,
+            "inclusive_ns": 481280
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 3984,
+            "inclusive_ns": 3984
+          },
+          "targeted_probe._validate_runtime_scope": {
+            "count": 2,
+            "exclusive_ns": 17292,
+            "inclusive_ns": 17292
+          },
+          "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+            "count": 1,
+            "exclusive_ns": 391256,
+            "inclusive_ns": 391256
+          },
+          "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+            "count": 2,
+            "exclusive_ns": 34694,
+            "inclusive_ns": 34694
+          },
+          "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+            "count": 1,
+            "exclusive_ns": 223038,
+            "inclusive_ns": 223038
+          }
+        },
+        "server_end_ns": 4897540381990887,
+        "server_start_ns": 4897540380346039,
+        "submit_end_ns": 4897540384068609,
+        "submit_start_ns": 4897540380296879
+      },
+      "changed_fields": [],
+      "effective_lookup_limit": 4651,
+      "excluded_nonsemantic_fields": [
+        "控制请求nonce",
+        "控制请求往返时间",
+        "日志时间"
+      ],
+      "extra_key": null,
+      "input_token_count": 4652,
+      "matched_segments": [
+        {
+          "full_device_resident": true,
+          "matched_length": 2432,
+          "node_id": 20,
+          "segment_length": 2432
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 5,
+          "node_id": 19,
+          "segment_length": 5
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 1659,
+          "node_id": 25,
+          "segment_length": 1659
+        }
+      ],
+      "nonce": "g112_round2_flowstate_rep03:frontier:B",
+      "ok": true,
+      "page_size": 1,
+      "partial_match": false,
+      "resident_fa_frontier": 4096,
+      "scope_after": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "scope_before": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "semantic_snapshot_after": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "semantic_snapshot_before": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "state_equal": true,
+      "stop_reason": "没有匹配子节点",
+      "traversed_node_ids": [
+        20,
+        19,
+        25
+      ]
+    },
+    {
+      "_control_profile": {
+        "operations": {
+          "targeted_probe._accounting_snapshot": {
+            "count": 2,
+            "exclusive_ns": 23944,
+            "inclusive_ns": 57389
+          },
+          "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 33445,
+            "inclusive_ns": 33445
+          },
+          "targeted_probe._global_maps": {
+            "count": 2,
+            "exclusive_ns": 140431,
+            "inclusive_ns": 825005
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+            "count": 16,
+            "exclusive_ns": 217876,
+            "inclusive_ns": 217876
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+            "count": 22,
+            "exclusive_ns": 462684,
+            "inclusive_ns": 466698
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 4014,
+            "inclusive_ns": 4014
+          },
+          "targeted_probe._validate_runtime_scope": {
+            "count": 2,
+            "exclusive_ns": 16739,
+            "inclusive_ns": 16739
+          },
+          "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+            "count": 1,
+            "exclusive_ns": 415215,
+            "inclusive_ns": 415215
+          },
+          "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+            "count": 2,
+            "exclusive_ns": 33530,
+            "inclusive_ns": 33530
+          },
+          "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+            "count": 1,
+            "exclusive_ns": 286666,
+            "inclusive_ns": 286666
+          }
+        },
+        "server_end_ns": 4897540388811974,
+        "server_start_ns": 4897540387107803,
+        "submit_end_ns": 4897540392196860,
+        "submit_start_ns": 4897540387076801
+      },
+      "changed_fields": [],
+      "effective_lookup_limit": 4794,
+      "excluded_nonsemantic_fields": [
+        "控制请求nonce",
+        "控制请求往返时间",
+        "日志时间"
+      ],
+      "extra_key": null,
+      "input_token_count": 4795,
+      "matched_segments": [
+        {
+          "full_device_resident": true,
+          "matched_length": 2432,
+          "node_id": 20,
+          "segment_length": 2432
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 5,
+          "node_id": 19,
+          "segment_length": 5
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 10,
+          "node_id": 22,
+          "segment_length": 10
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 1265,
+          "node_id": 21,
+          "segment_length": 1265
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 320,
+          "node_id": 26,
+          "segment_length": 320
+        }
+      ],
+      "nonce": "g112_round2_flowstate_rep03:frontier:C",
+      "ok": true,
+      "page_size": 1,
+      "partial_match": false,
+      "resident_fa_frontier": 4032,
+      "scope_after": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "scope_before": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "semantic_snapshot_after": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "semantic_snapshot_before": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "state_equal": true,
+      "stop_reason": "没有匹配子节点",
+      "traversed_node_ids": [
+        20,
+        19,
+        22,
+        21,
+        26
+      ]
+    },
+    {
+      "_control_profile": {
+        "operations": {
+          "targeted_probe._accounting_snapshot": {
+            "count": 2,
+            "exclusive_ns": 23165,
+            "inclusive_ns": 57668
+          },
+          "targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 34503,
+            "inclusive_ns": 34503
+          },
+          "targeted_probe._global_maps": {
+            "count": 2,
+            "exclusive_ns": 140575,
+            "inclusive_ns": 830557
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_ids": {
+            "count": 16,
+            "exclusive_ns": 218660,
+            "inclusive_ns": 218660
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+            "count": 22,
+            "exclusive_ns": 467163,
+            "inclusive_ns": 471322
+          },
+          "targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+            "count": 2,
+            "exclusive_ns": 4159,
+            "inclusive_ns": 4159
+          },
+          "targeted_probe._validate_runtime_scope": {
+            "count": 2,
+            "exclusive_ns": 16891,
+            "inclusive_ns": 16891
+          },
+          "wp3b_end_to_end_transport.inspect_resident_fa_frontier": {
+            "count": 1,
+            "exclusive_ns": 482263,
+            "inclusive_ns": 482263
+          },
+          "wp3b_end_to_end_transport.semantic_cache_snapshot": {
+            "count": 2,
+            "exclusive_ns": 33869,
+            "inclusive_ns": 33869
+          },
+          "wp3b_end_to_end_transport.semantic_snapshot_differences": {
+            "count": 1,
+            "exclusive_ns": 221019,
+            "inclusive_ns": 221019
+          }
+        },
+        "server_end_ns": 4897540410234825,
+        "server_start_ns": 4897540408520212,
+        "submit_end_ns": 4897540420161786,
+        "submit_start_ns": 4897540408475044
+      },
+      "changed_fields": [],
+      "effective_lookup_limit": 5872,
+      "excluded_nonsemantic_fields": [
+        "控制请求nonce",
+        "控制请求往返时间",
+        "日志时间"
+      ],
+      "extra_key": null,
+      "input_token_count": 5873,
+      "matched_segments": [
+        {
+          "full_device_resident": true,
+          "matched_length": 2432,
+          "node_id": 20,
+          "segment_length": 2432
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 5,
+          "node_id": 19,
+          "segment_length": 5
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 10,
+          "node_id": 22,
+          "segment_length": 10
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 2353,
+          "node_id": 23,
+          "segment_length": 2353
+        },
+        {
+          "full_device_resident": true,
+          "matched_length": 320,
+          "node_id": 27,
+          "segment_length": 320
+        }
+      ],
+      "nonce": "g112_round2_flowstate_rep03:frontier:D",
+      "ok": true,
+      "page_size": 1,
+      "partial_match": false,
+      "resident_fa_frontier": 5120,
+      "scope_after": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "scope_before": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "semantic_snapshot_after": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "semantic_snapshot_before": {
+        "accounting": {
+          "full_allocator": {
+            "allocated": null,
+            "allocator_type": "TokenToKVPoolAllocator",
+            "available": 374771
+          },
+          "full_evictable": 10279,
+          "full_protected": 0,
+          "mamba_allocator_type": "MambaSlotAllocator",
+          "mamba_available": 20,
+          "mamba_evictable": 8,
+          "mamba_free_slots": [
+            1,
+            2,
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+          "mamba_protected": 0,
+          "mamba_schedulable_available": 20
+        },
+        "full_evictable_leaf_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "mamba_lru_order_mru_to_lru": [
+          27,
+          23,
+          26,
+          21,
+          25,
+          20,
+          24,
+          18
+        ],
+        "recency_rows": [
+          [
+            9,
+            89.0,
+            20.0,
+            0
+          ],
+          [
+            18,
+            71.0,
+            40.0,
+            2
+          ],
+          [
+            19,
+            91.0,
+            40.0,
+            7
+          ],
+          [
+            20,
+            90.0,
+            40.0,
+            8
+          ],
+          [
+            21,
+            85.0,
+            56.0,
+            2
+          ],
+          [
+            22,
+            92.0,
+            56.0,
+            4
+          ],
+          [
+            23,
+            93.0,
+            66.0,
+            2
+          ],
+          [
+            24,
+            72.0,
+            73.0,
+            1
+          ],
+          [
+            25,
+            78.0,
+            79.0,
+            1
+          ],
+          [
+            26,
+            86.0,
+            87.0,
+            1
+          ],
+          [
+            27,
+            94.0,
+            95.0,
+            1
+          ]
+        ],
+        "reference_rows": [
+          [
+            9,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            18,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            21,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            25,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            26,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            27,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "tree": {
+          "full_rows": [
+            [
+              9,
+              0,
+              "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            ],
+            [
+              18,
+              1019,
+              "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+            ],
+            [
+              19,
+              5,
+              "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+            ],
+            [
+              20,
+              2432,
+              "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+            ],
+            [
+              21,
+              1265,
+              "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+            ],
+            [
+              22,
+              10,
+              "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+            ],
+            [
+              23,
+              2353,
+              "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+            ],
+            [
+              24,
+              896,
+              "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+            ],
+            [
+              25,
+              1659,
+              "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+            ],
+            [
+              26,
+              320,
+              "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+            ],
+            [
+              27,
+              320,
+              "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+            ]
+          ],
+          "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+          "mamba_node_count": 8,
+          "mamba_rows": [
+            [
+              18,
+              [
+                3
+              ]
+            ],
+            [
+              20,
+              [
+                6
+              ]
+            ],
+            [
+              21,
+              [
+                8
+              ]
+            ],
+            [
+              23,
+              [
+                10
+              ]
+            ],
+            [
+              24,
+              [
+                12
+              ]
+            ],
+            [
+              25,
+              [
+                14
+              ]
+            ],
+            [
+              26,
+              [
+                16
+              ]
+            ],
+            [
+              27,
+              [
+                18
+              ]
+            ]
+          ],
+          "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+          "node_count": 11,
+          "structure_rows": [
+            [
+              9,
+              null,
+              [
+                20
+              ],
+              0
+            ],
+            [
+              18,
+              19,
+              [
+                24
+              ],
+              1019
+            ],
+            [
+              19,
+              20,
+              [
+                18,
+                22,
+                25
+              ],
+              5
+            ],
+            [
+              20,
+              9,
+              [
+                19
+              ],
+              2432
+            ],
+            [
+              21,
+              22,
+              [
+                26
+              ],
+              1265
+            ],
+            [
+              22,
+              19,
+              [
+                21,
+                23
+              ],
+              10
+            ],
+            [
+              23,
+              22,
+              [
+                27
+              ],
+              2353
+            ],
+            [
+              24,
+              18,
+              [],
+              896
+            ],
+            [
+              25,
+              19,
+              [],
+              1659
+            ],
+            [
+              26,
+              21,
+              [],
+              320
+            ],
+            [
+              27,
+              23,
+              [],
+              320
+            ]
+          ],
+          "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+        }
+      },
+      "state_equal": true,
+      "stop_reason": "没有匹配子节点",
+      "traversed_node_ids": [
+        20,
+        19,
+        22,
+        23,
+        27
+      ]
+    }
+  ],
+  "reconciliation": {
+    "_control_profile": {
+      "operations": {
+        "SGLangAdapter.evict_mamba_only": {
+          "count": 6,
+          "exclusive_ns": 62574,
+          "inclusive_ns": 5873740
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter._capture_target_snapshot": {
+          "count": 6,
+          "exclusive_ns": 97459,
+          "inclusive_ns": 97459
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter._evict_mamba_component_only": {
+          "count": 6,
+          "exclusive_ns": 368192,
+          "inclusive_ns": 628170
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter._evict_mamba_component_only/UnifiedRadixCache.sanity_check": {
+          "count": 6,
+          "exclusive_ns": 259978,
+          "inclusive_ns": 259978
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter._find_exact_node": {
+          "count": 12,
+          "exclusive_ns": 947885,
+          "inclusive_ns": 947885
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter._validate_postconditions": {
+          "count": 6,
+          "exclusive_ns": 99657,
+          "inclusive_ns": 99657
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter._validate_target": {
+          "count": 6,
+          "exclusive_ns": 1247472,
+          "inclusive_ns": 1247472
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter.validate_runtime_capabilities": {
+          "count": 6,
+          "exclusive_ns": 130339,
+          "inclusive_ns": 2790523
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version": {
+          "count": 6,
+          "exclusive_ns": 16047,
+          "inclusive_ns": 2660184
+        },
+        "SGLangAdapter.evict_mamba_only/SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version/SGLangAdapter._read_sglang_version": {
+          "count": 6,
+          "exclusive_ns": 2644137,
+          "inclusive_ns": 2644137
+        },
+        "SGLangAdapter.validate_runtime_capabilities": {
+          "count": 1,
+          "exclusive_ns": 50568,
+          "inclusive_ns": 699678
+        },
+        "SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version": {
+          "count": 1,
+          "exclusive_ns": 3671,
+          "inclusive_ns": 649110
+        },
+        "SGLangAdapter.validate_runtime_capabilities/SGLangAdapter._validate_runtime_version/SGLangAdapter._read_sglang_version": {
+          "count": 1,
+          "exclusive_ns": 645439,
+          "inclusive_ns": 645439
+        },
+        "UnifiedRadixCache.sanity_check": {
+          "count": 1,
+          "exclusive_ns": 35486,
+          "inclusive_ns": 35486
+        },
+        "rq6_batched_control_transport._batch_view": {
+          "count": 2,
+          "exclusive_ns": 34069,
+          "inclusive_ns": 9865172
+        },
+        "rq6_batched_control_transport._batch_view/rq6_batched_control_transport._canonical_digest": {
+          "count": 2,
+          "exclusive_ns": 211421,
+          "inclusive_ns": 211421
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot": {
+          "count": 2,
+          "exclusive_ns": 28712,
+          "inclusive_ns": 63516
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._accounting_snapshot/targeted_probe._tensor_ids": {
+          "count": 2,
+          "exclusive_ns": 34804,
+          "inclusive_ns": 34804
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps": {
+          "count": 2,
+          "exclusive_ns": 132191,
+          "inclusive_ns": 683473
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_ids": {
+          "count": 10,
+          "exclusive_ns": 131276,
+          "inclusive_ns": 131276
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256": {
+          "count": 22,
+          "exclusive_ns": 415643,
+          "inclusive_ns": 420006
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._global_maps/targeted_probe._tensor_sha256/targeted_probe._tensor_ids": {
+          "count": 2,
+          "exclusive_ns": 4363,
+          "inclusive_ns": 4363
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot": {
+          "count": 16,
+          "exclusive_ns": 3486510,
+          "inclusive_ns": 8853703
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._find_exact_node": {
+          "count": 16,
+          "exclusive_ns": 3258540,
+          "inclusive_ns": 3258540
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_ids": {
+          "count": 36,
+          "exclusive_ns": 414511,
+          "inclusive_ns": 414511
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._path_snapshot/targeted_probe._tensor_sha256": {
+          "count": 74,
+          "exclusive_ns": 1694142,
+          "inclusive_ns": 1694142
+        },
+        "rq6_batched_control_transport._batch_view/targeted_probe._validate_runtime_scope": {
+          "count": 2,
+          "exclusive_ns": 18990,
+          "inclusive_ns": 18990
+        },
+        "rq6_batched_control_transport._parse_handles": {
+          "count": 1,
+          "exclusive_ns": 2861497,
+          "inclusive_ns": 2861497
+        },
+        "rq6_batched_control_transport._proof": {
+          "count": 1,
+          "exclusive_ns": 24480,
+          "inclusive_ns": 24480
+        },
+        "rq6_batched_control_transport._validate_identity_and_residency": {
+          "count": 1,
+          "exclusive_ns": 10584,
+          "inclusive_ns": 10584
+        }
+      },
+      "server_end_ns": 4897540485023314,
+      "server_start_ns": 4897540465489206,
+      "submit_end_ns": 4897540485383561,
+      "submit_start_ns": 4897540465435907
+    },
+    "after": {
+      "accounting": {
+        "full_allocator": {
+          "allocated": null,
+          "allocator_type": "TokenToKVPoolAllocator",
+          "available": 374771
+        },
+        "full_evictable": 10279,
+        "full_protected": 0,
+        "mamba_allocator_type": "MambaSlotAllocator",
+        "mamba_available": 26,
+        "mamba_evictable": 2,
+        "mamba_free_slots": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "mamba_free_slots_sha256": "8fbca64b538f1f4ae1b683e1698510eb6f432f1b3f1d382baf36f9d19888dea2",
+        "mamba_protected": 0,
+        "mamba_schedulable_available": 26
+      },
+      "paths": {
+        "RQ3_G112_A_TURN_001": {
+          "child_node_ids": [
+            24
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 18,
+          "parent_node_id": 19,
+          "path_full_all_present": true,
+          "path_full_rows": 3456,
+          "path_full_sha256": "280d80c0c0c330b3d849ef90d57836a71a8c291bb1c4822f206a90261bfc03f9",
+          "path_mamba_positions": [],
+          "path_node_ids": [
+            20,
+            19,
+            18
+          ],
+          "prefix_sha256": "4c25a53ce12119e393436dbec4a57b5f97bb7e20eb71765946ed39607623178d",
+          "prefix_tokens": 3456,
+          "segment_lengths": [
+            2432,
+            5,
+            1019
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1019,
+          "target_full_value_sha256": "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": false,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": false,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": []
+        },
+        "RQ3_G112_A_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 24,
+          "parent_node_id": 18,
+          "path_full_all_present": true,
+          "path_full_rows": 4352,
+          "path_full_sha256": "e48491ce01a1657dbc70fbff422883ad89c15f3d0d52a3e7dcdf9f094409c7f7",
+          "path_mamba_positions": [
+            {
+              "node_id": 24,
+              "position": 4352,
+              "slots": [
+                12
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            18,
+            24
+          ],
+          "prefix_sha256": "c98e00bb7522177755f0c69ab8373f18104d86bfd0888b9ff68ec0126627aab2",
+          "prefix_tokens": 4352,
+          "segment_lengths": [
+            2432,
+            5,
+            1019,
+            896
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 896,
+          "target_full_value_sha256": "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            12
+          ]
+        },
+        "RQ3_G112_B_TURN_001": {
+          "child_node_ids": [
+            19
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 20,
+          "parent_node_id": 9,
+          "path_full_all_present": true,
+          "path_full_rows": 2432,
+          "path_full_sha256": "22f483dd173eb7e903495a1fcadf0169565e1396c2ef0d4adc8ef63fc636f4c6",
+          "path_mamba_positions": [],
+          "path_node_ids": [
+            20
+          ],
+          "prefix_sha256": "23711558018cb78d78b5075fe959b41b9cd356493862b43167c53b43bbc43674",
+          "prefix_tokens": 2432,
+          "segment_lengths": [
+            2432
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 2432,
+          "target_full_value_sha256": "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": false,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": false,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": []
+        },
+        "RQ3_G112_B_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 25,
+          "parent_node_id": 19,
+          "path_full_all_present": true,
+          "path_full_rows": 4096,
+          "path_full_sha256": "132ffd0c93205b833c44dc5b4270fe9c5dfbccbe30e58d3dfa6fff454dd59cf3",
+          "path_mamba_positions": [],
+          "path_node_ids": [
+            20,
+            19,
+            25
+          ],
+          "prefix_sha256": "3d3138f272e26bbd7a0d17bdbe9f403348c64ba3a9605e6194ca8b59bbc4da9b",
+          "prefix_tokens": 4096,
+          "segment_lengths": [
+            2432,
+            5,
+            1659
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1659,
+          "target_full_value_sha256": "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": false,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": false,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": []
+        },
+        "RQ3_G112_C_TURN_001": {
+          "child_node_ids": [
+            26
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 21,
+          "parent_node_id": 22,
+          "path_full_all_present": true,
+          "path_full_rows": 3712,
+          "path_full_sha256": "c62adb06dd5352e416c8ef473572e88eb980fe09d127a647f9294ed0373f976f",
+          "path_mamba_positions": [],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            21
+          ],
+          "prefix_sha256": "551c1c8e34d1f398f8544cfc98ee2fc7e1888c4b5d2a3e3ea1473787125ccc86",
+          "prefix_tokens": 3712,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            1265
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1265,
+          "target_full_value_sha256": "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": false,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": false,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": []
+        },
+        "RQ3_G112_C_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 26,
+          "parent_node_id": 21,
+          "path_full_all_present": true,
+          "path_full_rows": 4032,
+          "path_full_sha256": "b3a77da6c391e07624f3ee66bc52757a22e41042c232ad9b4229f570110e3155",
+          "path_mamba_positions": [],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            21,
+            26
+          ],
+          "prefix_sha256": "c670ecfa5d6fa49f1043ed8d57d0f8bdd675a252d493e6e7db06fa0eb82fb263",
+          "prefix_tokens": 4032,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            1265,
+            320
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 320,
+          "target_full_value_sha256": "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": false,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": false,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": []
+        },
+        "RQ3_G112_D_TURN_001": {
+          "child_node_ids": [
+            27
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 23,
+          "parent_node_id": 22,
+          "path_full_all_present": true,
+          "path_full_rows": 4800,
+          "path_full_sha256": "d646a18d772405f9162e62fc5f15ceba3b309d2d0853ed7257bf8f352ccdecd4",
+          "path_mamba_positions": [],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            23
+          ],
+          "prefix_sha256": "be0c8776dccf53936150c65d0483d8e41148fee7371d59630231cc2a0510c910",
+          "prefix_tokens": 4800,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            2353
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 2353,
+          "target_full_value_sha256": "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": false,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": false,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": []
+        },
+        "RQ3_G112_D_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 27,
+          "parent_node_id": 23,
+          "path_full_all_present": true,
+          "path_full_rows": 5120,
+          "path_full_sha256": "2bde726f5b087b05a75d888cf64d27ca716062e692a1c006f08de38c6a4423e6",
+          "path_mamba_positions": [
+            {
+              "node_id": 27,
+              "position": 5120,
+              "slots": [
+                18
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            23,
+            27
+          ],
+          "prefix_sha256": "38daec34dcf538f94177098cdacfac6696bcc573a9757b68d3c4c284252b782b",
+          "prefix_tokens": 5120,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            2353,
+            320
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 320,
+          "target_full_value_sha256": "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            18
+          ]
+        }
+      },
+      "scope": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "tree": {
+        "full_rows": [
+          [
+            9,
+            0,
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ],
+          [
+            18,
+            1019,
+            "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+          ],
+          [
+            19,
+            5,
+            "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+          ],
+          [
+            20,
+            2432,
+            "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+          ],
+          [
+            21,
+            1265,
+            "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+          ],
+          [
+            22,
+            10,
+            "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+          ],
+          [
+            23,
+            2353,
+            "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+          ],
+          [
+            24,
+            896,
+            "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+          ],
+          [
+            25,
+            1659,
+            "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+          ],
+          [
+            26,
+            320,
+            "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+          ],
+          [
+            27,
+            320,
+            "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+          ]
+        ],
+        "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+        "mamba_node_count": 2,
+        "mamba_rows": [
+          [
+            24,
+            [
+              12
+            ]
+          ],
+          [
+            27,
+            [
+              18
+            ]
+          ]
+        ],
+        "mamba_tree_sha256": "592ad44930a80e5d32fe39ce8aafc2f4d47090c072ca4c977f7f6eea26bc9194",
+        "node_count": 11,
+        "structure_rows": [
+          [
+            9,
+            null,
+            [
+              20
+            ],
+            0
+          ],
+          [
+            18,
+            19,
+            [
+              24
+            ],
+            1019
+          ],
+          [
+            19,
+            20,
+            [
+              18,
+              22,
+              25
+            ],
+            5
+          ],
+          [
+            20,
+            9,
+            [
+              19
+            ],
+            2432
+          ],
+          [
+            21,
+            22,
+            [
+              26
+            ],
+            1265
+          ],
+          [
+            22,
+            19,
+            [
+              21,
+              23
+            ],
+            10
+          ],
+          [
+            23,
+            22,
+            [
+              27
+            ],
+            2353
+          ],
+          [
+            24,
+            18,
+            [],
+            896
+          ],
+          [
+            25,
+            19,
+            [],
+            1659
+          ],
+          [
+            26,
+            21,
+            [],
+            320
+          ],
+          [
+            27,
+            23,
+            [],
+            320
+          ]
+        ],
+        "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+      }
+    },
+    "after_view_digest": "f12673a8ebbd3ffef77a9839eb2cb0f577c3e711fb39804aea2bd24fa543c5b9",
+    "before": {
+      "accounting": {
+        "full_allocator": {
+          "allocated": null,
+          "allocator_type": "TokenToKVPoolAllocator",
+          "available": 374771
+        },
+        "full_evictable": 10279,
+        "full_protected": 0,
+        "mamba_allocator_type": "MambaSlotAllocator",
+        "mamba_available": 20,
+        "mamba_evictable": 8,
+        "mamba_free_slots": [
+          1,
+          2,
+          4,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "mamba_free_slots_sha256": "7ccfd3b037e5c01cf77bf47c36b8c7e51b3212fe225c7067d2a967c460dfe0d1",
+        "mamba_protected": 0,
+        "mamba_schedulable_available": 20
+      },
+      "paths": {
+        "RQ3_G112_A_TURN_001": {
+          "child_node_ids": [
+            24
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 18,
+          "parent_node_id": 19,
+          "path_full_all_present": true,
+          "path_full_rows": 3456,
+          "path_full_sha256": "280d80c0c0c330b3d849ef90d57836a71a8c291bb1c4822f206a90261bfc03f9",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 18,
+              "position": 3456,
+              "slots": [
+                3
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            18
+          ],
+          "prefix_sha256": "4c25a53ce12119e393436dbec4a57b5f97bb7e20eb71765946ed39607623178d",
+          "prefix_tokens": 3456,
+          "segment_lengths": [
+            2432,
+            5,
+            1019
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1019,
+          "target_full_value_sha256": "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            3
+          ]
+        },
+        "RQ3_G112_A_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 24,
+          "parent_node_id": 18,
+          "path_full_all_present": true,
+          "path_full_rows": 4352,
+          "path_full_sha256": "e48491ce01a1657dbc70fbff422883ad89c15f3d0d52a3e7dcdf9f094409c7f7",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 18,
+              "position": 3456,
+              "slots": [
+                3
+              ]
+            },
+            {
+              "node_id": 24,
+              "position": 4352,
+              "slots": [
+                12
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            18,
+            24
+          ],
+          "prefix_sha256": "c98e00bb7522177755f0c69ab8373f18104d86bfd0888b9ff68ec0126627aab2",
+          "prefix_tokens": 4352,
+          "segment_lengths": [
+            2432,
+            5,
+            1019,
+            896
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 896,
+          "target_full_value_sha256": "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            12
+          ]
+        },
+        "RQ3_G112_B_TURN_001": {
+          "child_node_ids": [
+            19
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 20,
+          "parent_node_id": 9,
+          "path_full_all_present": true,
+          "path_full_rows": 2432,
+          "path_full_sha256": "22f483dd173eb7e903495a1fcadf0169565e1396c2ef0d4adc8ef63fc636f4c6",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20
+          ],
+          "prefix_sha256": "23711558018cb78d78b5075fe959b41b9cd356493862b43167c53b43bbc43674",
+          "prefix_tokens": 2432,
+          "segment_lengths": [
+            2432
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 2432,
+          "target_full_value_sha256": "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            6
+          ]
+        },
+        "RQ3_G112_B_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 25,
+          "parent_node_id": 19,
+          "path_full_all_present": true,
+          "path_full_rows": 4096,
+          "path_full_sha256": "132ffd0c93205b833c44dc5b4270fe9c5dfbccbe30e58d3dfa6fff454dd59cf3",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 25,
+              "position": 4096,
+              "slots": [
+                14
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            25
+          ],
+          "prefix_sha256": "3d3138f272e26bbd7a0d17bdbe9f403348c64ba3a9605e6194ca8b59bbc4da9b",
+          "prefix_tokens": 4096,
+          "segment_lengths": [
+            2432,
+            5,
+            1659
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1659,
+          "target_full_value_sha256": "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            14
+          ]
+        },
+        "RQ3_G112_C_TURN_001": {
+          "child_node_ids": [
+            26
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 21,
+          "parent_node_id": 22,
+          "path_full_all_present": true,
+          "path_full_rows": 3712,
+          "path_full_sha256": "c62adb06dd5352e416c8ef473572e88eb980fe09d127a647f9294ed0373f976f",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 21,
+              "position": 3712,
+              "slots": [
+                8
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            21
+          ],
+          "prefix_sha256": "551c1c8e34d1f398f8544cfc98ee2fc7e1888c4b5d2a3e3ea1473787125ccc86",
+          "prefix_tokens": 3712,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            1265
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 1265,
+          "target_full_value_sha256": "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            8
+          ]
+        },
+        "RQ3_G112_C_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 26,
+          "parent_node_id": 21,
+          "path_full_all_present": true,
+          "path_full_rows": 4032,
+          "path_full_sha256": "b3a77da6c391e07624f3ee66bc52757a22e41042c232ad9b4229f570110e3155",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 21,
+              "position": 3712,
+              "slots": [
+                8
+              ]
+            },
+            {
+              "node_id": 26,
+              "position": 4032,
+              "slots": [
+                16
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            21,
+            26
+          ],
+          "prefix_sha256": "c670ecfa5d6fa49f1043ed8d57d0f8bdd675a252d493e6e7db06fa0eb82fb263",
+          "prefix_tokens": 4032,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            1265,
+            320
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 320,
+          "target_full_value_sha256": "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            16
+          ]
+        },
+        "RQ3_G112_D_TURN_001": {
+          "child_node_ids": [
+            27
+          ],
+          "extra_key": null,
+          "is_device_leaf": false,
+          "n_children": 1,
+          "node_id": 23,
+          "parent_node_id": 22,
+          "path_full_all_present": true,
+          "path_full_rows": 4800,
+          "path_full_sha256": "d646a18d772405f9162e62fc5f15ceba3b309d2d0853ed7257bf8f352ccdecd4",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 23,
+              "position": 4800,
+              "slots": [
+                10
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            23
+          ],
+          "prefix_sha256": "be0c8776dccf53936150c65d0483d8e41148fee7371d59630231cc2a0510c910",
+          "prefix_tokens": 4800,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            2353
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 2353,
+          "target_full_value_sha256": "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            10
+          ]
+        },
+        "RQ3_G112_D_TURN_002": {
+          "child_node_ids": [],
+          "extra_key": null,
+          "is_device_leaf": true,
+          "n_children": 0,
+          "node_id": 27,
+          "parent_node_id": 23,
+          "path_full_all_present": true,
+          "path_full_rows": 5120,
+          "path_full_sha256": "2bde726f5b087b05a75d888cf64d27ca716062e692a1c006f08de38c6a4423e6",
+          "path_mamba_positions": [
+            {
+              "node_id": 20,
+              "position": 2432,
+              "slots": [
+                6
+              ]
+            },
+            {
+              "node_id": 23,
+              "position": 4800,
+              "slots": [
+                10
+              ]
+            },
+            {
+              "node_id": 27,
+              "position": 5120,
+              "slots": [
+                18
+              ]
+            }
+          ],
+          "path_node_ids": [
+            20,
+            19,
+            22,
+            23,
+            27
+          ],
+          "prefix_sha256": "38daec34dcf538f94177098cdacfac6696bcc573a9757b68d3c4c284252b782b",
+          "prefix_tokens": 5120,
+          "segment_lengths": [
+            2432,
+            5,
+            10,
+            2353,
+            320
+          ],
+          "target_full_lock_ref": 0,
+          "target_full_present": true,
+          "target_full_value_len": 320,
+          "target_full_value_sha256": "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530",
+          "target_mamba_host_lock_ref": 0,
+          "target_mamba_host_present": false,
+          "target_mamba_in_lru": true,
+          "target_mamba_lock_ref": 0,
+          "target_mamba_present": true,
+          "target_mamba_session_ref": 0,
+          "target_mamba_slots": [
+            18
+          ]
+        }
+      },
+      "scope": {
+        "cache_type": "UnifiedRadixCache",
+        "chunked_request_present": false,
+        "dp_size": 1,
+        "enable_hicache": false,
+        "enable_session_radix_cache": false,
+        "page_size": 1,
+        "pp_size": 1,
+        "running_requests": 0,
+        "scheduler_fully_idle": true,
+        "tp_size": 1,
+        "tree_core_type": "UnifiedTreeCore",
+        "waiting_requests": 0
+      },
+      "tree": {
+        "full_rows": [
+          [
+            9,
+            0,
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ],
+          [
+            18,
+            1019,
+            "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+          ],
+          [
+            19,
+            5,
+            "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+          ],
+          [
+            20,
+            2432,
+            "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+          ],
+          [
+            21,
+            1265,
+            "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+          ],
+          [
+            22,
+            10,
+            "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+          ],
+          [
+            23,
+            2353,
+            "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+          ],
+          [
+            24,
+            896,
+            "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+          ],
+          [
+            25,
+            1659,
+            "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+          ],
+          [
+            26,
+            320,
+            "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+          ],
+          [
+            27,
+            320,
+            "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+          ]
+        ],
+        "full_tree_sha256": "69ac4e3220f3f3a61669f726ef80cb984f6fc6460fe4070fe99c1c7b77ea06c2",
+        "mamba_node_count": 8,
+        "mamba_rows": [
+          [
+            18,
+            [
+              3
+            ]
+          ],
+          [
+            20,
+            [
+              6
+            ]
+          ],
+          [
+            21,
+            [
+              8
+            ]
+          ],
+          [
+            23,
+            [
+              10
+            ]
+          ],
+          [
+            24,
+            [
+              12
+            ]
+          ],
+          [
+            25,
+            [
+              14
+            ]
+          ],
+          [
+            26,
+            [
+              16
+            ]
+          ],
+          [
+            27,
+            [
+              18
+            ]
+          ]
+        ],
+        "mamba_tree_sha256": "4ff3652b89b958fbc6ba40ba984845a032fa7ffdd76eadf2777df99e0b09dc0f",
+        "node_count": 11,
+        "structure_rows": [
+          [
+            9,
+            null,
+            [
+              20
+            ],
+            0
+          ],
+          [
+            18,
+            19,
+            [
+              24
+            ],
+            1019
+          ],
+          [
+            19,
+            20,
+            [
+              18,
+              22,
+              25
+            ],
+            5
+          ],
+          [
+            20,
+            9,
+            [
+              19
+            ],
+            2432
+          ],
+          [
+            21,
+            22,
+            [
+              26
+            ],
+            1265
+          ],
+          [
+            22,
+            19,
+            [
+              21,
+              23
+            ],
+            10
+          ],
+          [
+            23,
+            22,
+            [
+              27
+            ],
+            2353
+          ],
+          [
+            24,
+            18,
+            [],
+            896
+          ],
+          [
+            25,
+            19,
+            [],
+            1659
+          ],
+          [
+            26,
+            21,
+            [],
+            320
+          ],
+          [
+            27,
+            23,
+            [],
+            320
+          ]
+        ],
+        "structure_sha256": "7c42894015edcc64d9e961a7b9d43c3e651c5cc569ee2743868e3da4a70bd55d"
+      }
+    },
+    "before_view_digest": "a5339a9cf2185e37642ce9a4bc38a67da6ebf7baf457026aeeb5842ed6580625",
+    "candidate_ids": [
+      "RQ3_G112_A_TURN_001",
+      "RQ3_G112_A_TURN_002",
+      "RQ3_G112_B_TURN_001",
+      "RQ3_G112_B_TURN_002",
+      "RQ3_G112_C_TURN_001",
+      "RQ3_G112_C_TURN_002",
+      "RQ3_G112_D_TURN_001",
+      "RQ3_G112_D_TURN_002"
+    ],
+    "completed_eviction_ids": [
+      "RQ3_G112_A_TURN_001",
+      "RQ3_G112_B_TURN_001",
+      "RQ3_G112_B_TURN_002",
+      "RQ3_G112_C_TURN_001",
+      "RQ3_G112_C_TURN_002",
+      "RQ3_G112_D_TURN_001"
+    ],
+    "evicted_ids": [
+      "RQ3_G112_A_TURN_001",
+      "RQ3_G112_B_TURN_001",
+      "RQ3_G112_B_TURN_002",
+      "RQ3_G112_C_TURN_001",
+      "RQ3_G112_C_TURN_002",
+      "RQ3_G112_D_TURN_001"
+    ],
+    "nonce": "g112_round2_flowstate_rep03:reconcile",
+    "ok": true,
+    "operation_ns": [
+      1030124,
+      1148240,
+      946744,
+      886036,
+      907412,
+      962708
+    ],
+    "post_validation_count": 1,
+    "proof": {
+      "changed_mamba_node_ids": [
+        18,
+        20,
+        21,
+        23,
+        25,
+        26
+      ],
+      "evicted_absent": true,
+      "expected_changed_mamba_node_ids": [
+        18,
+        20,
+        21,
+        23,
+        25,
+        26
+      ],
+      "expected_released_slots": 6,
+      "fa_cascade": false,
+      "fa_preserved": true,
+      "identities_unchanged": true,
+      "mamba_available_delta": 6,
+      "native_recurrent_eviction": false,
+      "recurrent_change_exact": true,
+      "selected_resident": true,
+      "status": "PASS",
+      "unexpected_rematerialization": false
+    },
+    "selected_ids": [
+      "RQ3_G112_D_TURN_002",
+      "RQ3_G112_A_TURN_002"
+    ],
+    "worker_ns": 19405132
+  },
+  "censuses": [
+    {
+      "request_ordinal": 9,
+      "workflow": "A",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-a24441652244394e4968c6444bf9947e",
+      "turn": 3,
+      "rid": "rq3e-g112-a-turn-003",
+      "input_tokens": 4753,
+      "mamba_total_slots": 28,
+      "mamba_available_slots": 25,
+      "mamba_schedulable_available_slots": 25,
+      "mamba_evictable_slots": 3,
+      "mamba_protected_slots": 0,
+      "device_resident_mamba_slots": 3,
+      "unaccounted_or_working_slots_at_safe_point": 0,
+      "mamba_node_count": 3,
+      "mamba_rows_count": 3,
+      "resident_mamba_nodes": [
+        {
+          "node_id": 24,
+          "slots": [
+            12
+          ],
+          "token_position": 4352
+        },
+        {
+          "node_id": 27,
+          "slots": [
+            18
+          ],
+          "token_position": 5120
+        },
+        {
+          "node_id": 28,
+          "slots": [
+            20
+          ],
+          "token_position": 4736
+        }
+      ],
+      "added_mamba_node_ids": [
+        28
+      ],
+      "removed_mamba_node_ids": [],
+      "changed_existing_mamba_node_ids": [],
+      "full_device_node_count": 12,
+      "full_device_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "full_evictable_tokens": 10663,
+      "full_protected_tokens": 0,
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 374387
+      },
+      "tree_node_count": 12,
+      "structure_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "removed_full_device_node_ids": [],
+      "removed_structure_node_ids": [],
+      "native_mamba_capacity_eviction_inferred": false,
+      "fa_kv_cascade_eviction_inferred": false,
+      "raw_accounting": {
+        "full_allocator": {
+          "allocated": null,
+          "allocator_type": "TokenToKVPoolAllocator",
+          "available": 374387
+        },
+        "full_evictable": 10663,
+        "full_protected": 0,
+        "mamba_allocator_type": "MambaSlotAllocator",
+        "mamba_available": 25,
+        "mamba_evictable": 3,
+        "mamba_free_slots": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "mamba_free_slots_sha256": "d65cf1ffee7b272bc5f388d87f3c65503b238c63d23291cc628890215326fc2d",
+        "mamba_protected": 0,
+        "mamba_schedulable_available": 25
+      },
+      "raw_tree": {
+        "full_rows": [
+          [
+            9,
+            0,
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ],
+          [
+            18,
+            1019,
+            "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+          ],
+          [
+            19,
+            5,
+            "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+          ],
+          [
+            20,
+            2432,
+            "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+          ],
+          [
+            21,
+            1265,
+            "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+          ],
+          [
+            22,
+            10,
+            "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+          ],
+          [
+            23,
+            2353,
+            "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+          ],
+          [
+            24,
+            896,
+            "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+          ],
+          [
+            25,
+            1659,
+            "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+          ],
+          [
+            26,
+            320,
+            "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+          ],
+          [
+            27,
+            320,
+            "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+          ],
+          [
+            28,
+            384,
+            "8ba3e2cb8c4d60dd67aca7569544761d5ec0b2ff754124e12c2f4e122aeda1ad"
+          ]
+        ],
+        "full_tree_sha256": "e844cf314eb58b7b73c5585df73d7ca1385982ddf6c75d36c8610b7d475c4179",
+        "mamba_node_count": 3,
+        "mamba_rows": [
+          [
+            24,
+            [
+              12
+            ]
+          ],
+          [
+            27,
+            [
+              18
+            ]
+          ],
+          [
+            28,
+            [
+              20
+            ]
+          ]
+        ],
+        "mamba_tree_sha256": "2e9c6beb062872f11b24ebf385abedcb6ad64595eeb855359c5a50c8c99e89f2",
+        "node_count": 12,
+        "structure_rows": [
+          [
+            9,
+            null,
+            [
+              20
+            ],
+            0
+          ],
+          [
+            18,
+            19,
+            [
+              24
+            ],
+            1019
+          ],
+          [
+            19,
+            20,
+            [
+              18,
+              22,
+              25
+            ],
+            5
+          ],
+          [
+            20,
+            9,
+            [
+              19
+            ],
+            2432
+          ],
+          [
+            21,
+            22,
+            [
+              26
+            ],
+            1265
+          ],
+          [
+            22,
+            19,
+            [
+              21,
+              23
+            ],
+            10
+          ],
+          [
+            23,
+            22,
+            [
+              27
+            ],
+            2353
+          ],
+          [
+            24,
+            18,
+            [
+              28
+            ],
+            896
+          ],
+          [
+            25,
+            19,
+            [],
+            1659
+          ],
+          [
+            26,
+            21,
+            [],
+            320
+          ],
+          [
+            27,
+            23,
+            [],
+            320
+          ],
+          [
+            28,
+            24,
+            [],
+            384
+          ]
+        ],
+        "structure_sha256": "0055d2c468c3649c0909cbaad9e2c407e1bd518a62da65feba66a42ca4bce9b4"
+      }
+    },
+    {
+      "request_ordinal": 10,
+      "workflow": "B",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-b208cb740b50d8a2fa31e14be986c19d",
+      "turn": 3,
+      "rid": "rq3e-g112-b-turn-003",
+      "input_tokens": 4652,
+      "mamba_total_slots": 28,
+      "mamba_available_slots": 24,
+      "mamba_schedulable_available_slots": 24,
+      "mamba_evictable_slots": 4,
+      "mamba_protected_slots": 0,
+      "device_resident_mamba_slots": 4,
+      "unaccounted_or_working_slots_at_safe_point": 0,
+      "mamba_node_count": 4,
+      "mamba_rows_count": 4,
+      "resident_mamba_nodes": [
+        {
+          "node_id": 24,
+          "slots": [
+            12
+          ],
+          "token_position": 4352
+        },
+        {
+          "node_id": 25,
+          "slots": [
+            23
+          ],
+          "token_position": 4096
+        },
+        {
+          "node_id": 27,
+          "slots": [
+            18
+          ],
+          "token_position": 5120
+        },
+        {
+          "node_id": 28,
+          "slots": [
+            20
+          ],
+          "token_position": 4736
+        }
+      ],
+      "added_mamba_node_ids": [
+        25
+      ],
+      "removed_mamba_node_ids": [],
+      "changed_existing_mamba_node_ids": [],
+      "full_device_node_count": 12,
+      "full_device_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "full_evictable_tokens": 10663,
+      "full_protected_tokens": 0,
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 374387
+      },
+      "tree_node_count": 12,
+      "structure_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "removed_full_device_node_ids": [],
+      "removed_structure_node_ids": [],
+      "native_mamba_capacity_eviction_inferred": false,
+      "fa_kv_cascade_eviction_inferred": false,
+      "raw_accounting": {
+        "full_allocator": {
+          "allocated": null,
+          "allocator_type": "TokenToKVPoolAllocator",
+          "available": 374387
+        },
+        "full_evictable": 10663,
+        "full_protected": 0,
+        "mamba_allocator_type": "MambaSlotAllocator",
+        "mamba_available": 24,
+        "mamba_evictable": 4,
+        "mamba_free_slots": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          21,
+          22,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "mamba_free_slots_sha256": "40f5fc79879f5538ecd063e4f63664e5aa018dd00e8e1f23f4e377a3055ccd63",
+        "mamba_protected": 0,
+        "mamba_schedulable_available": 24
+      },
+      "raw_tree": {
+        "full_rows": [
+          [
+            9,
+            0,
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ],
+          [
+            18,
+            1019,
+            "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+          ],
+          [
+            19,
+            5,
+            "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+          ],
+          [
+            20,
+            2432,
+            "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+          ],
+          [
+            21,
+            1265,
+            "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+          ],
+          [
+            22,
+            10,
+            "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+          ],
+          [
+            23,
+            2353,
+            "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+          ],
+          [
+            24,
+            896,
+            "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+          ],
+          [
+            25,
+            1659,
+            "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+          ],
+          [
+            26,
+            320,
+            "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+          ],
+          [
+            27,
+            320,
+            "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+          ],
+          [
+            28,
+            384,
+            "8ba3e2cb8c4d60dd67aca7569544761d5ec0b2ff754124e12c2f4e122aeda1ad"
+          ]
+        ],
+        "full_tree_sha256": "e844cf314eb58b7b73c5585df73d7ca1385982ddf6c75d36c8610b7d475c4179",
+        "mamba_node_count": 4,
+        "mamba_rows": [
+          [
+            24,
+            [
+              12
+            ]
+          ],
+          [
+            25,
+            [
+              23
+            ]
+          ],
+          [
+            27,
+            [
+              18
+            ]
+          ],
+          [
+            28,
+            [
+              20
+            ]
+          ]
+        ],
+        "mamba_tree_sha256": "8432d411a76d8fdfbdc530473bbb639b6fc600ec313698e3c950c9f4d03c5865",
+        "node_count": 12,
+        "structure_rows": [
+          [
+            9,
+            null,
+            [
+              20
+            ],
+            0
+          ],
+          [
+            18,
+            19,
+            [
+              24
+            ],
+            1019
+          ],
+          [
+            19,
+            20,
+            [
+              18,
+              22,
+              25
+            ],
+            5
+          ],
+          [
+            20,
+            9,
+            [
+              19
+            ],
+            2432
+          ],
+          [
+            21,
+            22,
+            [
+              26
+            ],
+            1265
+          ],
+          [
+            22,
+            19,
+            [
+              21,
+              23
+            ],
+            10
+          ],
+          [
+            23,
+            22,
+            [
+              27
+            ],
+            2353
+          ],
+          [
+            24,
+            18,
+            [
+              28
+            ],
+            896
+          ],
+          [
+            25,
+            19,
+            [],
+            1659
+          ],
+          [
+            26,
+            21,
+            [],
+            320
+          ],
+          [
+            27,
+            23,
+            [],
+            320
+          ],
+          [
+            28,
+            24,
+            [],
+            384
+          ]
+        ],
+        "structure_sha256": "0055d2c468c3649c0909cbaad9e2c407e1bd518a62da65feba66a42ca4bce9b4"
+      }
+    },
+    {
+      "request_ordinal": 11,
+      "workflow": "C",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-c0ba035bf1d3532542cf9eb10d049af2",
+      "turn": 3,
+      "rid": "rq3e-g112-c-turn-003",
+      "input_tokens": 4795,
+      "mamba_total_slots": 28,
+      "mamba_available_slots": 23,
+      "mamba_schedulable_available_slots": 23,
+      "mamba_evictable_slots": 5,
+      "mamba_protected_slots": 0,
+      "device_resident_mamba_slots": 5,
+      "unaccounted_or_working_slots_at_safe_point": 0,
+      "mamba_node_count": 5,
+      "mamba_rows_count": 5,
+      "resident_mamba_nodes": [
+        {
+          "node_id": 24,
+          "slots": [
+            12
+          ],
+          "token_position": 4352
+        },
+        {
+          "node_id": 25,
+          "slots": [
+            23
+          ],
+          "token_position": 4096
+        },
+        {
+          "node_id": 26,
+          "slots": [
+            26
+          ],
+          "token_position": 4032
+        },
+        {
+          "node_id": 27,
+          "slots": [
+            18
+          ],
+          "token_position": 5120
+        },
+        {
+          "node_id": 28,
+          "slots": [
+            20
+          ],
+          "token_position": 4736
+        }
+      ],
+      "added_mamba_node_ids": [
+        26
+      ],
+      "removed_mamba_node_ids": [],
+      "changed_existing_mamba_node_ids": [],
+      "full_device_node_count": 12,
+      "full_device_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "full_evictable_tokens": 10663,
+      "full_protected_tokens": 0,
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 374387
+      },
+      "tree_node_count": 12,
+      "structure_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "removed_full_device_node_ids": [],
+      "removed_structure_node_ids": [],
+      "native_mamba_capacity_eviction_inferred": false,
+      "fa_kv_cascade_eviction_inferred": false,
+      "raw_accounting": {
+        "full_allocator": {
+          "allocated": null,
+          "allocator_type": "TokenToKVPoolAllocator",
+          "available": 374387
+        },
+        "full_evictable": 10663,
+        "full_protected": 0,
+        "mamba_allocator_type": "MambaSlotAllocator",
+        "mamba_available": 23,
+        "mamba_evictable": 5,
+        "mamba_free_slots": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          21,
+          22,
+          24,
+          25,
+          27,
+          28
+        ],
+        "mamba_free_slots_sha256": "144bc8e4186ab4ebe6592869261c45a04c4f618c477503d6dd76b9e6384e6851",
+        "mamba_protected": 0,
+        "mamba_schedulable_available": 23
+      },
+      "raw_tree": {
+        "full_rows": [
+          [
+            9,
+            0,
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ],
+          [
+            18,
+            1019,
+            "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+          ],
+          [
+            19,
+            5,
+            "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+          ],
+          [
+            20,
+            2432,
+            "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+          ],
+          [
+            21,
+            1265,
+            "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+          ],
+          [
+            22,
+            10,
+            "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+          ],
+          [
+            23,
+            2353,
+            "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+          ],
+          [
+            24,
+            896,
+            "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+          ],
+          [
+            25,
+            1659,
+            "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+          ],
+          [
+            26,
+            320,
+            "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+          ],
+          [
+            27,
+            320,
+            "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+          ],
+          [
+            28,
+            384,
+            "8ba3e2cb8c4d60dd67aca7569544761d5ec0b2ff754124e12c2f4e122aeda1ad"
+          ]
+        ],
+        "full_tree_sha256": "e844cf314eb58b7b73c5585df73d7ca1385982ddf6c75d36c8610b7d475c4179",
+        "mamba_node_count": 5,
+        "mamba_rows": [
+          [
+            24,
+            [
+              12
+            ]
+          ],
+          [
+            25,
+            [
+              23
+            ]
+          ],
+          [
+            26,
+            [
+              26
+            ]
+          ],
+          [
+            27,
+            [
+              18
+            ]
+          ],
+          [
+            28,
+            [
+              20
+            ]
+          ]
+        ],
+        "mamba_tree_sha256": "65d53bcc6ae128f6f1f48b64d8adaa1be123a8622c4778bb71bad115ac9e368e",
+        "node_count": 12,
+        "structure_rows": [
+          [
+            9,
+            null,
+            [
+              20
+            ],
+            0
+          ],
+          [
+            18,
+            19,
+            [
+              24
+            ],
+            1019
+          ],
+          [
+            19,
+            20,
+            [
+              18,
+              22,
+              25
+            ],
+            5
+          ],
+          [
+            20,
+            9,
+            [
+              19
+            ],
+            2432
+          ],
+          [
+            21,
+            22,
+            [
+              26
+            ],
+            1265
+          ],
+          [
+            22,
+            19,
+            [
+              21,
+              23
+            ],
+            10
+          ],
+          [
+            23,
+            22,
+            [
+              27
+            ],
+            2353
+          ],
+          [
+            24,
+            18,
+            [
+              28
+            ],
+            896
+          ],
+          [
+            25,
+            19,
+            [],
+            1659
+          ],
+          [
+            26,
+            21,
+            [],
+            320
+          ],
+          [
+            27,
+            23,
+            [],
+            320
+          ],
+          [
+            28,
+            24,
+            [],
+            384
+          ]
+        ],
+        "structure_sha256": "0055d2c468c3649c0909cbaad9e2c407e1bd518a62da65feba66a42ca4bce9b4"
+      }
+    },
+    {
+      "request_ordinal": 12,
+      "workflow": "D",
+      "workflow_id": "nebius-swe-rebench-openhands::chatcmpl-e7f3ee270126cc56d28343b3eb0002be",
+      "turn": 3,
+      "rid": "rq3e-g112-d-turn-003",
+      "input_tokens": 5873,
+      "mamba_total_slots": 28,
+      "mamba_available_slots": 22,
+      "mamba_schedulable_available_slots": 22,
+      "mamba_evictable_slots": 6,
+      "mamba_protected_slots": 0,
+      "device_resident_mamba_slots": 6,
+      "unaccounted_or_working_slots_at_safe_point": 0,
+      "mamba_node_count": 6,
+      "mamba_rows_count": 6,
+      "resident_mamba_nodes": [
+        {
+          "node_id": 24,
+          "slots": [
+            12
+          ],
+          "token_position": 4352
+        },
+        {
+          "node_id": 25,
+          "slots": [
+            23
+          ],
+          "token_position": 4096
+        },
+        {
+          "node_id": 26,
+          "slots": [
+            26
+          ],
+          "token_position": 4032
+        },
+        {
+          "node_id": 27,
+          "slots": [
+            18
+          ],
+          "token_position": 5120
+        },
+        {
+          "node_id": 28,
+          "slots": [
+            20
+          ],
+          "token_position": 4736
+        },
+        {
+          "node_id": 29,
+          "slots": [
+            28
+          ],
+          "token_position": 5824
+        }
+      ],
+      "added_mamba_node_ids": [
+        29
+      ],
+      "removed_mamba_node_ids": [],
+      "changed_existing_mamba_node_ids": [],
+      "full_device_node_count": 13,
+      "full_device_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "full_evictable_tokens": 11367,
+      "full_protected_tokens": 0,
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 373683
+      },
+      "tree_node_count": 13,
+      "structure_node_ids": [
+        9,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "removed_full_device_node_ids": [],
+      "removed_structure_node_ids": [],
+      "native_mamba_capacity_eviction_inferred": false,
+      "fa_kv_cascade_eviction_inferred": false,
+      "raw_accounting": {
+        "full_allocator": {
+          "allocated": null,
+          "allocator_type": "TokenToKVPoolAllocator",
+          "available": 373683
+        },
+        "full_evictable": 11367,
+        "full_protected": 0,
+        "mamba_allocator_type": "MambaSlotAllocator",
+        "mamba_available": 22,
+        "mamba_evictable": 6,
+        "mamba_free_slots": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          21,
+          22,
+          24,
+          25,
+          27
+        ],
+        "mamba_free_slots_sha256": "30210de814ae620a63652a0ac17709221e42811f3eb248710ec0995674397002",
+        "mamba_protected": 0,
+        "mamba_schedulable_available": 22
+      },
+      "raw_tree": {
+        "full_rows": [
+          [
+            9,
+            0,
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          ],
+          [
+            18,
+            1019,
+            "241e6781c181cdb82cdf55a15d527bcfa89e77cdd7bf3852ec56fd1447077ba2"
+          ],
+          [
+            19,
+            5,
+            "a77215ae1e01a76a2c1e7a8ee0524e54e619199ff01e03a652bf07dfd140dae3"
+          ],
+          [
+            20,
+            2432,
+            "ebb5c3c334d57dd227e21bec4548c6a2ae1a77bed0a06aa957ec5e27a34adde2"
+          ],
+          [
+            21,
+            1265,
+            "3a6525521a5dd43bd3fbeca700ce12a91b55e9c104a2ac51e51c8baa37213ee0"
+          ],
+          [
+            22,
+            10,
+            "5d932e1c59a24760428612cde28026a33cdca42b8b4299dad4a6ea7a04b0c30e"
+          ],
+          [
+            23,
+            2353,
+            "207198e687063c891efe1c2ee4074773b77a8e3078b39aaf2f7ab565e6de8f92"
+          ],
+          [
+            24,
+            896,
+            "1a27f02cdb6ed7fbc9bc4384c9adcdab17270c13ecb30694d29caffcdc2af790"
+          ],
+          [
+            25,
+            1659,
+            "6987fff021f0bb11e41cb55f4e430d5ee231f81c533e8d3767dedf7552310975"
+          ],
+          [
+            26,
+            320,
+            "4f060d4c3912b8b57c5c2e5c4ea8e0a03418c9bd1d66ed385d51670a39959cf5"
+          ],
+          [
+            27,
+            320,
+            "5b419db003a984c804edb5fb482482f6ff1a7bfaebd88c8ed200dec73f3a5530"
+          ],
+          [
+            28,
+            384,
+            "8ba3e2cb8c4d60dd67aca7569544761d5ec0b2ff754124e12c2f4e122aeda1ad"
+          ],
+          [
+            29,
+            704,
+            "424f5fa60936cdba533e64c835975a5347dbd50bfe56d7bd1beeb588662de2fd"
+          ]
+        ],
+        "full_tree_sha256": "b4a5a6b8e64750e4b8db4467fc2531044482e924bdf7015540461681e5fc7fbe",
+        "mamba_node_count": 6,
+        "mamba_rows": [
+          [
+            24,
+            [
+              12
+            ]
+          ],
+          [
+            25,
+            [
+              23
+            ]
+          ],
+          [
+            26,
+            [
+              26
+            ]
+          ],
+          [
+            27,
+            [
+              18
+            ]
+          ],
+          [
+            28,
+            [
+              20
+            ]
+          ],
+          [
+            29,
+            [
+              28
+            ]
+          ]
+        ],
+        "mamba_tree_sha256": "01942dce38dc48cc2cb97a40764e3f9e35333f56538f24206626e7312f939869",
+        "node_count": 13,
+        "structure_rows": [
+          [
+            9,
+            null,
+            [
+              20
+            ],
+            0
+          ],
+          [
+            18,
+            19,
+            [
+              24
+            ],
+            1019
+          ],
+          [
+            19,
+            20,
+            [
+              18,
+              22,
+              25
+            ],
+            5
+          ],
+          [
+            20,
+            9,
+            [
+              19
+            ],
+            2432
+          ],
+          [
+            21,
+            22,
+            [
+              26
+            ],
+            1265
+          ],
+          [
+            22,
+            19,
+            [
+              21,
+              23
+            ],
+            10
+          ],
+          [
+            23,
+            22,
+            [
+              27
+            ],
+            2353
+          ],
+          [
+            24,
+            18,
+            [
+              28
+            ],
+            896
+          ],
+          [
+            25,
+            19,
+            [],
+            1659
+          ],
+          [
+            26,
+            21,
+            [],
+            320
+          ],
+          [
+            27,
+            23,
+            [
+              29
+            ],
+            320
+          ],
+          [
+            28,
+            24,
+            [],
+            384
+          ],
+          [
+            29,
+            27,
+            [],
+            704
+          ]
+        ],
+        "structure_sha256": "a226fb6f783a6930245e8fc4e177e92c1b8a83efa8eacf826e1550bad98ba4e8"
+      }
+    }
+  ]
+}

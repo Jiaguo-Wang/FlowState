@@ -1,0 +1,33 @@
+{
+  "说明": "包含控制路径的四个串行单令牌恢复请求；历史维护不属于本 epoch。",
+  "时钟": "perf_counter_ns 转为毫秒；仅在同一 worker 内比较时间戳。",
+  "计时边界": "历史重建后公共观测开始至第四请求流结束。第四请求后审计不计入。",
+  "观测": "公共批量视图由三种策略承担；FlowState 在计时区间内重新查询四个 frontier。",
+  "日志": "worker标准输出由父进程在内存中收集，worker退出后写盘；关键路径不写artifact。",
+  "同步验证": "协调验证、每请求前驻留检查及前三请求后的 H/E/G 查询和 census 均计入。",
+  "初始化": "历史记录维护及参考快照验证在计时区间外，不代替区间内观测和选择。",
+  "统计": "每快照策略先取三次重复均值，再以24快照配对；round分层bootstrap10000次，seed20260928。",
+  "平局": "配对差绝对值不超过1e-6毫秒。正改善定义为基线减FlowState。",
+  "规模": {
+    "snapshots": 24,
+    "policies": 3,
+    "repetitions": 3,
+    "lifecycles": 216
+  },
+  "冻结模型配置": {
+    "chunked_prefill_size": 45056,
+    "context_length": 131200,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "log_level": "info",
+    "mamba_max_states_per_path": -1,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "max_mamba_cache_size": 28,
+    "mem_fraction_static": 0.4,
+    "model_path": "/model",
+    "stream_interval": 1,
+    "tp_size": 1
+  }
+}
