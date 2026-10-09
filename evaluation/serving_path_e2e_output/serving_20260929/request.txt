@@ -1,0 +1,196 @@
+当前 probe-inclusive control-inclusive resume-epoch 实验及其审计结果已经冻结。下一步执行最后一个 Serving-Path Control-Inclusive Resume-Epoch Evaluation。
+目标：在不改变 FlowState 算法、workload、candidate population、selected set、runtime semantics 和 correctness criteria 的前提下，将已经审计确认为 evaluation-only 的同步探针从被测 serving critical path 中分离，重新测量 LRU、Marconi Adaptation 和 FlowState 的 control-inclusive resume-epoch latency。
+重要：本实验不是为了获得正结果。不得修改 workload、snapshot、预算、请求数、输出长度或策略参数来改善结果。
+1. 冻结实验条件
+完全复用现有正式设置：
+- 24 个原有 policy-blind frozen snapshots；
+- Qwen3.5-9B；
+- SGLang 0.5.17；
+- 单 H100；
+- TP=1；
+- 25% logical recurrent-state budget；
+- LRU / Marconi Adaptation / FlowState；
+- 每个 snapshot-policy 3 个独立 repetitions；
+- 24 × 3 × 3 = 216 isolated engine lifecycles；
+- 每个 snapshot 4 个 pending continuations；
+- 4 个请求保持串行提交；
+- 每请求仍生成 1 token；
+- history replay、engine configuration、候选集合及策略参数全部保持不变。
+不得重新挑选 snapshot，不得增加 request 数，不得改成多 token，不得改变 scheduler 或模型配置。
+2. Serving critical path 的计时边界
+history replay 完成且 4 个 pending continuations 已就绪后：
+t0
+ → production-required state observation
+ → policy input construction
+ → allocation / selection
+ → recurrent-state reconciliation
+ → production-required native safety checks
+ → submit request 1 → complete
+ → submit request 2 → complete
+ → submit request 3 → complete
+ → submit request 4 → complete
+c4
+
+主指标：
+serving_path_epoch_latency_ms = c4 - t0
+
+同时记录：
+- control_latency_ms
+- common_observation_ms
+- policy_observation_ms
+- input_construction_ms
+- allocation_ms
+- reconciliation_ms
+- 每个 request 的 submit_ts
+- first_token_ts
+- completion_ts
+- ttft_ms
+- request_latency_ms
+- mean_request_execution_ms
+- mean_barrier_to_completion_ms
+3. 必须保留在关键路径中的操作
+以下内容只要是实际 serving 所需，就必须继续计时：
+- 各策略真正需要的 runtime-state observation；
+- FlowState 的 pending attention-side frontier 获取；
+- policy input construction；
+- allocation；
+- candidate handle 的 production-required validity check；
+- recurrent-only reconciliation；
+- 原生 runtime safety checks；
+- scheduler/barrier 中正常请求执行所需的等待；
+- request submission；
+- request generation；
+- response transport；
+- 正常 engine/runtime cleanup。
+不得为了缩短时间删除生产所需的信息或安全约束。
+4. 从 serving critical timing path 中分离的 evaluation-only 操作
+根据上一轮 measurement-scope audit，以下附加验证不得继续以同步 RPC 的形式阻塞 request dispatch：
+- 每请求前逐 candidate 的 inspect_candidate_states 正确性探针；
+- 每请求后完整 runtime.census；
+- 每请求后额外同步 H/E/G diagnostic query；
+- frozen-reference comparison；
+- 为 formal evaluation 添加的额外 selected-set/assertion probes；
+- diagnostic print / flush；
+- artifact / JSON 写盘；
+- 不属于生产请求执行必需的同步 audit。
+注意：这些 correctness checks 不能删除，只能从被测 critical path 中分离。
+5. 正确性验证必须改成 deferred / passive validation
+优先采用以下方式保持原 correctness evidence：
+- 利用 request 执行过程中 runtime 本来就会产生的状态记录；
+- server-side/passive instrumentation 记录 H/E/G、native eviction、retraction、truncation 等事件；
+- epoch 完成后统一读取并验证；
+- selected set 与 frozen selector 结果在 epoch 后核对；
+- attention-side preservation 在 epoch 后核对；
+- candidate/recurrent-state residency 在 epoch 后核对；
+- native-eviction contamination 在 epoch 后核对。
+如果某项 correctness gate 无法在不增加同步 serving-path probe 的情况下验证：
+1. 不得静默删除；
+2. 不得降低 gate；
+3. 返回 BLOCKED_BY_CORRECTNESS_GATE；
+4. 明确说明哪项验证必须同步执行以及原因。
+不允许为了得到更好的 latency 牺牲原实验正确性。
+6. 新 runner 要独立
+新建独立 runner 和 output root。
+不修改：
+- 旧 RQ4 artifacts；
+- 旧 RQ6 artifacts；
+- 第一版 probe-inclusive E2E artifacts；
+- control-path optimization artifacts；
+- frozen snapshots；
+- selector outputs。
+旧结果全部保留，只作为历史和 correctness 对照。
+7. 正确性门禁
+新实验完成后必须验证：
+- 216/216 isolated lifecycles 正常；
+- new selected set 与 frozen formal selector 完全一致；
+- 864/864 requests 的逻辑 H/E/G 与正式 reference 一致；
+- attention-side state preserved；
+- selected recurrent checkpoints correctly realized；
+- 无 unexpected eviction；
+- 无 unexpected rematerialization；
+- 无 native replacement contamination；
+- 无 OOM；
+- 无 unexpected retraction；
+- 无 truncation；
+- GPU cleanup 正常；
+- 所有旧 frozen artifacts 未修改。
+8. 统计方法
+statistical unit 仍为 snapshot。
+每个 snapshot-policy：
+1. 先聚合 3 repetitions；
+2. 再进行 snapshot-level paired comparison。
+使用现有 round 2/3/4/5 分层的 10,000 次 bootstrap。
+报告：
+- mean；
+- median；
+- 95% CI；
+- W/T/L；
+- repeated-run CV；
+- round 2/3/4/5 breakdown；
+- 所有负例 IDs。
+不得把 864 requests 当独立统计单位。
+9. 主比较
+必须报告：
+FlowState vs LRU
+FlowState vs Marconi Adaptation
+
+对下列指标分别给出 paired statistics：
+1. serving-path epoch latency；
+2. mean barrier-to-completion latency；
+3. mean request execution latency；
+4. measured control latency。
+10. 结果解释规则
+若 95% CI 跨 0：
+必须写：
+no statistically stable serving-path net benefit is established
+
+不得用 mean 为正就宣称 improvement。
+若 CI 不跨 0 且方向有利于 FlowState：
+才可以写 statistically stable serving-path improvement。
+若 FlowState 显著更慢，也必须原样报告。
+不删除 outlier，不追加调参实验，不重新选择 snapshot。
+11. 与旧 probe-inclusive experiment 的关系
+新实验的目标是测量 serving critical path，而不是“修正”旧数据。
+不得：
+- 从旧 epoch 中事后减去 probe latency；
+- 拼接旧 profiling 得到 corrected latency；
+- 用新结果覆盖旧结果；
+- 把两批实验的 raw mean difference 直接归因于某个单一优化。
+可以在最终报告中并列说明：
+Probe-inclusive formal validation path
+Serving-path measurement
+
+但二者必须明确为不同 measurement scope。
+12. 论文 claim 边界
+当前 workload 仍然是：
+four serial single-token resumed continuations
+
+因此即使结果为正，也只能称：
+serving-path control-inclusive resume-epoch latency
+
+或：
+control-inclusive single-token resume latency
+
+不得称为：
+- full workflow completion；
+- multi-token continuation completion；
+- generic production E2E latency。
+13. 最终输出
+最终只给一个状态：
+PASS
+FAIL
+BLOCKED_BY_CORRECTNESS_GATE
+
+并输出：
+1. serving-path measurement protocol；
+2. 哪些 evaluation-only probes 被 deferred，以及如何保持 correctness；
+3. 216-run correctness summary；
+4. 三策略 latency breakdown；
+5. FlowState vs LRU / Marconi paired results；
+6. 95% CI、W/T/L、CV；
+7. round breakdown；
+8. 全部负例 IDs；
+9. selected-set / H/E/G consistency evidence；
+10. frozen-artifact integrity report；
+11. 一句 paper-ready conclusion。
+所有新增代码中的注释、docstring、说明性文字一律使用中文；变量名、函数名、类名可以使用英文；不要写英文注释。

@@ -1,0 +1,45 @@
+{
+  "状态": "BLOCKED_BY_CORRECTNESS_GATE",
+  "性质": "待门禁证据完备后方可执行的协议；本轮未启动正式运行",
+  "冻结输入": {
+    "来源": "/home/wjg/code/FlowState/evaluation/control_path_optimization_output/control_20260929/optimized_formal/plan.json",
+    "snapshots": 24,
+    "policies": [
+      "LRU",
+      "Marconi",
+      "FlowState"
+    ],
+    "repetitions": 3,
+    "lifecycles": 216,
+    "pending_requests": 4,
+    "max_new_tokens": 1,
+    "提交方式": "串行",
+    "logical_recurrent_budget": "25%",
+    "模型": "Qwen3.5-9B",
+    "运行时": "SGLang 0.5.17",
+    "GPU": "单 H100",
+    "TP": 1
+  },
+  "计时": "历史 replay 完成且 pending 就绪后 t0；真实观测、构造、选择、协调、必要安全检查、四次请求及正常执行等待均计时；第四个流结束时 c4。",
+  "清理": "正常请求收尾若发生在流结束前则自然计时；engine shutdown 和 GPU cleanup 在 c4 后单独执行并作为必过门禁，不把 c4 后的时间伪计入 c4-t0。",
+  "可延后验证": [
+    "冻结选择集对照",
+    "冻结 frontier 对照",
+    "H/E/G 已有请求记录的统一读取与核对",
+    "已收到的输出元数据检查",
+    "artifact 写盘与诊断输出"
+  ],
+  "不能直接延后的现有实现": [
+    "逐请求前精确候选驻留探针",
+    "逐请求后 census 检测的节点丢失和换槽"
+  ],
+  "缺失替代证据": "按请求边界排序、覆盖循环状态写入/换槽/驱逐/重新物化和节点删除的被动日志；需要证明完整性及非干扰并通过故障注入测试，不能只读取 epoch 末态。",
+  "统计": "snapshot 为单位；先对每个 snapshot-policy 的三次重复取均值；再按 round 2/3/4/5 分层做 10000 次 bootstrap；差值为基线减 FlowState；报告四项指标的 mean、median、95% CI、W/T/L、CV、分层及全部负例；不剔除异常值。",
+  "四项配对指标": [
+    "serving_path_epoch_latency_ms",
+    "mean_barrier_to_completion_ms",
+    "mean_request_execution_ms",
+    "control_latency_ms"
+  ],
+  "结果边界": "仅四个串行单令牌恢复请求；不同 measurement scope 的旧结果不能作减法修正或拼接。"
+}

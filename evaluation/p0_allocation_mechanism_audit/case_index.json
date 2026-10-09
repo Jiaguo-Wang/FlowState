@@ -1,0 +1,107 @@
+[
+  {
+    "label": "A",
+    "rule": "OpenHands 对 Marconi 最大绝对改善；同时也是对 StandaloneTopK 最大改善",
+    "snapshot_id": "rq3-openhands-main-g186-round4",
+    "k": 4,
+    "budget_ratio": 0.25,
+    "source_file": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_formal_policy_eval_20260904_110011/per_snapshot_results.jsonl",
+    "source_line": 463,
+    "improvement_ms": {
+      "LFU": 430.55684543687505,
+      "LRU": 574.1857683857812,
+      "Marconi": 582.242052929836,
+      "StandaloneTopK": 753.2003086575625
+    }
+  },
+  {
+    "label": "B",
+    "rule": "OpenHands 对 Marconi 严格改善排序的下中位案例",
+    "snapshot_id": "rq3-openhands-main-g073-round3",
+    "k": 3,
+    "budget_ratio": 0.25,
+    "source_file": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_formal_policy_eval_20260904_110011/per_snapshot_results.jsonl",
+    "source_line": 184,
+    "improvement_ms": {
+      "LFU": 193.58779757016407,
+      "LRU": 191.4029299315078,
+      "Marconi": 115.49126488928908,
+      "StandaloneTopK": 0.0
+    }
+  },
+  {
+    "label": "C",
+    "rule": "OpenHands 对 StandaloneTopK 严格改善排序的下中位案例",
+    "snapshot_id": "rq3-openhands-main-g138-round4",
+    "k": 4,
+    "budget_ratio": 0.25,
+    "source_file": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_formal_policy_eval_20260904_110011/per_snapshot_results.jsonl",
+    "source_line": 346,
+    "improvement_ms": {
+      "LFU": 227.8585196183633,
+      "LRU": 348.139125153,
+      "Marconi": 402.32528084553906,
+      "StandaloneTopK": 174.0695625765
+    }
+  },
+  {
+    "label": "D",
+    "rule": "AgentX 第一个严格优于 StandaloneTopK 的案例",
+    "snapshot_id": "rq3-agentx-g006-epoch35",
+    "k": 8,
+    "budget_ratio": 0.25,
+    "source_file": "/home/wjg/code/FlowState/rq3_agentx_policy_eval_20260906_214956/per_case_results.jsonl",
+    "source_line": 19,
+    "improvement_ms": {
+      "LFU": 403.4885013136054,
+      "LRU": 3473.050109287512,
+      "Marconi": 271.3350510496748,
+      "StandaloneTopK": 2333.666429033882
+    }
+  },
+  {
+    "label": "E",
+    "rule": "AgentX 第二个严格优于 StandaloneTopK 的案例",
+    "snapshot_id": "rq3-agentx-g018-epoch30",
+    "k": 7,
+    "budget_ratio": 0.25,
+    "source_file": "/home/wjg/code/FlowState/rq3_agentx_policy_eval_20260906_214956/per_case_results.jsonl",
+    "source_line": 55,
+    "improvement_ms": {
+      "LFU": 635.9017973032378,
+      "LRU": 3691.7418659787236,
+      "Marconi": 1114.4363140400674,
+      "StandaloneTopK": 2276.0077281118065
+    }
+  },
+  {
+    "label": "F",
+    "rule": "AgentX 不同集合但 objective 相同：按预算、ID 升序首例",
+    "snapshot_id": "rq3-agentx-g000-epoch109",
+    "k": 27,
+    "budget_ratio": 0.25,
+    "source_file": "/home/wjg/code/FlowState/rq3_agentx_policy_eval_20260906_214956/per_case_results.jsonl",
+    "source_line": 1,
+    "improvement_ms": {
+      "LFU": 4211.1480370570425,
+      "LRU": 0.0,
+      "Marconi": 0.0,
+      "StandaloneTopK": 0.0
+    }
+  },
+  {
+    "label": "G",
+    "rule": "OpenHands 对 Marconi 持平：按预算、ID 升序首例",
+    "snapshot_id": "rq3-openhands-main-g009-round3",
+    "k": 3,
+    "budget_ratio": 0.25,
+    "source_file": "/home/wjg/code/FlowState/evaluation/runtime_artifacts/rq3_formal_policy_eval_20260904_110011/per_snapshot_results.jsonl",
+    "source_line": 25,
+    "improvement_ms": {
+      "LFU": 501.9335136077186,
+      "LRU": 425.96464086119533,
+      "Marconi": 0.0,
+      "StandaloneTopK": 0.0
+    }
+  }
+]

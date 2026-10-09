@@ -1,0 +1,142 @@
+{
+  "OpenHands": {
+    "cases": 504,
+    "comparisons": {
+      "Marconi": {
+        "wtl": {
+          "win": 386,
+          "tie": 118,
+          "loss": 0
+        },
+        "different_sets": 503,
+        "mean": 112.02148948240192
+      },
+      "LRU": {
+        "wtl": {
+          "win": 306,
+          "tie": 198,
+          "loss": 0
+        },
+        "different_sets": 504,
+        "mean": 164.282051649795
+      },
+      "LFU": {
+        "wtl": {
+          "win": 504,
+          "tie": 0,
+          "loss": 0
+        },
+        "different_sets": 504,
+        "mean": 273.1038707000126
+      },
+      "StandaloneTopK": {
+        "wtl": {
+          "win": 144,
+          "tie": 360,
+          "loss": 0
+        },
+        "different_sets": 431,
+        "mean": 59.30120997933108
+      }
+    },
+    "classes": {
+      "A_overlap": 504,
+      "A_standalone_redundant": 431,
+      "A_marconi_redundant": 440,
+      "B_independent_workflows": 504,
+      "B_budget_binding_independent": 90,
+      "C_structural": 0,
+      "C_positive": 0,
+      "C_multiple_positive_step": 0,
+      "C_selected_essential": 0,
+      "C_joint_rank_reversal": 0,
+      "D_standalone_diff_tie": 287,
+      "D_marconi_diff_tie": 117,
+      "E_marconi_tie": 118,
+      "E_marconi_small_positive": 0,
+      "E_marconi_adverse": 0
+    },
+    "ties": {
+      "不同集合但每个待续请求的可执行前沿相同": {
+        "count": 287,
+        "reaches_all_candidate_frontier": 287,
+        "zero_cost": 267
+      },
+      "选中集合相同": {
+        "count": 73,
+        "reaches_all_candidate_frontier": 20,
+        "zero_cost": 20
+      }
+    }
+  },
+  "AgentX": {
+    "cases": 69,
+    "comparisons": {
+      "Marconi": {
+        "wtl": {
+          "win": 16,
+          "tie": 53,
+          "loss": 0
+        },
+        "different_sets": 69,
+        "mean": 77.17708843547712
+      },
+      "LRU": {
+        "wtl": {
+          "win": 16,
+          "tie": 53,
+          "loss": 0
+        },
+        "different_sets": 69,
+        "mean": 415.1582183192225
+      },
+      "LFU": {
+        "wtl": {
+          "win": 12,
+          "tie": 57,
+          "loss": 0
+        },
+        "different_sets": 66,
+        "mean": 277.6083044708743
+      },
+      "StandaloneTopK": {
+        "wtl": {
+          "win": 2,
+          "tie": 67,
+          "loss": 0
+        },
+        "different_sets": 24,
+        "mean": 66.80687184269114
+      }
+    },
+    "classes": {
+      "A_overlap": 33,
+      "A_standalone_redundant": 24,
+      "A_marconi_redundant": 69,
+      "B_independent_workflows": 0,
+      "B_budget_binding_independent": 0,
+      "C_structural": 69,
+      "C_positive": 66,
+      "C_multiple_positive_step": 48,
+      "C_selected_essential": 66,
+      "C_joint_rank_reversal": 9,
+      "D_standalone_diff_tie": 22,
+      "D_marconi_diff_tie": 53,
+      "E_marconi_tie": 53,
+      "E_marconi_small_positive": 0,
+      "E_marconi_adverse": 0
+    },
+    "ties": {
+      "不同集合但每个待续请求的可执行前沿相同": {
+        "count": 22,
+        "reaches_all_candidate_frontier": 22,
+        "zero_cost": 0
+      },
+      "选中集合相同": {
+        "count": 45,
+        "reaches_all_candidate_frontier": 45,
+        "zero_cost": 0
+      }
+    }
+  }
+}

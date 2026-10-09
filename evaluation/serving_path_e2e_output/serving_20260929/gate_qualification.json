@@ -1,0 +1,27 @@
+{
+  "status": "BLOCKED_BY_CORRECTNESS_GATE",
+  "checks": {
+    "中间状态证据": {
+      "中途丢失被旧门禁拒绝": true,
+      "中途换槽被旧门禁拒绝": true,
+      "仅比较相同末态无法识别两种反例": true,
+      "性质": "合成 CPU 反例；不宣称正式运行曾出现这些异常"
+    },
+    "原生事件覆盖": {
+      "原函数释放循环状态": true,
+      "现有事件队列未产生对应记录": true,
+      "源码": "/tmp/flowstate-serving-unified-cache/components/mamba_component.py",
+      "sha256": "51ce309485e054e356fda112e4c441750c145b164fa600ab472d73d03ecff2f6",
+      "性质": "仅执行提取的函数体；不初始化 SGLang，不运行 GPU"
+    }
+  },
+  "正式生命周期": 0,
+  "正式请求": 0,
+  "阻塞门禁": [
+    "逐请求前候选驻留与身份一致性",
+    "逐请求后无循环状态丢失或换槽",
+    "无中途 native replacement contamination"
+  ],
+  "说明": "现有 H/E/G 记录、末态 census 和原生事件不足以替代原中间态验证。尚未建立并验证全覆盖的被动变更日志；不宣称这种实现原则上不可能。",
+  "禁止推论": "CPU 反例不是正式 workload 的测量，不能用于性能统计或推断真实异常率。"
+}
