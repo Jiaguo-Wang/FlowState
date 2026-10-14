@@ -1,0 +1,167 @@
+{
+  "raw": {
+    "trace_count": 393,
+    "unique_trace_ids": 393,
+    "invocation_records": 98827,
+    "invocation_field_counts": {
+      "t": 98827,
+      "model": 98827,
+      "in": 98827,
+      "out": 98827,
+      "hash_ids": 98827,
+      "api_time": 98827,
+      "type": 98827,
+      "ttft": 56432,
+      "think_time": 98434
+    },
+    "all_field_counts": {
+      "id": 393,
+      "models": 2090,
+      "block_size": 393,
+      "hash_id_scope": 393,
+      "requests": 2090,
+      "t": 100524,
+      "model": 98827,
+      "in": 98827,
+      "out": 98827,
+      "hash_ids": 98827,
+      "api_time": 98827,
+      "type": 100524,
+      "ttft": 56432,
+      "think_time": 98434,
+      "agent_id": 1697,
+      "subagent_type": 1697,
+      "duration_ms": 1697,
+      "total_tokens": 1697,
+      "tool_use_count": 1697,
+      "status": 1697
+    },
+    "top_field_counts": {
+      "id": 393,
+      "models": 393,
+      "block_size": 393,
+      "hash_id_scope": 393,
+      "requests": 393
+    },
+    "request_type_counts": {
+      "s": 56432,
+      "subagent": 1697,
+      "n": 42395
+    },
+    "nested_request_containers": 1697,
+    "missing_or_nonpositive_duration": 0,
+    "api_interval_overlap_trace_count": 373,
+    "maximum_api_interval_overlap": 23,
+    "说明": "API 区间重叠不等于同时待续；仅使用记录中的相对 t 和 api_time，不证明队列或 pending。",
+    "examples": {
+      "s": {
+        "file": "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+        "line": 1,
+        "path": "$.requests[0]",
+        "fields": {
+          "t": 0.0,
+          "model": "claude-opus-4-8",
+          "in": 640,
+          "out": 20,
+          "hash_ids": "数组长度 10",
+          "api_time": 1.979,
+          "type": "s",
+          "ttft": 1.741
+        }
+      },
+      "subagent": {
+        "file": "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+        "line": 1,
+        "path": "$.requests[48]",
+        "fields": {
+          "t": 86541.149,
+          "type": "subagent",
+          "agent_id": "subagent_001_f552fe6f",
+          "subagent_type": "Subagent",
+          "duration_ms": 108127,
+          "total_tokens": 331009,
+          "tool_use_count": null,
+          "status": "completed",
+          "requests": "数组长度 7",
+          "models": "数组长度 1"
+        }
+      },
+      "n": {
+        "file": "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+        "line": 1,
+        "path": "$.requests[48].requests[0]",
+        "fields": {
+          "t": 86541.149,
+          "type": "n",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 35008,
+          "out": 153,
+          "hash_ids": "数组长度 547",
+          "api_time": 1.903,
+          "think_time": 0.0
+        }
+      }
+    }
+  },
+  "census": {
+    "trace_count": 393,
+    "historical_definition_counts": {
+      "SHARED_CONTEXT_ELIGIBLE": 1206,
+      "SHARED_CONTEXT_INELIGIBLE": 13773,
+      "CHAIN_ONLY_CONTEXT_ELIGIBLE": 17105,
+      "OTHER": 76567
+    },
+    "traces_with_eligible_epochs": 23,
+    "formal_snapshots": 23,
+    "additional_derived_epochs": 1183,
+    "解释": "旧逻辑/上下文门禁计数，不是本轮真实 fork、同时 pending 和 residency 门禁通过数。"
+  },
+  "capacity": {
+    "cases": 69,
+    "snapshots": 23,
+    "minimum_frontier_histogram": {
+      "2": 27,
+      "1": 39,
+      "0": 3
+    },
+    "constrained_cases": 0,
+    "cases_with_two_deeper_private_pattern": 0,
+    "conditional_scope": "仅冻结正式 compatibility 下的结构事实，不升级为通过本轮真实 provenance 门禁。",
+    "strict_real_shared_tradeoff_count": "UNKNOWN"
+  },
+  "new_epochs": {
+    "real_fork_verified": "UNKNOWN",
+    "simultaneously_pending_verified": "UNKNOWN",
+    "attention_residency": "UNKNOWN",
+    "recurrent_residency": "UNKNOWN",
+    "K_min_frontier": "UNKNOWN",
+    "capacity_constrained_count": "UNKNOWN"
+  },
+  "gpu_started": false,
+  "baseline_executed": false,
+  "new_cohort_created": false,
+  "status": "NOT_FEASIBLE_FROM_EXISTING_DATA",
+  "gate_results": {
+    "A": {
+      "status": "NOT_ESTABLISHED",
+      "reason": "原生 fork/父执行前缀继承事件缺失；LCP/嵌套不足"
+    },
+    "B": {
+      "status": "NOT_ESTABLISHED",
+      "reason": "原生 ready/pending 缺失；conversation active 不是等待执行"
+    },
+    "C": {
+      "status": "PARTIAL",
+      "reason": "旧 replay 的 A/R/T/L 可核验，新 epoch R 与 native pending anchor UNKNOWN"
+    },
+    "D": {
+      "status": "PARTIAL",
+      "reason": "旧 replay 568 个 checkpoint 有身份/驻留关联；其他原始 epoch 未观测物理状态"
+    }
+  },
+  "recoverability": {
+    "recoverable": "原始 trace 和 JSON 路径、显式 subagent 归属、请求相对时间、旧 replay 的身份/前沿、旧定义下的其他 epoch 线索",
+    "not_recoverable_from_recorded_fields": "原生 fork 继承证明、ready/dispatch 状态机、原执行 Hybrid recurrent/attention 驻留；除非另有同时期日志，不能事后补造",
+    "recommendation": "唯一下一步：形成真实执行框架与 Hybrid runtime 联合事件日志的采集设计及预注册；不启动采集。"
+  }
+}

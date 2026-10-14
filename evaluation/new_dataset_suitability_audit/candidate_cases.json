@@ -1,0 +1,9 @@
+{
+  "审计日期": "2026-10-13",
+  "候选案例": [],
+  "说明": "本轮未读取任何完整数据行。FreeInference 的 Viewer split 返回服务端错误；GATC 的 trajectories 行查询与数据集 API 在当前环境不可用。现有可见 Viewer 行存在截断，且未显示可核验的父子 session 链接、同一 workflow 的并发请求或 recurrent 物理状态证据，因此不推荐具体 Session，避免把数据卡示例误认作已审计案例。",
+  "可供下一轮定向抽样的筛选条件": [
+    "FreeInference：先以 nested tool_calls[].subagent 非空及多个嵌套请求为筛选条件，再核验是否有同一 workflow 的请求时间重叠；候选仍不能据此认证 recurrent checkpoint。",
+    "GATC：先筛选 trajectories.steps 中 type=subagent 且父轨迹包含多个委派事件的案例；只有拿到明确父子 trajectory 关联后，才进一步检查共同行为历史。"
+  ]
+}

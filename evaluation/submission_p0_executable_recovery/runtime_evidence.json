@@ -1,0 +1,555 @@
+{
+  "task": "FlowState 投稿冲刺任务 A3：最小 Runtime Resume 认证",
+  "started_utc": "2026-10-12T17:07:07.432787+00:00",
+  "status": "PASS",
+  "failure_stage": null,
+  "engine_config": {
+    "context_length": 45056,
+    "mem_fraction_static": 0.4,
+    "tp_size": 1,
+    "chunked_prefill_size": 45056,
+    "max_mamba_cache_size": 16,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "mamba_max_states_per_path": -1,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "stream_interval": 1,
+    "log_level": "info"
+  },
+  "environment": {
+    "flowstate_step5d_port": "49939",
+    "cuda_visible_devices": "0",
+    "sglang_version": "0.5.17"
+  },
+  "gate": {
+    "runtime_resume_certified": true,
+    "illegal_prefix_rejected": true,
+    "contract_note": "谓词层：P1/P2 为 ADMISSIBLE 且 C7 全 PASS；C5 因 runtime 未暴露 slot generation 账本而保持 UNKNOWN（诚实标注，见 compatibility_contract.md §5）",
+    "unknown_conditions": [
+      "C5_physical_identity",
+      "C7_resume_certified"
+    ]
+  },
+  "finished_utc": "2026-10-12T17:07:56.156737+00:00",
+  "sample": {
+    "h_length": 8192,
+    "state_position_L": 8192,
+    "mutation_position": 4096,
+    "anchor_output": 220,
+    "anchor_output_rematerialize": 220,
+    "anchor_deterministic": true,
+    "c0_token_digest": "4b26742e57e97f09a99217594d440b64472d4524337d43ec7228708358e365d9"
+  },
+  "paths": {
+    "materialize": {
+      "child_node_ids": [],
+      "extra_key": null,
+      "is_device_leaf": true,
+      "n_children": 0,
+      "node_id": 67,
+      "parent_node_id": 58,
+      "path_full_all_present": true,
+      "path_full_rows": 8192,
+      "path_full_sha256": "e17750433bec2e96131cc6ac229331696d0e9ac30c377016eea5ce07b207c85c",
+      "path_mamba_positions": [
+        {
+          "node_id": 67,
+          "position": 8192,
+          "slots": [
+            3
+          ]
+        }
+      ],
+      "path_node_ids": [
+        67
+      ],
+      "prefix_sha256": "4b26742e57e97f09a99217594d440b64472d4524337d43ec7228708358e365d9",
+      "prefix_tokens": 8192,
+      "segment_lengths": [
+        8192
+      ],
+      "target_full_lock_ref": 0,
+      "target_full_present": true,
+      "target_full_value_len": 8192,
+      "target_full_value_sha256": "5a7163bddea78d93b1bd7c36634c45d7e621425234e87d2289c8ce5310ff0cfd",
+      "target_mamba_host_lock_ref": 0,
+      "target_mamba_host_present": false,
+      "target_mamba_in_lru": true,
+      "target_mamba_lock_ref": 0,
+      "target_mamba_present": true,
+      "target_mamba_session_ref": 0,
+      "target_mamba_slots": [
+        3
+      ]
+    },
+    "after_branches": {
+      "child_node_ids": [
+        68,
+        69
+      ],
+      "extra_key": null,
+      "is_device_leaf": false,
+      "n_children": 2,
+      "node_id": 67,
+      "parent_node_id": 58,
+      "path_full_all_present": true,
+      "path_full_rows": 8192,
+      "path_full_sha256": "e17750433bec2e96131cc6ac229331696d0e9ac30c377016eea5ce07b207c85c",
+      "path_mamba_positions": [
+        {
+          "node_id": 67,
+          "position": 8192,
+          "slots": [
+            3
+          ]
+        }
+      ],
+      "path_node_ids": [
+        67
+      ],
+      "prefix_sha256": "4b26742e57e97f09a99217594d440b64472d4524337d43ec7228708358e365d9",
+      "prefix_tokens": 8192,
+      "segment_lengths": [
+        8192
+      ],
+      "target_full_lock_ref": 0,
+      "target_full_present": true,
+      "target_full_value_len": 8192,
+      "target_full_value_sha256": "5a7163bddea78d93b1bd7c36634c45d7e621425234e87d2289c8ce5310ff0cfd",
+      "target_mamba_host_lock_ref": 0,
+      "target_mamba_host_present": false,
+      "target_mamba_in_lru": true,
+      "target_mamba_lock_ref": 0,
+      "target_mamba_present": true,
+      "target_mamba_session_ref": 0,
+      "target_mamba_slots": [
+        3
+      ]
+    },
+    "rematerialize": {
+      "child_node_ids": [],
+      "extra_key": null,
+      "is_device_leaf": true,
+      "n_children": 0,
+      "node_id": 80,
+      "parent_node_id": 71,
+      "path_full_all_present": true,
+      "path_full_rows": 8192,
+      "path_full_sha256": "e17750433bec2e96131cc6ac229331696d0e9ac30c377016eea5ce07b207c85c",
+      "path_mamba_positions": [
+        {
+          "node_id": 80,
+          "position": 8192,
+          "slots": [
+            3
+          ]
+        }
+      ],
+      "path_node_ids": [
+        80
+      ],
+      "prefix_sha256": "4b26742e57e97f09a99217594d440b64472d4524337d43ec7228708358e365d9",
+      "prefix_tokens": 8192,
+      "segment_lengths": [
+        8192
+      ],
+      "target_full_lock_ref": 0,
+      "target_full_present": true,
+      "target_full_value_len": 8192,
+      "target_full_value_sha256": "5a7163bddea78d93b1bd7c36634c45d7e621425234e87d2289c8ce5310ff0cfd",
+      "target_mamba_host_lock_ref": 0,
+      "target_mamba_host_present": false,
+      "target_mamba_in_lru": true,
+      "target_mamba_lock_ref": 0,
+      "target_mamba_present": true,
+      "target_mamba_session_ref": 0,
+      "target_mamba_slots": [
+        3
+      ]
+    }
+  },
+  "identity_stability": {
+    "within_tree_c0_mamba_slots_stable": true,
+    "c0_digest_stable_after_branches": true,
+    "digest_stable_across_materializations": true,
+    "fa_value_sha256_stable_across_materializations": true
+  },
+  "anchor_metrics": {
+    "materialize": {
+      "executable_prefix": 0,
+      "mamba_branching_seqlen": null,
+      "mamba_host_hit_length": 0,
+      "physical_fa_hit": 0,
+      "replay_gap": 0,
+      "request_id": "p0_anchor_mat"
+    },
+    "rematerialize": {
+      "executable_prefix": 0,
+      "mamba_branching_seqlen": null,
+      "mamba_host_hit_length": 0,
+      "physical_fa_hit": 0,
+      "replay_gap": 0,
+      "request_id": "p0_anchor_remat"
+    }
+  },
+  "references_full_recompute": {
+    "P1": {
+      "request_id": "p0_ref_p1",
+      "input_length": 8448,
+      "output_token": 220,
+      "metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "p0_ref_p1"
+      },
+      "e2e_latency_s": 11.707128448004369,
+      "first_token_latency_s": null
+    },
+    "P2": {
+      "request_id": "p0_ref_p2",
+      "input_length": 8448,
+      "output_token": 248046,
+      "metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "p0_ref_p2"
+      },
+      "e2e_latency_s": 0.33428207802353427,
+      "first_token_latency_s": null
+    },
+    "P3": {
+      "request_id": "p0_ref_p3",
+      "input_length": 8448,
+      "output_token": 220,
+      "metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "p0_ref_p3"
+      },
+      "e2e_latency_s": 0.33748294101678766,
+      "first_token_latency_s": null
+    },
+    "P_bad": {
+      "request_id": "p0_ref_p_bad",
+      "input_length": 8448,
+      "output_token": 220,
+      "metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "p0_ref_p_bad"
+      },
+      "e2e_latency_s": 0.34273750698775984,
+      "first_token_latency_s": null
+    }
+  },
+  "resumes": {
+    "P1": {
+      "request_id": "p0_res_p1",
+      "input_length": 8448,
+      "output_token": 220,
+      "metrics": {
+        "executable_prefix": 8192,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 8192,
+        "replay_gap": 0,
+        "request_id": "p0_res_p1"
+      },
+      "e2e_latency_s": 0.4826507709803991,
+      "first_token_latency_s": null
+    },
+    "P2": {
+      "request_id": "p0_res_p2",
+      "input_length": 8448,
+      "output_token": 248046,
+      "metrics": {
+        "executable_prefix": 8192,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 8192,
+        "replay_gap": 0,
+        "request_id": "p0_res_p2"
+      },
+      "e2e_latency_s": 0.03426853899145499,
+      "first_token_latency_s": null
+    }
+  },
+  "negative_case": {
+    "request_id": "p0_res_p_bad",
+    "output_token": 220,
+    "metrics": {
+      "executable_prefix": 0,
+      "mamba_branching_seqlen": 4096,
+      "mamba_host_hit_length": 0,
+      "physical_fa_hit": 4096,
+      "replay_gap": 4096,
+      "request_id": "p0_res_p_bad"
+    },
+    "physical_hit_stops_at_mutation": true
+  },
+  "mamba_dependency_counterfactual": {
+    "eviction_proof": {
+      "sanity_check": true,
+      "fa_identity_unchanged": true
+    },
+    "p3_physical_fa_hit": 8192,
+    "p3_executable_prefix": 4096,
+    "p3_replay_gap": 4096,
+    "executable_collapsed": true,
+    "gap_grew": true,
+    "p3_output_matches_full_recompute": true
+  },
+  "post_eviction_p3": {
+    "request_id": "p0_res_p3_post_evict",
+    "output_token": 220,
+    "metrics": {
+      "executable_prefix": 4096,
+      "mamba_branching_seqlen": 8192,
+      "mamba_host_hit_length": 0,
+      "physical_fa_hit": 8192,
+      "replay_gap": 4096,
+      "request_id": "p0_res_p3_post_evict"
+    },
+    "path_after_eviction": {
+      "child_node_ids": [
+        68,
+        69
+      ],
+      "extra_key": null,
+      "is_device_leaf": false,
+      "n_children": 2,
+      "node_id": 67,
+      "parent_node_id": 70,
+      "path_full_all_present": true,
+      "path_full_rows": 8192,
+      "path_full_sha256": "111ee95345e3dccb7ec3156590f301f5d0d1145d0541d427fa2dc1c49d105ef0",
+      "path_mamba_positions": [
+        {
+          "node_id": 70,
+          "position": 4096,
+          "slots": [
+            10
+          ]
+        }
+      ],
+      "path_node_ids": [
+        70,
+        67
+      ],
+      "prefix_sha256": "4b26742e57e97f09a99217594d440b64472d4524337d43ec7228708358e365d9",
+      "prefix_tokens": 8192,
+      "segment_lengths": [
+        4096,
+        4096
+      ],
+      "target_full_lock_ref": 0,
+      "target_full_present": true,
+      "target_full_value_len": 4096,
+      "target_full_value_sha256": "566b4514319b70b0b085b94052b32d414cba45d23890411620c7f641bde1b61e",
+      "target_mamba_host_lock_ref": 0,
+      "target_mamba_host_present": false,
+      "target_mamba_in_lru": false,
+      "target_mamba_lock_ref": 0,
+      "target_mamba_present": false,
+      "target_mamba_session_ref": 0,
+      "target_mamba_slots": []
+    }
+  },
+  "certification": {
+    "P1": {
+      "physical_fa_hit": 8192,
+      "executable_prefix": 8192,
+      "replay_gap": 0,
+      "mamba_branching_seqlen_observed": null,
+      "physical_fa_hit_at_L": true,
+      "executable_prefix_at_L": true,
+      "replay_gap_small": true,
+      "output_matches_full_recompute": true,
+      "resume_verified": true
+    },
+    "P2": {
+      "physical_fa_hit": 8192,
+      "executable_prefix": 8192,
+      "replay_gap": 0,
+      "mamba_branching_seqlen_observed": null,
+      "physical_fa_hit_at_L": true,
+      "executable_prefix_at_L": true,
+      "replay_gap_small": true,
+      "output_matches_full_recompute": true,
+      "resume_verified": true
+    }
+  },
+  "census": {
+    "after_materialize": {
+      "tree_digests": {
+        "structure_sha256": "2eead21b2ebce59379024aea55025c4cc582e4b4dcd00f5d0e1f8c5d72c725f2",
+        "full_tree_sha256": "88f0e57c434afb3d4ce2cb7dcca73daff707984a55c239d71801464fbd066620"
+      },
+      "mamba_node_count": 1
+    },
+    "after_branches": {
+      "tree_digests": {
+        "structure_sha256": "7c37b5d6c297cf994051614421acd3afab505530b546818721dc2bed332b0921",
+        "full_tree_sha256": "8ccbca972afe5d49926662d56c75d8a09b9d75e8690e5a8692ef66fa01868154"
+      },
+      "mamba_node_count": 3,
+      "new_mamba_nodes": [
+        68,
+        69
+      ]
+    }
+  },
+  "predicate_verdicts": {
+    "P1": {
+      "checkpoint_id": "minimal_C0",
+      "continuation_id": "P1",
+      "is_admissible": true,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "PASS",
+          "detail": "前 8192 个 token 逐位一致"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=8192 <= T=8448"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=8192"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "PASS",
+          "detail": "physical=8192, executable=8192, gap=0, 输出与全量重算一致=True, 驱逐反事实证明依赖 Recurrent State=True"
+        }
+      ],
+      "non_pass_reasons": [
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation"
+      ]
+    },
+    "P2": {
+      "checkpoint_id": "minimal_C0",
+      "continuation_id": "P2",
+      "is_admissible": true,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "PASS",
+          "detail": "前 8192 个 token 逐位一致"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=8192 <= T=8448"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=8192"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "PASS",
+          "detail": "physical=8192, executable=8192, gap=0, 输出与全量重算一致=True, 驱逐反事实证明依赖 Recurrent State=True"
+        }
+      ],
+      "non_pass_reasons": [
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation"
+      ]
+    },
+    "P_bad": {
+      "checkpoint_id": "minimal_C0",
+      "continuation_id": "P_bad",
+      "is_admissible": false,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "FAIL",
+          "detail": "token 历史在位置 4096 首次分歧 (64324 != 64325)"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=8192 <= T=8448"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=8192"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "UNKNOWN",
+          "detail": "离线阶段不可认证"
+        }
+      ],
+      "non_pass_reasons": [
+        "C2_token_history=FAIL: token 历史在位置 4096 首次分歧 (64324 != 64325)",
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation",
+        "C7_resume_certified=UNKNOWN: 离线阶段不可认证"
+      ]
+    }
+  }
+}

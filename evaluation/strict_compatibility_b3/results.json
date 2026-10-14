@@ -1,0 +1,1833 @@
+{
+  "classification": "ANALYTICAL EXAMPLE",
+  "cases": [
+    {
+      "id": "S1_redundant_chain",
+      "K": 1,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "A1",
+            "position": 3072,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "A2",
+            "position": 4096,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "B1",
+            "position": 2048,
+            "compatible": [
+              "B"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4096
+          },
+          {
+            "identifier": "B",
+            "target": 4096
+          }
+        ],
+        "k": 1
+      },
+      "benefit_matrix_ms": {
+        "A1": [
+          115.29311096099998,
+          0.0
+        ],
+        "A2": [
+          154.34895561599998,
+          0.0
+        ],
+        "B1": [
+          0.0,
+          76.54967013999999
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "A2"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 0.0
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "A2"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 0.0
+        },
+        "WFC": {
+          "selected": [
+            "A2"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 0.0
+        },
+        "Exact OPT": {
+          "selected": [
+            "A2"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "A1": 115.29311096099998,
+            "A2": 154.34895561599998,
+            "B1": 76.54967013999999
+          },
+          "chosen": "A2"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "A2",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 4096,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 3072,
+                "advances": {
+                  "A": 3072,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 2048,
+                "advances": {
+                  "A": 0,
+                  "B": 2048
+                }
+              }
+            ],
+            "chosen": "A2",
+            "q": 1,
+            "r": 4096
+          }
+        ],
+        "final_frontiers": {
+          "A": 4096,
+          "B": 0
+        }
+      },
+      "opt_ties": [
+        [
+          "A2"
+        ]
+      ],
+      "checked_subsets": 4
+    },
+    {
+      "id": "S1_redundant_chain",
+      "K": 2,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "A1",
+            "position": 3072,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "A2",
+            "position": 4096,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "B1",
+            "position": 2048,
+            "compatible": [
+              "B"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4096
+          },
+          {
+            "identifier": "B",
+            "target": 4096
+          }
+        ],
+        "k": 2
+      },
+      "benefit_matrix_ms": {
+        "A1": [
+          115.29311096099998,
+          0.0
+        ],
+        "A2": [
+          154.34895561599998,
+          0.0
+        ],
+        "B1": [
+          0.0,
+          76.54967013999999
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "A2",
+            "B1"
+          ],
+          "cost_ms": 77.799285476,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 2048,
+              "G": 2048,
+              "cost_ms": 77.799285476
+            }
+          ],
+          "F_ms": 230.89862575599997,
+          "gap_to_opt_ms": 0.0
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "A1",
+            "A2"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 76.54967013999999
+        },
+        "WFC": {
+          "selected": [
+            "A2",
+            "B1"
+          ],
+          "cost_ms": 77.799285476,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 2048,
+              "G": 2048,
+              "cost_ms": 77.799285476
+            }
+          ],
+          "F_ms": 230.89862575599997,
+          "gap_to_opt_ms": 0.0
+        },
+        "Exact OPT": {
+          "selected": [
+            "A2",
+            "B1"
+          ],
+          "cost_ms": 77.799285476,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 2048,
+              "G": 2048,
+              "cost_ms": 77.799285476
+            }
+          ],
+          "F_ms": 230.89862575599997,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "A1": 115.29311096099998,
+            "A2": 154.34895561599998,
+            "B1": 76.54967013999999
+          },
+          "chosen": "A2"
+        },
+        {
+          "selected": [
+            "A2"
+          ],
+          "gains_ms": {
+            "A1": 0.0,
+            "B1": 76.54967013999999
+          },
+          "chosen": "B1"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "A2",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 4096,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 3072,
+                "advances": {
+                  "A": 3072,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 2048,
+                "advances": {
+                  "A": 0,
+                  "B": 2048
+                }
+              }
+            ],
+            "chosen": "A2",
+            "q": 1,
+            "r": 4096
+          },
+          {
+            "prefix": [
+              "A2"
+            ],
+            "E_before": {
+              "A": 4096,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 2048,
+                "advances": {
+                  "A": 0,
+                  "B": 2048
+                }
+              },
+              {
+                "checkpoint_id": "A1",
+                "q": 0,
+                "r": 0,
+                "advances": {
+                  "A": 0,
+                  "B": 0
+                }
+              }
+            ],
+            "chosen": "B1",
+            "q": 1,
+            "r": 2048
+          }
+        ],
+        "final_frontiers": {
+          "A": 4096,
+          "B": 2048
+        }
+      },
+      "opt_ties": [
+        [
+          "A2",
+          "B1"
+        ]
+      ],
+      "checked_subsets": 7
+    },
+    {
+      "id": "S2_count_vs_depth",
+      "K": 1,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "R",
+            "position": 1024,
+            "compatible": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "identifier": "A1",
+            "position": 4096,
+            "compatible": [
+              "A"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4096
+          },
+          {
+            "identifier": "B",
+            "target": 4096
+          }
+        ],
+        "k": 1
+      },
+      "benefit_matrix_ms": {
+        "R": [
+          38.118633152999976,
+          38.118633152999976
+        ],
+        "A1": [
+          154.34895561599998,
+          0.0
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "A1"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 0.0
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "A1"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 0.0
+        },
+        "WFC": {
+          "selected": [
+            "R"
+          ],
+          "cost_ms": 232.46064492600001,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 1024,
+              "G": 3072,
+              "cost_ms": 116.23032246300001
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 1024,
+              "G": 3072,
+              "cost_ms": 116.23032246300001
+            }
+          ],
+          "F_ms": 76.23726630599995,
+          "gap_to_opt_ms": 78.11168931000003
+        },
+        "Exact OPT": {
+          "selected": [
+            "A1"
+          ],
+          "cost_ms": 154.34895561599998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 0,
+              "G": 4096,
+              "cost_ms": 154.34895561599998
+            }
+          ],
+          "F_ms": 154.34895561599998,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "R": 76.23726630599995,
+            "A1": 154.34895561599998
+          },
+          "chosen": "A1"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "R",
+                "q": 2,
+                "r": 2048,
+                "advances": {
+                  "A": 1024,
+                  "B": 1024
+                }
+              },
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 4096,
+                  "B": 0
+                }
+              }
+            ],
+            "chosen": "R",
+            "q": 2,
+            "r": 2048
+          }
+        ],
+        "final_frontiers": {
+          "A": 1024,
+          "B": 1024
+        }
+      },
+      "opt_ties": [
+        [
+          "A1"
+        ]
+      ],
+      "checked_subsets": 3
+    },
+    {
+      "id": "S2_count_vs_depth",
+      "K": 2,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "R",
+            "position": 1024,
+            "compatible": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "identifier": "A1",
+            "position": 4096,
+            "compatible": [
+              "A"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4096
+          },
+          {
+            "identifier": "B",
+            "target": 4096
+          }
+        ],
+        "k": 2
+      },
+      "benefit_matrix_ms": {
+        "R": [
+          38.118633152999976,
+          38.118633152999976
+        ],
+        "A1": [
+          154.34895561599998,
+          0.0
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "A1",
+            "R"
+          ],
+          "cost_ms": 116.23032246300001,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 1024,
+              "G": 3072,
+              "cost_ms": 116.23032246300001
+            }
+          ],
+          "F_ms": 192.46758876899997,
+          "gap_to_opt_ms": 0.0
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "A1",
+            "R"
+          ],
+          "cost_ms": 116.23032246300001,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 1024,
+              "G": 3072,
+              "cost_ms": 116.23032246300001
+            }
+          ],
+          "F_ms": 192.46758876899997,
+          "gap_to_opt_ms": 0.0
+        },
+        "WFC": {
+          "selected": [
+            "R",
+            "A1"
+          ],
+          "cost_ms": 116.23032246300001,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 1024,
+              "G": 3072,
+              "cost_ms": 116.23032246300001
+            }
+          ],
+          "F_ms": 192.46758876899997,
+          "gap_to_opt_ms": 0.0
+        },
+        "Exact OPT": {
+          "selected": [
+            "A1",
+            "R"
+          ],
+          "cost_ms": 116.23032246300001,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 1024,
+              "G": 3072,
+              "cost_ms": 116.23032246300001
+            }
+          ],
+          "F_ms": 192.46758876899997,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "R": 76.23726630599995,
+            "A1": 154.34895561599998
+          },
+          "chosen": "A1"
+        },
+        {
+          "selected": [
+            "A1"
+          ],
+          "gains_ms": {
+            "R": 38.11863315299999
+          },
+          "chosen": "R"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "R",
+                "q": 2,
+                "r": 2048,
+                "advances": {
+                  "A": 1024,
+                  "B": 1024
+                }
+              },
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 4096,
+                  "B": 0
+                }
+              }
+            ],
+            "chosen": "R",
+            "q": 2,
+            "r": 2048
+          },
+          {
+            "prefix": [
+              "R"
+            ],
+            "E_before": {
+              "A": 1024,
+              "B": 1024
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 3072,
+                "advances": {
+                  "A": 3072,
+                  "B": 0
+                }
+              }
+            ],
+            "chosen": "A1",
+            "q": 1,
+            "r": 3072
+          }
+        ],
+        "final_frontiers": {
+          "A": 4096,
+          "B": 1024
+        }
+      },
+      "opt_ties": [
+        [
+          "A1",
+          "R"
+        ]
+      ],
+      "checked_subsets": 4
+    },
+    {
+      "id": "S3_position_weight",
+      "K": 1,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "A1",
+            "position": 4224,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "B1",
+            "position": 4096,
+            "compatible": [
+              "B"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4224
+          },
+          {
+            "identifier": "B",
+            "target": 65536
+          }
+        ],
+        "k": 1
+      },
+      "benefit_matrix_ms": {
+        "A1": [
+          159.27021178303124,
+          0.0
+        ],
+        "B1": [
+          0.0,
+          162.40582977600025
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "B1"
+          ],
+          "cost_ms": 3195.173019703031,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 0,
+              "G": 4224,
+              "cost_ms": 159.27021178303124
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 4096,
+              "G": 61440,
+              "cost_ms": 3035.9028079199998
+            }
+          ],
+          "F_ms": 162.40582977600025,
+          "gap_to_opt_ms": 0.0
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "B1"
+          ],
+          "cost_ms": 3195.173019703031,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 0,
+              "G": 4224,
+              "cost_ms": 159.27021178303124
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 4096,
+              "G": 61440,
+              "cost_ms": 3035.9028079199998
+            }
+          ],
+          "F_ms": 162.40582977600025,
+          "gap_to_opt_ms": 0.0
+        },
+        "WFC": {
+          "selected": [
+            "A1"
+          ],
+          "cost_ms": 3198.308637696,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 4224,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 0,
+              "G": 65536,
+              "cost_ms": 3198.308637696
+            }
+          ],
+          "F_ms": 159.27021178303124,
+          "gap_to_opt_ms": 3.135617992968946
+        },
+        "Exact OPT": {
+          "selected": [
+            "B1"
+          ],
+          "cost_ms": 3195.173019703031,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 0,
+              "G": 4224,
+              "cost_ms": 159.27021178303124
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 4096,
+              "G": 61440,
+              "cost_ms": 3035.9028079199998
+            }
+          ],
+          "F_ms": 162.40582977600025,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "A1": 159.27021178303124,
+            "B1": 162.40582977600025
+          },
+          "chosen": "B1"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 4224,
+                "advances": {
+                  "A": 4224,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 0,
+                  "B": 4096
+                }
+              }
+            ],
+            "chosen": "A1",
+            "q": 1,
+            "r": 4224
+          }
+        ],
+        "final_frontiers": {
+          "A": 4224,
+          "B": 0
+        }
+      },
+      "opt_ties": [
+        [
+          "B1"
+        ]
+      ],
+      "checked_subsets": 3
+    },
+    {
+      "id": "S3_position_weight",
+      "K": 2,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "A1",
+            "position": 4224,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "B1",
+            "position": 4096,
+            "compatible": [
+              "B"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4224
+          },
+          {
+            "identifier": "B",
+            "target": 65536
+          }
+        ],
+        "k": 2
+      },
+      "benefit_matrix_ms": {
+        "A1": [
+          159.27021178303124,
+          0.0
+        ],
+        "B1": [
+          0.0,
+          162.40582977600025
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "B1",
+            "A1"
+          ],
+          "cost_ms": 3035.9028079199998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 4224,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 4096,
+              "G": 61440,
+              "cost_ms": 3035.9028079199998
+            }
+          ],
+          "F_ms": 321.6760415590315,
+          "gap_to_opt_ms": 0.0
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "A1",
+            "B1"
+          ],
+          "cost_ms": 3035.9028079199998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 4224,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 4096,
+              "G": 61440,
+              "cost_ms": 3035.9028079199998
+            }
+          ],
+          "F_ms": 321.6760415590315,
+          "gap_to_opt_ms": 0.0
+        },
+        "WFC": {
+          "selected": [
+            "A1",
+            "B1"
+          ],
+          "cost_ms": 3035.9028079199998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 4224,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 4096,
+              "G": 61440,
+              "cost_ms": 3035.9028079199998
+            }
+          ],
+          "F_ms": 321.6760415590315,
+          "gap_to_opt_ms": 0.0
+        },
+        "Exact OPT": {
+          "selected": [
+            "A1",
+            "B1"
+          ],
+          "cost_ms": 3035.9028079199998,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4224,
+              "E": 4224,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 65536,
+              "E": 4096,
+              "G": 61440,
+              "cost_ms": 3035.9028079199998
+            }
+          ],
+          "F_ms": 321.6760415590315,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "A1": 159.27021178303124,
+            "B1": 162.40582977600025
+          },
+          "chosen": "B1"
+        },
+        {
+          "selected": [
+            "B1"
+          ],
+          "gains_ms": {
+            "A1": 159.27021178303124
+          },
+          "chosen": "A1"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 4224,
+                "advances": {
+                  "A": 4224,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 0,
+                  "B": 4096
+                }
+              }
+            ],
+            "chosen": "A1",
+            "q": 1,
+            "r": 4224
+          },
+          {
+            "prefix": [
+              "A1"
+            ],
+            "E_before": {
+              "A": 4224,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 0,
+                  "B": 4096
+                }
+              }
+            ],
+            "chosen": "B1",
+            "q": 1,
+            "r": 4096
+          }
+        ],
+        "final_frontiers": {
+          "A": 4224,
+          "B": 4096
+        }
+      },
+      "opt_ties": [
+        [
+          "A1",
+          "B1"
+        ]
+      ],
+      "checked_subsets": 4
+    },
+    {
+      "id": "S4_greedy_lockin",
+      "K": 1,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "R",
+            "position": 3072,
+            "compatible": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "identifier": "A1",
+            "position": 4096,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "B1",
+            "position": 4096,
+            "compatible": [
+              "B"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4096
+          },
+          {
+            "identifier": "B",
+            "target": 4096
+          }
+        ],
+        "k": 1
+      },
+      "benefit_matrix_ms": {
+        "R": [
+          115.29311096099998,
+          115.29311096099998
+        ],
+        "A1": [
+          154.34895561599998,
+          0.0
+        ],
+        "B1": [
+          0.0,
+          154.34895561599998
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "R"
+          ],
+          "cost_ms": 78.11168931,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            }
+          ],
+          "F_ms": 230.58622192199996,
+          "gap_to_opt_ms": 0.0
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "R"
+          ],
+          "cost_ms": 78.11168931,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            }
+          ],
+          "F_ms": 230.58622192199996,
+          "gap_to_opt_ms": 0.0
+        },
+        "WFC": {
+          "selected": [
+            "R"
+          ],
+          "cost_ms": 78.11168931,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            }
+          ],
+          "F_ms": 230.58622192199996,
+          "gap_to_opt_ms": 0.0
+        },
+        "Exact OPT": {
+          "selected": [
+            "R"
+          ],
+          "cost_ms": 78.11168931,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            }
+          ],
+          "F_ms": 230.58622192199996,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "R": 230.58622192199996,
+            "A1": 154.34895561599998,
+            "B1": 154.34895561599998
+          },
+          "chosen": "R"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "R",
+                "q": 2,
+                "r": 6144,
+                "advances": {
+                  "A": 3072,
+                  "B": 3072
+                }
+              },
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 4096,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 0,
+                  "B": 4096
+                }
+              }
+            ],
+            "chosen": "R",
+            "q": 2,
+            "r": 6144
+          }
+        ],
+        "final_frontiers": {
+          "A": 3072,
+          "B": 3072
+        }
+      },
+      "opt_ties": [
+        [
+          "R"
+        ]
+      ],
+      "checked_subsets": 4
+    },
+    {
+      "id": "S4_greedy_lockin",
+      "K": 2,
+      "epoch": {
+        "candidates": [
+          {
+            "identifier": "R",
+            "position": 3072,
+            "compatible": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "identifier": "A1",
+            "position": 4096,
+            "compatible": [
+              "A"
+            ]
+          },
+          {
+            "identifier": "B1",
+            "position": 4096,
+            "compatible": [
+              "B"
+            ]
+          }
+        ],
+        "pending": [
+          {
+            "identifier": "A",
+            "target": 4096
+          },
+          {
+            "identifier": "B",
+            "target": 4096
+          }
+        ],
+        "k": 2
+      },
+      "benefit_matrix_ms": {
+        "R": [
+          115.29311096099998,
+          115.29311096099998
+        ],
+        "A1": [
+          154.34895561599998,
+          0.0
+        ],
+        "B1": [
+          0.0,
+          154.34895561599998
+        ]
+      },
+      "policies": {
+        "FlowState": {
+          "selected": [
+            "R",
+            "A1"
+          ],
+          "cost_ms": 39.055844655,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            }
+          ],
+          "F_ms": 269.642066577,
+          "gap_to_opt_ms": 39.055844655
+        },
+        "StandaloneTopK": {
+          "selected": [
+            "A1",
+            "R"
+          ],
+          "cost_ms": 39.055844655,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            }
+          ],
+          "F_ms": 269.642066577,
+          "gap_to_opt_ms": 39.055844655
+        },
+        "WFC": {
+          "selected": [
+            "R",
+            "A1"
+          ],
+          "cost_ms": 39.055844655,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 3072,
+              "G": 1024,
+              "cost_ms": 39.055844655
+            }
+          ],
+          "F_ms": 269.642066577,
+          "gap_to_opt_ms": 39.055844655
+        },
+        "Exact OPT": {
+          "selected": [
+            "A1",
+            "B1"
+          ],
+          "cost_ms": 0.0,
+          "per_pending": [
+            {
+              "continuation_id": "A",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            },
+            {
+              "continuation_id": "B",
+              "T": 4096,
+              "E": 4096,
+              "G": 0,
+              "cost_ms": 0.0
+            }
+          ],
+          "F_ms": 308.69791123199997,
+          "gap_to_opt_ms": 0.0
+        }
+      },
+      "flowstate_steps": [
+        {
+          "selected": [],
+          "gains_ms": {
+            "R": 230.58622192199996,
+            "A1": 154.34895561599998,
+            "B1": 154.34895561599998
+          },
+          "chosen": "R"
+        },
+        {
+          "selected": [
+            "R"
+          ],
+          "gains_ms": {
+            "A1": 39.055844655000016,
+            "B1": 39.055844655000016
+          },
+          "chosen": "A1"
+        }
+      ],
+      "wfc_steps": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "A": 0,
+              "B": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "R",
+                "q": 2,
+                "r": 6144,
+                "advances": {
+                  "A": 3072,
+                  "B": 3072
+                }
+              },
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 4096,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "A": 0,
+                  "B": 4096
+                }
+              }
+            ],
+            "chosen": "R",
+            "q": 2,
+            "r": 6144
+          },
+          {
+            "prefix": [
+              "R"
+            ],
+            "E_before": {
+              "A": 3072,
+              "B": 3072
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "A1",
+                "q": 1,
+                "r": 1024,
+                "advances": {
+                  "A": 1024,
+                  "B": 0
+                }
+              },
+              {
+                "checkpoint_id": "B1",
+                "q": 1,
+                "r": 1024,
+                "advances": {
+                  "A": 0,
+                  "B": 1024
+                }
+              }
+            ],
+            "chosen": "A1",
+            "q": 1,
+            "r": 1024
+          }
+        ],
+        "final_frontiers": {
+          "A": 4096,
+          "B": 3072
+        }
+      },
+      "opt_ties": [
+        [
+          "A1",
+          "B1"
+        ]
+      ],
+      "checked_subsets": 7
+    }
+  ],
+  "model": {
+    "name": "position_aware_quadratic_v1",
+    "coefficient_a": 37.82815,
+    "coefficient_b": 0.345974143,
+    "coefficient_c": -0.156201917,
+    "gap_unit": "tokens",
+    "target_unit": "tokens",
+    "output_unit": "ms",
+    "calibration_artifact": "recovery_model_freeze_20260826_154235_266020",
+    "minimum_gap_tokens": 0,
+    "maximum_target_tokens": 131072
+  }
+}

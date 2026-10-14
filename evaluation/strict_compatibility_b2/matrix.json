@@ -1,0 +1,680 @@
+{
+  "input": {
+    "candidates": [
+      {
+        "identifier": "RQ3_G000_A_TURN_001",
+        "position": 3904,
+        "compatible": [
+          "RQ3_G000_A_PENDING_TURN_003"
+        ]
+      },
+      {
+        "identifier": "RQ3_G000_A_TURN_002",
+        "position": 4352,
+        "compatible": [
+          "RQ3_G000_A_PENDING_TURN_003"
+        ]
+      },
+      {
+        "identifier": "RQ3_G000_B_TURN_001",
+        "position": 2432,
+        "compatible": [
+          "RQ3_G000_A_PENDING_TURN_003",
+          "RQ3_G000_B_PENDING_TURN_003",
+          "RQ3_G000_C_PENDING_TURN_003",
+          "RQ3_G000_D_PENDING_TURN_003"
+        ]
+      },
+      {
+        "identifier": "RQ3_G000_B_TURN_002",
+        "position": 3968,
+        "compatible": [
+          "RQ3_G000_B_PENDING_TURN_003"
+        ]
+      },
+      {
+        "identifier": "RQ3_G000_C_TURN_001",
+        "position": 3712,
+        "compatible": [
+          "RQ3_G000_C_PENDING_TURN_003"
+        ]
+      },
+      {
+        "identifier": "RQ3_G000_C_TURN_002",
+        "position": 4160,
+        "compatible": [
+          "RQ3_G000_C_PENDING_TURN_003"
+        ]
+      },
+      {
+        "identifier": "RQ3_G000_D_TURN_001",
+        "position": 3584,
+        "compatible": [
+          "RQ3_G000_D_PENDING_TURN_003"
+        ]
+      },
+      {
+        "identifier": "RQ3_G000_D_TURN_002",
+        "position": 4032,
+        "compatible": [
+          "RQ3_G000_D_PENDING_TURN_003"
+        ]
+      }
+    ],
+    "pending": [
+      {
+        "identifier": "RQ3_G000_A_PENDING_TURN_003",
+        "target": 4352
+      },
+      {
+        "identifier": "RQ3_G000_B_PENDING_TURN_003",
+        "target": 3968
+      },
+      {
+        "identifier": "RQ3_G000_C_PENDING_TURN_003",
+        "target": 4160
+      },
+      {
+        "identifier": "RQ3_G000_D_PENDING_TURN_003",
+        "target": 4032
+      }
+    ],
+    "k": 8
+  },
+  "edges": [
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_002",
+      "conditions": {
+        "L_le_T": false,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_002",
+      "conditions": {
+        "L_le_T": false,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_A_TURN_002",
+      "conditions": {
+        "L_le_T": false,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "RESUME_VALIDATED"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_B_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_002",
+      "conditions": {
+        "L_le_T": false,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_C_TURN_002",
+      "conditions": {
+        "L_le_T": false,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_001",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_A_PENDING_TURN_003",
+      "request_id": "rq3e-g000-a-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_002",
+      "conditions": {
+        "L_le_T": false,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_B_PENDING_TURN_003",
+      "request_id": "rq3e-g000-b-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": false,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_C_PENDING_TURN_003",
+      "request_id": "rq3e-g000-c-turn-003",
+      "status": "REJECTED",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    },
+    {
+      "actual_resume_verified": false,
+      "checkpoint_id": "RQ3_G000_D_TURN_002",
+      "conditions": {
+        "L_le_T": true,
+        "complete_recurrent_and_attention_residency": true,
+        "exact_token_prefix": true,
+        "physical_identity_matches": true,
+        "reference_protection_clear": true,
+        "same_loaded_model_tokenizer_config": true,
+        "same_observation_boundary": true
+      },
+      "continuation_id": "RQ3_G000_D_PENDING_TURN_003",
+      "request_id": "rq3e-g000-d-turn-003",
+      "status": "EPOCH_ADMISSIBLE",
+      "B1C_evidence_level": "未由B1-C逐边恢复认证"
+    }
+  ],
+  "benefit_matrix_ms": {
+    "RQ3_G000_A_TURN_001": [
+      147.03418505816018,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "RQ3_G000_A_TURN_002": [
+      164.19739833212503,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "RQ3_G000_B_TURN_001": [
+      91.0617829945469,
+      91.03188443809375,
+      91.04683371632031,
+      91.03686753083595
+    ],
+    "RQ3_G000_B_TURN_002": [
+      0.0,
+      149.43362983103125,
+      0.0,
+      0.0
+    ],
+    "RQ3_G000_C_TURN_001": [
+      0.0,
+      0.0,
+      139.67400981921094,
+      0.0
+    ],
+    "RQ3_G000_C_TURN_002": [
+      0.0,
+      0.0,
+      156.8088424017578,
+      0.0
+    ],
+    "RQ3_G000_D_TURN_001": [
+      0.0,
+      0.0,
+      0.0,
+      134.77463930415627
+    ],
+    "RQ3_G000_D_TURN_002": [
+      0.0,
+      0.0,
+      0.0,
+      151.89055142575782
+    ]
+  }
+}

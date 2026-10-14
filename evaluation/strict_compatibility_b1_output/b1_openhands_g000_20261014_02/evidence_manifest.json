@@ -1,0 +1,68 @@
+{
+  "schema": "flowstate.strict_compatibility_b1.manifest.v1",
+  "final_gate": "PARTIAL",
+  "artifact_root": "evaluation/strict_compatibility_b1_output/b1_openhands_g000_20261014_02",
+  "run_date": "2026-10-14",
+  "runtime": {
+    "image": "lmsysorg/sglang:v0.5.17-cu129-runtime",
+    "image_digest": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+    "sglang": "0.5.17",
+    "transformers": "5.12.1",
+    "model": "Qwen3.5-9B",
+    "model_path": "/home/wjg/models/qwen3.5-9b",
+    "model_config_sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+    "model_weight_content_sha256": "UNKNOWN：未对模型权重分片计算内容摘要",
+    "tokenizer_json_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config_sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "gpu": "NVIDIA H100 PCIe",
+    "gpu_count_visible_to_container": 1,
+    "tensor_parallel_size": 1,
+    "mamba_pool_slots": 28
+  },
+  "frozen_input": {
+    "population_manifest": "evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/population_manifest.json",
+    "population_manifest_sha256": "e8a28c8fc5fccc80d7bb4d38f9aafd52c7f92041d609b71a4b519a86c4b7c897",
+    "group_ordinal": 0,
+    "allocation_round": 2,
+    "snapshot_id": "b1-openhands-g000-round2",
+    "dataset_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+    "dataset_bytes": 325563194,
+    "dataset_sha256": "未重新计算；输入以只读方式挂载"
+  },
+  "results": {
+    "evidence_file": "pilot_evidence.json",
+    "evidence_sha256": "55ce87e39b08f3c142af271b3ece4cac89cd966599cceea88aba67e072d1e119",
+    "report_file": "final_report.md",
+    "report_sha256": "b7d7f25a55d10a3994904a38eeccb02dbc15b6cddc51efe8cff4af4bf530cdb5",
+    "runner_file": "evaluation/strict_compatibility_b1/run_pilot.py",
+    "runner_sha256": "4fa3949247229d0a02bdcf532725bd93c61a45f1dbf0d40cb23a3bdbcb062080",
+    "edge_counts": {
+      "epoch_admissible": 11,
+      "rejected": 21,
+      "unknown": 0,
+      "cross_workflow_epoch_admissible": 3
+    },
+    "runtime_resume_checks": {
+      "positive_correct": true,
+      "recurrent_only_eviction_correct": true,
+      "incompatible_edge_classified_by_exact_tokens": true,
+      "incompatible_edge_isolated_runtime_resume": false,
+      "request_to_node_id_direct_mapping": false,
+      "slot_generation_available": false
+    }
+  },
+  "integrity": {
+    "frozen_artifacts_modified": false,
+    "model_and_dataset_mounted_read_only": true,
+    "repository_mounted_read_only_during_gpu_run": true,
+    "output_directory_writable": true,
+    "gpu_cleanup": "PASS：结束后两张 H100 各 14 MiB；Pilot 容器已退出"
+  },
+  "nonfinal_attempt": {
+    "artifact": "evaluation/strict_compatibility_b1_output/b1_openhands_g000_20261014_01/pilot_evidence.json",
+    "sha256": "a245b25398c63b028924ea52e530e8592d108d771d90e585889fee04728b63d8",
+    "status": "BLOCKED_NO_EPOCH_ADMISSIBLE_EDGE",
+    "classification": "审计脚本曾要求运行时探针未提供的引用字段；该结果仅记录工具问题，不计入最终 Pilot"
+  }
+}

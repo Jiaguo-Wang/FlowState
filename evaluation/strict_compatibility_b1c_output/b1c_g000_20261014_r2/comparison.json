@@ -1,0 +1,127 @@
+{
+  "verdict": "PASS",
+  "target_checkpoint": "RQ3_G000_B_TURN_001",
+  "pending": "RQ3_G000_A_PENDING_TURN_003",
+  "changed_prefix_only": [
+    "23711558018cb78d78b5075fe959b41b9cd356493862b43167c53b43bbc43674"
+  ],
+  "conditions": {
+    "reference": {
+      "H": 0,
+      "E": 0,
+      "G_H_minus_E": 0,
+      "output_ids": [
+        248058,
+        198,
+        27,
+        1628,
+        15462,
+        10318,
+        32634,
+        29
+      ],
+      "request_id": "b1c_reference_A_pending_turn003"
+    },
+    "retained": {
+      "H": 4352,
+      "E": 2432,
+      "G_H_minus_E": 1920,
+      "output_ids": [
+        248058,
+        198,
+        27,
+        1628,
+        15462,
+        10318,
+        32634,
+        29
+      ],
+      "request_id": "b1c_retained_A_pending_turn003"
+    },
+    "removed": {
+      "H": 4352,
+      "E": 0,
+      "G_H_minus_E": 4352,
+      "output_ids": [
+        248058,
+        198,
+        27,
+        1628,
+        15462,
+        10318,
+        32634,
+        29
+      ],
+      "request_id": "b1c_removed_A_pending_turn003"
+    }
+  },
+  "direct_match_and_native_copy": {
+    "copies": [
+      {
+        "destination_slots": [
+          19
+        ],
+        "monotonic_ns": 355013804840599,
+        "native_call_returned": true,
+        "request_ids": [
+          "b1c_retained_A_pending_turn003"
+        ],
+        "source_slots": [
+          6
+        ]
+      }
+    ],
+    "metrics": {
+      "best_match_node": 20,
+      "cow_requested": true,
+      "cow_source_slots": [
+        6
+      ],
+      "executable_prefix": 2432,
+      "input_token_count": 5020,
+      "input_token_digest": "c3f8049600887c59c0958afb8dd02ae0fcc8813fa5c6e9a019b9f5cd545508f8",
+      "last_device_node": 20,
+      "last_host_node": 20,
+      "mamba_branching_seqlen": 4352,
+      "mamba_host_hit_length": 0,
+      "monotonic_ns": 355013802185862,
+      "physical_fa_hit": 4352,
+      "replay_gap": 1920,
+      "request_id": "b1c_retained_A_pending_turn003",
+      "working_slots": [
+        19
+      ]
+    },
+    "ok": true,
+    "records": [
+      {
+        "best_match_node": 20,
+        "cow_requested": true,
+        "cow_source_slots": [
+          6
+        ],
+        "executable_prefix": 2432,
+        "input_token_count": 5020,
+        "input_token_digest": "c3f8049600887c59c0958afb8dd02ae0fcc8813fa5c6e9a019b9f5cd545508f8",
+        "last_device_node": 20,
+        "last_host_node": 20,
+        "mamba_branching_seqlen": 4352,
+        "mamba_host_hit_length": 0,
+        "monotonic_ns": 355013802185862,
+        "physical_fa_hit": 4352,
+        "replay_gap": 1920,
+        "request_id": "b1c_retained_A_pending_turn003",
+        "working_slots": [
+          19
+        ]
+      }
+    ]
+  },
+  "configuration_equal": true,
+  "initial_barrier_equal": true,
+  "only_target_recurrent_changed": true,
+  "output_equal_8_tokens": true,
+  "gpu_cleanup": "PASS",
+  "slot_generation": "UNKNOWN",
+  "scope": "仅认证本轮受控 B1 到 A Pending 恢复边，不认证全部跨 Workflow 关系"
+}

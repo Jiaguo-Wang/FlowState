@@ -1,0 +1,43 @@
+"""只读检查已有清单和Parquet页脚，冻结协议；不读取会话内容或运行采样。"""
+import hashlib
+import json
+from pathlib import Path
+import pyarrow.parquet as pq
+ROOT=Path(__file__).resolve().parents[2]
+OUT=Path(__file__).resolve().parent
+MANIFEST=ROOT/'evaluation/runtime_artifacts/rq3_openhands_main_formal_20260904_001017/population_manifest.json'
+DATA=Path('/home/wjg/data/agentic_coding_trajectories/sessions.parquet')
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def write(n,v):(OUT/n).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+m=json.loads(MANIFEST.read_text());pf=pq.ParquetFile(DATA)
+assert all(len(g['session_ids'])==4 for g in m['groups'])
+assert len(set(m['ordered_session_ids']))==len(m['ordered_session_ids'])
+assert all(g['session_ids']==m['ordered_session_ids'][4*i:4*i+4] for i,g in enumerate(m['groups']))
+protocol={
+ 'version':'B4-A.v1','gate':'PARTIAL','execution_authorized_by_this_artifact':False,
+ '目标':'在不依据策略胜负选样的前提下收集严格准入矩阵；自然在线Pending与受控回放分开报告',
+ 'native_online_track':'当前没有原生Ready/Fork/全局事件顺序证据，不能按自然Allocation Boundary完成采集',
+ 'controlled_replay_track':'可复用既有四Session分组；仅允许称冻结已知输入的受控回放边界，不称自然在线边界',
+ 'limits':{'root_sessions':30,'natural_boundaries':100,'per_stratum':4,'total_accepted':12,'per_root_accepted':1},
+ 'source':{'path':str(DATA),'size_bytes':DATA.stat().st_size,'mtime_ns':DATA.stat().st_mtime_ns,'rows':pf.metadata.num_rows,'row_groups':pf.metadata.num_row_groups,'columns':pf.schema.names,'identity_level':'文件元数据与既有来源清单；本轮未扫描数据页或计算全数据SHA，执行前须冻结完整摘要'},
+ 'existing_order':{'manifest':str(MANIFEST),'sha256':sha(MANIFEST),'rule':m['ordering'],'seed':m['seed'],'claim':'已有正式清单顺序，按Session ID的固定hash排序；不是自然时间序'},
+ 'controlled_order_contract':{'group_order':'既有manifest的group_ordinal升序，禁止按旧结果或严格认证成败过滤','members':'保留原session_ids及A/B/C/D，不重新配对','round':'保留allocation_round；组内turn升序再A/B/C/D','candidate_boundaries':'每组仅既有指定round的一个边界','session_accounting':'每个组的4个源Session均计入检查上限；缺失、失败、已知发现组也计数；不把group当作一个root','complete_groups_within_30':7,'unused_tail_sessions':2,'root_identity_limit':'源Session是可复核计数单位，原生根Workflow归属UNKNOWN；不能认证原生root唯一性','discovery_group':0,'discovery_handling':'group0作为已有发现证据单列，不计新确认性入选数；仍占检查配额，不用其他组补位','max_new_boundaries':6,'no_replacement':True},
+ 'strata_priority':['A','B','C'],
+ 'strata':{
+ 'A':'存在同一Pending上合法祖先与更深候选且均正推进；另有候选推进该链以外的Pending；至少2 Pending、3候选。',
+ 'B':'共同祖先候选合法覆盖至少2 Pending，至少一个分支有更深专属候选，K_min_frontier>1。',
+ 'C':'存在2个支持互斥的正推进候选，对应Pending的T不同且L不同或已有合法基础E不同；不按Phi排序或胜负筛选。'},
+ 'classification':'由同边界准入Token边、L/T和覆盖结构确定；仅结构主标签按A>B>C首次匹配，保留全部标签。主层满额则记录但不改派次层；不得按收益筛选。无标签也记入分母。',
+ 'admission':'所有必要身份/配置/驻留/边界可核对，32式笛卡尔配对完整分类；存在关键UNKNOWN则保存为证据不完整，不进入严格完整矩阵比较；拒绝边置不兼容但保留理由。',
+ 'budget':{'K':'1..min(4,num_candidates)','K_min_frontier':'单独按全候选可实现前沿覆盖计算；不当成物理容量，不因策略胜负改K','unit':'同一Snapshot的重复预算条件'},
+ 'stops':['30个根Session计数上限或100自然边界先到即停；受控回放另记replay_barrier_count，亦不超过100但不得替代自然计数','完整组超过30 Session配额则不启动，剩余2个不能拼接新组','每层4/总12封顶，不延长窗口或补位','关键身份、因果输入、组件或边界冲突立即停止该实例；共性缺失阻断所有实例则停止整批','OOM、native eviction污染、无法安全静止或清理失败停止，不自动增池/改工作负载/重试求成功'],
+ 'metrics':['合格/尝试/排除/无标签/各层满额数量','EPOCH_ADMISSIBLE/REJECTED/UNKNOWN配对数','跨Workflow准入边/全部准入边；另报跨Workflow准入边/全部跨Workflow配对','K与K_min_frontier关系','逐策略J、E/G、所选集合、同收益异集合','FlowState对WFC/StandaloneTopK/PCB/LDR的胜平负','Exact OPT差距及求解状态','全部实例含失败与负面结果，预算内配对统计不伪增样本数'],
+ 'runtime_patch_plan':['独立新采集入口，group参数、输出保护、检查/入选计数和失败账本','拆出B1的capture-only路径，禁止自动reference/evicted双臂及策略运行','复用B1-C原始match观察器与整树只读身份检查；保存所有历史请求输入摘要及checkpoint映射','在屏障前显式冻结待提交Pending输入缓冲；保存prepare/ready/dispatch事件，区分客户端冻结与Runtime实际接收','冻结后依既有A/B/C/D顺序提交4个Pending，每请求1个确定性Token，仅核对Runtime接收Token摘要；不得用之后状态补入边界或宣称逐边恢复认证','保存creation_order/last_access_order及策略元数据，不能靠census补造Marconi访问顺序','冻结同一边界证据并分类后方可释放屏障；禁止后续请求状态反补；保存全树候选外状态与基础前沿证据','根ID和自然Ready缺口必须明确，不能通过日志字段命名伪造'],
+ 'lifecycle_estimate':{'controlled_capture_only_max':6,'existing_discovery_reference_reused':1,'automatic_recovery_counterfactual_runs':0,'meaning':'6个新组各1独立引擎，仅采集；若另行授权逐Pending冷参考，则每组再1冷引擎且请求间flush，共最多12，但不在本协议默认任务中','natural_online':'UNKNOWN，缺事件来源'},
+ 'environment':'复用B1-C冻结Docker镜像/Qwen3.5-9B/TP1/单H100/28 recurrent slots；本轮不查GPU、不启动Docker。新组可行性待运行，失败不自动调整容量。',
+ 'B4B_gate':'仅在受控回放范围和原生root限制明确被接受、数据完整摘要锁定、独立采集补丁CPU测试通过后，才能按另行任务启动；自然在线采样仍需原生事件证据。'
+}
+write('sampling_protocol.json',protocol)
+sources=[MANIFEST,ROOT/'evaluation/rq3_openhands_neutral_collector.py',ROOT/'evaluation/rq3_openhands_population.py',ROOT/'evaluation/strict_compatibility_b1/run_pilot.py',ROOT/'evaluation/strict_compatibility_b1c/runner.py',ROOT/'evaluation/strict_compatibility_b1c/run.sh',ROOT/'evaluation/strict_compatibility_b3/final_report.md']
+write('cpu_preflight.json',{'status':'PASS','scope':'清单一致性与Parquet页脚，无内容采样、Token重建或GPU','manifest_group_count':len(m['groups']),'source_hashes':{str(p):sha(p) for p in sources},'data_metadata':protocol['source'],'environment_paths_exist':{p:Path(p).exists() for p in ['/home/wjg/models/qwen3.5-9b','/home/wjg/uv312/bin/python',str(DATA)]}})
+print('协议冻结：PARTIAL；仅完成元数据检查')

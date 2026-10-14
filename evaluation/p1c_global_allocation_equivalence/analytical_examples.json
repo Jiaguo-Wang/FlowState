@@ -1,0 +1,1228 @@
+[
+  {
+    "case_id": "数学甲",
+    "k": 1,
+    "input": {
+      "candidates": [
+        {
+          "identifier": "a",
+          "position": 4096,
+          "compatible": [
+            "p1"
+          ]
+        },
+        {
+          "identifier": "b",
+          "position": 4096,
+          "compatible": [
+            "p2"
+          ]
+        },
+        {
+          "identifier": "c",
+          "position": 2048,
+          "compatible": [
+            "p1"
+          ]
+        }
+      ],
+      "pending": [
+        {
+          "identifier": "p1",
+          "target": 8192
+        },
+        {
+          "identifier": "p2",
+          "target": 131072
+        }
+      ],
+      "k": 1
+    },
+    "lineage": [
+      {
+        "checkpoint_id": "a",
+        "workflow_id": "w1",
+        "lineage_path": [
+          "r1"
+        ],
+        "token_pos": 4096,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "b",
+        "workflow_id": "w2",
+        "lineage_path": [
+          "r2"
+        ],
+        "token_pos": 4096,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "c",
+        "workflow_id": "w1",
+        "lineage_path": [
+          "r1"
+        ],
+        "token_pos": 2048,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      }
+    ],
+    "pending_lineage": [
+      {
+        "continuation_id": "p1",
+        "workflow_id": "w1",
+        "lineage_path": [
+          "r1"
+        ],
+        "anchor_pos": 8192,
+        "resident_fa_frontier": 8192
+      },
+      {
+        "continuation_id": "p2",
+        "workflow_id": "w2",
+        "lineage_path": [
+          "r2"
+        ],
+        "anchor_pos": 131072,
+        "resident_fa_frontier": 131072
+      }
+    ],
+    "benefit_matrix_ms": {
+      "a": [
+        154.88608056000004,
+        0.0
+      ],
+      "b": [
+        0.0,
+        170.9998288800016
+      ],
+      "c": [
+        76.81823261200003,
+        0.0
+      ]
+    },
+    "results": {
+      "FlowState": {
+        "selected": [
+          "b"
+        ],
+        "cost_ms": 8095.002144367999,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 0,
+            "G": 8192,
+            "cost_ms": 314.77062246400004
+          },
+          {
+            "continuation_id": "p2",
+            "T": 131072,
+            "E": 4096,
+            "G": 126976,
+            "cost_ms": 7780.231521903999
+          }
+        ]
+      },
+      "PCB": {
+        "selected": [
+          "b"
+        ],
+        "cost_ms": 8095.002144367999,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 0,
+            "G": 8192,
+            "cost_ms": 314.77062246400004
+          },
+          {
+            "continuation_id": "p2",
+            "T": 131072,
+            "E": 4096,
+            "G": 126976,
+            "cost_ms": 7780.231521903999
+          }
+        ]
+      },
+      "LDR": {
+        "selected": [
+          "a"
+        ],
+        "cost_ms": 8111.115892688001,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          },
+          {
+            "continuation_id": "p2",
+            "T": 131072,
+            "E": 0,
+            "G": 131072,
+            "cost_ms": 7951.231350784001
+          }
+        ]
+      },
+      "WFC": {
+        "selected": [
+          "a"
+        ],
+        "cost_ms": 8111.115892688001,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          },
+          {
+            "continuation_id": "p2",
+            "T": 131072,
+            "E": 0,
+            "G": 131072,
+            "cost_ms": 7951.231350784001
+          }
+        ]
+      }
+    },
+    "traces": {
+      "PCB": {
+        "recommendations": [
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "b",
+            "score": 170.9998288800016
+          },
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "a",
+            "score": 154.88608056000004
+          }
+        ]
+      },
+      "LDR": {
+        "recommendations": [
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "a",
+            "score": 4096
+          },
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "b",
+            "score": 4096
+          }
+        ]
+      },
+      "WFC": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "p1": 0,
+              "p2": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "a",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "p1": 4096,
+                  "p2": 0
+                }
+              },
+              {
+                "checkpoint_id": "b",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "p1": 0,
+                  "p2": 4096
+                }
+              },
+              {
+                "checkpoint_id": "c",
+                "q": 1,
+                "r": 2048,
+                "advances": {
+                  "p1": 2048,
+                  "p2": 0
+                }
+              }
+            ],
+            "chosen": "a",
+            "q": 1,
+            "r": 4096
+          }
+        ],
+        "final_frontiers": {
+          "p1": 4096,
+          "p2": 0
+        }
+      }
+    },
+    "flowstate_steps": [
+      {
+        "prefix": [],
+        "gains": {
+          "a": 154.88608056000066,
+          "b": 170.9998288800025,
+          "c": 76.81823261200043
+        },
+        "chosen": "b"
+      }
+    ],
+    "exact_cost_ms": 8095.002144367999,
+    "exact_selected": [
+      "b"
+    ]
+  },
+  {
+    "case_id": "数学乙一",
+    "k": 1,
+    "input": {
+      "candidates": [
+        {
+          "identifier": "a",
+          "position": 4096,
+          "compatible": [
+            "p1",
+            "p2"
+          ]
+        },
+        {
+          "identifier": "b",
+          "position": 6144,
+          "compatible": [
+            "p1"
+          ]
+        },
+        {
+          "identifier": "c",
+          "position": 6144,
+          "compatible": [
+            "p2"
+          ]
+        }
+      ],
+      "pending": [
+        {
+          "identifier": "p1",
+          "target": 8192
+        },
+        {
+          "identifier": "p2",
+          "target": 8192
+        }
+      ],
+      "k": 1
+    },
+    "lineage": [
+      {
+        "checkpoint_id": "a",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r"
+        ],
+        "token_pos": 4096,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "b",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "x"
+        ],
+        "token_pos": 6144,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "c",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "y"
+        ],
+        "token_pos": 6144,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      }
+    ],
+    "pending_lineage": [
+      {
+        "continuation_id": "p1",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "x"
+        ],
+        "anchor_pos": 8192,
+        "resident_fa_frontier": 8192
+      },
+      {
+        "continuation_id": "p2",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "y"
+        ],
+        "anchor_pos": 8192,
+        "resident_fa_frontier": 8192
+      }
+    ],
+    "benefit_matrix_ms": {
+      "a": [
+        154.88608056000004,
+        154.88608056000004
+      ],
+      "b": [
+        234.20354384400002,
+        0.0
+      ],
+      "c": [
+        0.0,
+        234.20354384400002
+      ]
+    },
+    "results": {
+      "FlowState": {
+        "selected": [
+          "a"
+        ],
+        "cost_ms": 319.769083808,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          }
+        ]
+      },
+      "PCB": {
+        "selected": [
+          "b"
+        ],
+        "cost_ms": 395.33770108400006,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 0,
+            "G": 8192,
+            "cost_ms": 314.77062246400004
+          }
+        ]
+      },
+      "LDR": {
+        "selected": [
+          "b"
+        ],
+        "cost_ms": 395.33770108400006,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 0,
+            "G": 8192,
+            "cost_ms": 314.77062246400004
+          }
+        ]
+      },
+      "WFC": {
+        "selected": [
+          "a"
+        ],
+        "cost_ms": 319.769083808,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          }
+        ]
+      }
+    },
+    "traces": {
+      "PCB": {
+        "recommendations": [
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "b",
+            "score": 234.20354384400002
+          },
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "c",
+            "score": 234.20354384400002
+          }
+        ]
+      },
+      "LDR": {
+        "recommendations": [
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "b",
+            "score": 6144
+          },
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "c",
+            "score": 6144
+          }
+        ]
+      },
+      "WFC": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "p1": 0,
+              "p2": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "a",
+                "q": 2,
+                "r": 8192,
+                "advances": {
+                  "p1": 4096,
+                  "p2": 4096
+                }
+              },
+              {
+                "checkpoint_id": "b",
+                "q": 1,
+                "r": 6144,
+                "advances": {
+                  "p1": 6144,
+                  "p2": 0
+                }
+              },
+              {
+                "checkpoint_id": "c",
+                "q": 1,
+                "r": 6144,
+                "advances": {
+                  "p1": 0,
+                  "p2": 6144
+                }
+              }
+            ],
+            "chosen": "a",
+            "q": 2,
+            "r": 8192
+          }
+        ],
+        "final_frontiers": {
+          "p1": 4096,
+          "p2": 4096
+        }
+      }
+    },
+    "flowstate_steps": [
+      {
+        "prefix": [],
+        "gains": {
+          "a": 309.7721611200001,
+          "b": 234.20354384400002,
+          "c": 234.20354384400002
+        },
+        "chosen": "a"
+      }
+    ],
+    "exact_cost_ms": 319.769083808,
+    "exact_selected": [
+      "a"
+    ]
+  },
+  {
+    "case_id": "数学乙二",
+    "k": 2,
+    "input": {
+      "candidates": [
+        {
+          "identifier": "a",
+          "position": 4096,
+          "compatible": [
+            "p1",
+            "p2"
+          ]
+        },
+        {
+          "identifier": "b",
+          "position": 6144,
+          "compatible": [
+            "p1"
+          ]
+        },
+        {
+          "identifier": "c",
+          "position": 6144,
+          "compatible": [
+            "p2"
+          ]
+        }
+      ],
+      "pending": [
+        {
+          "identifier": "p1",
+          "target": 8192
+        },
+        {
+          "identifier": "p2",
+          "target": 8192
+        }
+      ],
+      "k": 2
+    },
+    "lineage": [
+      {
+        "checkpoint_id": "a",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r"
+        ],
+        "token_pos": 4096,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "b",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "x"
+        ],
+        "token_pos": 6144,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "c",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "y"
+        ],
+        "token_pos": 6144,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      }
+    ],
+    "pending_lineage": [
+      {
+        "continuation_id": "p1",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "x"
+        ],
+        "anchor_pos": 8192,
+        "resident_fa_frontier": 8192
+      },
+      {
+        "continuation_id": "p2",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "y"
+        ],
+        "anchor_pos": 8192,
+        "resident_fa_frontier": 8192
+      }
+    ],
+    "benefit_matrix_ms": {
+      "a": [
+        154.88608056000004,
+        154.88608056000004
+      ],
+      "b": [
+        234.20354384400002,
+        0.0
+      ],
+      "c": [
+        0.0,
+        234.20354384400002
+      ]
+    },
+    "results": {
+      "FlowState": {
+        "selected": [
+          "a",
+          "b"
+        ],
+        "cost_ms": 240.45162052400002,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          }
+        ]
+      },
+      "PCB": {
+        "selected": [
+          "b",
+          "c"
+        ],
+        "cost_ms": 161.13415724,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          }
+        ]
+      },
+      "LDR": {
+        "selected": [
+          "b",
+          "c"
+        ],
+        "cost_ms": 161.13415724,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          }
+        ]
+      },
+      "WFC": {
+        "selected": [
+          "a",
+          "b"
+        ],
+        "cost_ms": 240.45162052400002,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 4096,
+            "G": 4096,
+            "cost_ms": 159.884541904
+          }
+        ]
+      }
+    },
+    "traces": {
+      "PCB": {
+        "recommendations": [
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "b",
+            "score": 234.20354384400002
+          },
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "c",
+            "score": 234.20354384400002
+          }
+        ]
+      },
+      "LDR": {
+        "recommendations": [
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "b",
+            "score": 6144
+          },
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "c",
+            "score": 6144
+          }
+        ]
+      },
+      "WFC": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "p1": 0,
+              "p2": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "a",
+                "q": 2,
+                "r": 8192,
+                "advances": {
+                  "p1": 4096,
+                  "p2": 4096
+                }
+              },
+              {
+                "checkpoint_id": "b",
+                "q": 1,
+                "r": 6144,
+                "advances": {
+                  "p1": 6144,
+                  "p2": 0
+                }
+              },
+              {
+                "checkpoint_id": "c",
+                "q": 1,
+                "r": 6144,
+                "advances": {
+                  "p1": 0,
+                  "p2": 6144
+                }
+              }
+            ],
+            "chosen": "a",
+            "q": 2,
+            "r": 8192
+          },
+          {
+            "prefix": [
+              "a"
+            ],
+            "E_before": {
+              "p1": 4096,
+              "p2": 4096
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "b",
+                "q": 1,
+                "r": 2048,
+                "advances": {
+                  "p1": 2048,
+                  "p2": 0
+                }
+              },
+              {
+                "checkpoint_id": "c",
+                "q": 1,
+                "r": 2048,
+                "advances": {
+                  "p1": 0,
+                  "p2": 2048
+                }
+              }
+            ],
+            "chosen": "b",
+            "q": 1,
+            "r": 2048
+          }
+        ],
+        "final_frontiers": {
+          "p1": 6144,
+          "p2": 4096
+        }
+      }
+    },
+    "flowstate_steps": [
+      {
+        "prefix": [],
+        "gains": {
+          "a": 309.7721611200001,
+          "b": 234.20354384400002,
+          "c": 234.20354384400002
+        },
+        "chosen": "a"
+      },
+      {
+        "prefix": [
+          "a"
+        ],
+        "gains": {
+          "b": 79.31746328399998,
+          "c": 79.31746328399998
+        },
+        "chosen": "b"
+      }
+    ],
+    "exact_cost_ms": 161.13415724,
+    "exact_selected": [
+      "b",
+      "c"
+    ]
+  },
+  {
+    "case_id": "数学丙",
+    "k": 1,
+    "input": {
+      "candidates": [
+        {
+          "identifier": "a",
+          "position": 1024,
+          "compatible": [
+            "p1",
+            "p2"
+          ]
+        },
+        {
+          "identifier": "b",
+          "position": 6144,
+          "compatible": [
+            "p1"
+          ]
+        },
+        {
+          "identifier": "c",
+          "position": 6144,
+          "compatible": [
+            "p2"
+          ]
+        }
+      ],
+      "pending": [
+        {
+          "identifier": "p1",
+          "target": 8192
+        },
+        {
+          "identifier": "p2",
+          "target": 8192
+        }
+      ],
+      "k": 1
+    },
+    "lineage": [
+      {
+        "checkpoint_id": "a",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r"
+        ],
+        "token_pos": 1024,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "b",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "x"
+        ],
+        "token_pos": 6144,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      },
+      {
+        "checkpoint_id": "c",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "y"
+        ],
+        "token_pos": 6144,
+        "memory_bytes": 1,
+        "recurrent_resident": true,
+        "fa_resident": true
+      }
+    ],
+    "pending_lineage": [
+      {
+        "continuation_id": "p1",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "x"
+        ],
+        "anchor_pos": 8192,
+        "resident_fa_frontier": 8192
+      },
+      {
+        "continuation_id": "p2",
+        "workflow_id": "w",
+        "lineage_path": [
+          "r",
+          "y"
+        ],
+        "anchor_pos": 8192,
+        "resident_fa_frontier": 8192
+      }
+    ],
+    "benefit_matrix_ms": {
+      "a": [
+        38.25291438900001,
+        38.25291438900001
+      ],
+      "b": [
+        234.20354384400002,
+        0.0
+      ],
+      "c": [
+        0.0,
+        234.20354384400002
+      ]
+    },
+    "results": {
+      "FlowState": {
+        "selected": [
+          "b"
+        ],
+        "cost_ms": 395.33770108400006,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 0,
+            "G": 8192,
+            "cost_ms": 314.77062246400004
+          }
+        ]
+      },
+      "PCB": {
+        "selected": [
+          "b"
+        ],
+        "cost_ms": 395.33770108400006,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 0,
+            "G": 8192,
+            "cost_ms": 314.77062246400004
+          }
+        ]
+      },
+      "LDR": {
+        "selected": [
+          "b"
+        ],
+        "cost_ms": 395.33770108400006,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 6144,
+            "G": 2048,
+            "cost_ms": 80.56707862
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 0,
+            "G": 8192,
+            "cost_ms": 314.77062246400004
+          }
+        ]
+      },
+      "WFC": {
+        "selected": [
+          "a"
+        ],
+        "cost_ms": 553.0354161500001,
+        "per_pending": [
+          {
+            "continuation_id": "p1",
+            "T": 8192,
+            "E": 1024,
+            "G": 7168,
+            "cost_ms": 276.51770807500003
+          },
+          {
+            "continuation_id": "p2",
+            "T": 8192,
+            "E": 1024,
+            "G": 7168,
+            "cost_ms": 276.51770807500003
+          }
+        ]
+      }
+    },
+    "traces": {
+      "PCB": {
+        "recommendations": [
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "b",
+            "score": 234.20354384400002
+          },
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "c",
+            "score": 234.20354384400002
+          }
+        ]
+      },
+      "LDR": {
+        "recommendations": [
+          {
+            "pending_id": "p1",
+            "checkpoint_id": "b",
+            "score": 6144
+          },
+          {
+            "pending_id": "p2",
+            "checkpoint_id": "c",
+            "score": 6144
+          }
+        ]
+      },
+      "WFC": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "p1": 0,
+              "p2": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "a",
+                "q": 2,
+                "r": 2048,
+                "advances": {
+                  "p1": 1024,
+                  "p2": 1024
+                }
+              },
+              {
+                "checkpoint_id": "b",
+                "q": 1,
+                "r": 6144,
+                "advances": {
+                  "p1": 6144,
+                  "p2": 0
+                }
+              },
+              {
+                "checkpoint_id": "c",
+                "q": 1,
+                "r": 6144,
+                "advances": {
+                  "p1": 0,
+                  "p2": 6144
+                }
+              }
+            ],
+            "chosen": "a",
+            "q": 2,
+            "r": 2048
+          }
+        ],
+        "final_frontiers": {
+          "p1": 1024,
+          "p2": 1024
+        }
+      }
+    },
+    "flowstate_steps": [
+      {
+        "prefix": [],
+        "gains": {
+          "a": 76.50582877800002,
+          "b": 234.20354384400002,
+          "c": 234.20354384400002
+        },
+        "chosen": "b"
+      }
+    ],
+    "exact_cost_ms": 395.33770108400006,
+    "exact_selected": [
+      "b"
+    ]
+  }
+]

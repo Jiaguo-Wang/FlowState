@@ -1,0 +1,150 @@
+{
+  "case_id": "lmcache_10",
+  "checkpoint_id": "lmcache10_C0",
+  "state_position_L": 9984,
+  "contract_reference": "evaluation/submission_p0_executable_recovery/compatibility_contract.md（Task A 合同，未修改）",
+  "verdicts": {
+    "P1": {
+      "checkpoint_id": "lmcache10_C0",
+      "continuation_id": "P1",
+      "is_admissible": true,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "PASS",
+          "detail": "前 9984 个 token 逐位一致"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=9984 <= T=16338"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=9984"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "PASS",
+          "detail": "physical=9984, executable=9984, gap=0, 输出与全量重算一致=True, 驱逐反事实证明依赖 Recurrent State=True"
+        }
+      ],
+      "non_pass_reasons": [
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation"
+      ]
+    },
+    "P2": {
+      "checkpoint_id": "lmcache10_C0",
+      "continuation_id": "P2",
+      "is_admissible": true,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "PASS",
+          "detail": "前 9984 个 token 逐位一致"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=9984 <= T=21520"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=9984"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "PASS",
+          "detail": "physical=9984, executable=9984, gap=0, 输出与全量重算一致=True, 驱逐反事实证明依赖 Recurrent State=True"
+        }
+      ],
+      "non_pass_reasons": [
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation"
+      ]
+    },
+    "P_neg": {
+      "checkpoint_id": "lmcache10_C0",
+      "continuation_id": "P_neg",
+      "is_admissible": false,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "FAIL",
+          "detail": "token 历史在位置 4992 首次分歧 (33955 != 33956)"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=9984 <= T=16338"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=9984"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "UNKNOWN",
+          "detail": "离线阶段不可认证"
+        }
+      ],
+      "non_pass_reasons": [
+        "C2_token_history=FAIL: token 历史在位置 4992 首次分歧 (33955 != 33956)",
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation",
+        "C7_resume_certified=UNKNOWN: 离线阶段不可认证"
+      ]
+    }
+  },
+  "unknown_conditions": [
+    "C5_physical_identity",
+    "C7_resume_certified"
+  ],
+  "generated_utc": "2026-10-13T07:53:06.876660+00:00"
+}

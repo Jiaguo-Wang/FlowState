@@ -1,0 +1,769 @@
+{
+  "task": "FlowState 投稿冲刺任务 A5：LMCache lmcache_10 真实消息恢复验证",
+  "started_utc": "2026-10-13T07:51:57.704056+00:00",
+  "status": "PASS",
+  "failure_stage": null,
+  "engine_config": {
+    "context_length": 45056,
+    "mem_fraction_static": 0.4,
+    "tp_size": 1,
+    "chunked_prefill_size": 45056,
+    "max_mamba_cache_size": 16,
+    "mamba_radix_cache_strategy": "extra_buffer",
+    "mamba_track_interval": 256,
+    "mamba_max_states_per_path": -1,
+    "disable_cuda_graph": true,
+    "disable_overlap_schedule": true,
+    "enable_request_time_stats_logging": true,
+    "stream_interval": 1,
+    "log_level": "info"
+  },
+  "environment": {
+    "flowstate_step5d_port": "49939",
+    "cuda_visible_devices": "0",
+    "sglang_version": "0.5.17"
+  },
+  "gate": {
+    "runtime_resume_certified": true,
+    "illegal_prefix_rejected": true,
+    "mamba_dependency_proven": true,
+    "contract_note": "谓词层：P1/P2 为 ADMISSIBLE 且 C7 全 PASS；C5 因 runtime 未暴露 slot generation 账本而保持 UNKNOWN（诚实标注，沿用 Task A 合同）",
+    "unknown_conditions": [
+      "C5_physical_identity",
+      "C7_resume_certified"
+    ]
+  },
+  "finished_utc": "2026-10-13T07:53:06.874901+00:00",
+  "input_verification": {
+    "schema_version": "1",
+    "case_id": "lmcache_10",
+    "dataset_name": "sammshen/lmcache-agentic-traces",
+    "source_task_id": "swebench__django__django-15731",
+    "source_session_ids": [
+      "swebench__django__django-15731__deepseek",
+      "swebench__django__django-15731__minimax"
+    ],
+    "source_type": "实验回放",
+    "source_type_evidence": "同任务异模型已有会话作为统一模型的离线回放材料；原始采集事件与原生 fork 未认证",
+    "session_metadata": {
+      "p1": {
+        "session_id": "swebench__django__django-15731__deepseek"
+      },
+      "p2": {
+        "session_id": "swebench__django__django-15731__minimax"
+      }
+    },
+    "input_files": {
+      "p1": {
+        "path": "/home/wjg/code/FlowState/agentic_workflow_dataset_research/phase2_submission_inputs/inputs/lmcache_10_p1_tokens.json",
+        "sha256": "2eee5178913f64b377beb890ecd1de8a304745fdc943663e8c67fdf434221b8c"
+      },
+      "p2": {
+        "path": "/home/wjg/code/FlowState/agentic_workflow_dataset_research/phase2_submission_inputs/inputs/lmcache_10_p2_tokens.json",
+        "sha256": "05f9595836c81932061de4ad796aae722dfe56214cdeab799c0b47be55ac7552"
+      }
+    },
+    "tokenization_method": "apply_chat_template(tokenize=True, add_generation_prompt=True)，不传 tools 或 enable_thinking，不截断",
+    "submission_mode": "直接提交冻结 input_ids（runtime_gate.generate 以 input_ids 发送，不经 decode/re-template；见 runtime_gate.py:152-173）",
+    "lengths": {
+      "p1": 16338,
+      "p2": 21520,
+      "measured_lcp": 10206,
+      "c0": 9984
+    },
+    "verified_claims": {
+      "file_sha256_match_manifest": true,
+      "lengths_match": true,
+      "lcp_match": true,
+      "prefix9984_identical": true,
+      "diverge_after_lcp": true,
+      "c0_inside_prefix": true,
+      "c0_is_track_boundary": true,
+      "engine_identity_matches_contract": true
+    },
+    "first_divergence": {
+      "position": 10206,
+      "p1_token": 40,
+      "p2_token": 27
+    },
+    "token_digests": {
+      "c0_prefix": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+      "p1_full": "c7951033e7665a583e652cb28c95269b3453e1712d41f2f50eac36790b521aea",
+      "p2_full": "b013bfc3af293c2899659dcd607ad4c650399de209b1ba95875e7d160ab4255d",
+      "negative_full": "d22735e499649c99023dd33d562b1b59dcc05248cdcccf99c8dd2a61b3334747"
+    },
+    "checkpoint": {
+      "checkpoint_id": "lmcache10_C0",
+      "length": 9984,
+      "digest": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+      "note": "9984=39×256 为 track 边界对齐候选；物化以 runtime inspect 实测为准（Task A 发现①：exact 节点位于请求输入边界）"
+    },
+    "negative_case": {
+      "kind": "illegal_prefix_mutation",
+      "marked": "CONTROLLED",
+      "derived_from": "P1（冻结输入派生，非原始 LMCache 数据）",
+      "flip_position": 4992,
+      "original_token": 33955,
+      "mutated_token": 33956
+    },
+    "input_contract_identity": {
+      "model": "/home/wjg/models/qwen3.5-9b",
+      "class": "Qwen2Tokenizer",
+      "transformers": "5.13.0",
+      "files_sha256": {
+        "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+        "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+        "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05"
+      }
+    },
+    "engine_model_files_sha256": {
+      "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+      "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "model_identity": "qwen3.5-9b@d0883072e01861ed",
+    "tokenizer_identity": "qwen3.5-9b-tokenizer@316230d6a809701f",
+    "generated_utc": "2026-10-13T07:52:11.902794+00:00"
+  },
+  "materializations": {
+    "mat1": {
+      "anchor_output": 16944,
+      "anchor_metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_anchor_mat1"
+      },
+      "path": {
+        "child_node_ids": [],
+        "extra_key": null,
+        "is_device_leaf": true,
+        "n_children": 0,
+        "node_id": 57,
+        "parent_node_id": 48,
+        "path_full_all_present": true,
+        "path_full_rows": 9984,
+        "path_full_sha256": "619691f4337df7089e07aba0667c63ff353a6a76abc0de7c787345fa9dfc1651",
+        "path_mamba_positions": [
+          {
+            "node_id": 57,
+            "position": 9984,
+            "slots": [
+              3
+            ]
+          }
+        ],
+        "path_node_ids": [
+          57
+        ],
+        "prefix_sha256": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+        "prefix_tokens": 9984,
+        "segment_lengths": [
+          9984
+        ],
+        "target_full_lock_ref": 0,
+        "target_full_present": true,
+        "target_full_value_len": 9984,
+        "target_full_value_sha256": "becc677cbc95129529c45909b9b04375e5dd393465a459b85540876cd1c77823",
+        "target_mamba_host_lock_ref": 0,
+        "target_mamba_host_present": false,
+        "target_mamba_in_lru": true,
+        "target_mamba_lock_ref": 0,
+        "target_mamba_present": true,
+        "target_mamba_session_ref": 0,
+        "target_mamba_slots": [
+          3
+        ]
+      }
+    },
+    "mat2": {
+      "anchor_output": 16944,
+      "anchor_metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_anchor_mat2"
+      },
+      "path": {
+        "child_node_ids": [],
+        "extra_key": null,
+        "is_device_leaf": true,
+        "n_children": 0,
+        "node_id": 67,
+        "parent_node_id": 58,
+        "path_full_all_present": true,
+        "path_full_rows": 9984,
+        "path_full_sha256": "619691f4337df7089e07aba0667c63ff353a6a76abc0de7c787345fa9dfc1651",
+        "path_mamba_positions": [
+          {
+            "node_id": 67,
+            "position": 9984,
+            "slots": [
+              3
+            ]
+          }
+        ],
+        "path_node_ids": [
+          67
+        ],
+        "prefix_sha256": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+        "prefix_tokens": 9984,
+        "segment_lengths": [
+          9984
+        ],
+        "target_full_lock_ref": 0,
+        "target_full_present": true,
+        "target_full_value_len": 9984,
+        "target_full_value_sha256": "becc677cbc95129529c45909b9b04375e5dd393465a459b85540876cd1c77823",
+        "target_mamba_host_lock_ref": 0,
+        "target_mamba_host_present": false,
+        "target_mamba_in_lru": true,
+        "target_mamba_lock_ref": 0,
+        "target_mamba_present": true,
+        "target_mamba_session_ref": 0,
+        "target_mamba_slots": [
+          3
+        ]
+      }
+    },
+    "mat3": {
+      "anchor_output": 16944,
+      "anchor_metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_anchor_mat3"
+      },
+      "path": {
+        "child_node_ids": [],
+        "extra_key": null,
+        "is_device_leaf": true,
+        "n_children": 0,
+        "node_id": 78,
+        "parent_node_id": 69,
+        "path_full_all_present": true,
+        "path_full_rows": 9984,
+        "path_full_sha256": "619691f4337df7089e07aba0667c63ff353a6a76abc0de7c787345fa9dfc1651",
+        "path_mamba_positions": [
+          {
+            "node_id": 78,
+            "position": 9984,
+            "slots": [
+              3
+            ]
+          }
+        ],
+        "path_node_ids": [
+          78
+        ],
+        "prefix_sha256": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+        "prefix_tokens": 9984,
+        "segment_lengths": [
+          9984
+        ],
+        "target_full_lock_ref": 0,
+        "target_full_present": true,
+        "target_full_value_len": 9984,
+        "target_full_value_sha256": "becc677cbc95129529c45909b9b04375e5dd393465a459b85540876cd1c77823",
+        "target_mamba_host_lock_ref": 0,
+        "target_mamba_host_present": false,
+        "target_mamba_in_lru": true,
+        "target_mamba_lock_ref": 0,
+        "target_mamba_present": true,
+        "target_mamba_session_ref": 0,
+        "target_mamba_slots": [
+          3
+        ]
+      }
+    },
+    "mat4": {
+      "anchor_output": 16944,
+      "anchor_metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_anchor_mat4"
+      },
+      "path": {
+        "child_node_ids": [],
+        "extra_key": null,
+        "is_device_leaf": true,
+        "n_children": 0,
+        "node_id": 89,
+        "parent_node_id": 80,
+        "path_full_all_present": true,
+        "path_full_rows": 9984,
+        "path_full_sha256": "619691f4337df7089e07aba0667c63ff353a6a76abc0de7c787345fa9dfc1651",
+        "path_mamba_positions": [
+          {
+            "node_id": 89,
+            "position": 9984,
+            "slots": [
+              3
+            ]
+          }
+        ],
+        "path_node_ids": [
+          89
+        ],
+        "prefix_sha256": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+        "prefix_tokens": 9984,
+        "segment_lengths": [
+          9984
+        ],
+        "target_full_lock_ref": 0,
+        "target_full_present": true,
+        "target_full_value_len": 9984,
+        "target_full_value_sha256": "becc677cbc95129529c45909b9b04375e5dd393465a459b85540876cd1c77823",
+        "target_mamba_host_lock_ref": 0,
+        "target_mamba_host_present": false,
+        "target_mamba_in_lru": true,
+        "target_mamba_lock_ref": 0,
+        "target_mamba_present": true,
+        "target_mamba_session_ref": 0,
+        "target_mamba_slots": [
+          3
+        ]
+      }
+    },
+    "mat5": {
+      "anchor_output": 16944,
+      "anchor_metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_anchor_mat5"
+      },
+      "path": {
+        "child_node_ids": [],
+        "extra_key": null,
+        "is_device_leaf": true,
+        "n_children": 0,
+        "node_id": 103,
+        "parent_node_id": 94,
+        "path_full_all_present": true,
+        "path_full_rows": 9984,
+        "path_full_sha256": "619691f4337df7089e07aba0667c63ff353a6a76abc0de7c787345fa9dfc1651",
+        "path_mamba_positions": [
+          {
+            "node_id": 103,
+            "position": 9984,
+            "slots": [
+              3
+            ]
+          }
+        ],
+        "path_node_ids": [
+          103
+        ],
+        "prefix_sha256": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+        "prefix_tokens": 9984,
+        "segment_lengths": [
+          9984
+        ],
+        "target_full_lock_ref": 0,
+        "target_full_present": true,
+        "target_full_value_len": 9984,
+        "target_full_value_sha256": "becc677cbc95129529c45909b9b04375e5dd393465a459b85540876cd1c77823",
+        "target_mamba_host_lock_ref": 0,
+        "target_mamba_host_present": false,
+        "target_mamba_in_lru": true,
+        "target_mamba_lock_ref": 0,
+        "target_mamba_present": true,
+        "target_mamba_session_ref": 0,
+        "target_mamba_slots": [
+          3
+        ]
+      }
+    }
+  },
+  "references_full_recompute": {
+    "P1": {
+      "request_id": "a5_ref_p1",
+      "input_length": 16338,
+      "output_token": 9764,
+      "metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_ref_p1"
+      },
+      "e2e_latency_s": 27.350148477999028
+    },
+    "P2": {
+      "request_id": "a5_ref_p2",
+      "input_length": 21520,
+      "output_token": 760,
+      "metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_ref_p2"
+      },
+      "e2e_latency_s": 1.2132417859975249
+    },
+    "P_neg": {
+      "request_id": "a5_ref_p_neg",
+      "input_length": 16338,
+      "output_token": 40,
+      "metrics": {
+        "executable_prefix": 0,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 0,
+        "replay_gap": 0,
+        "request_id": "a5_ref_p_neg"
+      },
+      "e2e_latency_s": 0.7000251350109465
+    }
+  },
+  "independent_resumes": {
+    "P1": {
+      "materialization": "mat2",
+      "request_id": "a5_res1_p1",
+      "output_token": 9764,
+      "metrics": {
+        "executable_prefix": 9984,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 9984,
+        "replay_gap": 0,
+        "request_id": "a5_res1_p1"
+      },
+      "c0_stability": {
+        "same_node": true,
+        "same_slots": true,
+        "digest_stable": true,
+        "mamba_present": true
+      },
+      "output_matches_full_recompute": true
+    },
+    "P2": {
+      "materialization": "mat3",
+      "request_id": "a5_res2_p2",
+      "output_token": 760,
+      "metrics": {
+        "executable_prefix": 9984,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 9984,
+        "replay_gap": 0,
+        "request_id": "a5_res2_p2"
+      },
+      "c0_stability": {
+        "same_node": true,
+        "same_slots": true,
+        "digest_stable": true,
+        "mamba_present": true
+      },
+      "output_matches_full_recompute": true
+    }
+  },
+  "dual_branch": {
+    "p1": {
+      "request_id": "a5_dual_p1",
+      "output_token": 9764,
+      "output_matches_full_recompute": true,
+      "metrics": {
+        "executable_prefix": 9984,
+        "mamba_branching_seqlen": null,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 9984,
+        "replay_gap": 0,
+        "request_id": "a5_dual_p1"
+      }
+    },
+    "p2": {
+      "request_id": "a5_dual_p2",
+      "output_token": 760,
+      "output_matches_full_recompute": true,
+      "metrics": {
+        "executable_prefix": 9984,
+        "mamba_branching_seqlen": 10176,
+        "mamba_host_hit_length": 0,
+        "physical_fa_hit": 10206,
+        "replay_gap": 222,
+        "request_id": "a5_dual_p2"
+      },
+      "physical_deeper_than_c0": true,
+      "deeper_hit_attribution": "P2 与 P1 的真实 LCP=10206；若物理命中深于 9984，来源是 P1 分支留下的合法 FA-KV 段 [9984,10206)，与 C0 无关（C0 只覆盖 [0,9984)）"
+    },
+    "c0_stability": {
+      "after_p1": {
+        "same_node": true,
+        "same_slots": true,
+        "digest_stable": true,
+        "mamba_present": true
+      },
+      "after_p2": {
+        "same_node": true,
+        "same_slots": true,
+        "digest_stable": true,
+        "mamba_present": true
+      }
+    },
+    "census": {
+      "before_count": 1,
+      "after_count": 3,
+      "new_mamba_nodes": [
+        90,
+        92
+      ]
+    },
+    "terminal_boundary_note": "P1 终点 16338=63×256+150、P2 终点 21520=84×256+16 均非 track 边界；按 Task A 发现②，分支终止状态预期不物化为独立节点，故此处只记录实测、不设新节点断言"
+  },
+  "negative_case": {
+    "request_id": "a5_neg_pneg",
+    "marked": "CONTROLLED（冻结输入派生，非原始 LMCache 数据）",
+    "flip_position": 4992,
+    "output_token": 40,
+    "metrics": {
+      "executable_prefix": 0,
+      "mamba_branching_seqlen": 4992,
+      "mamba_host_hit_length": 0,
+      "physical_fa_hit": 4992,
+      "replay_gap": 4992,
+      "request_id": "a5_neg_pneg"
+    },
+    "physical_hit_stops_at_flip": true,
+    "output_matches_full_recompute": true
+  },
+  "mamba_dependency_counterfactual": {
+    "eviction_proof": {
+      "cascade_called": false,
+      "fa_identity_unchanged": true,
+      "fa_unchanged": true,
+      "only_target_mamba_changed": true,
+      "path_unchanged": true,
+      "same_node": true,
+      "sanity_check": true,
+      "tree_unchanged": true
+    },
+    "inspect_after_eviction": {
+      "mamba_present": false,
+      "full_present": true
+    },
+    "paired_comparison": {
+      "before_independent_resume_P1": {
+        "physical_fa_hit": 9984,
+        "executable_prefix": 9984,
+        "replay_gap": 0
+      },
+      "after_eviction_P1": {
+        "physical_fa_hit": 9984,
+        "executable_prefix": 0,
+        "replay_gap": 9984
+      }
+    },
+    "p1_physical_fa_hit": 9984,
+    "p1_executable_prefix": 0,
+    "p1_replay_gap": 9984,
+    "executable_retreated": true,
+    "gap_grew": true,
+    "p1_output_matches_full_recompute": true
+  },
+  "certification": {
+    "P1": {
+      "physical_fa_hit": 9984,
+      "executable_prefix": 9984,
+      "replay_gap": 0,
+      "mamba_branching_seqlen_observed": null,
+      "physical_fa_hit_at_L": true,
+      "executable_prefix_at_L": true,
+      "replay_gap_small": true,
+      "output_matches_full_recompute": true,
+      "evidence_source": "独立恢复（只含 C0 的干净状态）",
+      "resume_verified": true
+    },
+    "P2": {
+      "physical_fa_hit": 9984,
+      "executable_prefix": 9984,
+      "replay_gap": 0,
+      "mamba_branching_seqlen_observed": null,
+      "physical_fa_hit_at_L": true,
+      "executable_prefix_at_L": true,
+      "replay_gap_small": true,
+      "output_matches_full_recompute": true,
+      "evidence_source": "独立恢复（只含 C0 的干净状态）",
+      "resume_verified": true
+    }
+  },
+  "census": {
+    "mat1": {
+      "tree_digests": {
+        "structure_sha256": "55cdce79a2f49112b967e582222212f1e9b202ad28438f48c235b167d6a9b9b7",
+        "full_tree_sha256": "d4d28650cac2e5c4072d2544733672b2fde30ef4f56f2bd1c1f9e55936ec07d8"
+      },
+      "mamba_node_count": 1
+    },
+    "res1": {
+      "tree_digests": {
+        "structure_sha256": "6739031cb44190328b1bd648afef1deff35a56ff2fddf5b31f12e328bef9dcd9",
+        "full_tree_sha256": "f82e109086a7937797f255fe2ec71deac9bdb155473e5413380da788d1061c76"
+      },
+      "mamba_node_count": 2
+    },
+    "res2": {
+      "tree_digests": {
+        "structure_sha256": "b19855e0bc0b1510dee15aebe30ee7581f1ec05a1dc2a54234dc8b4705a8e6e0",
+        "full_tree_sha256": "b59e4d7decc66dd31b631678b8a690b5dd29b4c70a93867754315dc21d97e6aa"
+      },
+      "mamba_node_count": 2
+    }
+  },
+  "predicate_verdicts": {
+    "P1": {
+      "checkpoint_id": "lmcache10_C0",
+      "continuation_id": "P1",
+      "is_admissible": true,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "PASS",
+          "detail": "前 9984 个 token 逐位一致"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=9984 <= T=16338"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=9984"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "PASS",
+          "detail": "physical=9984, executable=9984, gap=0, 输出与全量重算一致=True, 驱逐反事实证明依赖 Recurrent State=True"
+        }
+      ],
+      "non_pass_reasons": [
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation"
+      ]
+    },
+    "P2": {
+      "checkpoint_id": "lmcache10_C0",
+      "continuation_id": "P2",
+      "is_admissible": true,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "PASS",
+          "detail": "前 9984 个 token 逐位一致"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=9984 <= T=21520"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=9984"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "PASS",
+          "detail": "physical=9984, executable=9984, gap=0, 输出与全量重算一致=True, 驱逐反事实证明依赖 Recurrent State=True"
+        }
+      ],
+      "non_pass_reasons": [
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation"
+      ]
+    },
+    "P_neg": {
+      "checkpoint_id": "lmcache10_C0",
+      "continuation_id": "P_neg",
+      "is_admissible": false,
+      "conditions": [
+        {
+          "condition_id": "C1_identity",
+          "status": "PASS",
+          "detail": "model_identity/tokenizer_identity 一致"
+        },
+        {
+          "condition_id": "C2_token_history",
+          "status": "FAIL",
+          "detail": "token 历史在位置 4992 首次分歧 (33955 != 33956)"
+        },
+        {
+          "condition_id": "C3_position",
+          "status": "PASS",
+          "detail": "0 < L=9984 <= T=16338"
+        },
+        {
+          "condition_id": "C4_state_residency",
+          "status": "PASS",
+          "detail": "FA 与 Recurrent 均驻留；exact 节点；FA frontier=9984"
+        },
+        {
+          "condition_id": "C5_physical_identity",
+          "status": "UNKNOWN",
+          "detail": "缺失：slot_generation"
+        },
+        {
+          "condition_id": "C6_protection",
+          "status": "PASS",
+          "detail": "无未释放引用（读取时点）"
+        },
+        {
+          "condition_id": "C7_resume_certified",
+          "status": "UNKNOWN",
+          "detail": "离线阶段不可认证"
+        }
+      ],
+      "non_pass_reasons": [
+        "C2_token_history=FAIL: token 历史在位置 4992 首次分歧 (33955 != 33956)",
+        "C5_physical_identity=UNKNOWN: 缺失：slot_generation",
+        "C7_resume_certified=UNKNOWN: 离线阶段不可认证"
+      ]
+    }
+  }
+}

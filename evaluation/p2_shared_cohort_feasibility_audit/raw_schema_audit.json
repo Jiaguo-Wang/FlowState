@@ -1,0 +1,104 @@
+{
+  "trace_count": 393,
+  "unique_trace_ids": 393,
+  "invocation_records": 98827,
+  "invocation_field_counts": {
+    "t": 98827,
+    "model": 98827,
+    "in": 98827,
+    "out": 98827,
+    "hash_ids": 98827,
+    "api_time": 98827,
+    "type": 98827,
+    "ttft": 56432,
+    "think_time": 98434
+  },
+  "all_field_counts": {
+    "id": 393,
+    "models": 2090,
+    "block_size": 393,
+    "hash_id_scope": 393,
+    "requests": 2090,
+    "t": 100524,
+    "model": 98827,
+    "in": 98827,
+    "out": 98827,
+    "hash_ids": 98827,
+    "api_time": 98827,
+    "type": 100524,
+    "ttft": 56432,
+    "think_time": 98434,
+    "agent_id": 1697,
+    "subagent_type": 1697,
+    "duration_ms": 1697,
+    "total_tokens": 1697,
+    "tool_use_count": 1697,
+    "status": 1697
+  },
+  "top_field_counts": {
+    "id": 393,
+    "models": 393,
+    "block_size": 393,
+    "hash_id_scope": 393,
+    "requests": 393
+  },
+  "request_type_counts": {
+    "s": 56432,
+    "subagent": 1697,
+    "n": 42395
+  },
+  "nested_request_containers": 1697,
+  "missing_or_nonpositive_duration": 0,
+  "api_interval_overlap_trace_count": 373,
+  "maximum_api_interval_overlap": 23,
+  "说明": "API 区间重叠不等于同时待续；仅使用记录中的相对 t 和 api_time，不证明队列或 pending。",
+  "examples": {
+    "s": {
+      "file": "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+      "line": 1,
+      "path": "$.requests[0]",
+      "fields": {
+        "t": 0.0,
+        "model": "claude-opus-4-8",
+        "in": 640,
+        "out": 20,
+        "hash_ids": "数组长度 10",
+        "api_time": 1.979,
+        "type": "s",
+        "ttft": 1.741
+      }
+    },
+    "subagent": {
+      "file": "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+      "line": 1,
+      "path": "$.requests[48]",
+      "fields": {
+        "t": 86541.149,
+        "type": "subagent",
+        "agent_id": "subagent_001_f552fe6f",
+        "subagent_type": "Subagent",
+        "duration_ms": 108127,
+        "total_tokens": 331009,
+        "tool_use_count": null,
+        "status": "completed",
+        "requests": "数组长度 7",
+        "models": "数组长度 1"
+      }
+    },
+    "n": {
+      "file": "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+      "line": 1,
+      "path": "$.requests[48].requests[0]",
+      "fields": {
+        "t": 86541.149,
+        "type": "n",
+        "model": "claude-haiku-4-5-20251001",
+        "in": 35008,
+        "out": 153,
+        "hash_ids": "数组长度 547",
+        "api_time": 1.903,
+        "think_time": 0.0
+      }
+    }
+  }
+}

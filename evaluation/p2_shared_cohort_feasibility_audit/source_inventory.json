@@ -1,0 +1,348 @@
+{
+  "primary_source": {
+    "path": "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+    "provider": "semianalysisai/cc-traces-weka-062126（本地 B1 INPUTS 与原始文件）",
+    "sha256": "29b6a19e751ff5230771519aab755f80a0f43a4ba9cf96b72d3a6a437ec99276",
+    "version_scope": "以此内容摘要固定，未联网核验远端版本",
+    "time_scope": "每条 trace 的相对 t；绝对采集时间窗口 UNKNOWN",
+    "fields": {
+      "原始数据来源": {
+        "status": "AVAILABLE",
+        "evidence": [
+          "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl",
+          "raw_schema_audit.json"
+        ],
+        "detail": "393 条唯一 trace，原始文件 SHA-256 与 B1 INPUTS 一致；只有 hash block 形状，不是原模型 recurrent state。"
+      },
+      "Workflow ID": {
+        "status": "PARTIAL",
+        "evidence": [
+          "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl $.id",
+          "evaluation/agentx_structure_audit.py:369"
+        ],
+        "detail": "原生 trace id 可追踪且 393/393 唯一；派生 conversation/workflow 分组并非全都来自原生工作流事件。"
+      },
+      "Parent ID": {
+        "status": "PARTIAL",
+        "evidence": [
+          "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl 第1行 $.requests[48]",
+          "evaluation/agentx_structure_audit.py:430"
+        ],
+        "detail": "嵌套 subagent 容器证明记录归属；没有 parent_request_id 或继承状态 identity。flat-chain 的 parent_conversation_id 由构建器赋值。"
+      },
+      "Fork Event": {
+        "status": "MISSING",
+        "evidence": [
+          "evaluation/agentx_chain_detection.py:298",
+          "evaluation/agentx_structure_audit.py:517"
+        ],
+        "detail": "全量原始字段未出现原生 fork 事件；部分 parent/depth 来自最大 hash LCP，fork_time 取子请求 t，不能当成真实继承证明。"
+      },
+      "Branch ID": {
+        "status": "PARTIAL",
+        "evidence": [
+          "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl $.requests[*].agent_id",
+          "evaluation/agentx_structure_audit.py:399"
+        ],
+        "detail": "1697 个 subagent 容器有 agent_id；fa/aux/wg 等链 ID 是启发式构建，不可由命名证明真实分支。"
+      },
+      "Request ID": {
+        "status": "PARTIAL",
+        "evidence": [
+          "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl $.requests[*]",
+          "evaluation/agentx_runtime_snapshot_collection.py:322"
+        ],
+        "detail": "可用 trace+JSON 路径关联 invocation；原始 invocation 没有 request_id，::req 编号为派生标识。"
+      },
+      "Timestamp": {
+        "status": "PARTIAL",
+        "evidence": [
+          "/home/wjg/data/agentx/cc-traces-weka-062126/traces.jsonl t/api_time/duration_ms",
+          "evaluation/agentx_chain_detection.py:102"
+        ],
+        "detail": "98827 invocations 均有 t 和正 api_time；缺 ready/dispatch/fork/native state generation 的同钟事件。绝对时间和跨来源同步 UNKNOWN。"
+      },
+      "Pending 状态": {
+        "status": "MISSING",
+        "evidence": [
+          "evaluation/agentx_structure_audit.py:748",
+          "evaluation/agentx_structure_audit.py:831",
+          "evaluation/agentx_runtime_snapshot_collection.py:327"
+        ],
+        "detail": "没有原生 ready/queued/running 状态转换；active conversation 或 API 区间重叠均不足以确认同时待续。"
+      },
+      "Checkpoint Identity": {
+        "status": "PARTIAL",
+        "evidence": [
+          "/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_snapshots.jsonl",
+          "evaluation/agentx_runtime_snapshot_collection.py:831"
+        ],
+        "detail": "旧 replay 保存 checkpoint_id/request_index/node_id/runtime_identity_digest/recurrent_prefix_length；原始轨迹无 checkpoint，未知 epoch 无 identity。"
+      },
+      "Residency Evidence": {
+        "status": "PARTIAL",
+        "evidence": [
+          "/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/runtime_snapshots.jsonl",
+          "/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649/per_snapshot/",
+          "evaluation/agentx_runtime_snapshot_collection.py:849"
+        ],
+        "detail": "仅旧 23 个 replay snapshots 有 recurrent/FA 观测与 census；不是原始执行时驻留，也不能外推到其余 epoch。"
+      }
+    }
+  },
+  "historical_census_root": "/home/wjg/data/agentx/audits/agentx_runtime_population_census_20260905_010614",
+  "historical_runtime_root": "/home/wjg/data/agentx/audits/agentx_runtime_formal_20260906_023649",
+  "other_local_sources": [
+    {
+      "path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+      "scope": "完整顶层 parquet schema",
+      "rows": 15000,
+      "fields": [
+        "session_id",
+        "source_dataset",
+        "source_id",
+        "agent_framework",
+        "recorded_model",
+        "messages_json",
+        "n_turns",
+        "max_isl",
+        "total_tokens",
+        "ground_truth_meta_json"
+      ],
+      "status": "PARTIAL",
+      "missing": "顶层无调度/驻留事件；messages_json 内是否有足够父子证据 UNKNOWN，不能把 turn 当同时 pending。"
+    },
+    {
+      "path": "/home/wjg/data/traceelephant/data/captain-runs-assistantbench/assistantbench_task_0_gpt-4o_8jqg5bbthx21/step_records.json",
+      "scope": "该目录字典序首个轨迹，不能代表全库",
+      "steps": 9,
+      "fields": [
+        "agent_id",
+        "agent_name",
+        "input",
+        "output",
+        "step_id",
+        "tool_logs"
+      ],
+      "metadata_fields": [
+        "task_id",
+        "task_instruction",
+        "system_name",
+        "agent_configuration",
+        "run_id",
+        "mistake_agent",
+        "mistake_step",
+        "mistake_reason",
+        "ground_truth",
+        "agent_system_intro"
+      ],
+      "status": "PARTIAL",
+      "missing": "多 agent/工具步骤可见；该样本没有系统级 fork、ready 或 Hybrid state handle；其余未读内容 UNKNOWN。"
+    },
+    {
+      "path": "/home/wjg/data/traceelephant/data/captain-runs-gaia/gaia_task_0_gpt-4o_898a9espvjvi/step_records.json",
+      "scope": "该目录字典序首个轨迹，不能代表全库",
+      "steps": 21,
+      "fields": [
+        "agent_id",
+        "agent_name",
+        "input",
+        "output",
+        "step_id",
+        "tool_logs"
+      ],
+      "metadata_fields": [
+        "task_id",
+        "task_instruction",
+        "system_name",
+        "agent_configuration",
+        "run_id",
+        "mistake_agent",
+        "mistake_step",
+        "mistake_reason",
+        "ground_truth",
+        "agent_system_intro"
+      ],
+      "status": "PARTIAL",
+      "missing": "多 agent/工具步骤可见；该样本没有系统级 fork、ready 或 Hybrid state handle；其余未读内容 UNKNOWN。"
+    },
+    {
+      "path": "/home/wjg/data/traceelephant/data/magentic-runs-assistant-bench/assistant_bench_task_10_gpt_4o_rpuxwpqmrriu/step_records.json",
+      "scope": "该目录字典序首个轨迹，不能代表全库",
+      "steps": 47,
+      "fields": [
+        "agent_id",
+        "agent_name",
+        "input",
+        "output",
+        "step_id",
+        "tool_logs"
+      ],
+      "metadata_fields": [
+        "task_id",
+        "task_instruction",
+        "system_name",
+        "agent_configuration",
+        "run_id",
+        "mistake_agent",
+        "mistake_step",
+        "mistake_reason",
+        "ground_truth",
+        "agent_system_intro"
+      ],
+      "status": "PARTIAL",
+      "missing": "多 agent/工具步骤可见；该样本没有系统级 fork、ready 或 Hybrid state handle；其余未读内容 UNKNOWN。"
+    },
+    {
+      "path": "/home/wjg/data/traceelephant/data/magentic-runs-gaia/gaia_task_101_gpt_4o_4dukklab6hjl/step_records.json",
+      "scope": "该目录字典序首个轨迹，不能代表全库",
+      "steps": 48,
+      "fields": [
+        "agent_id",
+        "agent_name",
+        "input",
+        "output",
+        "step_id",
+        "tool_logs"
+      ],
+      "metadata_fields": [
+        "task_id",
+        "task_instruction",
+        "system_name",
+        "agent_configuration",
+        "run_id",
+        "mistake_agent",
+        "mistake_step",
+        "mistake_reason",
+        "ground_truth",
+        "agent_system_intro"
+      ],
+      "status": "PARTIAL",
+      "missing": "多 agent/工具步骤可见；该样本没有系统级 fork、ready 或 Hybrid state handle；其余未读内容 UNKNOWN。"
+    },
+    {
+      "path": "/home/wjg/data/traceelephant/data/swe-agent-runs-swe-bench/astropy__astropy-12907/step_records.json",
+      "scope": "该目录字典序首个轨迹，不能代表全库",
+      "steps": 18,
+      "fields": [
+        "agent_id",
+        "agent_name",
+        "input",
+        "output",
+        "step_id",
+        "tool_logs"
+      ],
+      "metadata_fields": [
+        "task_id",
+        "task_instruction",
+        "system_name",
+        "agent_configuration",
+        "run_id",
+        "mistake_agent",
+        "mistake_step",
+        "mistake_reason",
+        "tests_status",
+        "agent_system_intro"
+      ],
+      "status": "PARTIAL",
+      "missing": "多 agent/工具步骤可见；该样本没有系统级 fork、ready 或 Hybrid state handle；其余未读内容 UNKNOWN。"
+    },
+    {
+      "path": "/home/wjg/data/tracelab/v0.0.2/syfi_coding_trace.duckdb",
+      "scope": "只读表 schema",
+      "schema": {
+        "rounds": [
+          "round_pk",
+          "ingest_seq",
+          "provider",
+          "project",
+          "session_id",
+          "round_index",
+          "round_id",
+          "model",
+          "input_tokens_total",
+          "prefix_tokens",
+          "newly_append_tokens",
+          "claude_uncached_input_tokens",
+          "claude_cache_creation_input_tokens",
+          "claude_cache_read_input_tokens",
+          "output_tokens",
+          "current_input_event_count",
+          "current_user_message_count",
+          "current_tool_result_count",
+          "current_user_message_chars",
+          "current_tool_result_chars",
+          "current_input_chars",
+          "first_input_event_type",
+          "user",
+          "store",
+          "trace_key",
+          "turn_id",
+          "reasoning_output_tokens"
+        ],
+        "timing_events": [
+          "round_pk",
+          "event_index",
+          "event_type",
+          "source",
+          "timestamp",
+          "tool_call_id",
+          "tool_index",
+          "tool_name",
+          "is_error",
+          "result_chars",
+          "content_chars"
+        ],
+        "tool_calls": [
+          "round_pk",
+          "tool_index",
+          "tool_name",
+          "tool_call_id",
+          "emitted_at",
+          "result_at",
+          "tool_wall_latency_ms",
+          "tool_internal_latency_ms",
+          "is_error",
+          "input_chars",
+          "result_chars",
+          "continuation_of_tool_call_id",
+          "command_status",
+          "command_exit_code",
+          "executables",
+          "executable_parse_status",
+          "executable_parse_reason",
+          "command_skeleton"
+        ],
+        "trace_source": [
+          "path"
+        ]
+      },
+      "status": "PARTIAL",
+      "missing": "timing_events/tool_calls 有时间和工具链接，但这不证明 fork 继承或 checkpoint residency；字段内容覆盖 UNKNOWN。"
+    },
+    {
+      "path": "/home/wjg/data/inferencex_weka/traces_first30.jsonl",
+      "scope": "仅首条 schema",
+      "fields": [
+        "id",
+        "models",
+        "block_size",
+        "hash_id_scope",
+        "requests"
+      ],
+      "request_fields": [
+        "t",
+        "model",
+        "in",
+        "out",
+        "hash_ids",
+        "api_time",
+        "type",
+        "ttft"
+      ],
+      "status": "PARTIAL",
+      "missing": "同类 block-shape 请求记录；未证明 native fork、pending、residency，全库符合门禁数 UNKNOWN。"
+    }
+  ],
+  "public_source_search": "本轮未联网、未下载；只提出字段需求，未承诺具体公开数据集满足条件。"
+}

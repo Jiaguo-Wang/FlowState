@@ -1,0 +1,93 @@
+{
+  "schema_version": "1",
+  "case_id": "lmcache_10",
+  "dataset_name": "sammshen/lmcache-agentic-traces",
+  "source_task_id": "swebench__django__django-15731",
+  "source_session_ids": [
+    "swebench__django__django-15731__deepseek",
+    "swebench__django__django-15731__minimax"
+  ],
+  "source_type": "实验回放",
+  "source_type_evidence": "同任务异模型已有会话作为统一模型的离线回放材料；原始采集事件与原生 fork 未认证",
+  "session_metadata": {
+    "p1": {
+      "session_id": "swebench__django__django-15731__deepseek"
+    },
+    "p2": {
+      "session_id": "swebench__django__django-15731__minimax"
+    }
+  },
+  "input_files": {
+    "p1": {
+      "path": "/home/wjg/code/FlowState/agentic_workflow_dataset_research/phase2_submission_inputs/inputs/lmcache_10_p1_tokens.json",
+      "sha256": "2eee5178913f64b377beb890ecd1de8a304745fdc943663e8c67fdf434221b8c"
+    },
+    "p2": {
+      "path": "/home/wjg/code/FlowState/agentic_workflow_dataset_research/phase2_submission_inputs/inputs/lmcache_10_p2_tokens.json",
+      "sha256": "05f9595836c81932061de4ad796aae722dfe56214cdeab799c0b47be55ac7552"
+    }
+  },
+  "tokenization_method": "apply_chat_template(tokenize=True, add_generation_prompt=True)，不传 tools 或 enable_thinking，不截断",
+  "submission_mode": "直接提交冻结 input_ids（runtime_gate.generate 以 input_ids 发送，不经 decode/re-template；见 runtime_gate.py:152-173）",
+  "lengths": {
+    "p1": 16338,
+    "p2": 21520,
+    "measured_lcp": 10206,
+    "c0": 9984
+  },
+  "verified_claims": {
+    "file_sha256_match_manifest": true,
+    "lengths_match": true,
+    "lcp_match": true,
+    "prefix9984_identical": true,
+    "diverge_after_lcp": true,
+    "c0_inside_prefix": true,
+    "c0_is_track_boundary": true,
+    "engine_identity_matches_contract": true
+  },
+  "first_divergence": {
+    "position": 10206,
+    "p1_token": 40,
+    "p2_token": 27
+  },
+  "token_digests": {
+    "c0_prefix": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+    "p1_full": "c7951033e7665a583e652cb28c95269b3453e1712d41f2f50eac36790b521aea",
+    "p2_full": "b013bfc3af293c2899659dcd607ad4c650399de209b1ba95875e7d160ab4255d",
+    "negative_full": "d22735e499649c99023dd33d562b1b59dcc05248cdcccf99c8dd2a61b3334747"
+  },
+  "checkpoint": {
+    "checkpoint_id": "lmcache10_C0",
+    "length": 9984,
+    "digest": "fb6e08bbac6a5cefbb2ea9929f37499ca15728a7f1276fe80f2deeba327edd87",
+    "note": "9984=39×256 为 track 边界对齐候选；物化以 runtime inspect 实测为准（Task A 发现①：exact 节点位于请求输入边界）"
+  },
+  "negative_case": {
+    "kind": "illegal_prefix_mutation",
+    "marked": "CONTROLLED",
+    "derived_from": "P1（冻结输入派生，非原始 LMCache 数据）",
+    "flip_position": 4992,
+    "original_token": 33955,
+    "mutated_token": 33956
+  },
+  "input_contract_identity": {
+    "model": "/home/wjg/models/qwen3.5-9b",
+    "class": "Qwen2Tokenizer",
+    "transformers": "5.13.0",
+    "files_sha256": {
+      "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+      "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05"
+    }
+  },
+  "engine_model_files_sha256": {
+    "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+    "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  },
+  "model_identity": "qwen3.5-9b@d0883072e01861ed",
+  "tokenizer_identity": "qwen3.5-9b-tokenizer@316230d6a809701f",
+  "generated_utc": "2026-10-13T07:52:11.902794+00:00"
+}

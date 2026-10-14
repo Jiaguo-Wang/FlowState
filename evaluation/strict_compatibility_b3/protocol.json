@@ -1,0 +1,10 @@
+{
+  "性质": "ANALYTICAL EXAMPLE：仅验证合法前缀树上的模型机制，不是Runtime采集",
+  "冻结规则": "固定四种结构，不搜索、不调参；每例输出全部指定预算及所有策略结果，包括失败",
+  "cases": [
+    {"id":"S1_redundant_chain","targets":{"A":4096,"B":4096},"shared":256,"checkpoints":{"A1":["A",3072],"A2":["A",4096],"B1":["B",2048]},"budgets":[1,2]},
+    {"id":"S2_count_vs_depth","targets":{"A":4096,"B":4096},"shared":1024,"checkpoints":{"R":["root",1024],"A1":["A",4096]},"budgets":[1,2]},
+    {"id":"S3_position_weight","targets":{"A":4224,"B":65536},"shared":256,"checkpoints":{"A1":["A",4224],"B1":["B",4096]},"budgets":[1,2]},
+    {"id":"S4_greedy_lockin","targets":{"A":4096,"B":4096},"shared":3072,"checkpoints":{"R":["root",3072],"A1":["A",4096],"B1":["B",4096]},"budgets":[1,2]}
+  ]
+}
