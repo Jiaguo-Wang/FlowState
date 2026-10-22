@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "decimal_oracle": [
+    {
+      "group": "g001",
+      "K": 1,
+      "subsets": 13,
+      "status": "PASS"
+    },
+    {
+      "group": "g001",
+      "K": 2,
+      "subsets": 79,
+      "status": "PASS"
+    },
+    {
+      "group": "g001",
+      "K": 3,
+      "subsets": 299,
+      "status": "PASS"
+    },
+    {
+      "group": "g001",
+      "K": 4,
+      "subsets": 794,
+      "status": "PASS"
+    },
+    {
+      "group": "g004",
+      "K": 1,
+      "subsets": 9,
+      "status": "PASS"
+    },
+    {
+      "group": "g004",
+      "K": 2,
+      "subsets": 37,
+      "status": "PASS"
+    },
+    {
+      "group": "g004",
+      "K": 3,
+      "subsets": 93,
+      "status": "PASS"
+    },
+    {
+      "group": "g004",
+      "K": 4,
+      "subsets": 163,
+      "status": "PASS"
+    },
+    {
+      "group": "b5c3",
+      "K": 1,
+      "subsets": 8,
+      "status": "PASS"
+    },
+    {
+      "group": "b5c3",
+      "K": 2,
+      "subsets": 29,
+      "status": "PASS"
+    },
+    {
+      "group": "b5c3",
+      "K": 3,
+      "subsets": 64,
+      "status": "PASS"
+    },
+    {
+      "group": "b5c3",
+      "K": 4,
+      "subsets": 99,
+      "status": "PASS"
+    }
+  ],
+  "tie_tests": 5,
+  "limit_predicate_tests": [
+    {
+      "n": 12,
+      "m": 4,
+      "K": 4,
+      "allowed": true,
+      "说明": "仅规模谓词测试，不作为合法Epoch分配"
+    },
+    {
+      "n": 13,
+      "m": 4,
+      "K": 1,
+      "allowed": false,
+      "说明": "仅规模谓词测试，不作为合法Epoch分配"
+    },
+    {
+      "n": 7,
+      "m": 5,
+      "K": 1,
+      "allowed": false,
+      "说明": "仅规模谓词测试，不作为合法Epoch分配"
+    },
+    {
+      "n": 7,
+      "m": 4,
+      "K": 5,
+      "allowed": false,
+      "说明": "仅规模谓词测试，不作为合法Epoch分配"
+    },
+    {
+      "n": 7,
+      "m": 4,
+      "K": 0,
+      "allowed": true,
+      "说明": "仅规模谓词测试，不作为合法Epoch分配"
+    }
+  ],
+  "mid_solve_cancel": "PASS",
+  "invalid_plan_tests": 4,
+  "timing_records": 480,
+  "timing_recalculation": "PASS",
+  "frozen_unchanged": true
+}

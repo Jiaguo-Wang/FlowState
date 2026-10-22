@@ -1,0 +1,59 @@
+{
+  "files": {
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/cpu_preflight.py": "0d4d7506c9e65b568f138098350c3ca81c96d623680ad4e75ebc7d8a50b17ee2",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/prepare.py": "1c6bb9f25af455b6530db0640ea20e39267636ae3516d405e9c5b315b67432a1",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/launch.py": "517d7a6dff5a5280f5d75ffa95209b07ddb6b9d9928b2638b429908871d5ccc5",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/review.py": "360a927da09778162f5dd1ae4c225444261d6c37c6d1a6dcc43138fbb2fe8709",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/experiment_protocol.md": "369ce14459d1edf0b0c76c3d4f2a8db0104cfe0d2e92f05bbf09b530b8dda64b",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/protocol_lock.json": "6a57d879cf3bde31c864fd0f4d6ef6118319110e3815bff878087ee98dfba637",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/cpu_gate.json": "a342c1fb6f8f1da25de656743d6cab619c4f496626660571c4c58319970e98a1",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/source_identity.json": "de981feb5c35d735b0ac6555697f55a445b810dd20684fdb9380e89c7e37294f",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/prepared_inputs.json": "d836f46e8f74a3d38d8f76d60bfe97c135f235cedcad60a2de643738d0b0416e",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/cpu_regression_results.json": "172288a546f4c007bd9c89ea79509a5189b05e89a1d1da1d1c51a15616a551fd",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/original_experiment_protocol.md": "95770f13613b5d1c3b0aa088cd772d4e63d6f57aaf8a241b53a5ea53b5df8c0a",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/persistence.py": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/runner.py": "6fd3b332a2403968e8a3f7e5b8cdcc16e4accb8ef43e95a940a10db50f5b7fd5",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/source_contract.py": "1fbb08637757715291a0e6737bbb7910e00a0c185c2cd39e80a65b4758ed3f91",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/test_regression.py": "c4ebd6f0987121ce62e35bbf0a63757ef0046b2b04e695c15c667778f5a6bbee",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/control.py": "f8e3282820c8497ca40573be987156ff362ac45fd529fdbd7af3403af7c560d9",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/observation.py": "10d2e2557bc414877b10473c18046f4b058063e7608945510df12ebf17bc2950",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/finalize.py": "0deee57e6d968a30654cbdb5b858a0b729d4ef04ae459d34e484f5607ae3cd2b",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/bridge.py": "ae07e3394bb515d9c432a2bdff08b47d019af9bfcebdc4ed59a5e59ab8fdbbda",
+    "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/protocol.py": "fbb1cde5eaed13e46588b4b74873dce41f36e17781ef1b17c32f4a89c9c51718"
+  },
+  "image": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+  "runner": "evaluation.exact_greedy_paired_gpu_fix_b5d4a.runner",
+  "protocol": {
+    "pairs": 5,
+    "order": [
+      [
+        "Greedy",
+        "Exact"
+      ],
+      [
+        "Exact",
+        "Greedy"
+      ],
+      [
+        "Greedy",
+        "Exact"
+      ],
+      [
+        "Exact",
+        "Greedy"
+      ],
+      [
+        "Greedy",
+        "Exact"
+      ]
+    ],
+    "target": "B5C2_C_TURN_003",
+    "K": 2,
+    "reference_after_pair": 1,
+    "temperature": 0,
+    "max_new_tokens": 8,
+    "ignore_eos": true,
+    "stop_on_failure": true
+  },
+  "provenance_required_for_performance": false
+}

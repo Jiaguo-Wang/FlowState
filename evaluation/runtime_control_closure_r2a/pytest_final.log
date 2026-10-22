@@ -1,0 +1,23 @@
+.F...................................................... [ 62%]
+..................................                                       [100%]
+=================================== FAILURES ===================================
+__________________ StrictTests.test_all_cross_workflow_edges ___________________
+
+self = <test_strict_epoch.StrictTests testMethod=test_all_cross_workflow_edges>
+
+    def test_all_cross_workflow_edges(self):
+        count=0
+        for g in range(1,5):
+            epoch=load(g);cs={c.candidate.checkpoint_id:c for c in epoch.candidates};ps={p.pending_id:p for p in epoch.pendings}
+            for e in epoch.edges:
+                if e.status=='EPOCH_ADMISSIBLE' and cs[e.candidate_id].candidate.workflow_id!=ps[e.pending_id].workflow_id:
+                    i=list(ps).index(e.pending_id)
+                    self.assertEqual(epoch.frontiers([e.candidate_id])[i],cs[e.candidate_id].candidate.token_pos)
+>                   for step in snapshot['traces'][f'{k}/FlowState']:
+                                ^^^^^^^^
+E                   NameError: name 'snapshot' is not defined
+
+tests/test_strict_epoch.py:74: NameError
+=========================== short test summary info ============================
+FAILED tests/test_strict_epoch.py::StrictTests::test_all_cross_workflow_edges
+1 failed, 89 passed, 16 subtests passed in 2.97s

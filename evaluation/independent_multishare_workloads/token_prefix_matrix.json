@@ -1,0 +1,698 @@
+{
+  "w1": {
+    "status": "REBUILT",
+    "counts": {
+      "A": 4250,
+      "B": 4308,
+      "C": 4497,
+      "D": 4582
+    },
+    "pairwise_lcp": {
+      "A": {
+        "A": 4250,
+        "B": 3451,
+        "C": 2438,
+        "D": 2438
+      },
+      "B": {
+        "A": 3451,
+        "B": 4308,
+        "C": 2438,
+        "D": 2438
+      },
+      "C": {
+        "A": 2438,
+        "B": 2438,
+        "C": 4497,
+        "D": 3771
+      },
+      "D": {
+        "A": 2438,
+        "B": 2438,
+        "C": 3771,
+        "D": 4582
+      }
+    },
+    "four_way_lcp": 2438,
+    "task_pair_lcp": {
+      "AB": 3451,
+      "CD": 3771
+    },
+    "cross_task_lcp": {
+      "AC": 2438,
+      "AD": 2438,
+      "BC": 2438,
+      "BD": 2438
+    },
+    "system_prefix_token_lengths": {
+      "A": 2428,
+      "B": 2428,
+      "C": 2428,
+      "D": 2428
+    },
+    "positions": [
+      {
+        "name": "common",
+        "position": 2438,
+        "origin": "A",
+        "support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "7a970a352d32db5e8e2c5a20b2946e79b55e8288d04f747f09fc6bdfd433daae",
+        "divergence": {
+          "A": {
+            "next_token_id": 16,
+            "next_token_text": "1",
+            "character_offset": [
+              11622,
+              11623
+            ]
+          },
+          "B": {
+            "next_token_id": 16,
+            "next_token_text": "1",
+            "character_offset": [
+              11622,
+              11623
+            ]
+          },
+          "C": {
+            "next_token_id": 18,
+            "next_token_text": "3",
+            "character_offset": [
+              11622,
+              11623
+            ]
+          },
+          "D": {
+            "next_token_id": 18,
+            "next_token_text": "3",
+            "character_offset": [
+              11622,
+              11623
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 2438；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task1",
+        "position": 3451,
+        "origin": "A",
+        "support": [
+          "A",
+          "B"
+        ],
+        "prefix_token_sha256": "ec9b8ed822f214f30464962dc087ae1a69fe757acd017f1c78393acd0a38c4da",
+        "divergence": {
+          "A": {
+            "next_token_id": 1236,
+            "next_token_text": " make",
+            "character_offset": [
+              15683,
+              15688
+            ]
+          },
+          "B": {
+            "next_token_id": 14519,
+            "next_token_text": " restore",
+            "character_offset": [
+              15683,
+              15691
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3451；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task2",
+        "position": 3771,
+        "origin": "C",
+        "support": [
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "7eec61b2cdf74517edc812b7c3b728e11573b624f1a39a8c3a9a126e9454396a",
+        "divergence": {
+          "C": {
+            "next_token_id": 1151,
+            "next_token_text": " start",
+            "character_offset": [
+              16922,
+              16928
+            ]
+          },
+          "D": {
+            "next_token_id": 944,
+            "next_token_text": " work",
+            "character_offset": [
+              16922,
+              16927
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3771；本轮不假设FA或T",
+        "checkpoint_created": false
+      }
+    ],
+    "structure_class": "nested_two_task",
+    "boundary_all_exact": true,
+    "scope": "真实目标Tokenizer构造的CPU内容输入；非原始Runtime已接收Token；无Checkpoint物化或严格边认证"
+  },
+  "w2": {
+    "status": "REBUILT",
+    "counts": {
+      "A": 4209,
+      "B": 4122,
+      "C": 4191,
+      "D": 4667
+    },
+    "pairwise_lcp": {
+      "A": {
+        "A": 4209,
+        "B": 3511,
+        "C": 2438,
+        "D": 2438
+      },
+      "B": {
+        "A": 3511,
+        "B": 4122,
+        "C": 2438,
+        "D": 2438
+      },
+      "C": {
+        "A": 2438,
+        "B": 2438,
+        "C": 4191,
+        "D": 3570
+      },
+      "D": {
+        "A": 2438,
+        "B": 2438,
+        "C": 3570,
+        "D": 4667
+      }
+    },
+    "four_way_lcp": 2438,
+    "task_pair_lcp": {
+      "AB": 3511,
+      "CD": 3570
+    },
+    "cross_task_lcp": {
+      "AC": 2438,
+      "AD": 2438,
+      "BC": 2438,
+      "BD": 2438
+    },
+    "system_prefix_token_lengths": {
+      "A": 2428,
+      "B": 2428,
+      "C": 2428,
+      "D": 2428
+    },
+    "positions": [
+      {
+        "name": "common",
+        "position": 2438,
+        "origin": "A",
+        "support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "7a970a352d32db5e8e2c5a20b2946e79b55e8288d04f747f09fc6bdfd433daae",
+        "divergence": {
+          "A": {
+            "next_token_id": 19,
+            "next_token_text": "4",
+            "character_offset": [
+              11622,
+              11623
+            ]
+          },
+          "B": {
+            "next_token_id": 19,
+            "next_token_text": "4",
+            "character_offset": [
+              11622,
+              11623
+            ]
+          },
+          "C": {
+            "next_token_id": 17375,
+            "next_token_text": "ARM",
+            "character_offset": [
+              11622,
+              11625
+            ]
+          },
+          "D": {
+            "next_token_id": 17375,
+            "next_token_text": "ARM",
+            "character_offset": [
+              11622,
+              11625
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 2438；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task1",
+        "position": 3511,
+        "origin": "A",
+        "support": [
+          "A",
+          "B"
+        ],
+        "prefix_token_sha256": "90cdc99ba82707ac93fb0b43a28b6efaae58010d6ce0b5a2d3b8ab8fbc4bd8bd",
+        "divergence": {
+          "A": {
+            "next_token_id": 28,
+            "next_token_text": "=",
+            "character_offset": [
+              15909,
+              15910
+            ]
+          },
+          "B": {
+            "next_token_id": 15462,
+            "next_token_text": "=str",
+            "character_offset": [
+              15909,
+              15913
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3511；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task2",
+        "position": 3570,
+        "origin": "C",
+        "support": [
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "fa7f31212591e64c134e17766a07bb3b8f0e689678869d0d1e728686354e271d",
+        "divergence": {
+          "C": {
+            "next_token_id": 2904,
+            "next_token_text": " option",
+            "character_offset": [
+              16059,
+              16066
+            ]
+          },
+          "D": {
+            "next_token_id": 5555,
+            "next_token_text": " parameter",
+            "character_offset": [
+              16059,
+              16069
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3570；本轮不假设FA或T",
+        "checkpoint_created": false
+      }
+    ],
+    "structure_class": "nested_two_task",
+    "boundary_all_exact": true,
+    "scope": "真实目标Tokenizer构造的CPU内容输入；非原始Runtime已接收Token；无Checkpoint物化或严格边认证"
+  },
+  "w3": {
+    "status": "REBUILT",
+    "counts": {
+      "A": 4215,
+      "B": 4184,
+      "C": 4548,
+      "D": 4543
+    },
+    "pairwise_lcp": {
+      "A": {
+        "A": 4215,
+        "B": 3535,
+        "C": 2438,
+        "D": 2438
+      },
+      "B": {
+        "A": 3535,
+        "B": 4184,
+        "C": 2438,
+        "D": 2438
+      },
+      "C": {
+        "A": 2438,
+        "B": 2438,
+        "C": 4548,
+        "D": 3471
+      },
+      "D": {
+        "A": 2438,
+        "B": 2438,
+        "C": 3471,
+        "D": 4543
+      }
+    },
+    "four_way_lcp": 2438,
+    "task_pair_lcp": {
+      "AB": 3535,
+      "CD": 3471
+    },
+    "cross_task_lcp": {
+      "AC": 2438,
+      "AD": 2438,
+      "BC": 2438,
+      "BD": 2438
+    },
+    "system_prefix_token_lengths": {
+      "A": 2428,
+      "B": 2428,
+      "C": 2428,
+      "D": 2428
+    },
+    "positions": [
+      {
+        "name": "common",
+        "position": 2438,
+        "origin": "A",
+        "support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "7a970a352d32db5e8e2c5a20b2946e79b55e8288d04f747f09fc6bdfd433daae",
+        "divergence": {
+          "A": {
+            "next_token_id": 45915,
+            "next_token_text": "ASF",
+            "character_offset": [
+              11622,
+              11625
+            ]
+          },
+          "B": {
+            "next_token_id": 45915,
+            "next_token_text": "ASF",
+            "character_offset": [
+              11622,
+              11625
+            ]
+          },
+          "C": {
+            "next_token_id": 1846,
+            "next_token_text": "AS",
+            "character_offset": [
+              11622,
+              11624
+            ]
+          },
+          "D": {
+            "next_token_id": 1846,
+            "next_token_text": "AS",
+            "character_offset": [
+              11622,
+              11624
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 2438；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task1",
+        "position": 3535,
+        "origin": "A",
+        "support": [
+          "A",
+          "B"
+        ],
+        "prefix_token_sha256": "581192137bff5ebed9e36898c2402d168d8a9884abda8fbc86a6bfe10fa79324",
+        "divergence": {
+          "A": {
+            "next_token_id": 561,
+            "next_token_text": " The",
+            "character_offset": [
+              16030,
+              16034
+            ]
+          },
+          "B": {
+            "next_token_id": 5927,
+            "next_token_text": " Code",
+            "character_offset": [
+              16030,
+              16035
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3535；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task2",
+        "position": 3471,
+        "origin": "C",
+        "support": [
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "3a2be56d8389586f31362290f9c144a14ab1951e0a2a46a9e14b6664f42da47d",
+        "divergence": {
+          "C": {
+            "next_token_id": 303,
+            "next_token_text": " in",
+            "character_offset": [
+              15631,
+              15634
+            ]
+          },
+          "D": {
+            "next_token_id": 13,
+            "next_token_text": ".",
+            "character_offset": [
+              15631,
+              15632
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3471；本轮不假设FA或T",
+        "checkpoint_created": false
+      }
+    ],
+    "structure_class": "nested_two_task",
+    "boundary_all_exact": true,
+    "scope": "真实目标Tokenizer构造的CPU内容输入；非原始Runtime已接收Token；无Checkpoint物化或严格边认证"
+  },
+  "w4": {
+    "status": "REBUILT",
+    "counts": {
+      "A": 4866,
+      "B": 4847,
+      "C": 4513,
+      "D": 6971
+    },
+    "pairwise_lcp": {
+      "A": {
+        "A": 4866,
+        "B": 3549,
+        "C": 2437,
+        "D": 2437
+      },
+      "B": {
+        "A": 3549,
+        "B": 4847,
+        "C": 2437,
+        "D": 2437
+      },
+      "C": {
+        "A": 2437,
+        "B": 2437,
+        "C": 4513,
+        "D": 3488
+      },
+      "D": {
+        "A": 2437,
+        "B": 2437,
+        "C": 3488,
+        "D": 6971
+      }
+    },
+    "four_way_lcp": 2437,
+    "task_pair_lcp": {
+      "AB": 3549,
+      "CD": 3488
+    },
+    "cross_task_lcp": {
+      "AC": 2437,
+      "AD": 2437,
+      "BC": 2437,
+      "BD": 2437
+    },
+    "system_prefix_token_lengths": {
+      "A": 2428,
+      "B": 2428,
+      "C": 2428,
+      "D": 2428
+    },
+    "positions": [
+      {
+        "name": "common",
+        "position": 2437,
+        "origin": "A",
+        "support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "035e8caaeefa61f65731605d5e897412c291f8eb5d50d3aa742418a57d68ea07",
+        "divergence": {
+          "A": {
+            "next_token_id": 14,
+            "next_token_text": "/",
+            "character_offset": [
+              11621,
+              11622
+            ]
+          },
+          "B": {
+            "next_token_id": 14,
+            "next_token_text": "/",
+            "character_offset": [
+              11621,
+              11622
+            ]
+          },
+          "C": {
+            "next_token_id": 10052,
+            "next_token_text": "/A",
+            "character_offset": [
+              11621,
+              11623
+            ]
+          },
+          "D": {
+            "next_token_id": 10052,
+            "next_token_text": "/A",
+            "character_offset": [
+              11621,
+              11623
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 2437；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task1",
+        "position": 3549,
+        "origin": "A",
+        "support": [
+          "A",
+          "B"
+        ],
+        "prefix_token_sha256": "9af560d79b4aa47312b7b984ca6ea184d63898df5a56f43e5ed8eaa3c2d4aeaf",
+        "divergence": {
+          "A": {
+            "next_token_id": 1387,
+            "next_token_text": " break",
+            "character_offset": [
+              16165,
+              16171
+            ]
+          },
+          "B": {
+            "next_token_id": 15060,
+            "next_token_text": " carefully",
+            "character_offset": [
+              16165,
+              16175
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3549；本轮不假设FA或T",
+        "checkpoint_created": false
+      },
+      {
+        "name": "task2",
+        "position": 3488,
+        "origin": "C",
+        "support": [
+          "C",
+          "D"
+        ],
+        "prefix_token_sha256": "ef38808c332ed3d862a83a1e933815df50029da0b25e3139bd3ee2d340515667",
+        "divergence": {
+          "C": {
+            "next_token_id": 10804,
+            "next_token_text": " inputs",
+            "character_offset": [
+              15841,
+              15848
+            ]
+          },
+          "D": {
+            "next_token_id": 2663,
+            "next_token_text": " values",
+            "character_offset": [
+              15841,
+              15848
+            ]
+          }
+        },
+        "runtime_materialization": "UNKNOWN",
+        "planning_target": "UNKNOWN",
+        "position_within_input": true,
+        "required_future_target": "T_p >= 3488；本轮不假设FA或T",
+        "checkpoint_created": false
+      }
+    ],
+    "structure_class": "nested_two_task",
+    "boundary_all_exact": true,
+    "scope": "真实目标Tokenizer构造的CPU内容输入；非原始Runtime已接收Token；无Checkpoint物化或严格边认证"
+  }
+}

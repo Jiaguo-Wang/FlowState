@@ -1,0 +1,3839 @@
+{
+  "gate": "READY",
+  "cost_model": {
+    "name": "position_aware_quadratic_v1",
+    "coefficient_a": 37.82815,
+    "coefficient_b": 0.345974143,
+    "coefficient_c": -0.156201917,
+    "gap_unit": "tokens",
+    "target_unit": "tokens",
+    "output_unit": "ms",
+    "calibration_artifact": "recovery_model_freeze_20260826_154235_266020",
+    "minimum_gap_tokens": 0,
+    "maximum_target_tokens": 131072
+  },
+  "input": {
+    "candidates": [
+      {
+        "identifier": "B5C3_NODE_18",
+        "position": 3712,
+        "compatible": [
+          "B5C2_A_TURN_003",
+          "B5C2_B_TURN_003"
+        ]
+      },
+      {
+        "identifier": "B5C3_NODE_20",
+        "position": 2432,
+        "compatible": [
+          "B5C2_A_TURN_003",
+          "B5C2_B_TURN_003",
+          "B5C2_C_TURN_003",
+          "B5C2_D_TURN_003"
+        ]
+      },
+      {
+        "identifier": "B5C3_NODE_21",
+        "position": 3456,
+        "compatible": [
+          "B5C2_C_TURN_003",
+          "B5C2_D_TURN_003"
+        ]
+      },
+      {
+        "identifier": "B5C3_NODE_22",
+        "position": 4160,
+        "compatible": [
+          "B5C2_A_TURN_003"
+        ]
+      },
+      {
+        "identifier": "B5C3_NODE_24",
+        "position": 4096,
+        "compatible": [
+          "B5C2_B_TURN_003"
+        ]
+      },
+      {
+        "identifier": "B5C3_NODE_25",
+        "position": 3904,
+        "compatible": [
+          "B5C2_C_TURN_003"
+        ]
+      },
+      {
+        "identifier": "B5C3_NODE_27",
+        "position": 3520,
+        "compatible": [
+          "B5C2_C_TURN_003",
+          "B5C2_D_TURN_003"
+        ]
+      }
+    ],
+    "pending": [
+      {
+        "identifier": "B5C2_A_TURN_003",
+        "target": 4160
+      },
+      {
+        "identifier": "B5C2_B_TURN_003",
+        "target": 4096
+      },
+      {
+        "identifier": "B5C2_C_TURN_003",
+        "target": 3904
+      },
+      {
+        "identifier": "B5C2_D_TURN_003",
+        "target": 3566
+      }
+    ],
+    "k": 7
+  },
+  "size_bytes": {
+    "B5C3_NODE_18": 51511296,
+    "B5C3_NODE_20": 51511296,
+    "B5C3_NODE_21": 51511296,
+    "B5C3_NODE_22": 51511296,
+    "B5C3_NODE_24": 51511296,
+    "B5C3_NODE_25": 51511296,
+    "B5C3_NODE_27": 51511296
+  },
+  "edge_counts": {
+    "EPOCH_ADMISSIBLE": 13,
+    "REJECTED": 15,
+    "UNKNOWN": 0
+  },
+  "benefit_matrix_ms": {
+    "B5C3_NODE_18": [
+      139.67400981921094,
+      139.6664040460781,
+      0.0,
+      0.0
+    ],
+    "B5C3_NODE_20": [
+      91.04683371632031,
+      91.04185062357811,
+      91.02690134535156,
+      91.0005843868069
+    ],
+    "B5C3_NODE_21": [
+      0.0,
+      0.0,
+      129.88119917116407,
+      129.84380138796902
+    ],
+    "B5C3_NODE_22": [
+      156.8088424017578,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "B5C3_NODE_24": [
+      0.0,
+      154.34895561599998,
+      0.0,
+      0.0
+    ],
+    "B5C3_NODE_25": [
+      0.0,
+      0.0,
+      146.9781908318203,
+      0.0
+    ],
+    "B5C3_NODE_27": [
+      0.0,
+      0.0,
+      132.31996556882814,
+      132.28187523409244
+    ]
+  },
+  "K_min": 4,
+  "all_frontiers": [
+    4160,
+    4096,
+    3904,
+    3520
+  ],
+  "supports": {
+    "B5C3_NODE_18": [
+      "A",
+      "B"
+    ],
+    "B5C3_NODE_20": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "B5C3_NODE_21": [
+      "C",
+      "D"
+    ],
+    "B5C3_NODE_22": [
+      "A"
+    ],
+    "B5C3_NODE_24": [
+      "B"
+    ],
+    "B5C3_NODE_25": [
+      "C"
+    ],
+    "B5C3_NODE_27": [
+      "C",
+      "D"
+    ]
+  },
+  "dominance": [
+    {
+      "dominator": "B5C3_NODE_27",
+      "dominated": "B5C3_NODE_21"
+    }
+  ],
+  "equal_benefits": [],
+  "laminar": true,
+  "rows": [
+    {
+      "K": 1,
+      "policy": "FlowState",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 228.05481335524232,
+      "F_ms": 364.1161700720569,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 2432,
+          "G": 1472,
+          "cost_ms": 55.95128948646875
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 2432,
+          "G": 1134,
+          "cost_ms": 43.034410190914194
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 364.1161700720569
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_18": -84.77575620676785,
+          "B5C3_NODE_21": -104.39116951292382,
+          "B5C3_NODE_22": -207.3073276702991,
+          "B5C3_NODE_24": -209.7672144560569,
+          "B5C3_NODE_25": -217.13797924023655,
+          "B5C3_NODE_27": -99.51432926913631
+        }
+      }
+    },
+    {
+      "K": 1,
+      "policy": "Exact OPT",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 228.05481335524232,
+      "F_ms": 364.1161700720569,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 2432,
+          "G": 1472,
+          "cost_ms": 55.95128948646875
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 2432,
+          "G": 1134,
+          "cost_ms": 43.034410190914194
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 364.1161700720569
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_18": -84.77575620676785,
+          "B5C3_NODE_21": -104.39116951292382,
+          "B5C3_NODE_22": -207.3073276702991,
+          "B5C3_NODE_24": -209.7672144560569,
+          "B5C3_NODE_25": -217.13797924023655,
+          "B5C3_NODE_27": -99.51432926913631
+        }
+      }
+    },
+    {
+      "K": 1,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_22"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22"
+      ],
+      "J_ms": 435.3621410255414,
+      "F_ms": 156.8088424017578,
+      "gap_to_exact_ms": 207.3073276702991,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 0,
+          "G": 4096,
+          "cost_ms": 154.34895561599998
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 0,
+          "G": 3904,
+          "cost_ms": 146.9781908318203
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 0,
+          "G": 3566,
+          "cost_ms": 134.0349945777211
+        }
+      ],
+      "baseline_minus_flowstate_ms": 207.3073276702991,
+      "FlowState_WTL": "W",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.80884240175783
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": 122.53157146353124,
+          "B5C3_NODE_20": 207.3073276702991,
+          "B5C3_NODE_21": 102.91615815737526,
+          "B5C3_NODE_24": -2.459886785757817,
+          "B5C3_NODE_25": -9.830651569937459,
+          "B5C3_NODE_27": 107.79299840116278
+        }
+      }
+    },
+    {
+      "K": 1,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_22"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22"
+      ],
+      "J_ms": 435.3621410255414,
+      "F_ms": 156.8088424017578,
+      "gap_to_exact_ms": 207.3073276702991,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 0,
+          "G": 4096,
+          "cost_ms": 154.34895561599998
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 0,
+          "G": 3904,
+          "cost_ms": 146.9781908318203
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 0,
+          "G": 3566,
+          "cost_ms": 134.0349945777211
+        }
+      ],
+      "baseline_minus_flowstate_ms": 207.3073276702991,
+      "FlowState_WTL": "W",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.80884240175783
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": 122.53157146353124,
+          "B5C3_NODE_20": 207.3073276702991,
+          "B5C3_NODE_21": 102.91615815737526,
+          "B5C3_NODE_24": -2.459886785757817,
+          "B5C3_NODE_25": -9.830651569937459,
+          "B5C3_NODE_27": 107.79299840116278
+        }
+      }
+    },
+    {
+      "K": 1,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 228.05481335524232,
+      "F_ms": 364.1161700720569,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 2432,
+          "G": 1472,
+          "cost_ms": 55.95128948646875
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 2432,
+          "G": 1134,
+          "cost_ms": 43.034410190914194
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 364.1161700720569
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_18": -84.77575620676785,
+          "B5C3_NODE_21": -104.39116951292382,
+          "B5C3_NODE_22": -207.3073276702991,
+          "B5C3_NODE_24": -209.7672144560569,
+          "B5C3_NODE_25": -217.13797924023655,
+          "B5C3_NODE_27": -99.51432926913631
+        }
+      }
+    },
+    {
+      "K": 1,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 228.05481335524232,
+      "F_ms": 364.1161700720569,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 2432,
+          "G": 1472,
+          "cost_ms": 55.95128948646875
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 2432,
+          "G": 1134,
+          "cost_ms": 43.034410190914194
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 364.1161700720569
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_18": -84.77575620676785,
+          "B5C3_NODE_21": -104.39116951292382,
+          "B5C3_NODE_22": -207.3073276702991,
+          "B5C3_NODE_24": -209.7672144560569,
+          "B5C3_NODE_25": -217.13797924023655,
+          "B5C3_NODE_27": -99.51432926913631
+        }
+      }
+    },
+    {
+      "K": 2,
+      "policy": "FlowState",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 130.8030838298517,
+      "F_ms": 461.3678995974475,
+      "gap_to_exact_ms": 82.57435507076208,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 2432,
+          "G": 1472,
+          "cost_ms": 55.95128948646875
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 2432,
+          "G": 1134,
+          "cost_ms": 43.034410190914194
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 182.02748573215848,
+        "B5C3_NODE_18": 97.25172952539063
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": -164.8926531496116,
+          "B5C3_NODE_24": -167.3449341622366,
+          "B5C3_NODE_25": -35.04929490033817,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -19.55421469841602,
+          "B5C3_NODE_22": -31.489720839953122,
+          "B5C3_NODE_24": -33.94462453296876,
+          "B5C3_NODE_25": -41.30044003892186,
+          "B5C3_NODE_27": -14.677374454628534
+        }
+      }
+    },
+    {
+      "K": 2,
+      "policy": "Exact OPT",
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 48.228728759089606,
+      "F_ms": 543.9422546682097,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": -82.57435507076208,
+      "FlowState_WTL": "L",
+      "removal_contribution_ms": {
+        "B5C3_NODE_18": 279.340413865289,
+        "B5C3_NODE_27": 264.60184080292055
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_18": {
+          "B5C3_NODE_20": -97.25172952539062,
+          "B5C3_NODE_21": -279.340413865289,
+          "B5C3_NODE_22": -122.53157146353122,
+          "B5C3_NODE_24": -124.99145824928904,
+          "B5C3_NODE_25": -264.68218860229683
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_20": -82.57435507076208,
+          "B5C3_NODE_21": -4.876840243787477,
+          "B5C3_NODE_22": -247.46700822037366,
+          "B5C3_NODE_24": -249.91928923299866,
+          "B5C3_NODE_25": -117.62364997110025
+        }
+      }
+    },
+    {
+      "K": 2,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24"
+      ],
+      "J_ms": 281.0131854095414,
+      "F_ms": 311.1577980177578,
+      "gap_to_exact_ms": 232.78445665045177,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 0,
+          "G": 3904,
+          "cost_ms": 146.9781908318203
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 0,
+          "G": 3566,
+          "cost_ms": 134.0349945777211
+        }
+      ],
+      "baseline_minus_flowstate_ms": 150.2101015796897,
+      "FlowState_WTL": "W",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.80884240175783,
+        "B5C3_NODE_24": 154.348955616
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.134832582546892,
+          "B5C3_NODE_20": 116.26547704672095,
+          "B5C3_NODE_21": 102.91615815737526,
+          "B5C3_NODE_25": -9.830651569937515,
+          "B5C3_NODE_27": 107.79299840116275
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921884,
+          "B5C3_NODE_20": 118.72038073973658,
+          "B5C3_NODE_21": 105.37604494313308,
+          "B5C3_NODE_25": -7.370764784179698,
+          "B5C3_NODE_27": 110.25288518692057
+        }
+      }
+    },
+    {
+      "K": 2,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24"
+      ],
+      "J_ms": 281.0131854095414,
+      "F_ms": 311.1577980177578,
+      "gap_to_exact_ms": 232.78445665045177,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 0,
+          "G": 3904,
+          "cost_ms": 146.9781908318203
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 0,
+          "G": 3566,
+          "cost_ms": 134.0349945777211
+        }
+      ],
+      "baseline_minus_flowstate_ms": 150.2101015796897,
+      "FlowState_WTL": "W",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.80884240175783,
+        "B5C3_NODE_24": 154.348955616
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.134832582546892,
+          "B5C3_NODE_20": 116.26547704672095,
+          "B5C3_NODE_21": 102.91615815737526,
+          "B5C3_NODE_25": -9.830651569937515,
+          "B5C3_NODE_27": 107.79299840116275
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921884,
+          "B5C3_NODE_20": 118.72038073973658,
+          "B5C3_NODE_21": 105.37604494313308,
+          "B5C3_NODE_25": -7.370764784179698,
+          "B5C3_NODE_27": 110.25288518692057
+        }
+      }
+    },
+    {
+      "K": 2,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 130.8030838298517,
+      "F_ms": 461.3678995974475,
+      "gap_to_exact_ms": 82.57435507076208,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 2432,
+          "G": 1472,
+          "cost_ms": 55.95128948646875
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 2432,
+          "G": 1134,
+          "cost_ms": 43.034410190914194
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 182.02748573215848,
+        "B5C3_NODE_18": 97.25172952539063
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": -164.8926531496116,
+          "B5C3_NODE_24": -167.3449341622366,
+          "B5C3_NODE_25": -35.04929490033817,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -19.55421469841602,
+          "B5C3_NODE_22": -31.489720839953122,
+          "B5C3_NODE_24": -33.94462453296876,
+          "B5C3_NODE_25": -41.30044003892186,
+          "B5C3_NODE_27": -14.677374454628534
+        }
+      }
+    },
+    {
+      "K": 2,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_20"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 130.8030838298517,
+      "F_ms": 461.3678995974475,
+      "gap_to_exact_ms": 82.57435507076208,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 2432,
+          "G": 1472,
+          "cost_ms": 55.95128948646875
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 2432,
+          "G": 1134,
+          "cost_ms": 43.034410190914194
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_18": 97.25172952539063,
+        "B5C3_NODE_20": 182.02748573215848
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -19.55421469841602,
+          "B5C3_NODE_22": -31.489720839953122,
+          "B5C3_NODE_24": -33.94462453296876,
+          "B5C3_NODE_25": -41.30044003892186,
+          "B5C3_NODE_27": -14.677374454628534
+        },
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": -164.8926531496116,
+          "B5C3_NODE_24": -167.3449341622366,
+          "B5C3_NODE_25": -35.04929490033817,
+          "B5C3_NODE_27": 82.57435507076208
+        }
+      }
+    },
+    {
+      "K": 3,
+      "policy": "FlowState",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 48.228728759089606,
+      "F_ms": 543.9422546682097,
+      "gap_to_exact_ms": 31.817384152468748,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 0.0,
+        "B5C3_NODE_18": 97.25172952539062,
+        "B5C3_NODE_27": 82.57435507076208
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -97.25172952539062,
+          "B5C3_NODE_22": -31.489720839953122,
+          "B5C3_NODE_24": -33.944624532968746,
+          "B5C3_NODE_25": -82.59350426239844
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_21": -4.876840243787477,
+          "B5C3_NODE_22": -65.43952248821522,
+          "B5C3_NODE_24": -67.89180350084021,
+          "B5C3_NODE_25": -26.623065584293343
+        }
+      }
+    },
+    {
+      "K": 3,
+      "policy": "Exact OPT",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 16.411344606620858,
+      "F_ms": 575.7596388206783,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": -31.817384152468748,
+      "FlowState_WTL": "L",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.80884240175777,
+        "B5C3_NODE_24": 154.34895561599996,
+        "B5C3_NODE_27": 264.60184080292055
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.13483258254687,
+          "B5C3_NODE_20": -65.7620086854375,
+          "B5C3_NODE_21": -156.80884240175777,
+          "B5C3_NODE_25": -142.1506171387656
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921873,
+          "B5C3_NODE_20": -63.30710499242187,
+          "B5C3_NODE_21": -154.34895561599996,
+          "B5C3_NODE_25": -139.69073035300778
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_18": -264.60184080292055,
+          "B5C3_NODE_20": -82.57435507076208,
+          "B5C3_NODE_21": -4.876840243787477,
+          "B5C3_NODE_25": -117.62364997110025
+        }
+      }
+    },
+    {
+      "K": 3,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25"
+      ],
+      "J_ms": 134.0349945777211,
+      "F_ms": 458.1359888495781,
+      "gap_to_exact_ms": 117.62364997110025,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3904,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 0,
+          "G": 3566,
+          "cost_ms": 134.0349945777211
+        }
+      ],
+      "baseline_minus_flowstate_ms": 85.8062658186315,
+      "FlowState_WTL": "W",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.8088424017578,
+        "B5C3_NODE_24": 154.34895561599998,
+        "B5C3_NODE_25": 146.97819083182029
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.134832582546863,
+          "B5C3_NODE_20": 25.238575701369427,
+          "B5C3_NODE_21": -26.965041013788777,
+          "B5C3_NODE_27": -24.52696716766536
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921884,
+          "B5C3_NODE_20": 27.693479394385037,
+          "B5C3_NODE_21": -24.50515422803096,
+          "B5C3_NODE_27": -22.067080381907545
+        },
+        "B5C3_NODE_25": {
+          "B5C3_NODE_18": -146.97819083182029,
+          "B5C3_NODE_20": 35.04929490033817,
+          "B5C3_NODE_21": 112.74680972731278,
+          "B5C3_NODE_27": 117.62364997110025
+        }
+      }
+    },
+    {
+      "K": 3,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25"
+      ],
+      "J_ms": 134.0349945777211,
+      "F_ms": 458.1359888495781,
+      "gap_to_exact_ms": 117.62364997110025,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3904,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 0,
+          "G": 3566,
+          "cost_ms": 134.0349945777211
+        }
+      ],
+      "baseline_minus_flowstate_ms": 85.8062658186315,
+      "FlowState_WTL": "W",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.8088424017578,
+        "B5C3_NODE_24": 154.34895561599998,
+        "B5C3_NODE_25": 146.97819083182029
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.134832582546863,
+          "B5C3_NODE_20": 25.238575701369427,
+          "B5C3_NODE_21": -26.965041013788777,
+          "B5C3_NODE_27": -24.52696716766536
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921884,
+          "B5C3_NODE_20": 27.693479394385037,
+          "B5C3_NODE_21": -24.50515422803096,
+          "B5C3_NODE_27": -22.067080381907545
+        },
+        "B5C3_NODE_25": {
+          "B5C3_NODE_18": -146.97819083182029,
+          "B5C3_NODE_20": 35.04929490033817,
+          "B5C3_NODE_21": 112.74680972731278,
+          "B5C3_NODE_27": 117.62364997110025
+        }
+      }
+    },
+    {
+      "K": 3,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 48.228728759089606,
+      "F_ms": 543.9422546682097,
+      "gap_to_exact_ms": 31.817384152468748,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 0.0,
+        "B5C3_NODE_18": 97.25172952539062,
+        "B5C3_NODE_27": 82.57435507076208
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -97.25172952539062,
+          "B5C3_NODE_22": -31.489720839953122,
+          "B5C3_NODE_24": -33.944624532968746,
+          "B5C3_NODE_25": -82.59350426239844
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_21": -4.876840243787477,
+          "B5C3_NODE_22": -65.43952248821522,
+          "B5C3_NODE_24": -67.89180350084021,
+          "B5C3_NODE_25": -26.623065584293343
+        }
+      }
+    },
+    {
+      "K": 3,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_20",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 48.228728759089606,
+      "F_ms": 543.9422546682097,
+      "gap_to_exact_ms": 31.817384152468748,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_18": 97.25172952539062,
+        "B5C3_NODE_20": 0.0,
+        "B5C3_NODE_27": 82.57435507076208
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -97.25172952539062,
+          "B5C3_NODE_22": -31.489720839953122,
+          "B5C3_NODE_24": -33.944624532968746,
+          "B5C3_NODE_25": -82.59350426239844
+        },
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_21": -4.876840243787477,
+          "B5C3_NODE_22": -65.43952248821522,
+          "B5C3_NODE_24": -67.89180350084021,
+          "B5C3_NODE_25": -26.623065584293343
+        }
+      }
+    },
+    {
+      "K": 4,
+      "policy": "FlowState",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27",
+        "B5C3_NODE_22"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27",
+        "B5C3_NODE_22"
+      ],
+      "J_ms": 31.09389617654273,
+      "F_ms": 561.0770872507564,
+      "gap_to_exact_ms": 29.340776832914063,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 0.0,
+        "B5C3_NODE_18": 48.6245534225,
+        "B5C3_NODE_27": 82.5743550707621,
+        "B5C3_NODE_22": 17.134832582546874
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_24": 14.682551569921873,
+          "B5C3_NODE_25": 14.658225262992186
+        },
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -48.6245534225,
+          "B5C3_NODE_24": 14.682551569921873,
+          "B5C3_NODE_25": -33.966328159507825
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_21": -4.8768402437874805,
+          "B5C3_NODE_24": -67.89180350084021,
+          "B5C3_NODE_25": -26.62306558429334
+        },
+        "B5C3_NODE_22": {
+          "B5C3_NODE_21": -17.134832582546874,
+          "B5C3_NODE_24": -2.452281012624997,
+          "B5C3_NODE_25": -2.4766073195546845
+        }
+      }
+    },
+    {
+      "K": 4,
+      "policy": "Exact OPT",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 1.7531193436286698,
+      "F_ms": 590.4178640836706,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3904,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": -29.340776832914063,
+      "FlowState_WTL": "L",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.8088424017578,
+        "B5C3_NODE_24": 154.34895561599998,
+        "B5C3_NODE_25": 14.658225262992188,
+        "B5C3_NODE_27": 132.28187523409244
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.134832582546874,
+          "B5C3_NODE_20": -65.7620086854375,
+          "B5C3_NODE_21": -156.8088424017578
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921875,
+          "B5C3_NODE_20": -63.307104992421884,
+          "B5C3_NODE_21": -154.34895561599998
+        },
+        "B5C3_NODE_25": {
+          "B5C3_NODE_18": -14.658225262992188,
+          "B5C3_NODE_20": -14.658225262992188,
+          "B5C3_NODE_21": -14.658225262992188
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_18": -132.28187523409244,
+          "B5C3_NODE_20": -41.281290847285526,
+          "B5C3_NODE_21": -2.438073846123413
+        }
+      }
+    },
+    {
+      "K": 4,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 1.7531193436286698,
+      "F_ms": 590.4178640836706,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3904,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": -29.340776832914063,
+      "FlowState_WTL": "L",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.8088424017578,
+        "B5C3_NODE_24": 154.34895561599998,
+        "B5C3_NODE_25": 14.658225262992188,
+        "B5C3_NODE_27": 132.28187523409244
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.134832582546874,
+          "B5C3_NODE_20": -65.7620086854375,
+          "B5C3_NODE_21": -156.8088424017578
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921875,
+          "B5C3_NODE_20": -63.307104992421884,
+          "B5C3_NODE_21": -154.34895561599998
+        },
+        "B5C3_NODE_25": {
+          "B5C3_NODE_18": -14.658225262992188,
+          "B5C3_NODE_20": -14.658225262992188,
+          "B5C3_NODE_21": -14.658225262992188
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_18": -132.28187523409244,
+          "B5C3_NODE_20": -41.281290847285526,
+          "B5C3_NODE_21": -2.438073846123413
+        }
+      }
+    },
+    {
+      "K": 4,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 1.7531193436286698,
+      "F_ms": 590.4178640836706,
+      "gap_to_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3904,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": -29.340776832914063,
+      "FlowState_WTL": "L",
+      "removal_contribution_ms": {
+        "B5C3_NODE_22": 156.8088424017578,
+        "B5C3_NODE_24": 154.34895561599998,
+        "B5C3_NODE_25": 14.658225262992188,
+        "B5C3_NODE_27": 132.28187523409244
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_22": {
+          "B5C3_NODE_18": -17.134832582546874,
+          "B5C3_NODE_20": -65.7620086854375,
+          "B5C3_NODE_21": -156.8088424017578
+        },
+        "B5C3_NODE_24": {
+          "B5C3_NODE_18": -14.682551569921875,
+          "B5C3_NODE_20": -63.307104992421884,
+          "B5C3_NODE_21": -154.34895561599998
+        },
+        "B5C3_NODE_25": {
+          "B5C3_NODE_18": -14.658225262992188,
+          "B5C3_NODE_20": -14.658225262992188,
+          "B5C3_NODE_21": -14.658225262992188
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_18": -132.28187523409244,
+          "B5C3_NODE_20": -41.281290847285526,
+          "B5C3_NODE_21": -2.438073846123413
+        }
+      }
+    },
+    {
+      "K": 4,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27",
+        "B5C3_NODE_22"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27",
+        "B5C3_NODE_22"
+      ],
+      "J_ms": 31.09389617654273,
+      "F_ms": 561.0770872507564,
+      "gap_to_exact_ms": 29.340776832914063,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": 0.0,
+      "FlowState_WTL": "T",
+      "removal_contribution_ms": {
+        "B5C3_NODE_20": 0.0,
+        "B5C3_NODE_18": 48.6245534225,
+        "B5C3_NODE_27": 82.5743550707621,
+        "B5C3_NODE_22": 17.134832582546874
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_20": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_24": 14.682551569921873,
+          "B5C3_NODE_25": 14.658225262992186
+        },
+        "B5C3_NODE_18": {
+          "B5C3_NODE_21": -48.6245534225,
+          "B5C3_NODE_24": 14.682551569921873,
+          "B5C3_NODE_25": -33.966328159507825
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_21": -4.8768402437874805,
+          "B5C3_NODE_24": -67.89180350084021,
+          "B5C3_NODE_25": -26.62306558429334
+        },
+        "B5C3_NODE_22": {
+          "B5C3_NODE_21": -17.134832582546874,
+          "B5C3_NODE_24": -2.452281012624997,
+          "B5C3_NODE_25": -2.4766073195546845
+        }
+      }
+    },
+    {
+      "K": 4,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_20",
+        "B5C3_NODE_21",
+        "B5C3_NODE_27"
+      ],
+      "selection_order": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27",
+        "B5C3_NODE_21"
+      ],
+      "J_ms": 48.228728759089606,
+      "F_ms": 543.9422546682097,
+      "gap_to_exact_ms": 46.47560941546094,
+      "per_pending": [
+        {
+          "continuation_id": "B5C2_A_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        },
+        {
+          "continuation_id": "B5C2_B_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "B5C2_C_TURN_003",
+          "T": 3904,
+          "E": 3520,
+          "G": 384,
+          "cost_ms": 14.658225262992188
+        },
+        {
+          "continuation_id": "B5C2_D_TURN_003",
+          "T": 3566,
+          "E": 3520,
+          "G": 46,
+          "cost_ms": 1.7531193436286698
+        }
+      ],
+      "baseline_minus_flowstate_ms": 17.134832582546874,
+      "FlowState_WTL": "W",
+      "removal_contribution_ms": {
+        "B5C3_NODE_18": 97.25172952539062,
+        "B5C3_NODE_20": 0.0,
+        "B5C3_NODE_21": 0.0,
+        "B5C3_NODE_27": 4.876840243787477
+      },
+      "replacement_diagnostics_ms": {
+        "B5C3_NODE_18": {
+          "B5C3_NODE_22": -31.489720839953122,
+          "B5C3_NODE_24": -33.944624532968746,
+          "B5C3_NODE_25": -82.59350426239844
+        },
+        "B5C3_NODE_20": {
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "B5C3_NODE_21": {
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "B5C3_NODE_27": {
+          "B5C3_NODE_22": 12.257992338759394,
+          "B5C3_NODE_24": 9.8057113261344,
+          "B5C3_NODE_25": 12.220151416868774
+        }
+      }
+    }
+  ],
+  "traces": {
+    "1/PCB/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 156.8088424017578
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 154.34895561599998
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 146.9781908318203
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 132.28187523409244
+        }
+      ]
+    },
+    "1/LDR/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 4160
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 4096
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 3904
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 3520
+        }
+      ]
+    },
+    "1/WFC/native": {
+      "steps": [
+        {
+          "prefix": [],
+          "E_before": {
+            "B5C2_A_TURN_003": 0,
+            "B5C2_B_TURN_003": 0,
+            "B5C2_C_TURN_003": 0,
+            "B5C2_D_TURN_003": 0
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_20",
+              "q": 4,
+              "r": 9728,
+              "advances": {
+                "B5C2_A_TURN_003": 2432,
+                "B5C2_B_TURN_003": 2432,
+                "B5C2_C_TURN_003": 2432,
+                "B5C2_D_TURN_003": 2432
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_18",
+              "q": 2,
+              "r": 7424,
+              "advances": {
+                "B5C2_A_TURN_003": 3712,
+                "B5C2_B_TURN_003": 3712,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 7040,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3520,
+                "B5C2_D_TURN_003": 3520
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 6912,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3456,
+                "B5C2_D_TURN_003": 3456
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 4160,
+              "advances": {
+                "B5C2_A_TURN_003": 4160,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 4096,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 4096,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 3904,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3904,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_20",
+          "q": 4,
+          "r": 9728
+        }
+      ],
+      "final_frontiers": {
+        "B5C2_A_TURN_003": 2432,
+        "B5C2_B_TURN_003": 2432,
+        "B5C2_C_TURN_003": 2432,
+        "B5C2_D_TURN_003": 2432
+      }
+    },
+    "1/FlowState/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      }
+    ],
+    "1/Exact OPT/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      }
+    ],
+    "1/PCB/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      }
+    ],
+    "1/LDR/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      }
+    ],
+    "1/WFC/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      }
+    ],
+    "1/StandaloneTopK/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      }
+    ],
+    "2/PCB/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 156.8088424017578
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 154.34895561599998
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 146.9781908318203
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 132.28187523409244
+        }
+      ]
+    },
+    "2/LDR/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 4160
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 4096
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 3904
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 3520
+        }
+      ]
+    },
+    "2/WFC/native": {
+      "steps": [
+        {
+          "prefix": [],
+          "E_before": {
+            "B5C2_A_TURN_003": 0,
+            "B5C2_B_TURN_003": 0,
+            "B5C2_C_TURN_003": 0,
+            "B5C2_D_TURN_003": 0
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_20",
+              "q": 4,
+              "r": 9728,
+              "advances": {
+                "B5C2_A_TURN_003": 2432,
+                "B5C2_B_TURN_003": 2432,
+                "B5C2_C_TURN_003": 2432,
+                "B5C2_D_TURN_003": 2432
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_18",
+              "q": 2,
+              "r": 7424,
+              "advances": {
+                "B5C2_A_TURN_003": 3712,
+                "B5C2_B_TURN_003": 3712,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 7040,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3520,
+                "B5C2_D_TURN_003": 3520
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 6912,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3456,
+                "B5C2_D_TURN_003": 3456
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 4160,
+              "advances": {
+                "B5C2_A_TURN_003": 4160,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 4096,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 4096,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 3904,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3904,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_20",
+          "q": 4,
+          "r": 9728
+        },
+        {
+          "prefix": [
+            "B5C3_NODE_20"
+          ],
+          "E_before": {
+            "B5C2_A_TURN_003": 2432,
+            "B5C2_B_TURN_003": 2432,
+            "B5C2_C_TURN_003": 2432,
+            "B5C2_D_TURN_003": 2432
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_18",
+              "q": 2,
+              "r": 2560,
+              "advances": {
+                "B5C2_A_TURN_003": 1280,
+                "B5C2_B_TURN_003": 1280,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 2176,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1088,
+                "B5C2_D_TURN_003": 1088
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 2048,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1024,
+                "B5C2_D_TURN_003": 1024
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 1728,
+              "advances": {
+                "B5C2_A_TURN_003": 1728,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 1664,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 1664,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 1472,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1472,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_18",
+          "q": 2,
+          "r": 2560
+        }
+      ],
+      "final_frontiers": {
+        "B5C2_A_TURN_003": 3712,
+        "B5C2_B_TURN_003": 3712,
+        "B5C2_C_TURN_003": 2432,
+        "B5C2_D_TURN_003": 2432
+      }
+    },
+    "2/FlowState/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      }
+    ],
+    "2/Exact OPT/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 279.34041386528907
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_18"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_20": 182.02748573215848,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 17.134832582546892,
+          "B5C3_NODE_24": 14.682551569921884,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.60184080292055
+        },
+        "selected_marginal_ms": 264.60184080292055
+      }
+    ],
+    "2/PCB/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      }
+    ],
+    "2/LDR/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      }
+    ],
+    "2/WFC/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      }
+    ],
+    "2/StandaloneTopK/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      }
+    ],
+    "3/PCB/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 156.8088424017578
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 154.34895561599998
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 146.9781908318203
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 132.28187523409244
+        }
+      ]
+    },
+    "3/LDR/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 4160
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 4096
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 3904
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 3520
+        }
+      ]
+    },
+    "3/WFC/native": {
+      "steps": [
+        {
+          "prefix": [],
+          "E_before": {
+            "B5C2_A_TURN_003": 0,
+            "B5C2_B_TURN_003": 0,
+            "B5C2_C_TURN_003": 0,
+            "B5C2_D_TURN_003": 0
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_20",
+              "q": 4,
+              "r": 9728,
+              "advances": {
+                "B5C2_A_TURN_003": 2432,
+                "B5C2_B_TURN_003": 2432,
+                "B5C2_C_TURN_003": 2432,
+                "B5C2_D_TURN_003": 2432
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_18",
+              "q": 2,
+              "r": 7424,
+              "advances": {
+                "B5C2_A_TURN_003": 3712,
+                "B5C2_B_TURN_003": 3712,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 7040,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3520,
+                "B5C2_D_TURN_003": 3520
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 6912,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3456,
+                "B5C2_D_TURN_003": 3456
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 4160,
+              "advances": {
+                "B5C2_A_TURN_003": 4160,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 4096,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 4096,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 3904,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3904,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_20",
+          "q": 4,
+          "r": 9728
+        },
+        {
+          "prefix": [
+            "B5C3_NODE_20"
+          ],
+          "E_before": {
+            "B5C2_A_TURN_003": 2432,
+            "B5C2_B_TURN_003": 2432,
+            "B5C2_C_TURN_003": 2432,
+            "B5C2_D_TURN_003": 2432
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_18",
+              "q": 2,
+              "r": 2560,
+              "advances": {
+                "B5C2_A_TURN_003": 1280,
+                "B5C2_B_TURN_003": 1280,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 2176,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1088,
+                "B5C2_D_TURN_003": 1088
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 2048,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1024,
+                "B5C2_D_TURN_003": 1024
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 1728,
+              "advances": {
+                "B5C2_A_TURN_003": 1728,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 1664,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 1664,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 1472,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1472,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_18",
+          "q": 2,
+          "r": 2560
+        },
+        {
+          "prefix": [
+            "B5C3_NODE_20",
+            "B5C3_NODE_18"
+          ],
+          "E_before": {
+            "B5C2_A_TURN_003": 3712,
+            "B5C2_B_TURN_003": 3712,
+            "B5C2_C_TURN_003": 2432,
+            "B5C2_D_TURN_003": 2432
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 2176,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1088,
+                "B5C2_D_TURN_003": 1088
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 2048,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1024,
+                "B5C2_D_TURN_003": 1024
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 1472,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1472,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 448,
+              "advances": {
+                "B5C2_A_TURN_003": 448,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 384,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 384,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_27",
+          "q": 2,
+          "r": 2176
+        }
+      ],
+      "final_frontiers": {
+        "B5C2_A_TURN_003": 3712,
+        "B5C2_B_TURN_003": 3712,
+        "B5C2_C_TURN_003": 3520,
+        "B5C2_D_TURN_003": 3520
+      }
+    },
+    "3/FlowState/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 17.134832582546863,
+          "B5C3_NODE_24": 14.68255156992187,
+          "B5C3_NODE_25": 55.95128948646874,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "selected_marginal_ms": 82.57435507076208
+      }
+    ],
+    "3/Exact OPT/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 182.02748573215845,
+          "B5C3_NODE_21": 259.72500055913304,
+          "B5C3_NODE_25": 146.97819083182029,
+          "B5C3_NODE_27": 264.60184080292055
+        },
+        "selected_marginal_ms": 264.60184080292055
+      }
+    ],
+    "3/PCB/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ],
+        "chosen": "B5C3_NODE_25",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 182.02748573215845,
+          "B5C3_NODE_21": 259.72500055913304,
+          "B5C3_NODE_25": 146.97819083182029,
+          "B5C3_NODE_27": 264.60184080292055
+        },
+        "selected_marginal_ms": 146.97819083182029
+      }
+    ],
+    "3/LDR/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ],
+        "chosen": "B5C3_NODE_25",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 182.02748573215845,
+          "B5C3_NODE_21": 259.72500055913304,
+          "B5C3_NODE_25": 146.97819083182029,
+          "B5C3_NODE_27": 264.60184080292055
+        },
+        "selected_marginal_ms": 146.97819083182029
+      }
+    ],
+    "3/WFC/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 17.134832582546863,
+          "B5C3_NODE_24": 14.68255156992187,
+          "B5C3_NODE_25": 55.95128948646874,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "selected_marginal_ms": 82.57435507076208
+      }
+    ],
+    "3/StandaloneTopK/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 17.134832582546863,
+          "B5C3_NODE_24": 14.68255156992187,
+          "B5C3_NODE_25": 55.95128948646874,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "selected_marginal_ms": 82.57435507076208
+      }
+    ],
+    "4/PCB/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 156.8088424017578
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 154.34895561599998
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 146.9781908318203
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 132.28187523409244
+        }
+      ]
+    },
+    "4/LDR/native": {
+      "recommendations": [
+        {
+          "pending_id": "B5C2_A_TURN_003",
+          "checkpoint_id": "B5C3_NODE_22",
+          "score": 4160
+        },
+        {
+          "pending_id": "B5C2_B_TURN_003",
+          "checkpoint_id": "B5C3_NODE_24",
+          "score": 4096
+        },
+        {
+          "pending_id": "B5C2_C_TURN_003",
+          "checkpoint_id": "B5C3_NODE_25",
+          "score": 3904
+        },
+        {
+          "pending_id": "B5C2_D_TURN_003",
+          "checkpoint_id": "B5C3_NODE_27",
+          "score": 3520
+        }
+      ]
+    },
+    "4/WFC/native": {
+      "steps": [
+        {
+          "prefix": [],
+          "E_before": {
+            "B5C2_A_TURN_003": 0,
+            "B5C2_B_TURN_003": 0,
+            "B5C2_C_TURN_003": 0,
+            "B5C2_D_TURN_003": 0
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_20",
+              "q": 4,
+              "r": 9728,
+              "advances": {
+                "B5C2_A_TURN_003": 2432,
+                "B5C2_B_TURN_003": 2432,
+                "B5C2_C_TURN_003": 2432,
+                "B5C2_D_TURN_003": 2432
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_18",
+              "q": 2,
+              "r": 7424,
+              "advances": {
+                "B5C2_A_TURN_003": 3712,
+                "B5C2_B_TURN_003": 3712,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 7040,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3520,
+                "B5C2_D_TURN_003": 3520
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 6912,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3456,
+                "B5C2_D_TURN_003": 3456
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 4160,
+              "advances": {
+                "B5C2_A_TURN_003": 4160,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 4096,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 4096,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 3904,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 3904,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_20",
+          "q": 4,
+          "r": 9728
+        },
+        {
+          "prefix": [
+            "B5C3_NODE_20"
+          ],
+          "E_before": {
+            "B5C2_A_TURN_003": 2432,
+            "B5C2_B_TURN_003": 2432,
+            "B5C2_C_TURN_003": 2432,
+            "B5C2_D_TURN_003": 2432
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_18",
+              "q": 2,
+              "r": 2560,
+              "advances": {
+                "B5C2_A_TURN_003": 1280,
+                "B5C2_B_TURN_003": 1280,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 2176,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1088,
+                "B5C2_D_TURN_003": 1088
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 2048,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1024,
+                "B5C2_D_TURN_003": 1024
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 1728,
+              "advances": {
+                "B5C2_A_TURN_003": 1728,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 1664,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 1664,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 1472,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1472,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_18",
+          "q": 2,
+          "r": 2560
+        },
+        {
+          "prefix": [
+            "B5C3_NODE_20",
+            "B5C3_NODE_18"
+          ],
+          "E_before": {
+            "B5C2_A_TURN_003": 3712,
+            "B5C2_B_TURN_003": 3712,
+            "B5C2_C_TURN_003": 2432,
+            "B5C2_D_TURN_003": 2432
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_27",
+              "q": 2,
+              "r": 2176,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1088,
+                "B5C2_D_TURN_003": 1088
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 2,
+              "r": 2048,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1024,
+                "B5C2_D_TURN_003": 1024
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 1472,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 1472,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 448,
+              "advances": {
+                "B5C2_A_TURN_003": 448,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 384,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 384,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_27",
+          "q": 2,
+          "r": 2176
+        },
+        {
+          "prefix": [
+            "B5C3_NODE_20",
+            "B5C3_NODE_18",
+            "B5C3_NODE_27"
+          ],
+          "E_before": {
+            "B5C2_A_TURN_003": 3712,
+            "B5C2_B_TURN_003": 3712,
+            "B5C2_C_TURN_003": 3520,
+            "B5C2_D_TURN_003": 3520
+          },
+          "ranked_candidates": [
+            {
+              "checkpoint_id": "B5C3_NODE_22",
+              "q": 1,
+              "r": 448,
+              "advances": {
+                "B5C2_A_TURN_003": 448,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_24",
+              "q": 1,
+              "r": 384,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 384,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_25",
+              "q": 1,
+              "r": 384,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 384,
+                "B5C2_D_TURN_003": 0
+              }
+            },
+            {
+              "checkpoint_id": "B5C3_NODE_21",
+              "q": 0,
+              "r": 0,
+              "advances": {
+                "B5C2_A_TURN_003": 0,
+                "B5C2_B_TURN_003": 0,
+                "B5C2_C_TURN_003": 0,
+                "B5C2_D_TURN_003": 0
+              }
+            }
+          ],
+          "chosen": "B5C3_NODE_22",
+          "q": 1,
+          "r": 448
+        }
+      ],
+      "final_frontiers": {
+        "B5C2_A_TURN_003": 4160,
+        "B5C2_B_TURN_003": 3712,
+        "B5C2_C_TURN_003": 3520,
+        "B5C2_D_TURN_003": 3520
+      }
+    },
+    "4/FlowState/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 17.134832582546863,
+          "B5C3_NODE_24": 14.68255156992187,
+          "B5C3_NODE_25": 55.95128948646874,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "selected_marginal_ms": 82.57435507076208
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "selected_marginal_ms": 17.134832582546874
+      }
+    ],
+    "4/Exact OPT/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ],
+        "chosen": "B5C3_NODE_25",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 182.02748573215845,
+          "B5C3_NODE_21": 259.72500055913304,
+          "B5C3_NODE_25": 146.97819083182029,
+          "B5C3_NODE_27": 264.60184080292055
+        },
+        "selected_marginal_ms": 146.97819083182029
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 91.0005843868069,
+          "B5C3_NODE_21": 129.84380138796902,
+          "B5C3_NODE_27": 132.28187523409244
+        },
+        "selected_marginal_ms": 132.28187523409244
+      }
+    ],
+    "4/PCB/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ],
+        "chosen": "B5C3_NODE_25",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 182.02748573215845,
+          "B5C3_NODE_21": 259.72500055913304,
+          "B5C3_NODE_25": 146.97819083182029,
+          "B5C3_NODE_27": 264.60184080292055
+        },
+        "selected_marginal_ms": 146.97819083182029
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 91.0005843868069,
+          "B5C3_NODE_21": 129.84380138796902,
+          "B5C3_NODE_27": 132.28187523409244
+        },
+        "selected_marginal_ms": 132.28187523409244
+      }
+    ],
+    "4/LDR/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 156.80884240175783
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22"
+        ],
+        "chosen": "B5C3_NODE_24",
+        "marginals_ms": {
+          "B5C3_NODE_18": 139.66640404607813,
+          "B5C3_NODE_20": 273.0693363557366,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.9781908318203,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 154.348955616
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ],
+        "chosen": "B5C3_NODE_25",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 182.02748573215845,
+          "B5C3_NODE_21": 259.72500055913304,
+          "B5C3_NODE_25": 146.97819083182029,
+          "B5C3_NODE_27": 264.60184080292055
+        },
+        "selected_marginal_ms": 146.97819083182029
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_18": 0.0,
+          "B5C3_NODE_20": 91.0005843868069,
+          "B5C3_NODE_21": 129.84380138796902,
+          "B5C3_NODE_27": 132.28187523409244
+        },
+        "selected_marginal_ms": 132.28187523409244
+      }
+    ],
+    "4/WFC/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 17.134832582546863,
+          "B5C3_NODE_24": 14.68255156992187,
+          "B5C3_NODE_25": 55.95128948646874,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "selected_marginal_ms": 82.57435507076208
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "chosen": "B5C3_NODE_22",
+        "marginals_ms": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "selected_marginal_ms": 17.134832582546874
+      }
+    ],
+    "4/StandaloneTopK/evaluation": [
+      {
+        "prefix": [],
+        "chosen": "B5C3_NODE_20",
+        "marginals_ms": {
+          "B5C3_NODE_18": 279.34041386528907,
+          "B5C3_NODE_20": 364.1161700720569,
+          "B5C3_NODE_21": 259.7250005591331,
+          "B5C3_NODE_22": 156.80884240175783,
+          "B5C3_NODE_24": 154.348955616,
+          "B5C3_NODE_25": 146.97819083182037,
+          "B5C3_NODE_27": 264.6018408029206
+        },
+        "selected_marginal_ms": 364.1161700720569
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20"
+        ],
+        "chosen": "B5C3_NODE_18",
+        "marginals_ms": {
+          "B5C3_NODE_18": 97.25172952539063,
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 65.76200868543751,
+          "B5C3_NODE_24": 63.30710499242187,
+          "B5C3_NODE_25": 55.95128948646877,
+          "B5C3_NODE_27": 82.5743550707621
+        },
+        "selected_marginal_ms": 97.25172952539063
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18"
+        ],
+        "chosen": "B5C3_NODE_27",
+        "marginals_ms": {
+          "B5C3_NODE_21": 77.69751482697461,
+          "B5C3_NODE_22": 17.134832582546863,
+          "B5C3_NODE_24": 14.68255156992187,
+          "B5C3_NODE_25": 55.95128948646874,
+          "B5C3_NODE_27": 82.57435507076208
+        },
+        "selected_marginal_ms": 82.57435507076208
+      },
+      {
+        "prefix": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "chosen": "B5C3_NODE_21",
+        "marginals_ms": {
+          "B5C3_NODE_21": 0.0,
+          "B5C3_NODE_22": 17.134832582546874,
+          "B5C3_NODE_24": 14.682551569921877,
+          "B5C3_NODE_25": 14.65822526299219
+        },
+        "selected_marginal_ms": 0.0
+      }
+    ]
+  }
+}

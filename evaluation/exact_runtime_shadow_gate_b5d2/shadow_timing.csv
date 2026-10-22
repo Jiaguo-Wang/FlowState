@@ -1,0 +1,9 @@
+stage,ms,solver,说明
+runtime_observation_freeze_rpc,1102.324873,共同,包含Scheduler观察、GPU同步摘要、返回传输与客户端解码
+epoch_construction_authentication,110.831426,共同,CPU窗口外，含序列化、来源整理、原Strict合同与物理证据认证及快照写出
+benefit_matrix,0.040567,共同,仅一次共同预处理
+solve,0.186871,Greedy,同一冻结Epoch和共同评分
+plan_construction_validation,13.552525,Greedy,调用既有validate_plan
+solve,0.224964,Exact,同一冻结Epoch和共同评分
+plan_construction_validation,13.747073,Exact,调用既有validate_plan
+independent_oracle,0.404123,审计,不计入任一规划器独立路径

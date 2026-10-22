@@ -1,0 +1,11 @@
+# 计时有效性与可比性
+
+计时接口依据冻结Runtime真实源码，见runtime_timing_source_audit.json、observation.py、bridge.py。非重叠调度、禁用CUDA Graph；COW在ModelRunner._forward_raw里先于EagerRunner.execute。主Prefill指标为EagerRunner.execute的同流CUDA事件区间，包含输入缓冲/Attention初始化/模型执行及主机提交空隙，排除前面的COW内容哈希。首次编译可能让事件间设备空闲；不称其为内核时间之和或稳态生产Prefill。
+
+外层run_batch事件包含COW及其审计，不能与内层Eager事件相加。COW事件与Host Match记录各有独立边界。事件前设备同步、事件后等待会扰动异步执行，两臂同样应用；完整Wall保留所有这些成本。没有用Host调用时间冒充GPU时间。
+
+客户端TTFT从流式调用前到首非空Token响应；TPOT为首末响应间隔/7，仅8Token描述量。完整路径从控制RPC发起到目标流结束，含控制/后续准备/请求与内嵌审计，不包含Engine启动、八条历史或请求后的最终Census；这些仍有原始日志。D4a分阶段Journal的fsync和客户端原始RPC落盘已计入完整Wall；未记录的写盘开销不推测为0；其影响仍在相应总Wall内。
+
+配对一致性要求完整Token、严格条件、T/H、候选内容、FA索引和内容、池容量与占用一致；物理指针不能跨生命周期复用。每臂单独空Triton目录，但系统文件页缓存、设备温度、频率及其他库缓存未强制一致。首次编译与Host提交开销可能主导Decode或Prefill，故即使5对全部完成，也不是生产稳态或显著性证明。
+
+所有均值、范围和逐对差值以实际记录为准，完整成本不通过减去审计项人为改成生产净收益。四Pending模型J、目标C模型成本、GPU事件时间和Wall分栏。单C结果不证明四Pending总吞吐、Goodput或整体收益。逻辑K2不等于真实物理内存压力。

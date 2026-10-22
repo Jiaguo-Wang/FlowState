@@ -1,0 +1,11 @@
+# 计时与环境有效性
+
+同一冻结输入、K2、单卡H100、TP1、28槽、八条历史和固定C；每个臂全新Engine，固定三轮交替顺序，不按结果选择。独立Cold只运行一次，所有臂8Token精确对照。每臂单独Triton目录，系统页缓存、频率、首次编译可能波动；结果是单个受控组合的重复，不是独立Workflow或生产P95。
+
+观察RPC为控制前独立重型参考RPC，包含观察、对照规划及内容认证，记录reference_observation_rpc_wall_ms，不将它误称轻量观察RPC。决策观察内联在连续控制RPC中：observation_stage_ms为实际阶段Wall，不存在另一个可独立相加的轻量观察RPC。保留内联避免观察与应用之间Admission窗口。
+
+Control RPC Wall从客户端发起到完整响应返回，包含实际执行和序列化。Epoch/solve/plan/apply/reconcile是其子区间。Control-to-Completion从该RPC发起到C流结束；额外Audit-inclusive从前置重型参考RPC发起到流结束，明确不把前置审计成本删除。请求后的独立完整性对拍及Engine关闭不在上述完成边界，但原始日志保留。
+
+Eager Prefill同流CUDA事件位于延迟COW之后，保留同步及事件等待，包含CPU提交空隙，不等于纯内核和。COW与外层run_batch嵌套，不相加。TTFT为客户端发起请求到首个非空响应，Request Wall至流结束。相同测量边界，轻量模式不逐事件写盘/内容哈希；因此轻重请求差异包含审计插桩影响，不是模型计算算法改变。真正的四臂Exact/Greedy对比在同一种观测模式内部解释。
+
+完整结果不得称作生产路径净收益。当前仍保留完整CPU树遍历、索引摘要、重复严格验证及独立参考审计。Node27血缘仍未认证。

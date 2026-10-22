@@ -1,0 +1,167 @@
+{
+  "gate": "READY",
+  "counts": {
+    "A": 4862,
+    "B": 4860,
+    "C": 4435,
+    "D": 4486
+  },
+  "pairwise_lcp": {
+    "A": {
+      "A": 4862,
+      "B": 3765,
+      "C": 2438,
+      "D": 2438
+    },
+    "B": {
+      "A": 3765,
+      "B": 4860,
+      "C": 2438,
+      "D": 2438
+    },
+    "C": {
+      "A": 2438,
+      "B": 2438,
+      "C": 4435,
+      "D": 3566
+    },
+    "D": {
+      "A": 2438,
+      "B": 2438,
+      "C": 3566,
+      "D": 4486
+    }
+  },
+  "four_way_lcp": 2438,
+  "task_pair_lcp": {
+    "AB": 3765,
+    "CD": 3566
+  },
+  "system_prefix_token_lengths": {
+    "A": 2428,
+    "B": 2428,
+    "C": 2428,
+    "D": 2428
+  },
+  "positions": [
+    {
+      "name": "common",
+      "position": 2438,
+      "origin": "A",
+      "support": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "prefix_token_sha256": "7a970a352d32db5e8e2c5a20b2946e79b55e8288d04f747f09fc6bdfd433daae",
+      "divergence": {
+        "A": {
+          "next_token_id": 15,
+          "next_token_text": "0",
+          "character_offset": [
+            11622,
+            11623
+          ]
+        },
+        "B": {
+          "next_token_id": 15,
+          "next_token_text": "0",
+          "character_offset": [
+            11622,
+            11623
+          ]
+        },
+        "C": {
+          "next_token_id": 16,
+          "next_token_text": "1",
+          "character_offset": [
+            11622,
+            11623
+          ]
+        },
+        "D": {
+          "next_token_id": 16,
+          "next_token_text": "1",
+          "character_offset": [
+            11622,
+            11623
+          ]
+        }
+      },
+      "runtime_materialization": "UNKNOWN",
+      "planning_target": "UNKNOWN",
+      "position_within_input": true,
+      "required_future_target": "T_p >= 2438；本轮不假设FA或T",
+      "checkpoint_created": false
+    },
+    {
+      "name": "task1",
+      "position": 3765,
+      "origin": "A",
+      "support": [
+        "A",
+        "B"
+      ],
+      "prefix_token_sha256": "690316d446a84dcaba4f0e9751e050d554510c623f127ba5746e3ae87010fb33",
+      "divergence": {
+        "A": {
+          "next_token_id": 33286,
+          "next_token_text": " phases",
+          "character_offset": [
+            16402,
+            16409
+          ]
+        },
+        "B": {
+          "next_token_id": 31559,
+          "next_token_text": " outlined",
+          "character_offset": [
+            16402,
+            16411
+          ]
+        }
+      },
+      "runtime_materialization": "UNKNOWN",
+      "planning_target": "UNKNOWN",
+      "position_within_input": true,
+      "required_future_target": "T_p >= 3765；本轮不假设FA或T",
+      "checkpoint_created": false
+    },
+    {
+      "name": "task2",
+      "position": 3566,
+      "origin": "C",
+      "support": [
+        "C",
+        "D"
+      ],
+      "prefix_token_sha256": "c23dcadc14ec4101b660d923ced1b1f006d74b5f5a0d912a97204fe83db71ba5",
+      "divergence": {
+        "C": {
+          "next_token_id": 22903,
+          "next_token_text": " analyze",
+          "character_offset": [
+            16143,
+            16151
+          ]
+        },
+        "D": {
+          "next_token_id": 15060,
+          "next_token_text": " carefully",
+          "character_offset": [
+            16143,
+            16153
+          ]
+        }
+      },
+      "runtime_materialization": "UNKNOWN",
+      "planning_target": "UNKNOWN",
+      "position_within_input": true,
+      "required_future_target": "T_p >= 3566；本轮不假设FA或T",
+      "checkpoint_created": false
+    }
+  ],
+  "structure_pass": true,
+  "scope": "真实目标Tokenizer构造的CPU内容输入；非原始Runtime已接收Token；无Checkpoint物化或严格边认证"
+}

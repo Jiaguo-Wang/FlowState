@@ -1,0 +1,19 @@
+{
+  "workload_order": ["w1", "w2", "w3", "w4"],
+  "workload_type": "Trace-derived Controlled Composition",
+  "history_order": ["A1", "B1", "C1", "D1", "A2", "B2", "C2", "D2"],
+  "pending_dispatches": 0,
+  "budget_rule": "K=1至min(4,n)，等大小Checkpoint逻辑基数预算，不删除候选",
+  "budgets_max": 4,
+  "online_exact_limits": {"n": 12, "m": 4, "K": 4, "subsets": 794},
+  "offline_exact_limits": {"n": 24, "m": 4, "subsets_per_budget": 20000},
+  "exact_tie": "相对真实最小J的绝对容差1e-9，先较少项，再排序后的ID字典序",
+  "cost_tolerance_ms": 1e-9,
+  "policies": ["FlowState-Exact", "FlowState-Greedy", "StandaloneTopK", "PCB", "LDR", "WFC"],
+  "K_min": "达到全候选最大E向量的最少保留项数；在相同离线枚举上限内按集合大小递增核验，至多m项；超限标记UNKNOWN",
+  "failure_policy": "每组一次不重试、不替换；独立组发生物化或认证失败且资源清理通过时保留失败并继续下一固定组；环境身份或清理安全失败则停止，剩余组标记未执行",
+  "unknown_policy": "UNKNOWN使该组不进入完整策略比较，不视为零收益",
+  "strict_boundary": "单次Scheduler同步静止只读观察，前后物理及组件内容一致；不驱逐，不派发四个Pending",
+  "provenance": "PROVENANCE_UNVERIFIED；历史首次出现与标签不认证张量血缘",
+  "performance_claim": "仅CPU模型化分配比较，不报告GPU策略性能"
+}

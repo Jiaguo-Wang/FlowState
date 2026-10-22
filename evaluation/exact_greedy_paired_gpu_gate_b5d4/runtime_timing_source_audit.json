@@ -1,0 +1,109 @@
+{
+  "managers/scheduler.py": {
+    "sha256": "1d4a7683e32f0862cf5b03be33e5ec23f9d112e59546d391e28fa222fcd1619b",
+    "snippets": [
+      {
+        "line": 3255,
+        "text": "                if not added:\n                    # init_next_round_input() may stage deferred Mamba COW/clear\n                    # metadata before add_one_req() rejects the request.\n                    req.mamba_cow_src_index = None\n                    req.mamba_needs_clear = False\n                    if req.mamba_pool_idx is not None and not getattr(\n                        req, \"session\", None\n                    ):\n                        self.tree_cache.req_to_token_pool.mamba_allocator.free(\n                            req.mamba_pool_idx.unsqueeze(-1)\n                        )\n                        req.mamba_pool_idx = None\n                break\n\n        if mamba_allocator is not None:"
+      },
+      {
+        "line": 3484,
+        "text": "        self.batch_record_buf[self.batch_record_ct] = [batch, attr_snapshot]\n\n    @contextmanager\n    def _forward_isolation(self, batch: ScheduleBatch, *, overlap: bool):\n        \"\"\"Make SB transactional across one forward (overlap and non-overlap).\n\n        1. Snapshot SB fields so V2's mid-forward mutations (forward_mode /\n           input_ids / seq_lens / spec_info / ...) can be undone. V1 / non-spec\n           only need sampling_info restored - V1 carries spec_info forward as\n           next-iter draft input.\n        2. Substitute sampling_info with a forward-only copy (orchestrator=None,\n           shares the pre-accumulated penalty buffer) so V2's multiple init_new\n           calls don't double-accumulate penalties.\n        3. (overlap=True only) Pin (batch, snapshot) into batch_record_buf\n           for 2 iters so GPU tensors in the snapshot survive the caching"
+      },
+      {
+        "line": 3528,
+        "text": "                batch.sampling_info = sched_sampling_info\n\n    @scheduler_nvtx_method(\"scheduler.run_batch\")\n    def run_batch(\n        self,\n        batch: ScheduleBatch,\n        pp_proxy_tensors: Optional[PPProxyTensors] = None,\n    ) -> Union[GenerationBatchResult, EmbeddingBatchResult]:\n        \"\"\"Run a batch.\"\"\"\n        self.forward_ct += 1\n        batch.forward_iter = self.forward_ct\n        batch.launch_ts = time.monotonic()\n\n        if self.scripted_scheduler_hook is not None:\n            self.scripted_scheduler_hook.on_run_batch(batch)"
+      }
+    ]
+  },
+  "managers/tokenizer_manager.py": {
+    "sha256": "0385c00527d2c8ad53021a2170e73a6a3eda5dd94a54c3e86a549c56b2fd4f61",
+    "snippets": [
+      {
+        "line": 408,
+        "text": "        self.elastic_scale_phase = \"idle\"\n        self.elastic_last_error = None\n        self.enable_metrics = server_args.enable_metrics\n        self.incremental_streaming_output = server_args.incremental_streaming_output\n        self.enable_lora = server_args.enable_lora\n        self.enable_trace = server_args.enable_trace\n        self.allow_auto_truncate = server_args.allow_auto_truncate\n        self.skip_tokenizer_init = server_args.skip_tokenizer_init\n        self.preferred_sampling_params = server_args.preferred_sampling_params\n        self.crash_dump_folder = server_args.crash_dump_folder\n        set_global_server_args_for_tokenizer(server_args)\n\n        # Init model config\n        self.init_model_config()\n"
+      },
+      {
+        "line": 1698,
+        "text": "\n            # With incremental streaming, each chunk is a delta \u2014 coalesce\n            # multiple queued chunks to avoid dropping token ids.\n            incremental_stream = is_stream and self.incremental_streaming_output\n            if incremental_stream and len(out_list) > 1:\n                out = self._coalesce_streaming_chunks(\n                    out_list,\n                    obj.rid,\n                    state.customized_info_accumulated.keys(),\n                )\n            else:\n                out = out_list[-1]\n\n            # Resolve deferred text for non-incremental streaming.\n            # _handle_batch_output sets \"text\": None on intermediate chunks"
+      },
+      {
+        "line": 2320,
+        "text": "            if isinstance(recv_obj, BatchStrOutput):\n                # Not all request types have `stream` (e.g., EmbeddingReqInput). Default to non-streaming.\n                is_stream = getattr(state.obj, \"stream\", False)\n                incremental = is_stream and self.incremental_streaming_output\n                delta_text = recv_obj.output_strs[i]\n                delta_output_ids = list(recv_obj.output_ids[i])\n                output_offset = state.last_output_offset\n                state.append_text(delta_text)\n                state.output_ids.extend(delta_output_ids)\n\n                if is_stream:\n                    if incremental:\n                        output_token_ids = delta_output_ids\n                        _slice_streaming_output_meta_info(\n                            meta_info,"
+      },
+      {
+        "line": 2368,
+        "text": "                    out_dict[\"prompt_token_ids\"] = state.prompt_token_ids\n            elif isinstance(recv_obj, BatchTokenIDOutput):\n                is_stream = getattr(state.obj, \"stream\", False)\n                incremental = is_stream and self.incremental_streaming_output\n                delta_output_ids = list(recv_obj.output_ids[i])\n                output_offset = state.last_output_offset\n                state.output_ids.extend(delta_output_ids)\n\n                if is_stream:\n                    if incremental:\n                        output_token_ids = delta_output_ids\n                        _slice_streaming_output_meta_info(\n                            meta_info,\n                            output_offset,\n                            state.customized_info_accumulated.keys(),"
+      },
+      {
+        "line": 3198,
+        "text": "    def update_active_ranks(self, ranks: ActiveRanksOutput):\n        self._dispatch_to_scheduler(ranks)\n\n    def forward_elastic_scale_update(self, msg: ElasticScaleUpdateReq):\n        if not msg.success:\n            self.elastic_pending_ep_size = None\n            self.elastic_scale_phase = \"failed\"\n            self.elastic_last_error = msg.error\n            return\n\n        self._dispatch_to_scheduler(msg)\n        self.elastic_worker_count = msg.effective_ep_size\n        self.elastic_pending_ep_size = None\n        self.elastic_scale_phase = \"serving_expanded\"\n        self.elastic_last_error = None"
+      }
+    ]
+  },
+  "model_executor/model_runner.py": {
+    "sha256": "221032bf7ae57d2ebdb96801150a48d23244840a9b7938dc586e911671c11102",
+    "snippets": [
+      {
+        "line": 1360,
+        "text": "            kwargs[\"get_embedding\"] = True\n        return kwargs\n\n    def forward_split_prefill(\n        self,\n        forward_batch: ForwardBatch,\n        reinit_attn_backend: bool = False,\n        forward_count: int = 1,\n    ) -> LogitsProcessorOutput:\n        if forward_batch.split_index == 0 or reinit_attn_backend:\n            self.attn_backend.init_forward_metadata(forward_batch)\n        next_split_index = min(\n            forward_batch.split_index + forward_count,\n            self.model_config.num_hidden_layers,\n        )"
+      },
+      {
+        "line": 1382,
+        "text": "        forward_batch.split_index = next_split_index\n        return ret\n\n    def forward(\n        self,\n        forward_batch: ForwardBatch,\n        skip_attn_backend_init: Optional[bool] = None,  # deprecated\n        pp_proxy_tensors: Optional[PPProxyTensors] = None,\n        reinit_attn_backend: bool = False,\n        split_forward_count: int = 1,\n    ) -> ModelRunnerOutput:\n        # Deprecated kwarg: pre-planners mark the batch themselves now.\n        forward_batch.apply_deprecated_skip_attn_backend_init(skip_attn_backend_init)\n\n        self.forward_pass_id += 1"
+      },
+      {
+        "line": 1478,
+        "text": "\n        return output\n\n    def _maybe_execute_deferred_mamba_cow_and_clear(\n        self, forward_batch: ForwardBatch\n    ) -> None:\n        \"\"\"Run deferred clear/COW on the forward stream, before the mamba layers\n        read the pool, so the copies don't race the scheduler copy stream.\n\n        No-op unless this is an extend forward on a mamba model's target worker;\n        COW/clear only happen at prefix match on extend.\n        \"\"\"\n        pool = self.req_to_token_pool\n        if (\n            not isinstance(pool, HybridReqToTokenPool)"
+      },
+      {
+        "line": 1506,
+        "text": "                pool.translate_mamba_indices(forward_batch.mamba_clear_indices)\n            )\n        if (\n            forward_batch.mamba_cow_src_indices is not None\n            and len(forward_batch.mamba_cow_src_indices) > 0\n        ):\n            if pool.mamba_ckpt_pool is not None:\n                # int8 checkpoints: dequantize src int8 ckpt slot into the active bf16 dst.\n                pool.mamba_ckpt_pool.load_to_active(\n                    pool.mamba_pool,\n                    forward_batch.mamba_cow_src_indices,\n                    forward_batch.mamba_cow_dst_indices,\n                )\n            else:\n                # mamba_pool is a pure PHYSICAL store; translate both COW slot ids."
+      },
+      {
+        "line": 1507,
+        "text": "            )\n        if (\n            forward_batch.mamba_cow_src_indices is not None\n            and len(forward_batch.mamba_cow_src_indices) > 0\n        ):\n            if pool.mamba_ckpt_pool is not None:\n                # int8 checkpoints: dequantize src int8 ckpt slot into the active bf16 dst.\n                pool.mamba_ckpt_pool.load_to_active(\n                    pool.mamba_pool,\n                    forward_batch.mamba_cow_src_indices,\n                    forward_batch.mamba_cow_dst_indices,\n                )\n            else:\n                # mamba_pool is a pure PHYSICAL store; translate both COW slot ids.\n                pool.mamba_pool.copy_from("
+      },
+      {
+        "line": 1513,
+        "text": "                # int8 checkpoints: dequantize src int8 ckpt slot into the active bf16 dst.\n                pool.mamba_ckpt_pool.load_to_active(\n                    pool.mamba_pool,\n                    forward_batch.mamba_cow_src_indices,\n                    forward_batch.mamba_cow_dst_indices,\n                )\n            else:\n                # mamba_pool is a pure PHYSICAL store; translate both COW slot ids.\n                pool.mamba_pool.copy_from(\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_src_indices),\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_dst_indices),\n                )\n        forward_batch.mamba_clear_indices = None\n        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None"
+      },
+      {
+        "line": 1514,
+        "text": "                pool.mamba_ckpt_pool.load_to_active(\n                    pool.mamba_pool,\n                    forward_batch.mamba_cow_src_indices,\n                    forward_batch.mamba_cow_dst_indices,\n                )\n            else:\n                # mamba_pool is a pure PHYSICAL store; translate both COW slot ids.\n                pool.mamba_pool.copy_from(\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_src_indices),\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_dst_indices),\n                )\n        forward_batch.mamba_clear_indices = None\n        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None\n"
+      },
+      {
+        "line": 1518,
+        "text": "                )\n            else:\n                # mamba_pool is a pure PHYSICAL store; translate both COW slot ids.\n                pool.mamba_pool.copy_from(\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_src_indices),\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_dst_indices),\n                )\n        forward_batch.mamba_clear_indices = None\n        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None\n\n    def _forward_raw(\n        self,\n        forward_batch: ForwardBatch,\n        pp_proxy_tensors: Optional[PPProxyTensors],"
+      },
+      {
+        "line": 1519,
+        "text": "            else:\n                # mamba_pool is a pure PHYSICAL store; translate both COW slot ids.\n                pool.mamba_pool.copy_from(\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_src_indices),\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_dst_indices),\n                )\n        forward_batch.mamba_clear_indices = None\n        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None\n\n    def _forward_raw(\n        self,\n        forward_batch: ForwardBatch,\n        pp_proxy_tensors: Optional[PPProxyTensors],\n        reinit_attn_backend: bool = False,"
+      },
+      {
+        "line": 1520,
+        "text": "                # mamba_pool is a pure PHYSICAL store; translate both COW slot ids.\n                pool.mamba_pool.copy_from(\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_src_indices),\n                    pool.translate_mamba_indices(forward_batch.mamba_cow_dst_indices),\n                )\n        forward_batch.mamba_clear_indices = None\n        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None\n\n    def _forward_raw(\n        self,\n        forward_batch: ForwardBatch,\n        pp_proxy_tensors: Optional[PPProxyTensors],\n        reinit_attn_backend: bool = False,\n        split_forward_count: int = 1,"
+      },
+      {
+        "line": 1523,
+        "text": "                    pool.translate_mamba_indices(forward_batch.mamba_cow_dst_indices),\n                )\n        forward_batch.mamba_clear_indices = None\n        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None\n\n    def _forward_raw(\n        self,\n        forward_batch: ForwardBatch,\n        pp_proxy_tensors: Optional[PPProxyTensors],\n        reinit_attn_backend: bool = False,\n        split_forward_count: int = 1,\n    ) -> ModelRunnerOutput:\n        if has_forward_context():\n            ctx_mgr = contextlib.nullcontext()"
+      },
+      {
+        "line": 1524,
+        "text": "                )\n        forward_batch.mamba_clear_indices = None\n        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None\n\n    def _forward_raw(\n        self,\n        forward_batch: ForwardBatch,\n        pp_proxy_tensors: Optional[PPProxyTensors],\n        reinit_attn_backend: bool = False,\n        split_forward_count: int = 1,\n    ) -> ModelRunnerOutput:\n        if has_forward_context():\n            ctx_mgr = contextlib.nullcontext()\n        else:"
+      },
+      {
+        "line": 1526,
+        "text": "        forward_batch.mamba_cow_src_indices = None\n        forward_batch.mamba_cow_dst_indices = None\n\n    def _forward_raw(\n        self,\n        forward_batch: ForwardBatch,\n        pp_proxy_tensors: Optional[PPProxyTensors],\n        reinit_attn_backend: bool = False,\n        split_forward_count: int = 1,\n    ) -> ModelRunnerOutput:\n        if has_forward_context():\n            ctx_mgr = contextlib.nullcontext()\n        else:\n            ctx_mgr = forward_context(ForwardContext(attn_backend=self.attn_backend))\n        with ctx_mgr:"
+      },
+      {
+        "line": 1575,
+        "text": "\n            # Deferred mamba COW/clear on the forward stream, before the extend\n            # dispatch below reads the pool.\n            self._maybe_execute_deferred_mamba_cow_and_clear(forward_batch)\n\n            dwdp_mgr = get_global_dwdp_manager()\n            if dwdp_mgr is not None:\n                dwdp_mgr.prefetch_first_layers()\n\n            if forward_batch.forward_mode.is_split_prefill():\n                # Layer-split mode; stays on ModelRunner, not the eager runner.\n                ret = self.forward_split_prefill(\n                    forward_batch,\n                    reinit_attn_backend=reinit_attn_backend,\n                    forward_count=split_forward_count,"
+      }
+    ]
+  },
+  "entrypoints/engine.py": {
+    "sha256": "63f285e2d1866f4e9cc34867b330809d71ddac7124e2f442f308124f7fa9923f",
+    "snippets": []
+  }
+}

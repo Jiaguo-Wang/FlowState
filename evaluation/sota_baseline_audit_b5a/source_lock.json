@@ -1,0 +1,87 @@
+{
+  "任务": "Phase B5-A：Marconi 与 KVFlow 源码级 Baseline 适配审计",
+  "审计日期": "2026-10-16",
+  "审计性质": "只读源码审计；未修改 FlowState 核心代码；未占用 GPU；未实现任何 Baseline",
+  "marconi": {
+    "论文": {
+      "标题": "Marconi: Prefix Caching for the Era of Hybrid LLMs",
+      "会议": "MLSys 2025",
+      "来源": "https://proceedings.mlsys.org/... (PDF 下载至 raw/marconi_paper.pdf, 文本抽取 raw/marconi_paper.txt)",
+      "本地文件": ["raw/marconi_paper.pdf", "raw/marconi_paper.txt"],
+      "章节结构": {
+        "3": "Challenges of Prefix Caching",
+        "4": "Design and Implementation",
+        "4.1": "Cache Admission",
+        "4.2": "Cache Eviction",
+        "4.3": "Implementation details",
+        "5.1": "Methodology",
+        "5.3": "Fine-Grained Analysis of FLOP-Aware Eviction"
+      }
+    },
+    "代码仓库": {
+      "url": "https://github.com/ruipeterpan/marconi",
+      "commit_sha": "08016617b1524e6bf6ac29b680641cc945bda7f0",
+      "commit信息": "add license (2025-03-05 16:14:00 -0500)",
+      "本地路径": "raw/marconi_repo/",
+      "历史状态": "正常历史，HEAD 为仓库最新提交；论文发表(MLSys 2025)前最后提交，与论文时序一致",
+      "审计覆盖文件": [
+        "radix_cache_hybrid.py (560 行, 全文精读)",
+        "config_tuner.py (120 行, 全文精读)",
+        "utils.py (全文精读)",
+        "policy_exploration.py (353 行, 全文精读)",
+        "radix_cache_vllm.py (通读)",
+        "artifact_evaluation.md (全文)"
+      ]
+    }
+  },
+  "kvflow": {
+    "论文": {
+      "标题": "KVFlow: Efficient prefix caching for accelerating LLM-based multi-agent workflows",
+      "会议": "NeurIPS 2025",
+      "arXiv": "2507.07400v1 (2025-07-10 提交; 已核实 arXiv 仅有 v1, 请求 v2 返回 404; NeurIPS camera-ready 未上 arXiv)",
+      "本地文件": ["raw/kvflow_paper.pdf", "raw/kvflow_paper.txt"],
+      "章节结构": {
+        "2": "Background",
+        "3": "Design of KVFlow",
+        "3.1": "Workflow-Aware Eviction Policy",
+        "3.2": "Overlapped KV Prefetching",
+        "3.3": "Implementation",
+        "4": "Evaluation"
+      }
+    },
+    "代码仓库": {
+      "url": "https://github.com/PanZaifeng/KVFlow",
+      "commit_sha": "7ef897eaedc16626a281ccfe0d453fae80251e8f",
+      "commit信息": "Update README (2026-03-12 15:23:08 -0700)",
+      "本地路径": "raw/kvflow_repo/",
+      "版本归属重要警示": {
+        "历史被压缩": "仓库仅 2 个提交: [Init] (2026-02-18) 与 Update README (2026-03-12)，均晚于论文 arXiv v1 (2025-07-10)；论文发表时的代码状态无法从 git 历史恢复",
+        "双项目混载": "README.md 第 3 行明示仓库同时包含 KVFlow (NeurIPS'25) 与 ScaleSim (Preprint) 两个项目的代码",
+        "后果": "当前 HEAD 中观察到的任何代码行为只能归属到该混合快照本身；不能直接断言为论文实验时的行为（涉及条目在各审计文件中逐条标注）"
+      },
+      "基准SGLang版本": "仓库内 python/pyproject.toml 与代码结构对应 SGLang v0.4.x 系（论文 §3.3 自述基于 SGLang 实现；精确基线 commit 未能从仓库内证实，UNVERIFIED）",
+      "审计覆盖文件": [
+        "python/sglang/srt/mem_cache/radix_cache.py (TreeNode.__lt__ 等关键段精读)",
+        "python/sglang/srt/mem_cache/lora_radix_cache.py (全文精读)",
+        "python/sglang/srt/mem_cache/lora_hiradix_cache.py (974 行, 全文精读)",
+        "python/sglang/srt/mem_cache/hiradix_cache.py (evict 及关联段)",
+        "python/sglang/srt/managers/agent_manager.py (95 行, 全文精读)",
+        "python/sglang/srt/managers/scheduler.py (cache 选择、/v1/update 处理、请求入队段)",
+        "python/sglang/srt/managers/scheduler_output_processor_mixin.py (agent 关联、DispatchLoadTasks)",
+        "python/sglang/srt/managers/schedule_policy.py (init_load_back 调用段)",
+        "python/sglang/srt/managers/io_struct.py / tokenizer_manager.py (元数据传输)",
+        "python/sglang/srt/entrypoints/http_server.py (/v1/update 端点)",
+        "python/sglang/srt/entrypoints/openai/protocol.py / serving_chat.py (agent_id 入口)",
+        "python/sglang/srt/server_args.py (专属参数组)",
+        "SScheduler/Scheduler.py (259 行, 全文精读)",
+        "SScheduler/timestepManager/BaseManager.py / PlanManager.py / SpaceManager.py (全文精读)",
+        "SScheduler/policy/base_policy.py / example_policies.py (全文精读)"
+      ]
+    }
+  },
+  "环境与安全说明": [
+    "两个仓库均以全新空目录隔离存放于 raw/ 下，审计脚本与仓库分离",
+    "所有 Python 检查以 -I 隔离模式运行或仅用只读文本工具，未执行仓库内任何代码",
+    "未下载任何模型权重，未占用 GPU"
+  ]
+}

@@ -1,9 +1,98 @@
 {
-  "审计日期": "2026-10-13",
-  "候选案例": [],
-  "说明": "本轮未读取任何完整数据行。FreeInference 的 Viewer split 返回服务端错误；GATC 的 trajectories 行查询与数据集 API 在当前环境不可用。现有可见 Viewer 行存在截断，且未显示可核验的父子 session 链接、同一 workflow 的并发请求或 recurrent 物理状态证据，因此不推荐具体 Session，避免把数据卡示例误认作已审计案例。",
-  "可供下一轮定向抽样的筛选条件": [
-    "FreeInference：先以 nested tool_calls[].subagent 非空及多个嵌套请求为筛选条件，再核验是否有同一 workflow 的请求时间重叠；候选仍不能据此认证 recurrent checkpoint。",
-    "GATC：先筛选 trajectories.steps 中 type=subagent 且父轨迹包含多个委派事件的案例；只有拿到明确父子 trajectory 关联后，才进一步检查共同行为历史。"
-  ]
+  "审计日期": "2026-10-15",
+  "数据可用性变化": "本轮网络已恢复：Hugging Face Hub API、Dataset Server（info/parquet/rows）对 FreeInference 可用；Viewer 对 block_ids 字段做 redact，真实 block_ids 只在 release 日文件中。GATC v6 经 Hub 与 hf-mirror.com 下载均返回 401（数据集访问受限，需授权），样本级审计 BLOCKED，故本轮候选案例仅来自 FreeInference。",
+  "样本来源与选择方式": "下载 release/2026-08-30_2026-09-05/traces/2026-08-30.jsonl.zst（15.75MB）与 release/2026-08-09_2026-08-15/traces/2026-08-09.jsonl.zst（13.39MB），合计 29.14MB，低于任务 100MB 上限。每天文件按文件顺序取前 250 个 session（08-30 文件共 251 行、审计 250；08-09 文件共 214 行、全量审计），合计 464 session。流式解压逐行处理，未整文件载入内存。",
+  "候选案例": [
+    {
+      "rank": 1,
+      "dataset": "FreeInference",
+      "day": "2026-08-30",
+      "session_id": "9b39a908bf7bc46b95f50967d877e3f8",
+      "harness": "opencode",
+      "定位": "同 workflow 并行 subagent 重叠最密集案例",
+      "指标": {
+        "subagent_sessions": 4,
+        "flat_requests": 612,
+        "top_level_requests": 98,
+        "max_concurrency": 8,
+        "overlap_pairs_total": 2463,
+        "overlap_pair_classes": {"top-top": 0, "top-sub": 14, "sub-sub": 2449},
+        "subagent_lifetime_overlaps_parent_request_window": [3, 4],
+        "prefix_forks": 4,
+        "prefix_contain_pairs": 39889,
+        "max_shared_prefix_blocks": 27101,
+        "models": ["glm-5.2", "glm-5.3-flash"],
+        "providers": ["B", "D"],
+        "step_triggers": {"user": 14, "tool": 598},
+        "duration_s": 11080
+      },
+      "证据链": [
+        "文件：evaluation/new_dataset_suitability_audit/raw/fi_2026-08-30/2026-08-30.jsonl.zst（源 https://huggingface.co/datasets/harvardMadsys/freeinference_agentic_trace/resolve/main/release/2026-08-30_2026-09-05/traces/2026-08-30.jsonl.zst）",
+        "行首 session_id 前缀 9b39a908bf7bc46b 可直接 zstd -dc 后 grep 定位整行",
+        "重叠对分类经修正排序扫描核实：主对话 top-top=0，重叠全部来自并行 subagent 之间及 subagent 与父窗口的交界",
+        "block 级结构见 session_metrics.jsonl 同 session 行；父子前缀关系见 parent_child_lcp.jsonl"
+      ],
+      "不能证明": "block_ids 为周局部 16-token 块编号，非原始 token 文本；无法据此认证 exact token compatibility、recurrent checkpoint 物化或任何 runtime 分配资格"
+    },
+    {
+      "rank": 2,
+      "dataset": "FreeInference",
+      "day": "2026-08-09",
+      "session_id": "e571369a6a1360d201f8ac75e1c5ab30",
+      "harness": "claude-code",
+      "定位": "subagent 数量与前缀分叉组合最强案例",
+      "指标": {
+        "subagent_sessions": 6,
+        "flat_requests": 550,
+        "top_level_requests": 472,
+        "max_concurrency": 2,
+        "overlap_pairs_total": 39,
+        "overlap_pair_classes": {"top-top": 0, "top-sub": 0, "sub-sub": 39},
+        "subagent_lifetime_overlaps_parent_request_window": [0, 6],
+        "prefix_forks": 20,
+        "prefix_contain_pairs": 16658,
+        "max_shared_prefix_blocks": 9411,
+        "models": ["deepseek-v4-flash"],
+        "providers": ["A"],
+        "duration_s": 56860
+      },
+      "证据链": [
+        "文件：evaluation/new_dataset_suitability_audit/raw/fi_2026-08-09/2026-08-09.jsonl.zst（源 release/2026-08-09_2026-08-15/traces/2026-08-09.jsonl.zst）",
+        "20 个前缀分叉点说明同 session 内多请求在共享块历史后分叉（重试/分支探索形状）",
+        "6 个 subagent 的生命期均不与父请求窗口相交（顺序派发），39 个重叠对全部为 subagent 之间并行"
+      ],
+      "不能证明": "同上；分叉是 block 粒度，无法区分 token 级重编码差异"
+    },
+    {
+      "rank": 3,
+      "dataset": "FreeInference",
+      "day": "2026-08-30",
+      "session_id": "709937a13aed1ad78c0c96247ef9b0c4",
+      "harness": "opencode",
+      "定位": "最长 append-only 前缀链与最大共享前缀案例（checkpoint 形状规模证据）",
+      "指标": {
+        "subagent_sessions": 3,
+        "flat_requests": 1506,
+        "top_level_requests": 1362,
+        "max_concurrency": 3,
+        "overlap_pairs_total": 72,
+        "overlap_pair_classes": {"top-top": 0, "top-sub": 0, "sub-sub": 72},
+        "subagent_lifetime_overlaps_parent_request_window": [0, 3],
+        "prefix_forks": 7,
+        "prefix_contain_pairs": 313685,
+        "max_shared_prefix_blocks": 57498,
+        "models": ["deepseek-v4-flash", "glm-5.3-flash"],
+        "providers": ["A", "B", "D"],
+        "duration_s": 89594
+      },
+      "证据链": [
+        "文件：与 rank1 同一 2026-08-30 日文件",
+        "57498 块共享前缀（约 92 万 token 量级的块渲染）与 313685 个前缀包含对展示单会话深 prefix 链规模；每对包含对即“请求 A 的输入是请求 B 输入的前缀”结构，是 recurrent checkpoint 可复用形状的必要结构条件",
+        "116 个 user 触发、1390 个 tool 触发请求，跨 3 个匿名 provider"
+      ],
+      "不能证明": "前缀包含形状不等于当时存在已物化 recurrent 状态；无 slot/generation/驻留证据"
+    }
+  ],
+  "父子前缀总体结论": "1448 对（subagent 首请求 vs 触发它的父请求）中 0 对完全延伸父 block 前缀，1060 对部分共享后分叉（中位 152 块，最大 3204），388 对零共享。subagent 上下文渲染与父对话不同构（system/tooldefs 头部相同、正文重组），不能把委派当作父历史的 token 前缀延伸。",
+  "推荐上限说明": "按任务要求最多 3 个；GATC 因授权受限本轮无候选。"
 }

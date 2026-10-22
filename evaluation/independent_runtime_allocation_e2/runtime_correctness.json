@@ -1,0 +1,1503 @@
+{
+  "w1": {
+    "physical_unchanged": true,
+    "pending_dispatches": 0,
+    "destructive_calls": 0,
+    "cleanup": {
+      "status": "PASS",
+      "own_container": "",
+      "remove_returncode": 0,
+      "remove_stderr": "Error response from daemon: No such container: flowstate-e2-w1\n",
+      "observations": [
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378250775150363
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378253867625201
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378256958433084
+        }
+      ],
+      "other_processes_terminated": false
+    },
+    "raw_status": "READY",
+    "provenance": "PROVENANCE_UNVERIFIED",
+    "pending_resume_validated": false,
+    "resident_outside_candidate_set": [],
+    "native_eviction_events": [],
+    "pool_accounting": {
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 379559
+      },
+      "full_evictable": 5956,
+      "full_protected": 0,
+      "mamba_allocator_type": "MambaSlotAllocator",
+      "mamba_available": 21,
+      "mamba_evictable": 7,
+      "mamba_free_slots": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "mamba_free_slots_sha256": "f8a5e71db7a15b6db6715d579a660d3d7f53f36cb31d08afbcbf27631864d32f",
+      "mamba_protected": 0,
+      "mamba_schedulable_available": 21
+    },
+    "candidate_mapping": [
+      {
+        "checkpoint_id": "B5C3_NODE_18",
+        "position": 3392,
+        "node": 18,
+        "slots": [
+          3
+        ],
+        "components": [
+          "17adaad2ea191a9dc99668f9856fc0f6efb22cc5bf2c673bded46f5e8b6fc2d0",
+          "bce9be0200a0d257dca7c03e153d9419efdfd517c2e4777ae75ad1aaa0288c64"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_20",
+        "position": 2432,
+        "node": 20,
+        "slots": [
+          8
+        ],
+        "components": [
+          "b7964dfaeb27158ce1b8b84f72552a421e40a3c65df0c360671b39db612da04d",
+          "946528eeeca50f3824a9e458030db129e24a6b9fbc41a43455932b0edaa07b1b"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_21",
+        "position": 3712,
+        "node": 21,
+        "slots": [
+          10
+        ],
+        "components": [
+          "3b723e219306c10ec767f43e5367fc173e34152f5056ce2c0f9edfdeea4d6cf1",
+          "39381a41951a1392087db3fecac74524977b57ad0ac612b5002cabab909ba3c3"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_22",
+        "position": 3648,
+        "node": 22,
+        "slots": [
+          12
+        ],
+        "components": [
+          "3d8d60a6a1dc987bd8423a77b2ae8aa48029404d06e37fea1859d22b999a32e1",
+          "e2aae9198d0d3b1bead1c36150e4b028ecce8a81a472956d65fab49d606e0863"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_24",
+        "position": 3712,
+        "node": 24,
+        "slots": [
+          14
+        ],
+        "components": [
+          "60866014687da1a450cc2fc0c5d61ce7f824bbec8085eb5fdb693086cf17f2ca",
+          "1e1d98ff1f7c64a032077ecbe45ed906a5a8644f5beda1f57a3df0b12d7072fd"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_25",
+        "position": 4096,
+        "node": 25,
+        "slots": [
+          16
+        ],
+        "components": [
+          "d8d766280d6cbe70e60bb587831f38468d511ccd971e749fb341c0485aba4762",
+          "5ac17a3c5561944311115f28271f544992ffd574184f30c2a0bdd783d0f32b16"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_27",
+        "position": 4160,
+        "node": 27,
+        "slots": [
+          18
+        ],
+        "components": [
+          "8b0ffd9ba8a9daab353350d9d02ecb5ee926cd30588a348480d4681962d2fe32",
+          "b87946fb827716ed71c2ca09df9100224bf7b5885ef0c5fcbf2141ace370adf7"
+        ]
+      }
+    ],
+    "planning_targets": {
+      "IMW1_A_TURN_003": 3648,
+      "IMW1_B_TURN_003": 3712,
+      "IMW1_C_TURN_003": 4096,
+      "IMW1_D_TURN_003": 4160
+    },
+    "fa_observations": [
+      {
+        "observation": {
+          "effective_lookup_limit": 4249,
+          "extra_key": null,
+          "input_token_count": 4250,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 954,
+              "node_id": 18,
+              "segment_length": 954
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 59,
+              "node_id": 23,
+              "segment_length": 59
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 197,
+              "node_id": 22,
+              "segment_length": 197
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3648,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            23,
+            22
+          ]
+        },
+        "pending_id": "IMW1_A_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4307,
+          "extra_key": null,
+          "input_token_count": 4308,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 954,
+              "node_id": 18,
+              "segment_length": 954
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 59,
+              "node_id": 23,
+              "segment_length": 59
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 261,
+              "node_id": 24,
+              "segment_length": 261
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3712,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            23,
+            24
+          ]
+        },
+        "pending_id": "IMW1_B_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4496,
+          "extra_key": null,
+          "input_token_count": 4497,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1274,
+              "node_id": 21,
+              "segment_length": 1274
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 59,
+              "node_id": 26,
+              "segment_length": 59
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 325,
+              "node_id": 25,
+              "segment_length": 325
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 4096,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            26,
+            25
+          ]
+        },
+        "pending_id": "IMW1_C_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4581,
+          "extra_key": null,
+          "input_token_count": 4582,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1274,
+              "node_id": 21,
+              "segment_length": 1274
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 59,
+              "node_id": 26,
+              "segment_length": 59
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 389,
+              "node_id": 27,
+              "segment_length": 389
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 4160,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            26,
+            27
+          ]
+        },
+        "pending_id": "IMW1_D_TURN_003"
+      }
+    ]
+  },
+  "w2": {
+    "physical_unchanged": true,
+    "pending_dispatches": 0,
+    "destructive_calls": 0,
+    "cleanup": {
+      "status": "PASS",
+      "own_container": "",
+      "remove_returncode": 0,
+      "remove_stderr": "Error response from daemon: No such container: flowstate-e2-w2\n",
+      "observations": [
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378350789981580
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378353880207275
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378356970982114
+        }
+      ],
+      "other_processes_terminated": false
+    },
+    "raw_status": "READY",
+    "provenance": "PROVENANCE_UNVERIFIED",
+    "pending_resume_validated": false,
+    "resident_outside_candidate_set": [],
+    "native_eviction_events": [],
+    "pool_accounting": {
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 379674
+      },
+      "full_evictable": 5841,
+      "full_protected": 0,
+      "mamba_allocator_type": "MambaSlotAllocator",
+      "mamba_available": 21,
+      "mamba_evictable": 7,
+      "mamba_free_slots": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "mamba_free_slots_sha256": "f8a5e71db7a15b6db6715d579a660d3d7f53f36cb31d08afbcbf27631864d32f",
+      "mamba_protected": 0,
+      "mamba_schedulable_available": 21
+    },
+    "candidate_mapping": [
+      {
+        "checkpoint_id": "B5C3_NODE_18",
+        "position": 3456,
+        "node": 18,
+        "slots": [
+          3
+        ],
+        "components": [
+          "dd539c327430951742d52172dd936b4bdf80ffe4b4353d17381866201619cdae",
+          "a2adb16db313312a2e100f01b5d77ef12fc99654ef2c45d82b541460f523f34e"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_20",
+        "position": 2432,
+        "node": 20,
+        "slots": [
+          8
+        ],
+        "components": [
+          "ba52e6c0cc129cd457efe486fa88dc331dc4e6b0e897aef2ca8d26697e19feb6",
+          "9f322a747ce881b55cb860d285d5d1bd95be93b9e951620d6754d25b63abf11b"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_21",
+        "position": 3520,
+        "node": 21,
+        "slots": [
+          10
+        ],
+        "components": [
+          "982ad73227ec9c329be3cd8b531108d26eda19ff02b2bcdb4de3f46d8f41fca2",
+          "731b133d4ed790c7a8e064a29f5d8719a450feb4702ff753363579cadaeebe37"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_22",
+        "position": 3776,
+        "node": 22,
+        "slots": [
+          12
+        ],
+        "components": [
+          "260e00349dfe327f85a6e42044bac84122e59ca282e29271148c22a8d50be428",
+          "170099092482a581a66a32f732ac13872d17cc0f72bb9aa3e84c7367ee052fd3"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_24",
+        "position": 3712,
+        "node": 24,
+        "slots": [
+          14
+        ],
+        "components": [
+          "63255053250b5da94bc9a4b31346c612394ce2d27ce5c107a7c88e5a6e767896",
+          "82ff1379b03c0006f6a6226b44e87b522bcd826383bee203868bef985b8b6c1a"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_25",
+        "position": 4032,
+        "node": 25,
+        "slots": [
+          16
+        ],
+        "components": [
+          "973bf5bca246b500c2ac9bd255c9e4e9654372d4a4899b390eb15788086649b6",
+          "5300cd8f4eef1b1e9a739d46bfa0867de479cc9071b5704f65237b0dc95ddfd7"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_27",
+        "position": 3840,
+        "node": 27,
+        "slots": [
+          18
+        ],
+        "components": [
+          "4d9602c6dc8a50fc551f215d7a2ebde93c39e8d9be68a0e7dd707d0237da3447",
+          "6cab7043812a98cf449ee692df24be0be1e37b9bea94851708bd5d6ad3281dfb"
+        ]
+      }
+    ],
+    "planning_targets": {
+      "IMW2_A_TURN_003": 3776,
+      "IMW2_B_TURN_003": 3712,
+      "IMW2_C_TURN_003": 4032,
+      "IMW2_D_TURN_003": 3840
+    },
+    "fa_observations": [
+      {
+        "observation": {
+          "effective_lookup_limit": 4208,
+          "extra_key": null,
+          "input_token_count": 4209,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1018,
+              "node_id": 18,
+              "segment_length": 1018
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 55,
+              "node_id": 23,
+              "segment_length": 55
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 265,
+              "node_id": 22,
+              "segment_length": 265
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3776,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            23,
+            22
+          ]
+        },
+        "pending_id": "IMW2_A_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4121,
+          "extra_key": null,
+          "input_token_count": 4122,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1018,
+              "node_id": 18,
+              "segment_length": 1018
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 55,
+              "node_id": 23,
+              "segment_length": 55
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 201,
+              "node_id": 24,
+              "segment_length": 201
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3712,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            23,
+            24
+          ]
+        },
+        "pending_id": "IMW2_B_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4190,
+          "extra_key": null,
+          "input_token_count": 4191,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1082,
+              "node_id": 21,
+              "segment_length": 1082
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 50,
+              "node_id": 26,
+              "segment_length": 50
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 462,
+              "node_id": 25,
+              "segment_length": 462
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 4032,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            26,
+            25
+          ]
+        },
+        "pending_id": "IMW2_C_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4666,
+          "extra_key": null,
+          "input_token_count": 4667,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1082,
+              "node_id": 21,
+              "segment_length": 1082
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 50,
+              "node_id": 26,
+              "segment_length": 50
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 270,
+              "node_id": 27,
+              "segment_length": 270
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3840,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            26,
+            27
+          ]
+        },
+        "pending_id": "IMW2_D_TURN_003"
+      }
+    ]
+  },
+  "w3": {
+    "physical_unchanged": true,
+    "pending_dispatches": 0,
+    "destructive_calls": 0,
+    "cleanup": {
+      "status": "PASS",
+      "own_container": "",
+      "remove_returncode": 0,
+      "remove_stderr": "Error response from daemon: No such container: flowstate-e2-w3\n",
+      "observations": [
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378450213233929
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378453309730017
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378456406520100
+        }
+      ],
+      "other_processes_terminated": false
+    },
+    "raw_status": "READY",
+    "provenance": "PROVENANCE_UNVERIFIED",
+    "pending_resume_validated": false,
+    "resident_outside_candidate_set": [],
+    "native_eviction_events": [],
+    "pool_accounting": {
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 380337
+      },
+      "full_evictable": 5178,
+      "full_protected": 0,
+      "mamba_allocator_type": "MambaSlotAllocator",
+      "mamba_available": 21,
+      "mamba_evictable": 7,
+      "mamba_free_slots": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "mamba_free_slots_sha256": "f8a5e71db7a15b6db6715d579a660d3d7f53f36cb31d08afbcbf27631864d32f",
+      "mamba_protected": 0,
+      "mamba_schedulable_available": 21
+    },
+    "candidate_mapping": [
+      {
+        "checkpoint_id": "B5C3_NODE_18",
+        "position": 3456,
+        "node": 18,
+        "slots": [
+          3
+        ],
+        "components": [
+          "82608cf15ad599cc11ff508369848e7fc4039e6582ed51e647b46899fbce5a98",
+          "bf22d6a77191daaf50703adb0bb5cf737f5cb23a2d94467aa1cdb55464329400"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_20",
+        "position": 2432,
+        "node": 20,
+        "slots": [
+          8
+        ],
+        "components": [
+          "b1a4ad9bba83fda440cef3119d05400ebb95adb0c486cc0983bcce8b345060e5",
+          "13671767c6841f96793f5021311c74b0ad66008bf7d93fb226c3f6e4398b3873"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_21",
+        "position": 3392,
+        "node": 21,
+        "slots": [
+          10
+        ],
+        "components": [
+          "af40e6e844d0dbe9faab9dadf2f5311d351f8b87d3366c44452d7a4f2fe04c60",
+          "c437683e537b7403fc2f5577a85f3ceb1faf4983b287f06df7f75fe2bcba7572"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_22",
+        "position": 3776,
+        "node": 22,
+        "slots": [
+          12
+        ],
+        "components": [
+          "727ffcb3d55531a87a614761a6baf720b4c7705c913b4a17869cd06faa263610",
+          "066b8dbba2725b5aa423e6f0b6d89c84bac1e1da41d65b410ddeb3c9056349f9"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_24",
+        "position": 3520,
+        "node": 24,
+        "slots": [
+          14
+        ],
+        "components": [
+          "ba872fe466f91723fd3d40a41e57d99f13878ecbd5576519ab8de7af5a938aed",
+          "9d0c596e4ef50a45622de5c0950aa4dd78fe75536c21ed062960b73d2cfbe122"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_25",
+        "position": 3840,
+        "node": 25,
+        "slots": [
+          16
+        ],
+        "components": [
+          "c308a373bfb1a1f578a91339d3aaaa8519e3a245d880575fb2057309cef6e7fd",
+          "7f96088d16b9e87c448ee974e5bb2c82296d06bb50cfb059ea98cfc66bb7a85b"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_27",
+        "position": 3456,
+        "node": 27,
+        "slots": [
+          18
+        ],
+        "components": [
+          "8ccbd2344a476e3785944f224c72fe0cb8dd90fac81223ed477f52241503bdc2",
+          "087dd44c82f280e43588c9e60e84acf95b58ebe9bf35d8ac28cfcbce66cc8791"
+        ]
+      }
+    ],
+    "planning_targets": {
+      "IMW3_A_TURN_003": 3776,
+      "IMW3_B_TURN_003": 3535,
+      "IMW3_C_TURN_003": 3840,
+      "IMW3_D_TURN_003": 3471
+    },
+    "fa_observations": [
+      {
+        "observation": {
+          "effective_lookup_limit": 4214,
+          "extra_key": null,
+          "input_token_count": 4215,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1018,
+              "node_id": 18,
+              "segment_length": 1018
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 64,
+              "node_id": 24,
+              "segment_length": 64
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 15,
+              "node_id": 23,
+              "segment_length": 15
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 241,
+              "node_id": 22,
+              "segment_length": 241
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3776,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            24,
+            23,
+            22
+          ]
+        },
+        "pending_id": "IMW3_A_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4183,
+          "extra_key": null,
+          "input_token_count": 4184,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1018,
+              "node_id": 18,
+              "segment_length": 1018
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 64,
+              "node_id": 24,
+              "segment_length": 64
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 15,
+              "node_id": 23,
+              "segment_length": 15
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3535,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            24,
+            23
+          ]
+        },
+        "pending_id": "IMW3_B_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4547,
+          "extra_key": null,
+          "input_token_count": 4548,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 954,
+              "node_id": 21,
+              "segment_length": 954
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 64,
+              "node_id": 27,
+              "segment_length": 64
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 15,
+              "node_id": 26,
+              "segment_length": 15
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 369,
+              "node_id": 25,
+              "segment_length": 369
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3840,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            27,
+            26,
+            25
+          ]
+        },
+        "pending_id": "IMW3_C_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4542,
+          "extra_key": null,
+          "input_token_count": 4543,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 6,
+              "node_id": 19,
+              "segment_length": 6
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 954,
+              "node_id": 21,
+              "segment_length": 954
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 64,
+              "node_id": 27,
+              "segment_length": 64
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 15,
+              "node_id": 26,
+              "segment_length": 15
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3471,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            27,
+            26
+          ]
+        },
+        "pending_id": "IMW3_D_TURN_003"
+      }
+    ]
+  },
+  "w4": {
+    "physical_unchanged": true,
+    "pending_dispatches": 0,
+    "destructive_calls": 0,
+    "cleanup": {
+      "status": "PASS",
+      "own_container": "",
+      "remove_returncode": 0,
+      "remove_stderr": "Error response from daemon: No such container: flowstate-e2-w4\n",
+      "observations": [
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378547656422959
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378550748366226
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+          "unix_ns": 1792378553851591675
+        }
+      ],
+      "other_processes_terminated": false
+    },
+    "raw_status": "READY",
+    "provenance": "PROVENANCE_UNVERIFIED",
+    "pending_resume_validated": false,
+    "resident_outside_candidate_set": [],
+    "native_eviction_events": [],
+    "pool_accounting": {
+      "full_allocator": {
+        "allocated": null,
+        "allocator_type": "TokenToKVPoolAllocator",
+        "available": 379856
+      },
+      "full_evictable": 5659,
+      "full_protected": 0,
+      "mamba_allocator_type": "MambaSlotAllocator",
+      "mamba_available": 21,
+      "mamba_evictable": 7,
+      "mamba_free_slots": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "mamba_free_slots_sha256": "f8a5e71db7a15b6db6715d579a660d3d7f53f36cb31d08afbcbf27631864d32f",
+      "mamba_protected": 0,
+      "mamba_schedulable_available": 21
+    },
+    "candidate_mapping": [
+      {
+        "checkpoint_id": "B5C3_NODE_18",
+        "position": 3456,
+        "node": 18,
+        "slots": [
+          3
+        ],
+        "components": [
+          "c00f4bc2b1d968f14d658c3cfeb2195a5e733fee4f73f799d15ef3c1962a9060",
+          "94b1cbcc58ade7e4c29ab50e665df671d2849f7586720170163007b63f2a33a4"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_20",
+        "position": 2432,
+        "node": 20,
+        "slots": [
+          8
+        ],
+        "components": [
+          "de2cb7f197f6142c44a3ffbef78602a8841c19d0d292931522cbb79d49ad89f6",
+          "1892b1b5f2d39201ed662fa23c6de055cde6b0f674dc91591bc6646718c8fc88"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_21",
+        "position": 3456,
+        "node": 21,
+        "slots": [
+          10
+        ],
+        "components": [
+          "778f348940ee3ee3b486e03e197db0fcb7d09014dacf7bd9db526b13eb854ed1",
+          "850c78162caf0b4824a2ad86964b685876b886d498ba1c94c673f900d33ee943"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_22",
+        "position": 3776,
+        "node": 22,
+        "slots": [
+          12
+        ],
+        "components": [
+          "0b6da9ef96a77407705ff435294013cfd534690a552c51f91f218f5cc3cd1b15",
+          "8ffbde2a7b4594064d763087e64fbbcd00b58aafc83c1369894233d948c53010"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_24",
+        "position": 3520,
+        "node": 24,
+        "slots": [
+          14
+        ],
+        "components": [
+          "f263cf51131f170c83f203b9e21ae764401074742845266f959cf20ceb0aef3c",
+          "6bd96c882c1ee69e4f45177022099a69f1c4667716cc0a20b95d623df4e2d688"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_25",
+        "position": 3840,
+        "node": 25,
+        "slots": [
+          16
+        ],
+        "components": [
+          "dcf2aca40ef0c2b34ea6ffe1ba4aac2a4c435ef10a55bb9f2ea65bf02356fe36",
+          "797bc123f3eed02984d172424a566eb9fbfd0422abb962e472965b8a6dc14129"
+        ]
+      },
+      {
+        "checkpoint_id": "B5C3_NODE_27",
+        "position": 3968,
+        "node": 27,
+        "slots": [
+          18
+        ],
+        "components": [
+          "85be4ab88b66fc3e5e65a9b912090c79efa3002379a7bc17ded16fc048ad62f7",
+          "2cdd1ea09e9eaf7613f95c3adefd2241a8a613f0ab212e4d7c7c6d28506f008b"
+        ]
+      }
+    ],
+    "planning_targets": {
+      "IMW4_A_TURN_003": 3776,
+      "IMW4_B_TURN_003": 3549,
+      "IMW4_C_TURN_003": 3840,
+      "IMW4_D_TURN_003": 3968
+    },
+    "fa_observations": [
+      {
+        "observation": {
+          "effective_lookup_limit": 4865,
+          "extra_key": null,
+          "input_token_count": 4866,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 5,
+              "node_id": 19,
+              "segment_length": 5
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1019,
+              "node_id": 18,
+              "segment_length": 1019
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 64,
+              "node_id": 24,
+              "segment_length": 64
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 29,
+              "node_id": 23,
+              "segment_length": 29
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 227,
+              "node_id": 22,
+              "segment_length": 227
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3776,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            24,
+            23,
+            22
+          ]
+        },
+        "pending_id": "IMW4_A_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4846,
+          "extra_key": null,
+          "input_token_count": 4847,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 5,
+              "node_id": 19,
+              "segment_length": 5
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1019,
+              "node_id": 18,
+              "segment_length": 1019
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 64,
+              "node_id": 24,
+              "segment_length": 64
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 29,
+              "node_id": 23,
+              "segment_length": 29
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3549,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            18,
+            24,
+            23
+          ]
+        },
+        "pending_id": "IMW4_B_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 4512,
+          "extra_key": null,
+          "input_token_count": 4513,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 5,
+              "node_id": 19,
+              "segment_length": 5
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1019,
+              "node_id": 21,
+              "segment_length": 1019
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 32,
+              "node_id": 26,
+              "segment_length": 32
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 352,
+              "node_id": 25,
+              "segment_length": 352
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3840,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            26,
+            25
+          ]
+        },
+        "pending_id": "IMW4_C_TURN_003"
+      },
+      {
+        "observation": {
+          "effective_lookup_limit": 6970,
+          "extra_key": null,
+          "input_token_count": 6971,
+          "matched_segments": [
+            {
+              "full_device_resident": true,
+              "matched_length": 2432,
+              "node_id": 20,
+              "segment_length": 2432
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 5,
+              "node_id": 19,
+              "segment_length": 5
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 1019,
+              "node_id": 21,
+              "segment_length": 1019
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 32,
+              "node_id": 26,
+              "segment_length": 32
+            },
+            {
+              "full_device_resident": true,
+              "matched_length": 480,
+              "node_id": 27,
+              "segment_length": 480
+            }
+          ],
+          "page_size": 1,
+          "partial_match": false,
+          "resident_fa_frontier": 3968,
+          "stop_reason": "没有匹配子节点",
+          "traversed_node_ids": [
+            20,
+            19,
+            21,
+            26,
+            27
+          ]
+        },
+        "pending_id": "IMW4_D_TURN_003"
+      }
+    ]
+  }
+}

@@ -112,6 +112,12 @@ class StateController:
         return allocation
 
     @staticmethod
+    def reconcile_strict(epoch, plan, runtime):
+        """显式严格执行入口；不调用 Legacy 优化器或当前适配器隐式重选。"""
+        from .strict_control import StrictReconciler
+        return StrictReconciler().reconcile_strict(epoch, plan, runtime)
+
+    @staticmethod
     def _validate_handles(
         handles: Mapping[str, RuntimeCheckpointHandle],
     ) -> None:

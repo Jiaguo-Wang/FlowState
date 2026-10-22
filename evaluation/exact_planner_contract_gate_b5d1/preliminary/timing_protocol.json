@@ -1,0 +1,10 @@
+{
+  "warmup": 2,
+  "repetitions": 20,
+  "eligible_conditions": 12,
+  "order": "Exact和Greedy每轮交替先后，条件固定轮转",
+  "clock": "perf_counter_ns",
+  "scope": "已有StrictEpoch到完整Plan；共同prepare含validate、原始证据解析和物理身份检查；共同benefits；各自solve和finish含生产validate_plan",
+  "p95": "本地20重复最近秩第19项，不是在线P95",
+  "excluded": "初次原文件读取、from_frozen构造、SHA清单遍历、结果核对、写盘；prepare内部证据摘要检查仍计时"
+}

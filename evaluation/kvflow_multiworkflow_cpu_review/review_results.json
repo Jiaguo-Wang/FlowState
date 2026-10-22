@@ -1,0 +1,628 @@
+{
+  "input_lock_verified": true,
+  "calibration_bounds": {
+    "min_T": 32768,
+    "max_T": 131072,
+    "max_G": 131072
+  },
+  "task1_counterfactual_C_K5": {
+    "set": [
+      "C_A_P04096",
+      "C_B_P05120",
+      "C_C_P06144",
+      "C_D_P07168",
+      "C_JOIN_P04096"
+    ],
+    "all_ids_in_frozen_domain": true,
+    "per_candidate": {
+      "C_A_P04096": {
+        "L": 4096,
+        "compat": [
+          "C_A"
+        ],
+        "state_status": "PROPOSED",
+        "runtime_materialized": false,
+        "logical_cost": 1,
+        "expected_independent_slot_cost": 1,
+        "parent_not_in_set": true
+      },
+      "C_B_P05120": {
+        "L": 5120,
+        "compat": [
+          "C_B"
+        ],
+        "state_status": "PROPOSED",
+        "runtime_materialized": false,
+        "logical_cost": 1,
+        "expected_independent_slot_cost": 1,
+        "parent_not_in_set": true
+      },
+      "C_C_P06144": {
+        "L": 6144,
+        "compat": [
+          "C_C"
+        ],
+        "state_status": "PROPOSED",
+        "runtime_materialized": false,
+        "logical_cost": 1,
+        "expected_independent_slot_cost": 1,
+        "parent_not_in_set": true
+      },
+      "C_D_P07168": {
+        "L": 7168,
+        "compat": [
+          "C_D"
+        ],
+        "state_status": "PROPOSED",
+        "runtime_materialized": false,
+        "logical_cost": 1,
+        "expected_independent_slot_cost": 1,
+        "parent_not_in_set": true
+      },
+      "C_JOIN_P04096": {
+        "L": 4096,
+        "compat": [
+          "C_JOIN"
+        ],
+        "state_status": "PROPOSED",
+        "runtime_materialized": false,
+        "logical_cost": 1,
+        "expected_independent_slot_cost": 1,
+        "parent_not_in_set": true
+      }
+    },
+    "total_slot_cost": 5,
+    "budget_K": 5,
+    "within_budget": true,
+    "current_J_ms": 0.0,
+    "current_per_pending": [
+      {
+        "continuation_id": "C_A",
+        "T": 4096,
+        "E": 4096,
+        "G": 0,
+        "cost_ms": 0.0,
+        "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+      },
+      {
+        "continuation_id": "C_B",
+        "T": 5120,
+        "E": 5120,
+        "G": 0,
+        "cost_ms": 0.0,
+        "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+      },
+      {
+        "continuation_id": "C_C",
+        "T": 6144,
+        "E": 6144,
+        "G": 0,
+        "cost_ms": 0.0,
+        "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+      },
+      {
+        "continuation_id": "C_D",
+        "T": 7168,
+        "E": 7168,
+        "G": 0,
+        "cost_ms": 0.0,
+        "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+      }
+    ],
+    "future_J_ms": 0.0,
+    "future_per_pending": [
+      {
+        "continuation_id": "C_JOIN",
+        "T": 4096,
+        "E": 4096,
+        "G": 0,
+        "cost_ms": 0.0,
+        "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+      }
+    ],
+    "dual_zero": true,
+    "flowstate_frozen_reference": {
+      "selected": [
+        "C_D_P07168",
+        "C_C_P06144",
+        "C_B_P05120",
+        "C_A_P04096"
+      ],
+      "current_J_ms": 0.0,
+      "future_static_J_ms": 154.34895561599998
+    }
+  },
+  "task2_standalone_vs_greedy_C": {
+    "K=3": {
+      "standalone_selected": [
+        "C_D_P07168",
+        "C_D_P07104",
+        "C_C_P06144"
+      ],
+      "standalone_ranking_top8": [
+        "C_D_P07168",
+        "C_D_P07104",
+        "C_C_P06144",
+        "C_C_P06080",
+        "C_CD_P03072",
+        "C_CD_P03008",
+        "C_B_P05120",
+        "C_B_P05056"
+      ],
+      "standalone_benefits_ms": {
+        "C_D_P07168": 274.0959,
+        "C_D_P07104": 271.5809,
+        "C_C_P06144": 233.8007,
+        "C_C_P06080": 231.3073,
+        "C_CD_P03072": 231.0898,
+        "C_CD_P03008": 226.2181,
+        "C_B_P05120": 193.8851,
+        "C_B_P05056": 191.4133
+      },
+      "greedy_selected": [
+        "C_D_P07168",
+        "C_C_P06144",
+        "C_B_P05120"
+      ],
+      "same_set": false,
+      "standalone_current_J_ms": 348.234011266,
+      "greedy_current_J_ms": 154.34895561599998,
+      "J_diff_standalone_minus_greedy_ms": 193.88505565,
+      "standalone_per_pending": [
+        {
+          "continuation_id": "C_A",
+          "T": 4096,
+          "E": 0,
+          "G": 4096,
+          "cost_ms": 154.34895561599998,
+          "calibration_status": "OUTSIDE_CALIBRATION_TARGET_RANGE"
+        },
+        {
+          "continuation_id": "C_B",
+          "T": 5120,
+          "E": 0,
+          "G": 5120,
+          "cost_ms": 193.88505565,
+          "calibration_status": "OUTSIDE_CALIBRATION_TARGET_RANGE"
+        },
+        {
+          "continuation_id": "C_C",
+          "T": 6144,
+          "E": 6144,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        },
+        {
+          "continuation_id": "C_D",
+          "T": 7168,
+          "E": 7168,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        }
+      ],
+      "greedy_per_pending": [
+        {
+          "continuation_id": "C_A",
+          "T": 4096,
+          "E": 0,
+          "G": 4096,
+          "cost_ms": 154.34895561599998,
+          "calibration_status": "OUTSIDE_CALIBRATION_TARGET_RANGE"
+        },
+        {
+          "continuation_id": "C_B",
+          "T": 5120,
+          "E": 5120,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        },
+        {
+          "continuation_id": "C_C",
+          "T": 6144,
+          "E": 6144,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        },
+        {
+          "continuation_id": "C_D",
+          "T": 7168,
+          "E": 7168,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        }
+      ],
+      "standalone_slots_used": 3,
+      "greedy_slots_used": 3,
+      "greedy_matches_frozen": true
+    },
+    "K=5": {
+      "standalone_selected": [
+        "C_D_P07168",
+        "C_D_P07104",
+        "C_C_P06144",
+        "C_C_P06080",
+        "C_CD_P03072"
+      ],
+      "standalone_ranking_top8": [
+        "C_D_P07168",
+        "C_D_P07104",
+        "C_C_P06144",
+        "C_C_P06080",
+        "C_CD_P03072",
+        "C_CD_P03008",
+        "C_B_P05120",
+        "C_B_P05056"
+      ],
+      "standalone_benefits_ms": {
+        "C_D_P07168": 274.0959,
+        "C_D_P07104": 271.5809,
+        "C_C_P06144": 233.8007,
+        "C_C_P06080": 231.3073,
+        "C_CD_P03072": 231.0898,
+        "C_CD_P03008": 226.2181,
+        "C_B_P05120": 193.8851,
+        "C_B_P05056": 191.4133
+      },
+      "greedy_selected": [
+        "C_D_P07168",
+        "C_C_P06144",
+        "C_B_P05120",
+        "C_A_P04096"
+      ],
+      "same_set": false,
+      "standalone_current_J_ms": 348.234011266,
+      "greedy_current_J_ms": 0.0,
+      "J_diff_standalone_minus_greedy_ms": 348.234011266,
+      "standalone_per_pending": [
+        {
+          "continuation_id": "C_A",
+          "T": 4096,
+          "E": 0,
+          "G": 4096,
+          "cost_ms": 154.34895561599998,
+          "calibration_status": "OUTSIDE_CALIBRATION_TARGET_RANGE"
+        },
+        {
+          "continuation_id": "C_B",
+          "T": 5120,
+          "E": 0,
+          "G": 5120,
+          "cost_ms": 193.88505565,
+          "calibration_status": "OUTSIDE_CALIBRATION_TARGET_RANGE"
+        },
+        {
+          "continuation_id": "C_C",
+          "T": 6144,
+          "E": 6144,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        },
+        {
+          "continuation_id": "C_D",
+          "T": 7168,
+          "E": 7168,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        }
+      ],
+      "greedy_per_pending": [
+        {
+          "continuation_id": "C_A",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        },
+        {
+          "continuation_id": "C_B",
+          "T": 5120,
+          "E": 5120,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        },
+        {
+          "continuation_id": "C_C",
+          "T": 6144,
+          "E": 6144,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        },
+        {
+          "continuation_id": "C_D",
+          "T": 7168,
+          "E": 7168,
+          "G": 0,
+          "cost_ms": 0.0,
+          "calibration_status": "EXACT_ZERO_BY_DEFINITION"
+        }
+      ],
+      "standalone_slots_used": 5,
+      "greedy_slots_used": 4,
+      "greedy_matches_frozen": true
+    }
+  },
+  "task3_decision_time_legality": {
+    "per_structure": {
+      "A": {
+        "candidate_count": 20,
+        "state_status_values": [
+          "PROPOSED"
+        ],
+        "runtime_materialized_values": [
+          false
+        ],
+        "runtime_handle_values": [
+          "null"
+        ],
+        "control_domain_values": [
+          "POLICY_MANAGED"
+        ],
+        "calls_runtime_received": [
+          false
+        ],
+        "runtime_actual_candidates": [],
+        "common_retained_state_ids": [],
+        "access_event_count": 40,
+        "access_events_runtime_observed": [
+          false
+        ],
+        "planned_warmup_rounds": [
+          "A_WARM_0",
+          "A_WARM_1"
+        ],
+        "planned_warmup_request_count": 20,
+        "future_call_ids": [
+          "INVOKE_0_01",
+          "INVOKE_0_02",
+          "INVOKE_0_03",
+          "INVOKE_0_04",
+          "INVOKE_0_05",
+          "INVOKE_0_06",
+          "INVOKE_0_07",
+          "INVOKE_0_08",
+          "INVOKE_0_09"
+        ],
+        "future_state_access_events": [],
+        "candidate_fields_sample": [
+          {
+            "checkpoint_id": "A_AGENT00_P04032",
+            "state_status": "PROPOSED",
+            "runtime_materialized": false,
+            "runtime_handle": null,
+            "control_domain": "POLICY_MANAGED",
+            "logical_cost": 1,
+            "expected_independent_slot_cost": 1
+          },
+          {
+            "checkpoint_id": "A_AGENT00_P04096",
+            "state_status": "PROPOSED",
+            "runtime_materialized": false,
+            "runtime_handle": null,
+            "control_domain": "POLICY_MANAGED",
+            "logical_cost": 1,
+            "expected_independent_slot_cost": 1
+          }
+        ]
+      },
+      "B": {
+        "candidate_count": 12,
+        "state_status_values": [
+          "PROPOSED"
+        ],
+        "runtime_materialized_values": [
+          false
+        ],
+        "runtime_handle_values": [
+          "null"
+        ],
+        "control_domain_values": [
+          "POLICY_MANAGED"
+        ],
+        "calls_runtime_received": [
+          false
+        ],
+        "runtime_actual_candidates": [],
+        "common_retained_state_ids": [],
+        "access_event_count": 24,
+        "access_events_runtime_observed": [
+          false
+        ],
+        "planned_warmup_rounds": [
+          "B_WARM_0_W0",
+          "B_WARM_0_W1",
+          "B_WARM_0_W2",
+          "B_WARM_1_W0",
+          "B_WARM_1_W1",
+          "B_WARM_1_W2"
+        ],
+        "planned_warmup_request_count": 12,
+        "future_call_ids": [
+          "B_W0_S1",
+          "B_W1_S1",
+          "B_W2_S1"
+        ],
+        "future_state_access_events": [
+          {
+            "event_order": 2,
+            "checkpoint_id": "B_W0_S1_P03008",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 3,
+            "checkpoint_id": "B_W0_S1_P03072",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 6,
+            "checkpoint_id": "B_W1_S1_P05056",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 7,
+            "checkpoint_id": "B_W1_S1_P05120",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 10,
+            "checkpoint_id": "B_W2_S1_P08128",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 11,
+            "checkpoint_id": "B_W2_S1_P08192",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 14,
+            "checkpoint_id": "B_W0_S1_P03008",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 15,
+            "checkpoint_id": "B_W0_S1_P03072",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 18,
+            "checkpoint_id": "B_W1_S1_P05056",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 19,
+            "checkpoint_id": "B_W1_S1_P05120",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 22,
+            "checkpoint_id": "B_W2_S1_P08128",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 23,
+            "checkpoint_id": "B_W2_S1_P08192",
+            "runtime_observed": false
+          }
+        ],
+        "candidate_fields_sample": [
+          {
+            "checkpoint_id": "B_W0_S0_P01984",
+            "state_status": "PROPOSED",
+            "runtime_materialized": false,
+            "runtime_handle": null,
+            "control_domain": "POLICY_MANAGED",
+            "logical_cost": 1,
+            "expected_independent_slot_cost": 1
+          },
+          {
+            "checkpoint_id": "B_W0_S0_P02048",
+            "state_status": "PROPOSED",
+            "runtime_materialized": false,
+            "runtime_handle": null,
+            "control_domain": "POLICY_MANAGED",
+            "logical_cost": 1,
+            "expected_independent_slot_cost": 1
+          }
+        ]
+      },
+      "C": {
+        "candidate_count": 16,
+        "state_status_values": [
+          "PROPOSED"
+        ],
+        "runtime_materialized_values": [
+          false
+        ],
+        "runtime_handle_values": [
+          "null"
+        ],
+        "control_domain_values": [
+          "POLICY_MANAGED"
+        ],
+        "calls_runtime_received": [
+          false
+        ],
+        "runtime_actual_candidates": [],
+        "common_retained_state_ids": [],
+        "access_event_count": 32,
+        "access_events_runtime_observed": [
+          false
+        ],
+        "planned_warmup_rounds": [
+          "C_WARM_0",
+          "C_WARM_1"
+        ],
+        "planned_warmup_request_count": 16,
+        "future_call_ids": [
+          "C_JOIN"
+        ],
+        "future_state_access_events": [
+          {
+            "event_order": 14,
+            "checkpoint_id": "C_JOIN_P04032",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 15,
+            "checkpoint_id": "C_JOIN_P04096",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 30,
+            "checkpoint_id": "C_JOIN_P04032",
+            "runtime_observed": false
+          },
+          {
+            "event_order": 31,
+            "checkpoint_id": "C_JOIN_P04096",
+            "runtime_observed": false
+          }
+        ],
+        "candidate_fields_sample": [
+          {
+            "checkpoint_id": "C_ROOT_P00960",
+            "state_status": "PROPOSED",
+            "runtime_materialized": false,
+            "runtime_handle": null,
+            "control_domain": "POLICY_MANAGED",
+            "logical_cost": 1,
+            "expected_independent_slot_cost": 1
+          },
+          {
+            "checkpoint_id": "C_ROOT_P01024",
+            "state_status": "PROPOSED",
+            "runtime_materialized": false,
+            "runtime_handle": null,
+            "control_domain": "POLICY_MANAGED",
+            "logical_cost": 1,
+            "expected_independent_slot_cost": 1
+          }
+        ]
+      }
+    },
+    "lru_evidence_C": {
+      "join_event_orders": [
+        14,
+        15,
+        30,
+        31
+      ],
+      "max_event_order": 31,
+      "lru_C_K3_selected": [
+        "C_JOIN_P04096",
+        "C_JOIN_P04032",
+        "C_D_P07168"
+      ],
+      "note": "JOIN 的合成访问事件排在声明序列最末（=最近访问），LRU 按此将其排在保留首位；该事件 runtime_observed=False，对应调用 ready=False 且从未执行"
+    }
+  }
+}

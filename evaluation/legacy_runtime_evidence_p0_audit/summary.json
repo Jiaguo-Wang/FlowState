@@ -1,0 +1,139 @@
+{
+  "classification": "QUALIFIED",
+  "runs": 216,
+  "requests": 864,
+  "missing": [],
+  "mean_ttft_ms": {
+    "LRU": 164.70500180555555,
+    "Marconi": 129.09717030555555,
+    "FlowState": 94.02458018402778
+  },
+  "comparisons": {
+    "LRU": {
+      "mean_relative_percent": 43.057901500116024,
+      "mean_absolute_ms": 70.68042162152777,
+      "win_tie_loss": [
+        24,
+        0,
+        0
+      ],
+      "losses": []
+    },
+    "Marconi": {
+      "mean_relative_percent": 24.264400653100353,
+      "mean_absolute_ms": 35.07259012152778,
+      "win_tie_loss": [
+        22,
+        0,
+        2
+      ],
+      "losses": [
+        {
+          "snapshot_id": "rq3-openhands-main-g015-round5",
+          "FlowState": 54.200754333333336,
+          "LRU": 142.18023991666666,
+          "Marconi": 42.840265,
+          "LRU_relative": 0.61878841697622,
+          "Marconi_relative": -0.2651825177396389
+        },
+        {
+          "snapshot_id": "rq3-openhands-main-g184-round2",
+          "FlowState": 212.1667109166667,
+          "LRU": 219.58875766666668,
+          "Marconi": 191.8865745,
+          "LRU_relative": 0.03379975745965364,
+          "Marconi_relative": -0.105688146601766
+        }
+      ]
+    }
+  },
+  "positive_E_no_legacy_source": [],
+  "marconi_reproduced_runs": 72,
+  "alphas": [
+    1.0
+  ],
+  "source_identity": [
+    {
+      "after_sha256": "589c2d65f70b38f38c38d07aaa7fe19230e86509e52b5d20f35a31ed2ccc1b32",
+      "before_sha256": "589c2d65f70b38f38c38d07aaa7fe19230e86509e52b5d20f35a31ed2ccc1b32",
+      "path": "/home/wjg/code/FlowState/evaluation/rq3_frozen_snapshot_evaluator.py",
+      "unchanged": true,
+      "current_exists": true,
+      "current_matches_historical": true
+    },
+    {
+      "after_sha256": "6a2650239a76f2bf2c3c504cbbb7ae01cf0490945d6f211f69ace30b1a49dbe8",
+      "before_sha256": "6a2650239a76f2bf2c3c504cbbb7ae01cf0490945d6f211f69ace30b1a49dbe8",
+      "path": "/home/wjg/code/FlowState/evaluation/rq3_formal_policy_evaluation.py",
+      "unchanged": true,
+      "current_exists": true,
+      "current_matches_historical": true
+    },
+    {
+      "after_sha256": "7222431f16fbcad1cf540e28856a18736338b39f3f36e4df74eb454574db2f44",
+      "before_sha256": "7222431f16fbcad1cf540e28856a18736338b39f3f36e4df74eb454574db2f44",
+      "path": "/home/wjg/code/FlowState/evaluation/rq3_openhands_neutral_collector.py",
+      "unchanged": true,
+      "current_exists": true,
+      "current_matches_historical": true
+    },
+    {
+      "after_sha256": "3fb80b7175adbbeac8a7aea35944faa23a931e4da3a658653a7e1a8918dfaa4a",
+      "before_sha256": "3fb80b7175adbbeac8a7aea35944faa23a931e4da3a658653a7e1a8918dfaa4a",
+      "path": "/home/wjg/code/FlowState/evaluation/openhands_policy_to_actuator_mapping_gate.py",
+      "unchanged": true,
+      "current_exists": true,
+      "current_matches_historical": true
+    },
+    {
+      "after_sha256": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98",
+      "before_sha256": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98",
+      "path": "/home/wjg/code/FlowState/flowstate/optimizer.py",
+      "unchanged": true,
+      "current_exists": true,
+      "current_matches_historical": false
+    },
+    {
+      "after_sha256": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5",
+      "before_sha256": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5",
+      "path": "/home/wjg/code/FlowState/flowstate/recovery_model.py",
+      "unchanged": true,
+      "current_exists": true,
+      "current_matches_historical": true
+    },
+    {
+      "after_sha256": "88a34a4cb2b7404f135104d9389b38e391067cea62df5e0202d8a9c9a4e3bf8d",
+      "before_sha256": "88a34a4cb2b7404f135104d9389b38e391067cea62df5e0202d8a9c9a4e3bf8d",
+      "path": "/home/wjg/code/FlowState/evaluation/rq4_unified_runtime_harness.py",
+      "unchanged": true,
+      "current_exists": true,
+      "current_matches_historical": true
+    }
+  ],
+  "snapshot_ids_verified": [
+    "rq3-openhands-main-g016-round2",
+    "rq3-openhands-main-g156-round2",
+    "rq3-openhands-main-g112-round2",
+    "rq3-openhands-main-g176-round2",
+    "rq3-openhands-main-g172-round2",
+    "rq3-openhands-main-g184-round2",
+    "rq3-openhands-main-g037-round3",
+    "rq3-openhands-main-g157-round3",
+    "rq3-openhands-main-g177-round3",
+    "rq3-openhands-main-g165-round3",
+    "rq3-openhands-main-g069-round3",
+    "rq3-openhands-main-g005-round3",
+    "rq3-openhands-main-g122-round4",
+    "rq3-openhands-main-g050-round4",
+    "rq3-openhands-main-g058-round4",
+    "rq3-openhands-main-g078-round4",
+    "rq3-openhands-main-g070-round4",
+    "rq3-openhands-main-g094-round4",
+    "rq3-openhands-main-g171-round5",
+    "rq3-openhands-main-g199-round5",
+    "rq3-openhands-main-g167-round5",
+    "rq3-openhands-main-g043-round5",
+    "rq3-openhands-main-g015-round5",
+    "rq3-openhands-main-g119-round5"
+  ]
+}

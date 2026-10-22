@@ -1,0 +1,57 @@
+test_admissible_rejected_conflict (tests.test_strict_epoch.StrictTests.test_admissible_rejected_conflict) ... ok
+test_all_cross_workflow_edges (tests.test_strict_epoch.StrictTests.test_all_cross_workflow_edges) ... ok
+test_config_mismatch (tests.test_strict_epoch.StrictTests.test_config_mismatch) ... ok
+test_conflicting_pair (tests.test_strict_epoch.StrictTests.test_conflicting_pair) ... ok
+test_duplicate_candidate (tests.test_strict_epoch.StrictTests.test_duplicate_candidate) ... ok
+test_duplicate_pair (tests.test_strict_epoch.StrictTests.test_duplicate_pair) ... ok
+test_duplicate_pending (tests.test_strict_epoch.StrictTests.test_duplicate_pending) ... ok
+test_epoch_digest (tests.test_strict_epoch.StrictTests.test_epoch_digest) ... ok
+test_epoch_mismatch (tests.test_strict_epoch.StrictTests.test_epoch_mismatch) ... ok
+test_frozen_16_conditions (tests.test_strict_epoch.StrictTests.test_frozen_16_conditions) ... ok
+test_incomplete_conditions (tests.test_strict_epoch.StrictTests.test_incomplete_conditions) ... ok
+test_legacy_still_rejects_cross_workflow (tests.test_strict_epoch.StrictTests.test_legacy_still_rejects_cross_workflow) ... ok
+test_missing_component (tests.test_strict_epoch.StrictTests.test_missing_component) ... ok
+test_missing_pair (tests.test_strict_epoch.StrictTests.test_missing_pair) ... ok
+test_out_of_domain (tests.test_strict_epoch.StrictTests.test_out_of_domain) ... ok
+test_position (tests.test_strict_epoch.StrictTests.test_position) ... ok
+test_rejected_edges_zero (tests.test_strict_epoch.StrictTests.test_rejected_edges_zero) ... ok
+test_saturation_stop_and_tie (tests.test_strict_epoch.StrictTests.test_saturation_stop_and_tie) ... ok
+test_source_digest (tests.test_strict_epoch.StrictTests.test_source_digest) ... ok
+test_strict_legacy_mixing (tests.test_strict_epoch.StrictTests.test_strict_legacy_mixing) ... ok
+test_target (tests.test_strict_epoch.StrictTests.test_target) ... ok
+test_token_digest (tests.test_strict_epoch.StrictTests.test_token_digest) ... ok
+test_unknown (tests.test_strict_epoch.StrictTests.test_unknown) ... ok
+test_zero_budget (tests.test_strict_epoch.StrictTests.test_zero_budget) ... ok
+test_optimizer (unittest.loader._FailedTest.test_optimizer) ... ERROR
+test_controller (unittest.loader._FailedTest.test_controller) ... ERROR
+
+======================================================================
+ERROR: test_optimizer (unittest.loader._FailedTest.test_optimizer)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_optimizer
+Traceback (most recent call last):
+  File "/home/wjg/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjg/code/FlowState/tests/test_optimizer.py", line 3, in <module>
+    import pytest
+ModuleNotFoundError: No module named 'pytest'
+
+
+======================================================================
+ERROR: test_controller (unittest.loader._FailedTest.test_controller)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_controller
+Traceback (most recent call last):
+  File "/home/wjg/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjg/code/FlowState/tests/test_controller.py", line 5, in <module>
+    import pytest
+ModuleNotFoundError: No module named 'pytest'
+
+
+----------------------------------------------------------------------
+Ran 26 tests in 2.852s
+
+FAILED (errors=2)

@@ -1,0 +1,26 @@
+{
+  "gate": "BLOCKED",
+  "valid_pairs": 0,
+  "changed": [],
+  "failures": [
+    {
+      "run": "p01_Greedy",
+      "failure": {
+        "status": "BLOCKED",
+        "error": "RuntimeError('probe operation failed: {\\'error\\': \"RuntimeError(\\'固定Pending C没有唯一可证明来源的跨Workflow最深选中共享状态\\')\", \\'observations\\': [], \\'ok\\': False, \\'operations\\': [], \\'oracle\\': {\\'J_ms\\': 48.228728759089606, \\'selected\\': [\\'B5C3_NODE_18\\', \\'B5C3_NODE_27\\'], \\'status\\': \\'PASS\\', \\'subsets\\': 29}, \\'solver\\': \\'Greedy\\', \\'status\\': \\'BLOCKED\\', \\'timing\\': [{\\'ms\\': 1061.160451, \\'stage\\': \\'heavy_observation_gpu_sync\\'}, {\\'ms\\': 342.794985, \\'stage\\': \\'strict_epoch_authentication\\'}, {\\'ms\\': 0.026522, \\'stage\\': \\'benefit_matrix\\'}, {\\'ms\\': 0.121842, \\'stage\\': \\'solver\\'}, {\\'ms\\': 8.207747, \\'stage\\': \\'plan_build_validate\\'}, {\\'ms\\': 0.251872, \\'stage\\': \\'independent_oracle\\'}], \\'traceback\\': \\'Traceback (most recent call last):\\\\n  File \"/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4/control.py\", line 99, in apply\\\\n    require(len(choices)==1,\\\\\\'固定Pending C没有唯一可证明来源的跨Workflow最深选中共享状态\\\\\\');target=choices[0]\\\\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\n  File \"/home/wjg/code/FlowState/evaluation/runtime_control_closure_r2c0/bridge.py\", line 18, in require\\\\n    if not v:raise RuntimeError(message)\\\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\nRuntimeError: 固定Pending C没有唯一可证明来源的跨Workflow最深选中共享状态\\\\n\\'}')",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4/runner.py\", line 36, in main\n    control_start=time.monotonic_ns();result=client._call({'op':'checkpoint_control','action':'b5d4_apply','nonce':str(time.time_ns())});control_end=time.monotonic_ns()\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/wjg/code/FlowState/motivation/artifacts/wp3b_gate_20260820/targeted_probe.py\", line 585, in _call\n    raise RuntimeError(f\"probe operation failed: {response}\")\nRuntimeError: probe operation failed: {'error': \"RuntimeError('固定Pending C没有唯一可证明来源的跨Workflow最深选中共享状态')\", 'observations': [], 'ok': False, 'operations': [], 'oracle': {'J_ms': 48.228728759089606, 'selected': ['B5C3_NODE_18', 'B5C3_NODE_27'], 'status': 'PASS', 'subsets': 29}, 'solver': 'Greedy', 'status': 'BLOCKED', 'timing': [{'ms': 1061.160451, 'stage': 'heavy_observation_gpu_sync'}, {'ms': 342.794985, 'stage': 'strict_epoch_authentication'}, {'ms': 0.026522, 'stage': 'benefit_matrix'}, {'ms': 0.121842, 'stage': 'solver'}, {'ms': 8.207747, 'stage': 'plan_build_validate'}, {'ms': 0.251872, 'stage': 'independent_oracle'}], 'traceback': 'Traceback (most recent call last):\\n  File \"/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4/control.py\", line 99, in apply\\n    require(len(choices)==1,\\'固定Pending C没有唯一可证明来源的跨Workflow最深选中共享状态\\');target=choices[0]\\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/wjg/code/FlowState/evaluation/runtime_control_closure_r2c0/bridge.py\", line 18, in require\\n    if not v:raise RuntimeError(message)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nRuntimeError: 固定Pending C没有唯一可证明来源的跨Workflow最深选中共享状态\\n'}\n"
+      }
+    },
+    {
+      "error": "AssertionError('执行或清理失败')",
+      "started": [
+        "p01_Greedy"
+      ]
+    }
+  ],
+  "cleanup_pass": false,
+  "failure_class": "EXPERIMENT_PROVENANCE_GATE_ERROR",
+  "native_evictions": 0,
+  "pending_executed": 0,
+  "actual_cleanup_pass": true
+}

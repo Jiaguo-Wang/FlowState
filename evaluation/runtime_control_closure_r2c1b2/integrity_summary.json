@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "source_files": 244,
+  "prior_frozen_manifests": [
+    "R2-C0",
+    "R2-C1a",
+    "R2-C1b-1"
+  ],
+  "gpu_cleanup": {
+    "strict": {
+      "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+      "memory_used_mib": 17,
+      "own_container": "",
+      "remove_stderr": "Error response from daemon: No such container: flowstate-r2c1b2-strict\n",
+      "status": "PASS"
+    },
+    "cold": {
+      "processes": "pid, process_name, used_gpu_memory [MiB]\n",
+      "memory_used_mib": 17,
+      "own_container": "",
+      "remove_stderr": "Error response from daemon: No such container: flowstate-r2c1b2-cold\n",
+      "status": "PASS"
+    }
+  },
+  "failures": []
+}

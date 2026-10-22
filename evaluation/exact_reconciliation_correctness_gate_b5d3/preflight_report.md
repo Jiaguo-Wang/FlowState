@@ -1,0 +1,11 @@
+# B5-D3 预检查
+
+冻结B5-C2输入、C3/D1/D2证据及生产源码摘要核验通过。八条历史顺序不变，主实验仅当前Exact K2；恢复目标按当前选集中的最深合法共享来源，依Pending标签及候选ID固定顺序选择第一条不同来源Workflow关系，不能硬编码Node或Slot。
+
+真实Req/Batch CPU门禁及真实HybridLinearKVPool/MHATokenToKVPool的CPU缓冲只读测试通过。首轮CPU夹具缺少quant_method字段而失败，修正夹具补齐实际初始化字段后通过；失败日志保留cpu_tests_fixture_failure.log，该阶段没有GPU Engine。
+
+协调路径：单次Scheduler调用中只读观察→当前Epoch认证→Exact及独立Oracle→当前映射与内容重验→原bind/preflight→生产StateController.reconcile_strict→原SGLangAdapter逐项驱逐→生产逐步Postcheck及独立FA/Selected内容核验。整个控制函数不返回调度循环，禁止借用旧窗口或旧Slot。
+
+FA内容观察仅允许无传输、非量化的已审计Hybrid池；检查失败则停止。实际API源码身份在Engine前核对。请求观测沿用R2-C1b2真实Req.get_fill_ids及run_batch包装，原函数恰好执行一次。
+
+GPU资源和镜像检查由launch在每臂启动前执行；仅清理本轮专用容器。Strict失败后不运行Cold，不自动重试。两个生命周期只用于一个正式Pending的Strict/Cold正确性对照，不进行策略性能比较。

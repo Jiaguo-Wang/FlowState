@@ -1,0 +1,36 @@
+{
+  "gate": "PARTIAL",
+  "cpu": "PASS",
+  "runtime_control": "BLOCKED",
+  "history_requests_completed": 20,
+  "native_resident_candidates": 20,
+  "fixed_endpoint_candidates": 10,
+  "extra_ancestor_candidates": 10,
+  "actual_evictions": 0,
+  "pending_dispatched": 0,
+  "cold_executed": false,
+  "resume_validated": false,
+  "gpu_cleanup": {
+    "strict": {
+      "status": "PASS",
+      "observations": [
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n"
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n"
+        },
+        {
+          "memory_mib": 14,
+          "processes": "pid, process_name, used_gpu_memory [MiB]\n"
+        }
+      ],
+      "own_container": "",
+      "remove_stderr": "Error response from daemon: No such container: flowstate-kvflow-synth-strict\n"
+    }
+  },
+  "source_files_unchanged": true,
+  "reason": "实验入口要求所有候选恰为固定末端；额外4032祖先状态导致驱逐前拒绝。不是无法物化，也不是策略或恢复计算错误。"
+}

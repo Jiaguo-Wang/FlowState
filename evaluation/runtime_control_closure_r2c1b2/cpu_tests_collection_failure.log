@@ -1,0 +1,26 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting evaluation/runtime_control_closure_r2c1b2/test_real_api.py __
+ImportError while importing test module '/home/wjg/code/FlowState/evaluation/runtime_control_closure_r2c1b2/test_real_api.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/runtime_control_closure_r2c1b2/test_real_api.py:12: in <module>
+    from .observation import TARGET,observe_batch,wrap_run_batch,real_api_preflight
+E   ImportError: attempted relative import with no known parent package
+=============================== warnings summary ===============================
+../../../../usr/local/lib/python3.12/dist-packages/torchao/quantization/quant_api.py:1731
+  /usr/local/lib/python3.12/dist-packages/torchao/quantization/quant_api.py:1731: SyntaxWarning: invalid escape sequence '\.'
+    """Configuration class for applying different quantization configs to modules or parameters based on their fully qualified names (FQNs).
+
+../../../../usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:365: 14 warnings
+  /usr/local/lib/python3.12/dist-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR evaluation/runtime_control_closure_r2c1b2/test_real_api.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+15 warnings, 1 error in 18.23s

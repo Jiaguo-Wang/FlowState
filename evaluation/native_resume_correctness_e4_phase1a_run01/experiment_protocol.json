@@ -1,0 +1,22 @@
+{
+  "workload": "w1",
+  "K": 2,
+  "pending_order": [
+    "IMW1_A_TURN_003",
+    "IMW1_B_TURN_003",
+    "IMW1_C_TURN_003",
+    "IMW1_D_TURN_003"
+  ],
+  "lifecycle_order": "每个Pending先独立Cold，再独立Greedy、独立Exact；最多12个生命周期，各严格臂重放同一八条历史",
+  "generation": {
+    "temperature": 0,
+    "max_new_tokens": 8,
+    "ignore_eos": true
+  },
+  "failure": "任何安全、恢复或输出失败立即停止后续生命周期；不重试",
+  "control": "复用E1重型路径和B5-D4a安全协调；同Scheduler调用Apply-time重验；所有臂均执行完整内容后验",
+  "identity": "按完整Token前缀双射映射冻结逻辑候选，不复用旧Node/Slot；当前矩阵、T/H及计划必须等价",
+  "provenance": "PROVENANCE_UNVERIFIED",
+  "timing": "不以性能为门禁，不作时延比较",
+  "swap_arm": "w1/K2与Exact同集，不另执行"
+}

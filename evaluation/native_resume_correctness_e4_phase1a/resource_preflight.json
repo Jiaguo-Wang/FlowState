@@ -1,0 +1,11 @@
+{
+  "status": "BLOCKED",
+  "recorded_unix_ns": 1792400181532279268,
+  "evidence": "失败后独立只读nvidia-smi及本轮容器查询；控制台原始输出如下",
+  "compute_apps_csv": "pid, process_name, used_gpu_memory [MiB]\n3059291, sglang::scheduler_ATTN_CP0_TP0, 79554 MiB\n",
+  "gpu_csv": "uuid, name, memory.used [MiB], memory.total [MiB]\nGPU-bfff4d31-0b94-7de3-9946-f593437ae566, NVIDIA H100 PCIe, 79578 MiB, 81559 MiB\n",
+  "experiment_container_query": "docker ps -a --filter name=flowstate-e4p1a --format {{.Names}} {{.Status}}",
+  "experiment_container_stdout": "",
+  "process_action": "仅观察；未终止、修改或占用该现有进程",
+  "gpu_engine_launched": false
+}

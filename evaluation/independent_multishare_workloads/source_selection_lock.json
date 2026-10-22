@@ -1,0 +1,407 @@
+{
+  "workload_type": "Trace-derived Controlled Composition",
+  "rule": "sampling_protocol.md 预注册：B5-C1 multi_session_task_groups 的 instance_id 字典序中剔除 B5-C2 已用 2 任务后依序取前 8 任务，连续两任务成组 w1..w4；每任务取 session_id 字典序前 2 Session（A,B 属任务一，C,D 属任务二）；合法性失败记录不替换",
+  "source_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "source_sha256": "3dd8ec3546cf771ce4ab2ac6c51ccefdd621197fa997a2cefb430b50df808fb6",
+  "excluded_instance_ids_from_b5c2": [
+    "0b01001001__spectree-64",
+    "12rambau__sepal_ui-411"
+  ],
+  "excluded_sessions_from_b5c2": [
+    "nebius-swe-rebench-openhands::chatcmpl-6f6bc3d08ce275e9f059158e0a4513ef",
+    "nebius-swe-rebench-openhands::chatcmpl-71420ffc5b410547d43ac67939b0441c",
+    "nebius-swe-rebench-openhands::chatcmpl-71b073b89097665d14501919b224c26b",
+    "nebius-swe-rebench-openhands::chatcmpl-9d7d3d3ab3856419dec69a7d1a106c8b"
+  ],
+  "chosen_task_order": [
+    "12rambau__sepal_ui-747",
+    "3YOURMIND__django-migration-linter-258",
+    "4degrees__clique-26",
+    "ARMmbed__mbed-tools-293",
+    "ASFHyP3__hyp3-sdk-53",
+    "ASPP__pelita-696",
+    "ASPP__pelita-798",
+    "Aarhus-Psychiatry-Research__timeseriesflattener-186"
+  ],
+  "group_task_mapping": {
+    "w1": [
+      "12rambau__sepal_ui-747",
+      "3YOURMIND__django-migration-linter-258"
+    ],
+    "w2": [
+      "4degrees__clique-26",
+      "ARMmbed__mbed-tools-293"
+    ],
+    "w3": [
+      "ASFHyP3__hyp3-sdk-53",
+      "ASPP__pelita-696"
+    ],
+    "w4": [
+      "ASPP__pelita-798",
+      "Aarhus-Psychiatry-Research__timeseriesflattener-186"
+    ]
+  },
+  "records": [
+    {
+      "group": "w1",
+      "label": "A",
+      "instance_id": "12rambau__sepal_ui-747",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-019748607d8f3f68844645bd474eea9c",
+      "failure": null,
+      "source_id": "chatcmpl-019748607d8f3f68844645bd474eea9c",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 12484,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w1/w1_A_source_history.json",
+      "source_history_sha256": "c8b69f4a2f66399196e07fbde6ee88d35859cefcd0239a6192d936cecac35436",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w1",
+      "label": "B",
+      "instance_id": "12rambau__sepal_ui-747",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-4a1456bdf81fe2d5b4d436b5605981a1",
+      "failure": null,
+      "source_id": "chatcmpl-4a1456bdf81fe2d5b4d436b5605981a1",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 11784,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w1/w1_B_source_history.json",
+      "source_history_sha256": "6f0931c1c477cab6548b97fe1c48f62cd7ced27dce2cdc7bd9aa76a1daa7e205",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w1",
+      "label": "C",
+      "instance_id": "3YOURMIND__django-migration-linter-258",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-893447cc6a2b12ec8f03fd5962ef5e23",
+      "failure": null,
+      "source_id": "chatcmpl-893447cc6a2b12ec8f03fd5962ef5e23",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 12909,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w1/w1_C_source_history.json",
+      "source_history_sha256": "755971de518107cbf90ab01e0437c7a15df8bcfa695a0ff5b7ab8dcc425db963",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w1",
+      "label": "D",
+      "instance_id": "3YOURMIND__django-migration-linter-258",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-8f559190f4cc30908b732c0fdc651ed1",
+      "failure": null,
+      "source_id": "chatcmpl-8f559190f4cc30908b732c0fdc651ed1",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 11486,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w1/w1_D_source_history.json",
+      "source_history_sha256": "38853b6c86d0f0a58547d0d747615aa2b9af4d6fcdfe01363f8469a0adffb982",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w2",
+      "label": "A",
+      "instance_id": "4degrees__clique-26",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-9b6cc3bfc6601b33584f93cc14d2831d",
+      "failure": null,
+      "source_id": "chatcmpl-9b6cc3bfc6601b33584f93cc14d2831d",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 10221,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w2/w2_A_source_history.json",
+      "source_history_sha256": "050f3812aabb4d9711d6b056279ba56bb4b3e9a38b9d2f14e89af1a3234f149e",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w2",
+      "label": "B",
+      "instance_id": "4degrees__clique-26",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-d0cf3b9eb569ecf96d5c46d9e1704269",
+      "failure": null,
+      "source_id": "chatcmpl-d0cf3b9eb569ecf96d5c46d9e1704269",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 10295,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w2/w2_B_source_history.json",
+      "source_history_sha256": "d1dcdc65e2d2bfdf8b53f11d1535bfe76ee319689b667da3913a0e136811bf6a",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w2",
+      "label": "C",
+      "instance_id": "ARMmbed__mbed-tools-293",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-1bd66ae1b3919b8a6ce3e88a074171e0",
+      "failure": null,
+      "source_id": "chatcmpl-1bd66ae1b3919b8a6ce3e88a074171e0",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 11841,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w2/w2_C_source_history.json",
+      "source_history_sha256": "b6e2d5f1f782291974e65c0d473b0d1d04198049e90c88915506cc2b7c728216",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w2",
+      "label": "D",
+      "instance_id": "ARMmbed__mbed-tools-293",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-8087f9aaabc85af9da14b400be53cc3d",
+      "failure": null,
+      "source_id": "chatcmpl-8087f9aaabc85af9da14b400be53cc3d",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 12897,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w2/w2_D_source_history.json",
+      "source_history_sha256": "4fbc8d05175f8dfc1bd09431eb718d965983a06b20ee89c2bf515daef0ef6885",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w3",
+      "label": "A",
+      "instance_id": "ASFHyP3__hyp3-sdk-53",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-594f2f9f67b497385fc4d03aecfbdcb8",
+      "failure": null,
+      "source_id": "chatcmpl-594f2f9f67b497385fc4d03aecfbdcb8",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 8135,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w3/w3_A_source_history.json",
+      "source_history_sha256": "073765e41feae785c720b4b26e885661f2e2fc4cfc05552037cbe3708b525c00",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w3",
+      "label": "B",
+      "instance_id": "ASFHyP3__hyp3-sdk-53",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-71a37a9adb00c152fff8ac1721d84fdf",
+      "failure": null,
+      "source_id": "chatcmpl-71a37a9adb00c152fff8ac1721d84fdf",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 7544,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w3/w3_B_source_history.json",
+      "source_history_sha256": "e0482e49657f2e8ac95ca3bf159a2e9e939bf03c66f9fafe6dd6857a6fd23f6a",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w3",
+      "label": "C",
+      "instance_id": "ASPP__pelita-696",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-c5c12b464b245febd92bda1e55ad0bc6",
+      "failure": null,
+      "source_id": "chatcmpl-c5c12b464b245febd92bda1e55ad0bc6",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 8536,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w3/w3_C_source_history.json",
+      "source_history_sha256": "f9a0aaa327c67764bab113c19a3c349e605da22ee581a34a6072109ccd69eddc",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w3",
+      "label": "D",
+      "instance_id": "ASPP__pelita-696",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-f238626ab8d6c2b93454479cb77e8706",
+      "failure": null,
+      "source_id": "chatcmpl-f238626ab8d6c2b93454479cb77e8706",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 9342,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w3/w3_D_source_history.json",
+      "source_history_sha256": "12bed754809fbbfc9e0e013ec09b7505a16e4ba7f806a51202cabe1904adb2d5",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w4",
+      "label": "A",
+      "instance_id": "ASPP__pelita-798",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-3942e3a432dc0fb9cb5278f12587ff46",
+      "failure": null,
+      "source_id": "chatcmpl-3942e3a432dc0fb9cb5278f12587ff46",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 13379,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w4/w4_A_source_history.json",
+      "source_history_sha256": "932811f513193dbcc1933a0b212c9b931d5862b1df1fdeace9b4553b56375cbf",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w4",
+      "label": "B",
+      "instance_id": "ASPP__pelita-798",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-71a0f78a38141a11373a246a33cc6819",
+      "failure": null,
+      "source_id": "chatcmpl-71a0f78a38141a11373a246a33cc6819",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 13116,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w4/w4_B_source_history.json",
+      "source_history_sha256": "73fc301d6ccbed164720cfd4864bb7575808563f1d80011c7ff6652f2db43992",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w4",
+      "label": "C",
+      "instance_id": "Aarhus-Psychiatry-Research__timeseriesflattener-186",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-693f196b1497d431296622c3e990b5fa",
+      "failure": null,
+      "source_id": "chatcmpl-693f196b1497d431296622c3e990b5fa",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 14507,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w4/w4_C_source_history.json",
+      "source_history_sha256": "930ee3ea339466653fdbef7e01220c0cbc5530d54f36bd60a81f0df05e421d70",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "group": "w4",
+      "label": "D",
+      "instance_id": "Aarhus-Psychiatry-Research__timeseriesflattener-186",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-c53d9462f679017413386dcf8183c91a",
+      "failure": null,
+      "source_id": "chatcmpl-c53d9462f679017413386dcf8183c91a",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 14589,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "history_message_count": 6,
+      "source_history_file": "w4/w4_D_source_history.json",
+      "source_history_sha256": "3524d4527b10246a6cebce7b281f65160ffe86ee1cc03ba1f328c07fee4edf21",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    }
+  ],
+  "failures": [],
+  "prior_protocol_sha256": "c0dd4c6760949f85b6574744f21b0109654b56db5ff4e3f406a5e2b5bdb48715",
+  "b5c1_source_manifest_entry": {
+    "exists": true,
+    "size_bytes": 325563194,
+    "sha256": "3dd8ec3546cf771ce4ab2ac6c51ccefdd621197fa997a2cefb430b50df808fb6"
+  },
+  "b5c2_lock_sha256": "12865cd0f523a55c871030110742a09c80c0846e83314b8a05134c6ad644399e",
+  "说明": "选择顺序先于分词固定；原始行号只作溯源；截断历史已随锁落盘，Token 重建只消费这些文件"
+}

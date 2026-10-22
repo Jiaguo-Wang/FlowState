@@ -1,0 +1,91 @@
+{
+  "workload_type": "Trace-derived Controlled Composition",
+  "model_path": "/home/wjg/models/qwen3.5-9b",
+  "versions": {
+    "transformers": "5.12.1",
+    "tokenizers": "0.22.2",
+    "sglang": "0.5.17",
+    "jinja2": "3.1.6"
+  },
+  "image_id": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+  "b4_identity": {
+    "chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "engine_configuration": {
+      "chunked_prefill_size": 45056,
+      "context_length": 131200,
+      "disable_cuda_graph": true,
+      "disable_overlap_schedule": true,
+      "enable_request_time_stats_logging": true,
+      "log_level": "info",
+      "mamba_max_states_per_path": -1,
+      "mamba_radix_cache_strategy": "extra_buffer",
+      "mamba_track_interval": 256,
+      "max_mamba_cache_size": 28,
+      "mem_fraction_static": 0.4,
+      "model_path": "/home/wjg/models/qwen3.5-9b",
+      "stream_interval": 1,
+      "tp_size": 1
+    },
+    "engine_configuration_sha256": "2e267c95f3a09a6467e11e6e0d0f83d77d6e6b7a7435d0dc607e996cbb81942e",
+    "model_files": [
+      {
+        "bytes": 3126,
+        "path": "/home/wjg/models/qwen3.5-9b/config.json",
+        "sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05"
+      },
+      {
+        "path": "/home/wjg/models/qwen3.5-9b/generation_config.json",
+        "status": "MISSING"
+      }
+    ],
+    "model_path": "/home/wjg/models/qwen3.5-9b",
+    "sglang_version": "0.5.17",
+    "tokenizer_files": [
+      {
+        "bytes": 12807982,
+        "path": "/home/wjg/models/qwen3.5-9b/tokenizer.json",
+        "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+      },
+      {
+        "bytes": 16710,
+        "path": "/home/wjg/models/qwen3.5-9b/tokenizer_config.json",
+        "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+      },
+      {
+        "bytes": 3126,
+        "path": "/home/wjg/models/qwen3.5-9b/config.json",
+        "sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05"
+      },
+      {
+        "path": "/home/wjg/models/qwen3.5-9b/special_tokens_map.json",
+        "status": "MISSING"
+      }
+    ],
+    "tokenizer_path": "/home/wjg/models/qwen3.5-9b",
+    "transformers_version": "5.12.1"
+  },
+  "files": {
+    "/home/wjg/code/FlowState/evaluation/openhands_single_workflow_smoke.py": "e87f3d3583335e8164d595ff1092a63db44f5572bf9e1d1e0de095048a204e9f",
+    "/home/wjg/code/FlowState/evaluation/rq3_openhands_neutral_collector.py": "7222431f16fbcad1cf540e28856a18736338b39f3f36e4df74eb454574db2f44",
+    "/home/wjg/models/qwen3.5-9b/tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "/home/wjg/models/qwen3.5-9b/tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "/home/wjg/models/qwen3.5-9b/chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "/home/wjg/models/qwen3.5-9b/config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05"
+  },
+  "loaded_chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+  "tokenizer_class": "Qwen2Tokenizer",
+  "apply_chat_template": {
+    "tokenize": true,
+    "add_generation_prompt": true,
+    "tools": "未传入，与B4一致",
+    "enable_thinking": "未传入，使用冻结模板默认值",
+    "truncation": false
+  },
+  "normalization": "原样AST加载冻结normalize_message、_parse_tool_calls与_template_input_ids；保留role/content/tool_call_id，工具参数JSON转换为对象",
+  "tools_definition_source": "模板不额外注入tools列表；保留原System消息内的工具说明和已有tool_calls，与B4完全一致",
+  "engine_started": false,
+  "gpu_devices": [],
+  "sglang_imported": false,
+  "model_weights_loaded": false,
+  "difference_from_B5C2": "仅来源组合（4组×2任务×2Session）与逐组结构分类不同；分词、规范化、模板与截断语义完全一致"
+}

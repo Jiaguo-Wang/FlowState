@@ -1,0 +1,18 @@
+setUpClass (__main__.Regression) ... ERROR
+
+======================================================================
+ERROR: setUpClass (__main__.Regression)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/test_regression.py", line 45, in setUpClass
+    cls.plans={s:finish(prep,ids) for s,ids in [('Greedy',('B5C3_NODE_20','B5C3_NODE_18')),('Exact',('B5C3_NODE_18','B5C3_NODE_27'))]}
+                 ^^^^^^^^^^^^^^^^
+  File "/home/wjg/code/FlowState/evaluation/exact_planner_contract_gate_b5d1/planner.py", line 149, in finish
+    plan=StrictAllocationPlan(ep.epoch_id,ep.snapshot_sha256,ep.content_digest,ep.K,tuple(selected),len(selected),rows,j,sum(prepared.costs)-j,tuple(sorted(set(prepared.ids)-set(selected))))
+                                                                                                                                                                ^^^^^^^^^^^^
+AttributeError: 'types.SimpleNamespace' object has no attribute 'ids'
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.310s
+
+FAILED (errors=1)

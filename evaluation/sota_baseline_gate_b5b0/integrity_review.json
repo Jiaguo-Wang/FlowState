@@ -1,0 +1,52 @@
+{
+  "checks": [
+    {
+      "manifest": "/home/wjg/code/FlowState/evaluation/strict_compatibility_b4b1_output/capture_g001_g006_run01/manifest.json",
+      "files": 339,
+      "status": "PASS"
+    },
+    {
+      "manifest": "/home/wjg/code/FlowState/evaluation/strict_compatibility_b4c/evidence_manifest.json",
+      "files": 11,
+      "status": "PASS"
+    },
+    {
+      "manifest": "/home/wjg/code/FlowState/evaluation/strict_compatibility_b4b1_output/capture_g001_g006_run01/g001/manifest.json",
+      "files": 14,
+      "status": "PASS"
+    },
+    {
+      "manifest": "/home/wjg/code/FlowState/evaluation/strict_compatibility_b4b1_output/capture_g001_g006_run01/g002/manifest.json",
+      "files": 14,
+      "status": "PASS"
+    },
+    {
+      "manifest": "/home/wjg/code/FlowState/evaluation/strict_compatibility_b4b1_output/capture_g001_g006_run01/g003/manifest.json",
+      "files": 14,
+      "status": "PASS"
+    },
+    {
+      "manifest": "/home/wjg/code/FlowState/evaluation/strict_compatibility_b4b1_output/capture_g001_g006_run01/g004/manifest.json",
+      "files": 14,
+      "status": "PASS"
+    },
+    {
+      "repository": "/home/wjg/code/FlowState/evaluation/sota_baseline_audit_b5a/raw/marconi_repo",
+      "commit": "08016617b1524e6bf6ac29b680641cc945bda7f0",
+      "status": "PASS"
+    },
+    {
+      "repository": "/home/wjg/code/FlowState/evaluation/sota_baseline_audit_b5a/raw/kvflow_repo",
+      "commit": "7ef897eaedc16626a281ccfe0d453fae80251e8f",
+      "status": "PASS"
+    }
+  ],
+  "historical_input_hash_mismatches": [
+    {
+      "path": "/home/wjg/code/FlowState/flowstate/optimizer.py",
+      "frozen_sha256": "eabf84c7c5d50db1d5e9e60821b0803f760f2c81750a846d960f4cb638f87b98",
+      "current_sha256": "b0060e1cc9fc5d14352a998e8ef95b9b9a8ed3a28a562303595bea749e6f360c"
+    }
+  ],
+  "说明": "当前生产源码变化单列；冻结结果与快照清单必须完整通过，不运行新策略"
+}

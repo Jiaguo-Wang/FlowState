@@ -1,0 +1,29 @@
+test_all_eight_sources (evaluation.exact_swap_runtime_e5_step1.test_cpu.Contract.test_all_eight_sources) ... ok
+test_both_sets_and_fresh_binding (evaluation.exact_swap_runtime_e5_step1.test_cpu.Contract.test_both_sets_and_fresh_binding) ... ok
+test_fail_closed (evaluation.exact_swap_runtime_e5_step1.test_cpu.Contract.test_fail_closed) ... ok
+test_native_source_mismatch (evaluation.exact_swap_runtime_e5_step1.test_cpu.Contract.test_native_source_mismatch) ... ok
+test_unknown_and_budget (evaluation.exact_swap_runtime_e5_step1.test_cpu.Contract.test_unknown_and_budget) ... ERROR
+
+======================================================================
+ERROR: test_unknown_and_budget (evaluation.exact_swap_runtime_e5_step1.test_cpu.Contract.test_unknown_and_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/wjg/code/FlowState/evaluation/exact_swap_runtime_e5_step1/test_cpu.py", line 59, in test_unknown_and_budget
+    bad=replace(self.epoch,edges=(replace(self.epoch.edges[0],status='UNKNOWN'),)+self.epoch.edges[1:])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wjg/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/dataclasses.py", line 1588, in replace
+    return obj.__class__(**changes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 11, in __init__
+  File "/home/wjg/code/FlowState/flowstate/strict_epoch.py", line 99, in __post_init__
+    self.validate()
+  File "/home/wjg/code/FlowState/flowstate/strict_epoch.py", line 137, in validate
+    _require(e.status in ('EPOCH_ADMISSIBLE','REJECTED'), 'UNKNOWN 或非法配对状态')
+  File "/home/wjg/code/FlowState/flowstate/strict_epoch.py", line 22, in _require
+    raise ValueError(message)
+ValueError: UNKNOWN 或非法配对状态
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.750s
+
+FAILED (errors=1)

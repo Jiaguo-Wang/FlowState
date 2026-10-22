@@ -1,0 +1,92 @@
+--- /home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4/control.py
++++ /home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_fix_b5d4a/control.py
+@@ -10,6 +10,8 @@
+ from evaluation.exact_planner_contract_gate_b5d1 import planner as planner
+ from flowstate.controller import StateController
+ from flowstate.strict_control import StrictRuntimeBridge,bind,preflight,StrictReconciliationError
++from .source_contract import choose_source
++from .persistence import Journal
+ OUT=Path('/b5out');require=prior.require
+ 
+ def encode(x):return json.dumps(x,sort_keys=True,ensure_ascii=False).encode()
+@@ -51,13 +53,18 @@
+  return rows
+ 
+ def apply(scheduler,request):
+- result={'ok':False,'status':'BLOCKED','operations':[],'timing':[],'observations':[]}
++ result={'ok':False,'status':'BLOCKED','operations':[],'timing':[],'observations':[],'phase':'start'}
++ journal=None
+  try:
++  journal=Journal(OUT/os.environ['B5D4_RUN']/'control_evidence')
++  result['phase']='observe'
+   t=time.perf_counter_ns();initial=capture.observe_control(scheduler,{'final':True});require(initial.get('ok'),'只读采集失败')
+   result['timing'].append({'stage':'heavy_observation_gpu_sync','ms':(time.perf_counter_ns()-t)/1e6})
+   scheduler._r2c0_owner=threading.get_ident();window=initial['window'];prior.scope(scheduler)
+   t=time.perf_counter_ns();raw=initial['strict_epoch'];data=encode(raw);physical=encode(initial)
++  result.update(raw_epoch=raw,physical_observation=initial);journal.record('observed_epoch',result)
+   inputs=json.loads((OUT/'prepared_inputs.json').read_text());origins=[]
++  result['phase']='epoch_authentication'
+   for c in raw['candidates']:
+    seen=[]
+    for i,h in enumerate(inputs['history'],1):
+@@ -65,15 +72,17 @@
+     if any(n['node_id']==c['state_identity']['node_id'] and n['token_ids']==c['token_ids'] and n['slots'] for n in state['before']['nodes']):seen.append(h['request_id'])
+    require(bool(seen),'缺少本生命周期候选来源');origins.append({'checkpoint_id':c['checkpoint_id'],'first_observed_after':seen[0]})
+   evidence=planner.FrozenEvidence(data,hashlib.sha256(data).hexdigest(),physical_snapshot=physical,physical_sha256=hashlib.sha256(physical).hexdigest())
+-  epoch=planner.from_frozen(evidence,2,(initial,origins,inputs));prepared=planner.prepare(epoch,evidence)
++  epoch=planner.from_frozen(evidence,2,(initial,origins,inputs));result.update(epoch=asdict(epoch),origins=origins);journal.record('strict_epoch',result);prepared=planner.prepare(epoch,evidence)
+   require(planner.allowed(epoch),'当前规模不允许Exact，不进行驱逐')
+   result['timing'].append({'stage':'strict_epoch_authentication','ms':(time.perf_counter_ns()-t)/1e6})
+   t=time.perf_counter_ns();matrix=planner.benefits(prepared);result['timing'].append({'stage':'benefit_matrix','ms':(time.perf_counter_ns()-t)/1e6})
+   solver=os.environ['B5D4_SOLVER'];require(solver in ['Greedy','Exact'],'未授权求解器')
++  result['phase']='planning'
+   t=time.perf_counter_ns();selected=planner.solve(prepared,matrix,solver)
+   result['timing'].append({'stage':'solver','ms':(time.perf_counter_ns()-t)/1e6})
+   t=time.perf_counter_ns();plan=planner.finish(prepared,selected)
+   result['timing'].append({'stage':'plan_build_validate','ms':(time.perf_counter_ns()-t)/1e6});result['solver']=solver
++  result['plan']=asdict(plan);journal.record('plan',result)
+   # 独立Oracle只使用本次原始边、位置和冻结系数。
+   t=time.perf_counter_ns();cs={c['checkpoint_id']:c for c in raw['candidates']};edges={(e['checkpoint_id'],e['continuation_id']) for e in raw['edges'] if e['status']=='EPOCH_ADMISSIBLE'}
+   def phi(g,t):
+@@ -88,16 +97,10 @@
+   require(plan.recovery_cost_ms>=float(best)-1e-9,'计划不可能优于Oracle')
+   result['oracle']={'status':'PASS','subsets':len(scores),'selected':winner,'J_ms':float(best)}
+   result['timing'].append({'stage':'independent_oracle','ms':(time.perf_counter_ns()-t)/1e6})
+-  choices=[]
+-  for p in raw['pendings']:
+-   if p['continuation_id']!='B5C2_C_TURN_003':continue
+-   expected=next(x for x in plan.pending if x.pending_id==p['continuation_id'])
+-   for cid in sorted(plan.selected_ids):
+-    origin=next(o for o in origins if o['checkpoint_id']==cid);h=next(h for h in inputs['history'] if h['request_id']==origin['first_observed_after'])
+-    if h['workflow_id']!=p['workflow_id'] and (cid,p['continuation_id']) in edges and cs[cid]['token_position_L']==expected.E and expected.E>0 and sum(c==cid for c,_ in edges)>1:
+-     choices.append({'pending':p,'source_checkpoint':cid,'source_history':h,'source_first_observed':origin,'expected':asdict(expected)} )
+-  require(len(choices)==1,'固定Pending C没有唯一可证明来源的跨Workflow最深选中共享状态');target=choices[0]
+-  if solver=='Exact':require(target['source_history']['request_id'].startswith('B5C2_D_'),'Exact的来源不是D历史，停止配对')
++  result['phase']='source_selection'
++  target=choose_source(raw,epoch,plan,origins,inputs,solver)
++  result['target']=target;journal.record('source_expectation',result)
++  result['phase']='apply_preflight'
+   t=time.perf_counter_ns();before,audit=prior.observe(scheduler,epoch,window)
+   require(asdict(before)==initial['before'] and audit['semantic']==initial['audit_before']['semantic'] and audit['component_slices']==initial['audit_before']['component_slices'],'Apply前状态变化')
+   require(capture.payload(scheduler.tree_cache,before)==initial['payload_before'],'Apply前组件内容变化')
+@@ -118,6 +121,7 @@
+   def observe():
+    view,a=prior.observe(scheduler,epoch,window);require(a['state']['tree']['structure_sha256']==audit['state']['tree']['structure_sha256'],'协调过程FA树结构变化');result['observations'].append(asdict(view));return view
+   def invalidate(ledger):scheduler._r2c0_failed=True
++  result['phase']='reconciliation';journal.record('before_reconciliation',result)
+   t=time.perf_counter_ns();runtime=StrictRuntimeBridge(RecordedAdapter(scheduler.tree_cache,result['operations']),held,observe,invalidate)
+   ledger=StateController.reconcile_strict(epoch,plan,runtime)
+   result['timing'].append({'stage':'strict_reconciliation_with_postchecks','ms':(time.perf_counter_ns()-t)/1e6})
+@@ -134,8 +138,11 @@
+   result['timing'].append({'stage':'fa_content_postcheck_and_resume_baseline','ms':(time.perf_counter_ns()-t)/1e6})
+   result.update(ok=True,status='READY',raw_epoch=raw,epoch=asdict(epoch),plan=asdict(plan),target=target,origins=origins,reconciliation=ledger,after=asdict(after),audit_after=last,selected_payload_after=source_after,fa_indices_before=sorted(indices),fa_content_before=full_hash,fa_content_after=full_hash,fa_content_postcheck='PASS',fa_protected_indices=protected,fa_protected_payload=protected_hash,fa_expected_recomputed_indices=sorted(recomputed),fa_map_before=old_fa)
+   prior.scope(scheduler)
++  result['phase']='complete';journal.record('complete',result)
+   return result,epoch,plan
+  except BaseException as exc:
+   if isinstance(exc,StrictReconciliationError):result['reconciliation']=exc.ledger
+-  scheduler._r2c0_failed=True;result.update(error=repr(exc),traceback=traceback.format_exc(),status='BLOCKED');return result,None,None
++  scheduler._r2c0_failed=True;result.update(error=repr(exc),traceback=traceback.format_exc(),status='BLOCKED')
++  if journal is not None:journal.fail(result,exc)
++  return result,None,None
+  finally:scheduler._r2c0_owner=None

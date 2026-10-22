@@ -1,0 +1,20 @@
+{
+  "workload_type": "reconstructed_synthetic_sequential_workflow",
+  "seed": 20261021,
+  "agents": 10,
+  "fixed_tokens": 4096,
+  "dynamic_tokens": 32,
+  "fixed_warmup_cycles": 2,
+  "workflow_cycles": 2,
+  "budgets": [3, 5],
+  "runtime_budget": 3,
+  "runtime_target_agent": 0,
+  "sampling": {"temperature": 0, "max_new_tokens": 8, "ignore_eos": true},
+  "warmup_sampling": {"temperature": 0, "max_new_tokens": 1, "ignore_eos": true},
+  "token_sampling": "按目标Tokenizer全部非特殊Token ID均匀有放回采样，Python Random；不解码再编码",
+  "planning_scope": "未来一轮十个事先准备输入的调用；仅首Agent Ready，其余具有已声明顺序依赖，不称为十个同时Ready请求",
+  "cpu_candidate_scope": "每Agent固定提示末端一个PROPOSED状态，等大小逻辑成本；不视作实际驻留",
+  "cpu_target": "固定前缀4096，情景FA前沿假设；Runtime必须重新测量",
+  "tie_break": "复用现有KVFlow实现的Checkpoint ID升序；不声称官方同分",
+  "runtime_stop": "缺少原生固定末端、未知优先级、资源不独占或安全检查失败即停止，不改输入或强制创建状态"
+}

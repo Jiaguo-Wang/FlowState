@@ -1,0 +1,47 @@
+{
+  "version": "1.4",
+  "amendments": [
+    "v1.1（执行前）：deadline 从 start+7200s 延长为 21:17+4h（17臂含Engine启动不可达）",
+    "v1.2（census PASS 后）：attempt1 的 strict_FlowState-Greedy_C_B 被'round0精确物化'断言 BLOCKED。逐历史证据证实引擎实际时间线为：末端(L)物化于round0、祖先(L-64)物化于round1重复插入——两者均属冻结16请求预热且都在决策前，不利用未来请求。修正断言为'物化于声明的round0或round1'并记录实测轮次；attempt1 日志完整保留于 *.attempt1* 文件。此为检查合同修正，非正确性放宽：候选域/预算/策略选择/驱逐语义均未改动",
+    "v1.3（attempt2 后）：apply 全链路 ok=True（协调/驱逐/FA不变性全过），但 e1 bridge b5d4_apply 成功路径要求 result['raw_epoch'] 键，本 pilot control 未设置→RPC信封崩溃。属接线集成缺陷，与被测系统正确性无关；补键后 attempt3 续跑，attempt2 证据保留于 *.attempt2*"
+  ],
+  "started_unix": 1792587652.5525002,
+  "deadline_unix": 1792616545,
+  "deadline_note": "v1.4：deadline 更新为 2026-10-22 01:32+3.5h。v1.1 的 4h 窗口被 attempt1（时间线合同修正）与 attempt2（raw_epoch 接线键）两次非正确性迭代耗尽；被测系统本身零正确性失败。停止规则仍以正确性失败为准，未完成臂如实报告未测",
+  "source": {
+    "workloads": "/home/wjg/code/FlowState/evaluation/kvflow_multiworkflow_cpu_main/workloads.json",
+    "workloads_sha256": "4bc3a48be6eae2c15e3e396478984b86a941c84e2191e0fe30589285663ea383",
+    "cpu_results_sha256": "5802761408003e9df906a1f2e05c1eafbe50cb924abcbef8a37e43430f5fa813",
+    "input_lock_sha256": "0c9a9e6dc4a2afc05be6d9bc29bc3bd3bee5258e4e1adbf64b47a0c4ae9993d7"
+  },
+  "workload": "C Shared/Branched 冻结案例（16 预热请求=8前缀×2轮；4个 ready Pending C_A/C_B/C_C/C_D；C_JOIN 不执行）",
+  "budget_K": 3,
+  "policies": [
+    "FlowState-Greedy",
+    "StandaloneTopK",
+    "WFC"
+  ],
+  "arms": [
+    "census",
+    "strict_FlowState-Greedy_C_B",
+    "strict_FlowState-Greedy_C_A",
+    "strict_FlowState-Greedy_C_D",
+    "strict_FlowState-Greedy_C_C",
+    "strict_StandaloneTopK_C_B",
+    "strict_StandaloneTopK_C_A",
+    "strict_StandaloneTopK_C_D",
+    "strict_StandaloneTopK_C_C",
+    "strict_WFC_C_B",
+    "strict_WFC_C_A",
+    "strict_WFC_C_D",
+    "strict_WFC_C_C",
+    "cold_C_B",
+    "cold_C_A",
+    "cold_C_D",
+    "cold_C_C"
+  ],
+  "arm_order_rationale": "C_B 为三策略恢复前沿互不相同的 Pending，最先执行；随后 C_A、C_D、C_C 覆盖其余当前 Pending；每臂独立 Engine 生命周期，无跨请求缓存污染",
+  "cold": "每个 Pending 一个独立干净生命周期，仅用于输出一致性与全量 Prefill 对照",
+  "rules": "不修改生产 FlowState/Phi/策略实现/冻结Token/拓扑；K=3 只指真实 Recurrent 槽预算；所有16个物化状态纳入统一可控域，未选一律真实驱逐，不默认保留祖先；若 Runtime 出现 CPU 未建模状态，先建真实映射并入合同，无法一致则 BLOCKED",
+  "stop_rule": "任一关键正确性检查失败即保留日志停止该比较；census 结构断言失败不进入 strict 臂；按 deadline_unix 截止，未完成臂如实报告未测"
+}

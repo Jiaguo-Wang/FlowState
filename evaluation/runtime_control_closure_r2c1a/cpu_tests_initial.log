@@ -1,0 +1,29 @@
+F.F..................................................... [ 98%]
+.                                                                        [100%]
+=================================== FAILURES ===================================
+____________________ BridgeTests.test_partial_failure_stops ____________________
+
+self = <test_bridge.BridgeTests testMethod=test_partial_failure_stops>
+
+    def test_partial_failure_stops(self):
+>       r,rt,s=self.execute(failed=True);self.assertEqual(r['status'],'BLOCKED');self.assertEqual(len(r['operations']),2)
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: 1 != 2
+
+evaluation/runtime_control_closure_r2c1a/test_bridge.py:23: AssertionError
+___________________________ BridgeTests.test_success ___________________________
+
+self = <test_bridge.BridgeTests testMethod=test_success>
+
+    def test_success(self):
+>       r,rt,s=self.execute();self.assertEqual(r['status'],'READY');self.assertEqual(len(r['operations']),10)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: 'BLOCKED' != 'READY'
+E       - BLOCKED
+E       + READY
+
+evaluation/runtime_control_closure_r2c1a/test_bridge.py:20: AssertionError
+=========================== short test summary info ============================
+FAILED evaluation/runtime_control_closure_r2c1a/test_bridge.py::BridgeTests::test_partial_failure_stops
+FAILED evaluation/runtime_control_closure_r2c1a/test_bridge.py::BridgeTests::test_success
+2 failed, 55 passed, 16 subtests passed in 6.20s

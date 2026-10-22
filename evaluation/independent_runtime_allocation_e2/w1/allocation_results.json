@@ -1,0 +1,3689 @@
+{
+  "n": 7,
+  "m": 4,
+  "K_min": 4,
+  "supports": {
+    "B5C3_NODE_18": [
+      "IMW1_A_TURN_003",
+      "IMW1_B_TURN_003"
+    ],
+    "B5C3_NODE_20": [
+      "IMW1_A_TURN_003",
+      "IMW1_B_TURN_003",
+      "IMW1_C_TURN_003",
+      "IMW1_D_TURN_003"
+    ],
+    "B5C3_NODE_21": [
+      "IMW1_C_TURN_003",
+      "IMW1_D_TURN_003"
+    ],
+    "B5C3_NODE_22": [
+      "IMW1_A_TURN_003"
+    ],
+    "B5C3_NODE_24": [
+      "IMW1_B_TURN_003"
+    ],
+    "B5C3_NODE_25": [
+      "IMW1_C_TURN_003"
+    ],
+    "B5C3_NODE_27": [
+      "IMW1_D_TURN_003"
+    ]
+  },
+  "origins": [
+    {
+      "checkpoint_id": "B5C3_NODE_18",
+      "first_observed_after": "IMW1_A_TURN_001",
+      "provenance": "PROVENANCE_UNVERIFIED"
+    },
+    {
+      "checkpoint_id": "B5C3_NODE_20",
+      "first_observed_after": "IMW1_C_TURN_001",
+      "provenance": "PROVENANCE_UNVERIFIED"
+    },
+    {
+      "checkpoint_id": "B5C3_NODE_21",
+      "first_observed_after": "IMW1_D_TURN_001",
+      "provenance": "PROVENANCE_UNVERIFIED"
+    },
+    {
+      "checkpoint_id": "B5C3_NODE_22",
+      "first_observed_after": "IMW1_A_TURN_002",
+      "provenance": "PROVENANCE_UNVERIFIED"
+    },
+    {
+      "checkpoint_id": "B5C3_NODE_24",
+      "first_observed_after": "IMW1_B_TURN_002",
+      "provenance": "PROVENANCE_UNVERIFIED"
+    },
+    {
+      "checkpoint_id": "B5C3_NODE_25",
+      "first_observed_after": "IMW1_C_TURN_002",
+      "provenance": "PROVENANCE_UNVERIFIED"
+    },
+    {
+      "checkpoint_id": "B5C3_NODE_27",
+      "first_observed_after": "IMW1_D_TURN_002",
+      "provenance": "PROVENANCE_UNVERIFIED"
+    }
+  ],
+  "benefits": {
+    "B5C3_NODE_18": [
+      127.41585268883593,
+      127.42280279187112,
+      0.0,
+      0.0
+    ],
+    "B5C3_NODE_20": [
+      91.0069689743828,
+      91.01195206712502,
+      91.04185062357811,
+      91.04683371632031
+    ],
+    "B5C3_NODE_21": [
+      0.0,
+      0.0,
+      139.6664040460781,
+      139.67400981921094
+    ],
+    "B5C3_NODE_22": [
+      137.1712607901328,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "B5C3_NODE_24": [
+      0.0,
+      139.62076940728127,
+      0.0,
+      0.0
+    ],
+    "B5C3_NODE_25": [
+      0.0,
+      0.0,
+      154.34895561599998,
+      0.0
+    ],
+    "B5C3_NODE_27": [
+      0.0,
+      0.0,
+      0.0,
+      156.8088424017578
+    ]
+  },
+  "laminar": true,
+  "rows": [
+    {
+      "K": 1,
+      "policy": "FlowState-Greedy",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 223.84222283376562,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 2432,
+          "G": 1216,
+          "cost_ms": 46.164291815750005
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 2432,
+          "G": 1280,
+          "cost_ms": 48.60881734015625
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "a5bbd11bd55648a4c92abadef3d9282543d5135b17608cc665ef7170a2788419",
+        "K": 1,
+        "selected_ids": [
+          "B5C3_NODE_20"
+        ],
+        "selected_count": 1,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 2432,
+            "G": 1216,
+            "cost_ms": 46.164291815750005
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 2432,
+            "G": 1280,
+            "cost_ms": 48.60881734015625
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 2432,
+            "G": 1664,
+            "cost_ms": 63.30710499242188
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 2432,
+            "G": 1728,
+            "cost_ms": 65.7620086854375
+          }
+        ],
+        "recovery_cost_ms": 223.84222283376562,
+        "benefit_ms": 364.1076053814063,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 1,
+      "policy": "FlowState-Exact",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 223.84222283376562,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 2432,
+          "G": 1216,
+          "cost_ms": 46.164291815750005
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 2432,
+          "G": 1280,
+          "cost_ms": 48.60881734015625
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "a5bbd11bd55648a4c92abadef3d9282543d5135b17608cc665ef7170a2788419",
+        "K": 1,
+        "selected_ids": [
+          "B5C3_NODE_20"
+        ],
+        "selected_count": 1,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 2432,
+            "G": 1216,
+            "cost_ms": 46.164291815750005
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 2432,
+            "G": 1280,
+            "cost_ms": 48.60881734015625
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 2432,
+            "G": 1664,
+            "cost_ms": 63.30710499242188
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 2432,
+            "G": 1728,
+            "cost_ms": 65.7620086854375
+          }
+        ],
+        "recovery_cost_ms": 223.84222283376562,
+        "benefit_ms": 364.1076053814063,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 1,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 431.1409858134141,
+      "gap_exact_ms": 207.29876297964847,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 0,
+          "G": 3648,
+          "cost_ms": 137.1712607901328
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 0,
+          "G": 3712,
+          "cost_ms": 139.62076940728127
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 0,
+          "G": 4096,
+          "cost_ms": 154.34895561599998
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "a5bbd11bd55648a4c92abadef3d9282543d5135b17608cc665ef7170a2788419",
+        "K": 1,
+        "selected_ids": [
+          "B5C3_NODE_27"
+        ],
+        "selected_count": 1,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 0,
+            "G": 3648,
+            "cost_ms": 137.1712607901328
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 0,
+            "G": 3712,
+            "cost_ms": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 0,
+            "G": 4096,
+            "cost_ms": 154.34895561599998
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 431.1409858134141,
+        "benefit_ms": 156.80884240175783,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 156.8088424017578
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 154.34895561599998
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 137.1712607901328
+          }
+        ]
+      }
+    },
+    {
+      "K": 1,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 431.1409858134141,
+      "gap_exact_ms": 207.29876297964847,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 0,
+          "G": 3648,
+          "cost_ms": 137.1712607901328
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 0,
+          "G": 3712,
+          "cost_ms": 139.62076940728127
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 0,
+          "G": 4096,
+          "cost_ms": 154.34895561599998
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "a5bbd11bd55648a4c92abadef3d9282543d5135b17608cc665ef7170a2788419",
+        "K": 1,
+        "selected_ids": [
+          "B5C3_NODE_27"
+        ],
+        "selected_count": 1,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 0,
+            "G": 3648,
+            "cost_ms": 137.1712607901328
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 0,
+            "G": 3712,
+            "cost_ms": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 0,
+            "G": 4096,
+            "cost_ms": 154.34895561599998
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 431.1409858134141,
+        "benefit_ms": 156.80884240175783,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 4160
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 4096
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 3712
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 3648
+          }
+        ]
+      }
+    },
+    {
+      "K": 1,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 223.84222283376562,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 2432,
+          "G": 1216,
+          "cost_ms": 46.164291815750005
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 2432,
+          "G": 1280,
+          "cost_ms": 48.60881734015625
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "a5bbd11bd55648a4c92abadef3d9282543d5135b17608cc665ef7170a2788419",
+        "K": 1,
+        "selected_ids": [
+          "B5C3_NODE_20"
+        ],
+        "selected_count": 1,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 2432,
+            "G": 1216,
+            "cost_ms": 46.164291815750005
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 2432,
+            "G": 1280,
+            "cost_ms": 48.60881734015625
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 2432,
+            "G": 1664,
+            "cost_ms": 63.30710499242188
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 2432,
+            "G": 1728,
+            "cost_ms": 65.7620086854375
+          }
+        ],
+        "recovery_cost_ms": 223.84222283376562,
+        "benefit_ms": 364.1076053814063,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        }
+      ],
+      "native_trace": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "IMW1_A_TURN_003": 0,
+              "IMW1_B_TURN_003": 0,
+              "IMW1_C_TURN_003": 0,
+              "IMW1_D_TURN_003": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_20",
+                "q": 4,
+                "r": 9728,
+                "advances": {
+                  "IMW1_A_TURN_003": 2432,
+                  "IMW1_B_TURN_003": 2432,
+                  "IMW1_C_TURN_003": 2432,
+                  "IMW1_D_TURN_003": 2432
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_21",
+                "q": 2,
+                "r": 7424,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 3712,
+                  "IMW1_D_TURN_003": 3712
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 6784,
+                "advances": {
+                  "IMW1_A_TURN_003": 3392,
+                  "IMW1_B_TURN_003": 3392,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 4160,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 4160
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 4096,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 3712,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 3712,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 3648,
+                "advances": {
+                  "IMW1_A_TURN_003": 3648,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_20",
+            "q": 4,
+            "r": 9728
+          }
+        ],
+        "final_frontiers": {
+          "IMW1_A_TURN_003": 2432,
+          "IMW1_B_TURN_003": 2432,
+          "IMW1_C_TURN_003": 2432,
+          "IMW1_D_TURN_003": 2432
+        }
+      }
+    },
+    {
+      "K": 1,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_20"
+      ],
+      "J_ms": 223.84222283376562,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 2432,
+          "G": 1216,
+          "cost_ms": 46.164291815750005
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 2432,
+          "G": 1280,
+          "cost_ms": 48.60881734015625
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 2432,
+          "G": 1664,
+          "cost_ms": 63.30710499242188
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 2432,
+          "G": 1728,
+          "cost_ms": 65.7620086854375
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "a5bbd11bd55648a4c92abadef3d9282543d5135b17608cc665ef7170a2788419",
+        "K": 1,
+        "selected_ids": [
+          "B5C3_NODE_20"
+        ],
+        "selected_count": 1,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 2432,
+            "G": 1216,
+            "cost_ms": 46.164291815750005
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 2432,
+            "G": 1280,
+            "cost_ms": 48.60881734015625
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 2432,
+            "G": 1664,
+            "cost_ms": 63.30710499242188
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 2432,
+            "G": 1728,
+            "cost_ms": 65.7620086854375
+          }
+        ],
+        "recovery_cost_ms": 223.84222283376562,
+        "benefit_ms": 364.1076053814063,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 2,
+      "policy": "FlowState-Greedy",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21"
+      ],
+      "J_ms": 126.590493308375,
+      "gap_exact_ms": 72.81973443919922,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 2432,
+          "G": 1216,
+          "cost_ms": 46.164291815750005
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 2432,
+          "G": 1280,
+          "cost_ms": 48.60881734015625
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "0444ef5f07e1a04fbed5a47551ffe4cebf5a7d1af6320621c314fe0c2ee791c6",
+        "K": 2,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21"
+        ],
+        "selected_count": 2,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 2432,
+            "G": 1216,
+            "cost_ms": 46.164291815750005
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 2432,
+            "G": 1280,
+            "cost_ms": 48.60881734015625
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 3712,
+            "G": 448,
+            "cost_ms": 17.134832582546874
+          }
+        ],
+        "recovery_cost_ms": 126.590493308375,
+        "benefit_ms": 461.3593349067969,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 2,
+      "policy": "FlowState-Exact",
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_21"
+      ],
+      "J_ms": 53.77075886917578,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "0444ef5f07e1a04fbed5a47551ffe4cebf5a7d1af6320621c314fe0c2ee791c6",
+        "K": 2,
+        "selected_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21"
+        ],
+        "selected_count": 2,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 3712,
+            "G": 448,
+            "cost_ms": 17.134832582546874
+          }
+        ],
+        "recovery_cost_ms": 53.77075886917578,
+        "benefit_ms": 534.1790693459961,
+        "logical_eviction_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 254.83865548070713
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 279.340413865289
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 2,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_27",
+        "B5C3_NODE_25"
+      ],
+      "J_ms": 276.7920301974141,
+      "gap_exact_ms": 223.0212713282383,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 0,
+          "G": 3648,
+          "cost_ms": 137.1712607901328
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 0,
+          "G": 3712,
+          "cost_ms": 139.62076940728127
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "0444ef5f07e1a04fbed5a47551ffe4cebf5a7d1af6320621c314fe0c2ee791c6",
+        "K": 2,
+        "selected_ids": [
+          "B5C3_NODE_27",
+          "B5C3_NODE_25"
+        ],
+        "selected_count": 2,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 0,
+            "G": 3648,
+            "cost_ms": 137.1712607901328
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 0,
+            "G": 3712,
+            "cost_ms": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 276.7920301974141,
+        "benefit_ms": 311.15779801775784,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.348955616
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 156.8088424017578
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 154.34895561599998
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 137.1712607901328
+          }
+        ]
+      }
+    },
+    {
+      "K": 2,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_27",
+        "B5C3_NODE_25"
+      ],
+      "J_ms": 276.7920301974141,
+      "gap_exact_ms": 223.0212713282383,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 0,
+          "G": 3648,
+          "cost_ms": 137.1712607901328
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 0,
+          "G": 3712,
+          "cost_ms": 139.62076940728127
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "0444ef5f07e1a04fbed5a47551ffe4cebf5a7d1af6320621c314fe0c2ee791c6",
+        "K": 2,
+        "selected_ids": [
+          "B5C3_NODE_27",
+          "B5C3_NODE_25"
+        ],
+        "selected_count": 2,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 0,
+            "G": 3648,
+            "cost_ms": 137.1712607901328
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 0,
+            "G": 3712,
+            "cost_ms": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 276.7920301974141,
+        "benefit_ms": 311.15779801775784,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.348955616
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 4160
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 4096
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 3712
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 3648
+          }
+        ]
+      }
+    },
+    {
+      "K": 2,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21"
+      ],
+      "J_ms": 126.590493308375,
+      "gap_exact_ms": 72.81973443919922,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 2432,
+          "G": 1216,
+          "cost_ms": 46.164291815750005
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 2432,
+          "G": 1280,
+          "cost_ms": 48.60881734015625
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "0444ef5f07e1a04fbed5a47551ffe4cebf5a7d1af6320621c314fe0c2ee791c6",
+        "K": 2,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21"
+        ],
+        "selected_count": 2,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 2432,
+            "G": 1216,
+            "cost_ms": 46.164291815750005
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 2432,
+            "G": 1280,
+            "cost_ms": 48.60881734015625
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 3712,
+            "G": 448,
+            "cost_ms": 17.134832582546874
+          }
+        ],
+        "recovery_cost_ms": 126.590493308375,
+        "benefit_ms": 461.3593349067969,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        }
+      ],
+      "native_trace": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "IMW1_A_TURN_003": 0,
+              "IMW1_B_TURN_003": 0,
+              "IMW1_C_TURN_003": 0,
+              "IMW1_D_TURN_003": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_20",
+                "q": 4,
+                "r": 9728,
+                "advances": {
+                  "IMW1_A_TURN_003": 2432,
+                  "IMW1_B_TURN_003": 2432,
+                  "IMW1_C_TURN_003": 2432,
+                  "IMW1_D_TURN_003": 2432
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_21",
+                "q": 2,
+                "r": 7424,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 3712,
+                  "IMW1_D_TURN_003": 3712
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 6784,
+                "advances": {
+                  "IMW1_A_TURN_003": 3392,
+                  "IMW1_B_TURN_003": 3392,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 4160,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 4160
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 4096,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 3712,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 3712,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 3648,
+                "advances": {
+                  "IMW1_A_TURN_003": 3648,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_20",
+            "q": 4,
+            "r": 9728
+          },
+          {
+            "prefix": [
+              "B5C3_NODE_20"
+            ],
+            "E_before": {
+              "IMW1_A_TURN_003": 2432,
+              "IMW1_B_TURN_003": 2432,
+              "IMW1_C_TURN_003": 2432,
+              "IMW1_D_TURN_003": 2432
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_21",
+                "q": 2,
+                "r": 2560,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 1280,
+                  "IMW1_D_TURN_003": 1280
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 1920,
+                "advances": {
+                  "IMW1_A_TURN_003": 960,
+                  "IMW1_B_TURN_003": 960,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 1728,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 1728
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 1664,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 1664,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 1280,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 1280,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 1216,
+                "advances": {
+                  "IMW1_A_TURN_003": 1216,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_21",
+            "q": 2,
+            "r": 2560
+          }
+        ],
+        "final_frontiers": {
+          "IMW1_A_TURN_003": 2432,
+          "IMW1_B_TURN_003": 2432,
+          "IMW1_C_TURN_003": 3712,
+          "IMW1_D_TURN_003": 3712
+        }
+      }
+    },
+    {
+      "K": 2,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21"
+      ],
+      "J_ms": 126.590493308375,
+      "gap_exact_ms": 72.81973443919922,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 2432,
+          "G": 1216,
+          "cost_ms": 46.164291815750005
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 2432,
+          "G": 1280,
+          "cost_ms": 48.60881734015625
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "0444ef5f07e1a04fbed5a47551ffe4cebf5a7d1af6320621c314fe0c2ee791c6",
+        "K": 2,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21"
+        ],
+        "selected_count": 2,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 2432,
+            "G": 1216,
+            "cost_ms": 46.164291815750005
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 2432,
+            "G": 1280,
+            "cost_ms": 48.60881734015625
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 3712,
+            "G": 448,
+            "cost_ms": 17.134832582546874
+          }
+        ],
+        "recovery_cost_ms": 126.590493308375,
+        "benefit_ms": 461.3593349067969,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 3,
+      "policy": "FlowState-Greedy",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 53.77075886917578,
+      "gap_exact_ms": 31.817384152468748,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "dab272ee1f45e7f986089b7d95c0af7c193b70530f30daaeb4ad1a77d26edee9",
+        "K": 3,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_18"
+        ],
+        "selected_count": 3,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 3712,
+            "G": 448,
+            "cost_ms": 17.134832582546874
+          }
+        ],
+        "recovery_cost_ms": 53.77075886917578,
+        "benefit_ms": 534.1790693459961,
+        "logical_eviction_ids": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        },
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 72.81973443919922
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 3,
+      "policy": "FlowState-Exact",
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 21.95337471670703,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "dab272ee1f45e7f986089b7d95c0af7c193b70530f30daaeb4ad1a77d26edee9",
+        "K": 3,
+        "selected_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ],
+        "selected_count": 3,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 21.95337471670703,
+        "benefit_ms": 565.9964534984649,
+        "logical_eviction_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 254.83865548070713
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.34895561599996
+        },
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.8088424017578
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 3,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_27",
+        "B5C3_NODE_25",
+        "B5C3_NODE_24"
+      ],
+      "J_ms": 137.1712607901328,
+      "gap_exact_ms": 115.21788607342577,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 0,
+          "G": 3648,
+          "cost_ms": 137.1712607901328
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3712,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "dab272ee1f45e7f986089b7d95c0af7c193b70530f30daaeb4ad1a77d26edee9",
+        "K": 3,
+        "selected_ids": [
+          "B5C3_NODE_27",
+          "B5C3_NODE_25",
+          "B5C3_NODE_24"
+        ],
+        "selected_count": 3,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 0,
+            "G": 3648,
+            "cost_ms": 137.1712607901328
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3712,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 137.1712607901328,
+        "benefit_ms": 450.7785674250391,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.348955616
+        },
+        {
+          "checkpoint": "B5C3_NODE_24",
+          "marginal_ms": 139.62076940728127
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 156.8088424017578
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 154.34895561599998
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 137.1712607901328
+          }
+        ]
+      }
+    },
+    {
+      "K": 3,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_27",
+        "B5C3_NODE_25",
+        "B5C3_NODE_24"
+      ],
+      "J_ms": 137.1712607901328,
+      "gap_exact_ms": 115.21788607342577,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 0,
+          "G": 3648,
+          "cost_ms": 137.1712607901328
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3712,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "dab272ee1f45e7f986089b7d95c0af7c193b70530f30daaeb4ad1a77d26edee9",
+        "K": 3,
+        "selected_ids": [
+          "B5C3_NODE_27",
+          "B5C3_NODE_25",
+          "B5C3_NODE_24"
+        ],
+        "selected_count": 3,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 0,
+            "G": 3648,
+            "cost_ms": 137.1712607901328
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3712,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 137.1712607901328,
+        "benefit_ms": 450.7785674250391,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_22"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.348955616
+        },
+        {
+          "checkpoint": "B5C3_NODE_24",
+          "marginal_ms": 139.62076940728127
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 4160
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 4096
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 3712
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 3648
+          }
+        ]
+      }
+    },
+    {
+      "K": 3,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 53.77075886917578,
+      "gap_exact_ms": 31.817384152468748,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "dab272ee1f45e7f986089b7d95c0af7c193b70530f30daaeb4ad1a77d26edee9",
+        "K": 3,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_18"
+        ],
+        "selected_count": 3,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 3712,
+            "G": 448,
+            "cost_ms": 17.134832582546874
+          }
+        ],
+        "recovery_cost_ms": 53.77075886917578,
+        "benefit_ms": 534.1790693459961,
+        "logical_eviction_ids": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        },
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 72.81973443919922
+        }
+      ],
+      "native_trace": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "IMW1_A_TURN_003": 0,
+              "IMW1_B_TURN_003": 0,
+              "IMW1_C_TURN_003": 0,
+              "IMW1_D_TURN_003": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_20",
+                "q": 4,
+                "r": 9728,
+                "advances": {
+                  "IMW1_A_TURN_003": 2432,
+                  "IMW1_B_TURN_003": 2432,
+                  "IMW1_C_TURN_003": 2432,
+                  "IMW1_D_TURN_003": 2432
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_21",
+                "q": 2,
+                "r": 7424,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 3712,
+                  "IMW1_D_TURN_003": 3712
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 6784,
+                "advances": {
+                  "IMW1_A_TURN_003": 3392,
+                  "IMW1_B_TURN_003": 3392,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 4160,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 4160
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 4096,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 3712,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 3712,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 3648,
+                "advances": {
+                  "IMW1_A_TURN_003": 3648,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_20",
+            "q": 4,
+            "r": 9728
+          },
+          {
+            "prefix": [
+              "B5C3_NODE_20"
+            ],
+            "E_before": {
+              "IMW1_A_TURN_003": 2432,
+              "IMW1_B_TURN_003": 2432,
+              "IMW1_C_TURN_003": 2432,
+              "IMW1_D_TURN_003": 2432
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_21",
+                "q": 2,
+                "r": 2560,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 1280,
+                  "IMW1_D_TURN_003": 1280
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 1920,
+                "advances": {
+                  "IMW1_A_TURN_003": 960,
+                  "IMW1_B_TURN_003": 960,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 1728,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 1728
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 1664,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 1664,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 1280,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 1280,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 1216,
+                "advances": {
+                  "IMW1_A_TURN_003": 1216,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_21",
+            "q": 2,
+            "r": 2560
+          },
+          {
+            "prefix": [
+              "B5C3_NODE_20",
+              "B5C3_NODE_21"
+            ],
+            "E_before": {
+              "IMW1_A_TURN_003": 2432,
+              "IMW1_B_TURN_003": 2432,
+              "IMW1_C_TURN_003": 3712,
+              "IMW1_D_TURN_003": 3712
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 1920,
+                "advances": {
+                  "IMW1_A_TURN_003": 960,
+                  "IMW1_B_TURN_003": 960,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 1280,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 1280,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 1216,
+                "advances": {
+                  "IMW1_A_TURN_003": 1216,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 448,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 448
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 384,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 384,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_18",
+            "q": 2,
+            "r": 1920
+          }
+        ],
+        "final_frontiers": {
+          "IMW1_A_TURN_003": 3392,
+          "IMW1_B_TURN_003": 3392,
+          "IMW1_C_TURN_003": 3712,
+          "IMW1_D_TURN_003": 3712
+        }
+      }
+    },
+    {
+      "K": 3,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 53.77075886917578,
+      "gap_exact_ms": 31.817384152468748,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 3712,
+          "G": 448,
+          "cost_ms": 17.134832582546874
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "dab272ee1f45e7f986089b7d95c0af7c193b70530f30daaeb4ad1a77d26edee9",
+        "K": 3,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_18"
+        ],
+        "selected_count": 3,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 3712,
+            "G": 448,
+            "cost_ms": 17.134832582546874
+          }
+        ],
+        "recovery_cost_ms": 53.77075886917578,
+        "benefit_ms": 534.1790693459961,
+        "logical_eviction_ids": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        },
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 72.81973443919922
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 4,
+      "policy": "FlowState-Greedy",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 36.6359262866289,
+      "gap_exact_ms": 36.6359262866289,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "7f260780d108f3d7d28fb5664b3d03f0989f9c49655e66645506d1e5ef6abf3e",
+        "K": 4,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "selected_count": 4,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 36.6359262866289,
+        "benefit_ms": 551.313901928543,
+        "logical_eviction_ids": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        },
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 72.81973443919922
+        },
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 17.134832582546878
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 4,
+      "policy": "FlowState-Exact",
+      "selected": [
+        "B5C3_NODE_22",
+        "B5C3_NODE_24",
+        "B5C3_NODE_25",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 0.0,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3648,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3712,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "7f260780d108f3d7d28fb5664b3d03f0989f9c49655e66645506d1e5ef6abf3e",
+        "K": 4,
+        "selected_ids": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ],
+        "selected_count": 4,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3648,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3712,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 0.0,
+        "benefit_ms": 587.9498282151719,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_22",
+          "marginal_ms": 137.17126079013286
+        },
+        {
+          "checkpoint": "B5C3_NODE_24",
+          "marginal_ms": 139.62076940728127
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.34895561599998
+        },
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.8088424017578
+        }
+      ],
+      "native_trace": null
+    },
+    {
+      "K": 4,
+      "policy": "PCB",
+      "selected": [
+        "B5C3_NODE_27",
+        "B5C3_NODE_25",
+        "B5C3_NODE_24",
+        "B5C3_NODE_22"
+      ],
+      "J_ms": 0.0,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3648,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3712,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "7f260780d108f3d7d28fb5664b3d03f0989f9c49655e66645506d1e5ef6abf3e",
+        "K": 4,
+        "selected_ids": [
+          "B5C3_NODE_27",
+          "B5C3_NODE_25",
+          "B5C3_NODE_24",
+          "B5C3_NODE_22"
+        ],
+        "selected_count": 4,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3648,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3712,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 0.0,
+        "benefit_ms": 587.9498282151719,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.348955616
+        },
+        {
+          "checkpoint": "B5C3_NODE_24",
+          "marginal_ms": 139.62076940728127
+        },
+        {
+          "checkpoint": "B5C3_NODE_22",
+          "marginal_ms": 137.1712607901328
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 156.8088424017578
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 154.34895561599998
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 139.62076940728127
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 137.1712607901328
+          }
+        ]
+      }
+    },
+    {
+      "K": 4,
+      "policy": "LDR",
+      "selected": [
+        "B5C3_NODE_27",
+        "B5C3_NODE_25",
+        "B5C3_NODE_24",
+        "B5C3_NODE_22"
+      ],
+      "J_ms": 0.0,
+      "gap_exact_ms": 0.0,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3648,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3712,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 4096,
+          "G": 0,
+          "cost_ms": 0.0
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "7f260780d108f3d7d28fb5664b3d03f0989f9c49655e66645506d1e5ef6abf3e",
+        "K": 4,
+        "selected_ids": [
+          "B5C3_NODE_27",
+          "B5C3_NODE_25",
+          "B5C3_NODE_24",
+          "B5C3_NODE_22"
+        ],
+        "selected_count": 4,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3648,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3712,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 4096,
+            "G": 0,
+            "cost_ms": 0.0
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 0.0,
+        "benefit_ms": 587.9498282151719,
+        "logical_eviction_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20",
+          "B5C3_NODE_21"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 156.80884240175783
+        },
+        {
+          "checkpoint": "B5C3_NODE_25",
+          "marginal_ms": 154.348955616
+        },
+        {
+          "checkpoint": "B5C3_NODE_24",
+          "marginal_ms": 139.62076940728127
+        },
+        {
+          "checkpoint": "B5C3_NODE_22",
+          "marginal_ms": 137.1712607901328
+        }
+      ],
+      "native_trace": {
+        "recommendations": [
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "checkpoint_id": "B5C3_NODE_27",
+            "score": 4160
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "checkpoint_id": "B5C3_NODE_25",
+            "score": 4096
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "checkpoint_id": "B5C3_NODE_24",
+            "score": 3712
+          },
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "checkpoint_id": "B5C3_NODE_22",
+            "score": 3648
+          }
+        ]
+      }
+    },
+    {
+      "K": 4,
+      "policy": "WFC",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 36.6359262866289,
+      "gap_exact_ms": 36.6359262866289,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "7f260780d108f3d7d28fb5664b3d03f0989f9c49655e66645506d1e5ef6abf3e",
+        "K": 4,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "selected_count": 4,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 36.6359262866289,
+        "benefit_ms": 551.313901928543,
+        "logical_eviction_ids": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        },
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 72.81973443919922
+        },
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 17.134832582546878
+        }
+      ],
+      "native_trace": {
+        "steps": [
+          {
+            "prefix": [],
+            "E_before": {
+              "IMW1_A_TURN_003": 0,
+              "IMW1_B_TURN_003": 0,
+              "IMW1_C_TURN_003": 0,
+              "IMW1_D_TURN_003": 0
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_20",
+                "q": 4,
+                "r": 9728,
+                "advances": {
+                  "IMW1_A_TURN_003": 2432,
+                  "IMW1_B_TURN_003": 2432,
+                  "IMW1_C_TURN_003": 2432,
+                  "IMW1_D_TURN_003": 2432
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_21",
+                "q": 2,
+                "r": 7424,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 3712,
+                  "IMW1_D_TURN_003": 3712
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 6784,
+                "advances": {
+                  "IMW1_A_TURN_003": 3392,
+                  "IMW1_B_TURN_003": 3392,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 4160,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 4160
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 4096,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 4096,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 3712,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 3712,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 3648,
+                "advances": {
+                  "IMW1_A_TURN_003": 3648,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_20",
+            "q": 4,
+            "r": 9728
+          },
+          {
+            "prefix": [
+              "B5C3_NODE_20"
+            ],
+            "E_before": {
+              "IMW1_A_TURN_003": 2432,
+              "IMW1_B_TURN_003": 2432,
+              "IMW1_C_TURN_003": 2432,
+              "IMW1_D_TURN_003": 2432
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_21",
+                "q": 2,
+                "r": 2560,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 1280,
+                  "IMW1_D_TURN_003": 1280
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 1920,
+                "advances": {
+                  "IMW1_A_TURN_003": 960,
+                  "IMW1_B_TURN_003": 960,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 1728,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 1728
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 1664,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 1664,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 1280,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 1280,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 1216,
+                "advances": {
+                  "IMW1_A_TURN_003": 1216,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_21",
+            "q": 2,
+            "r": 2560
+          },
+          {
+            "prefix": [
+              "B5C3_NODE_20",
+              "B5C3_NODE_21"
+            ],
+            "E_before": {
+              "IMW1_A_TURN_003": 2432,
+              "IMW1_B_TURN_003": 2432,
+              "IMW1_C_TURN_003": 3712,
+              "IMW1_D_TURN_003": 3712
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_18",
+                "q": 2,
+                "r": 1920,
+                "advances": {
+                  "IMW1_A_TURN_003": 960,
+                  "IMW1_B_TURN_003": 960,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 1280,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 1280,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 1216,
+                "advances": {
+                  "IMW1_A_TURN_003": 1216,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 448,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 448
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 384,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 384,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_18",
+            "q": 2,
+            "r": 1920
+          },
+          {
+            "prefix": [
+              "B5C3_NODE_20",
+              "B5C3_NODE_21",
+              "B5C3_NODE_18"
+            ],
+            "E_before": {
+              "IMW1_A_TURN_003": 3392,
+              "IMW1_B_TURN_003": 3392,
+              "IMW1_C_TURN_003": 3712,
+              "IMW1_D_TURN_003": 3712
+            },
+            "ranked_candidates": [
+              {
+                "checkpoint_id": "B5C3_NODE_27",
+                "q": 1,
+                "r": 448,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 448
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_25",
+                "q": 1,
+                "r": 384,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 384,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_24",
+                "q": 1,
+                "r": 320,
+                "advances": {
+                  "IMW1_A_TURN_003": 0,
+                  "IMW1_B_TURN_003": 320,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              },
+              {
+                "checkpoint_id": "B5C3_NODE_22",
+                "q": 1,
+                "r": 256,
+                "advances": {
+                  "IMW1_A_TURN_003": 256,
+                  "IMW1_B_TURN_003": 0,
+                  "IMW1_C_TURN_003": 0,
+                  "IMW1_D_TURN_003": 0
+                }
+              }
+            ],
+            "chosen": "B5C3_NODE_27",
+            "q": 1,
+            "r": 448
+          }
+        ],
+        "final_frontiers": {
+          "IMW1_A_TURN_003": 3392,
+          "IMW1_B_TURN_003": 3392,
+          "IMW1_C_TURN_003": 3712,
+          "IMW1_D_TURN_003": 4160
+        }
+      }
+    },
+    {
+      "K": 4,
+      "policy": "StandaloneTopK",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_21",
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 36.6359262866289,
+      "gap_exact_ms": 36.6359262866289,
+      "per_pending": [
+        {
+          "continuation_id": "IMW1_A_TURN_003",
+          "T": 3648,
+          "E": 3392,
+          "G": 256,
+          "cost_ms": 9.755408101296874
+        },
+        {
+          "continuation_id": "IMW1_B_TURN_003",
+          "T": 3712,
+          "E": 3392,
+          "G": 320,
+          "cost_ms": 12.197966615410156
+        },
+        {
+          "continuation_id": "IMW1_C_TURN_003",
+          "T": 4096,
+          "E": 3712,
+          "G": 384,
+          "cost_ms": 14.682551569921875
+        },
+        {
+          "continuation_id": "IMW1_D_TURN_003",
+          "T": 4160,
+          "E": 4160,
+          "G": 0,
+          "cost_ms": 0.0
+        }
+      ],
+      "plan": {
+        "epoch_id": "b5c3-191-770617937432341",
+        "snapshot_sha256": "970cd9680c9c7f79430c51e85d7657ed1644ae62557778c5b3a52f853754b246",
+        "epoch_digest": "7f260780d108f3d7d28fb5664b3d03f0989f9c49655e66645506d1e5ef6abf3e",
+        "K": 4,
+        "selected_ids": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21",
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "selected_count": 4,
+        "pending": [
+          {
+            "pending_id": "IMW1_A_TURN_003",
+            "T": 3648,
+            "E": 3392,
+            "G": 256,
+            "cost_ms": 9.755408101296874
+          },
+          {
+            "pending_id": "IMW1_B_TURN_003",
+            "T": 3712,
+            "E": 3392,
+            "G": 320,
+            "cost_ms": 12.197966615410156
+          },
+          {
+            "pending_id": "IMW1_C_TURN_003",
+            "T": 4096,
+            "E": 3712,
+            "G": 384,
+            "cost_ms": 14.682551569921875
+          },
+          {
+            "pending_id": "IMW1_D_TURN_003",
+            "T": 4160,
+            "E": 4160,
+            "G": 0,
+            "cost_ms": 0.0
+          }
+        ],
+        "recovery_cost_ms": 36.6359262866289,
+        "benefit_ms": 551.313901928543,
+        "logical_eviction_ids": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25"
+        ]
+      },
+      "steps": [
+        {
+          "checkpoint": "B5C3_NODE_20",
+          "marginal_ms": 364.1076053814063
+        },
+        {
+          "checkpoint": "B5C3_NODE_21",
+          "marginal_ms": 97.25172952539062
+        },
+        {
+          "checkpoint": "B5C3_NODE_18",
+          "marginal_ms": 72.81973443919922
+        },
+        {
+          "checkpoint": "B5C3_NODE_27",
+          "marginal_ms": 17.134832582546878
+        }
+      ],
+      "native_trace": null
+    }
+  ],
+  "exact": [
+    {
+      "K": 1,
+      "status": "ONLINE_DOMAIN_EXACT",
+      "J_ms": 223.84222283376562,
+      "optimal_sets": [
+        [
+          "B5C3_NODE_20"
+        ]
+      ],
+      "enumerated": 8
+    },
+    {
+      "K": 2,
+      "status": "ONLINE_DOMAIN_EXACT",
+      "J_ms": 53.77075886917578,
+      "optimal_sets": [
+        [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21"
+        ]
+      ],
+      "enumerated": 29
+    },
+    {
+      "K": 3,
+      "status": "ONLINE_DOMAIN_EXACT",
+      "J_ms": 21.95337471670703,
+      "optimal_sets": [
+        [
+          "B5C3_NODE_18",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      ],
+      "enumerated": 64
+    },
+    {
+      "K": 4,
+      "status": "ONLINE_DOMAIN_EXACT",
+      "J_ms": 0.0,
+      "optimal_sets": [
+        [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      ],
+      "enumerated": 99
+    }
+  ]
+}

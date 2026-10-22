@@ -1,0 +1,5 @@
+# 来源证据等级
+
+全部来源仅有首次Census线索，标记PROVENANCE_UNVERIFIED。Strict Compatibility准入、Native实际使用Node/Slot、COW完成、输出正确性与来源血缘分别报告。不同Workflow标签或首次在D2后出现不足以证明张量由D创建。本轮READY不要求血缘已认证，也不因此排除其他独立门禁完整的性能样本。不得在论文中称为已认证跨Workflow来源恢复。
+
+真正匹配和输出证据见native_resume_verification.json及cold_reference_correctness.json。每条状态均来自当前生命周期，无历史Slot绑定复用。

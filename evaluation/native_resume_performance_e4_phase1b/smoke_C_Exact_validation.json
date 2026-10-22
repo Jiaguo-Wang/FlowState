@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "run": "smoke_C_Exact",
+  "pending": "IMW1_C_TURN_003",
+  "solver": "Exact",
+  "mode": "light",
+  "output": {
+    "status": "PASS",
+    "exact_token_match": true,
+    "token_count": 8,
+    "strict_output_ids": [
+      248058,
+      198,
+      27,
+      1628,
+      15462,
+      10318,
+      32634,
+      29
+    ],
+    "cold_output_ids": [
+      248058,
+      198,
+      27,
+      1628,
+      15462,
+      10318,
+      32634,
+      29
+    ],
+    "finish_reason": {
+      "type": "length",
+      "length": 8
+    },
+    "logits": "既有协议未提供Logits比较，本轮未新增容差"
+  },
+  "actual_prefill_tokens": 785,
+  "native_match": {
+    "best_match_node": 21,
+    "cow_requested": true,
+    "cow_source_slots": [
+      10
+    ],
+    "executable_prefix": 3712,
+    "input_token_count": 4497,
+    "input_token_digest": "6e920fdf7bc1cebc5a675c5919b233b366f05a5316e7de18dbd8fc6eb3126b02",
+    "last_device_node": 21,
+    "last_host_node": 21,
+    "mamba_branching_seqlen": 4096,
+    "mamba_host_hit_length": 0,
+    "monotonic_ns": 862892381788384,
+    "physical_fa_hit": 4096,
+    "replay_gap": 384,
+    "request_id": "IMW1_C_TURN_003",
+    "working_slots": [
+      19
+    ]
+  },
+  "selected": [
+    "B5C3_NODE_18",
+    "B5C3_NODE_21"
+  ],
+  "FA_metadata_unchanged": true,
+  "selected_content_unchanged": true,
+  "cold": "C_Cold",
+  "provenance": "PROVENANCE_UNVERIFIED",
+  "phase": "smoke",
+  "pair": 0
+}

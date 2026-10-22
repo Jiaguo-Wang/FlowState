@@ -1,0 +1,37 @@
+{
+  "summary": {
+    "OpenHands": {
+      "conditions": 504,
+      "snapshots": 168,
+      "tight_budget": 90,
+      "shared_conditions": 0,
+      "overlap_conditions": 504,
+      "model_optimal": 504,
+      "n_range": [
+        8,
+        20
+      ]
+    },
+    "AgentX": {
+      "conditions": 69,
+      "snapshots": 23,
+      "tight_budget": 0,
+      "shared_conditions": 66,
+      "overlap_conditions": 33,
+      "model_optimal": 69,
+      "n_range": [
+        6,
+        149
+      ]
+    }
+  },
+  "source_sha256": {
+    "/home/wjg/code/FlowState/evaluation/gate1_step1_allocation_equivalence/gate1_step1_instance_statistics.csv": "542f04aa5bece3cdbc48590026e828485bc6a9292d892cbc9e515da0076627cc",
+    "/home/wjg/code/FlowState/evaluation/gate1_step1_allocation_equivalence/matrices.jsonl": "9aa81ef02257a01f45a9aedc1357a48b98d601ab13cc80e6ba76e9b9520a64e6",
+    "/home/wjg/code/FlowState/evaluation/gate1_step1_allocation_equivalence/summary.json": "754611933cf979292eab0c05519faf45cd5b1d1699e32e8929b697ecc92d33fa",
+    "/home/wjg/code/FlowState/evaluation/gate1_step1_allocation_equivalence/integrity.json": "eb5a34db5d67b181b12ea33d7a1b2d250f78a5816e53a2e0470149b0678d14c3",
+    "/home/wjg/code/FlowState/evaluation/gate1_step1_allocation_equivalence/audit.py": "31fadfd3ca5345a8fe59fec6d1de41a63cd5980433ecf5d5717a21277b59aede"
+  },
+  "method": "复用结构并逐条件复核；可分支持TopK或达到全候选前沿给出最优证书；没有运行新Exact或旧策略",
+  "runtime_boundary": "旧Formal矩阵不是Strict Runtime认证，AgentX既有Formal-only问题未修复"
+}

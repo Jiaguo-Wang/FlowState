@@ -1,0 +1,188 @@
+{
+  "census": {
+    "cpu_domain_size": 16,
+    "mapped": [
+      {
+        "L": 1024,
+        "cpu_checkpoint_id": "C_ROOT_P01024",
+        "first_materialized_request": "C_WARM_0_ROOT",
+        "node_id": 18,
+        "physical_checkpoint_id": "B5C3_NODE_18",
+        "slots": [
+          3
+        ]
+      },
+      {
+        "L": 2048,
+        "cpu_checkpoint_id": "C_AB_P02048",
+        "first_materialized_request": "C_WARM_0_AB",
+        "node_id": 19,
+        "physical_checkpoint_id": "B5C3_NODE_19",
+        "slots": [
+          5
+        ]
+      },
+      {
+        "L": 3072,
+        "cpu_checkpoint_id": "C_CD_P03072",
+        "first_materialized_request": "C_WARM_0_CD",
+        "node_id": 20,
+        "physical_checkpoint_id": "B5C3_NODE_20",
+        "slots": [
+          7
+        ]
+      },
+      {
+        "L": 4096,
+        "cpu_checkpoint_id": "C_A_P04096",
+        "first_materialized_request": "C_WARM_0_A",
+        "node_id": 21,
+        "physical_checkpoint_id": "B5C3_NODE_21",
+        "slots": [
+          9
+        ]
+      },
+      {
+        "L": 5120,
+        "cpu_checkpoint_id": "C_B_P05120",
+        "first_materialized_request": "C_WARM_0_B",
+        "node_id": 22,
+        "physical_checkpoint_id": "B5C3_NODE_22",
+        "slots": [
+          11
+        ]
+      },
+      {
+        "L": 6144,
+        "cpu_checkpoint_id": "C_C_P06144",
+        "first_materialized_request": "C_WARM_0_C",
+        "node_id": 23,
+        "physical_checkpoint_id": "B5C3_NODE_23",
+        "slots": [
+          13
+        ]
+      },
+      {
+        "L": 7168,
+        "cpu_checkpoint_id": "C_D_P07168",
+        "first_materialized_request": "C_WARM_0_D",
+        "node_id": 24,
+        "physical_checkpoint_id": "B5C3_NODE_24",
+        "slots": [
+          15
+        ]
+      },
+      {
+        "L": 4096,
+        "cpu_checkpoint_id": "C_JOIN_P04096",
+        "first_materialized_request": "C_WARM_0_JOIN",
+        "node_id": 25,
+        "physical_checkpoint_id": "B5C3_NODE_25",
+        "slots": [
+          17
+        ]
+      },
+      {
+        "L": 960,
+        "cpu_checkpoint_id": "C_ROOT_P00960",
+        "first_materialized_request": "C_WARM_0_ROOT",
+        "node_id": 27,
+        "physical_checkpoint_id": "B5C3_NODE_27",
+        "slots": [
+          20
+        ]
+      },
+      {
+        "L": 1984,
+        "cpu_checkpoint_id": "C_AB_P01984",
+        "first_materialized_request": "C_WARM_0_AB",
+        "node_id": 29,
+        "physical_checkpoint_id": "B5C3_NODE_29",
+        "slots": [
+          22
+        ]
+      },
+      {
+        "L": 3008,
+        "cpu_checkpoint_id": "C_CD_P03008",
+        "first_materialized_request": "C_WARM_0_CD",
+        "node_id": 31,
+        "physical_checkpoint_id": "B5C3_NODE_31",
+        "slots": [
+          24
+        ]
+      },
+      {
+        "L": 4032,
+        "cpu_checkpoint_id": "C_A_P04032",
+        "first_materialized_request": "C_WARM_0_A",
+        "node_id": 33,
+        "physical_checkpoint_id": "B5C3_NODE_33",
+        "slots": [
+          26
+        ]
+      },
+      {
+        "L": 5056,
+        "cpu_checkpoint_id": "C_B_P05056",
+        "first_materialized_request": "C_WARM_0_B",
+        "node_id": 35,
+        "physical_checkpoint_id": "B5C3_NODE_35",
+        "slots": [
+          28
+        ]
+      },
+      {
+        "L": 6080,
+        "cpu_checkpoint_id": "C_C_P06080",
+        "first_materialized_request": "C_WARM_0_C",
+        "node_id": 37,
+        "physical_checkpoint_id": "B5C3_NODE_37",
+        "slots": [
+          2
+        ]
+      },
+      {
+        "L": 7104,
+        "cpu_checkpoint_id": "C_D_P07104",
+        "first_materialized_request": "C_WARM_0_D",
+        "node_id": 39,
+        "physical_checkpoint_id": "B5C3_NODE_39",
+        "slots": [
+          6
+        ]
+      },
+      {
+        "L": 4032,
+        "cpu_checkpoint_id": "C_JOIN_P04032",
+        "first_materialized_request": "C_WARM_0_JOIN",
+        "node_id": 41,
+        "physical_checkpoint_id": "B5C3_NODE_41",
+        "slots": [
+          10
+        ]
+      }
+    ],
+    "missing_physical": [],
+    "note": "未映射的额外物理状态一律视为未选中并在协调中真实驱逐，不免费保留任何祖先",
+    "physical_domain_size": 16,
+    "unmapped_extras": []
+  },
+  "error": "RuntimeError('物化时间线与冻结预热声明不符：B5C3_NODE_27')",
+  "observations": [],
+  "ok": false,
+  "operations": [],
+  "phase": "start",
+  "status": "BLOCKED",
+  "timing": [
+    {
+      "ms": 2401.345835,
+      "stage": "final_heavy_observation"
+    },
+    {
+      "ms": 0.575403,
+      "stage": "cpu_physical_mapping"
+    }
+  ],
+  "traceback": "Traceback (most recent call last):\n  File \"/home/wjg/code/FlowState/evaluation/c_shared_gpu_pilot_k3/control.py\", line 92, in apply\n    require(seen[0] == phys_to_cpu[c['checkpoint_id']]['first_materialized_request'],\n  File \"/home/wjg/code/FlowState/evaluation/runtime_control_closure_r2c0/bridge.py\", line 18, in require\n    if not v:raise RuntimeError(message)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: 物化时间线与冻结预热声明不符：B5C3_NODE_27\n"
+}

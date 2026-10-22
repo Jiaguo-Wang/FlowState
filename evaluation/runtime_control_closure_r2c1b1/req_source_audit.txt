@@ -1,0 +1,69 @@
+73: from sglang.srt.dllm.mixin.req import ReqDllmMixin
+98: from sglang.srt.mem_cache.memory_pool import ReqToTokenPool
+110:     APIServerReqTimeStats,
+111:     DPControllerReqTimeStats,
+112:     SchedulerReqTimeStats,
+171: def get_batch_return_hidden_states_mode(reqs: List[Req]) -> CaptureHiddenMode:
+734: class ReqLogprob:
+761: class ReqKvInfo:
+771: class Req(ReqDllmMixin):
+814:             Union[APIServerReqTimeStats, DPControllerReqTimeStats]
+829:         # _refresh_fill_ids infers how many output tokens are already in
+830:         # full_untruncated_fill_ids from lengths alone, so in-place rewrites
+831:         # that preserve length would silently corrupt fill_ids.
+834:         # Kept in sync by _refresh_fill_ids; admission only updates
+836:         self.full_untruncated_fill_ids = array("q")
+850:         self.kv: Optional[ReqKvInfo] = None
+866:         # Require reasoning for the request
+1004:         self.logprob = ReqLogprob(
+1105:             self.time_stats = SchedulerReqTimeStats.new_from_obj(time_stats)
+1107:             self.time_stats = SchedulerReqTimeStats(disagg_mode=disagg_mode)
+1225:     def get_fill_ids(self) -> array:
+1226:         return self.full_untruncated_fill_ids[: self.extend_range.end]
+1228:     def _refresh_fill_ids(self) -> None:
+1229:         """Keep full_untruncated_fill_ids == origin_input_ids + output_ids by
+1233:         - aliasing: scheduler_pp_mixin assigns full_untruncated_fill_ids =
+1240:         n_have_output = len(self.full_untruncated_fill_ids) - len(self.origin_input_ids)
+1242:             self.full_untruncated_fill_ids is not self.origin_input_ids
+1245:             self.full_untruncated_fill_ids.extend(self.output_ids[n_have_output:])
+1247:             self.full_untruncated_fill_ids = self.origin_input_ids + self.output_ids
+1255:             self._init_fill_ids_for_dllm()
+1258:             self._refresh_fill_ids()
+1260:         input_len = len(self.full_untruncated_fill_ids)
+1280:         token_ids_to_match = self.full_untruncated_fill_ids
+1538:                             "BadRequestError",
+1726:             f"ReqTimeStats("
+1748:             error_msg, HTTPStatus.BAD_REQUEST, "BadRequestError"
+1774:             f"Req(rid={self.rid}, "
+1836:     req: Req,
+1839:     req_to_token_pool: ReqToTokenPool,
+1865:     reqs: List[Req],
+1867:     req_to_token_pool: ReqToTokenPool,
+1896:     # - extend_input_len: Number of tokens that need to be processed in this extend batch
+1906:     chunked_req: Optional[Req],
+1927:     reqs: List[Req]
+1931:     req_to_token_pool: ReqToTokenPool = None
+1952:     chunked_req: Optional[Req] = None
+1959:     decoding_reqs: List[Req] = None
+2104:         reqs: List[Req],
+2105:         req_to_token_pool: ReqToTokenPool,
+2111:         chunked_req: Optional[Req] = None,
+2291:         input_ids = [r.get_fill_ids()[len(r.prefix_indices) :] for r in reqs]
+2302:                 full_untruncated_fill_len=len(r.full_untruncated_fill_ids),
+2357:                 # Slice to match extend_input_len — PrefillAdder truncates
+2358:                 # fill_len/extend_input_len on chunk overflow but not input_embeds.
+2432:                 # get_fill_ids() = [1, 2]
+2437:                 # get_fill_ids() = [3, 4]
+2556:         req: Req,
+2672:             req._refresh_fill_ids()
+2673:             full_len = len(req.full_untruncated_fill_ids)
+2736:     ) -> Tuple[List[Req], float, List[Req]]:
+2756:         reqs_to_abort: List[Req] = []
+2777:         # Reqs in batch are filtered
+2786:         reqs: List[Req], server_args: ServerArgs
+2797:         def length_key(req: Req) -> Tuple[int, int]:
+2803:             def retraction_key(req: Req) -> Tuple[int, int, int]:
+2931:         # entry. So take the last output token from Req directly
+3023:         chunked_req_to_exclude: Optional[Union[Req, List[Req]]] = None,
+3027:             if isinstance(chunked_req_to_exclude, Req):
+3264:     def _evict_swa(self, req: Req, pre_len: int):

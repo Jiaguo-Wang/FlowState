@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+___ ERROR collecting evaluation/runtime_control_closure_r2c0/test_bridge.py ____
+ImportError while importing test module '/home/wjg/code/FlowState/evaluation/runtime_control_closure_r2c0/test_bridge.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+evaluation/runtime_control_closure_r2c0/test_bridge.py:4: in <module>
+    from .bridge import load,assert_nonoverlap
+E   ImportError: attempted relative import with no known parent package
+=========================== short test summary info ============================
+ERROR evaluation/runtime_control_closure_r2c0/test_bridge.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.19s

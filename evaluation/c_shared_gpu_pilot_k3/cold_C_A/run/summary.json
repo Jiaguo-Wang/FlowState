@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "mode": "cold",
+  "policy": null,
+  "pending": "C_A",
+  "H_physical_fa_hit": 0,
+  "E_executable_prefix": 0,
+  "G_replay_gap": 0,
+  "prefill_token_count": 4128,
+  "batch_prefix_length": 0,
+  "cuda_prefill_ms": 23124.53515625,
+  "cuda_decode_ms": 2151.989866256714,
+  "cow_copy_count": 0,
+  "cow_copy_cuda_ms": 0,
+  "ttft_ms": 24544.321762,
+  "request_wall_ms": 31501.100347,
+  "stream_tpot_ms": 993.7800574285715,
+  "control_rpc_wall_ms": null,
+  "warmup_wall_ms": 0.000854,
+  "epoch_wall_ms": 31560.945364,
+  "output_ids": [
+    220,
+    200,
+    248046,
+    198,
+    248045,
+    74455,
+    198,
+    248068
+  ],
+  "native_matches": [
+    {
+      "best_match_node": 9,
+      "cow_requested": true,
+      "cow_source_slots": [],
+      "executable_prefix": 0,
+      "input_token_count": 4128,
+      "input_token_digest": "67f4fb3c131ceb78c68b88fc1be8e434fa5a2589e9386ef6b2d11543eb7828fd",
+      "last_device_node": 9,
+      "last_host_node": 9,
+      "mamba_branching_seqlen": null,
+      "mamba_host_hit_length": 0,
+      "monotonic_ns": 997883340137543,
+      "physical_fa_hit": 0,
+      "replay_gap": 0,
+      "request_id": "C_A",
+      "working_slots": []
+    }
+  ],
+  "说明": "受控审计化执行；CUDA事件是设备时间线区间而非纯内核之和；控制开销与请求性能分开计时"
+}

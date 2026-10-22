@@ -1,0 +1,15 @@
+{
+  "started_unix": 1792576357.0780523,
+  "deadline_unix": 1792583557.0780525,
+  "source": "evaluation/kvflow_synthetic_stage1",
+  "target": "INVOKE_0_00",
+  "arms": [
+    "probe",
+    "evict",
+    "cold"
+  ],
+  "probe": "全新生命周期，两次固定提示预热，不驱逐，测试4128 Token后续输入",
+  "evict": "仅probe通过后，全新等价生命周期保留4032祖先、驱逐4096末端；K=1指一个真实Recurrent槽，不是策略比较",
+  "cold": "干净独立生命周期，使用相同完整输入和8 Token确定性参数",
+  "scope": "仅Agent00，不重跑十Agent；其他Agent物理计量依据已有全树Census"
+}

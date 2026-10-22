@@ -1,0 +1,519 @@
+{
+  "workload_type": "Trace-derived Controlled Composition（每组两任务×两Session，共4组16 Session）",
+  "identity": {
+    "image_id": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+    "versions": {
+      "transformers": "5.12.1",
+      "tokenizers": "0.22.2",
+      "sglang": "0.5.17",
+      "jinja2": "3.1.6"
+    },
+    "loaded_chat_template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+    "model_path": "/home/wjg/models/qwen3.5-9b",
+    "b4_identity_source": "evaluation/strict_compatibility_b4b1_output/capture_g001_g006_run01/g001/configuration.json"
+  },
+  "selection": {
+    "protocol": "sampling_protocol.md（先于分词固定）",
+    "excluded_b5c2_instance_ids": [
+      "0b01001001__spectree-64",
+      "12rambau__sepal_ui-411"
+    ],
+    "group_task_mapping": {
+      "w1": [
+        "12rambau__sepal_ui-747",
+        "3YOURMIND__django-migration-linter-258"
+      ],
+      "w2": [
+        "4degrees__clique-26",
+        "ARMmbed__mbed-tools-293"
+      ],
+      "w3": [
+        "ASFHyP3__hyp3-sdk-53",
+        "ASPP__pelita-696"
+      ],
+      "w4": [
+        "ASPP__pelita-798",
+        "Aarhus-Psychiatry-Research__timeseriesflattener-186"
+      ]
+    },
+    "failures": []
+  },
+  "groups": {
+    "w1": {
+      "status": "REBUILT",
+      "structure_class": "nested_two_task",
+      "sources": [
+        {
+          "label": "A",
+          "instance_id": "12rambau__sepal_ui-747",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-019748607d8f3f68844645bd474eea9c",
+          "parquet_row_index_zero_based": 12484,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "B",
+          "instance_id": "12rambau__sepal_ui-747",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-4a1456bdf81fe2d5b4d436b5605981a1",
+          "parquet_row_index_zero_based": 11784,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "C",
+          "instance_id": "3YOURMIND__django-migration-linter-258",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-893447cc6a2b12ec8f03fd5962ef5e23",
+          "parquet_row_index_zero_based": 12909,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "D",
+          "instance_id": "3YOURMIND__django-migration-linter-258",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-8f559190f4cc30908b732c0fdc651ed1",
+          "parquet_row_index_zero_based": 11486,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        }
+      ],
+      "pending_token_counts": {
+        "A": 4250,
+        "B": 4308,
+        "C": 4497,
+        "D": 4582
+      },
+      "pending_token_sha256": {
+        "A": "060a287409b55605b6d5c2c3acebfbe4c098feaac1fd000c503b4c74935d1bfd",
+        "B": "2301f464b0f865903f025f8f1e7237c3381e21e07fbe72bc251fa699ef443d8a",
+        "C": "108a016ad8e65bcd5526b3756cbd9ba52b9b7043e192bed31096c4724902ece4",
+        "D": "32d58103ae42f70af1b4963cebf5af0805c025462b549df92d0fc837123486e6"
+      },
+      "token_sharing": {
+        "four_way_lcp": 2438,
+        "four_way_support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "task1_lcp_AB": 3451,
+        "task1_support": [
+          "A",
+          "B"
+        ],
+        "task2_lcp_CD": 3771,
+        "task2_support": [
+          "C",
+          "D"
+        ],
+        "cross_task_lcp": {
+          "AC": 2438,
+          "AD": 2438,
+          "BC": 2438,
+          "BD": 2438
+        },
+        "system_prefix_token_lengths": {
+          "A": 2428,
+          "B": 2428,
+          "C": 2428,
+          "D": 2428
+        },
+        "pairwise_lcp": {
+          "A": {
+            "A": 4250,
+            "B": 3451,
+            "C": 2438,
+            "D": 2438
+          },
+          "B": {
+            "A": 3451,
+            "B": 4308,
+            "C": 2438,
+            "D": 2438
+          },
+          "C": {
+            "A": 2438,
+            "B": 2438,
+            "C": 4497,
+            "D": 3771
+          },
+          "D": {
+            "A": 2438,
+            "B": 2438,
+            "C": 3771,
+            "D": 4582
+          }
+        }
+      },
+      "history_causality": "顺序与tool_call_id可核验；墙钟UNKNOWN",
+      "runtime_materialization": "UNKNOWN；未创建任何Checkpoint",
+      "runtime_must_verify": [
+        "历史回放实际接收Token与CPU数组一致",
+        "原生Recurrent Checkpoint物化位置与Node/Slot所有权",
+        "逐Pending FA frontier与Planning Target（L≤T逐边确认）",
+        "完整Strict Compatibility矩阵（三态，无UNKNOWN）",
+        "实际支持集合与预算竞争；有效与无效案例原样保留"
+      ]
+    },
+    "w2": {
+      "status": "REBUILT",
+      "structure_class": "nested_two_task",
+      "sources": [
+        {
+          "label": "A",
+          "instance_id": "4degrees__clique-26",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-9b6cc3bfc6601b33584f93cc14d2831d",
+          "parquet_row_index_zero_based": 10221,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "B",
+          "instance_id": "4degrees__clique-26",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-d0cf3b9eb569ecf96d5c46d9e1704269",
+          "parquet_row_index_zero_based": 10295,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "C",
+          "instance_id": "ARMmbed__mbed-tools-293",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-1bd66ae1b3919b8a6ce3e88a074171e0",
+          "parquet_row_index_zero_based": 11841,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "D",
+          "instance_id": "ARMmbed__mbed-tools-293",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-8087f9aaabc85af9da14b400be53cc3d",
+          "parquet_row_index_zero_based": 12897,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        }
+      ],
+      "pending_token_counts": {
+        "A": 4209,
+        "B": 4122,
+        "C": 4191,
+        "D": 4667
+      },
+      "pending_token_sha256": {
+        "A": "f042248bf1539f76d9d698f67cde002d44db7bf2d336e586ae691c0b5fbc9771",
+        "B": "f760626554a89076453f804ce78fd465d4ba10ec68c469e232b7312626324657",
+        "C": "2b9439bb4ad7160611f96740eb6d8dd13d31d637e6c8e9331f4ab6d8e8e85e07",
+        "D": "37d32fb51bcc4a000eefa0a4e0c34ff2ca34129b18970606bc08c86c4bc09677"
+      },
+      "token_sharing": {
+        "four_way_lcp": 2438,
+        "four_way_support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "task1_lcp_AB": 3511,
+        "task1_support": [
+          "A",
+          "B"
+        ],
+        "task2_lcp_CD": 3570,
+        "task2_support": [
+          "C",
+          "D"
+        ],
+        "cross_task_lcp": {
+          "AC": 2438,
+          "AD": 2438,
+          "BC": 2438,
+          "BD": 2438
+        },
+        "system_prefix_token_lengths": {
+          "A": 2428,
+          "B": 2428,
+          "C": 2428,
+          "D": 2428
+        },
+        "pairwise_lcp": {
+          "A": {
+            "A": 4209,
+            "B": 3511,
+            "C": 2438,
+            "D": 2438
+          },
+          "B": {
+            "A": 3511,
+            "B": 4122,
+            "C": 2438,
+            "D": 2438
+          },
+          "C": {
+            "A": 2438,
+            "B": 2438,
+            "C": 4191,
+            "D": 3570
+          },
+          "D": {
+            "A": 2438,
+            "B": 2438,
+            "C": 3570,
+            "D": 4667
+          }
+        }
+      },
+      "history_causality": "顺序与tool_call_id可核验；墙钟UNKNOWN",
+      "runtime_materialization": "UNKNOWN；未创建任何Checkpoint",
+      "runtime_must_verify": [
+        "历史回放实际接收Token与CPU数组一致",
+        "原生Recurrent Checkpoint物化位置与Node/Slot所有权",
+        "逐Pending FA frontier与Planning Target（L≤T逐边确认）",
+        "完整Strict Compatibility矩阵（三态，无UNKNOWN）",
+        "实际支持集合与预算竞争；有效与无效案例原样保留"
+      ]
+    },
+    "w3": {
+      "status": "REBUILT",
+      "structure_class": "nested_two_task",
+      "sources": [
+        {
+          "label": "A",
+          "instance_id": "ASFHyP3__hyp3-sdk-53",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-594f2f9f67b497385fc4d03aecfbdcb8",
+          "parquet_row_index_zero_based": 8135,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "B",
+          "instance_id": "ASFHyP3__hyp3-sdk-53",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-71a37a9adb00c152fff8ac1721d84fdf",
+          "parquet_row_index_zero_based": 7544,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "C",
+          "instance_id": "ASPP__pelita-696",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-c5c12b464b245febd92bda1e55ad0bc6",
+          "parquet_row_index_zero_based": 8536,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "D",
+          "instance_id": "ASPP__pelita-696",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-f238626ab8d6c2b93454479cb77e8706",
+          "parquet_row_index_zero_based": 9342,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        }
+      ],
+      "pending_token_counts": {
+        "A": 4215,
+        "B": 4184,
+        "C": 4548,
+        "D": 4543
+      },
+      "pending_token_sha256": {
+        "A": "2f31a4a686afc15618b2eee2f866124750953ef96dd7c96cb4cbac78126786d6",
+        "B": "fbbe98ceeb03b9bd9ccbed64d6ecdb68b4aafe556ee7ad85508c187d55052a20",
+        "C": "779bce22885dfa0b03e33ef98da237c6d860738714c2ff9971a044b879ac1570",
+        "D": "27c5a32486f60b3ab84494204fc5784f551871be72919422e276f4bc9436e3ad"
+      },
+      "token_sharing": {
+        "four_way_lcp": 2438,
+        "four_way_support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "task1_lcp_AB": 3535,
+        "task1_support": [
+          "A",
+          "B"
+        ],
+        "task2_lcp_CD": 3471,
+        "task2_support": [
+          "C",
+          "D"
+        ],
+        "cross_task_lcp": {
+          "AC": 2438,
+          "AD": 2438,
+          "BC": 2438,
+          "BD": 2438
+        },
+        "system_prefix_token_lengths": {
+          "A": 2428,
+          "B": 2428,
+          "C": 2428,
+          "D": 2428
+        },
+        "pairwise_lcp": {
+          "A": {
+            "A": 4215,
+            "B": 3535,
+            "C": 2438,
+            "D": 2438
+          },
+          "B": {
+            "A": 3535,
+            "B": 4184,
+            "C": 2438,
+            "D": 2438
+          },
+          "C": {
+            "A": 2438,
+            "B": 2438,
+            "C": 4548,
+            "D": 3471
+          },
+          "D": {
+            "A": 2438,
+            "B": 2438,
+            "C": 3471,
+            "D": 4543
+          }
+        }
+      },
+      "history_causality": "顺序与tool_call_id可核验；墙钟UNKNOWN",
+      "runtime_materialization": "UNKNOWN；未创建任何Checkpoint",
+      "runtime_must_verify": [
+        "历史回放实际接收Token与CPU数组一致",
+        "原生Recurrent Checkpoint物化位置与Node/Slot所有权",
+        "逐Pending FA frontier与Planning Target（L≤T逐边确认）",
+        "完整Strict Compatibility矩阵（三态，无UNKNOWN）",
+        "实际支持集合与预算竞争；有效与无效案例原样保留"
+      ]
+    },
+    "w4": {
+      "status": "REBUILT",
+      "structure_class": "nested_two_task",
+      "sources": [
+        {
+          "label": "A",
+          "instance_id": "ASPP__pelita-798",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-3942e3a432dc0fb9cb5278f12587ff46",
+          "parquet_row_index_zero_based": 13379,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "B",
+          "instance_id": "ASPP__pelita-798",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-71a0f78a38141a11373a246a33cc6819",
+          "parquet_row_index_zero_based": 13116,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "C",
+          "instance_id": "Aarhus-Psychiatry-Research__timeseriesflattener-186",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-693f196b1497d431296622c3e990b5fa",
+          "parquet_row_index_zero_based": 14507,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        },
+        {
+          "label": "D",
+          "instance_id": "Aarhus-Psychiatry-Research__timeseriesflattener-186",
+          "session_id": "nebius-swe-rebench-openhands::chatcmpl-c53d9462f679017413386dcf8183c91a",
+          "parquet_row_index_zero_based": 14589,
+          "pending_cut_index": 6,
+          "recorded_model": null
+        }
+      ],
+      "pending_token_counts": {
+        "A": 4866,
+        "B": 4847,
+        "C": 4513,
+        "D": 6971
+      },
+      "pending_token_sha256": {
+        "A": "270cc3825c16e8dd1fcf7d673836379810d894b9a4cfd5afec92ea9d83490c4c",
+        "B": "4208bfa6a2d67e3e41af34e5332e393069d4c83aa819c03c86c0e6c21120dbec",
+        "C": "83b00fe6bb9f9e55727ad69e501e90133e9ac468ff4504878fdfd10fb14e2491",
+        "D": "e27e8e03f00d325f36f4d6ee72f36b5137dd4cbe3999f57e8ab678c4a60f8cf1"
+      },
+      "token_sharing": {
+        "four_way_lcp": 2437,
+        "four_way_support": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "task1_lcp_AB": 3549,
+        "task1_support": [
+          "A",
+          "B"
+        ],
+        "task2_lcp_CD": 3488,
+        "task2_support": [
+          "C",
+          "D"
+        ],
+        "cross_task_lcp": {
+          "AC": 2437,
+          "AD": 2437,
+          "BC": 2437,
+          "BD": 2437
+        },
+        "system_prefix_token_lengths": {
+          "A": 2428,
+          "B": 2428,
+          "C": 2428,
+          "D": 2428
+        },
+        "pairwise_lcp": {
+          "A": {
+            "A": 4866,
+            "B": 3549,
+            "C": 2437,
+            "D": 2437
+          },
+          "B": {
+            "A": 3549,
+            "B": 4847,
+            "C": 2437,
+            "D": 2437
+          },
+          "C": {
+            "A": 2437,
+            "B": 2437,
+            "C": 4513,
+            "D": 3488
+          },
+          "D": {
+            "A": 2437,
+            "B": 2437,
+            "C": 3488,
+            "D": 6971
+          }
+        }
+      },
+      "history_causality": "顺序与tool_call_id可核验；墙钟UNKNOWN",
+      "runtime_materialization": "UNKNOWN；未创建任何Checkpoint",
+      "runtime_must_verify": [
+        "历史回放实际接收Token与CPU数组一致",
+        "原生Recurrent Checkpoint物化位置与Node/Slot所有权",
+        "逐Pending FA frontier与Planning Target（L≤T逐边确认）",
+        "完整Strict Compatibility矩阵（三态，无UNKNOWN）",
+        "实际支持集合与预算竞争；有效与无效案例原样保留"
+      ]
+    }
+  },
+  "tool_results_total": 32,
+  "message_boundaries_exact": true,
+  "scope_limits": [
+    "文本匹配、Token LCP与历史Session重复都不是可执行Recurrent State共享；物化状态UNKNOWN",
+    "非自然并发、非原生Agent Fork；受控已知输入组合",
+    "未运行GPU、未构造Strict Snapshot、未运行任何分配算法"
+  ],
+  "verification": {
+    "source_identity": "PASS",
+    "history_and_causality": "PASS",
+    "token_arrays_and_lcp": "PASS"
+  }
+}

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/wjg/code/FlowState/evaluation/multishare_cpu_input_gate_b5c2/tokenize_cpu.py", line 90, in <module>
+    save(f'{label}_pending_offsets.json',encoded['offset_mapping'])
+  File "/home/wjg/code/FlowState/evaluation/multishare_cpu_input_gate_b5c2/tokenize_cpu.py", line 20, in save
+    assert json.loads((OUT/name).read_text())==x,'已有本轮文件内容冲突：'+name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 已有本轮文件内容冲突：A_pending_offsets.json

@@ -1,0 +1,425 @@
+<|im_start|>system
+You are OpenHands agent, a helpful AI assistant that can interact with a computer to solve tasks.
+
+<ROLE>
+Your primary role is to assist users by executing commands, modifying code, and solving technical problems effectively. You should be thorough, methodical, and prioritize quality over speed.
+* If the user asks a question, like "why is X happening", don't try to fix the problem. Just give an answer to the question.
+</ROLE>
+
+<EFFICIENCY>
+* Each action you take is somewhat expensive. Wherever possible, combine multiple actions into a single action, e.g. combine multiple bash commands into one, using sed and grep to edit/view multiple files at once.
+* When exploring the codebase, use efficient tools like find, grep, and git commands with appropriate filters to minimize unnecessary operations.
+</EFFICIENCY>
+
+<FILE_SYSTEM_GUIDELINES>
+* When a user provides a file path, do NOT assume it's relative to the current working directory. First explore the file system to locate the file before working on it.
+* If asked to edit a file, edit the file directly, rather than creating a new file with a different filename.
+* For global search-and-replace operations, consider using `sed` instead of opening file editors multiple times.
+* NEVER create multiple versions of the same file with different suffixes (e.g., file_test.py, file_fix.py, file_simple.py). Instead:
+  - Always modify the original file directly when making changes
+  - If you need to create a temporary file for testing, delete it once you've confirmed your solution works
+  - If you decide a file you created is no longer useful, delete it instead of creating a new version
+* Do NOT include documentation files explaining your changes in version control unless the user explicitly requests it
+* When reproducing bugs or implementing fixes, use a single file rather than creating multiple files with different versions
+</FILE_SYSTEM_GUIDELINES>
+
+<CODE_QUALITY>
+* Write clean, efficient code with minimal comments. Avoid redundancy in comments: Do not repeat information that can be easily inferred from the code itself.
+* When implementing solutions, focus on making the minimal changes needed to solve the problem.
+* Before implementing any changes, first thoroughly understand the codebase through exploration.
+* If you are adding a lot of code to a function or file, consider splitting the function or file into smaller pieces when appropriate.
+* Place all imports at the top of the file unless explicitly requested otherwise or if placing imports at the top would cause issues (e.g., circular imports, conditional imports, or imports that need to be delayed for specific reasons).
+</CODE_QUALITY>
+
+<VERSION_CONTROL>
+* If there are existing git user credentials already configured, use them and add Co-authored-by: openhands <openhands@all-hands.dev> to any commits messages you make. if a git config doesn't exist use "openhands" as the user.name and "openhands@all-hands.dev" as the user.email by default, unless explicitly instructed otherwise.
+* Exercise caution with git operations. Do NOT make potentially dangerous changes (e.g., pushing to main, deleting repositories) unless explicitly asked to do so.
+* When committing changes, use `git status` to see all modified files, and stage all files necessary for the commit. Use `git commit -a` whenever possible.
+* Do NOT commit files that typically shouldn't go into version control (e.g., node_modules/, .env files, build directories, cache files, large binaries) unless explicitly instructed by the user.
+* If unsure about committing certain files, check for the presence of .gitignore files or ask the user for clarification.
+</VERSION_CONTROL>
+
+<PULL_REQUESTS>
+* **Important**: Do not push to the remote branch and/or start a pull request unless explicitly asked to do so.
+* When creating pull requests, create only ONE per session/issue unless explicitly instructed otherwise.
+* When working with an existing PR, update it with new commits rather than creating additional PRs for the same issue.
+* When updating a PR, preserve the original PR title and purpose, updating description only when necessary.
+</PULL_REQUESTS>
+
+<PROBLEM_SOLVING_WORKFLOW>
+1. EXPLORATION: Thoroughly explore relevant files and understand the context before proposing solutions
+2. ANALYSIS: Consider multiple approaches and select the most promising one
+3. TESTING:
+   * For bug fixes: Create tests to verify issues before implementing fixes
+   * For new features: Consider test-driven development when appropriate
+   * Do NOT write tests for documentation changes, README updates, configuration files, or other non-functionality changes
+   * If the repository lacks testing infrastructure and implementing tests would require extensive setup, consult with the user before investing time in building testing infrastructure
+   * If the environment is not set up to run tests, consult with the user first before investing time to install all dependencies
+4. IMPLEMENTATION:
+   * Make focused, minimal changes to address the problem
+   * Always modify existing files directly rather than creating new versions with different suffixes
+   * If you create temporary files for testing, delete them after confirming your solution works
+5. VERIFICATION: If the environment is set up to run tests, test your implementation thoroughly, including edge cases. If the environment is not set up to run tests, consult with the user first before investing time to run tests.
+</PROBLEM_SOLVING_WORKFLOW>
+
+<SECURITY>
+* Only use GITHUB_TOKEN and other credentials in ways the user has explicitly requested and would expect.
+* Use APIs to work with GitHub or other platforms, unless the user asks otherwise or your task requires browsing.
+</SECURITY>
+
+<EXTERNAL_SERVICES>
+* When interacting with external services like GitHub, GitLab, or Bitbucket, use their respective APIs instead of browser-based interactions whenever possible.
+* Only resort to browser-based interactions with these services if specifically requested by the user or if the required operation cannot be performed via API.
+</EXTERNAL_SERVICES>
+
+<ENVIRONMENT_SETUP>
+* When user asks you to run an application, don't stop if the application is not installed. Instead, please install the application and run the command again.
+* If you encounter missing dependencies:
+  1. First, look around in the repository for existing dependency files (requirements.txt, pyproject.toml, package.json, Gemfile, etc.)
+  2. If dependency files exist, use them to install all dependencies at once (e.g., `pip install -r requirements.txt`, `npm install`, etc.)
+  3. Only install individual packages directly if no dependency files are found or if only specific packages are needed
+* Similarly, if you encounter missing dependencies for essential tools requested by the user, install them when possible.
+</ENVIRONMENT_SETUP>
+
+<TROUBLESHOOTING>
+* If you've made repeated attempts to solve a problem but tests still fail or the user reports it's still broken:
+  1. Step back and reflect on 5-7 different possible sources of the problem
+  2. Assess the likelihood of each possible cause
+  3. Methodically address the most likely causes, starting with the highest probability
+  4. Document your reasoning process
+* When you run into any major issue while executing a plan from the user, please don't try to directly work around it. Instead, propose a new plan and confirm with the user before proceeding.
+</TROUBLESHOOTING>
+
+<DOCUMENTATION>
+* When explaining changes or solutions to the user:
+  - Include explanations in your conversation responses rather than creating separate documentation files
+  - If you need to create documentation files for reference, do NOT include them in version control unless explicitly requested
+  - Never create multiple versions of documentation files with different suffixes
+* If the user asks for documentation:
+  - Confirm whether they want it as a separate file or just in the conversation
+  - Ask if they want documentation files to be included in version control
+</DOCUMENTATION>
+
+<PROCESS_MANAGEMENT>
+* When terminating processes:
+  - Do NOT use general keywords with commands like `pkill -f server` or `pkill -f python` as this might accidentally kill other important servers or processes
+  - Always use specific keywords that uniquely identify the target process
+  - Prefer using `ps aux` to find the exact process ID (PID) first, then kill that specific PID
+  - When possible, use more targeted approaches like finding the PID from a pidfile or using application-specific shutdown commands
+</PROCESS_MANAGEMENT>
+
+<TASK_MANAGEMENT>
+* You have access to the `task_tracker` tool to help you organize and monitor development work. Use this tool REGULARLY to maintain task visibility and provide users with clear progress updates. This tool is ESSENTIAL for systematic planning and decomposing complex development work into manageable components. Failing to use this tool for planning may result in overlooked requirements - which is unacceptable.
+* It is crucial that you update task status to "done" immediately upon completion of each work item. Do not accumulate multiple finished tasks before updating their status.
+* For complex, multi-phase development work, use `task_tracker` to establish a comprehensive plan with well-defined steps:
+  1. Begin by decomposing the overall objective into primary phases using `task_tracker`
+  2. Include detailed work items as necessary to break complex activities into actionable units
+  3. Update tasks to "in_progress" status when commencing work on them
+  4. Update tasks to "done" status immediately after completing each item
+  5. For each primary phase, incorporate additional work items as you identify new requirements
+  6. If you determine the plan requires substantial modifications, suggest revisions and obtain user confirmation before proceeding
+* Example workflow for debugging and resolution:
+  ```
+  User: "Execute the test suite and resolve any validation failures"
+  Assistant: I'm going to use the task_tracker tool to organize the following work items:
+  - Execute the test suite
+  - Resolve any validation failures
+  I'm now going to run the test suite using the terminal.
+  [After running tests and discovering 8 validation failures]
+  I found 8 validation failures that need attention. I'm going to use the task_tracker tool to add 8 specific items to the task list.
+  [Updating first task to in_progress]
+  Let me begin addressing the first validation issue...
+  [After resolving first failure]
+  The first validation issue has been resolved, let me mark that task as done and proceed to the second item...
+  ```
+* Example workflow for component development:
+  ```
+  User: "Build a dashboard component that displays analytics data with interactive charts and filtering options"
+  Assistant: I'll help you create an analytics dashboard with interactive charts and filtering. Let me first use the task_tracker tool to organize this development work.
+  Adding the following tasks to the tracker:
+  1. Analyze existing analytics data structure and requirements
+  2. Design dashboard layout and component architecture
+  3. Implement data visualization charts with interactivity
+  4. Create filtering and search functionality
+  5. Integrate components and perform testing
+  Let me start by examining the current analytics data structure to understand what we're working with...
+  [Assistant proceeds with implementation step by step, updating tasks to in_progress and done as work progresses]
+  ```
+</TASK_MANAGEMENT><|im_end|>
+<|im_start|>user
+<uploaded_files>
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23
+</uploaded_files>
+
+I've uploaded a python code repository in the directory Aarhus-Psychiatry-Research__timeseriesflattener__0.23. Consider the following issue description:
+
+<issue_description>
+fix: change type hints in specs to allow for floats in interval_days
+Currenty, float inputs to interval_days args in predictor and outcome specs are coerced into integers. Thus, it is not possible to generate predictors/outcomes with non-integer lookbehind/ahead windows. 
+
+- [ ] Add test 
+</issue_description>
+
+Can you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?
+I've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!
+Also the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.
+Your task is to make the minimal changes to non-test files in the /workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23 directory to ensure the <issue_description> is satisfied.
+
+Follow these phases to resolve the issue:
+
+Phase 1. READING: read the problem and reword it in clearer terms
+   1.1 If there are code or config snippets. Express in words any best practices or conventions in them.
+   1.2 Hightlight message errors, method names, variables, file names, stack traces, and technical details.
+   1.3 Explain the problem in clear terms.
+   1.4 Enumerate the steps to reproduce the problem.
+   1.5 Hightlight any best practices to take into account when testing and fixing the issue
+
+Phase 2. RUNNING: install and run the tests on the repository
+   2.1 Follow the readme
+   2.2 Install the environment and anything needed
+   2.2 Iterate and figure out how to run the tests
+
+Phase 3. EXPLORATION: find the files that are related to the problem and possible solutions
+   3.1 Use `grep` to search for relevant methods, classes, keywords and error messages.
+   3.2 Identify all files related to the problem statement.
+   3.3 Propose the methods and files to fix the issue and explain why.
+   3.4 From the possible file locations, select the most likely location to fix the issue.
+
+Phase 4. TEST CREATION: before implementing any fix, create a script to reproduce and verify the issue.
+   4.1 Look at existing test files in the repository to understand the test format/structure.
+   4.2 Create a minimal reproduction script that reproduces the located issue.
+   4.3 Run the reproduction script to confirm you are reproducing the issue.
+   4.4 Adjust the reproduction script as necessary.
+
+Phase 5. FIX ANALYSIS: state clearly the problem and how to fix it
+   5.1 State clearly what the problem is.
+   5.2 State clearly where the problem is located.
+   5.3 State clearly how the test reproduces the issue.
+   5.4 State clearly the best practices to take into account in the fix.
+   5.5 State clearly how to fix the problem.
+
+Phase 6. FIX IMPLEMENTATION: Edit the source code to implement your chosen solution.
+   6.1 Make minimal, focused changes to fix the issue.
+
+Phase 7. VERIFICATION: Test your implementation thoroughly.
+   7.1 Run your reproduction script to verify the fix works.
+   7.2 Add edge cases to your test script to ensure comprehensive coverage.
+   7.3 Run existing tests related to the modified code to ensure you haven't broken anything.
+
+8. FINAL REVIEW: Carefully re-read the problem description and compare your changes with the base commit bb6a7fffb2a520272fcb5d7129957ce22484ff77.
+   8.1 Ensure you've fully addressed all requirements.
+   8.2 Run any tests in the repository related to:
+     8.2.1 The issue you are fixing
+     8.2.2 The files you modified
+     8.2.3 The functions you changed
+   8.3 If any tests fail, revise your implementation until all tests pass
+
+Be thorough in your exploration, testing, and reasoning. It's fine if your thinking process is lengthy - quality and completeness are more important than brevity.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+I'll help you implement the necessary changes to allow float values in `interval_days` parameters. Let me start by following the phases you outlined.
+
+## Phase 1. READING: Understanding the Problem
+
+<tool_call>
+<function=str_replace_editor>
+<parameter=command>
+view
+</parameter>
+<parameter=path>
+/workspace
+</parameter>
+</function>
+</tool_call><|im_end|>
+<|im_start|>user
+<tool_response>
+Here's the files and directories up to 2 levels deep in /workspace, excluding hidden items:
+/workspace/
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/CHANGELOG.md
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/CODE_OF_CONDUCT.md
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/CONTRIBUTING.md
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/LICENSE
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/Makefile
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/README.md
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/citation.cff
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/docs/
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/icon.png
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/paper/
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/pyproject.toml
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/src/
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/tasks.py
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/tests/
+</tool_response><|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+Let me examine the README to understand the project structure:
+
+<tool_call>
+<function=str_replace_editor>
+<parameter=path>
+/workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/README.md
+</parameter>
+<parameter=command>
+view
+</parameter>
+</function>
+</tool_call><|im_end|>
+<|im_start|>user
+<tool_response>
+Here's the result of running `cat -n` on /workspace/Aarhus-Psychiatry-Research__timeseriesflattener__0.23/README.md:
+     1	<a href="https://github.com/Aarhus-Psychiatry-Research/timeseriesflattener"><img src="https://github.com/Aarhus-Psychiatry-Research/timeseriesflattener/blob/main/docs/_static/icon.png?raw=true" width="200" align="right"/></a>
+     2	
+     3	# Timeseriesflattener
+     4	
+     5	[![github actions docs](https://github.com/Aarhus-Psychiatry-Research/timeseriesflattener/actions/workflows/documentation.yml/badge.svg)](https://aarhus-psychiatry-research.github.io/timeseriesflattener/)
+     6	[![github actions pytest](https://github.com/Aarhus-Psychiatry-Research/timeseriesflattener/actions/workflows/main_test_and_release.yml/badge.svg)](https://github.com/Aarhus-Psychiatry-Research/timeseriesflattener/actions)
+     7	[![python versions](https://img.shields.io/pypi/pyversions/timeseriesflattener)](https://pypi.org/project/timeseriesflattener/)
+     8	[![Code style: black](https://img.shields.io/badge/Code%20Style-Black-black)](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html)
+     9	
+    10	[![PyPI version](https://badge.fury.io/py/timeseriesflattener.svg)](https://pypi.org/project/timeseriesflattener/)
+    11	[![status](https://joss.theoj.org/papers/3bbea8745668d1aa40ff796c6fd3db87/status.svg)](https://joss.theoj.org/papers/3bbea8745668d1aa40ff796c6fd3db87)
+    12	
+    13	Time series from e.g. electronic health records often have a large number of variables, are sampled at irregular intervals and tend to have a large number of missing values. Before this type of data can be used for prediction modelling with machine learning methods such as logistic regression or XGBoost, the data needs to be reshaped. 
+    14	
+    15	In essence, the time series need to be *flattened* so that each prediction time is represented by a set of predictor values and an outcome value. These predictor values can be constructed by aggregating the preceding values in the time series within a certain time window. 
+    16	
+    17	`timeseriesflattener` aims to simplify this process by providing an easy-to-use and fully-specified pipeline for flattening complex time series. 
+    18	
+    19	## 🔧 Installation
+    20	To get started using timeseriesflattener simply install it using pip by running the following line in your terminal:
+    21	
+    22	```
+    23	pip install timeseriesflattener
+    24	```
+    25	
+    26	## ⚡ Quick start
+    27	
+    28	```py
+    29	import numpy as np
+    30	import pandas as pd
+    31	
+    32	if __name__ == "__main__":
+    33	
+    34	    # Load a dataframe with times you wish to make a prediction
+    35	    prediction_times_df = pd.DataFrame(
+    36	        {
+    37	            "id": [1, 1, 2],
+    38	            "date": ["2020-01-01", "2020-02-01", "2020-02-01"],
+    39	        },
+    40	    )
+    41	    # Load a dataframe with raw values you wish to aggregate as predictors
+    42	    predictor_df = pd.DataFrame(
+    43	        {
+    44	            "id": [1, 1, 1, 2],
+    45	            "date": [
+    46	                "2020-01-15",
+    47	                "2019-12-10",
+    48	                "2019-12-15",
+    49	                "2020-01-02",
+    50	            ],
+    51	            "value": [1, 2, 3, 4],
+    52	        },
+    53	    )
+    54	    # Load a dataframe specifying when the outcome occurs
+    55	    outcome_df = pd.DataFrame({"id": [1], "date": ["2020-03-01"], "value": [1]})
+    56	
+    57	    # Specify how to aggregate the predictors and define the outcome
+    58	    from timeseriesflattener.feature_spec_objects import OutcomeSpec, PredictorSpec
+    59	    from timeseriesflattener.resolve_multiple_functions import maximum, mean
+    60	
+    61	    predictor_spec = PredictorSpec(
+    62	        values_df=predictor_df,
+    63	        lookbehind_days=30,
+    64	        fallback=np.nan,
+    65	        entity_id_col_name="id",
+    66	        resolve_multiple_fn=mean,
+    67	        feature_name="test_feature",
+    68	    )
+    69	    outcome_spec = OutcomeSpec(
+    70	        values_df=outcome_df,
+    71	        lookahead_days=31,
+    72	        fallback=0,
+    73	        entity_id_col_name="id",
+    74	        resolve_multiple_fn=maximum,
+    75	        feature_name="test_outcome",
+    76	        incident=False,
+    77	    )
+    78	
+    79	    # Instantiate TimeseriesFlattener and add the specifications
+    80	    from timeseriesflattener import TimeseriesFlattener
+    81	
+    82	    ts_flattener = TimeseriesFlattener(
+    83	        prediction_times_df=prediction_times_df,
+    84	        entity_id_col_name="id",
+    85	        timestamp_col_name="date",
+    86	        n_workers=1,
+    87	        drop_pred_times_with_insufficient_look_distance=False,
+    88	    )
+    89	    ts_flattener.add_spec([predictor_spec, outcome_spec])
+    90	    df = ts_flattener.get_df()
+    91	    df
+    92	```
+    93	Output:
+    94	
+    95	|      |   id | date                | prediction_time_uuid  | pred_test_feature_within_30_days_mean_fallback_nan | outc_test_outcome_within_31_days_maximum_fallback_0_dichotomous |
+    96	| ---: | ---: | :------------------ | :-------------------- | -------------------------------------------------: | --------------------------------------------------------------: |
+    97	|    0 |    1 | 2020-01-01 00:00:00 | 1-2020-01-01-00-00-00 |                                                2.5 |                                                               0 |
+    98	|    1 |    1 | 2020-02-01 00:00:00 | 1-2020-02-01-00-00-00 |                                                  1 |                                                               1 |
+    99	|    2 |    2 | 2020-02-01 00:00:00 | 2-2020-02-01-00-00-00 |                                                  4 |                                                               0 |
+   100	
+   101	
+   102	## 📖 Documentation
+   103	
+   104	| Documentation          |                                                                                        |
+   105	| ---------------------- | -------------------------------------------------------------------------------------- |
+   106	| 🎓 **[Tutorial]**       | Simple and advanced tutorials to get you started using `timeseriesflattener`           |
+   107	| 🎛 **[General docs]** | The detailed reference for timeseriesflattener's API. |
+   108	| 🙋 **[FAQ]**            | Frequently asked question                                                              |
+   109	| 🗺️ **[Roadmap]**        | Kanban board for the roadmap for the project                                           |
+   110	
+   111	[Tutorial]: https://aarhus-psychiatry-research.github.io/timeseriesflattener/tutorials.html
+   112	[General docs]: https://Aarhus-Psychiatry-Research.github.io/timeseriesflattener/
+   113	[FAQ]: https://Aarhus-Psychiatry-Research.github.io/timeseriesflattener/faq.html
+   114	[Roadmap]: https://github.com/orgs/Aarhus-Psychiatry-Research/projects/11/views/1
+   115	
+   116	## 💬 Where to ask questions
+   117	
+   118	| Type                           |                        |
+   119	| ------------------------------ | ---------------------- |
+   120	| 🚨 **Bug Reports**              | [GitHub Issue Tracker] |
+   121	| 🎁 **Feature Requests & Ideas** | [GitHub Issue Tracker] |
+   122	| 👩‍💻 **Usage Questions**          | [GitHub Discussions]   |
+   123	| 🗯 **General Discussion**       | [GitHub Discussions]   |
+   124	
+   125	[github issue tracker]: https://github.com/Aarhus-Psychiatry-Research/timeseriesflattener/issues
+   126	[github discussions]: https://github.com/Aarhus-Psychiatry-Research/timeseriesflattener/discussions
+   127	
+   128	
+   129	## 🎓 Projects
+   130	PSYCOP projects which use `timeseriesflattener`. Note that some of these projects have yet to be published and are thus private.
+   131	
+   132	| Project                 | Publications |                                                                                                                                                                                                                                       |
+   133	| ----------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   134	| **[Type 2 Diabetes]**   |              | Prediction of type 2 diabetes among patients with visits to psychiatric hospital departments                                                                                                                                          |
+   135	| **[Cancer]**            |              | Prediction of Cancer among patients with visits to psychiatric hospital departments                                                                                                                                                   |
+   136	| **[COPD]**              |              | Prediction of Chronic obstructive pulmonary disease (COPD) among patients with visits to psychiatric hospital departments                                                                                                             |
+   137	| **[Forced admissions]** |              | Prediction of forced admissions of patients to the psychiatric hospital departments. Encompasses two separate projects: 1. Prediciting at time of discharge for inpatient admissions. 2. Predicting day before outpatient admissions. |
+   138	| **[Coercion]**          |              | Prediction of coercion among patients admittied to the hospital psychiatric department. Encompasses predicting mechanical restraint, sedative medication and manual restraint 48 hours before coercion occurs.                        |
+   139	
+   140	
+   141	[Type 2 diabetes]: https://github.com/Aarhus-Psychiatry-Research/psycop-t2d
+   142	[Cancer]: https://github.com/Aarhus-Psychiatry-Research/psycop-cancer
+   143	[COPD]: https://github.com/Aarhus-Psychiatry-Research/psycop-copd
+   144	[Forced admissions]: https://github.com/Aarhus-Psychiatry-Research/psycop-forced-admissions
+   145	[Coercion]: https://github.com/Aarhus-Psychiatry-Research/pyscop-coercion
+   146
+</tool_response><|im_end|>
+<|im_start|>assistant
+<think>

@@ -1,0 +1,21 @@
+# 测量范围与计时边界
+
+每个严格臂使用独立Engine、相同八条历史、同一w1/K2与确定性八Token协议。全部初始输入、候选前缀、组件内容、FA映射与内容、池结构通过规范化签名比较。三对次序预先冻结，不因结果补跑。系统页缓存、GPU频率和首次编译仍可能波动；不是生产P95或显著性实验。
+
+轻量观察在单次Scheduler串行控制RPC中内联，observation_inline_ms为实际元数据观察阶段，没有额外的轻量Observation RPC。heavy_reference_rpc_ms是其之前独立重型观察/参考规划/内容认证RPC，不能冒称轻量观察成本。
+
+Epoch认证、收益矩阵、求解、Plan验证、Apply-time与Reconciliation是Control RPC的子区间。Native Adapter驱逐位于Reconciliation内部。所有父子区间不得相加。
+
+CUDA Prefill事件在原Eager执行同一流、延迟COW之后记录，含主机提交空隙，不等于纯内核和；外层run_batch与COW事件另存原始trace，不加到Prefill。实际Prefill Tokens来自Req/Batch的实际extend区间，不用H−E代替完整输入长度−E。
+
+Client TTFT从客户端发起请求到第一个非空流响应；Request Wall到流结束。Control-to-completion从控制RPC发起到请求流结束，包含客户端中间步骤。Audit-inclusive Completion从前置重型参考RPC发起到请求流结束。请求后的完整内容验证和Engine清理不在这两个完成端点内，单独保存；因此Audit-inclusive并非全部实验生命周期Wall。
+
+四个Smoke在控制后额外执行完整内容审计，不纳入性能样本。性能臂的前置重型参考与请求后内容审计位于轻量关键路径之外，但前置成本仍计入Audit-inclusive。未通过估计减法生成轻量测量。当前路径仍有元数据遍历、同步和严格认证，不能视为生产实现成本。
+
+本轮复用原Runner与原E1隔离Hook，不改生产代码。Native匹配与组件检查支持本次恢复正确性；血缘一律PROVENANCE_UNVERIFIED。
+
+## 客户端证据持久化边界
+
+复用的AuditedControlClient经B5-D4a persistence.call_saved执行请求/响应保存与fsync；因此Control RPC Wall以及重型Reference RPC Wall均包含这部分客户端证据开销，不是仅网络或Scheduler时间。控制响应后还写reconciliation.json与request.json，再启动请求；这些工作计入Control-to-completion。CPU阶段子区间不包含全部客户端保存成本，不能将其相加代替RPC实测，也不从实测总路径扣除估计值。
+
+轻量路径已将全树内容哈希和逐槽内容对拍放到前置/后置独立审计；但没有消除所有实验持久化。请求Wall还包含完整八Token的Decode与流传输，不可当作Prefill时间。此限制不影响同边界的配对原始数据有效性，但阻止将完整路径称为纯生产控制净收益。

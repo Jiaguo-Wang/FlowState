@@ -1,0 +1,6 @@
+{
+  "error": "AssertionError('GPU存在其他任务')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/wjg/code/FlowState/evaluation/native_resume_correctness_e4_phase1a/launch.py\", line 47, in main\n    label=p['label'];pid=p['continuation_id'];cold=label+'_Cold';one(cold,'Cold',pid)\n                                                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/wjg/code/FlowState/evaluation/native_resume_correctness_e4_phase1a/launch.py\", line 20, in one\n    apps=run(['nvidia-smi','-i','0','--query-compute-apps=pid,process_name,used_memory','--format=csv']);assert len(apps.strip().splitlines())==1,'GPU存在其他任务'\n                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: GPU存在其他任务\n",
+  "attempted": [],
+  "validated": 0
+}

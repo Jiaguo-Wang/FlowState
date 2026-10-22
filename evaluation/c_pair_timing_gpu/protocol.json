@@ -1,0 +1,227 @@
+{
+  "version": "1.0",
+  "started_unix": 1792631053.1743348,
+  "deadline_unix": 1792645453.174335,
+  "deadline_note": "开始+4h；20 次主生命周期约 70–90 分钟，phase2 视分析结果追加约 15 分钟",
+  "source": {
+    "pilot": "/home/wjg/code/FlowState/evaluation/c_shared_gpu_pilot_k3",
+    "pilot_conclusion": "READY 17/17（零正确性失败）",
+    "frozen_inputs_crosschecked_against": "implementation_lock3.json",
+    "cold_references": [
+      "cold_reference_C_B.json",
+      "cold_reference_C_C.json"
+    ],
+    "control_stack": "control.py/bridge.py 与 pilot 逐字节一致（协调/观察/审计合同不变）"
+  },
+  "workload": "冻结 C Shared/Branched K=3（同 pilot：16 预热=8前缀×2轮；K=3；Qwen3.5-9B；SGLang v0.5.17；H100 PCIe TP=1）",
+  "design": {
+    "exp_cb": "C_B：FS(E=5120,G=0) vs SA(E=0,G=5120)，H=5152 相同——检验恢复 Token 减少是否产生可分辨延迟收益",
+    "exp_cc": "C_C：FS 与 SA 均 E=6144,G=0,H=6176——相同恢复前沿，估计环境与测量波动（零假设带宽）",
+    "reps": "每条件 5 次独立 Engine 生命周期，共 20 次；顺序冻结（奇数对 FS 先、偶数对 SA 先，对内两条件时间相邻）"
+  },
+  "phase1_arms": [
+    {
+      "name": "p01_CB_FS",
+      "pair": 1,
+      "experiment": "CB",
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p01_CB_SA",
+      "pair": 1,
+      "experiment": "CB",
+      "policy": "StandaloneTopK",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p01_CC_FS",
+      "pair": 1,
+      "experiment": "CC",
+      "policy": "FlowState-Greedy",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p01_CC_SA",
+      "pair": 1,
+      "experiment": "CC",
+      "policy": "StandaloneTopK",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p02_CB_SA",
+      "pair": 2,
+      "experiment": "CB",
+      "policy": "StandaloneTopK",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p02_CB_FS",
+      "pair": 2,
+      "experiment": "CB",
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p02_CC_SA",
+      "pair": 2,
+      "experiment": "CC",
+      "policy": "StandaloneTopK",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p02_CC_FS",
+      "pair": 2,
+      "experiment": "CC",
+      "policy": "FlowState-Greedy",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p03_CB_FS",
+      "pair": 3,
+      "experiment": "CB",
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p03_CB_SA",
+      "pair": 3,
+      "experiment": "CB",
+      "policy": "StandaloneTopK",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p03_CC_FS",
+      "pair": 3,
+      "experiment": "CC",
+      "policy": "FlowState-Greedy",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p03_CC_SA",
+      "pair": 3,
+      "experiment": "CC",
+      "policy": "StandaloneTopK",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p04_CB_SA",
+      "pair": 4,
+      "experiment": "CB",
+      "policy": "StandaloneTopK",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p04_CB_FS",
+      "pair": 4,
+      "experiment": "CB",
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p04_CC_SA",
+      "pair": 4,
+      "experiment": "CC",
+      "policy": "StandaloneTopK",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p04_CC_FS",
+      "pair": 4,
+      "experiment": "CC",
+      "policy": "FlowState-Greedy",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p05_CB_FS",
+      "pair": 5,
+      "experiment": "CB",
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p05_CB_SA",
+      "pair": 5,
+      "experiment": "CB",
+      "policy": "StandaloneTopK",
+      "pending": "C_B",
+      "mode": "strict"
+    },
+    {
+      "name": "p05_CC_FS",
+      "pair": 5,
+      "experiment": "CC",
+      "policy": "FlowState-Greedy",
+      "pending": "C_C",
+      "mode": "strict"
+    },
+    {
+      "name": "p05_CC_SA",
+      "pair": 5,
+      "experiment": "CC",
+      "policy": "StandaloneTopK",
+      "pending": "C_C",
+      "mode": "strict"
+    }
+  ],
+  "phase2_arms": [
+    {
+      "name": "w1_CB_FS",
+      "pair": 1,
+      "experiment": "CB_warm",
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "mode": "strict_warm"
+    },
+    {
+      "name": "w1_CB_SA",
+      "pair": 1,
+      "experiment": "CB_warm",
+      "policy": "StandaloneTopK",
+      "pending": "C_B",
+      "mode": "strict_warm"
+    },
+    {
+      "name": "w2_CB_SA",
+      "pair": 2,
+      "experiment": "CB_warm",
+      "policy": "StandaloneTopK",
+      "pending": "C_B",
+      "mode": "strict_warm"
+    },
+    {
+      "name": "w2_CB_FS",
+      "pair": 2,
+      "experiment": "CB_warm",
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "mode": "strict_warm"
+    }
+  ],
+  "phase2_gate": "仅当 phase1 分析确认计时污染（throwaway/Triton 证据）后写 contamination_confirmed.json 才执行；strict_warm 序列：16预热重放→throwaway(目标Pending原Token,1新Token,预热目标extend形状)→flush_cache→空缓存断言→16预热二次重放(逐请求digest验证,history2留证)→b5d4_apply(唯一一次协调,完整合同)→正式流式请求。apply前BASELINE保持None，b5c3_observe全程可用；Triton编译缓存跨flush保留（进程内不重编）",
+  "instrumentation": {
+    "triton_snapshots": "engine_ready/post_warmup/post_control(/post_throwaway/post_flush/post_warmup2)/post_request 各点条目数与名称，差分定位编译窗口",
+    "ttft_decomposition": "queue(send→首batch ns_before)+pregap(batch→首kernel)+execwin(batch窗)+compute(事件窗)+postgap+delivery(batch结束→首chunk)，client/engine同用CLOCK_MONOTONIC",
+    "first_decode": "首个 decode 步事件窗（首decode形状编译证据；引擎配置 disable_cuda_graph=true 已排除Graph Capture）",
+    "census_assert": "在 pilot 检查之上加严：每生命周期 census 必须 16/16/0 额外（pilot 由 launch 门禁把守，本轮入 runner）"
+  },
+  "rules": "不修改生产 FlowState/Phi/策略实现/冻结Token/预算；不修改 pilot 目录任何文件；协调与观察合同逐字节复用；只增计时仪表与两项加严断言（census 计数、Cold 输出一致），不删除任何状态控制；每臂独立容器与Engine生命周期，GPU 空闲礼仪与清理校验同 pilot；任一臂失败即停保留日志；不把 5 次重复解释为充分统计显著性",
+  "stop_rule": "失败即停；deadline 截止未完成臂如实标未测"
+}

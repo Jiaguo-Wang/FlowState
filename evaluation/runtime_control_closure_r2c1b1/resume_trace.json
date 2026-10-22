@@ -1,0 +1,44 @@
+{
+  "gate": "BLOCKED",
+  "reason": "新增执行入口观测读取不存在的Req.fill_ids，Scheduler在调用原run_batch前退出",
+  "reconciliation_status": "PASS",
+  "completed_evictions": [
+    "RQ3_G001_A_TURN_001",
+    "RQ3_G001_A_TURN_002",
+    "RQ3_G001_A_TURN_003",
+    "RQ3_G001_B_TURN_002",
+    "RQ3_G001_C_TURN_001",
+    "RQ3_G001_C_TURN_002",
+    "RQ3_G001_C_TURN_003",
+    "RQ3_G001_D_TURN_001",
+    "RQ3_G001_D_TURN_002",
+    "RQ3_G001_D_TURN_003"
+  ],
+  "admission_equivalence": "PASS",
+  "native_match": {
+    "request_id": "RQ3_G001_A_PENDING_TURN_004",
+    "monotonic_ns": 517915130102434,
+    "physical_fa_hit": 4224,
+    "executable_prefix": 2432,
+    "replay_gap": 1792,
+    "best_match_node": 20,
+    "last_device_node": 20,
+    "last_host_node": 20,
+    "mamba_host_hit_length": 0,
+    "mamba_branching_seqlen": 4224,
+    "cow_requested": true,
+    "cow_source_slots": [
+      6
+    ],
+    "working_slots": [
+      27
+    ],
+    "input_token_count": 4394,
+    "input_token_digest": "b4b54b0dd4b63aac05980df6f0c4e93b8da687ed34e8a82f1e6403d6c0e96b99"
+  },
+  "copies": [],
+  "execution": [],
+  "raw_trace": "strict/native_trace.json",
+  "evidence_level": "Actual Runtime State Matched；未达到RESUME_VALIDATED",
+  "retry_run": false
+}

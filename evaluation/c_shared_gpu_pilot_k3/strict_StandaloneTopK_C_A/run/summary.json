@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "mode": "strict",
+  "policy": "StandaloneTopK",
+  "pending": "C_A",
+  "H_physical_fa_hit": 4096,
+  "E_executable_prefix": 0,
+  "G_replay_gap": 4096,
+  "prefill_token_count": 4128,
+  "batch_prefix_length": 0,
+  "cuda_prefill_ms": 150.89756774902344,
+  "cuda_decode_ms": 1850.6471614837646,
+  "cow_copy_count": 0,
+  "cow_copy_cuda_ms": 0,
+  "ttft_ms": 2147.395339,
+  "request_wall_ms": 10485.041208,
+  "stream_tpot_ms": 1191.0405561428572,
+  "control_rpc_wall_ms": 10725.609565,
+  "warmup_wall_ms": 31710.404051,
+  "epoch_wall_ms": 55278.36185,
+  "output_ids": [
+    220,
+    200,
+    248046,
+    198,
+    248045,
+    74455,
+    198,
+    248068
+  ],
+  "native_matches": [
+    {
+      "best_match_node": 9,
+      "cow_requested": true,
+      "cow_source_slots": [],
+      "executable_prefix": 0,
+      "input_token_count": 4128,
+      "input_token_digest": "67f4fb3c131ceb78c68b88fc1be8e434fa5a2589e9386ef6b2d11543eb7828fd",
+      "last_device_node": 9,
+      "last_host_node": 9,
+      "mamba_branching_seqlen": 4096,
+      "mamba_host_hit_length": 0,
+      "monotonic_ns": 997019425964088,
+      "physical_fa_hit": 4096,
+      "replay_gap": 4096,
+      "request_id": "C_A",
+      "working_slots": []
+    }
+  ],
+  "说明": "受控审计化执行；CUDA事件是设备时间线区间而非纯内核之和；控制开销与请求性能分开计时",
+  "cow_absent_by_contract": true,
+  "control_timing_stages": [
+    {
+      "ms": 2442.02322,
+      "stage": "final_heavy_observation"
+    },
+    {
+      "ms": 0.615832,
+      "stage": "cpu_physical_mapping"
+    },
+    {
+      "ms": 148.461598,
+      "stage": "strict_epoch_authentication_and_plan"
+    },
+    {
+      "ms": 1245.090132,
+      "stage": "apply_time_freshness_preflight"
+    },
+    {
+      "ms": 937.986074,
+      "stage": "fa_content_audit_before"
+    },
+    {
+      "ms": 893.736041,
+      "stage": "strict_reconciliation_with_postchecks"
+    },
+    {
+      "ms": 1546.983526,
+      "stage": "fa_content_postcheck_and_resume_baseline"
+    }
+  ],
+  "census_counts": {
+    "physical": 16,
+    "mapped": 16,
+    "unmapped_extras": 0
+  },
+  "selected_cpu": [
+    "C_D_P07168",
+    "C_D_P07104",
+    "C_C_P06144"
+  ],
+  "plan_recovery_cost_ms": 348.234011266
+}

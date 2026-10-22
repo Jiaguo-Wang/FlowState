@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": {
+    "req_batch": {
+      "status": "PASS",
+      "req_class": "sglang.srt.managers.schedule_batch.Req",
+      "batch_class": "sglang.srt.managers.schedule_batch.ScheduleBatch",
+      "device": "cpu"
+    },
+    "fa_cpu_readonly": "PASS",
+    "fa_distinct_slice": "PASS",
+    "allocator_api": "PASS",
+    "cuda_wrapper_cpu_contract": "PASS：原生恰好一次、异常传播、重叠拒绝、Req不变；未认证GPU时间",
+    "eager_wrapper_cpu_contract": "PASS：只计目标、原调用恰好一次、保留返回值"
+  },
+  "runtime_sources": {
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/memory_pool.py": "29ef7b37d2e12b1a4b674b97c33b3ceb05cd8421a3742eb33cb6a75f52896ddc",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/allocator/base.py": "8f8239157e3cf30d94da9f103acb72a1ffd39ef7813df83aba882d1d5041d7f4",
+    "/sgl-workspace/sglang/python/sglang/srt/model_executor/runner/eager_runner.py": "b4064a3c4c102f004c3cc0d8481602fa1bb2d84a415fa54e4e9547f03a112a60"
+  },
+  "gpu_engine_started": false
+}

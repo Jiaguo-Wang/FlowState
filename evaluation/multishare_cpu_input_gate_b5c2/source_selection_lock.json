@@ -1,0 +1,88 @@
+{
+  "workload_type": "Trace-derived Controlled Composition",
+  "rule": "沿B5-C1既定instance_id、session_id字典序，前两个任务各前两个Session；失败不补位",
+  "source_path": "/home/wjg/data/agentic_coding_trajectories/sessions.parquet",
+  "source_sha256": "3dd8ec3546cf771ce4ab2ac6c51ccefdd621197fa997a2cefb430b50df808fb6",
+  "records": [
+    {
+      "label": "A",
+      "instance_id": "0b01001001__spectree-64",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-71420ffc5b410547d43ac67939b0441c",
+      "source_id": "chatcmpl-71420ffc5b410547d43ac67939b0441c",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 10918,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "source_history_file": "A_source_history.json",
+      "source_history_sha256": "78efe4c09c078995e54f2c915bde737b462b34e4862e6c1a2f9033e0754d0d07",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "label": "B",
+      "instance_id": "0b01001001__spectree-64",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-71b073b89097665d14501919b224c26b",
+      "source_id": "chatcmpl-71b073b89097665d14501919b224c26b",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 12519,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "source_history_file": "B_source_history.json",
+      "source_history_sha256": "d8f812c10f56519e5141b4999fd4f17055477f41762dcf7fa2beb4d52938ea54",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "label": "C",
+      "instance_id": "12rambau__sepal_ui-411",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-6f6bc3d08ce275e9f059158e0a4513ef",
+      "source_id": "chatcmpl-6f6bc3d08ce275e9f059158e0a4513ef",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 10472,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "source_history_file": "C_source_history.json",
+      "source_history_sha256": "a275ae1e2435fe45976bb062c9f78384d0b85fd466b2762d46d1b57f16f31263",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    },
+    {
+      "label": "D",
+      "instance_id": "12rambau__sepal_ui-411",
+      "session_id": "nebius-swe-rebench-openhands::chatcmpl-9d7d3d3ab3856419dec69a7d1a106c8b",
+      "source_id": "chatcmpl-9d7d3d3ab3856419dec69a7d1a106c8b",
+      "source_dataset": "nebius-swe-rebench-openhands",
+      "parquet_row_index_zero_based": 10378,
+      "assistant_message_indices_zero_based": [
+        2,
+        4,
+        6
+      ],
+      "pending_cut_index": 6,
+      "source_history_file": "D_source_history.json",
+      "source_history_sha256": "8940bbe387209745cae8782ef3c5f23cb6380b322577d5b915a815ffda3689db",
+      "recorded_model": null,
+      "third_assistant_content_read": false,
+      "source_wall_clock": "UNKNOWN"
+    }
+  ],
+  "prior_protocol_sha256": "7638b5ea71c9bacdb4e449810dd8bae7f1a063ce9a354317e85b0e7452360ec4",
+  "prior_inventory_sha256": "5e131faf184d355073d376959228c82dd085e3254f6112de8ecba9beffbd1e6f",
+  "original_row_order_is_selection_order": false,
+  "说明": "原始行号只作溯源；选取顺序是已预定字典序，不是原始时间顺序；只向分词脚本提供截断历史"
+}
