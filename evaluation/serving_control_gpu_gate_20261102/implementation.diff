@@ -1,0 +1,104 @@
+--- /home/wjg/code/FlowState/evaluation/serving_control_interface_gate_20261101/runner.py
++++ /home/wjg/code/FlowState/evaluation/serving_control_gpu_gate_20261102/runner.py
+@@ -39,6 +39,8 @@
+ POLICY = os.environ['PILOT_POLICY']
+ SEPARATION = os.environ.get('FS_SEPARATION_MODE', 'original')
+ require(SEPARATION in ('original', 'serving'), '未知控制模式')
++require(SEPARATION == 'serving' and BASELINE_MODE in ('shadow_validation', 'serving'),
++        '本轮GPU验证仅允许两个已授权接口模式')
+ TRANSFERS = []
+ require(MODE == 'strict_warm' and ARM == 'strict', '本轮固定 strict_warm + strict 臂语义')
+ require(os.environ.get('FS_MEASURE_MODE') == '1', '缺少测量模式环境变量')
+@@ -133,13 +135,22 @@
+         class AuditedControlClient(ControlClient):
+             """每次控制 RPC 落盘留证并计时（控制口径与请求口径分离；不进请求计时窗口）。"""
+             def _call(self, request):
+-                value = call_saved(self.port, self.timeout_s, request, out / ('rpc_' + str(time.monotonic_ns())))
++                saved_start = time.monotonic_ns()
++                rpc_directory = out / ('rpc_' + str(saved_start))
++                value = call_saved(self.port, self.timeout_s, request, rpc_directory)
++                saved_end = time.monotonic_ns()
+                 if SEPARATION == 'serving' and request.get('action') == 'b5d4_apply':
+                     from .codec import unpack
+                     value, metrics = unpack(value)
+                     TRANSFERS.append(metrics)
+                 if request.get('action') == 'b5d4_apply':
++                    validation_start = time.monotonic_ns()
+                     interface.validate_response(value, BASELINE_MODE)
++                    validation_end = time.monotonic_ns()
++                    metrics['client_validation_ms'] = (validation_end-validation_start)/1e6
++                    metrics['call_saved_interval'] = {'start_ns': saved_start, 'end_ns': saved_end,
++                        'wall_ms': (saved_end-saved_start)/1e6, 'directory': str(rpc_directory),
++                        '说明': '包含服务端执行、传输及原始响应持久化，不是纯网络时间'}
+                 return value
+ 
+         t_boot = time.monotonic_ns()
+--- /home/wjg/code/FlowState/evaluation/serving_control_interface_gate_20261101/interface.py
++++ /home/wjg/code/FlowState/evaluation/serving_control_gpu_gate_20261102/interface.py
+@@ -2,6 +2,7 @@
+ import copy
+ import hashlib
+ import json
++import time
+ from types import SimpleNamespace
+ from flowstate.strict_control import PhysicalNode, PhysicalView, validate_view
+ 
+@@ -99,8 +100,8 @@
+     require(len(by_id) == len(full['nodes']), '基线Node别名')
+     for n in result['after']['nodes']:
+         current = by_id.get(n['node_id'])
+-        require(current is not None and current['token_ids'] == n['token_ids'] and
+-                current['slots'] == n['slots'] and current['full_present'] is True and
++        require(current is not None and tuple(current['token_ids']) == tuple(n['token_ids']) and
++                tuple(current['slots']) == tuple(n['slots']) and current['full_present'] is True and
+                 current['references'] == [0, 0, 0], '基线物理身份、驻留或引用变化')
+     return {'schema': SCHEMA, 'context_sha256': context_digest(result),
+             'selected_components': copy.deepcopy(expected)}
+@@ -124,9 +125,11 @@
+ 
+ 
+ def build(result, full_builder, selected_mode):
+-    """生产者调用恰一次；全量内容SHA、同步及异常均保留。"""
++    """原调用次序不变，仅给生产、投影、服务端校验各自打点。"""
+     mode(selected_mode)
++    t0 = time.monotonic_ns()
+     full = full_builder()
++    t1 = time.monotonic_ns()
+     if selected_mode == 'validation':
+         result['admission_baseline'] = full
+     elif selected_mode == 'serving':
+@@ -134,4 +137,13 @@
+     else:
+         result['admission_baseline_serving'] = project(full, result)
+         result['admission_baseline'] = full
+-    return validate_response(result, selected_mode)
++    t2 = time.monotonic_ns()
++    validate_response(result, selected_mode)
++    t3 = time.monotonic_ns()
++    result['admission_interface_metrics'] = {
++        'mode': selected_mode,
++        'full_baseline': {'start_ns': t0, 'end_ns': t1, 'wall_ms': (t1-t0)/1e6},
++        'projection': {'start_ns': t1, 'end_ns': t2, 'wall_ms': (t2-t1)/1e6},
++        'server_validation': {'start_ns': t2, 'end_ns': t3, 'wall_ms': (t3-t2)/1e6},
++        '说明': '相邻子阶段，不与外层post_apply_baseline或RPC父区间重复相加'}
++    return result
+--- /home/wjg/code/FlowState/evaluation/serving_control_interface_gate_20261101/device_entry.py
++++ /home/wjg/code/FlowState/evaluation/serving_control_gpu_gate_20261102/device_entry.py
+@@ -2,7 +2,7 @@
+ 
+ 与 t2g1 formal_gpu1b/device_entry.py 同模式（spawn 重入教训：全部逻辑置于 __main__ 保护内）：
+ - 主进程（__main__）：设备校验（UUID 由 launch 注入 EXPECTED_GPU_UUID）→ 独占写证据
+-  → runpy 接力 evaluation.serving_control_interface_gate_20261101.runner；
++  → runpy 接力 evaluation.serving_control_gpu_gate_20261102.runner；
+ - spawn 子进程（__mp_main__）：重入为无操作，不触碰任何文件。
+ """
+ import json
+@@ -24,7 +24,7 @@
+         json.dump({'status': 'PASS', 'host_gpu_uuid': expected, 'cuda_device_count': 1,
+                    'logical_device': 0, 'actual_uuid': actual, 'name': p.name},
+                   f, ensure_ascii=False, indent=2)
+-    runpy.run_module('evaluation.serving_control_interface_gate_20261101.runner', run_name='__main__')
++    runpy.run_module('evaluation.serving_control_gpu_gate_20261102.runner', run_name='__main__')
+ 
+ 
+ if __name__ == '__main__':

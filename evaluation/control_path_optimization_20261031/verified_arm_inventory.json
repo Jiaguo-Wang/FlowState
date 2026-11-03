@@ -1,0 +1,200 @@
+[
+  {
+    "spec": {
+      "arm": "smoke_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "batched",
+      "verify": true,
+      "round": 0,
+      "phase": "smoke"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "cfe5e2b19189e77c0007114273f70262380e6f995575faa62f345043ae63463e",
+      "run/reconciliation.json": "f180544a8c2924a0da5d1f5b5a1335adb53c2e5088ba39335b570440f3c29612",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "a15c096fab99402dfdd7c0b700e03b7edfd3aa40732c7579ad5d010a62bab67b",
+      "gpu_cleanup.json": "140bbbea00e6ac7b8432c2675e7276941154f668eadb0e3be0faa2cafb9950c1"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p1_original_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "original",
+      "verify": false,
+      "round": 1,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "b2038b974d8a1d192a1bce63144c2e8335eeddb06aa5a7b78e2ae8b0dde3cff8",
+      "run/reconciliation.json": "0a8bac904589c93d345c99d0839779000c332c3e5704b426f216ebca5c9314b0",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "2ffcf12ba69af65f8bdbe679af2b85b79c5d74db086f55c85e763190f2ba6440",
+      "gpu_cleanup.json": "fbb533127c528e07543362e3939cd9558d12a031d5f19b055439e9bdff2fbb1d"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p1_batched_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "batched",
+      "verify": false,
+      "round": 1,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "9408a85fc03626657b07b8b92321cc1ae56f478cbb8ff941b94f540704cef485",
+      "run/reconciliation.json": "646f313cee63c6433faa5b76da50eee34dca32749ce2e2285cd632434d4db87a",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "1d8d04b9d7d4a369aaa44e6795f46637f9faca72bc1b54f18b16059c14f14803",
+      "gpu_cleanup_recovery.json": "51e3a31941b4d41f94b445c63b4de91e55822e29c0262669797eec6d567c0c6a"
+    },
+    "cleanup_recovered_after_launcher_exception": true
+  },
+  {
+    "spec": {
+      "arm": "p2_batched_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "batched",
+      "verify": false,
+      "round": 2,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "398a976e0bf5020797264fe3bb0511d674c81eaa257549025b835fbc8a2c1601",
+      "run/reconciliation.json": "3a3197ff873526f4830fc88f3efc17f50a4ff3dc8f264f9397e9fe910cf22a1a",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "38d5279211d883154ae7630ee9fa2bfc8919340d90f99a620ace8929afdbcf4e",
+      "gpu_cleanup.json": "a55baec61d2a625e36a554dc5e60028176c8aa5df105606915913e2dd1ee6c6a"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p2_original_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "original",
+      "verify": false,
+      "round": 2,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "f54fd4e45fc0df90104124b70ebe3820126c98ddfa9b5ea9df16b1f968d521b2",
+      "run/reconciliation.json": "d889cdd112c28933a71521927a5b8990285ca18fce80f55c9c0bba4b84ce0b29",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "244aa4869abcd4374b04735f463b41231c819093a2e76b8f18e4539e2088ff5d",
+      "gpu_cleanup.json": "6bfd57b656fb4b3ab4209cd7c7836eb5f1a5bef68f1496df943e4e9b70dfc4a2"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p3_original_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "original",
+      "verify": false,
+      "round": 3,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "463e670d54f75de6c0ff9b54e902209a00540647d7eedc9562078905b8a00c10",
+      "run/reconciliation.json": "e66099eaea358bb5b3a31b84b321d823ac6e460bdf585a97fb1d1591c6dbf988",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "b6aa3c00763d1ab81a7164d6ff9114bcfb446ab57114a90e843cad172383477a",
+      "gpu_cleanup.json": "4b6b4f153db0ce880b6b21c1262b8e3cc5c50d75a0e69edf0b4e1c63e4313aa3"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p3_batched_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "batched",
+      "verify": false,
+      "round": 3,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "2e1a78cef362498953bd52043a64f4dc1a252b623b85165c685d4d7c1e1eb71f",
+      "run/reconciliation.json": "cc5d9b425cbfd551cf58a56a1bdb5cc314f0bb4401fe973fb90cc80e22e0b5fd",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "1466c0dd2d22978941a87ae29231620db2e4f880172584e62d85f678ba557269",
+      "gpu_cleanup.json": "46cd413df0a1bc420108232a6b98a9e9a8f935648f879f443b634a1ce0ac9df2"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p4_batched_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "batched",
+      "verify": false,
+      "round": 4,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "7c10a12b9b2ac2f46481b72762ed7ad47bc7b7e265a7d239b6e48af87e93635d",
+      "run/reconciliation.json": "bbf4d9fe903be7c39d76546a2b7a1447f2220d16728183d49aea7bd2972e96c5",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "8f300c20966648c18eae5d0d01a919e6abae476a7a12cac0331468d596d534c2",
+      "gpu_cleanup.json": "63a0d8726f769af865098ccf0394a52767dbb7fa77abdefcee97bd7412c46e36"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p4_original_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "original",
+      "verify": false,
+      "round": 4,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "adc7c07742bee9642b3b8b847092e0c2f30a8d4d317822ff8e2636d0f4d3bfc3",
+      "run/reconciliation.json": "9d6859786a154a02c802c7bb55046d79d2aa0a115365fff2cbbd18e69616cd74",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "2dcab7938f8f560f77ed929dba30e8d5331d3899870ff0ad30ba37d84ecc6388",
+      "gpu_cleanup.json": "de7f24f62a5cf68faf3e2be7cc9e1d1ac863224364c22a094e87565bc5ab277e"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p5_original_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "original",
+      "verify": false,
+      "round": 5,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "e403160d2c209a6caa2f285805453d4052eb5abb471679ef09fdec387ff23610",
+      "run/reconciliation.json": "2568b1b8692b1addd5524accf9eb30dc2710b8149cfb1ce7f0ae3b0627a3cde0",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "7f7b33f6f5c7e91533147f47a20088633a1885293df24842dc098abbc1789a3b",
+      "gpu_cleanup.json": "2aade7ea802637c58ca13b8d30140362f2667cabb9c816770acd7e12454ecb75"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  },
+  {
+    "spec": {
+      "arm": "p5_batched_fs",
+      "policy": "FlowState-Greedy",
+      "mode": "batched",
+      "verify": false,
+      "round": 5,
+      "phase": "paired"
+    },
+    "evidence_sha256": {
+      "run/summary.json": "9c7c94d6dbcf0663cdf8fb9a1899a6adfd3a0ec8cf803657c7e7c1b7ff7291b7",
+      "run/reconciliation.json": "5895ba15eaf48b7c9f301a10f0d77613c50bdd0fddfa5f2f69fcbe1d26cb2ad8",
+      "run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+      "host_exit.json": "b77458a99b28b5ab6a727d490184d61065536673efcb5b26a274754b21b910aa",
+      "gpu_cleanup.json": "2947826e5f6b1c6f7260f0a6237a8731f8473314ab9cec823aa101342e661bed"
+    },
+    "cleanup_recovered_after_launcher_exception": false
+  }
+]

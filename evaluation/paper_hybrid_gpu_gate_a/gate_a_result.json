@@ -1,0 +1,380 @@
+{
+  "scenario": "A_b5c4_k2_exact_branch",
+  "run": "a1_hybrid_exact",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "在线决策=Exact且门禁准许",
+      "status": "PASS",
+      "detail": {
+        "gate": {
+          "budget_k": 2,
+          "candidates": 7,
+          "enumerable_subsets": 29,
+          "pendings": 4
+        },
+        "gate_allowed": true,
+        "objective_ms": 48.228728759089606,
+        "pure_solve_ms": 0.222861,
+        "selected_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "solver": "Exact"
+      }
+    },
+    {
+      "check": "门禁规模=7候选/4Pending/K=2/29子集",
+      "status": "PASS",
+      "detail": {
+        "budget_k": 2,
+        "candidates": 7,
+        "enumerable_subsets": 29,
+        "pendings": 4
+      }
+    },
+    {
+      "check": "决策记录完整(选集/J/纯求解时间)",
+      "status": "PASS",
+      "detail": {
+        "selected_ids": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "objective_ms": 48.228728759089606,
+        "pure_solve_ms": 0.222861
+      }
+    },
+    {
+      "check": "选集==b5d4b冻结Exact计划",
+      "status": "PASS",
+      "detail": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ]
+    },
+    {
+      "check": "选集==本轮运行内Decimal Oracle",
+      "status": "PASS",
+      "detail": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ]
+    },
+    {
+      "check": "J==b5d4b冻结Exact J(±1e-9)",
+      "status": "PASS",
+      "detail": 48.228728759089606
+    },
+    {
+      "check": "J==本轮Decimal Oracle J(±1e-9)",
+      "status": "PASS",
+      "detail": {
+        "J_ms": 48.228728759089606,
+        "selected": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "status": "PASS",
+        "subsets": 29
+      }
+    },
+    {
+      "check": "选集==e3冻结Exact行",
+      "status": "PASS",
+      "detail": "[\"B5C3_NODE_18\", \"B5C3_NODE_27\"]"
+    },
+    {
+      "check": "J==e3冻结Exact行(±1e-9)",
+      "status": "PASS",
+      "detail": "48.228728759089606"
+    },
+    {
+      "check": "与旧Greedy选集存在明确差异",
+      "status": "PASS",
+      "detail": {
+        "exact": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "greedy_frozen": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_20"
+        ],
+        "difference": [
+          "B5C3_NODE_27"
+        ]
+      }
+    },
+    {
+      "check": "驱逐==未选中补集且全部返回",
+      "status": "PASS",
+      "detail": [
+        [
+          "B5C3_NODE_20",
+          true
+        ],
+        [
+          "B5C3_NODE_21",
+          true
+        ],
+        [
+          "B5C3_NODE_22",
+          true
+        ],
+        [
+          "B5C3_NODE_24",
+          true
+        ],
+        [
+          "B5C3_NODE_25",
+          true
+        ]
+      ]
+    },
+    {
+      "check": "逐Pending E/T/G==冻结Exact臂",
+      "status": "PASS",
+      "detail": [
+        [
+          "B5C2_A_TURN_003",
+          3712,
+          4160,
+          448
+        ],
+        [
+          "B5C2_B_TURN_003",
+          3712,
+          4096,
+          384
+        ],
+        [
+          "B5C2_C_TURN_003",
+          3520,
+          3904,
+          384
+        ],
+        [
+          "B5C2_D_TURN_003",
+          3520,
+          3566,
+          46
+        ]
+      ]
+    },
+    {
+      "check": "Native来源==计划绑定Node/Slot",
+      "status": "PASS",
+      "detail": {
+        "native": [
+          27,
+          [
+            18
+          ]
+        ],
+        "bound": [
+          27,
+          [
+            18
+          ]
+        ]
+      }
+    },
+    {
+      "check": "Native E==计划E(3520)且FA命中==冻结边界(3904)",
+      "status": "PASS",
+      "detail": {
+        "E": 3520,
+        "H": 3904,
+        "G": 384
+      }
+    },
+    {
+      "check": "输出==冻结Cold参照逐Token",
+      "status": "PASS",
+      "detail": {
+        "status": "PASS",
+        "exact_token_match": true,
+        "token_count": 8,
+        "strict_output_ids": [
+          248058,
+          198,
+          27,
+          1628,
+          15462,
+          10318,
+          32634,
+          29
+        ],
+        "cold_output_ids": [
+          248058,
+          198,
+          27,
+          1628,
+          15462,
+          10318,
+          32634,
+          29
+        ],
+        "finish_reason": {
+          "type": "length",
+          "length": 8
+        },
+        "logits": "既有协议未提供Logits比较，本轮未新增容差"
+      }
+    },
+    {
+      "check": "请求后Selected内容不变",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "请求后FA映射全保留",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "请求后受保护FA内容不变",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Epoch形成方式已记录(冻结历史重放,非全在线)",
+      "status": "PASS",
+      "detail": {
+        "origins": [
+          {
+            "checkpoint_id": "B5C3_NODE_18",
+            "first_observed_after": "B5C2_A_TURN_001"
+          },
+          {
+            "checkpoint_id": "B5C3_NODE_20",
+            "first_observed_after": "B5C2_C_TURN_001"
+          },
+          {
+            "checkpoint_id": "B5C3_NODE_21",
+            "first_observed_after": "B5C2_D_TURN_001"
+          },
+          {
+            "checkpoint_id": "B5C3_NODE_22",
+            "first_observed_after": "B5C2_A_TURN_002"
+          },
+          {
+            "checkpoint_id": "B5C3_NODE_24",
+            "first_observed_after": "B5C2_B_TURN_002"
+          },
+          {
+            "checkpoint_id": "B5C3_NODE_25",
+            "first_observed_after": "B5C2_C_TURN_002"
+          },
+          {
+            "checkpoint_id": "B5C3_NODE_27",
+            "first_observed_after": "B5C2_D_TURN_002"
+          }
+        ],
+        "note": "复用B5C3冻结8条历史重放+实时观察准入"
+      }
+    },
+    {
+      "check": "进程退出码0且GPU清理PASS",
+      "status": "PASS",
+      "detail": {
+        "returncode": 0
+      }
+    },
+    {
+      "check": "冻结输入/被测代码/生产入口全程未变",
+      "status": "PASS",
+      "detail": "23 files（宿主机脚本除外）"
+    }
+  ],
+  "decision": {
+    "gate": {
+      "budget_k": 2,
+      "candidates": 7,
+      "enumerable_subsets": 29,
+      "pendings": 4
+    },
+    "gate_allowed": true,
+    "objective_ms": 48.228728759089606,
+    "pure_solve_ms": 0.222861,
+    "selected_ids": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_27"
+    ],
+    "solver": "Exact"
+  },
+  "selected": [
+    "B5C3_NODE_18",
+    "B5C3_NODE_27"
+  ],
+  "J_ms": 48.228728759089606,
+  "oracle": {
+    "J_ms": 48.228728759089606,
+    "selected": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_27"
+    ],
+    "status": "PASS",
+    "subsets": 29
+  },
+  "greedy_frozen_selection": [
+    "B5C3_NODE_18",
+    "B5C3_NODE_20"
+  ],
+  "evictions": [
+    [
+      "B5C3_NODE_20",
+      true
+    ],
+    [
+      "B5C3_NODE_21",
+      true
+    ],
+    [
+      "B5C3_NODE_22",
+      true
+    ],
+    [
+      "B5C3_NODE_24",
+      true
+    ],
+    [
+      "B5C3_NODE_25",
+      true
+    ]
+  ],
+  "native_match": {
+    "best_match_node": 27,
+    "cow_requested": true,
+    "cow_source_slots": [
+      18
+    ],
+    "executable_prefix": 3520,
+    "input_token_count": 4435,
+    "input_token_digest": "3e0881673fcc361325846267b88edc5f8992b1aabbc4bee0af1ec744ef0b3868",
+    "last_device_node": 27,
+    "last_host_node": 27,
+    "mamba_branching_seqlen": 3904,
+    "mamba_host_hit_length": 0,
+    "monotonic_ns": 1236039353383181,
+    "physical_fa_hit": 3904,
+    "replay_gap": 384,
+    "request_id": "B5C2_C_TURN_003",
+    "working_slots": [
+      19
+    ]
+  },
+  "output_ids": [
+    248058,
+    198,
+    27,
+    1628,
+    15462,
+    10318,
+    32634,
+    29
+  ],
+  "cold_match": true,
+  "post_run_notes": "verify.py 在 docker 运行完成后修复自身核验键路径（epoch.candidates[].candidate.checkpoint_id），不影响任何运行输入或被测代码；完整性检查范围已排除宿主机编排脚本"
+}

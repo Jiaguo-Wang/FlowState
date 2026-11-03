@@ -1,0 +1,401 @@
+{
+  "version": "1.0",
+  "source": {
+    "module": "evaluation.c_formal_perf_gpu.runner/bridge/control 零改动复用（逐臂哈希复核）",
+    "plans": "../t2g1_plans.json（plans 子字典原样投影为 policy_plans.json）",
+    "shared_inputs": "c_formal_perf_gpu 8 份冻结共享文件逐字节复制（与 implementation_lock_main.json 交叉核对）",
+    "contract": "测量合同沿用 c_formal_perf_gpu protocol v1.2：strict_warm + FS_MEASURE_MODE=1 + 形状预热 B v1.1（pt[:E]+确定性随机尾，E 处分叉）+ 请求窗口零 A 类审计零新增编译 + Cold 逐 Token 一致 + census 16=16 + E/T/G 逐格==冻结计划"
+  },
+  "policies": {
+    "FS": "FlowState-Greedy",
+    "MC": "Marconi-Evict",
+    "KV": "KVFlow-inspired"
+  },
+  "pairing": "同轮同 Pending 三策略时间相邻；顺序冻结（奇数轮 FS→MC→KV、偶数轮反转），不依结果调整",
+  "gate_arms": [
+    {
+      "name": "g_CB_FS",
+      "pair": 1,
+      "policy": "FlowState-Greedy",
+      "pending": "C_B"
+    },
+    {
+      "name": "g_CB_MC",
+      "pair": 1,
+      "policy": "Marconi-Evict",
+      "pending": "C_B"
+    },
+    {
+      "name": "g_CB_KV",
+      "pair": 1,
+      "policy": "KVFlow-inspired",
+      "pending": "C_B"
+    }
+  ],
+  "gate_criteria": "三臂 PASS（census 16/16/0、E/G==冻结、COW/FA/Cold 逐 Token 一致、形状预热行 E 与 FA 命中均恰为计划 E、请求窗口编译=0、窗口内审计项=2），人工复核后写 gate_passed.json 方可执行主矩阵",
+  "main_arms": [
+    {
+      "name": "m1A_FS",
+      "rep": 1,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1A_MC",
+      "rep": 1,
+      "pending": "C_A",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m1A_KV",
+      "rep": 1,
+      "pending": "C_A",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m1B_FS",
+      "rep": 1,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1B_MC",
+      "rep": 1,
+      "pending": "C_B",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m1B_KV",
+      "rep": 1,
+      "pending": "C_B",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m1C_FS",
+      "rep": 1,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1C_MC",
+      "rep": 1,
+      "pending": "C_C",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m1C_KV",
+      "rep": 1,
+      "pending": "C_C",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m1D_FS",
+      "rep": 1,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1D_MC",
+      "rep": 1,
+      "pending": "C_D",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m1D_KV",
+      "rep": 1,
+      "pending": "C_D",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m2A_KV",
+      "rep": 2,
+      "pending": "C_A",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m2A_MC",
+      "rep": 2,
+      "pending": "C_A",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m2A_FS",
+      "rep": 2,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m2B_KV",
+      "rep": 2,
+      "pending": "C_B",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m2B_MC",
+      "rep": 2,
+      "pending": "C_B",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m2B_FS",
+      "rep": 2,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m2C_KV",
+      "rep": 2,
+      "pending": "C_C",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m2C_MC",
+      "rep": 2,
+      "pending": "C_C",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m2C_FS",
+      "rep": 2,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m2D_KV",
+      "rep": 2,
+      "pending": "C_D",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m2D_MC",
+      "rep": 2,
+      "pending": "C_D",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m2D_FS",
+      "rep": 2,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3A_FS",
+      "rep": 3,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3A_MC",
+      "rep": 3,
+      "pending": "C_A",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m3A_KV",
+      "rep": 3,
+      "pending": "C_A",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m3B_FS",
+      "rep": 3,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3B_MC",
+      "rep": 3,
+      "pending": "C_B",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m3B_KV",
+      "rep": 3,
+      "pending": "C_B",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m3C_FS",
+      "rep": 3,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3C_MC",
+      "rep": 3,
+      "pending": "C_C",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m3C_KV",
+      "rep": 3,
+      "pending": "C_C",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m3D_FS",
+      "rep": 3,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3D_MC",
+      "rep": 3,
+      "pending": "C_D",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m3D_KV",
+      "rep": 3,
+      "pending": "C_D",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m4A_KV",
+      "rep": 4,
+      "pending": "C_A",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m4A_MC",
+      "rep": 4,
+      "pending": "C_A",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m4A_FS",
+      "rep": 4,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m4B_KV",
+      "rep": 4,
+      "pending": "C_B",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m4B_MC",
+      "rep": 4,
+      "pending": "C_B",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m4B_FS",
+      "rep": 4,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m4C_KV",
+      "rep": 4,
+      "pending": "C_C",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m4C_MC",
+      "rep": 4,
+      "pending": "C_C",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m4C_FS",
+      "rep": 4,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m4D_KV",
+      "rep": 4,
+      "pending": "C_D",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m4D_MC",
+      "rep": 4,
+      "pending": "C_D",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m4D_FS",
+      "rep": 4,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5A_FS",
+      "rep": 5,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5A_MC",
+      "rep": 5,
+      "pending": "C_A",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m5A_KV",
+      "rep": 5,
+      "pending": "C_A",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m5B_FS",
+      "rep": 5,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5B_MC",
+      "rep": 5,
+      "pending": "C_B",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m5B_KV",
+      "rep": 5,
+      "pending": "C_B",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m5C_FS",
+      "rep": 5,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5C_MC",
+      "rep": 5,
+      "pending": "C_C",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m5C_KV",
+      "rep": 5,
+      "pending": "C_C",
+      "policy": "KVFlow-inspired"
+    },
+    {
+      "name": "m5D_FS",
+      "rep": 5,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5D_MC",
+      "rep": 5,
+      "pending": "C_D",
+      "policy": "Marconi-Evict"
+    },
+    {
+      "name": "m5D_KV",
+      "rep": 5,
+      "pending": "C_D",
+      "policy": "KVFlow-inspired"
+    }
+  ],
+  "deadline_policy": "各阶段启动时固定 now+6h 写入 execution_started_<phase>.json；超时剩余臂如实标未测",
+  "rules": "不修改三种策略的评分与驱逐算法、不修改 Runtime 状态控制语义、不改动 c_formal_perf_gpu 目录任何文件；不修改生产 FlowState/Phi/策略实现/冻结 Token/预算；不改动镜像（runtime_sources 哈希逐生命周期由 runner 复核）；不删除任何 B/C 类必要操作；每臂独立容器与 Engine/Triton 生命周期；GPU 空卡礼仪与 c_formal 一致（无其他 compute 进程 + 显存<1000MiB + H100 PCIe），不沿用 Smoke 放宽条件；任一臂失败即停保留证据；不把 5 次重复解释为充分统计显著性；负向/平局观测全保留",
+  "stop_rule": "状态正确性失败 / 未解释编译污染 / 跨策略资源条件不一致 → 立即停止正式比较并保存证据；deadline 截止未完成臂如实标未测"
+}

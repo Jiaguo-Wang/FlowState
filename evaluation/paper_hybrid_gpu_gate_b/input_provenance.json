@@ -1,0 +1,12 @@
+{
+  "frozen_inputs": {
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/prepared_inputs.json": "b6c5203bb099b497480331cba1577302aebfc56833713abeda6e084d6b90c660",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cpu_candidate_prefix_mapping.json": "dab16d223398672aeb76af95a8baf445deac4872245eb2fac50addebd00f7cbf",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cpu_gate.json": "f8e04a5a8886bb0f4bcfe59453463ad23ec205934465aa81a56a97eafd37c75b",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/policy_plans.json": "e04edb9ca82d3d8bcaf1838260a772bffbf84077d0fb911fb0b5a13882cd6f12",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cold_reference_C_B.json": "0096bf229ee74d40015433f7800ecf86fb5267dc06e50fd4b991f0eb54e456be"
+  },
+  "policy_plans_role": "仅事后对照Oracle：控制路径在 plan_strict 求解完成后才读入，不参与本轮选择",
+  "environment": "C/K3 冻结环境（16预热×2轮+4Pending，K=3），Epoch 形成为冻结预热重放+实时观察，非全在线构建",
+  "cold_reference_role": "正式请求输出的逐Token对照基准（g1_CB_FS 冻结 cold_reference_C_B.json）"
+}

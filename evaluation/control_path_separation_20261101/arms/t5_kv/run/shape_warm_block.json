@@ -1,0 +1,58 @@
+{
+  "policy": "KVFlow-inspired",
+  "rows": [
+    {
+      "pending": "C_A",
+      "start_ns": 1909401233828479,
+      "end_ns": 1909408432184125,
+      "wall_ms": 7198.355646,
+      "input_len": 4128,
+      "planned_E": 4032,
+      "diverge_from": 4032,
+      "output_ids": [
+        220,
+        200
+      ]
+    },
+    {
+      "pending": "C_B",
+      "start_ns": 1909408434233720,
+      "end_ns": 1909408581636636,
+      "wall_ms": 147.402916,
+      "input_len": 5152,
+      "planned_E": 2048,
+      "diverge_from": 2048,
+      "output_ids": [
+        220,
+        200
+      ]
+    },
+    {
+      "pending": "C_C",
+      "start_ns": 1909408583950263,
+      "end_ns": 1909408855403850,
+      "wall_ms": 271.453587,
+      "input_len": 6176,
+      "planned_E": 0,
+      "diverge_from": 0,
+      "output_ids": [
+        220,
+        200
+      ]
+    },
+    {
+      "pending": "C_D",
+      "start_ns": 1909408857983529,
+      "end_ns": 1909409156780900,
+      "wall_ms": 298.797371,
+      "input_len": 7200,
+      "planned_E": 0,
+      "diverge_from": 0,
+      "output_ids": [
+        220,
+        248046
+      ]
+    }
+  ],
+  "note": "apply后形状预热块(v1.1,四Pending各一次)：计划E准入+目标extend/decode形状编译。口径归属：不进 control_cycle_ms(T3−T0)；计入 cycle_ms_full_incl_warm(T4−T0)，恒等式如实含 warm 段与其前后间隙；两口径并列报告，禁止事后扣除 warm 伪造连续生产窗口"
+}

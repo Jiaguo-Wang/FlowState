@@ -1,0 +1,19 @@
+{
+  "retry_of": "r1_ck3_fs",
+  "attempt": 2,
+  "timestamp": "2026-10-29 15:25:09",
+  "archived_dir": "/home/wjg/code/FlowState/evaluation/p0_control_cycle_gpu/arms/failed_attempt1_r1_ck3_fs_20261029_152508",
+  "attempt1_failure": {
+    "error": "SystemExit(0)（Scheduler SIGQUIT 级联）",
+    "root_cause": "observation.py wrap_eager.execute 于 ForwardBatch 访问 batch.reqs（属性不存在）；首个目标请求 C_A 的首个 forward 触发，history/shape warm 因 ACTIVE=False 早退未触发",
+    "fix": "run() 暂存 ACTIVE_RID（同一同步调用栈），execute() 读取；offline_test_observation 3/3",
+    "evidence": [
+      "/home/wjg/code/FlowState/evaluation/p0_control_cycle_gpu/arms/failed_attempt1_r1_ck3_fs_20261029_152508/run/failure.json",
+      "/home/wjg/code/FlowState/evaluation/p0_control_cycle_gpu/arms/failed_attempt1_r1_ck3_fs_20261029_152508/run/reconciliation.json（T0–T3 attempt1 已完整通过）"
+    ]
+  },
+  "prepared": {
+    "arm": "r1_ck3_fs",
+    "dir": "/home/wjg/code/FlowState/evaluation/p0_control_cycle_gpu/arms/r1_ck3_fs"
+  }
+}

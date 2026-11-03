@@ -1,0 +1,138 @@
+{
+  "口径声明": {
+    "A": "配对差中位数（主口径）",
+    "B": "两组中位数之差（辅助）",
+    "C": "轮级等权五轮中位（集合级）"
+  },
+  "有效性": {
+    "40臂": 40,
+    "逐臂检查全过": true,
+    "失败臂计数_arm_status": 0,
+    "重试后缀臂": 0
+  },
+  "结构核对": {
+    "J与E逐臂==冻结参照(48.2287/130.803, E 3712/3520/2432)": true
+  },
+  "逐Pending": {
+    "A": {
+      "ΔTTFT_逐轮": [
+        -1.483,
+        -0.094,
+        0.802,
+        0.868,
+        -1.517
+      ],
+      "A_配对差中位_TTFT": -0.094,
+      "B_两组中位之差_TTFT": -0.094,
+      "Exact中位": 53.302,
+      "Greedy中位": 53.208,
+      "A_配对差中位_CUDAPrefill": 0.123,
+      "Exact中位_CUDAPrefill": 46.277,
+      "Greedy中位_CUDAPrefill": 46.163,
+      "Exact_PrefillTokens": [
+        1150
+      ],
+      "Greedy_PrefillTokens": [
+        1150
+      ],
+      "五轮TTFT全为Greedy更慢(Δ>0)": 2
+    },
+    "B": {
+      "ΔTTFT_逐轮": [
+        0.129,
+        -15.197,
+        -12.8,
+        1.074,
+        6.163
+      ],
+      "A_配对差中位_TTFT": 0.129,
+      "B_两组中位之差_TTFT": 0.696,
+      "Exact中位": 53.145,
+      "Greedy中位": 53.841,
+      "A_配对差中位_CUDAPrefill": 0.084,
+      "Exact中位_CUDAPrefill": 46.493,
+      "Greedy中位_CUDAPrefill": 46.51,
+      "Exact_PrefillTokens": [
+        1148
+      ],
+      "Greedy_PrefillTokens": [
+        1148
+      ],
+      "五轮TTFT全为Greedy更慢(Δ>0)": 3
+    },
+    "C": {
+      "ΔTTFT_逐轮": [
+        35.587,
+        31.877,
+        34.707,
+        40.342,
+        34.104
+      ],
+      "A_配对差中位_TTFT": 34.707,
+      "B_两组中位之差_TTFT": 34.7,
+      "Exact中位": 47.48,
+      "Greedy中位": 82.18,
+      "A_配对差中位_CUDAPrefill": 33.768,
+      "Exact中位_CUDAPrefill": 40.574,
+      "Greedy中位_CUDAPrefill": 74.342,
+      "Exact_PrefillTokens": [
+        915
+      ],
+      "Greedy_PrefillTokens": [
+        2003
+      ],
+      "五轮TTFT全为Greedy更慢(Δ>0)": 5
+    },
+    "D": {
+      "ΔTTFT_逐轮": [
+        36.712,
+        29.535,
+        22.896,
+        41.262,
+        37.779
+      ],
+      "A_配对差中位_TTFT": 36.712,
+      "B_两组中位之差_TTFT": 36.696,
+      "Exact中位": 48.979,
+      "Greedy中位": 85.675,
+      "A_配对差中位_CUDAPrefill": 36.44,
+      "Exact中位_CUDAPrefill": 42.231,
+      "Greedy中位_CUDAPrefill": 78.241,
+      "Exact_PrefillTokens": [
+        966
+      ],
+      "Greedy_PrefillTokens": [
+        2054
+      ],
+      "五轮TTFT全为Greedy更慢(Δ>0)": 5
+    }
+  },
+  "轮级等权": {
+    "逐轮ΔTTFT": [
+      17.736,
+      11.53,
+      11.401,
+      20.886,
+      19.132
+    ],
+    "逐轮ΔCUDAPrefill": [
+      17.657,
+      12.821,
+      11.497,
+      18.63,
+      18.352
+    ],
+    "五轮中位ΔTTFT": 17.736,
+    "五轮中位ΔCUDAPrefill": 17.657,
+    "五轮全正_TTFT": true,
+    "五轮全正_Prefill": true
+  },
+  "v65核对": {
+    "C_34.71": true,
+    "D_36.71": true,
+    "等权17.74": true,
+    "prefill_C_2003/915": true,
+    "prefill_D_2054/966": true,
+    "说明": "J 48.23/130.80 为 6 位舍入显示，全精度见结构核对"
+  }
+}

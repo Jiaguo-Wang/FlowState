@@ -1,0 +1,55 @@
+{
+  "generated": "2026-10-25",
+  "git": {
+    "commit": "8cba094d2c5466759b70e4a5ef8f4824b61aade5",
+    "dirty": [
+      "flowstate/optimizer.py",
+      "tests/test_strict_epoch.py"
+    ],
+    "note": "工作区含未提交修改（与 hybrid solver 集成任务一致的已知状态）；被测入口哈希以 source_identity 台账为准，不依赖 git 清洁"
+  },
+  "image": {
+    "id": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+    "note": "sha256:1dfce903… 与 E4-1A/b5d4b/c_formal/g1_CB_FS 同镜像"
+  },
+  "production_entry": {
+    "flowstate_sources": "exact|greedy 各自 source_identity.json hybrid_entry_sources（flowstate/*.py 逐文件sha256，容器内运行时核验）",
+    "plan_strict": "flowstate/optimizer.py GlobalOptimizer.plan_strict（ hybridsolver：_exact_admission 门(≤12候选/≤4Pending/K≤4/≤794子集)→Exact，否则 Marginal Greedy；fail-stop）"
+  },
+  "reused_programs": {
+    "pkg_exact": "evaluation/hybrid_solver_gpu_gate_g1/pkg_exact＝paper_hybrid_gpu_fix_a 复制＋3处手术改动(G1_PENDING参数化选源/冷参照按continuation_id/scenario名)，diff留于prepare装配记录",
+    "pkg_greedy": "evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy＝paper_hybrid_gpu_fix_b 复制＋2处最小修复(E=0无源分支对齐c_formal生产语义；target_request.json写入本臂run目录)，见pkg_greedy/build_record.json"
+  },
+  "frozen_inputs": {
+    "exact": "E4-1A prepared_inputs(E2/w1 8历史+4Pending)+4×Cold(经validated_resumes逐Token验证)",
+    "greedy": "c_formal g1_CB_FS 5输入+4×Cold(==m1*_FS冻结输出)"
+  },
+  "verdicts": {
+    "exact_verify": "PASS",
+    "greedy_verify": "PASS"
+  },
+  "g1_dir_py_hashes": {
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/exact/launch.py": "b6eeb5ca6a3973cd28a55a682720ea42657f3b065fc8a758452cf9dd82a25e15",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/exact/prepare.py": "0f0cb20f98b314fe332e751d6f50c1fa9fe5b7832aa19d1be3970c3351c1ef7b",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/exact/verify.py": "aaec634ed7b2429617696e858079167f9f78a42dac5d921901bcf40bfce90494",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/greedy/launch.py": "567442323ee0248ee91a5cc6e195e78e41b09d539dd28f815f3795c037bf1a98",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/greedy/prepare.py": "c1ca07f181f8f16c485ec710dc0d6abe82e51dac224f33a73b2deca09ea7b8ac",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/greedy/verify.py": "84fa813b56e980141e6337dbb777858b24a2a8bf825cc65394573f1ef3ce0626",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/bridge.py": "ae07e3394bb515d9c432a2bdff08b47d019af9bfcebdc4ed59a5e59ab8fdbbda",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/control.py": "a7e57b6ff7fd99fce8d5bc7d6003c39f77746995100588cd7b6ca7520489eb0f",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/observation.py": "10d2e2557bc414877b10473c18046f4b058063e7608945510df12ebf17bc2950",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/persistence.py": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/protocol.py": "fbb1cde5eaed13e46588b4b74873dce41f36e17781ef1b17c32f4a89c9c51718",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/runner.py": "e723c1e0a773bb2a93298932d921037319dfe59b7c1d677888368beaaa0e8a24",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_exact/source_contract.py": "fe5f84a1d6e44e6bce57155da346913525052b04074a07d93589510ac0544368",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/bridge.py": "ae07e3394bb515d9c432a2bdff08b47d019af9bfcebdc4ed59a5e59ab8fdbbda",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/control.py": "c08ba52dfa01f84a4931001b110a12f15261296c7cb0461093d0062d51002db4",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/observation.py": "10d2e2557bc414877b10473c18046f4b058063e7608945510df12ebf17bc2950",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/persistence.py": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/prepare_pkg.py": "6ed146462b3f5b991aa29e57262d6ccd6fb4a86960ef8ef0815703f2156320bb",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/protocol.py": "fbb1cde5eaed13e46588b4b74873dce41f36e17781ef1b17c32f4a89c9c51718",
+    "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/runner.py": "bb5c3e337ed007b774dc9815e0a852a03912858ae0f455d72f0b82ab91836d64"
+  }
+}

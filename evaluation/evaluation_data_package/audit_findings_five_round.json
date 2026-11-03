@@ -1,0 +1,367 @@
+{
+  "arms_total": 15,
+  "all_pass": true,
+  "identity": {
+    "image_id": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926",
+    "runner": "b6cee2d3ffa04e8f85e9658bf166a37cfb063ad21983c9488b37fb8b4eaf9f84",
+    "observation": "7c1dcefcb5b456144a70908d7b48cba2b815584a5f0332c3e9f2586445392837",
+    "runtime_sources_files": 16,
+    "inputs_byte_identical_across_15_arms_and_r1": true,
+    "observation_note": "最终审计报告 §2 第 9 条曾误写 7c1dcef5…(应为 7c1dcefc…),以臂内 source_identity.json 为准",
+    "selection_note": "最终审计报告 §2 第 8 条把 MC/KV 选集误写为 {C_A..C_D}/{C_A,C_B};实测(以 t2g1_plans+15 臂 summary 为准)为 MC {C_JOIN_P04032,C_JOIN_P04096,C_ROOT_P01024}、KV {C_AB_P01984,C_AB_P02048,C_A_P04032},均 3 枚==K"
+  },
+  "leakage_check": "15 臂 4 请求 start_ns 全部 > t3_ns(选择先于全部请求);oracle_match=True;选集==冻结计划(集合语义)",
+  "policy_metrics": {
+    "FlowState-Greedy": {
+      "sum_ttft_ms": 261.902,
+      "sum_cuda_prefill_ms": 236.509,
+      "sum_stream_tpot_ms": 73.988,
+      "selection_call_ms": 16.381,
+      "control_cycle_ms": 10138.858,
+      "cycle_ms_full_incl_warm": 24107.215,
+      "request_exec_total_ms": 783.989
+    },
+    "Marconi-Evict": {
+      "sum_ttft_ms": 732.22,
+      "sum_cuda_prefill_ms": 699.81,
+      "sum_stream_tpot_ms": 71.889,
+      "selection_call_ms": 2.048,
+      "control_cycle_ms": 8123.101,
+      "cycle_ms_full_incl_warm": 21379.657,
+      "request_exec_total_ms": 1240.866
+    },
+    "KVFlow-inspired": {
+      "sum_ttft_ms": 684.445,
+      "sum_cuda_prefill_ms": 653.241,
+      "sum_stream_tpot_ms": 72.119,
+      "selection_call_ms": 4.402,
+      "control_cycle_ms": 9596.033,
+      "cycle_ms_full_incl_warm": 22840.29,
+      "request_exec_total_ms": 1191.902
+    }
+  },
+  "policy_metrics_minmax": {
+    "FlowState-Greedy": {
+      "sum_ttft_ms": [
+        254.366,
+        280.209
+      ],
+      "control_cycle_ms": [
+        10000.546,
+        10448.181
+      ],
+      "cycle_ms_full_incl_warm": [
+        22420.995,
+        25027.931
+      ]
+    },
+    "Marconi-Evict": {
+      "sum_ttft_ms": [
+        732.035,
+        737.609
+      ],
+      "control_cycle_ms": [
+        7664.459,
+        9606.785
+      ],
+      "cycle_ms_full_incl_warm": [
+        20716.974,
+        25237.456
+      ]
+    },
+    "KVFlow-inspired": {
+      "sum_ttft_ms": [
+        677.979,
+        715.062
+      ],
+      "control_cycle_ms": [
+        7784.826,
+        10300.275
+      ],
+      "cycle_ms_full_incl_warm": [
+        21573.871,
+        24278.83
+      ]
+    }
+  },
+  "paired": {
+    "FS-MC": {
+      "sum_ttft_diffs": [
+        -457.4,
+        -468.941,
+        -471.871,
+        -470.208,
+        -481.157
+      ],
+      "sum_ttft_diff_median": -470.208,
+      "sum_prefill_diffs": [
+        -449.552,
+        -462.847,
+        -462.362,
+        -463.183,
+        -471.235
+      ],
+      "sum_prefill_diff_median": -462.847,
+      "sum_tpot_diffs": [
+        -2.551,
+        8.121,
+        2.099,
+        2.777,
+        -4.131
+      ],
+      "sum_tpot_diff_median": 2.099,
+      "per_pending_diffs": {
+        "C_A": [
+          33.916,
+          35.882,
+          33.962,
+          36.328,
+          33.616
+        ],
+        "C_B": [
+          -116.285,
+          -127.013,
+          -127.976,
+          -126.257,
+          -128.605
+        ],
+        "C_C": [
+          -168.739,
+          -168.805,
+          -169.821,
+          -170.548,
+          -174.112
+        ],
+        "C_D": [
+          -206.292,
+          -209.005,
+          -208.036,
+          -209.731,
+          -212.055
+        ]
+      },
+      "per_pending_median": {
+        "C_A": 33.962,
+        "C_B": -127.013,
+        "C_C": -169.821,
+        "C_D": -209.005
+      },
+      "per_round_improvement_pct": [
+        -62.01,
+        -64.04,
+        -64.46,
+        -64.23,
+        -65.42
+      ],
+      "median_improvement_pct_round_first": -64.23,
+      "aggregate_improvement_pct": -64.22,
+      "baseline_sum_ttft_median": 732.22
+    },
+    "FS-KV": {
+      "sum_ttft_diffs": [
+        -434.853,
+        -437.238,
+        -417.815,
+        -422.543,
+        -429.711
+      ],
+      "sum_ttft_diff_median": -429.711,
+      "sum_prefill_diffs": [
+        -423.031,
+        -418.101,
+        -411.851,
+        -416.731,
+        -423.214
+      ],
+      "sum_prefill_diff_median": -418.101,
+      "sum_tpot_diffs": [
+        -12.954,
+        -40.119,
+        4.718,
+        2.156,
+        -2.65
+      ],
+      "sum_tpot_diff_median": -2.65,
+      "per_pending_diffs": {
+        "C_A": [
+          100.922,
+          119.249,
+          122.477,
+          122.621,
+          122.054
+        ],
+        "C_B": [
+          -81.082,
+          -93.374,
+          -91.041,
+          -92.406,
+          -92.944
+        ],
+        "C_C": [
+          -211.624,
+          -211.83,
+          -206.128,
+          -207.117,
+          -210.387
+        ],
+        "C_D": [
+          -243.069,
+          -251.283,
+          -243.122,
+          -245.642,
+          -248.434
+        ]
+      },
+      "per_pending_median": {
+        "C_A": 122.054,
+        "C_B": -92.406,
+        "C_C": -210.387,
+        "C_D": -245.642
+      },
+      "per_round_improvement_pct": [
+        -60.81,
+        -62.42,
+        -61.63,
+        -61.74,
+        -62.82
+      ],
+      "median_improvement_pct_round_first": -61.74,
+      "aggregate_improvement_pct": -62.78,
+      "baseline_sum_ttft_median": 684.445
+    }
+  },
+  "J_vs_realized": {
+    "FS-MC": {
+      "J_diff": -549.106,
+      "realized_diffs": [
+        -449.552,
+        -462.847,
+        -462.362,
+        -463.183,
+        -471.235
+      ],
+      "realized_median": -462.847,
+      "gap_over_J_pct_per_round": [
+        18.13,
+        15.71,
+        15.8,
+        15.65,
+        14.18
+      ],
+      "gap_over_J_pct_median": 15.71,
+      "J_over_realized_pct_median": 18.64,
+      "order_consistent_all_rounds": true
+    },
+    "FS-KV": {
+      "J_diff": -473.266,
+      "realized_diffs": [
+        -423.031,
+        -418.101,
+        -411.851,
+        -416.731,
+        -423.214
+      ],
+      "realized_median": -418.101,
+      "gap_over_J_pct_per_round": [
+        10.61,
+        11.66,
+        12.98,
+        11.95,
+        10.58
+      ],
+      "gap_over_J_pct_median": 11.66,
+      "J_over_realized_pct_median": 13.19,
+      "order_consistent_all_rounds": true
+    }
+  },
+  "R3_sensitivity": {
+    "FS-MC": {
+      "with_R3_median": -470.208,
+      "excl_R3_diffs": [
+        -457.4,
+        -468.941,
+        -470.208,
+        -481.157
+      ],
+      "excl_R3_median": -469.575
+    },
+    "FS-KV": {
+      "with_R3_median": -429.711,
+      "excl_R3_diffs": [
+        -434.853,
+        -437.238,
+        -422.543,
+        -429.711
+      ],
+      "excl_R3_median": -432.282
+    }
+  },
+  "cells_40": {
+    "FS-MC": {
+      "positive_cells": 5,
+      "negative_cells": 15,
+      "positive_where": [
+        "R1/C_A",
+        "R2/C_A",
+        "R3/C_A",
+        "R4/C_A",
+        "R5/C_A"
+      ]
+    },
+    "FS-KV": {
+      "positive_cells": 5,
+      "negative_cells": 15,
+      "positive_where": [
+        "R1/C_A",
+        "R2/C_A",
+        "R3/C_A",
+        "R4/C_A",
+        "R5/C_A"
+      ]
+    }
+  },
+  "overhead": {
+    "FlowState-Greedy": {
+      "selection_call_ms": 16.381,
+      "control_cycle_ms": 10138.858,
+      "cycle_full_ms": 24107.215,
+      "request_exec_total_ms": 783.989,
+      "stage_final_heavy_observation": 3157.225,
+      "stage_cpu_physical_mapping": 0.641,
+      "stage_strict_epoch_authentication": 153.581,
+      "stage_policy_online_select": 32.063,
+      "stage_apply_time_freshness_preflight": 1597.137,
+      "stage_fa_content_postcheck_and_resume_baseline": 1872.691,
+      "stage_gaps_sum_ms": 3330.706,
+      "unclassified_residual_ms": -0.0
+    },
+    "Marconi-Evict": {
+      "selection_call_ms": 2.048,
+      "control_cycle_ms": 8123.101,
+      "cycle_full_ms": 21379.657,
+      "request_exec_total_ms": 1240.866,
+      "stage_final_heavy_observation": 2567.497,
+      "stage_cpu_physical_mapping": 0.608,
+      "stage_strict_epoch_authentication": 149.185,
+      "stage_policy_online_select": 34.73,
+      "stage_apply_time_freshness_preflight": 1251.442,
+      "stage_fa_content_postcheck_and_resume_baseline": 1110.978,
+      "stage_gaps_sum_ms": 3009.413,
+      "unclassified_residual_ms": 0.0
+    },
+    "KVFlow-inspired": {
+      "selection_call_ms": 4.402,
+      "control_cycle_ms": 9596.033,
+      "cycle_full_ms": 22840.29,
+      "request_exec_total_ms": 1191.902,
+      "stage_final_heavy_observation": 3123.221,
+      "stage_cpu_physical_mapping": 0.642,
+      "stage_strict_epoch_authentication": 151.537,
+      "stage_policy_online_select": 37.895,
+      "stage_apply_time_freshness_preflight": 1611.807,
+      "stage_fa_content_postcheck_and_resume_baseline": 1398.093,
+      "stage_gaps_sum_ms": 3264.862,
+      "unclassified_residual_ms": -0.0
+    }
+  }
+}

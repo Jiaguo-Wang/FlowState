@@ -1,0 +1,230 @@
+{
+  "status": "PASS",
+  "mode": "measure_strict_warm",
+  "policy": "FlowState-Greedy",
+  "pending": "C_B",
+  "H_physical_fa_hit": 5120,
+  "E_executable_prefix": 5120,
+  "G_replay_gap": 0,
+  "prefill_token_count": 32,
+  "batch_prefix_length": 5120,
+  "cuda_prefill_ms": 30.61017608642578,
+  "cuda_decode_ms": 118.73878288269043,
+  "cow_copy_count": 1,
+  "cow_copy_cuda_ms": 0.2953279912471771,
+  "cow_copy_host_ms": 0.15314,
+  "match_native_ms": 0.7404,
+  "ttft_ms": 36.837303,
+  "request_wall_ms": 160.83547,
+  "stream_tpot_ms": 17.669523857142856,
+  "timing_decomposition": {
+    "queue_ms": 2.937895,
+    "pregap_ms": 0.777591,
+    "execwin_ms": 31.557517,
+    "compute_cuda_ms": 30.61017608642578,
+    "postgap_ms": 0.1331,
+    "delivery_ms": 2.341891,
+    "ttft_ms_check": 36.837303,
+    "first_decode_cuda_ms": 18.24140739440918
+  },
+  "control_rpc_wall_ms": 11137.986189,
+  "control_timing_stages": [
+    {
+      "ms": 2366.906947,
+      "stage": "final_heavy_observation"
+    },
+    {
+      "ms": 0.576772,
+      "stage": "cpu_physical_mapping"
+    },
+    {
+      "ms": 156.022668,
+      "stage": "strict_epoch_authentication_and_plan"
+    },
+    {
+      "ms": 1203.600062,
+      "stage": "apply_time_freshness_preflight"
+    },
+    {
+      "ms": 917.075719,
+      "stage": "fa_content_audit_before"
+    },
+    {
+      "ms": 849.012637,
+      "stage": "strict_reconciliation_with_postchecks"
+    },
+    {
+      "ms": 1803.026479,
+      "stage": "fa_content_postcheck_and_resume_baseline"
+    }
+  ],
+  "census_counts": {
+    "physical": 16,
+    "mapped": 16,
+    "unmapped_extras": 0
+  },
+  "selected_cpu": [
+    "C_D_P07168",
+    "C_C_P06144",
+    "C_B_P05120"
+  ],
+  "plan_recovery_cost_ms": 154.34895561599998,
+  "measure_mode": true,
+  "audit_entries_total": 2,
+  "shape_warm_b": {
+    "wall_ms": 6268.530799,
+    "E": 5120,
+    "fa_hit": 5120,
+    "output_len": 2
+  },
+  "warmup1_wall_ms": 30608.017806,
+  "warmup2_wall_ms": 5320.965963,
+  "warmup_observe_rpc_wall_ms": 167.8299601875,
+  "flush_wall_ms": 3.135598,
+  "engine_boot_ms": 26252.495986,
+  "epoch_wall_ms": 55793.299385,
+  "triton_snapshots": [
+    {
+      "label": "engine_ready",
+      "entries": 1
+    },
+    {
+      "label": "post_warmup",
+      "entries": 42
+    },
+    {
+      "label": "post_flush",
+      "entries": 42
+    },
+    {
+      "label": "post_warmup2",
+      "entries": 42
+    },
+    {
+      "label": "post_control",
+      "entries": 42
+    },
+    {
+      "label": "post_shape_warm",
+      "entries": 51
+    },
+    {
+      "label": "post_request",
+      "entries": 51
+    }
+  ],
+  "triton_new_kernels": [
+    {
+      "window": "engine_ready→post_warmup",
+      "new_entries": 41,
+      "new_names": [
+        "2MM5N7L4ZVSMCNPKCJLEJOFKMDQO3SOG7FAHPRBDIX5EJP5B2DBA",
+        "2XO62VVRCHPYKD7QFDIRQSQQB45AW767DXFGXOKAQEJ2DENGFM7Q",
+        "3AVXPVCXGEG5BUUGUEMMFSIFPAXWYEXQJZAQXENNTAV2BH77OIXQ",
+        "4VSOC3JURK4SCEZIYQFKL64ZK4TTIWSNWRE2TV6NLCBE6YDXMCCA",
+        "4YCPUJ4VAR5VWZR7IHGHIO73QQNUNGZ5WXYHHUCB2S5YAIX3L4JA",
+        "5FEL27CVOFWIM2GEL4CBVQI7ZILJ5TAH7BNTODLVLJNVXDZWVSWA",
+        "6QKBZAW3QXIJQ276AMGNZTQ2QNL4YRRB75ABS5EYCW22C4NMWWXA",
+        "7EJWCUPOGIQIJ4IXZ4C3LOP5STVZMV2QVZTWJG5CMNQUGMYZXRAQ",
+        "A3MDGPZF5HVEAB4YN23DDHM5HCNCZ4IXKPTMAVFJ5SXBLG2JZHVA",
+        "ABBFFYPSFEQSZPGARP23E3SCBZRN4KYDG6SIDNQABSXWCZ7Q3EVQ",
+        "BWUK7O3ASTPPQTSDSC3NLPL5YDPPGNMCND62XARNZXKSUPNTHNPQ",
+        "CAR5A6G2AN3CV2EVF67AVPERDZW26DKHNYTJA44RTZ67UAA3W2LA",
+        "EJQHUP6LPJIBYFIO3AAZF4NNXF4HDTCPXUEWAFZF6BH3EGKY3ORA",
+        "F4C6MZYV4KQNV4GTAOWB2M5NZZ6M3FRSNVL46I7U2WJMA2VX4QJQ",
+        "FF4JIDLOLQ5LEFJON5DSVL5PNWUY7AFX3HAFKU52GU6TX2XWCZVA",
+        "HCYS6HZPNLYSC6T6PJU5HWTCFBLSDLLO3HXOV56R7GXVCXMX4HQA",
+        "HDPGR6GJSEGL7776J5FXEDVSTQQYIISMBYE4WTNMDFJ2JDGNXEFA",
+        "HWI3V7UO5EY7V4CZFOKRBKTL3O3KQ2BY3JTHFBHMPZIXXYD3K7EA",
+        "JBFEHEVJWRDJHOCG43JGCMTWD557NQNQPJ7K6L6RPACCC3Q6C3FQ",
+        "L7KY7D264B6VVBDRZXOYGFUCWWXIFQZC64KIH4GL725LNCCPZHGQ",
+        "NCEDKKNHG55NOCYN675XCPY4DOZH6C3QIVTSM2DXRZXGOQMHVFRA",
+        "NJUG7NY5YAI4WZKGODEKDWTIOVY3INYYW3WUI6Y2ROMGTJCJVWOA",
+        "RLTF6LHPFFQYZP6SZOHEHSYXY7UQWZEK4QNP5VFAJIJFRZMY5FJA",
+        "RXJQJFWQXUYIHEXK6EQ7UVP7R3VCT37V2VQEE7LRGJSSQ6JS6S7A",
+        "S7G4UMY525SOKALOV2NLVAAI3ZVKC3T2X6N2CAXDOT6MU7B4VC6A",
+        "SAB6F3TUR35AGTICJQWKAWAFCZGPIWSMLXSB364JLNL5BTBOMZTA",
+        "SANHSBFUFZDKCPIOYXVMT2QJPBQVXGKAOFV77WDXYROCTXX7Q5EA",
+        "SRS7DJBJL4JK3VXTIWT2OIDIMRU3EBFDH6MOCOUU2SU72V2TBM3Q",
+        "SU5YJEYDWTQ57DB6SD4TNVRFLTOAPMYYBKJ34ESUDCKZGSJL7MAA",
+        "TYBLHHTWMPNICYBKGC6MCJMPDE3675VQYIDLBKMPD5VXJX5MHR5A",
+        "ULJGBDQVVZN6RMEFISRO7FM3JGZLLI52JESP42DBPA3DQFMZJFDA",
+        "VYDMZWGLTQKOMF5DM65JFTOAHCGWVQKRJF4QGVMWSTRMRR5FHAWQ",
+        "WAYUEKC2JVQ25RTDPJJEILYHW6AHNXEGI2HH6POCQKT2UDXOMZJA",
+        "X727QUOG3ZXXXEPPUN3P3NJ2IULYDOINUEVAFNBUCJGHWZKRW6YA",
+        "XNQGUFFKCGRLFKJQLVFN3YSG2QHPBD5KTURMHKOSLOPMZVD2E2AA",
+        "XRRQICQ5BVVB25F26WL2HC2YQDBCAWMW5TMY7ZZK7IEVQRUPY52A",
+        "Y6DMWX4LNMFIWHQLP7M36EP5YKS4SC4MJXVVFHVI6IDRF5LDGMHA",
+        "YCULH56BLCGXION424GOFESU6VG4KBKQM3BZBZW5VE37WOF2ILLQ",
+        "YHR7LE7BH5XEFMQB3PZISUDRYB5RLMYCDFYAGMG4TPCZ3UZJ6XCA",
+        "YRCSBBAMPKFQAP4FYI5IZXB6SHXXR5PKGEPJIFU3MUDS55JBOXHQ",
+        "Z4USOSDJPDVP7HGZPDB57G4FUBAWIT5USECJVCNFWSFDMEC7RZ7A"
+      ]
+    },
+    {
+      "window": "post_flush→post_warmup2",
+      "new_entries": 0,
+      "new_names": []
+    },
+    {
+      "window": "post_warmup2→post_control",
+      "new_entries": 0,
+      "new_names": []
+    },
+    {
+      "window": "post_control→post_shape_warm",
+      "new_entries": 9,
+      "new_names": [
+        "3DJJCHSFFS5LRFBC5MHPFYMJTUL5VQVIFEE3QXD27G4ZDLD2D74A",
+        "AXOCIGKVQHBSXFGXYHTHUZ57YHIWB2A4RYTRILLDLLIGXMZOPXMA",
+        "CFTS6Y66RO56MSLRD2N4RZU3BX2OJO7SDJOFQPGGOB2WOGOUFIIQ",
+        "DWYKB3S5LJ53RHIK2OMHLIO4SIB2FOHVMH7DTHUE7OIYCA22QHQA",
+        "KV6YW4FWCOYG63QRYZFV2SV4GEWLUAOTLPWX6LM4CEEYLUHKEKMA",
+        "MYMTAJR2R3LBJH4ABVBLZADZL425HTYJIGAWPOD6V5T5XRJSP6KA",
+        "VS4ZATRPS63ION54C5XILA6ZNNKHEJU6WEAD2IXHOPOMJLSJZATQ",
+        "WPOY3MSZ4RPEH6NIXDDT73QLTLPZALKPY2W3P4MKAMNUNRIXVWTA",
+        "ZFBRRU6BIZPU3NUXKEPZVSR7WZMDANJRDQNPKH4NHM7RLVLGQUYQ"
+      ]
+    },
+    {
+      "window": "post_shape_warm→post_request",
+      "new_entries": 0,
+      "new_names": []
+    }
+  ],
+  "cold_output_match": true,
+  "output_ids": [
+    220,
+    197,
+    1,
+    198,
+    197,
+    1,
+    198,
+    197
+  ],
+  "native_matches": [
+    {
+      "best_match_node": 55,
+      "cow_requested": true,
+      "cow_source_slots": [
+        11
+      ],
+      "executable_prefix": 5120,
+      "input_token_count": 5152,
+      "input_token_digest": "cf053cb2f3e11fb49c7a006671ee15d6d2a18bc4626c3add87bb0a3f886696b2",
+      "last_device_node": 55,
+      "last_host_node": 55,
+      "mamba_branching_seqlen": null,
+      "mamba_host_hit_length": 0,
+      "monotonic_ns": 1073384562950260,
+      "physical_fa_hit": 5120,
+      "replay_gap": 0,
+      "request_id": "C_B",
+      "working_slots": [
+        16
+      ]
+    }
+  ],
+  "说明": "测量模式：请求窗口（发送→首Token）零A类审计零落盘；B/C类原生操作全保留；CUDA事件是设备时间线区间而非纯内核之和"
+}

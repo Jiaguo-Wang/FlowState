@@ -1,0 +1,29 @@
+/home/wjg/code/FlowState/evaluation/baseline_reuse_t2r/test_interface.py:16: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/wjg/code/FlowState/evaluation/kvflow_multiworkflow_cpu_main/cpu_comparison.csv' mode='r' encoding='UTF-8'>
+  cls.frozen = {(r['structure'],int(r['K']),r['policy']):r for r in csv.DictReader((MAIN/'cpu_comparison.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_all_frozen_conditions (evaluation.baseline_reuse_t2r.test_interface.InterfaceTests.test_all_frozen_conditions) ... ok
+test_budget (evaluation.baseline_reuse_t2r.test_interface.InterfaceTests.test_budget) ... ok
+test_corrupted_inputs (evaluation.baseline_reuse_t2r.test_interface.InterfaceTests.test_corrupted_inputs) ... ok
+test_marconi_equal_actual_bytes (evaluation.baseline_reuse_t2r.test_interface.InterfaceTests.test_marconi_equal_actual_bytes) ... ok
+test_marconi_invalid_metadata (evaluation.baseline_reuse_t2r.test_interface.InterfaceTests.test_marconi_invalid_metadata) ... ok
+test_no_physical_execution (evaluation.baseline_reuse_t2r.test_interface.InterfaceTests.test_no_physical_execution) ... ok
+test_unknown_policy (evaluation.baseline_reuse_t2r.test_interface.InterfaceTests.test_unknown_policy) ... ok
+test_budget (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_budget) ... ok
+test_cycle_unknown (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_cycle_unknown) ... ok
+test_duplicate_ids (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_duplicate_ids) ... ok
+test_epoch_configuration_and_position (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_epoch_configuration_and_position) ... ok
+test_future_not_used (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_future_not_used) ... ok
+test_missing_fixed (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_missing_fixed) ... ok
+test_no_dynamic_inference (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_no_dynamic_inference) ... ok
+test_no_mutation (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_no_mutation) ... ok
+test_prefix_not_workflow_label (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_prefix_not_workflow_label) ... ok
+test_ready_and_or (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_ready_and_or) ... ok
+test_shared_min_and_dynamic_last (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_shared_min_and_dynamic_last) ... ok
+test_tie_is_deterministic (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_tie_is_deterministic) ... ok
+test_unknown_missing_parent (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_unknown_missing_parent) ... ok
+test_unknown_never_guessed (evaluation.kvflow_inspired_retention_cpu.test_policy.ContractTests.test_unknown_never_guessed) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.556s
+
+OK

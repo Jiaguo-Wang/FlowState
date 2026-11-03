@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "mode": "strict",
+  "policy": "KVFlow-inspired",
+  "pending": "C_B",
+  "H_physical_fa_hit": 5120,
+  "E_executable_prefix": 2048,
+  "G_replay_gap": 3072,
+  "prefill_token_count": 3104,
+  "batch_prefix_length": 2048,
+  "cuda_prefill_ms": 119.32771301269531,
+  "cuda_decode_ms": 1699.6582489013672,
+  "cow_copy_count": 1,
+  "cow_copy_cuda_ms": 0.5400000214576721,
+  "ttft_ms": 3015.505381,
+  "request_wall_ms": 11517.267461,
+  "stream_tpot_ms": 1214.4787694285715,
+  "control_rpc_wall_ms": 11105.379749,
+  "warmup_wall_ms": 31592.345068,
+  "epoch_wall_ms": 56672.031471,
+  "output_ids": [
+    220,
+    197,
+    1,
+    198,
+    197,
+    1,
+    198,
+    197
+  ],
+  "native_matches": [
+    {
+      "best_match_node": 19,
+      "cow_requested": true,
+      "cow_source_slots": [
+        5
+      ],
+      "executable_prefix": 2048,
+      "input_token_count": 5152,
+      "input_token_digest": "cf053cb2f3e11fb49c7a006671ee15d6d2a18bc4626c3add87bb0a3f886696b2",
+      "last_device_node": 19,
+      "last_host_node": 19,
+      "mamba_branching_seqlen": 5120,
+      "mamba_host_hit_length": 0,
+      "monotonic_ns": 1477099251608786,
+      "physical_fa_hit": 5120,
+      "replay_gap": 3072,
+      "request_id": "C_B",
+      "working_slots": [
+        12
+      ]
+    }
+  ],
+  "说明": "受控审计化执行；CUDA事件是设备时间线区间而非纯内核之和；控制开销与请求性能分开计时",
+  "control_timing_stages": [
+    {
+      "ms": 2410.499664,
+      "stage": "final_heavy_observation"
+    },
+    {
+      "ms": 0.688528,
+      "stage": "cpu_physical_mapping"
+    },
+    {
+      "ms": 151.268358,
+      "stage": "strict_epoch_authentication_and_plan"
+    },
+    {
+      "ms": 1209.575518,
+      "stage": "apply_time_freshness_preflight"
+    },
+    {
+      "ms": 933.600366,
+      "stage": "fa_content_audit_before"
+    },
+    {
+      "ms": 872.503081,
+      "stage": "strict_reconciliation_with_postchecks"
+    },
+    {
+      "ms": 1715.400274,
+      "stage": "fa_content_postcheck_and_resume_baseline"
+    }
+  ],
+  "census_counts": {
+    "physical": 16,
+    "mapped": 16,
+    "unmapped_extras": 0
+  },
+  "selected_cpu": [
+    "C_AB_P01984",
+    "C_AB_P02048",
+    "C_A_P04032"
+  ],
+  "plan_recovery_cost_ms": 627.6149768490118
+}

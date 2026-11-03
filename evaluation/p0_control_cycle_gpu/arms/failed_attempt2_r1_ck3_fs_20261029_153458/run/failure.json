@@ -1,0 +1,5 @@
+{
+  "status": "BLOCKED",
+  "error": "ValueError('T0–T4 恒等式失败：存在重复累加或遗漏')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/wjg/code/FlowState/evaluation/p0_control_cycle_gpu/runner.py\", line 394, in main\n    require((t4_ns - t0_ns) == (t3_ns - t0_ns) + gap_rpc_tail_ns + warm_total + req_total + sum(gaps),\n  File \"/home/wjg/code/FlowState/evaluation/lightweight_runtime_e1/protocol.py\", line 3, in require\n    if not value:raise ValueError(message)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: T0–T4 恒等式失败：存在重复累加或遗漏\n"
+}

@@ -1,0 +1,58 @@
+{
+  "policy": "FlowState-Greedy",
+  "rows": [
+    {
+      "pending": "C_A",
+      "start_ns": 1834231960823333,
+      "end_ns": 1834237977112232,
+      "wall_ms": 6016.288899,
+      "input_len": 4128,
+      "planned_E": 0,
+      "diverge_from": 0,
+      "output_ids": [
+        220,
+        16
+      ]
+    },
+    {
+      "pending": "C_B",
+      "start_ns": 1834237977430826,
+      "end_ns": 1834238318170757,
+      "wall_ms": 340.739931,
+      "input_len": 5152,
+      "planned_E": 5120,
+      "diverge_from": 5120,
+      "output_ids": [
+        903,
+        362
+      ]
+    },
+    {
+      "pending": "C_C",
+      "start_ns": 1834238318478711,
+      "end_ns": 1834238366825377,
+      "wall_ms": 48.346666,
+      "input_len": 6176,
+      "planned_E": 6144,
+      "diverge_from": 6144,
+      "output_ids": [
+        220,
+        197
+      ]
+    },
+    {
+      "pending": "C_D",
+      "start_ns": 1834238367140231,
+      "end_ns": 1834238416656873,
+      "wall_ms": 49.516642,
+      "input_len": 7200,
+      "planned_E": 7168,
+      "diverge_from": 7168,
+      "output_ids": [
+        96774,
+        220
+      ]
+    }
+  ],
+  "note": "apply后形状预热块(v1.1,四Pending各一次)：计划E准入+目标extend/decode形状编译。口径归属：不进 control_cycle_ms(T3−T0)；计入 cycle_ms_full_incl_warm(T4−T0)，恒等式如实含 warm 段与其前后间隙；两口径并列报告，禁止事后扣除 warm 伪造连续生产窗口"
+}

@@ -1,0 +1,1203 @@
+{
+ "checks": [
+  {
+   "check": "A1: 新旧两数据集各 216 PASS 记录（24 快照 × 3 策略 × 3 重复）",
+   "pass": true,
+   "detail": "(216, 216)"
+  },
+  {
+   "check": "A2: 逐 epoch 恒等闭合 Epoch=Control+请求和+Residual（432/432，误差<1e-6ms）",
+   "pass": true,
+   "detail": "load_epochs 内 assert 全过（含 residual==between 字段、Σgap==residual）"
+  },
+  {
+   "check": "A3: 两数据集 epoch/residual 均值与 comparison.json 逐位一致",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "A4: spec 表格新数据集 Epoch 均值复核（FS 2425.6 / MC 1876.0 / LRU 2952.3）",
+   "pass": true,
+   "detail": "{'FlowState': 2425.641, 'Marconi': 1875.991, 'LRU': 2952.253}"
+  },
+  {
+   "check": "A5: FS−MC 残余差 ≈663ms 与请求执行节省 ≈−147ms 复核",
+   "pass": true,
+   "detail": "{'residual_diff': 663.0, 'request_sum_diff': -147.3}"
+  },
+  {
+   "check": "A6: 请求执行跨会话稳定（|摆动|<2ms）而残余区间大幅摆动（FS/LRU>800ms）",
+   "pass": true,
+   "detail": "{'FlowState': {'residual_old': 1051.9, 'residual_new': 1929.1, 'residual_swing': 877.2, 'request_old': 92.537, 'request_new': 91.152, 'request_swing': -1.385}, 'Marconi': {'residual_old': 1108.0, 'residual_new': 1266.1, 'residual_swing': 158.1, 'request_old': 128.157, 'request_new': 127.987, 'request_swing': -0.17}, 'LRU': {'residual_old': 1244.2, 'residual_new': 2150.0, 'residual_swing': 905.8, '"
+  },
+  {
+   "check": "B1: profiling 72 epoch，窗口内调用数恒为 metrics=3、census=3、inspect=每快照相关候选和",
+   "pass": true,
+   "detail": "{'epochs': 72}"
+  },
+  {
+   "check": "B2: 窗口内 RPC 墙钟占残余区间 >90%（调度纯间隙为次要）",
+   "pass": true,
+   "detail": "{'cover': 0.9781}"
+  },
+  {
+   "check": "B3: RPC 墙钟由服务线程交接段主导（before_submit+event_handoff>85%，服务端计算<6%，安全点排队<1%）",
+   "pass": true,
+   "detail": "{'before_submit': 71.1, 'queue_wait': 0.1, 'server': 3.9, 'event_handoff': 23.9, 'after_submit': 1.0}"
+  },
+  {
+   "check": "C1: 同(快照,ordinal)下 FS 树均值比 MC 大 0~3 节点（mamba 分支点策略相关），量级远小于残余差",
+   "pass": true,
+   "detail": "{'aligned_cells': 96, 'tree_diff_mean': {'FS-MC': 1.146, 'FS-LRU': 1.229}, 'tree_diff_min_max': {'FS-MC': [0, 3], 'FS-LRU': [0, 2]}, 'tree_diff_nonzero_cells': {'FS-MC': 72, 'FS-LRU': 93}, 'selected_count_mean': {'FlowState': 3.25, 'LRU': 3.5, 'Marconi': 3.5}}"
+  }
+ ],
+ "taskA_paired": {
+  "new": {
+   "epoch_ms": {
+    "FS-MC": {
+     "mean": 549.649,
+     "median": 134.416,
+     "min": -8059.376,
+     "max": 10561.948,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -526.612,
+     "median": -156.51,
+     "min": -16422.863,
+     "max": 10429.842,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 2425.641,
+      "median": 1547.762,
+      "min": 835.799,
+      "max": 12012.89,
+      "cv": 1.108
+     },
+     "Marconi": {
+      "mean": 1875.991,
+      "median": 1540.766,
+      "min": 665.679,
+      "max": 9130.776,
+      "cv": 0.885
+     },
+     "LRU": {
+      "mean": 2952.253,
+      "median": 1796.808,
+      "min": 993.635,
+      "max": 17996.936,
+      "cv": 1.306
+     }
+    }
+   },
+   "control_ms": {
+    "FS-MC": {
+     "mean": 33.947,
+     "median": 28.755,
+     "min": -61.635,
+     "max": 200.167,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -17.551,
+     "median": 8.307,
+     "min": -944.717,
+     "max": 221.626,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 131.904,
+      "median": 108.977,
+      "min": 48.233,
+      "max": 341.663,
+      "cv": 0.543
+     },
+     "Marconi": {
+      "mean": 97.957,
+      "median": 98.626,
+      "min": 35.526,
+      "max": 192.693,
+      "cv": 0.455
+     },
+     "LRU": {
+      "mean": 149.455,
+      "median": 99.012,
+      "min": 49.724,
+      "max": 1074.853,
+      "cv": 1.355
+     }
+    }
+   },
+   "request_sum_ms": {
+    "FS-MC": {
+     "mean": -147.34,
+     "median": -180.074,
+     "min": -382.85,
+     "max": 7.605,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -288.158,
+     "median": -229.565,
+     "min": -686.859,
+     "max": -137.375,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 364.608,
+      "median": 387.024,
+      "min": 157.811,
+      "max": 720.572,
+      "cv": 0.419
+     },
+     "Marconi": {
+      "mean": 511.948,
+      "median": 482.163,
+      "min": 166.662,
+      "max": 784.873,
+      "cv": 0.37
+     },
+     "LRU": {
+      "mean": 652.765,
+      "median": 632.02,
+      "min": 355.458,
+      "max": 1029.608,
+      "cv": 0.244
+     }
+    }
+   },
+   "residual_ms": {
+    "FS-MC": {
+     "mean": 663.042,
+     "median": 226.049,
+     "min": -7932.848,
+     "max": 10572.653,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -220.904,
+     "median": 72.993,
+     "min": -15213.617,
+     "max": 10626.33,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 1929.129,
+      "median": 1029.589,
+      "min": 282.254,
+      "max": 11491.137,
+      "cv": 1.394
+     },
+     "Marconi": {
+      "mean": 1266.087,
+      "median": 945.629,
+      "min": 182.591,
+      "max": 8628.077,
+      "cv": 1.315
+     },
+     "LRU": {
+      "mean": 2150.033,
+      "median": 1044.735,
+      "min": 274.576,
+      "max": 16499.742,
+      "cv": 1.738
+     }
+    }
+   },
+   "gap1_ms": {
+    "FS-MC": {
+     "mean": -34.284,
+     "median": 63.449,
+     "min": -2728.419,
+     "max": 818.148,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -112.331,
+     "median": 16.964,
+     "min": -3774.793,
+     "max": 657.932,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 290.858,
+      "median": 259.113,
+      "min": 60.597,
+      "max": 908.093,
+      "cv": 0.699
+     },
+     "Marconi": {
+      "mean": 325.142,
+      "median": 196.002,
+      "min": 44.386,
+      "max": 2955.034,
+      "cv": 1.795
+     },
+     "LRU": {
+      "mean": 403.189,
+      "median": 180.93,
+      "min": 62.411,
+      "max": 4103.552,
+      "cv": 2.07
+     }
+    }
+   },
+   "gap_mid_ms": {
+    "FS-MC": {
+     "mean": 697.326,
+     "median": 195.379,
+     "min": -5204.43,
+     "max": 10040.502,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -108.572,
+     "median": 49.951,
+     "min": -11438.823,
+     "max": 10098.625,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 1638.271,
+      "median": 853.059,
+      "min": 221.657,
+      "max": 10735.44,
+      "cv": 1.536
+     },
+     "Marconi": {
+      "mean": 940.945,
+      "median": 731.571,
+      "min": 138.204,
+      "max": 5673.042,
+      "cv": 1.164
+     },
+     "LRU": {
+      "mean": 1746.843,
+      "median": 770.876,
+      "min": 165.413,
+      "max": 12396.191,
+      "cv": 1.689
+     }
+    }
+   },
+   "gap2_ms": {
+    "FS-MC": {
+     "mean": 177.187,
+     "median": 60.738,
+     "min": -2201.786,
+     "max": 3288.71,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": 63.808,
+     "median": 28.755,
+     "min": -3977.92,
+     "max": 3326.852,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 509.959,
+      "median": 234.536,
+      "min": 64.419,
+      "max": 3521.686,
+      "cv": 1.629
+     },
+     "Marconi": {
+      "mean": 332.771,
+      "median": 184.011,
+      "min": 40.841,
+      "max": 2389.643,
+      "cv": 1.45
+     },
+     "LRU": {
+      "mean": 446.151,
+      "median": 218.674,
+      "min": 62.363,
+      "max": 4213.396,
+      "cv": 1.922
+     }
+    }
+   },
+   "gap3_ms": {
+    "FS-MC": {
+     "mean": 472.354,
+     "median": 74.745,
+     "min": -639.623,
+     "max": 4185.092,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": 11.52,
+     "median": 5.798,
+     "min": -5615.302,
+     "max": 4155.931,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 734.173,
+      "median": 247.965,
+      "min": 64.174,
+      "max": 4451.6,
+      "cv": 1.739
+     },
+     "Marconi": {
+      "mean": 261.819,
+      "median": 263.72,
+      "min": 34.815,
+      "max": 1015.799,
+      "cv": 0.801
+     },
+     "LRU": {
+      "mean": 722.653,
+      "median": 281.263,
+      "min": 52.993,
+      "max": 6014.593,
+      "cv": 2.003
+     }
+    }
+   },
+   "gap4_ms": {
+    "FS-MC": {
+     "mean": 47.784,
+     "median": 29.324,
+     "min": -2729.309,
+     "max": 2566.7,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -183.9,
+     "median": -11.092,
+     "min": -2699.141,
+     "max": 2615.843,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 394.139,
+      "median": 255.866,
+      "min": 67.682,
+      "max": 2762.154,
+      "cv": 1.36
+     },
+     "Marconi": {
+      "mean": 346.355,
+      "median": 245.186,
+      "min": 51.901,
+      "max": 2903.251,
+      "cv": 1.613
+     },
+     "LRU": {
+      "mean": 578.039,
+      "median": 273.659,
+      "min": 50.057,
+      "max": 3402.994,
+      "cv": 1.427
+     }
+    }
+   },
+   "mean_request_ms": {
+    "FS-MC": {
+     "mean": -36.835,
+     "median": -45.019,
+     "min": -95.712,
+     "max": 1.901,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -72.039,
+     "median": -57.391,
+     "min": -171.715,
+     "max": -34.344,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 91.152,
+      "median": 96.756,
+      "min": 39.453,
+      "max": 180.143,
+      "cv": 0.419
+     },
+     "Marconi": {
+      "mean": 127.987,
+      "median": 120.541,
+      "min": 41.665,
+      "max": 196.218,
+      "cv": 0.37
+     },
+     "LRU": {
+      "mean": 163.191,
+      "median": 158.005,
+      "min": 88.864,
+      "max": 257.402,
+      "cv": 0.244
+     }
+    }
+   }
+  },
+  "old": {
+   "epoch_ms": {
+    "FS-MC": {
+     "mean": 190.466,
+     "median": 137.575,
+     "min": -940.988,
+     "max": 1636.106,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -51.785,
+     "median": 234.471,
+     "min": -3434.8,
+     "max": 1217.38,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 2078.838,
+      "median": 1919.248,
+      "min": 840.711,
+      "max": 3888.906,
+      "cv": 0.378
+     },
+     "Marconi": {
+      "mean": 1888.372,
+      "median": 1787.936,
+      "min": 1215.374,
+      "max": 3347.232,
+      "cv": 0.296
+     },
+     "LRU": {
+      "mean": 2130.623,
+      "median": 2004.671,
+      "min": 812.768,
+      "max": 4812.411,
+      "cv": 0.444
+     }
+    }
+   },
+   "control_ms": {
+    "FS-MC": {
+     "mean": 389.013,
+     "median": 366.771,
+     "min": -97.526,
+     "max": 1069.09,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": 423.879,
+     "median": 348.509,
+     "min": -5.965,
+     "max": 1169.931,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 656.771,
+      "median": 586.114,
+      "min": 158.181,
+      "max": 1301.068,
+      "cv": 0.474
+     },
+     "Marconi": {
+      "mean": 267.758,
+      "median": 230.081,
+      "min": 116.572,
+      "max": 595.179,
+      "cv": 0.519
+     },
+     "LRU": {
+      "mean": 232.892,
+      "median": 219.207,
+      "min": 51.96,
+      "max": 575.652,
+      "cv": 0.508
+     }
+    }
+   },
+   "request_sum_ms": {
+    "FS-MC": {
+     "mean": -142.48,
+     "median": -178.597,
+     "min": -385.334,
+     "max": 75.49,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -283.352,
+     "median": -226.538,
+     "min": -685.193,
+     "max": -31.43,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 370.148,
+      "median": 388.883,
+      "min": 159.819,
+      "max": 845.775,
+      "cv": 0.452
+     },
+     "Marconi": {
+      "mean": 512.628,
+      "median": 484.32,
+      "min": 167.695,
+      "max": 784.372,
+      "cv": 0.371
+     },
+     "LRU": {
+      "mean": 653.499,
+      "median": 634.8,
+      "min": 360.714,
+      "max": 1031.966,
+      "cv": 0.244
+     }
+    }
+   },
+   "residual_ms": {
+    "FS-MC": {
+     "mean": -56.067,
+     "median": -99.979,
+     "min": -1099.767,
+     "max": 904.283,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -192.313,
+     "median": -76.807,
+     "min": -3184.433,
+     "max": 657.063,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 1051.919,
+      "median": 981.641,
+      "min": 230.196,
+      "max": 2498.686,
+      "cv": 0.573
+     },
+     "Marconi": {
+      "mean": 1107.986,
+      "median": 1004.683,
+      "min": 418.981,
+      "max": 2398.376,
+      "cv": 0.493
+     },
+     "LRU": {
+      "mean": 1244.232,
+      "median": 1046.439,
+      "min": 194.81,
+      "max": 3977.067,
+      "cv": 0.709
+     }
+    }
+   },
+   "gap1_ms": {
+    "FS-MC": {
+     "mean": -3.214,
+     "median": 7.912,
+     "min": -328.718,
+     "max": 266.188,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -81.525,
+     "median": -32.989,
+     "min": -974.945,
+     "max": 146.685,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 214.444,
+      "median": 213.117,
+      "min": 43.628,
+      "max": 595.895,
+      "cv": 0.607
+     },
+     "Marconi": {
+      "mean": 217.658,
+      "median": 206.541,
+      "min": 77.184,
+      "max": 574.165,
+      "cv": 0.571
+     },
+     "LRU": {
+      "mean": 295.969,
+      "median": 261.548,
+      "min": 32.602,
+      "max": 1109.985,
+      "cv": 0.808
+     }
+    }
+   },
+   "gap_mid_ms": {
+    "FS-MC": {
+     "mean": -52.853,
+     "median": -89.16,
+     "min": -771.048,
+     "max": 649.349,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -110.788,
+     "median": -27.647,
+     "min": -2209.488,
+     "max": 580.763,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 837.475,
+      "median": 754.427,
+      "min": 186.568,
+      "max": 1957.624,
+      "cv": 0.593
+     },
+     "Marconi": {
+      "mean": 890.328,
+      "median": 818.235,
+      "min": 341.797,
+      "max": 1996.299,
+      "cv": 0.51
+     },
+     "LRU": {
+      "mean": 948.263,
+      "median": 732.364,
+      "min": 135.711,
+      "max": 2867.081,
+      "cv": 0.714
+     }
+    }
+   },
+   "gap2_ms": {
+    "FS-MC": {
+     "mean": 18.665,
+     "median": 17.784,
+     "min": -371.443,
+     "max": 299.448,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": 5.19,
+     "median": 23.51,
+     "min": -513.059,
+     "max": 201.19,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 289.204,
+      "median": 304.179,
+      "min": 47.991,
+      "max": 656.929,
+      "cv": 0.574
+     },
+     "Marconi": {
+      "mean": 270.538,
+      "median": 245.184,
+      "min": 91.22,
+      "max": 778.182,
+      "cv": 0.609
+     },
+     "LRU": {
+      "mean": 284.014,
+      "median": 221.681,
+      "min": 31.904,
+      "max": 829.906,
+      "cv": 0.721
+     }
+    }
+   },
+   "gap3_ms": {
+    "FS-MC": {
+     "mean": -18.523,
+     "median": -22.541,
+     "min": -280.38,
+     "max": 271.006,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -35.313,
+     "median": -21.54,
+     "min": -607.717,
+     "max": 341.725,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 262.739,
+      "median": 219.18,
+      "min": 83.093,
+      "max": 776.968,
+      "cv": 0.692
+     },
+     "Marconi": {
+      "mean": 281.262,
+      "median": 284.386,
+      "min": 73.844,
+      "max": 530.662,
+      "cv": 0.475
+     },
+     "LRU": {
+      "mean": 298.052,
+      "median": 237.514,
+      "min": 34.352,
+      "max": 752.694,
+      "cv": 0.673
+     }
+    }
+   },
+   "gap4_ms": {
+    "FS-MC": {
+     "mean": -52.996,
+     "median": -50.573,
+     "min": -658.324,
+     "max": 290.409,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -80.665,
+     "median": -24.754,
+     "min": -1088.712,
+     "max": 263.482,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 285.532,
+      "median": 233.317,
+      "min": 51.83,
+      "max": 764.699,
+      "cv": 0.659
+     },
+     "Marconi": {
+      "mean": 338.528,
+      "median": 321.191,
+      "min": 71.947,
+      "max": 1198.281,
+      "cv": 0.725
+     },
+     "LRU": {
+      "mean": 366.197,
+      "median": 280.011,
+      "min": 69.454,
+      "max": 1284.481,
+      "cv": 0.784
+     }
+    }
+   },
+   "mean_request_ms": {
+    "FS-MC": {
+     "mean": -35.62,
+     "median": -44.649,
+     "min": -96.334,
+     "max": 18.873,
+     "n": 24
+    },
+    "FS-LRU": {
+     "mean": -70.838,
+     "median": -56.634,
+     "min": -171.298,
+     "max": -7.858,
+     "n": 24
+    },
+    "per_policy": {
+     "FlowState": {
+      "mean": 92.537,
+      "median": 97.221,
+      "min": 39.955,
+      "max": 211.444,
+      "cv": 0.452
+     },
+     "Marconi": {
+      "mean": 128.157,
+      "median": 121.08,
+      "min": 41.924,
+      "max": 196.093,
+      "cv": 0.371
+     },
+     "LRU": {
+      "mean": 163.375,
+      "median": 158.7,
+      "min": 90.178,
+      "max": 257.992,
+      "cv": 0.244
+     }
+    }
+   }
+  }
+ },
+ "session_swing_same_code": {
+  "FlowState": {
+   "residual_old": 1051.9,
+   "residual_new": 1929.1,
+   "residual_swing": 877.2,
+   "request_old": 92.537,
+   "request_new": 91.152,
+   "request_swing": -1.385
+  },
+  "Marconi": {
+   "residual_old": 1108.0,
+   "residual_new": 1266.1,
+   "residual_swing": 158.1,
+   "request_old": 128.157,
+   "request_new": 127.987,
+   "request_swing": -0.17
+  },
+  "LRU": {
+   "residual_old": 1244.2,
+   "residual_new": 2150.0,
+   "residual_swing": 905.8,
+   "request_old": 163.375,
+   "request_new": 163.191,
+   "request_swing": -0.184
+  }
+ },
+ "taskB_profiling": {
+  "residual_mean_ms": 1126.233,
+  "rpc_wall_mean_ms": 1101.527,
+  "dispatch_remainder_mean_ms": 24.706,
+  "by_action_mean_ms": {
+   "inspect": 948.996,
+   "flowstate_runtime_metrics": 51.542,
+   "census": 100.988
+  },
+  "by_action_calls_per_epoch": {
+   "inspect": 14,
+   "flowstate_runtime_metrics": 3,
+   "census": 3
+  },
+  "per_call_wall_ms": {
+   "inspect": 67.785,
+   "flowstate_runtime_metrics": 17.181,
+   "census": 33.663
+  },
+  "by_segment_mean_ms": {
+   "before_submit": 783.073,
+   "queue_wait": 1.245,
+   "server": 43.417,
+   "event_handoff": 263.053,
+   "after_submit": 10.739
+  },
+  "gaps_mean_ms": {
+   "gap1": 207.747,
+   "gap2": 268.465,
+   "gap3": 309.417,
+   "gap4": 340.604
+  },
+  "gap_rpc_cover_mean_ms": {
+   "gap1": 201.957,
+   "gap2": 262.5,
+   "gap3": 303.051,
+   "gap4": 334.019
+  },
+  "residual_median_ms": 768.534,
+  "residual_min_max": [
+   98.2,
+   8023.1
+  ],
+  "census_server_vs_tree": {
+   "n_points": 216,
+   "tree_range": [
+    11,
+    26
+   ],
+   "server_mean_ms": 0.737,
+   "slope_ms_per_node": 0.0289,
+   "note": "仅 FlowState profiling 实测；用于界定 ±1~2 节点树差的 census 影响上界"
+  }
+ },
+ "taskB_per_call_by_action": {
+  "inspect": {
+   "n_calls": 1008,
+   "wall_p50_ms": 42.569,
+   "wall_p95_ms": 189.337,
+   "wall_max_ms": 1873.725,
+   "segment_mean_ms": {
+    "before_submit": 49.181,
+    "queue_wait": 0.055,
+    "server": 2.927,
+    "event_handoff": 14.968,
+    "after_submit": 0.655
+   }
+  },
+  "flowstate_runtime_metrics": {
+   "n_calls": 216,
+   "wall_p50_ms": 2.053,
+   "wall_p95_ms": 37.672,
+   "wall_max_ms": 1554.723,
+   "segment_mean_ms": {
+    "before_submit": 12.195,
+    "queue_wait": 0.094,
+    "server": 0.075,
+    "event_handoff": 4.606,
+    "after_submit": 0.211
+   }
+  },
+  "census": {
+   "n_calls": 216,
+   "wall_p50_ms": 10.088,
+   "wall_p95_ms": 132.452,
+   "wall_max_ms": 1084.771,
+   "segment_mean_ms": {
+    "before_submit": 19.319,
+    "queue_wait": 0.063,
+    "server": 0.737,
+    "event_handoff": 13.23,
+    "after_submit": 0.314
+   }
+  }
+ },
+ "taskB_census_tree_regression": {
+  "n_points": 216,
+  "tree_range": [
+   11,
+   26
+  ],
+  "server_mean_ms": 0.737,
+  "slope_ms_per_node": 0.0289,
+  "note": "仅 FlowState profiling 实测；用于界定 ±1~2 节点树差的 census 影响上界"
+ },
+ "taskC_tree_and_selection": {
+  "aligned_cells": 96,
+  "tree_diff_mean": {
+   "FS-MC": 1.146,
+   "FS-LRU": 1.229
+  },
+  "tree_diff_min_max": {
+   "FS-MC": [
+    0,
+    3
+   ],
+   "FS-LRU": [
+    0,
+    2
+   ]
+  },
+  "tree_diff_nonzero_cells": {
+   "FS-MC": 72,
+   "FS-LRU": 93
+  },
+  "selected_count_mean": {
+   "FlowState": 3.25,
+   "LRU": 3.5,
+   "Marconi": 3.5
+  }
+ },
+ "taskC_gap_attribution_new": {
+  "gap1_ms": {
+   "FS-MC": {
+    "mean": -34.284,
+    "median": 63.449,
+    "min": -2728.419,
+    "max": 818.148,
+    "n": 24
+   },
+   "FS-LRU": {
+    "mean": -112.331,
+    "median": 16.964,
+    "min": -3774.793,
+    "max": 657.932,
+    "n": 24
+   },
+   "per_policy": {
+    "FlowState": {
+     "mean": 290.858,
+     "median": 259.113,
+     "min": 60.597,
+     "max": 908.093,
+     "cv": 0.699
+    },
+    "Marconi": {
+     "mean": 325.142,
+     "median": 196.002,
+     "min": 44.386,
+     "max": 2955.034,
+     "cv": 1.795
+    },
+    "LRU": {
+     "mean": 403.189,
+     "median": 180.93,
+     "min": 62.411,
+     "max": 4103.552,
+     "cv": 2.07
+    }
+   }
+  },
+  "gap2_ms": {
+   "FS-MC": {
+    "mean": 177.187,
+    "median": 60.738,
+    "min": -2201.786,
+    "max": 3288.71,
+    "n": 24
+   },
+   "FS-LRU": {
+    "mean": 63.808,
+    "median": 28.755,
+    "min": -3977.92,
+    "max": 3326.852,
+    "n": 24
+   },
+   "per_policy": {
+    "FlowState": {
+     "mean": 509.959,
+     "median": 234.536,
+     "min": 64.419,
+     "max": 3521.686,
+     "cv": 1.629
+    },
+    "Marconi": {
+     "mean": 332.771,
+     "median": 184.011,
+     "min": 40.841,
+     "max": 2389.643,
+     "cv": 1.45
+    },
+    "LRU": {
+     "mean": 446.151,
+     "median": 218.674,
+     "min": 62.363,
+     "max": 4213.396,
+     "cv": 1.922
+    }
+   }
+  },
+  "gap3_ms": {
+   "FS-MC": {
+    "mean": 472.354,
+    "median": 74.745,
+    "min": -639.623,
+    "max": 4185.092,
+    "n": 24
+   },
+   "FS-LRU": {
+    "mean": 11.52,
+    "median": 5.798,
+    "min": -5615.302,
+    "max": 4155.931,
+    "n": 24
+   },
+   "per_policy": {
+    "FlowState": {
+     "mean": 734.173,
+     "median": 247.965,
+     "min": 64.174,
+     "max": 4451.6,
+     "cv": 1.739
+    },
+    "Marconi": {
+     "mean": 261.819,
+     "median": 263.72,
+     "min": 34.815,
+     "max": 1015.799,
+     "cv": 0.801
+    },
+    "LRU": {
+     "mean": 722.653,
+     "median": 281.263,
+     "min": 52.993,
+     "max": 6014.593,
+     "cv": 2.003
+    }
+   }
+  },
+  "gap4_ms": {
+   "FS-MC": {
+    "mean": 47.784,
+    "median": 29.324,
+    "min": -2729.309,
+    "max": 2566.7,
+    "n": 24
+   },
+   "FS-LRU": {
+    "mean": -183.9,
+    "median": -11.092,
+    "min": -2699.141,
+    "max": 2615.843,
+    "n": 24
+   },
+   "per_policy": {
+    "FlowState": {
+     "mean": 394.139,
+     "median": 255.866,
+     "min": 67.682,
+     "max": 2762.154,
+     "cv": 1.36
+    },
+    "Marconi": {
+     "mean": 346.355,
+     "median": 245.186,
+     "min": 51.901,
+     "max": 2903.251,
+     "cv": 1.613
+    },
+    "LRU": {
+     "mean": 578.039,
+     "median": 273.659,
+     "min": 50.057,
+     "max": 3402.994,
+     "cv": 1.427
+    }
+   }
+  },
+  "gap_mid_ms": {
+   "FS-MC": {
+    "mean": 697.326,
+    "median": 195.379,
+    "min": -5204.43,
+    "max": 10040.502,
+    "n": 24
+   },
+   "FS-LRU": {
+    "mean": -108.572,
+    "median": 49.951,
+    "min": -11438.823,
+    "max": 10098.625,
+    "n": 24
+   },
+   "per_policy": {
+    "FlowState": {
+     "mean": 1638.271,
+     "median": 853.059,
+     "min": 221.657,
+     "max": 10735.44,
+     "cv": 1.536
+    },
+    "Marconi": {
+     "mean": 940.945,
+     "median": 731.571,
+     "min": 138.204,
+     "max": 5673.042,
+     "cv": 1.164
+    },
+    "LRU": {
+     "mean": 1746.843,
+     "median": 770.876,
+     "min": 165.413,
+     "max": 12396.191,
+     "cv": 1.689
+    }
+   }
+  }
+ },
+ "taskC_outlier_structure": {
+  "paired_diff_mean_ms": 663.0,
+  "paired_diff_median_ms": 226.0,
+  "paired_diff_trimmed_mean_ms": 321.7,
+  "fs_mc_snapshot_correlation": -0.056,
+  "fs_lru_snapshot_correlation": -0.029,
+  "fs_wins": 16,
+  "n": 24
+ }
+}

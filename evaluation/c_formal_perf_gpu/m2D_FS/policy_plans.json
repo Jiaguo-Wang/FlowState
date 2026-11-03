@@ -1,0 +1,92 @@
+{
+  "FlowState-Greedy": {
+    "selected_checkpoint_ids": [
+      "C_D_P07168",
+      "C_C_P06144",
+      "C_B_P05120"
+    ],
+    "expected_E_G": {
+      "C_A": {
+        "E": 0,
+        "T": 4096,
+        "G": 4096
+      },
+      "C_B": {
+        "E": 5120,
+        "T": 5120,
+        "G": 0
+      },
+      "C_C": {
+        "E": 6144,
+        "T": 6144,
+        "G": 0
+      },
+      "C_D": {
+        "E": 7168,
+        "T": 7168,
+        "G": 0
+      }
+    },
+    "selection_source": "cpu_results.json 冻结输出"
+  },
+  "StandaloneTopK": {
+    "selected_checkpoint_ids": [
+      "C_D_P07168",
+      "C_D_P07104",
+      "C_C_P06144"
+    ],
+    "expected_E_G": {
+      "C_A": {
+        "E": 0,
+        "T": 4096,
+        "G": 4096
+      },
+      "C_B": {
+        "E": 0,
+        "T": 5120,
+        "G": 5120
+      },
+      "C_C": {
+        "E": 6144,
+        "T": 6144,
+        "G": 0
+      },
+      "C_D": {
+        "E": 7168,
+        "T": 7168,
+        "G": 0
+      }
+    },
+    "selection_source": "复核冻结定义 review_results.json"
+  },
+  "WFC": {
+    "selected_checkpoint_ids": [
+      "C_ROOT_P01024",
+      "C_CD_P03072",
+      "C_AB_P02048"
+    ],
+    "expected_E_G": {
+      "C_A": {
+        "E": 2048,
+        "T": 4096,
+        "G": 2048
+      },
+      "C_B": {
+        "E": 2048,
+        "T": 5120,
+        "G": 3072
+      },
+      "C_C": {
+        "E": 3072,
+        "T": 6144,
+        "G": 3072
+      },
+      "C_D": {
+        "E": 3072,
+        "T": 7168,
+        "G": 4096
+      }
+    },
+    "selection_source": "cpu_results.json 冻结输出"
+  }
+}

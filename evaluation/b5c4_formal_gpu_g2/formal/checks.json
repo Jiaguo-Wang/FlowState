@@ -1,0 +1,53 @@
+{
+  "validity": {
+    "arms_pass": 40,
+    "arms_fail": [],
+    "cold_match_all": true,
+    "audit_all_two": true,
+    "request_window_zero_compile_all": true,
+    "note": "保留全部有效结果（含 Exact 更慢的请求/轮次，如存在）；五轮样本不宣称统计显著性"
+  },
+  "layer1_model_J": {
+    "claim": "模型化 J 更低（Exact）",
+    "exact_J_all": 48.228729,
+    "greedy_J_all": 130.803084,
+    "consistent": true
+  },
+  "layer2_native_gap": {
+    "claim": "Native Gap 减少（Exact，C/D 上 E 3520 vs 2432）",
+    "exact_G_CD": [
+      46,
+      384
+    ],
+    "greedy_G_CD": [
+      1134,
+      1472
+    ],
+    "prefill_tokens_exact_CD": [
+      915,
+      966
+    ],
+    "prefill_tokens_greedy_CD": [
+      2003,
+      2054
+    ]
+  },
+  "layer3_measured": {
+    "claim": "CUDA Prefill / TTFT 实际改善（Exact，实测层）",
+    "per_pending_delta_median": {
+      "A": -0.09,
+      "B": 0.69,
+      "C": 34.7,
+      "D": 36.69
+    },
+    "round_level_delta_median": {
+      "Exact_ttft": 50.66,
+      "Greedy_ttft": 69.78,
+      "Exact_prefill": 43.89,
+      "Greedy_prefill": 61.74,
+      "delta_ttft_median": 17.74,
+      "delta_prefill_median": 17.66
+    }
+  },
+  "interpretation_rule": "三层依次为模型层/结构层/实测层；(1)(2) 不得直接推导 (3)，仅报告实测方向与 (1)(2) 的一致性"
+}

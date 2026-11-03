@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "arm": "strict",
+  "scenario": "B_ck3_greedy_branch",
+  "pending": "C_C",
+  "strict_decision": {
+    "gate": {
+      "budget_k": 3,
+      "candidates": 16,
+      "enumerable_subsets": 697,
+      "pendings": 4
+    },
+    "gate_allowed": false,
+    "objective_ms": 154.34895561599998,
+    "pure_solve_ms": 0.390251,
+    "selected_ids": [
+      "B5C3_NODE_57",
+      "B5C3_NODE_56",
+      "B5C3_NODE_55"
+    ],
+    "solver": "Marginal Greedy"
+  },
+  "selection_source": "GlobalOptimizer.plan_strict(在线)",
+  "selected_physical_ids": [
+    "B5C3_NODE_57",
+    "B5C3_NODE_56",
+    "B5C3_NODE_55"
+  ],
+  "selected_cpu_mapped": [
+    "C_B_P05120",
+    "C_C_P06144",
+    "C_D_P07168"
+  ],
+  "plan_recovery_cost_ms": 154.34895561599998,
+  "oracle_policy": "FlowState-Greedy(policy_plans.json，仅事后对照)",
+  "oracle_match": true,
+  "census_counts": {
+    "physical": 16,
+    "mapped": 16,
+    "unmapped_extras": 0
+  },
+  "H_physical_fa_hit": 6144,
+  "E_executable_prefix": 6144,
+  "G_replay_gap": 0,
+  "prefill_token_count": 32,
+  "batch_prefix_length": 6144,
+  "evictions": [
+    [
+      "B5C3_NODE_51",
+      true
+    ],
+    [
+      "B5C3_NODE_52",
+      true
+    ],
+    [
+      "B5C3_NODE_53",
+      true
+    ],
+    [
+      "B5C3_NODE_54",
+      true
+    ],
+    [
+      "B5C3_NODE_58",
+      true
+    ],
+    [
+      "B5C3_NODE_60",
+      true
+    ],
+    [
+      "B5C3_NODE_62",
+      true
+    ],
+    [
+      "B5C3_NODE_64",
+      true
+    ],
+    [
+      "B5C3_NODE_66",
+      true
+    ],
+    [
+      "B5C3_NODE_68",
+      true
+    ],
+    [
+      "B5C3_NODE_70",
+      true
+    ],
+    [
+      "B5C3_NODE_72",
+      true
+    ],
+    [
+      "B5C3_NODE_74",
+      true
+    ]
+  ],
+  "output_ids": [
+    220,
+    197,
+    510,
+    596,
+    29,
+    198,
+    197,
+    197
+  ],
+  "cold_output_match": true,
+  "native_match": {
+    "best_match_node": 56,
+    "cow_requested": true,
+    "cow_source_slots": [
+      13
+    ],
+    "executable_prefix": 6144,
+    "input_token_count": 6176,
+    "input_token_digest": "86af19a826d948d8c63aaee03582b5d638e63ceb3c0a3d0bd55b2fdcbbd293d8",
+    "last_device_node": 56,
+    "last_host_node": 56,
+    "mamba_branching_seqlen": null,
+    "mamba_host_hit_length": 0,
+    "monotonic_ns": 1323938420112721,
+    "physical_fa_hit": 6144,
+    "replay_gap": 0,
+    "request_id": "C_C",
+    "working_slots": [
+      12
+    ]
+  },
+  "request_wall_ms": 11968.470182,
+  "ttft_ms": 3630.720626,
+  "control_rpc_wall_ms": 13169.911595,
+  "control_timing_stages": [
+    {
+      "ms": 2382.014107,
+      "stage": "final_heavy_observation"
+    },
+    {
+      "ms": 0.571335,
+      "stage": "cpu_physical_mapping"
+    },
+    {
+      "ms": 140.2834,
+      "stage": "strict_epoch_authentication"
+    },
+    {
+      "ms": 17.927658,
+      "stage": "plan_strict_hybrid_solve"
+    },
+    {
+      "ms": 1232.026435,
+      "stage": "apply_time_freshness_preflight"
+    },
+    {
+      "ms": 945.425916,
+      "stage": "fa_content_audit_before"
+    },
+    {
+      "ms": 881.147992,
+      "stage": "strict_reconciliation_with_postchecks"
+    },
+    {
+      "ms": 1864.537544,
+      "stage": "fa_content_postcheck_and_resume_baseline"
+    }
+  ],
+  "说明": "单臂GPU正确性验证，非性能实验；计时字段仅为执行记录，不构成任何性能口径"
+}

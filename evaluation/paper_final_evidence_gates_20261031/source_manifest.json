@@ -1,0 +1,236 @@
+{
+ "日期": "2026-10-31",
+ "git_commit": "8cba094d2c5466759b70e4a5ef8f4824b61aade5 (2026-10-22)",
+ "工作区状态": "flowstate/optimizer.py 与 tests/test_strict_epoch.py 相对 HEAD 为 hybrid 集成未提交修改；被测身份以逐文件 SHA-256 锁定（与 G1 执行锁、五轮臂身份锁交叉一致）",
+ "gate_a_sources": {
+  "flowstate/optimizer.py": {
+   "path": "flowstate/optimizer.py",
+   "sha256": "7dfa9aec307d1178d79d79ced0b5d42b0f6574754194c58d84db300c74e48176"
+  },
+  "flowstate/strict_epoch.py": {
+   "path": "flowstate/strict_epoch.py",
+   "sha256": "5513f2703dd88e8f292c348baa07e198f30649c23c2df1a5699fe0066a1eb4a7"
+  },
+  "flowstate/strict_control.py": {
+   "path": "flowstate/strict_control.py",
+   "sha256": "5ffeeaeef14606f3f1d280f41fa26a575b2f10c66ea5db28832939481a3ebab3"
+  },
+  "flowstate/controller.py": {
+   "path": "flowstate/controller.py",
+   "sha256": "6a1ccdd9dbbcd3d1948a8d0cb7692886ae4bc1f1c7c87b51ba3ca8dfa4bb42a1"
+  },
+  "flowstate/recovery_model.py": {
+   "path": "flowstate/recovery_model.py",
+   "sha256": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5"
+  },
+  "A2/集成门禁报告": {
+   "path": "evaluation/paper_hybrid_solver_integration_gate.md",
+   "sha256": "3278a304baca2fa0139cf0357594bf1f089eb5bad34d2b39d1812f3887657c6c"
+  },
+  "A2/集成门禁机内结果": {
+   "path": "evaluation/paper_hybrid_solver_integration_gate.json",
+   "sha256": "797d99ec3ffad52a3f65bf8fa99c52ea538126005575297b92c3f45c170aedf0"
+  },
+  "A3/Spec8_GPU闭环报告": {
+   "path": "evaluation/paper_hybrid_solver_gpu_gate.md",
+   "sha256": "1bd8b238a07affc73b8db1cd20ce95e3e4c35e907dd30d4364b2e8a44406b6b8"
+  },
+  "A3/Spec8_场景A结果": {
+   "path": "evaluation/paper_hybrid_gpu_gate_a/gate_a_result.json",
+   "sha256": "6bfc713bbcc6ed7b9245c2c3a5ae15c11b22d18b35bbbbf710b9c35a300b84eb"
+  },
+  "A3/Spec8_场景B结果": {
+   "path": "evaluation/paper_hybrid_gpu_gate_b/gate_b_result.json",
+   "sha256": "aeaf120e16ac21551b76dc96f734867d0023b78d93374f3a60db68afec1a155b"
+  },
+  "A3/G1最终报告": {
+   "path": "evaluation/hybrid_solver_gpu_gate_g1/final_report.md",
+   "sha256": "8a13e3dd1164de868a2825a56cb5caa3d6b9969deff03c862142eef230c7b4c0"
+  },
+  "A3/G1核验表": {
+   "path": "evaluation/hybrid_solver_gpu_gate_g1/checks.json",
+   "sha256": "3a7426b59c2f3f488251cc64788a381fcb30914e29dfb4f70081a6287f442722"
+  },
+  "A3/G1只读审计": {
+   "path": "evaluation/hybrid_solver_gpu_gate_g1/audit_readonly.md",
+   "sha256": "9bde543282530633f37967d34d1c1e2f158ed86e84de55340a5d0c0e56d80199"
+  },
+  "A3/G1_Exact源身份": {
+   "path": "evaluation/hybrid_solver_gpu_gate_g1/exact/source_identity.json",
+   "sha256": "469455159018eee34713deabeabbc5b02de44b17c185464ee9ecdf7c16e73d71"
+  },
+  "生产调用点/p0_control": {
+   "path": "evaluation/p0_control_cycle_gpu/control.py",
+   "sha256": "b1c3a64a61720e69fe75497a09933a5b1f383b47658c3f9679e677aaab1694f9"
+  },
+  "五轮臂身份示例_m1_FS": {
+   "path": "evaluation/p0_control_cycle_gpu/arms/m1_ck3_fs/source_identity.json",
+   "sha256": "3c70dbd824b7825bde26c3b1f94a5ba8d7cb932b31aebdfac2262a2a07692cd5"
+  }
+ },
+ "gate_b_sources": {
+  "b5c3/final_report.md": {
+   "path": "evaluation/multishare_runtime_gate_b5c3/final_report.md",
+   "sha256": "0b97155cefe54dde9ffce8968d9112dd9358aa9a006919ef46400b6215fc4082",
+   "bytes": 4025
+  },
+  "b5c3/strict_epoch_snapshot.json": {
+   "path": "evaluation/multishare_runtime_gate_b5c3/strict_epoch_snapshot.json",
+   "sha256": "3b41f232b4ee4d79aab081643c6c2adad1671d0364841617e849f52b6c16ac7a",
+   "bytes": 629912
+  },
+  "b5c3/sharing_support_matrix.json": {
+   "path": "evaluation/multishare_runtime_gate_b5c3/sharing_support_matrix.json",
+   "sha256": "f98435dd497660e85d261a8f2bddab3116739391097d60cb36873cd0555c00cd",
+   "bytes": 3211
+  },
+  "b5c3/candidate_provenance.json": {
+   "path": "evaluation/multishare_runtime_gate_b5c3/candidate_provenance.json",
+   "sha256": "10269c422860147a66aae7b4cde4583e55a6215eb3f815f1d3e21d4e2e3a9ea9",
+   "bytes": 3283
+  },
+  "b5c3/physical_state_census.json": {
+   "path": "evaluation/multishare_runtime_gate_b5c3/physical_state_census.json",
+   "sha256": "76c9cb534aa70627c824ec0f6380711127c945c4825d6546b6f372ac04932caa",
+   "bytes": 3791916
+  },
+  "b5c4/final_report.md": {
+   "path": "evaluation/multishare_allocation_gate_b5c4/final_report.md",
+   "sha256": "afa80c63d9a0a1d3af98344cdd649c546f0c0dcb8c33d570a84c3da387c399b7",
+   "bytes": 2221
+  },
+  "b5c4/results.json": {
+   "path": "evaluation/multishare_allocation_gate_b5c4/results.json",
+   "sha256": "3ec9f90ce457fc8a0eb7f4ec09a8474ce3041e17477f03a2f33881bd864a390f",
+   "bytes": 105352
+  },
+  "b5c4/exact_verification.json": {
+   "path": "evaluation/multishare_allocation_gate_b5c4/exact_verification.json",
+   "sha256": "487cf9eeee100f3139b9c01d4654820934bb3b1dae474ce14aeb0ddb0b91784c",
+   "bytes": 113461
+  },
+  "strict20 CSV": {
+   "path": "evaluation/paper_allocation_structure_strict20.csv",
+   "sha256": "76cda2a08af0e6877a7c266bd609683446c9f90d642821b608116929e367833c",
+   "bytes": 5057
+  },
+  "e3 condition_results.csv": {
+   "path": "evaluation/greedy_swap_structure_e3_step1/condition_results.csv",
+   "sha256": "195b2ed1bbde3609a95209da8d7d4cff326b7e56185e3698667fb5054ee054f9",
+   "bytes": 81765
+  },
+  "g2/final_report.md": {
+   "path": "evaluation/b5c4_formal_gpu_g2/final_report.md",
+   "sha256": "7f0dd5cb1dd46d12113a1a6783f76835dc4a89ef6cea4e792cb3f9c4b10b8cb8",
+   "bytes": 4993
+  },
+  "g2/implementation_lock.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/implementation_lock.json",
+   "sha256": "780c0ebea3ab1964833be539e73403e3cafe43fc845555b67a6bee13cf62fd3f",
+   "bytes": 59689
+  },
+  "g2/raw_results.csv": {
+   "path": "evaluation/b5c4_formal_gpu_g2/formal/raw_results.csv",
+   "sha256": "fd45b2d028fb9df6252bb4df4e8004871899ed5fc7dae1cc03885956d6055eac",
+   "bytes": 11041
+  },
+  "g2/arm_status.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/formal/arm_status.json",
+   "sha256": "797372cfb4359bf2cbac1cd1e42cca2f5cb3811f0a92b12773f193de77d3f9aa",
+   "bytes": 9682
+  },
+  "g2/checks.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/formal/checks.json",
+   "sha256": "7444225afbdf5cf7fc859d0e219b7300968d32be790f3d6c57867465d3e04bcd",
+   "bytes": 1361
+  },
+  "g2/g2_reference.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/preflight/g2_reference.json",
+   "sha256": "5f631cd17b3eec074b12e605ee75e00c915b42cc1c65385c876108b8f05956c7",
+   "bytes": 1298
+  },
+  "g2/prepared_inputs.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/preflight/prepared_inputs.json",
+   "sha256": "d836f46e8f74a3d38d8f76d60bfe97c135f235cedcad60a2de643738d0b0416e",
+   "bytes": 679441
+  },
+  "g2/r1_exact_a/reconciliation.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/formal/r1_exact_a/reconciliation.json",
+   "sha256": "a97b47c183543f8a2faef173cf48848cd7771a75068736f5e1f29f8668c611df",
+   "bytes": 19489291
+  },
+  "g2/r1_greedy_a/reconciliation.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/formal/r1_greedy_a/reconciliation.json",
+   "sha256": "00fc3279373f3460d09a38eb9542cc6884a79b2154060417062a88335eea2b3f",
+   "bytes": 19489469
+  },
+  "g2/pkg_g2/control.py": {
+   "path": "evaluation/b5c4_formal_gpu_g2/pkg_g2/control.py",
+   "sha256": "b67c4aff446ec0390922898d2c1dcca4c730709425c36fd255d3d26a322559c8",
+   "bytes": 13264
+  },
+  "g2/pkg_g2/greedy_adapter.py": {
+   "path": "evaluation/b5c4_formal_gpu_g2/pkg_g2/greedy_adapter.py",
+   "sha256": "e7ce77eab8ca4d6a8c021a673b708cd8ea4b26c63977e34a945522f31d9b3b96",
+   "bytes": 2252
+  },
+  "g2/paper/g2_manuscript_evidence.md": {
+   "path": "evaluation/b5c4_formal_gpu_g2/paper/g2_manuscript_evidence.md",
+   "sha256": "291dd52c80098488a50af1c8f6e5f528b08efd5e9e8a9c10687c685f6cd740e8",
+   "bytes": 12555
+  },
+  "g2/paper/recompute_report.json": {
+   "path": "evaluation/b5c4_formal_gpu_g2/paper/recompute_report.json",
+   "sha256": "9cdc94bf8a4bf5514e5f3250e18d5e0e91bd4b0f3f366cd30f7ec150fd154cba",
+   "bytes": 11983
+  },
+  "b5d4a/final_report.md": {
+   "path": "evaluation/exact_greedy_paired_gpu_fix_b5d4a/final_report.md",
+   "sha256": "b4ff87930636cc4a564c8fa46deaf587ce6c1aa980f7ce670ad4aaa266a4a648",
+   "bytes": 3973
+  },
+  "b5d4a/root_cause_and_patch.md": {
+   "path": "evaluation/exact_greedy_paired_gpu_fix_b5d4a/root_cause_and_patch.md",
+   "sha256": "2f2ea8cc1e5f191a520facfa85775a2c6f7af77d713f2663aed99c66f64f3cbe",
+   "bytes": 3130
+  }
+ },
+ "本门禁产物": {
+  "gate_a_solver_integration.md": {
+   "sha256": "215a62ade1d79078656b2a2d5084e6f771fb2ffee9f2061cb31dadd83484f3c9",
+   "bytes": 13093
+  },
+  "gate_b_shared_branch_gpu.md": {
+   "sha256": "486632fa0dc0bc82959041f91cea87b6089ed7add25bd1f0d3c1635caac4a860",
+   "bytes": 12756
+  },
+  "claim_evidence_matrix.md": {
+   "sha256": "a85c5ca6208416ce68f81efa60793af13ea085da9339560406934b0075253b83",
+   "bytes": 6890
+  },
+  "b3_allocation_recompute.json": {
+   "sha256": "9948fc0c268bf67cf52759d56891f131e3e0a7178e90f63675d6c48ea1ada74f",
+   "bytes": 3468
+  },
+  "b3_k2_subsets.csv": {
+   "sha256": "7ff90860ad724400049fb9488f26768bce1396e1726448d6a956ac8b22f8b34e",
+   "bytes": 1147
+  },
+  "b4_g2_paired_recompute.json": {
+   "sha256": "9a1d49cdb91e17e69de01e96a450233d9ff7829d9f201af979c0efcad3045f3f",
+   "bytes": 3228
+  },
+  "b1_file_manifest.json": {
+   "sha256": "1e41556306d913a717920e1132d60a26b17205e13ff2eeec44487baf4612da5f",
+   "bytes": 5124
+  },
+  "scripts/recompute_b5c4_allocation.py": {
+   "sha256": "032f051c0244b9147336580b9a37628842fe03eefdf63c630585addf68399c7d",
+   "bytes": 8406
+  },
+  "scripts/recompute_g2_paired.py": {
+   "sha256": "e3ede471deab201f7e855a330e25de7c882fef89df37858a697ac83ee1075ee5",
+   "bytes": 8075
+  }
+ }
+}

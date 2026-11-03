@@ -1,0 +1,415 @@
+{
+  "version": "1.2",
+  "started_unix": 1792636877.986287,
+  "deadline_unix": 1792687000,
+  "deadline_note": "v1.2 顺延：gate2 于 unix 1792638714 全 PASS 并完成人工复核（gate_passed.json），但主矩阵首次启动时原 5h 窗口（1792654878）已过（会话暂停约 10.5h，非任何实验结果所致）；顺延至 1792687000（顺延决策时刻+约3h，覆盖 60 臂≈2–2.5h）。零臂执行的 attempt1 状态文件已改名 *_attempt1_expired.json 保留。冻结输入/策略/预算/门禁证据均未改动",
+  "source": {
+    "pilot": "/home/wjg/code/FlowState/evaluation/c_shared_gpu_pilot_k3",
+    "timing_validation": "/home/wjg/code/FlowState/evaluation/c_pair_timing_gpu",
+    "control_stack": "control.py 为 c_pair_timing_gpu/control.py 逐字节副本（协调/观察/审计合同不变）；bridge.py 为测量模式重写（请求窗口只留时间戳/CUDA事件/原生调用记录）",
+    "cold_references": [
+      "cold_reference_C_A.json",
+      "cold_reference_C_B.json",
+      "cold_reference_C_C.json",
+      "cold_reference_C_D.json"
+    ],
+    "audit_attribution": "analysis_audit_attribution.py + audit_attribution.csv（A/B/C 分类实测依据，读自 c_pair 产物）"
+  },
+  "workload": "冻结 C Shared/Branched K=3（同 pilot：16 预热=8前缀×2轮；K=3；Qwen3.5-9B；SGLang v0.5.17；H100 PCIe TP=1）",
+  "design": {
+    "measure_mode": "FS_MEASURE_MODE=1：正式请求计时窗口（发送→首Token）内不执行任何 A 类研究审计（全量 payload 哈希/全量 FA 内容哈希/全量状态快照比对/逐事件落盘），只保留时间戳、原生调用记录与 CUDA 事件；A 类审计全部移到请求后（b5d4_state 全量观察）与 apply 段（原有合同）。Native 状态绑定、COW、必要同步（B 类）与驱逐/协调（C 类）原样保留，不删任何状态控制",
+    "shape_warm": "每生命周期：16 预热(首轮 history_pre)→flush_cache→16 预热二次重放(history,溯源)→唯一 b5d4_apply(完整冻结合同)→形状预热 B v1.1(apply 后：pt[:计划E] 原样 + 确定性随机 T+32−E 个 Token，在 E 处首 Token 即分叉，max_new_tokens=2，在计划保留集下原生准入恰为计划 E 且 FA 命中恰为 E，编译与正式请求同形的 extend/decode 内核，只在随机分支物化状态，不进任何正式计时)→正式流式请求；断言请求窗口 Triton 新增编译=0",
+    "pairing": "同轮同 Pending 三策略时间相邻；顺序冻结（策略按轮×Pending 轮转），不依结果调整",
+    "no_pollution": "形状预热 B v1.1 在计划 E 处首 Token 即分叉：不在 Pending 前缀 E 之上执行/物化任何状态，正式请求原生匹配深度=计划 E（断言：预热行 E 与 FA 命中均恰为计划 E，正式行 E=计划且 FA 命中=T）；不重复执行正式 Pending 原文来污染缓存计时"
+  },
+  "gate_attempt1": {
+    "result": "g1_CB_FS=PASS（v1.0 代码，E=T=5120 格不受影响）；g1_CB_SA=BLOCKED：实际可执行前缀与计划E不符",
+    "root_cause": "v1.0 形状预热输入=pt[:T]+(t+1)%vocab 尾：对 E<T 的 12 格中 7 格（SA A/B、FS A、WFC A/B/C/D），预热请求以准入 E 执行 pt[E:] 全段，在 Pending 前缀上重新物化被计划驱逐的 mamba 状态（证据：g1_CB_SA 预热行 mamba_branching_seqlen=5120），正式请求准入被抬高至 5120≠计划0，runner 硬断言在计时前拦截",
+    "fix": "v1.1 预热输入=pt[:E]+确定性随机 T+32−E Token，E 处首 Token 即分叉：形状同形（位置 E 准入、extend L、decode 起 kv=T+32），物化只发生在随机分支；证据保留于 g1_CB_FS/（PASS）与 g1_CB_SA/（BLOCKED）+ launch_gate_failure.json",
+    "evidence": ["g1_CB_FS/run/summary.json", "g1_CB_SA/run/failure.json", "g1_CB_SA/run/post_request.json", "launch_gate_failure.json", "gate_nohup.log"]
+  },
+  "gate_arms": [
+    {
+      "name": "g2_CB_FS",
+      "pair": 2,
+      "policy": "FlowState-Greedy",
+      "pending": "C_B"
+    },
+    {
+      "name": "g2_CB_SA",
+      "pair": 2,
+      "policy": "StandaloneTopK",
+      "pending": "C_B"
+    }
+  ],
+  "gate_criteria": "两臂 PASS（含 census 16/16/0、E/G==冻结、COW/FA/Cold 逐 Token 一致、请求窗口编译=0、窗口内审计项=0），人工复核后写 gate_passed.json 方可执行主矩阵",
+  "main_arms": [
+    {
+      "name": "m1A_FS",
+      "rep": 1,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1A_SA",
+      "rep": 1,
+      "pending": "C_A",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m1A_WFC",
+      "rep": 1,
+      "pending": "C_A",
+      "policy": "WFC"
+    },
+    {
+      "name": "m1B_SA",
+      "rep": 1,
+      "pending": "C_B",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m1B_WFC",
+      "rep": 1,
+      "pending": "C_B",
+      "policy": "WFC"
+    },
+    {
+      "name": "m1B_FS",
+      "rep": 1,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1C_WFC",
+      "rep": 1,
+      "pending": "C_C",
+      "policy": "WFC"
+    },
+    {
+      "name": "m1C_FS",
+      "rep": 1,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1C_SA",
+      "rep": 1,
+      "pending": "C_C",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m1D_FS",
+      "rep": 1,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m1D_SA",
+      "rep": 1,
+      "pending": "C_D",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m1D_WFC",
+      "rep": 1,
+      "pending": "C_D",
+      "policy": "WFC"
+    },
+    {
+      "name": "m2A_SA",
+      "rep": 2,
+      "pending": "C_A",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m2A_WFC",
+      "rep": 2,
+      "pending": "C_A",
+      "policy": "WFC"
+    },
+    {
+      "name": "m2A_FS",
+      "rep": 2,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m2B_WFC",
+      "rep": 2,
+      "pending": "C_B",
+      "policy": "WFC"
+    },
+    {
+      "name": "m2B_FS",
+      "rep": 2,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m2B_SA",
+      "rep": 2,
+      "pending": "C_B",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m2C_FS",
+      "rep": 2,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m2C_SA",
+      "rep": 2,
+      "pending": "C_C",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m2C_WFC",
+      "rep": 2,
+      "pending": "C_C",
+      "policy": "WFC"
+    },
+    {
+      "name": "m2D_SA",
+      "rep": 2,
+      "pending": "C_D",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m2D_WFC",
+      "rep": 2,
+      "pending": "C_D",
+      "policy": "WFC"
+    },
+    {
+      "name": "m2D_FS",
+      "rep": 2,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3A_WFC",
+      "rep": 3,
+      "pending": "C_A",
+      "policy": "WFC"
+    },
+    {
+      "name": "m3A_FS",
+      "rep": 3,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3A_SA",
+      "rep": 3,
+      "pending": "C_A",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m3B_FS",
+      "rep": 3,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3B_SA",
+      "rep": 3,
+      "pending": "C_B",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m3B_WFC",
+      "rep": 3,
+      "pending": "C_B",
+      "policy": "WFC"
+    },
+    {
+      "name": "m3C_SA",
+      "rep": 3,
+      "pending": "C_C",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m3C_WFC",
+      "rep": 3,
+      "pending": "C_C",
+      "policy": "WFC"
+    },
+    {
+      "name": "m3C_FS",
+      "rep": 3,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3D_WFC",
+      "rep": 3,
+      "pending": "C_D",
+      "policy": "WFC"
+    },
+    {
+      "name": "m3D_FS",
+      "rep": 3,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m3D_SA",
+      "rep": 3,
+      "pending": "C_D",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m4A_FS",
+      "rep": 4,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m4A_SA",
+      "rep": 4,
+      "pending": "C_A",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m4A_WFC",
+      "rep": 4,
+      "pending": "C_A",
+      "policy": "WFC"
+    },
+    {
+      "name": "m4B_SA",
+      "rep": 4,
+      "pending": "C_B",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m4B_WFC",
+      "rep": 4,
+      "pending": "C_B",
+      "policy": "WFC"
+    },
+    {
+      "name": "m4B_FS",
+      "rep": 4,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m4C_WFC",
+      "rep": 4,
+      "pending": "C_C",
+      "policy": "WFC"
+    },
+    {
+      "name": "m4C_FS",
+      "rep": 4,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m4C_SA",
+      "rep": 4,
+      "pending": "C_C",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m4D_FS",
+      "rep": 4,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m4D_SA",
+      "rep": 4,
+      "pending": "C_D",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m4D_WFC",
+      "rep": 4,
+      "pending": "C_D",
+      "policy": "WFC"
+    },
+    {
+      "name": "m5A_SA",
+      "rep": 5,
+      "pending": "C_A",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m5A_WFC",
+      "rep": 5,
+      "pending": "C_A",
+      "policy": "WFC"
+    },
+    {
+      "name": "m5A_FS",
+      "rep": 5,
+      "pending": "C_A",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5B_WFC",
+      "rep": 5,
+      "pending": "C_B",
+      "policy": "WFC"
+    },
+    {
+      "name": "m5B_FS",
+      "rep": 5,
+      "pending": "C_B",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5B_SA",
+      "rep": 5,
+      "pending": "C_B",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m5C_FS",
+      "rep": 5,
+      "pending": "C_C",
+      "policy": "FlowState-Greedy"
+    },
+    {
+      "name": "m5C_SA",
+      "rep": 5,
+      "pending": "C_C",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m5C_WFC",
+      "rep": 5,
+      "pending": "C_C",
+      "policy": "WFC"
+    },
+    {
+      "name": "m5D_SA",
+      "rep": 5,
+      "pending": "C_D",
+      "policy": "StandaloneTopK"
+    },
+    {
+      "name": "m5D_WFC",
+      "rep": 5,
+      "pending": "C_D",
+      "policy": "WFC"
+    },
+    {
+      "name": "m5D_FS",
+      "rep": 5,
+      "pending": "C_D",
+      "policy": "FlowState-Greedy"
+    }
+  ],
+  "instrumentation": {
+    "triton_snapshots": "engine_ready/post_warmup/post_flush/post_warmup2/post_control/post_shape_warm/post_request",
+    "ttft_decomposition": "queue+pregap+execwin+compute+postgap+delivery（client/engine 同 CLOCK_MONOTONIC，闭合断言 5ms）",
+    "three_scopes": "A 计算口径=cuda_prefill/decode+COW 事件；B 请求口径=TTFT 六段+request_wall（测量模式，窗口内零审计）；C 控制口径=apply RPC 墙钟+分段（含 A 类审计分段单列）"
+  },
+  "rules": "不修改生产 FlowState/Phi/策略实现/冻结 Token/预算；不修改 pilot 与 c_pair 目录任何文件；不改动镜像（runtime_sources 哈希逐生命周期复核）；不删除任何 B/C 类必要操作；每臂独立容器与 Engine 生命周期，GPU 空闲礼仪与 3×清理校验同前；任一臂失败即停保留证据；不把 5 次重复解释为充分统计显著性；CC/CD 同前沿对内差作经验零假设带宽",
+  "stop_rule": "状态正确性失败 / 未解释编译污染 / 跨策略资源条件不一致 → 立即停止正式比较并保存证据；deadline 截止未完成臂如实标未测"
+}

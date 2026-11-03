@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "新入口顶层无可执行语句（全部在 main() 内）",
+      "pass": true,
+      "detail": "残留：[]"
+    },
+    {
+      "check": "新入口存在 __main__ 保护",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "新入口 __mp_main__ 重入退出码 0（无操作）",
+      "pass": true,
+      "detail": "rc=0 "
+    },
+    {
+      "check": "旧入口顶层存在未保护可执行语句（对照前提）",
+      "pass": true,
+      "detail": "未保护语句：['Assert', 'Assert', 'Assert', 'With', 'Expr']"
+    },
+    {
+      "check": "旧入口 __mp_main__ 重入必然失败（RED 对照，测试有效性）",
+      "pass": true,
+      "detail": "rc=1 FileNotFoundError: [Errno 2] No such file or directory: '/b5out/device_binding.json'"
+    }
+  ],
+  "stub_dir": "/tmp/t2g2_spawn_stub__a2ho2ta",
+  "old_entry": "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/device_entry.py",
+  "new_entry": "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1b/device_entry.py"
+}

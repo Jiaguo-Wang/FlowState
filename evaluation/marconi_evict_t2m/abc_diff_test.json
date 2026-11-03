@@ -1,0 +1,119 @@
+{
+  "说明": "测试内记录的新旧差异，正式对照以 run_compare.py 产物为准",
+  "diffs": [
+    {
+      "structure": "A",
+      "K": 3,
+      "legacy": [
+        "A_AGENT09_P04096",
+        "A_AGENT08_P04096",
+        "A_AGENT07_P04096"
+      ],
+      "evict": [
+        "A_AGENT08_P04032",
+        "A_AGENT09_P04032",
+        "A_AGENT09_P04096"
+      ],
+      "same_set": false,
+      "J_evict_ms": 154.34895561599998,
+      "J_legacy_ms": 154.34895561599998
+    },
+    {
+      "structure": "A",
+      "K": 5,
+      "legacy": [
+        "A_AGENT09_P04096",
+        "A_AGENT08_P04096",
+        "A_AGENT07_P04096",
+        "A_AGENT06_P04096",
+        "A_AGENT05_P04096"
+      ],
+      "evict": [
+        "A_AGENT06_P04032",
+        "A_AGENT07_P04032",
+        "A_AGENT08_P04032",
+        "A_AGENT09_P04032",
+        "A_AGENT09_P04096"
+      ],
+      "same_set": false,
+      "J_evict_ms": 154.34895561599998,
+      "J_legacy_ms": 154.34895561599998
+    },
+    {
+      "structure": "B",
+      "K": 3,
+      "legacy": [
+        "B_W2_S1_P08192",
+        "B_W2_S1_P08128",
+        "B_W2_S0_P06144"
+      ],
+      "evict": [
+        "B_W2_S0_P06080",
+        "B_W2_S1_P08128",
+        "B_W2_S1_P08192"
+      ],
+      "same_set": false,
+      "J_evict_ms": 233.2577340348867,
+      "J_legacy_ms": 230.76434451999998
+    },
+    {
+      "structure": "B",
+      "K": 5,
+      "legacy": [
+        "B_W2_S1_P08192",
+        "B_W2_S1_P08128",
+        "B_W2_S0_P06144",
+        "B_W2_S0_P06080",
+        "B_W1_S1_P05120"
+      ],
+      "evict": [
+        "B_W1_S1_P05056",
+        "B_W2_S0_P06080",
+        "B_W2_S0_P06144",
+        "B_W2_S1_P08128",
+        "B_W2_S1_P08192"
+      ],
+      "same_set": false,
+      "J_evict_ms": 230.76434451999998,
+      "J_legacy_ms": 230.76434451999998
+    },
+    {
+      "structure": "C",
+      "K": 3,
+      "legacy": [
+        "C_D_P07168",
+        "C_D_P07104",
+        "C_C_P06144"
+      ],
+      "evict": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "same_set": false,
+      "J_evict_ms": 703.45464601,
+      "J_legacy_ms": 348.234011266
+    },
+    {
+      "structure": "C",
+      "K": 5,
+      "legacy": [
+        "C_D_P07168",
+        "C_D_P07104",
+        "C_C_P06144",
+        "C_JOIN_P04096",
+        "C_C_P06080"
+      ],
+      "evict": [
+        "C_CD_P03072",
+        "C_D_P07104",
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "same_set": false,
+      "J_evict_ms": 392.78435487082425,
+      "J_legacy_ms": 348.234011266
+    }
+  ]
+}

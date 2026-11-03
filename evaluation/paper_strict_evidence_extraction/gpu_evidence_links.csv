@@ -1,0 +1,172 @@
+experiment,condition,policy_cpu,pending,cpu_selection,cpu_J_ms,mapping_evidence,execution_mode,gpu_arms,n_lifecycles,pending_coverage,native_E,native_H,native_G,prefill_tokens,cuda_prefill_ms_median,ttft_ms_median,resume_vs_cold,stat_method,artifacts,notes
+E4配对门禁(b5d4b),B5-C4/K2(n=7),Exact,B5C2_C_TURN_003(目标),"[""B5C3_NODE_18"", ""B5C3_NODE_27""]",48.228728759089606,同ID命名空间：CPU与GPU均为B5C3_NODE_*（B5C3快照内直接绑定）,运行内求解：Scheduler进程内对冻结历史重放+实时观察的Epoch求解（solver由B5D4_SOLVER指定）+运行内Decimal Oracle复核,p01–p05_Exact,5臂+1 Cold(10臂全过),目标Pending=C（其余3个Pending未单独测）,3520,3904,384,915,46.12473678588867,1078.688404,10/10臂8Token==Cold参照（cold_reference_correctness PASS）,descriptive_statistics.json（n=5，中位）,"evaluation/exact_greedy_paired_gpu_gate_b5d4b/{p01–p05_*}/ {{summary,reconciliation,output}}.json + cold/ + descriptive_statistics.json",计时含研究仪表，非生产口径（measurement_validity.md）
+E4配对门禁(b5d4b),B5-C4/K2(n=7),Greedy,B5C2_C_TURN_003(目标),"[""B5C3_NODE_20"", ""B5C3_NODE_18""]",130.8030838298517,同ID命名空间：CPU与GPU均为B5C3_NODE_*（B5C3快照内直接绑定）,运行内求解：Scheduler进程内对冻结历史重放+实时观察的Epoch求解（solver由B5D4_SOLVER指定）+运行内Decimal Oracle复核,p01–p05_Greedy,5臂+1 Cold(10臂全过),目标Pending=C（其余3个Pending未单独测）,2432,3904,1472,2003,78.43545532226562,1045.504681,10/10臂8Token==Cold参照（cold_reference_correctness PASS）,descriptive_statistics.json（n=5，中位）,"evaluation/exact_greedy_paired_gpu_gate_b5d4b/{p01–p05_*}/ {{summary,reconciliation,output}}.json + cold/ + descriptive_statistics.json",计时含研究仪表，非生产口径（measurement_validity.md）
+Spec8 Hybrid Solver GPU闭环(a1),B5-C4/K2(n=7),plan_strict→Exact(在线),B5C2_C_TURN_003(目标),"[""B5C3_NODE_18"", ""B5C3_NODE_27""]",48.228728759089606,同ID命名空间B5C3_NODE_*；Native绑定Node27/slots[18]==计划绑定,生产plan_strict在线（Scheduler进程内，last_strict_decision在案；pure_solve 0.222861ms）,a1_hybrid_exact,"1(最小正确性验证,非性能实验)",目标Pending=C,3520,3904,384,915,,,8Token==b5d4b冻结Cold参照（10臂验证过的ids）,单次正确性验证；计时字段仅执行记录,"evaluation/paper_hybrid_gpu_gate_a/{a1_hybrid_exact,gate_a_result}.json",==冻结Exact==运行内Decimal Oracle==e3；与旧Greedy选集差异N27
+Spec8 Hybrid Solver GPU闭环(b1),C/K3(n=16),plan_strict→Marginal Greedy(在线),C_B(目标),"[""B5C3_NODE_55"", ""B5C3_NODE_56"", ""B5C3_NODE_57""]",154.34895561599998,census 16=16：CPU C_*↔物理B5C3_NODE_*（reconciliation.census.mapped）,生产plan_strict在线（门禁16>12拒→自动Greedy；policy_plans仅事后对照；pure_solve 0.402763ms）,b1_hybrid_greedy,1(最小正确性验证),目标Pending=C_B,5120,5120,0,32,,,8Token==g1_CB_FS冻结Cold参照C_B,单次正确性验证,"evaluation/paper_hybrid_gpu_gate_b/{b1_hybrid_greedy,gate_b_result}.json",选集==g1冻结GPU计划==policy_plans(经census映射)==cpu_results；J=154.34895561599998
+E4-1B(w1/K2),w1/K2(n=7),Exact,IMW1_A_TURN_003,"[""B5C3_NODE_18"", ""B5C3_NODE_21""]",53.77075886917578,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Exact,3正式+smoke+独立Cold,"IMW1_A_TURN_003（A,C中之一）",3392,3648,256,858,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/native_resume_performance_e4_phase1b + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E4-1B(w1/K2),w1/K2(n=7),Greedy,IMW1_A_TURN_003,"[""B5C3_NODE_20"", ""B5C3_NODE_21""]",126.590493308375,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Greedy,3正式+smoke+独立Cold,"IMW1_A_TURN_003（A,C中之一）",2432,3648,1216,1818,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/native_resume_performance_e4_phase1b + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E4-1B(w1/K2),w1/K2(n=7),Exact,IMW1_C_TURN_003,"[""B5C3_NODE_18"", ""B5C3_NODE_21""]",53.77075886917578,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Exact,3正式+smoke+独立Cold,"IMW1_C_TURN_003（A,C中之一）",3712,4096,384,785,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/native_resume_performance_e4_phase1b + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E4-1B(w1/K2),w1/K2(n=7),Greedy,IMW1_C_TURN_003,"[""B5C3_NODE_20"", ""B5C3_NODE_21""]",126.590493308375,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Greedy,3正式+smoke+独立Cold,"IMW1_C_TURN_003（A,C中之一）",3712,4096,384,785,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/native_resume_performance_e4_phase1b + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Exact,IMW1_A_TURN_003,"[""B5C3_NODE_18"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",21.95337471670703,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Exact,3正式+smoke+独立Cold,"IMW1_A_TURN_003（A,B,C,D中之一）",3392,3648,256,858,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Greedy+1-Swap,IMW1_A_TURN_003,"[""B5C3_NODE_21"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",31.817384152468748,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Swap,3正式+smoke+独立Cold,"IMW1_A_TURN_003（A,B,C,D中之一）",3648,3648,0,602,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Exact,IMW1_B_TURN_003,"[""B5C3_NODE_18"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",21.95337471670703,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Exact,3正式+smoke+独立Cold,"IMW1_B_TURN_003（A,B,C,D中之一）",3392,3712,320,916,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Greedy+1-Swap,IMW1_B_TURN_003,"[""B5C3_NODE_21"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",31.817384152468748,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Swap,3正式+smoke+独立Cold,"IMW1_B_TURN_003（A,B,C,D中之一）",3712,3712,0,596,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Exact,IMW1_C_TURN_003,"[""B5C3_NODE_18"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",21.95337471670703,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Exact,3正式+smoke+独立Cold,"IMW1_C_TURN_003（A,B,C,D中之一）",4096,4096,0,401,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Greedy+1-Swap,IMW1_C_TURN_003,"[""B5C3_NODE_21"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",31.817384152468748,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Swap,3正式+smoke+独立Cold,"IMW1_C_TURN_003（A,B,C,D中之一）",3712,4096,384,785,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Exact,IMW1_D_TURN_003,"[""B5C3_NODE_18"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",21.95337471670703,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Exact,3正式+smoke+独立Cold,"IMW1_D_TURN_003（A,B,C,D中之一）",4160,4160,0,422,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+E5-1(w1/K3),w1/K3(n=7),Greedy+1-Swap,IMW1_D_TURN_003,"[""B5C3_NODE_21"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",31.817384152468748,同ID命名空间B5C3_NODE_*（w1快照内）,冻结选集执行（frozen_plans.json；无运行内求解）,r1–r3_IMW1_Swap,3正式+smoke+独立Cold,"IMW1_D_TURN_003（A,B,C,D中之一）",3712,4160,448,870,,,8Token==独立Cold（validated_resumes/validation.json；e45 54/54 PASS）,e45 unified_timing_stats（n=3，中位）,evaluation/exact_swap_runtime_e5_step1 + evaluation/e45_unified_timing/,每Pending独立恢复生命周期；E5-1三组Exact−Swap总和方向不一致（−13.4/+1.9/−3.1ms）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),FlowState-Greedy,C_A,"[""C_B_P05120"", ""C_C_P06144"", ""C_D_P07168""]",154.34895561599998,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5A_FS,5(主矩阵60臂；门禁g1/g2另计不混入),C_A,0,4096,4096,4128,151.354,159.312,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5A_FS/run/ + finalize_results.json,FS−SA配对TTFT中位差 1.0ms；FS−WFC 71.7ms
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),FlowState-Greedy,C_B,"[""C_B_P05120"", ""C_C_P06144"", ""C_D_P07168""]",154.34895561599998,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5B_FS,5(主矩阵60臂；门禁g1/g2另计不混入),C_B,5120,5120,0,32,30.808,37.63,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5B_FS/run/ + finalize_results.json,FS−SA配对TTFT中位差 -163.2ms；FS−WFC -84.4ms
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),FlowState-Greedy,C_C,"[""C_B_P05120"", ""C_C_P06144"", ""C_D_P07168""]",154.34895561599998,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5C_FS,5(主矩阵60臂；门禁g1/g2另计不混入),C_C,6144,6144,0,32,34.82,42.737,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5C_FS/run/ + finalize_results.json,FS−SA配对TTFT中位差 6.6ms；FS−WFC -84.3ms
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),FlowState-Greedy,C_D,"[""C_B_P05120"", ""C_C_P06144"", ""C_D_P07168""]",154.34895561599998,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5D_FS,5(主矩阵60臂；门禁g1/g2另计不混入),C_D,7168,7168,0,32,50.123,59.174,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5D_FS/run/ + finalize_results.json,FS−SA配对TTFT中位差 21.1ms；FS−WFC -105.4ms
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),StandaloneTopK,C_A,"[""C_C_P06144"", ""C_D_P07104"", ""C_D_P07168""]",348.234011266,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5A_SA,5(主矩阵60臂；门禁g1/g2另计不混入),C_A,0,4096,4096,4128,150.114,157.763,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5A_SA/run/ + finalize_results.json,SA−FS配对TTFT中位差 1.0ms（负=FS更慢）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),StandaloneTopK,C_B,"[""C_C_P06144"", ""C_D_P07104"", ""C_D_P07168""]",348.234011266,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5B_SA,5(主矩阵60臂；门禁g1/g2另计不混入),C_B,0,5120,5120,5152,193.225,203.66,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5B_SA/run/ + finalize_results.json,SA−FS配对TTFT中位差 -163.2ms（负=FS更慢）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),StandaloneTopK,C_C,"[""C_C_P06144"", ""C_D_P07104"", ""C_D_P07168""]",348.234011266,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5C_SA,5(主矩阵60臂；门禁g1/g2另计不混入),C_C,6144,6144,0,32,30.454,37.623,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5C_SA/run/ + finalize_results.json,SA−FS配对TTFT中位差 6.6ms（负=FS更慢）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),StandaloneTopK,C_D,"[""C_C_P06144"", ""C_D_P07104"", ""C_D_P07168""]",348.234011266,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5D_SA,5(主矩阵60臂；门禁g1/g2另计不混入),C_D,7168,7168,0,32,33.884,41.186,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5D_SA/run/ + finalize_results.json,SA−FS配对TTFT中位差 21.1ms（负=FS更慢）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),WFC,C_A,"[""C_AB_P02048"", ""C_CD_P03072"", ""C_ROOT_P01024""]",471.874343021,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5A_WFC,5(主矩阵60臂；门禁g1/g2另计不混入),C_A,2048,4096,2048,2080,79.718,87.322,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5A_WFC/run/ + finalize_results.json,WFC−FS配对TTFT中位差 71.7ms（负=FS更慢）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),WFC,C_B,"[""C_AB_P02048"", ""C_CD_P03072"", ""C_ROOT_P01024""]",471.874343021,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5B_WFC,5(主矩阵60臂；门禁g1/g2另计不混入),C_B,2048,5120,3072,3104,115.732,123.509,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5B_WFC/run/ + finalize_results.json,WFC−FS配对TTFT中位差 -84.4ms（负=FS更慢）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),WFC,C_C,"[""C_AB_P02048"", ""C_CD_P03072"", ""C_ROOT_P01024""]",471.874343021,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5C_WFC,5(主矩阵60臂；门禁g1/g2另计不混入),C_C,3072,6144,3072,3104,116.224,126.102,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5C_WFC/run/ + finalize_results.json,WFC−FS配对TTFT中位差 -84.3ms（负=FS更慢）
+C/K3 正式GPU主矩阵(c_formal m*),C/K3(n=16),WFC,C_D,"[""C_AB_P02048"", ""C_CD_P03072"", ""C_ROOT_P01024""]",471.874343021,census 16=16（每臂reconciliation.census，CPU C_*↔物理B5C3_NODE_*）,冻结选集执行（PILOT_POLICY读policy_plans.json；无运行内求解）,m1–m5D_WFC,5(主矩阵60臂；门禁g1/g2另计不混入),C_D,3072,7168,4096,4128,154.627,163.213,每臂8Token==该Pending冻结Cold参照（cold_reference_C_*.json）,60臂run/summary.json 中位数（n=5；正式统计仅m*主矩阵，协议v1.2）,evaluation/c_formal_perf_gpu/m1–m5D_WFC/run/ + finalize_results.json,WFC−FS配对TTFT中位差 -105.4ms（负=FS更慢）
+C/K3 门禁臂(不混入主统计),C/K3(n=16),FlowState-Greedy,C_B,"[""C_B_P05120"", ""C_C_P06144"", ""C_D_P07168""]",154.34895561599998,census 16=16,冻结选集执行（门禁复核算径）,g1_CB_FS,1(门禁),C_B,5120,5120,0,32,,59.772,True,门禁臂，正式统计不含（finalize按gate_arms+main_arms分列）,evaluation/c_formal_perf_gpu/g1_CB_FS/run/,协议v1.1→v1.2门禁复核臂
+C/K3 门禁臂(不混入主统计),C/K3(n=16),FlowState-Greedy,C_B,"[""C_B_P05120"", ""C_C_P06144"", ""C_D_P07168""]",154.34895561599998,census 16=16,冻结选集执行（门禁复核算径）,g2_CB_FS,1(门禁),C_B,5120,5120,0,32,,36.8,True,门禁臂，正式统计不含（finalize按gate_arms+main_arms分列）,evaluation/c_formal_perf_gpu/g2_CB_FS/run/,协议v1.1→v1.2门禁复核臂
+C/K3 门禁臂(不混入主统计),C/K3(n=16),StandaloneTopK,C_B,"[""C_C_P06144"", ""C_D_P07104"", ""C_D_P07168""]",348.234011266,census 16=16,冻结选集执行（门禁复核算径）,g2_CB_SA,1(门禁),C_B,0,5120,5120,5152,,192.117,True,门禁臂，正式统计不含（finalize按gate_arms+main_arms分列）,evaluation/c_formal_perf_gpu/g2_CB_SA/run/,协议v1.1→v1.2门禁复核臂
+—,w1/K1,Exact,ALL,"[""B5C3_NODE_20""]",223.84222283376562,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K1,Greedy,ALL,"[""B5C3_NODE_20""]",223.84222283376562,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K1,Greedy+1-Swap,ALL,"[""B5C3_NODE_20""]",223.84222283376562,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K1,WFC,ALL,"[""B5C3_NODE_20""]",223.84222283376562,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K1,StandaloneTopK,ALL,"[""B5C3_NODE_20""]",223.84222283376562,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K1,PCB,ALL,"[""B5C3_NODE_27""]",431.1409858134141,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K1,LDR,ALL,"[""B5C3_NODE_27""]",431.1409858134141,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K2,Greedy+1-Swap,ALL,"[""B5C3_NODE_18"", ""B5C3_NODE_21""]",53.77075886917578,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K2,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21""]",126.590493308375,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K2,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21""]",126.590493308375,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K2,PCB,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25""]",276.7920301974141,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K2,LDR,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25""]",276.7920301974141,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K3,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18""]",53.77075886917578,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K3,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18""]",53.77075886917578,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K3,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18""]",53.77075886917578,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K3,PCB,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_24""]",137.1712607901328,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K3,LDR,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_24""]",137.1712607901328,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K4,Exact,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K4,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18"", ""B5C3_NODE_27""]",36.6359262866289,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K4,Greedy+1-Swap,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K4,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18"", ""B5C3_NODE_27""]",36.6359262866289,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K4,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18"", ""B5C3_NODE_27""]",36.6359262866289,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K4,PCB,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_24"", ""B5C3_NODE_22""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w1/K4,LDR,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_24"", ""B5C3_NODE_22""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K1,Exact,ALL,"[""B5C3_NODE_20""]",214.01964287067187,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K1,Greedy,ALL,"[""B5C3_NODE_20""]",214.01964287067187,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K1,Greedy+1-Swap,ALL,"[""B5C3_NODE_20""]",214.01964287067187,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K1,WFC,ALL,"[""B5C3_NODE_20""]",214.01964287067187,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K1,StandaloneTopK,ALL,"[""B5C3_NODE_20""]",214.01964287067187,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K1,PCB,ALL,"[""B5C3_NODE_25""]",426.21676445535155,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K1,LDR,ALL,"[""B5C3_NODE_25""]",426.21676445535155,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K2,Exact,ALL,"[""B5C3_NODE_18"", ""B5C3_NODE_21""]",53.73318021532422,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K2,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21""]",131.4312851453867,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K2,Greedy+1-Swap,ALL,"[""B5C3_NODE_18"", ""B5C3_NODE_21""]",53.73318021532422,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K2,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21""]",131.4312851453867,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K2,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21""]",131.4312851453867,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K2,PCB,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_27""]",281.69253002722655,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K2,LDR,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_27""]",281.69253002722655,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K3,Exact,ALL,"[""B5C3_NODE_18"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",21.965537870171875,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K3,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18""]",53.73318021532422,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K3,Greedy+1-Swap,ALL,"[""B5C3_NODE_21"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",31.767642345152346,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K3,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18""]",53.73318021532422,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K3,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18""]",53.73318021532422,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K3,PCB,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_27"", ""B5C3_NODE_22""]",139.62076940728127,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K3,LDR,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_27"", ""B5C3_NODE_22""]",139.62076940728127,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K4,Exact,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K4,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18"", ""B5C3_NODE_25""]",34.17701910054297,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K4,Greedy+1-Swap,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K4,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18"", ""B5C3_NODE_25""]",34.17701910054297,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K4,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_21"", ""B5C3_NODE_18"", ""B5C3_NODE_25""]",34.17701910054297,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K4,PCB,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_27"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w2/K4,LDR,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_27"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",0.0,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K1,Exact,ALL,"[""B5C3_NODE_20""]",185.82030888572876,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K1,Greedy,ALL,"[""B5C3_NODE_20""]",185.82030888572876,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K1,Greedy+1-Swap,ALL,"[""B5C3_NODE_20""]",185.82030888572876,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K1,WFC,ALL,"[""B5C3_NODE_20""]",185.82030888572876,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K1,StandaloneTopK,ALL,"[""B5C3_NODE_20""]",185.82030888572876,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K1,PCB,ALL,"[""B5C3_NODE_25""]",405.3262861798579,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K1,LDR,ALL,"[""B5C3_NODE_25""]",405.3262861798579,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K2,Exact,ALL,"[""B5C3_NODE_24"", ""B5C3_NODE_27""]",25.559189928624576,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K2,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24""]",103.25149217832282,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K2,Greedy+1-Swap,ALL,"[""B5C3_NODE_24"", ""B5C3_NODE_27""]",25.559189928624576,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K2,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24""]",103.25149217832282,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K2,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24""]",103.25149217832282,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K2,PCB,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_22""]",263.2545255599126,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K2,LDR,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_22""]",263.2545255599126,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K3,Exact,ALL,"[""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",10.909073434608953,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K3,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_27""]",25.559189928624576,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K3,Greedy+1-Swap,ALL,"[""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",10.909073434608953,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K3,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_27""]",25.559189928624576,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K3,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_18""]",103.25149217832282,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K3,PCB,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",130.97614381805928,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K3,LDR,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",130.97614381805928,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K4,Exact,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.1428536413433266,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K4,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_27"", ""B5C3_NODE_25""]",10.909073434608953,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K4,Greedy+1-Swap,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.1428536413433266,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K4,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_27"", ""B5C3_NODE_25""]",10.909073434608953,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K4,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_18"", ""B5C3_NODE_27""]",25.559189928624576,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K4,PCB,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_27""]",1.1428536413433266,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w3/K4,LDR,ALL,"[""B5C3_NODE_25"", ""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_27""]",1.1428536413433266,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K1,Exact,ALL,"[""B5C3_NODE_20""]",205.34472391246481,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K1,Greedy,ALL,"[""B5C3_NODE_20""]",205.34472391246481,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K1,Greedy+1-Swap,ALL,"[""B5C3_NODE_20""]",205.34472391246481,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K1,WFC,ALL,"[""B5C3_NODE_20""]",205.34472391246481,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K1,StandaloneTopK,ALL,"[""B5C3_NODE_20""]",205.34472391246481,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K1,PCB,ALL,"[""B5C3_NODE_27""]",419.98109268480107,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K1,LDR,ALL,"[""B5C3_NODE_27""]",419.98109268480107,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K2,Exact,ALL,"[""B5C3_NODE_21"", ""B5C3_NODE_24""]",45.066823898798724,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K2,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24""]",122.77541955042372,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K2,Greedy+1-Swap,ALL,"[""B5C3_NODE_21"", ""B5C3_NODE_24""]",45.066823898798724,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K2,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24""]",122.77541955042372,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K2,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24""]",122.77541955042372,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K2,PCB,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25""]",275.4568582566761,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K2,LDR,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25""]",275.4568582566761,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K3,Exact,ALL,"[""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",10.871357981970599,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K3,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_21""]",45.066823898798724,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K3,Greedy+1-Swap,ALL,"[""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",10.871357981970599,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K3,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_21""]",45.066823898798724,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K3,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_21""]",45.066823898798724,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K3,PCB,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_22""]",133.3850976367308,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K3,LDR,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_22""]",133.3850976367308,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K4,Exact,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.1051381887049732,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K4,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_21"", ""B5C3_NODE_27""]",25.521474475986224,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K4,Greedy+1-Swap,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.1051381887049732,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K4,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_21"", ""B5C3_NODE_27""]",25.521474475986224,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K4,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_24"", ""B5C3_NODE_21"", ""B5C3_NODE_18""]",45.066823898798724,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K4,PCB,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",1.1051381887049732,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,w4/K4,LDR,ALL,"[""B5C3_NODE_27"", ""B5C3_NODE_25"", ""B5C3_NODE_22"", ""B5C3_NODE_24""]",1.1051381887049732,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K1,Exact,ALL,"[""B5C3_NODE_20""]",228.05481335524232,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K1,Greedy,ALL,"[""B5C3_NODE_20""]",228.05481335524232,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K1,Greedy+1-Swap,ALL,"[""B5C3_NODE_20""]",228.05481335524232,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K1,WFC,ALL,"[""B5C3_NODE_20""]",228.05481335524232,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K1,StandaloneTopK,ALL,"[""B5C3_NODE_20""]",228.05481335524232,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K1,PCB,ALL,"[""B5C3_NODE_22""]",435.3621410255414,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K1,LDR,ALL,"[""B5C3_NODE_22""]",435.3621410255414,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K2,Greedy+1-Swap,ALL,"[""B5C3_NODE_18"", ""B5C3_NODE_27""]",48.228728759089606,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K2,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18""]",130.8030838298517,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K2,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18""]",130.8030838298517,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K2,PCB,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24""]",281.0131854095414,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K2,LDR,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24""]",281.0131854095414,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K3,Exact,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_27""]",16.411344606620858,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K3,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18"", ""B5C3_NODE_27""]",48.228728759089606,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K3,Greedy+1-Swap,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_27""]",16.411344606620858,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K3,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18"", ""B5C3_NODE_27""]",48.228728759089606,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K3,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18"", ""B5C3_NODE_27""]",48.228728759089606,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K3,PCB,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25""]",134.0349945777211,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K3,LDR,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25""]",134.0349945777211,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K4,Exact,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.7531193436286698,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K4,Greedy,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18"", ""B5C3_NODE_27"", ""B5C3_NODE_22""]",31.09389617654273,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K4,Greedy+1-Swap,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.7531193436286698,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K4,WFC,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18"", ""B5C3_NODE_27"", ""B5C3_NODE_22""]",31.09389617654273,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K4,StandaloneTopK,ALL,"[""B5C3_NODE_20"", ""B5C3_NODE_18"", ""B5C3_NODE_27"", ""B5C3_NODE_21""]",48.228728759089606,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K4,PCB,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.7531193436286698,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,B5-C4/K4,LDR,ALL,"[""B5C3_NODE_22"", ""B5C3_NODE_24"", ""B5C3_NODE_25"", ""B5C3_NODE_27""]",1.7531193436286698,,,,0,,,,,,,,,,,NOT_MEASURED（不根据模型化J推测实际TTFT）
+—,C/K3,LRU,ALL,"[""C_D_P07168"", ""C_JOIN_P04096"", ""C_JOIN_P04032""]",582.034711402,,,,0,,,,,,,,,,,NOT_MEASURED
+—,C/K3,Marconi Adaptation,ALL,"[""C_C_P06144"", ""C_D_P07104"", ""C_D_P07168""]",348.234011266,,,,0,,,,,,,,,,,NOT_MEASURED
+—,C/K3,KVFlow-inspired,ALL,"[""C_A_P04032"", ""C_AB_P02048"", ""C_AB_P01984""]",627.6149768490118,,,,0,,,,,,,,,,,NOT_MEASURED
+—,C/K3,Greedy+1-Swap,ALL,"[""C_B_P05120"", ""C_C_P06144"", ""C_D_P07168""]",154.34895561599998,,,,0,,,,,,,,,,,NOT_MEASURED
+—,C/K3,PCB/LDR,ALL,[],,,,,0,,,,,,,,,,,NOT_RUN：C/K3 无PCB/LDR运行记录
+—,C/K3,Exact,ALL,[],,,,,0,,,,,,,,,,,NOT_AVAILABLE：无C/K3独立Exact证书（门禁拒绝n=16>12）

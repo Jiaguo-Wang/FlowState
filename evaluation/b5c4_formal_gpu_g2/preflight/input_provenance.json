@@ -1,0 +1,36 @@
+{
+  "prepared_inputs": {
+    "source": "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/prepared_inputs.json",
+    "sha256": "d836f46e8f74a3d38d8f76d60bfe97c135f235cedcad60a2de643738d0b0416e",
+    "verified_against": "b5d4b execution_lock.json"
+  },
+  "cpu_gate": {
+    "source": "/home/wjg/code/FlowState/evaluation/exact_greedy_paired_gpu_gate_b5d4b/cpu_gate.json",
+    "sha256": "a342c1fb6f8f1da25de656743d6cab619c4f496626660571c4c58319970e98a1",
+    "verified_against": "b5d4b execution_lock.json"
+  },
+  "g2_reference": {
+    "source": "/home/wjg/code/FlowState/evaluation/greedy_swap_structure_e3_step1/condition_results.csv",
+    "role": "仅事后对照Oracle：控制路径在求解完成后才由runner读入，不参与本轮选择",
+    "Exact": {
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 48.228728759089606
+    },
+    "Marginal Greedy": {
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 130.8030838298517
+    }
+  },
+  "cold_reference_C": {
+    "source": "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_gate_a/frozen_cold_reference.json",
+    "verified_against": "b5d4b cold_reference_correctness.json（10臂cold_output_ids 逐Token一致）"
+  },
+  "cold_reference_A_B_D": "待 preflight/cold/ 三臂按 b5d4b 同协议补采（全新Engine、空缓存断言、无控制、直接请求）后核验落位",
+  "environment": "B5-C4 冻结环境（8历史+4Pending，K=2），Epoch 形成为冻结历史重放+实时观察，非全在线构建"
+}

@@ -1,0 +1,32 @@
+--- evaluation/p0_control_cycle_gpu/bridge.py
++++ evaluation/control_path_optimization_20261031/bridge.py
+@@ -159,6 +159,9 @@
+ 
+ def scheduler_process(*args, **kwargs):
+     """专用进程：apply 一次（三策略在线 Select + 完整合同）+ 四请求测量钩子 + 请求后全量观察；失败保持隔离。"""
++    if os.environ.get('FS_OPT_MODE') == 'batched':
++        from .batched_payload import install
++        install(control, verify=os.environ.get('FS_OPT_VERIFY') == '1')
+     import wp3b_end_to_end_transport as transport
+     import targeted_probe as probe
+     # 控制路径替换：b5d4_apply 分发到本轮 control.py（三策略在线 Select 版）
+@@ -223,6 +226,8 @@
+                 t = time.monotonic_ns()
+                 result['admission_baseline'] = cache_state(scheduler.tree_cache)
+                 result['post_apply_baseline_ns'] = {'start_ns': t, 'end_ns': time.monotonic_ns()}
++            from .batched_payload import METRICS
++            result['optimization_metrics'] = list(METRICS)
+             return result
+         if action == 'b5d4_state':
+             probe._validate_runtime_scope(scheduler, scheduler.tree_cache)
+--- evaluation/p0_control_cycle_gpu/device_entry.py
++++ evaluation/control_path_optimization_20261031/device_entry.py
+@@ -24,7 +24,7 @@
+         json.dump({'status': 'PASS', 'host_gpu_uuid': expected, 'cuda_device_count': 1,
+                    'logical_device': 0, 'actual_uuid': actual, 'name': p.name},
+                   f, ensure_ascii=False, indent=2)
+-    runpy.run_module('evaluation.p0_control_cycle_gpu.runner', run_name='__main__')
++    runpy.run_module('evaluation.control_path_optimization_20261031.runner', run_name='__main__')
+ 
+ 
+ if __name__ == '__main__':

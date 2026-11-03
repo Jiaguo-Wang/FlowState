@@ -1,0 +1,396 @@
+{
+  "checks": [
+    {
+      "check": "Epoch身份=16候选/4Ready Pending/K=3",
+      "status": "PASS",
+      "detail": {
+        "candidates": [
+          "C_ROOT_P00960",
+          "C_ROOT_P01024",
+          "C_AB_P01984",
+          "C_AB_P02048",
+          "C_CD_P03008",
+          "C_CD_P03072",
+          "C_A_P04032",
+          "C_A_P04096",
+          "C_B_P05056",
+          "C_B_P05120",
+          "C_C_P06080",
+          "C_C_P06144",
+          "C_D_P07104",
+          "C_D_P07168",
+          "C_JOIN_P04032",
+          "C_JOIN_P04096"
+        ],
+        "pendings": [
+          "C_A",
+          "C_B",
+          "C_C",
+          "C_D"
+        ]
+      }
+    },
+    {
+      "check": "JOIN候选当前兼容为空(未来态)",
+      "status": "PASS",
+      "detail": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096"
+      ]
+    },
+    {
+      "check": "冻结参照重算一致[FlowState-Greedy]",
+      "status": "PASS",
+      "detail": {
+        "recomputed": 154.34895561599998,
+        "frozen": 154.34895561599998,
+        "same_EG": true
+      }
+    },
+    {
+      "check": "冻结参照重算一致[StandaloneTopK(与Marconi行同集)]",
+      "status": "PASS",
+      "detail": {
+        "recomputed": 348.234011266,
+        "frozen": 348.234011266,
+        "same_EG": true
+      }
+    },
+    {
+      "check": "冻结参照重算一致[WFC]",
+      "status": "PASS",
+      "detail": {
+        "recomputed": 471.8743430210001,
+        "frozen": 471.874343021,
+        "same_EG": true
+      }
+    },
+    {
+      "check": "StandaloneTopK独立复核行(cpu_review task2)==Marconi行",
+      "status": "PASS",
+      "detail": {
+        "review_same_set": false,
+        "J_diff": 193.88505565
+      }
+    },
+    {
+      "check": "A1_PCB在C/K3可公平执行并完整记录",
+      "status": "PASS",
+      "detail": {
+        "selected": [
+          "C_D_P07168",
+          "C_C_P06144",
+          "C_B_P05120"
+        ],
+        "J_ms": 154.34895561599998,
+        "relation": "SAME_SET_SAME_OBJECTIVE",
+        "score_rule": "每Pending的Phi(T)-Phi(T-L)独立收益",
+        "sort_key": "(-score,checkpoint_id,pending_id)",
+        "tie_break": "(-score,cid,pid)排序后顺序取前K个不同cid",
+        "recommendations": [
+          {
+            "pending_id": "C_D",
+            "checkpoint_id": "C_D_P07168",
+            "score": 274.095889074
+          },
+          {
+            "pending_id": "C_C",
+            "checkpoint_id": "C_C_P06144",
+            "score": 233.80070013600002
+          },
+          {
+            "pending_id": "C_B",
+            "checkpoint_id": "C_B_P05120",
+            "score": 193.88505565
+          },
+          {
+            "pending_id": "C_A",
+            "checkpoint_id": "C_A_P04096",
+            "score": 154.34895561599998
+          }
+        ]
+      }
+    },
+    {
+      "check": "A2_LDR在C/K3可公平执行并完整记录",
+      "status": "PASS",
+      "detail": {
+        "selected": [
+          "C_D_P07168",
+          "C_C_P06144",
+          "C_B_P05120"
+        ],
+        "J_ms": 154.34895561599998,
+        "relation": "SAME_SET_SAME_OBJECTIVE",
+        "score_rule": "每Pending最深合法候选位置L",
+        "sort_key": "(-L即(-score,checkpoint_id,pending_id)",
+        "tie_break": "排序后顺序取前K个不同cid",
+        "recommendations": [
+          {
+            "pending_id": "C_D",
+            "checkpoint_id": "C_D_P07168",
+            "score": 7168
+          },
+          {
+            "pending_id": "C_C",
+            "checkpoint_id": "C_C_P06144",
+            "score": 6144
+          },
+          {
+            "pending_id": "C_B",
+            "checkpoint_id": "C_B_P05120",
+            "score": 5120
+          },
+          {
+            "pending_id": "C_A",
+            "checkpoint_id": "C_A_P04096",
+            "score": 4096
+          }
+        ]
+      }
+    },
+    {
+      "check": "B_Gap-only Greedy可执行且每轮记录完整",
+      "status": "PASS",
+      "detail": {
+        "selected": [
+          "C_D_P07168",
+          "C_C_P06144",
+          "C_B_P05120"
+        ],
+        "J_gap_tokens": 4096,
+        "Phi_J_ms": 154.34895561599998,
+        "relation": "SAME_SET_SAME_OBJECTIVE",
+        "trace": [
+          {
+            "round": 1,
+            "chosen": "C_D_P07168",
+            "marginal_gap_reduction_tokens": 7168,
+            "J_gap_before": 22528,
+            "J_gap_after": 15360,
+            "E_after": {
+              "C_A": 0,
+              "C_B": 0,
+              "C_C": 0,
+              "C_D": 7168
+            },
+            "all_marginals_tokens": {
+              "C_ROOT_P00960": 3840,
+              "C_ROOT_P01024": 4096,
+              "C_AB_P01984": 3968,
+              "C_AB_P02048": 4096,
+              "C_CD_P03008": 6016,
+              "C_CD_P03072": 6144,
+              "C_A_P04032": 4032,
+              "C_A_P04096": 4096,
+              "C_B_P05056": 5056,
+              "C_B_P05120": 5120,
+              "C_C_P06080": 6080,
+              "C_C_P06144": 6144,
+              "C_D_P07104": 7104,
+              "C_D_P07168": 7168,
+              "C_JOIN_P04032": 0,
+              "C_JOIN_P04096": 0
+            }
+          },
+          {
+            "round": 2,
+            "chosen": "C_C_P06144",
+            "marginal_gap_reduction_tokens": 6144,
+            "J_gap_before": 15360,
+            "J_gap_after": 9216,
+            "E_after": {
+              "C_A": 0,
+              "C_B": 0,
+              "C_C": 6144,
+              "C_D": 7168
+            },
+            "all_marginals_tokens": {
+              "C_ROOT_P00960": 2880,
+              "C_ROOT_P01024": 3072,
+              "C_AB_P01984": 3968,
+              "C_AB_P02048": 4096,
+              "C_CD_P03008": 3008,
+              "C_CD_P03072": 3072,
+              "C_A_P04032": 4032,
+              "C_A_P04096": 4096,
+              "C_B_P05056": 5056,
+              "C_B_P05120": 5120,
+              "C_C_P06080": 6080,
+              "C_C_P06144": 6144,
+              "C_D_P07104": 0,
+              "C_JOIN_P04032": 0,
+              "C_JOIN_P04096": 0
+            }
+          },
+          {
+            "round": 3,
+            "chosen": "C_B_P05120",
+            "marginal_gap_reduction_tokens": 5120,
+            "J_gap_before": 9216,
+            "J_gap_after": 4096,
+            "E_after": {
+              "C_A": 0,
+              "C_B": 5120,
+              "C_C": 6144,
+              "C_D": 7168
+            },
+            "all_marginals_tokens": {
+              "C_ROOT_P00960": 1920,
+              "C_ROOT_P01024": 2048,
+              "C_AB_P01984": 3968,
+              "C_AB_P02048": 4096,
+              "C_CD_P03008": 0,
+              "C_CD_P03072": 0,
+              "C_A_P04032": 4032,
+              "C_A_P04096": 4096,
+              "C_B_P05056": 5056,
+              "C_B_P05120": 5120,
+              "C_C_P06080": 0,
+              "C_D_P07104": 0,
+              "C_JOIN_P04032": 0,
+              "C_JOIN_P04096": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "check": "C1_枚举规模==C(16,0)+C(16,1)+C(16,2)+C(16,3)==697",
+      "status": "PASS",
+      "detail": 697
+    },
+    {
+      "check": "C2_FlowState-Greedy重算J==冻结J",
+      "status": "PASS",
+      "detail": {
+        "recomputed": 154.34895561599998,
+        "frozen": 154.34895561599998
+      }
+    },
+    {
+      "check": "C3_1-Swap(ck3)冻结行与枚举评分一致",
+      "status": "PASS",
+      "detail": [
+        {
+          "method": "Greedy",
+          "selected": "[\"C_B_P05120\", \"C_C_P06144\", \"C_D_P07168\"]",
+          "J_ms": "154.34895561599998"
+        },
+        {
+          "method": "Greedy+1-Swap",
+          "selected": "[\"C_B_P05120\", \"C_C_P06144\", \"C_D_P07168\"]",
+          "J_ms": "154.34895561599998"
+        },
+        {
+          "method": "WFC",
+          "selected": "[\"C_AB_P02048\", \"C_CD_P03072\", \"C_ROOT_P01024\"]",
+          "J_ms": "471.8743430210001"
+        },
+        {
+          "method": "Swap-only",
+          "selected": "[\"C_B_P05120\", \"C_C_P06144\", \"C_D_P07168\"]",
+          "J_ms": "154.34895561599998"
+        }
+      ]
+    },
+    {
+      "check": "C4_Greedy是否全局最优(并列须全报)",
+      "status": "PASS",
+      "detail": {
+        "greedy_set": [
+          "C_B_P05120",
+          "C_C_P06144",
+          "C_D_P07168"
+        ],
+        "greedy_J": 154.34895561599998,
+        "min_J": 154.34895561599998,
+        "argmin_all": [
+          [
+            "C_B_P05120",
+            "C_C_P06144",
+            "C_D_P07168"
+          ]
+        ],
+        "abs_gap_ms": 0.0,
+        "rel_gap": 0.0,
+        "top5": [
+          {
+            "set": [
+              "C_B_P05120",
+              "C_C_P06144",
+              "C_D_P07168"
+            ],
+            "J_ms": 154.34895561599998
+          },
+          {
+            "set": [
+              "C_B_P05056",
+              "C_C_P06144",
+              "C_D_P07168"
+            ],
+            "J_ms": 156.8207217469492
+          },
+          {
+            "set": [
+              "C_B_P05120",
+              "C_C_P06080",
+              "C_D_P07168"
+            ],
+            "J_ms": 156.8423451308867
+          },
+          {
+            "set": [
+              "C_B_P05120",
+              "C_C_P06144",
+              "C_D_P07104"
+            ],
+            "J_ms": 156.8639685148242
+          },
+          {
+            "set": [
+              "C_B_P05056",
+              "C_C_P06080",
+              "C_D_P07168"
+            ],
+            "J_ms": 159.31411126183593
+          }
+        ]
+      }
+    },
+    {
+      "check": "D1_SA中C_D_P07104最终边际==0",
+      "status": "PASS",
+      "detail": {
+        "final_marginal_ms": 0.0,
+        "J_S_ms": 348.234011266,
+        "J_S_minus_c_ms": 348.234011266
+      }
+    },
+    {
+      "check": "D2_WFC中C_ROOT_P01024最终边际==0",
+      "status": "PASS",
+      "detail": {
+        "final_marginal_ms": 0.0,
+        "J_S_ms": 471.8743430210001,
+        "J_S_minus_c_ms": 471.8743430210001
+      }
+    }
+  ],
+  "all_pass": true,
+  "input_ledger": {
+    "sha256": {
+      "/home/wjg/code/FlowState/evaluation/kvflow_multiworkflow_cpu_main/workloads.json": "4bc3a48be6eae2c15e3e396478984b86a941c84e2191e0fe30589285663ea383",
+      "/home/wjg/code/FlowState/evaluation/kvflow_multiworkflow_cpu_main/cpu_results.json": "5802761408003e9df906a1f2e05c1eafbe50cb924abcbef8a37e43430f5fa813",
+      "/home/wjg/code/FlowState/evaluation/kvflow_multiworkflow_cpu_review/review_results.json": "8c4573b8e6229e5ccfb9ed57be71d10b73466296800e810bf7ba3ca8cf90e90d",
+      "/home/wjg/code/FlowState/evaluation/p1_strong_baseline_validation/common.py": "92d4a577099777a1e2b10233b9d851cded9b6a1ef075e40d847b447d8ac8427f",
+      "/home/wjg/code/FlowState/evaluation/p1_strong_baseline_validation/pcb.py": "4fe51bbe467770c6a201acce73c19e4891dbc01b220a7449eddfa78306685416",
+      "/home/wjg/code/FlowState/evaluation/p1_strong_baseline_validation/ldr.py": "ed31a1ea25603b29b47cca7bdf77299f2732c9526e4f31c34fb86ca6d88cde91",
+      "/home/wjg/code/FlowState/flowstate/recovery_model.py": "f3fe216592ad62c26e5bf7936f907823745942f7f34b483b8dfbc2fbd8fda1f5",
+      "/home/wjg/code/FlowState/evaluation/kvflow_multiworkflow_cpu_main/run_cpu.py": "b95dfdffe700a94614322dfb0e57d1a449013d7415727e4004ee6450b6d1531c",
+      "/home/wjg/code/FlowState/evaluation/paper_solver_tradeoff_summary.csv": "610434e9770a235e7989dbbf4bf843e92eb67cd008797b84051de1c8ba943779",
+      "/home/wjg/code/FlowState/evaluation/paper_strict_evidence_extraction/strict_allocation_matrix.csv": "0eefa6cbd19b5e4a3f02f2a02b6fef707b3d505b9fefd578783f347077898a36"
+    },
+    "generated_unix_ns": 1792893819117096286
+  }
+}

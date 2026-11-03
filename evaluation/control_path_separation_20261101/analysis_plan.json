@@ -1,0 +1,12 @@
+{
+  "timing": "保留Control T0–T3和Full T0–T4，新增审计完成T0–T5；不扣除或拼接平均耗时",
+  "pairing": "只按同阶段同轮次配对；三策略比较不引用前阶段或历史Baseline时间",
+  "summary": "逐臂、均值、中位数、最小最大；配对差后取中位；报告胜平负，不声称P95或显著性",
+  "first_pair_gate": "全部正确性通过且控制差<0、Full差<=0，否则停止，不调参",
+  "five_pair_gate": "全部正确性通过且控制差中位数<0、Full差中位数<=0才继续三策略",
+  "success_control": "五轮控制配对差中位数<0且正确性通过",
+  "success_full_cycle": "五轮Full配对差中位数<0；若审计完成墙钟恶化，必须收窄为关键窗口改善，不能宣称总净收益",
+  "success_net_gain_conservative": "同模式三策略五轮中，FS相对至少一个Baseline的Full及Audit-inclusive配对中位数均<0，且Full至少4/5获胜；保留所有负向轮次",
+  "unknown": "未独立记录的CPU/GPU子阶段成本保持UNKNOWN，不用总量减阶段中位数推测",
+  "provenance": "PROVENANCE_UNVERIFIED；不由Native Resume或Cold相同升级血缘认证"
+}

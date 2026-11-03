@@ -1,0 +1,187 @@
+{
+  "checks": [
+    {
+      "check": "Strict20 独立复算 140/140（选集+J 与 e3 冻结一致）",
+      "status": "PASS",
+      "detail": {
+        "不一致": []
+      }
+    },
+    {
+      "check": "e3 condition_results.csv == e5_step0 all_policy_results.csv（字节一致）",
+      "status": "PASS",
+      "detail": {
+        "sha256": "195b2ed1bbde3609a95209da8d7d4cff326b7e56185e3698667fb5054ee054f9"
+      }
+    },
+    {
+      "check": "e3 vs paper_solver_tradeoff（strict20 4 方法×20 条件）一致",
+      "status": "PASS",
+      "detail": {
+        "不一致": []
+      }
+    },
+    {
+      "check": "e3 vs paper_allocation_structure_strict20（7 个 J 列，舍入容差）一致",
+      "status": "PASS",
+      "detail": {
+        "不一致": []
+      }
+    },
+    {
+      "check": "C/K3 复算（Greedy/WFC/1-Swap/StandaloneTopK）与冻结一致",
+      "status": "PASS",
+      "detail": {
+        "不一致": []
+      }
+    },
+    {
+      "check": "C/K3 J 复算一致（Greedy/WFC/SA/1-Swap）",
+      "status": "PASS",
+      "detail": {
+        "不一致": []
+      }
+    },
+    {
+      "check": "C/K3 Exact 证书状态=NOT_AVAILABLE（n=16>12 门禁拒绝，未绕过）",
+      "status": "PASS",
+      "detail": "n=16 > 12 → planner.allowed 拒绝；Exact 列留空，未绕过门禁，不宣称任何最优性"
+    },
+    {
+      "check": "b5d4b 10臂 == B5-C4 K2 冻结Exact/Greedy选集与J",
+      "status": "PASS",
+      "detail": {
+        "Exact臂": true,
+        "Greedy臂": true
+      }
+    },
+    {
+      "check": "b5d4b 10臂输出==冷参照逐Token",
+      "status": "PASS",
+      "detail": {
+        "cold_output_ids": [
+          248058,
+          198,
+          27,
+          1628,
+          15462,
+          10318,
+          32634,
+          29
+        ],
+        "per_arm_comparisons": 10,
+        "all_exact_token_match": true
+      }
+    },
+    {
+      "check": "e45 统一计时 54/54 生命周期 PASS（E4-1B 18 + E5-1 36）",
+      "status": "PASS",
+      "detail": {
+        "gate": "PASS",
+        "lifecycle_rows": 54,
+        "pass_rows": 54
+      }
+    },
+    {
+      "check": "E4-1B 冻结计划==e3 w1/K2 Exact/Greedy",
+      "status": "PASS",
+      "detail": {
+        "E4-1B Exact": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21"
+        ],
+        "Greedy": [
+          "B5C3_NODE_20",
+          "B5C3_NODE_21"
+        ]
+      }
+    },
+    {
+      "check": "E5-1 冻结计划==e3 w1/K3 Exact/1-Swap",
+      "status": "PASS",
+      "detail": {
+        "E5-1 Exact": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ],
+        "Swap": [
+          "B5C3_NODE_21",
+          "B5C3_NODE_22",
+          "B5C3_NODE_24"
+        ]
+      }
+    },
+    {
+      "check": "E4-1B/E5-1 各臂 E/H/G/Prefill 跨重复一致",
+      "status": "PASS",
+      "detail": {
+        "不一致": []
+      }
+    },
+    {
+      "check": "c_formal 生命周期=62（主矩阵60 m* + 门禁2 g*），62/62 PASS",
+      "status": "PASS",
+      "detail": {
+        "lifecycles_total": 62,
+        "main_arms": 60
+      }
+    },
+    {
+      "check": "c_formal 60臂 census映射选集==policy_plans(每臂16=16)",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "check": "c_formal 60臂 cold_output_match 全True",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "check": "c_formal 60臂 Native E/G==policy_plans expected_E_G 逐臂",
+      "status": "PASS",
+      "detail": {}
+    },
+    {
+      "check": "观测：paper_allocation_structure_gpu_ck3.csv 的 n 列（C_B=6 含门禁臂，其余=5）",
+      "status": "PASS",
+      "detail": {
+        "n": {
+          "FlowState-Greedy|C_A": "5",
+          "FlowState-Greedy|C_B": "6",
+          "FlowState-Greedy|C_C": "5",
+          "FlowState-Greedy|C_D": "5",
+          "StandaloneTopK|C_A": "5",
+          "StandaloneTopK|C_B": "6",
+          "StandaloneTopK|C_C": "5",
+          "StandaloneTopK|C_D": "5",
+          "WFC|C_A": "5",
+          "WFC|C_B": "5",
+          "WFC|C_C": "5",
+          "WFC|C_D": "5"
+        },
+        "note": "该CSV为归因审计产物：FS/SA的C_B行n=6含g1/g2门禁臂（WFC无门禁臂n=5）；正式统计须用m*主矩阵（本表已用60臂单独重算）"
+      }
+    },
+    {
+      "check": "旧573=OpenHands504+AgentX69；证书类型与Strict认证状态",
+      "status": "PASS",
+      "detail": {
+        "conditions": {
+          "OpenHands": 504,
+          "AgentX": 69
+        },
+        "certificates": {
+          "SEPARABLE_SUPPORT_TOPK": 507,
+          "ALL_CANDIDATE_FRONTIERS_ATTAINED": 66
+        },
+        "strict_runtime_certified(0=未认证)": {
+          "NOT_CERTIFIED": 573
+        },
+        "greedy_optimal_in_legacy_model": {
+          "True": 573
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "1a_真实内核调用",
+      "pass": true,
+      "detail": "{'plan_strict': 1, 'marconi': 1, 'kvflow': 1}"
+    },
+    {
+      "check": "1b_FS走生产入口",
+      "pass": true,
+      "detail": "n=16 超门禁自动 Greedy；enumerable_subsets=697"
+    },
+    {
+      "check": "1c_选集复现冻结oracle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "2a_记录字段完整",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "2b_预算与域",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "2c_选集驱逐补集划分",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "2d_可见性如实记录",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "3a_恒等式精确_FlowState-Greedy",
+      "pass": true,
+      "detail": "cycle=12.806256ms 重算=12.806256ms"
+    },
+    {
+      "check": "3b_分段数量与注册表_FlowState-Greedy",
+      "pass": true,
+      "detail": "T0-T3 四段(observe/census/select/reconcile) + 每请求两段(preflight/execute)"
+    },
+    {
+      "check": "4a_四Pending声明顺序_FlowState-Greedy",
+      "pass": true,
+      "detail": "['C_A', 'C_B', 'C_C', 'C_D']"
+    },
+    {
+      "check": "4b_逐请求计时关联_FlowState-Greedy",
+      "pass": true,
+      "detail": "TTFT<终点、请求串行单调、T4≥第4终点"
+    },
+    {
+      "check": "4c_取证窗口外flush_FlowState-Greedy",
+      "pass": true,
+      "detail": "flush_ms=0.0015（不计入周期）"
+    },
+    {
+      "check": "3a_恒等式精确_Marconi-Evict",
+      "pass": true,
+      "detail": "cycle=12.848336ms 重算=12.848336ms"
+    },
+    {
+      "check": "3b_分段数量与注册表_Marconi-Evict",
+      "pass": true,
+      "detail": "T0-T3 四段(observe/census/select/reconcile) + 每请求两段(preflight/execute)"
+    },
+    {
+      "check": "4a_四Pending声明顺序_Marconi-Evict",
+      "pass": true,
+      "detail": "['C_A', 'C_B', 'C_C', 'C_D']"
+    },
+    {
+      "check": "4b_逐请求计时关联_Marconi-Evict",
+      "pass": true,
+      "detail": "TTFT<终点、请求串行单调、T4≥第4终点"
+    },
+    {
+      "check": "4c_取证窗口外flush_Marconi-Evict",
+      "pass": true,
+      "detail": "flush_ms=0.0027（不计入周期）"
+    },
+    {
+      "check": "3a_恒等式精确_KVFlow-inspired",
+      "pass": true,
+      "detail": "cycle=12.968734ms 重算=12.968734ms"
+    },
+    {
+      "check": "3b_分段数量与注册表_KVFlow-inspired",
+      "pass": true,
+      "detail": "T0-T3 四段(observe/census/select/reconcile) + 每请求两段(preflight/execute)"
+    },
+    {
+      "check": "4a_四Pending声明顺序_KVFlow-inspired",
+      "pass": true,
+      "detail": "['C_A', 'C_B', 'C_C', 'C_D']"
+    },
+    {
+      "check": "4b_逐请求计时关联_KVFlow-inspired",
+      "pass": true,
+      "detail": "TTFT<终点、请求串行单调、T4≥第4终点"
+    },
+    {
+      "check": "4c_取证窗口外flush_KVFlow-inspired",
+      "pass": true,
+      "detail": "flush_ms=0.0025（不计入周期）"
+    },
+    {
+      "check": "5a_三策略Plan全部通过生产校验",
+      "pass": true,
+      "detail": "validate_plan×3（含 FS 生产入口产物）"
+    },
+    {
+      "check": "5b_census对账复现冻结16=16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "5c_合同分段注册表完整",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "5d_协调后验合同在窗内",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "6a_内核异常直接传播",
+      "pass": true,
+      "detail": "ValueError: 内核注入异常"
+    },
+    {
+      "check": "6b_错误选集被oracle拒绝",
+      "pass": true,
+      "detail": "AssertionError: 在线 Marconi-Evict 选集与冻结 oracle 不一致：['C_AB_P01984', 'C_ROOT_P00960', 'C_ROOT_P0102"
+    },
+    {
+      "check": "6c_选择函数结构上无冻结读取",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "7a_冻结输入sha前后一致",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "7b_仅写本包out目录",
+      "pass": true,
+      "detail": "['selection_records.json']"
+    },
+    {
+      "check": "8_GPU待验证项登记",
+      "pass": true,
+      "detail": "见 cpu_gate_result.json"
+    }
+  ],
+  "summary": {
+    "policies": [
+      "FlowState-Greedy",
+      "Marconi-Evict",
+      "KVFlow-inspired"
+    ],
+    "K": 3,
+    "selection_call_ms": {
+      "FlowState-Greedy": 58.137638,
+      "Marconi-Evict": 0.374408,
+      "KVFlow-inspired": 4.431978
+    },
+    "selected_cpu": {
+      "FlowState-Greedy": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "Marconi-Evict": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "KVFlow-inspired": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ]
+    },
+    "J_ms": {
+      "FlowState-Greedy": 154.34895561599998,
+      "Marconi-Evict": 703.45464601,
+      "KVFlow-inspired": 627.6149768490118
+    },
+    "cycle_structure_ms": {
+      "FlowState-Greedy": 12.806256,
+      "Marconi-Evict": 12.848336,
+      "KVFlow-inspired": 12.968734
+    },
+    "gpu_pending_verification": [
+      "实时观察构造 Epoch（live observe_control + 实时 census 16=16 对账，替代冻结构造链）",
+      "Recurrent-only Reconciliation 真实物化（reconcile_strict 逐驱逐 evict_mamba_only + 每步 postcheck）",
+      "FA 内容审计在真实树上的逐摘要比对（CPU 仅登记合同）",
+      "Native Resume 真实执行（E/G/Prefill 实测 + Prefill=G+32 合同）",
+      "Cold Reference 逐 Token 一致（4 Pending）",
+      "四 Pending 串行请求的真实计时值与请求间隙 Residual（CPU 仅验证恒等式结构）",
+      "三策略完整周期 T0–T4 真实测量与配对统计"
+    ],
+    "note": "CPU 门禁：结构/合同/计时恒等式全过；真实物化与性能值待 GPU 验证"
+  }
+}

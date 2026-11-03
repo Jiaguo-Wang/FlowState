@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/wjg/code/FlowState/evaluation/serving_control_gpu_gate_20261102/analyze.py", line 162, in <module>
+    main()
+  File "/home/wjg/code/FlowState/evaluation/serving_control_gpu_gate_20261102/analyze.py", line 147, in main
+    assert a[0]['after']['engine_id']!=b[0]['after']['engine_id'], '独立生命周期身份未分开'
+AssertionError: 独立生命周期身份未分开

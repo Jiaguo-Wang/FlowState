@@ -1,0 +1,57 @@
+{
+  "task": "G1 Hybrid Solver Exact/Greedy 双路径 GPU 闭环验收",
+  "date": "2026-10-25",
+  "environment": {
+    "gpu": "单块 NVIDIA H100 PCIe（GPU0；共享环境，每臂前后 nvidia-smi 证据）",
+    "image": "sha256:1dfce9033670a84c7342a2ae922b7dfbc5cc3ead39160bf3a90847a61bd4f926（与 E4-1A/b5d4b/c_formal/g1_CB_FS 同镜像）",
+    "model": "Qwen3.5-9B TP=1；SGLang v0.5.17（容器内版本核验）",
+    "host": "docker --rm 单容器单臂；--network host；ROOT/models 只读挂载；输出目录可写挂载为 /b5out"
+  },
+  "chain_per_arm": [
+    "1 冻结历史真实重放（exact：w1 8历史；greedy：C/K3 16历史×2轮，flush 后二次重放）→ 每请求 digest/输入长度/输出数合同验证",
+    "2 实时物理观察构造 Strict Epoch（from_frozen/prepare 全合同认证；greedy 另做 census 16=16 cpu↔物理映射）",
+    "3 Scheduler 进程内调用生产 GlobalOptimizer.plan_strict() 在线求解（hybrid 自动分支，无外部指定）",
+    "4 StrictAllocationPlan 校验（validate_plan）",
+    "5 reconcile_strict 物理协调（使用本轮 Plan：COW 装载/驱逐/复验；安全门禁全开）",
+    "6 唯一目标 Pending 正式 Native 恢复流式请求（8 Token）",
+    "7 请求后全量观察：E/G/Prefill/FA/保留状态完整性断言",
+    "8 与冻结 Cold 参照逐 Token 对照"
+  ],
+  "arms": {
+    "exact_K2": [
+      {"run": "e1_w1k2_exact_A", "pending": "IMW1_A_TURN_003", "env": "G1_PENDING=IMW1_A_TURN_003 B5D4_ARM=strict"},
+      {"run": "e2_w1k2_exact_B", "pending": "IMW1_B_TURN_003", "env": "G1_PENDING=IMW1_B_TURN_003"},
+      {"run": "e3_w1k2_exact_C", "pending": "IMW1_C_TURN_003", "env": "G1_PENDING=IMW1_C_TURN_003"},
+      {"run": "e4_w1k2_exact_D", "pending": "IMW1_D_TURN_003", "env": "G1_PENDING=IMW1_D_TURN_003"}
+    ],
+    "greedy_K3": [
+      {"run": "g1_ck3_greedy_A_r3", "pending": "C_A", "env": "PILOT_PENDING=C_A"},
+      {"run": "g2_ck3_greedy_B_r3", "pending": "C_B", "env": "PILOT_PENDING=C_B"},
+      {"run": "g3_ck3_greedy_C_r3", "pending": "C_C", "env": "PILOT_PENDING=C_C"},
+      {"run": "g4_ck3_greedy_D_r3", "pending": "C_D", "env": "PILOT_PENDING=C_D"}
+    ]
+  },
+  "runner_modules": {
+    "exact": "evaluation.hybrid_solver_gpu_gate_g1.pkg_exact.runner",
+    "greedy": "evaluation.hybrid_solver_gpu_gate_g1.pkg_greedy.runner"
+  },
+  "launch_gates": [
+    "镜像ID==冻结 sha256:1dfce…；执行锁（输入+程序+生产入口哈希）写入后复验",
+    "GPU 空闲（无 compute apps，显存<1000MiB）且为 H100 PCIe",
+    "容器名不重复；端口预绑定检查；已启动臂拒绝重跑（失败重试须新 RUN 名 _r{n}，证据保留）",
+    "结束后 docker rm -f + 三次 nvidia-smi 观测（显存<100MiB、无进程、无残留容器）= 清理 PASS",
+    "returncode==0 且 run/summary.json status==PASS 方判臂完成"
+  ],
+  "safety_gates_in_control": [
+    "同 Scheduler 调用窗口（apply_validation.same_scheduler_call）",
+    "无 stale epoch：Apply 前状态逐项==观察基线（组件payload/FA前沿/树结构哈希）",
+    "全候选域+兼容矩阵核验（exact 12 容许边；greedy census 16=16 无 extras/missing）",
+    "Token/状态身份映射（digest/长度逐项）、ownership/slot/别名检查",
+    "仅 recurrent 驱逐且全部 returned；attention-side 内容前后一致并复算",
+    "协调后复验+请求后全量观察；任一不一致 fail-stop（无 fallback、无降级）"
+  ],
+  "failed_attempts": {
+    "count": 7,
+    "note": "g1 首跑=fix_b原版(E=0无源分支缺失→StopIteration)；g2-g4首批与r2=target_request.json 根目录 x 写跨臂冲突；全部证据保留，修复与豁免见 greedy/verify.json 与 pkg_greedy/build_record.json"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "prepared_inputs": {
+    "source": "/home/wjg/code/FlowState/evaluation/native_resume_correctness_e4_phase1a_run01/prepared_inputs.json",
+    "sha256": "e88dccd010cafde072a7be1d31dffcaa56fdca7594e40d0bb4213eac5bf65807",
+    "verified_against": "E4-1A execution_lock.json"
+  },
+  "cold_references": {
+    "source": "/home/wjg/code/FlowState/evaluation/native_resume_correctness_e4_phase1a_run01/{A,B,C,D}_Cold/output.json",
+    "verified_against": "E4-1A validated_resumes.json（8臂 RESUME_VALIDATED 逐Token一致）"
+  },
+  "cpu_smoke": {
+    "source": "/home/wjg/code/FlowState/evaluation/independent_runtime_allocation_e2/w1 快照 + /home/wjg/code/FlowState/evaluation/greedy_swap_structure_e3_step1/condition_results.csv w1/K2 Exact 行",
+    "result": "PASS"
+  },
+  "environment": "E2/w1 冻结环境（8历史+4Pending，K=2），Epoch 形成为冻结历史重放+实时观察，非全在线构建",
+  "pending_scope": "4臂：G1_PENDING=IMW1_A/B/C/D_TURN_003"
+}

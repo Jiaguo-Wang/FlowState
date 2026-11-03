@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-30",
+  "scope": "冻结Formal输入，CPU离线预算敏感性；不是Strict GPU",
+  "K_values": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "policies": [
+    "FlowState",
+    "PCB",
+    "LDR",
+    "WFC"
+  ],
+  "flowstate_mode": "原Marginal Greedy核心，不调用plan_strict混合入口",
+  "exact_gate": {
+    "n_max": 12,
+    "pending_max": 4,
+    "K_max": 4,
+    "subsets_max": 794
+  },
+  "epsilon_ms": 1e-09,
+  "exact_tie_rule": "最优容差1e-9内最少项，再按ID字典序",
+  "timing": {
+    "clock": "perf_counter_ns",
+    "warmups_per_condition_policy": 3,
+    "measurement_batches": 15,
+    "calls_per_batch": 5,
+    "policy_order": "按快照预算序号加测量批次轮转",
+    "quantile": "15个批均单次时间的中位与线性插值P95，不是单调用或线上P95",
+    "included": "真实选择函数及其内部诊断轨迹构建、评分和返回",
+    "excluded": "文件读取、JSON解析、输入对象准备、外部结果校验、报告生成"
+  }
+}

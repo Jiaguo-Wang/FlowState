@@ -1,0 +1,74 @@
+--- evaluation/control_path_separation_20261101/bridge.py
++++ evaluation/serving_control_interface_gate_20261101/bridge.py
+@@ -21,6 +21,9 @@
+ from evaluation.lightweight_runtime_e1 import control as original_control
+ from . import control
+ from . import observation
++from . import interface
++BASELINE_MODE = interface.mode(os.environ.get('FS_ADMISSION_BASELINE_MODE', 'validation'))
++interface.validate_runtime_mode(BASELINE_MODE, os.environ.get('FS_SEPARATION_MODE', 'original'))
+ 
+ require = reconcile.require
+ # 本桥接只服务测量模式：环境变量必须显式设置，防止误以 strict 语义跑正式矩阵
+@@ -221,7 +224,7 @@
+                 BASELINE = result
+                 # apply 后全量基线（A 类，t3 之后的 RPC 尾段；单独计时，不冒充控制周期内分段）
+                 t = time.monotonic_ns()
+-                result['admission_baseline'] = cache_state(scheduler.tree_cache)
++                interface.build(result, lambda: cache_state(scheduler.tree_cache), BASELINE_MODE)
+                 result['post_apply_baseline_ns'] = {'start_ns': t, 'end_ns': time.monotonic_ns()}
+             return result
+         if action == 'b5d4_state':
+--- evaluation/control_path_separation_20261101/runner.py
++++ evaluation/serving_control_interface_gate_20261101/runner.py
+@@ -27,6 +27,8 @@
+ import traceback
+ from pathlib import Path
+ from .bridge import scheduler_process
++from . import interface
++BASELINE_MODE = interface.mode(os.environ.get('FS_ADMISSION_BASELINE_MODE', 'validation'))
+ from evaluation.lightweight_runtime_e1.protocol import require
+ from evaluation.exact_greedy_paired_gpu_fix_b5d4a.persistence import call_saved
+ 
+@@ -136,6 +138,8 @@
+                     from .codec import unpack
+                     value, metrics = unpack(value)
+                     TRANSFERS.append(metrics)
++                if request.get('action') == 'b5d4_apply':
++                    interface.validate_response(value, BASELINE_MODE)
+                 return value
+ 
+         t_boot = time.monotonic_ns()
+@@ -479,10 +483,10 @@
+                           '恒等式(T4−T0)=apply段+间隙+RPC尾+形状预热块+请求段+请求间隙 整数精确；'
+                           'T0–T3 窗口内零取证磁盘 I/O（Journal 序列化在窗内如实计入段间隙，'
+                           '写盘+fsync 全部出窗）；oracle 对照与全量观察均在 T4 之后窗口外执行'}
+-        write(out / 'separation_audit.json', {'mode': SEPARATION, 'transfers': TRANSFERS,
++        write(out / 'separation_audit.json', {'mode': SEPARATION, 'admission_baseline_mode': BASELINE_MODE, 'transfers': TRANSFERS,
+                                                   'reconciliation_report': report_timing})
+         t5_ns = time.monotonic_ns()
+-        summary['separation'] = {'mode': SEPARATION, 't5_ns': t5_ns,
++        summary['separation'] = {'mode': SEPARATION, 'admission_baseline_mode': BASELINE_MODE, 't5_ns': t5_ns,
+                                  'audit_inclusive_ms': (t5_ns-t0_ns)/1e6,
+                                  'post_t4_audit_ms': (t5_ns-t4_ns)/1e6,
+                                  'report_timing': report_timing,
+--- evaluation/control_path_separation_20261101/device_entry.py
++++ evaluation/serving_control_interface_gate_20261101/device_entry.py
+@@ -2,7 +2,7 @@
+ 
+ 与 t2g1 formal_gpu1b/device_entry.py 同模式（spawn 重入教训：全部逻辑置于 __main__ 保护内）：
+ - 主进程（__main__）：设备校验（UUID 由 launch 注入 EXPECTED_GPU_UUID）→ 独占写证据
+-  → runpy 接力 evaluation.control_path_separation_20261101.runner；
++  → runpy 接力 evaluation.serving_control_interface_gate_20261101.runner；
+ - spawn 子进程（__mp_main__）：重入为无操作，不触碰任何文件。
+ """
+ import json
+@@ -24,7 +24,7 @@
+         json.dump({'status': 'PASS', 'host_gpu_uuid': expected, 'cuda_device_count': 1,
+                    'logical_device': 0, 'actual_uuid': actual, 'name': p.name},
+                   f, ensure_ascii=False, indent=2)
+-    runpy.run_module('evaluation.control_path_separation_20261101.runner', run_name='__main__')
++    runpy.run_module('evaluation.serving_control_interface_gate_20261101.runner', run_name='__main__')
+ 
+ 
+ if __name__ == '__main__':

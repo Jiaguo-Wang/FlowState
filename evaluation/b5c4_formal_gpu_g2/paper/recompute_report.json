@@ -1,0 +1,569 @@
+{
+  "verdict": "PASS",
+  "fails": [],
+  "checks": [
+    {
+      "check": "rows_40",
+      "pass": true,
+      "detail": 40
+    },
+    {
+      "check": "grid_complete",
+      "pass": true
+    },
+    {
+      "check": "arm_validity_from_summaries",
+      "pass": true,
+      "detail": "40/40：status/solver/audit==2/零编译/Cold一致/字段一致"
+    },
+    {
+      "check": "crosscheck_paired_analysis_csv",
+      "pass": true,
+      "detail": "delta_*_median 列确为两组中位数之差（辅助口径），数值一致"
+    },
+    {
+      "check": "crosscheck_checks_json_round_level",
+      "pass": true,
+      "detail": {
+        "recompute": {
+          "d_ttft_median_of_round_means": 17.74,
+          "d_prefill_median_of_round_means": 17.66,
+          "exact_ttft_median_of_round_means": 50.66,
+          "greedy_ttft_median_of_round_means": 69.78
+        },
+        "checks.json": {
+          "delta_ttft_median": 17.74,
+          "delta_prefill_median": 17.66
+        }
+      }
+    },
+    {
+      "check": "all_rounds_d_ttft_positive",
+      "pass": true,
+      "detail": [
+        17.74,
+        11.53,
+        11.4,
+        20.89,
+        19.13
+      ]
+    },
+    {
+      "check": "exact_slower_count_5",
+      "pass": true,
+      "detail": [
+        [
+          1,
+          "A",
+          54.4,
+          1.48
+        ],
+        [
+          2,
+          "A",
+          53.3,
+          0.09
+        ],
+        [
+          2,
+          "B",
+          68.1,
+          15.2
+        ],
+        [
+          3,
+          "B",
+          66.9,
+          12.8
+        ],
+        [
+          5,
+          "A",
+          54.1,
+          1.52
+        ]
+      ]
+    },
+    {
+      "check": "final_report_lists_slower",
+      "pass": true
+    },
+    {
+      "check": "J_constant_and_matches_e3",
+      "pass": true,
+      "detail": {
+        "Exact": [
+          48.228728759089606
+        ],
+        "Greedy": [
+          130.8030838298517
+        ]
+      }
+    },
+    {
+      "check": "selection_matches_e3",
+      "pass": true
+    },
+    {
+      "check": "structure_layer_consistent",
+      "pass": true,
+      "detail": {
+        "B5C2_A_TURN_003": {
+          "Exact": {
+            "E": 3712,
+            "T": 4160,
+            "G_model": 448,
+            "prefill_tokens": 1150,
+            "H": 4160,
+            "len_pt": 4862
+          },
+          "Greedy": {
+            "E": 3712,
+            "T": 4160,
+            "G_model": 448,
+            "prefill_tokens": 1150,
+            "H": 4160,
+            "len_pt": 4862
+          }
+        },
+        "B5C2_B_TURN_003": {
+          "Exact": {
+            "E": 3712,
+            "T": 4096,
+            "G_model": 384,
+            "prefill_tokens": 1148,
+            "H": 4096,
+            "len_pt": 4860
+          },
+          "Greedy": {
+            "E": 3712,
+            "T": 4096,
+            "G_model": 384,
+            "prefill_tokens": 1148,
+            "H": 4096,
+            "len_pt": 4860
+          }
+        },
+        "B5C2_C_TURN_003": {
+          "Exact": {
+            "E": 3520,
+            "T": 3904,
+            "G_model": 384,
+            "prefill_tokens": 915,
+            "H": 3904,
+            "len_pt": 4435
+          },
+          "Greedy": {
+            "E": 2432,
+            "T": 3904,
+            "G_model": 1472,
+            "prefill_tokens": 2003,
+            "H": 3904,
+            "len_pt": 4435
+          }
+        },
+        "B5C2_D_TURN_003": {
+          "Exact": {
+            "E": 3520,
+            "T": 3566,
+            "G_model": 46,
+            "prefill_tokens": 966,
+            "H": 3566,
+            "len_pt": 4486
+          },
+          "Greedy": {
+            "E": 2432,
+            "T": 3566,
+            "G_model": 1134,
+            "prefill_tokens": 2054,
+            "H": 3566,
+            "len_pt": 4486
+          }
+        }
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "round": 1,
+      "pending": "A",
+      "d_ttft_ms": -1.48,
+      "d_prefill_ms": -0.63
+    },
+    {
+      "round": 1,
+      "pending": "B",
+      "d_ttft_ms": 0.13,
+      "d_prefill_ms": 0.08
+    },
+    {
+      "round": 1,
+      "pending": "C",
+      "d_ttft_ms": 35.59,
+      "d_prefill_ms": 34.74
+    },
+    {
+      "round": 1,
+      "pending": "D",
+      "d_ttft_ms": 36.71,
+      "d_prefill_ms": 36.44
+    },
+    {
+      "round": 2,
+      "pending": "A",
+      "d_ttft_ms": -0.09,
+      "d_prefill_ms": 0.12
+    },
+    {
+      "round": 2,
+      "pending": "B",
+      "d_ttft_ms": -15.2,
+      "d_prefill_ms": -11.89
+    },
+    {
+      "round": 2,
+      "pending": "C",
+      "d_ttft_ms": 31.88,
+      "d_prefill_ms": 32.58
+    },
+    {
+      "round": 2,
+      "pending": "D",
+      "d_ttft_ms": 29.53,
+      "d_prefill_ms": 30.47
+    },
+    {
+      "round": 3,
+      "pending": "A",
+      "d_ttft_ms": 0.8,
+      "d_prefill_ms": 0.23
+    },
+    {
+      "round": 3,
+      "pending": "B",
+      "d_ttft_ms": -12.8,
+      "d_prefill_ms": -10.46
+    },
+    {
+      "round": 3,
+      "pending": "C",
+      "d_ttft_ms": 34.71,
+      "d_prefill_ms": 33.77
+    },
+    {
+      "round": 3,
+      "pending": "D",
+      "d_ttft_ms": 22.9,
+      "d_prefill_ms": 22.45
+    },
+    {
+      "round": 4,
+      "pending": "A",
+      "d_ttft_ms": 0.87,
+      "d_prefill_ms": 0.33
+    },
+    {
+      "round": 4,
+      "pending": "B",
+      "d_ttft_ms": 1.07,
+      "d_prefill_ms": 0.54
+    },
+    {
+      "round": 4,
+      "pending": "C",
+      "d_ttft_ms": 40.34,
+      "d_prefill_ms": 35.95
+    },
+    {
+      "round": 4,
+      "pending": "D",
+      "d_ttft_ms": 41.26,
+      "d_prefill_ms": 37.71
+    },
+    {
+      "round": 5,
+      "pending": "A",
+      "d_ttft_ms": -1.52,
+      "d_prefill_ms": -0.9
+    },
+    {
+      "round": 5,
+      "pending": "B",
+      "d_ttft_ms": 6.16,
+      "d_prefill_ms": 3.91
+    },
+    {
+      "round": 5,
+      "pending": "C",
+      "d_ttft_ms": 34.1,
+      "d_prefill_ms": 33.6
+    },
+    {
+      "round": 5,
+      "pending": "D",
+      "d_ttft_ms": 37.78,
+      "d_prefill_ms": 36.8
+    }
+  ],
+  "per_pending": {
+    "A": {
+      "d_ttft_rounds": [
+        -1.48,
+        -0.09,
+        0.8,
+        0.87,
+        -1.52
+      ],
+      "d_prefill_rounds": [
+        -0.63,
+        0.12,
+        0.23,
+        0.33,
+        -0.9
+      ],
+      "median_of_paired_d_ttft": -0.09,
+      "median_of_paired_d_prefill": 0.12,
+      "exact_ttft_median": 53.3,
+      "greedy_ttft_median": 53.21,
+      "exact_prefill_median": 46.28,
+      "greedy_prefill_median": 46.16,
+      "diff_of_medians_ttft": -0.09,
+      "diff_of_medians_prefill": -0.11
+    },
+    "B": {
+      "d_ttft_rounds": [
+        0.13,
+        -15.2,
+        -12.8,
+        1.07,
+        6.16
+      ],
+      "d_prefill_rounds": [
+        0.08,
+        -11.89,
+        -10.46,
+        0.54,
+        3.91
+      ],
+      "median_of_paired_d_ttft": 0.13,
+      "median_of_paired_d_prefill": 0.08,
+      "exact_ttft_median": 53.15,
+      "greedy_ttft_median": 53.84,
+      "exact_prefill_median": 46.49,
+      "greedy_prefill_median": 46.51,
+      "diff_of_medians_ttft": 0.7,
+      "diff_of_medians_prefill": 0.02
+    },
+    "C": {
+      "d_ttft_rounds": [
+        35.59,
+        31.88,
+        34.71,
+        40.34,
+        34.1
+      ],
+      "d_prefill_rounds": [
+        34.74,
+        32.58,
+        33.77,
+        35.95,
+        33.6
+      ],
+      "median_of_paired_d_ttft": 34.71,
+      "median_of_paired_d_prefill": 33.77,
+      "exact_ttft_median": 47.48,
+      "greedy_ttft_median": 82.18,
+      "exact_prefill_median": 40.57,
+      "greedy_prefill_median": 74.34,
+      "diff_of_medians_ttft": 34.7,
+      "diff_of_medians_prefill": 33.77
+    },
+    "D": {
+      "d_ttft_rounds": [
+        36.71,
+        29.53,
+        22.9,
+        41.26,
+        37.78
+      ],
+      "d_prefill_rounds": [
+        36.44,
+        30.47,
+        22.45,
+        37.71,
+        36.8
+      ],
+      "median_of_paired_d_ttft": 36.71,
+      "median_of_paired_d_prefill": 36.44,
+      "exact_ttft_median": 48.98,
+      "greedy_ttft_median": 85.67,
+      "exact_prefill_median": 42.23,
+      "greedy_prefill_median": 78.24,
+      "diff_of_medians_ttft": 36.7,
+      "diff_of_medians_prefill": 36.01
+    }
+  },
+  "round_level": [
+    {
+      "round": 1,
+      "d_ttft_equal_mean": 17.74,
+      "d_prefill_equal_mean": 17.66,
+      "exact_ttft_equal_mean": 50.66,
+      "greedy_ttft_equal_mean": 68.4,
+      "exact_prefill_equal_mean": 43.48,
+      "greedy_prefill_equal_mean": 61.14
+    },
+    {
+      "round": 2,
+      "d_ttft_equal_mean": 11.53,
+      "d_prefill_equal_mean": 12.82,
+      "exact_ttft_equal_mean": 56.66,
+      "greedy_ttft_equal_mean": 68.19,
+      "exact_prefill_equal_mean": 48.47,
+      "greedy_prefill_equal_mean": 61.3
+    },
+    {
+      "round": 3,
+      "d_ttft_equal_mean": 11.4,
+      "d_prefill_equal_mean": 11.5,
+      "exact_ttft_equal_mean": 58.86,
+      "greedy_ttft_equal_mean": 70.26,
+      "exact_prefill_equal_mean": 50.25,
+      "greedy_prefill_equal_mean": 61.74
+    },
+    {
+      "round": 4,
+      "d_ttft_equal_mean": 20.89,
+      "d_prefill_equal_mean": 18.63,
+      "exact_ttft_equal_mean": 50.21,
+      "greedy_ttft_equal_mean": 71.1,
+      "exact_prefill_equal_mean": 43.63,
+      "greedy_prefill_equal_mean": 62.26
+    },
+    {
+      "round": 5,
+      "d_ttft_equal_mean": 19.13,
+      "d_prefill_equal_mean": 18.35,
+      "exact_ttft_equal_mean": 50.64,
+      "greedy_ttft_equal_mean": 69.78,
+      "exact_prefill_equal_mean": 43.89,
+      "greedy_prefill_equal_mean": 62.24
+    }
+  ],
+  "summary_protocol": {
+    "d_ttft_median_of_round_means": 17.74,
+    "d_prefill_median_of_round_means": 17.66,
+    "exact_ttft_median_of_round_means": 50.66,
+    "greedy_ttft_median_of_round_means": 69.78
+  },
+  "pooled_nonprotocol_warning": {
+    "pooled_median_greedy_ttft_minus_exact": 17.48,
+    "note": "合并 20 样本池化中位数之差＝非实验协议口径（Pending 结构权重失真），仅警示对照，不得引用"
+  },
+  "exact_slower_rounds": [
+    {
+      "round": 1,
+      "pending": "A",
+      "exact_ttft_ms": 54.4,
+      "greedy_faster_by_ms": 1.48
+    },
+    {
+      "round": 2,
+      "pending": "A",
+      "exact_ttft_ms": 53.3,
+      "greedy_faster_by_ms": 0.09
+    },
+    {
+      "round": 2,
+      "pending": "B",
+      "exact_ttft_ms": 68.1,
+      "greedy_faster_by_ms": 15.2
+    },
+    {
+      "round": 3,
+      "pending": "B",
+      "exact_ttft_ms": 66.9,
+      "greedy_faster_by_ms": 12.8
+    },
+    {
+      "round": 5,
+      "pending": "A",
+      "exact_ttft_ms": 54.1,
+      "greedy_faster_by_ms": 1.52
+    }
+  ],
+  "structure": {
+    "B5C2_A_TURN_003": {
+      "Exact": {
+        "E": 3712,
+        "T": 4160,
+        "G_model": 448,
+        "prefill_tokens": 1150,
+        "H": 4160,
+        "len_pt": 4862
+      },
+      "Greedy": {
+        "E": 3712,
+        "T": 4160,
+        "G_model": 448,
+        "prefill_tokens": 1150,
+        "H": 4160,
+        "len_pt": 4862
+      }
+    },
+    "B5C2_B_TURN_003": {
+      "Exact": {
+        "E": 3712,
+        "T": 4096,
+        "G_model": 384,
+        "prefill_tokens": 1148,
+        "H": 4096,
+        "len_pt": 4860
+      },
+      "Greedy": {
+        "E": 3712,
+        "T": 4096,
+        "G_model": 384,
+        "prefill_tokens": 1148,
+        "H": 4096,
+        "len_pt": 4860
+      }
+    },
+    "B5C2_C_TURN_003": {
+      "Exact": {
+        "E": 3520,
+        "T": 3904,
+        "G_model": 384,
+        "prefill_tokens": 915,
+        "H": 3904,
+        "len_pt": 4435
+      },
+      "Greedy": {
+        "E": 2432,
+        "T": 3904,
+        "G_model": 1472,
+        "prefill_tokens": 2003,
+        "H": 3904,
+        "len_pt": 4435
+      }
+    },
+    "B5C2_D_TURN_003": {
+      "Exact": {
+        "E": 3520,
+        "T": 3566,
+        "G_model": 46,
+        "prefill_tokens": 966,
+        "H": 3566,
+        "len_pt": 4486
+      },
+      "Greedy": {
+        "E": 2432,
+        "T": 3566,
+        "G_model": 1134,
+        "prefill_tokens": 2054,
+        "H": 3566,
+        "len_pt": 4486
+      }
+    }
+  }
+}

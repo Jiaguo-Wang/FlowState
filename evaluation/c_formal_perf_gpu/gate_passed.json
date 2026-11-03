@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "reviewed_unix_ns": 1792676015643949283,
+  "protocol_version": "1.1",
+  "attempt1": "g1_CB_SA BLOCKED（v1.0 形状预热在 E<T 格物化被驱逐状态）→ v1.1 修复，见 protocol.gate_attempt1",
+  "arms": {
+    "g2_CB_FS": {
+      "status": "PASS",
+      "E": 5120,
+      "G": 0,
+      "H": 5120,
+      "census": "16/16/0",
+      "cold_output_match": true,
+      "request_window_new_kernels": 0,
+      "audit_entries": 2,
+      "shape_warm": {
+        "E": 5120,
+        "fa_hit": 5120
+      },
+      "ttft_ms": 36.8,
+      "compute_cuda_ms": 30.4,
+      "queue_ms": 2.9,
+      "pregap_ms": 0.9
+    },
+    "g2_CB_SA": {
+      "status": "PASS",
+      "E": 0,
+      "G": 5120,
+      "H": 5120,
+      "census": "16/16/0",
+      "cold_output_match": true,
+      "request_window_new_kernels": 0,
+      "audit_entries": 2,
+      "shape_warm": {
+        "E": 0,
+        "fa_hit": 0
+      },
+      "ttft_ms": 192.1,
+      "compute_cuda_ms": 183.9,
+      "queue_ms": 2.8,
+      "pregap_ms": 2.2
+    }
+  },
+  "criteria_check": {
+    "两臂PASS含census": true,
+    "E_G_冻结一致": true,
+    "COW_FA_Cold逐Token一致": true,
+    "请求窗口Triton新增编译=0": true,
+    "请求窗口内审计项=0（全程恰2次且均在窗口外）": true,
+    "形状预热B准入=E且FA命中=E": true,
+    "复核": "FS compute 30.4ms≈认证31ms；SA 183.9ms≈认证196ms；queue/pregap 均降至毫秒级；FS−SA TTFT −155.3ms"
+  }
+}

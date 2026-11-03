@@ -1,0 +1,273 @@
+{
+  "status": "PASS",
+  "arm": "strict",
+  "phase": "formal",
+  "round": "4",
+  "solver": "Exact",
+  "pending": "B5C2_B_TURN_003",
+  "selection_source": "GlobalOptimizer.plan_strict(在线,自动Exact)",
+  "strict_decision": {
+    "gate": {
+      "budget_k": 2,
+      "candidates": 7,
+      "enumerable_subsets": 29,
+      "pendings": 4
+    },
+    "gate_allowed": true,
+    "objective_ms": 48.228728759089606,
+    "pure_solve_ms": 0.225499,
+    "selected_ids": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_27"
+    ],
+    "solver": "Exact"
+  },
+  "selected_ids": [
+    "B5C3_NODE_18",
+    "B5C3_NODE_27"
+  ],
+  "plan_recovery_cost_ms": 48.228728759089606,
+  "oracle_e3": {
+    "selected": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_27"
+    ],
+    "J_ms": 48.228728759089606,
+    "match": true
+  },
+  "independent_oracle": {
+    "J_ms": 48.228728759089606,
+    "selected": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_27"
+    ],
+    "status": "PASS",
+    "subsets": 29
+  },
+  "H_physical_fa_hit": 4096,
+  "E_executable_prefix": 3712,
+  "G_model_replay_gap": 384,
+  "tail_beyond_frontier": 764,
+  "prefill_token_count": 1148,
+  "batch_prefix_length": 3712,
+  "cuda_prefill_ms": 46.08396911621094,
+  "cuda_decode_ms": 129.44003105163574,
+  "cow_copy_count": 1,
+  "cow_copy_cuda_ms": 0.29043200612068176,
+  "cow_copy_host_ms": 0.146915,
+  "match_native_ms": 0.658311,
+  "ttft_ms": 52.767129,
+  "request_wall_ms": 188.215237,
+  "stream_tpot_ms": 19.300905,
+  "timing_decomposition": {
+    "queue_ms": 2.658472,
+    "pregap_ms": 1.190834,
+    "execwin_ms": 47.45548,
+    "compute_cuda_ms": 46.08396911621094,
+    "postgap_ms": 0.141391,
+    "delivery_ms": 2.653177,
+    "ttft_ms_check": 52.767129,
+    "first_decode_cuda_ms": 19.1844482421875
+  },
+  "control_rpc_wall_ms": 5223.830816,
+  "control_timing_stages": [
+    {
+      "ms": 1179.432419,
+      "stage": "heavy_observation_gpu_sync"
+    },
+    {
+      "ms": 593.182676,
+      "stage": "strict_epoch_authentication"
+    },
+    {
+      "ms": 9.516456,
+      "stage": "online_solve"
+    },
+    {
+      "ms": 0.252615,
+      "stage": "independent_oracle"
+    },
+    {
+      "ms": 613.936438,
+      "stage": "apply_time_freshness_preflight"
+    },
+    {
+      "ms": 179.913204,
+      "stage": "fa_content_audit_before"
+    },
+    {
+      "ms": 200.056082,
+      "stage": "strict_reconciliation_with_postchecks"
+    },
+    {
+      "ms": 317.450274,
+      "stage": "fa_content_postcheck_and_resume_baseline"
+    }
+  ],
+  "evictions": [
+    [
+      "B5C3_NODE_20",
+      true
+    ],
+    [
+      "B5C3_NODE_21",
+      true
+    ],
+    [
+      "B5C3_NODE_22",
+      true
+    ],
+    [
+      "B5C3_NODE_24",
+      true
+    ],
+    [
+      "B5C3_NODE_25",
+      true
+    ]
+  ],
+  "measure_mode": true,
+  "audit_entries_total": 2,
+  "shape_warm_b": {
+    "wall_ms": 7285.242684,
+    "E": 3712,
+    "fa_hit": 3712,
+    "output_len": 2
+  },
+  "warmup_wall_ms": 34557.498765,
+  "warmup_observe_rpc_wall_ms": 98.5309885,
+  "engine_boot_ms": 28980.924384,
+  "epoch_wall_ms": 48132.812989,
+  "triton_snapshots": [
+    {
+      "label": "engine_ready",
+      "entries": 1
+    },
+    {
+      "label": "post_warmup",
+      "entries": 45
+    },
+    {
+      "label": "post_control",
+      "entries": 45
+    },
+    {
+      "label": "post_shape_warm",
+      "entries": 52
+    },
+    {
+      "label": "post_request",
+      "entries": 52
+    }
+  ],
+  "triton_new_kernels": [
+    {
+      "window": "engine_ready→post_warmup",
+      "new_entries": 44,
+      "new_names": [
+        "2MM5N7L4ZVSMCNPKCJLEJOFKMDQO3SOG7FAHPRBDIX5EJP5B2DBA",
+        "2XO62VVRCHPYKD7QFDIRQSQQB45AW767DXFGXOKAQEJ2DENGFM7Q",
+        "3AVXPVCXGEG5BUUGUEMMFSIFPAXWYEXQJZAQXENNTAV2BH77OIXQ",
+        "4VSOC3JURK4SCEZIYQFKL64ZK4TTIWSNWRE2TV6NLCBE6YDXMCCA",
+        "4YCPUJ4VAR5VWZR7IHGHIO73QQNUNGZ5WXYHHUCB2S5YAIX3L4JA",
+        "5FEL27CVOFWIM2GEL4CBVQI7ZILJ5TAH7BNTODLVLJNVXDZWVSWA",
+        "6QKBZAW3QXIJQ276AMGNZTQ2QNL4YRRB75ABS5EYCW22C4NMWWXA",
+        "7EJWCUPOGIQIJ4IXZ4C3LOP5STVZMV2QVZTWJG5CMNQUGMYZXRAQ",
+        "A3MDGPZF5HVEAB4YN23DDHM5HCNCZ4IXKPTMAVFJ5SXBLG2JZHVA",
+        "ABBFFYPSFEQSZPGARP23E3SCBZRN4KYDG6SIDNQABSXWCZ7Q3EVQ",
+        "BWUK7O3ASTPPQTSDSC3NLPL5YDPPGNMCND62XARNZXKSUPNTHNPQ",
+        "CAR5A6G2AN3CV2EVF67AVPERDZW26DKHNYTJA44RTZ67UAA3W2LA",
+        "EJQHUP6LPJIBYFIO3AAZF4NNXF4HDTCPXUEWAFZF6BH3EGKY3ORA",
+        "F4C6MZYV4KQNV4GTAOWB2M5NZZ6M3FRSNVL46I7U2WJMA2VX4QJQ",
+        "FF4JIDLOLQ5LEFJON5DSVL5PNWUY7AFX3HAFKU52GU6TX2XWCZVA",
+        "HCYS6HZPNLYSC6T6PJU5HWTCFBLSDLLO3HXOV56R7GXVCXMX4HQA",
+        "HDPGR6GJSEGL7776J5FXEDVSTQQYIISMBYE4WTNMDFJ2JDGNXEFA",
+        "HWI3V7UO5EY7V4CZFOKRBKTL3O3KQ2BY3JTHFBHMPZIXXYD3K7EA",
+        "I2OPMR4UCD5DE4Y6DPY6EHC5AFILSJYQI2OHBLUD6Z6CC7W6KXYQ",
+        "JBFEHEVJWRDJHOCG43JGCMTWD557NQNQPJ7K6L6RPACCC3Q6C3FQ",
+        "KV6YW4FWCOYG63QRYZFV2SV4GEWLUAOTLPWX6LM4CEEYLUHKEKMA",
+        "L7KY7D264B6VVBDRZXOYGFUCWWXIFQZC64KIH4GL725LNCCPZHGQ",
+        "NCEDKKNHG55NOCYN675XCPY4DOZH6C3QIVTSM2DXRZXGOQMHVFRA",
+        "NJ4MHN2MALRTRDLQK4M4IXHPOU2IMFBRLJUDPFJF7HUALTOBRTQA",
+        "NJUG7NY5YAI4WZKGODEKDWTIOVY3INYYW3WUI6Y2ROMGTJCJVWOA",
+        "RLTF6LHPFFQYZP6SZOHEHSYXY7UQWZEK4QNP5VFAJIJFRZMY5FJA",
+        "RXJQJFWQXUYIHEXK6EQ7UVP7R3VCT37V2VQEE7LRGJSSQ6JS6S7A",
+        "S7G4UMY525SOKALOV2NLVAAI3ZVKC3T2X6N2CAXDOT6MU7B4VC6A",
+        "SAB6F3TUR35AGTICJQWKAWAFCZGPIWSMLXSB364JLNL5BTBOMZTA",
+        "SANHSBFUFZDKCPIOYXVMT2QJPBQVXGKAOFV77WDXYROCTXX7Q5EA",
+        "SRS7DJBJL4JK3VXTIWT2OIDIMRU3EBFDH6MOCOUU2SU72V2TBM3Q",
+        "SU5YJEYDWTQ57DB6SD4TNVRFLTOAPMYYBKJ34ESUDCKZGSJL7MAA",
+        "TYBLHHTWMPNICYBKGC6MCJMPDE3675VQYIDLBKMPD5VXJX5MHR5A",
+        "ULJGBDQVVZN6RMEFISRO7FM3JGZLLI52JESP42DBPA3DQFMZJFDA",
+        "VYDMZWGLTQKOMF5DM65JFTOAHCGWVQKRJF4QGVMWSTRMRR5FHAWQ",
+        "WAYUEKC2JVQ25RTDPJJEILYHW6AHNXEGI2HH6POCQKT2UDXOMZJA",
+        "X727QUOG3ZXXXEPPUN3P3NJ2IULYDOINUEVAFNBUCJGHWZKRW6YA",
+        "XNQGUFFKCGRLFKJQLVFN3YSG2QHPBD5KTURMHKOSLOPMZVD2E2AA",
+        "XRRQICQ5BVVB25F26WL2HC2YQDBCAWMW5TMY7ZZK7IEVQRUPY52A",
+        "Y6DMWX4LNMFIWHQLP7M36EP5YKS4SC4MJXVVFHVI6IDRF5LDGMHA",
+        "YCULH56BLCGXION424GOFESU6VG4KBKQM3BZBZW5VE37WOF2ILLQ",
+        "YHR7LE7BH5XEFMQB3PZISUDRYB5RLMYCDFYAGMG4TPCZ3UZJ6XCA",
+        "YRCSBBAMPKFQAP4FYI5IZXB6SHXXR5PKGEPJIFU3MUDS55JBOXHQ",
+        "Z4USOSDJPDVP7HGZPDB57G4FUBAWIT5USECJVCNFWSFDMEC7RZ7A"
+      ]
+    },
+    {
+      "window": "post_warmup→post_control",
+      "new_entries": 0,
+      "new_names": []
+    },
+    {
+      "window": "post_control→post_shape_warm",
+      "new_entries": 7,
+      "new_names": [
+        "3DJJCHSFFS5LRFBC5MHPFYMJTUL5VQVIFEE3QXD27G4ZDLD2D74A",
+        "AXOCIGKVQHBSXFGXYHTHUZ57YHIWB2A4RYTRILLDLLIGXMZOPXMA",
+        "CFTS6Y66RO56MSLRD2N4RZU3BX2OJO7SDJOFQPGGOB2WOGOUFIIQ",
+        "DWYKB3S5LJ53RHIK2OMHLIO4SIB2FOHVMH7DTHUE7OIYCA22QHQA",
+        "VS4ZATRPS63ION54C5XILA6ZNNKHEJU6WEAD2IXHOPOMJLSJZATQ",
+        "WPOY3MSZ4RPEH6NIXDDT73QLTLPZALKPY2W3P4MKAMNUNRIXVWTA",
+        "ZFBRRU6BIZPU3NUXKEPZVSR7WZMDANJRDQNPKH4NHM7RLVLGQUYQ"
+      ]
+    },
+    {
+      "window": "post_shape_warm→post_request",
+      "new_entries": 0,
+      "new_names": []
+    }
+  ],
+  "cold_output_match": true,
+  "output_ids": [
+    248058,
+    198,
+    27,
+    1628,
+    15462,
+    10318,
+    32634,
+    29
+  ],
+  "native_matches": [
+    {
+      "best_match_node": 18,
+      "cow_requested": true,
+      "cow_source_slots": [
+        3
+      ],
+      "executable_prefix": 3712,
+      "input_token_count": 4860,
+      "input_token_digest": "728ed181bea432fd309aa50f282c5d6029a2d36703fe28f2b84f8e3eff73a0e7",
+      "last_device_node": 18,
+      "last_host_node": 18,
+      "mamba_branching_seqlen": 4096,
+      "mamba_host_hit_length": 0,
+      "monotonic_ns": 1389501300202772,
+      "physical_fa_hit": 4096,
+      "replay_gap": 384,
+      "request_id": "B5C2_B_TURN_003",
+      "working_slots": [
+        22
+      ]
+    }
+  ],
+  "说明": "G2测量模式：请求窗口（发送→首Token）零A类审计零落盘；B/C类原生操作全保留；CUDA事件是设备时间线区间而非纯内核之和；B5-C4语义Prefill=len(pt)−E、G_model=T−E分列"
+}

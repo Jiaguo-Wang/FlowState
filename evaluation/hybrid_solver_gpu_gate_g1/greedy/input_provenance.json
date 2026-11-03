@@ -1,0 +1,25 @@
+{
+  "frozen_inputs": {
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/prepared_inputs.json": "b6c5203bb099b497480331cba1577302aebfc56833713abeda6e084d6b90c660",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cpu_candidate_prefix_mapping.json": "dab16d223398672aeb76af95a8baf445deac4872245eb2fac50addebd00f7cbf",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cpu_gate.json": "f8e04a5a8886bb0f4bcfe59453463ad23ec205934465aa81a56a97eafd37c75b",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/policy_plans.json": "e04edb9ca82d3d8bcaf1838260a772bffbf84077d0fb911fb0b5a13882cd6f12",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cold_reference_C_A.json": "e9b208395d6f5568b087f5342e2d88bead52aafe50e5f32c18f0c8a5868c768f",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cold_reference_C_B.json": "0096bf229ee74d40015433f7800ecf86fb5267dc06e50fd4b991f0eb54e456be",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cold_reference_C_C.json": "dc7e8307d56214efac480d96243db3e91ab35072b764029ad383f015330d9139",
+    "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/g1_CB_FS/cold_reference_C_D.json": "19c78d32da8b7a94f80070eddfb98e7552e3f1d04dfec71ffd0af476d9a4c72a"
+  },
+  "reused_program": {
+    "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_b/bridge.py": "ae07e3394bb515d9c432a2bdff08b47d019af9bfcebdc4ed59a5e59ab8fdbbda",
+    "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_b/control.py": "c08ba52dfa01f84a4931001b110a12f15261296c7cb0461093d0062d51002db4",
+    "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_b/observation.py": "10d2e2557bc414877b10473c18046f4b058063e7608945510df12ebf17bc2950",
+    "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_b/persistence.py": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139",
+    "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_b/protocol.py": "fbb1cde5eaed13e46588b4b74873dce41f36e17781ef1b17c32f4a89c9c51718",
+    "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_b/runner.py": "70d2ec8059c87bc31e8b5698d095db5d8e2402351495292760f5874da093cef8"
+  },
+  "reused_program_note": "evaluation/paper_hybrid_gpu_fix_b 零改动复用：PILOT_PENDING 环境变量选择目标 Pending，Cold 参照按 cold_reference_{continuation_id}.json 命名",
+  "policy_plans_role": "仅事后对照Oracle：控制路径在 plan_strict 求解完成后才读入，不参与本轮选择",
+  "environment": "C/K3 冻结环境（16预热×2轮+4Pending，K=3），Epoch 形成为冻结预热重放+实时观察，非全在线构建",
+  "cold_reference_validation": "4份Cold与m1{A,B,C,D}_FS正式臂冻结输出逐Token一致；C_B另与g1_CB_FS运行输出一致",
+  "pending_scope": "4臂：PILOT_PENDING=C_A/C_B/C_C/C_D"
+}

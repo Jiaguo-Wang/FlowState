@@ -1,0 +1,229 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "FlowState-Greedy_status",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "FlowState-Greedy_census16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "FlowState-Greedy_E",
+      "pass": true,
+      "detail": "E实际=5120 预期=5120"
+    },
+    {
+      "check": "FlowState-Greedy_prefill",
+      "pass": true,
+      "detail": "prefill=32 batch_prefix=5120 预期E=5120"
+    },
+    {
+      "check": "FlowState-Greedy_fa",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "FlowState-Greedy_output_vs_cold",
+      "pass": true,
+      "detail": "输出与独立Cold参照逐Token一致"
+    },
+    {
+      "check": "FlowState-Greedy_selected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "FlowState-Greedy_evictions",
+      "pass": true,
+      "detail": "驱逐数=13"
+    },
+    {
+      "check": "Marconi-Evict_status",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Marconi-Evict_census16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Marconi-Evict_E",
+      "pass": true,
+      "detail": "E实际=1024 预期=1024"
+    },
+    {
+      "check": "Marconi-Evict_prefill",
+      "pass": true,
+      "detail": "prefill=4128 batch_prefix=1024 预期E=1024"
+    },
+    {
+      "check": "Marconi-Evict_fa",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Marconi-Evict_output_vs_cold",
+      "pass": true,
+      "detail": "输出与独立Cold参照逐Token一致"
+    },
+    {
+      "check": "Marconi-Evict_selected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "Marconi-Evict_evictions",
+      "pass": true,
+      "detail": "驱逐数=13"
+    },
+    {
+      "check": "KVFlow-inspired_status",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "KVFlow-inspired_census16",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "KVFlow-inspired_E",
+      "pass": true,
+      "detail": "E实际=2048 预期=2048"
+    },
+    {
+      "check": "KVFlow-inspired_prefill",
+      "pass": true,
+      "detail": "prefill=3104 batch_prefix=2048 预期E=2048"
+    },
+    {
+      "check": "KVFlow-inspired_fa",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "KVFlow-inspired_output_vs_cold",
+      "pass": true,
+      "detail": "输出与独立Cold参照逐Token一致"
+    },
+    {
+      "check": "KVFlow-inspired_selected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "KVFlow-inspired_evictions",
+      "pass": true,
+      "detail": "驱逐数=13"
+    }
+  ],
+  "arms": [
+    {
+      "policy": "FlowState-Greedy",
+      "pending": "C_B",
+      "selected_cpu": [
+        "C_D_P07168",
+        "C_C_P06144",
+        "C_B_P05120"
+      ],
+      "E": 5120,
+      "G": 0,
+      "prefill_tokens": 32,
+      "ttft_ms": 3548.03,
+      "cuda_prefill_ms": 356.13,
+      "cuda_decode_ms": 1665.77,
+      "cow_copy_cuda_ms": 0.5,
+      "control_rpc_wall_ms": 11483.94,
+      "control_stages_ms": {
+        "final_heavy_observation": 2423.93,
+        "cpu_physical_mapping": 0.57,
+        "strict_epoch_authentication_and_plan": 168.72,
+        "apply_time_freshness_preflight": 1238.57,
+        "fa_content_audit_before": 935.91,
+        "strict_reconciliation_with_postchecks": 867.01,
+        "fa_content_postcheck_and_resume_baseline": 1851.75
+      },
+      "evicted_count": 13,
+      "output_match_cold": true,
+      "J_plan_ms": 154.34895561599998
+    },
+    {
+      "policy": "Marconi-Evict",
+      "pending": "C_B",
+      "selected_cpu": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "E": 1024,
+      "G": 4096,
+      "prefill_tokens": 4128,
+      "ttft_ms": 2363.53,
+      "cuda_prefill_ms": 154.81,
+      "cuda_decode_ms": 1754.05,
+      "cow_copy_cuda_ms": 0.66,
+      "control_rpc_wall_ms": 11032.69,
+      "control_stages_ms": {
+        "final_heavy_observation": 2673.2,
+        "cpu_physical_mapping": 0.61,
+        "strict_epoch_authentication_and_plan": 153.34,
+        "apply_time_freshness_preflight": 1283.09,
+        "fa_content_audit_before": 972.23,
+        "strict_reconciliation_with_postchecks": 909.36,
+        "fa_content_postcheck_and_resume_baseline": 1518.23
+      },
+      "evicted_count": 13,
+      "output_match_cold": true,
+      "J_plan_ms": 703.45464601
+    },
+    {
+      "policy": "KVFlow-inspired",
+      "pending": "C_B",
+      "selected_cpu": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "E": 2048,
+      "G": 3072,
+      "prefill_tokens": 3104,
+      "ttft_ms": 3015.51,
+      "cuda_prefill_ms": 119.33,
+      "cuda_decode_ms": 1699.66,
+      "cow_copy_cuda_ms": 0.54,
+      "control_rpc_wall_ms": 11105.38,
+      "control_stages_ms": {
+        "final_heavy_observation": 2410.5,
+        "cpu_physical_mapping": 0.69,
+        "strict_epoch_authentication_and_plan": 151.27,
+        "apply_time_freshness_preflight": 1209.58,
+        "fa_content_audit_before": 933.6,
+        "strict_reconciliation_with_postchecks": 872.5,
+        "fa_content_postcheck_and_resume_baseline": 1715.4
+      },
+      "evicted_count": 13,
+      "output_match_cold": true,
+      "J_plan_ms": 627.6149768490118
+    }
+  ],
+  "note": "计时为单臂指示性观测（无形状预热/测量模式），正式测量见 formal_plan.md 60 臂协议；输出一致性对照=pilot 冻结 cold_C_B（独立空缓存生命周期）",
+  "cold_reference": {
+    "source": "c_shared_gpu_pilot_k3/cold_C_B",
+    "output_ids": [
+      220,
+      197,
+      1,
+      198,
+      197,
+      1,
+      198,
+      197
+    ],
+    "prefill_full": 5152
+  }
+}

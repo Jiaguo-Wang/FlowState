@@ -1,0 +1,130 @@
+--- evaluation/p0_control_cycle_gpu/runner.py
++++ evaluation/control_path_separation_20261101/runner.py
+@@ -35,6 +35,9 @@
+ ARM = os.environ['B5D4_ARM']
+ RUN = os.environ['B5D4_RUN']
+ POLICY = os.environ['PILOT_POLICY']
++SEPARATION = os.environ.get('FS_SEPARATION_MODE', 'original')
++require(SEPARATION in ('original', 'serving'), '未知控制模式')
++TRANSFERS = []
+ require(MODE == 'strict_warm' and ARM == 'strict', '本轮固定 strict_warm + strict 臂语义')
+ require(os.environ.get('FS_MEASURE_MODE') == '1', '缺少测量模式环境变量')
+ require(POLICY in ('FlowState-Greedy', 'Marconi-Evict', 'KVFlow-inspired'), '未知策略：' + POLICY)
+@@ -128,7 +131,12 @@
+         class AuditedControlClient(ControlClient):
+             """每次控制 RPC 落盘留证并计时（控制口径与请求口径分离；不进请求计时窗口）。"""
+             def _call(self, request):
+-                return call_saved(self.port, self.timeout_s, request, out / ('rpc_' + str(time.monotonic_ns())))
++                value = call_saved(self.port, self.timeout_s, request, out / ('rpc_' + str(time.monotonic_ns())))
++                if SEPARATION == 'serving' and request.get('action') == 'b5d4_apply':
++                    from .codec import unpack
++                    value, metrics = unpack(value)
++                    TRANSFERS.append(metrics)
++                return value
+ 
+         t_boot = time.monotonic_ns()
+         engine = ObservedEngine(**config['engine_configuration'])
+@@ -168,7 +176,16 @@
+         rpc_start = time.monotonic_ns()
+         result = client._call({'op': 'checkpoint_control', 'action': 'b5d4_apply', 'nonce': str(time.time_ns())})
+         rpc_end = time.monotonic_ns()
+-        write(out / 'reconciliation.json', result)
++        report_timing = None
++        def write_reconciliation():
++            start, cpu = time.monotonic_ns(), time.process_time_ns()
++            write(out / 'reconciliation.json', result)
++            end = time.monotonic_ns()
++            return {'start_ns': start, 'end_ns': end, 'wall_ms': (end-start)/1e6,
++                    'cpu_ms': (time.process_time_ns()-cpu)/1e6, 'gpu_calls': 0,
++                    'raw_response_already_fsynced': True}
++        if SEPARATION == 'original':
++            report_timing = write_reconciliation()
+         require(result.get('ok'), result.get('error', '协调失败'))
+         require(result['policy'] == POLICY, '策略标识不符')
+         require(result['census']['physical_domain_size'] == 16 and len(result['census']['mapped']) == 16 and
+@@ -277,6 +294,9 @@
+         # ── T4 之后：请求后全量观察 + 全部正确性门禁（窗口外）──
+         post = call('b5d4_state')
+         write(out / 'post_request.json', post)
++        if SEPARATION == 'serving':
++            report_timing = write_reconciliation()
++            require(report_timing['start_ns'] >= t4_ns, '重复展示报告未移出请求窗口')
+         trace = post['trace']
+ 
+         # 门槛 1：Admission 四次、声明顺序、逐 rid 一次
+@@ -459,6 +479,15 @@
+                           '恒等式(T4−T0)=apply段+间隙+RPC尾+形状预热块+请求段+请求间隙 整数精确；'
+                           'T0–T3 窗口内零取证磁盘 I/O（Journal 序列化在窗内如实计入段间隙，'
+                           '写盘+fsync 全部出窗）；oracle 对照与全量观察均在 T4 之后窗口外执行'}
++        write(out / 'separation_audit.json', {'mode': SEPARATION, 'transfers': TRANSFERS,
++                                                  'reconciliation_report': report_timing})
++        t5_ns = time.monotonic_ns()
++        summary['separation'] = {'mode': SEPARATION, 't5_ns': t5_ns,
++                                 'audit_inclusive_ms': (t5_ns-t0_ns)/1e6,
++                                 'post_t4_audit_ms': (t5_ns-t4_ns)/1e6,
++                                 'report_timing': report_timing,
++                                 'transfers': TRANSFERS,
++                                 'definition': 'T5为全部原正确性与Oracle检查、报告格式化和附加审计记录完成；不含summary写盘与Engine清理'}
+         write(out / 'summary.json', summary)
+         print('完成', POLICY, order,
+               '控制周期', round(summary['cycle']['control_cycle_ms'], 1), 'ms',
+--- evaluation/p0_control_cycle_gpu/control.py
++++ evaluation/control_path_separation_20261101/control.py
+@@ -51,7 +51,13 @@
+     def record(self, stage, result):
+         self.stage = stage
+         t = time.monotonic_ns()
+-        blob = json.dumps(result, ensure_ascii=False, indent=2)
++        if os.environ.get('FS_SEPARATION_MODE') == 'serving':
++            blob = json.dumps(result, ensure_ascii=False, separators=(',', ':'))
++        else:
++            blob = json.dumps(result, ensure_ascii=False, indent=2)
++        if os.environ.get('FS_SEPARATION_VERIFY') == '1':
++            require(json.loads(blob) == json.loads(json.dumps(result, ensure_ascii=False, indent=2)),
++                    'Journal快照与原格式不等价')
+         elapsed = (time.monotonic_ns() - t) / 1e6
+         if self.window_closed:
+             self.after_window_serialize_ms += elapsed
+--- evaluation/p0_control_cycle_gpu/bridge.py
++++ evaluation/control_path_separation_20261101/bridge.py
+@@ -238,6 +238,19 @@
+             return observe_control(scheduler, request)
+         raise ValueError('未授权动作：' + str(action))
+ 
+-    transport._run_checkpoint_control = dispatch
++    if os.environ.get('FS_SEPARATION_MODE') == 'serving':
++        def wire_dispatch(scheduler, request):
++            try:
++                value = dispatch(scheduler, request)
++                if request.get('action') == 'b5d4_apply' and value.get('ok'):
++                    from .codec import pack
++                    return pack(value, verify=os.environ.get('FS_SEPARATION_VERIFY') == '1')
++                return value
++            except BaseException:
++                scheduler._r2c0_failed = True
++                raise
++        transport._run_checkpoint_control = wire_dispatch
++    else:
++        transport._run_checkpoint_control = dispatch
+     transport._install_match_instrumentation = install_observation
+     return transport._wrapped_run_scheduler_process(*args, **kwargs)
+--- evaluation/p0_control_cycle_gpu/device_entry.py
++++ evaluation/control_path_separation_20261101/device_entry.py
+@@ -2,7 +2,7 @@
+ 
+ 与 t2g1 formal_gpu1b/device_entry.py 同模式（spawn 重入教训：全部逻辑置于 __main__ 保护内）：
+ - 主进程（__main__）：设备校验（UUID 由 launch 注入 EXPECTED_GPU_UUID）→ 独占写证据
+-  → runpy 接力 evaluation.p0_control_cycle_gpu.runner；
++  → runpy 接力 evaluation.control_path_separation_20261101.runner；
+ - spawn 子进程（__mp_main__）：重入为无操作，不触碰任何文件。
+ """
+ import json
+@@ -24,7 +24,7 @@
+         json.dump({'status': 'PASS', 'host_gpu_uuid': expected, 'cuda_device_count': 1,
+                    'logical_device': 0, 'actual_uuid': actual, 'name': p.name},
+                   f, ensure_ascii=False, indent=2)
+-    runpy.run_module('evaluation.p0_control_cycle_gpu.runner', run_name='__main__')
++    runpy.run_module('evaluation.control_path_separation_20261101.runner', run_name='__main__')
+ 
+ 
+ if __name__ == '__main__':

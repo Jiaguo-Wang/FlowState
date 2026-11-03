@@ -1,0 +1,87 @@
+{
+  "overall": "PASS",
+  "paths": {
+    "实验A_w1_K2_Exact分支": "PASS",
+    "实验B_C_K3_MarginalGreedy分支": "PASS"
+  },
+  "rows": [
+    {
+      "row": 1,
+      "item": "真实 GPU Strict Epoch",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "每臂 reconciliation.json raw_epoch/epoch（观察构造：exact 7候选/4Pending/12容许边；greedy census 16=16 mapped）+ history_*.json 逐请求留证"
+    },
+    {
+      "row": 2,
+      "item": "实际调用生产 plan_strict()",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "summary.selection_source==GlobalOptimizer.plan_strict(在线)；strict_decision 含 solver/gate/selected/objective；协调用 Plan 即本轮返回（apply_validation.binding/reconciliation.operations）"
+    },
+    {
+      "row": 3,
+      "item": "自动求解分支正确",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "exact：solver==Exact 且 gate_allowed(7候选/4Pending/K2/29子集≤门限)；greedy：solver==Marginal Greedy 且 gate_allowed==False(16候选>12)；无外部指定"
+    },
+    {
+      "row": 4,
+      "item": "选集及 J 与冻结参考一致",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "exact==e3 w1/K2 Exact行 {N18,N21} J=53.77075886917578（容器内oracle亦PASS,subsets29）；greedy==冻结FS {C_B,C_C,C_D} J=154.34895561599998（policy_plans仅事后对照）"
+    },
+    {
+      "row": 5,
+      "item": "Strict Plan 验证通过",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "控制路径 validate_plan 后方进入协调（apply_validation.status==PASS；phase推进至reconcile）"
+    },
+    {
+      "row": 6,
+      "item": "实际物理协调完成",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "reconciliation.operations：exact 5驱逐/keep2 全returned；greedy 13驱逐/keep3 全returned；选集payload前后一致"
+    },
+    {
+      "row": 7,
+      "item": "Attention-side State 正确",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "exact：fa_content_before/after/postcheck+native_source_validation；greedy：fa_protected_payload/fa_map_before 请求后全量复核（runner断言）"
+    },
+    {
+      "row": 8,
+      "item": "Native E/G/Prefill 正确",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "逐臂 native_match.executable_prefix==计划E、physical_fa_hit==FA前沿、batch_prefix_length==E、extend==G+32（greedy E=(0,5120,6144,7168),G=(4096,0,0,0)）"
+    },
+    {
+      "row": 9,
+      "item": "Cold Reference 逐 Token 一致",
+      "exact": "PASS",
+      "greedy": "PASS",
+      "evidence": "exact==E4-1A 4×Cold；greedy==冻结4×Cold；全部8/8 Token一致且零回撤"
+    }
+  ],
+  "arm_runs": {
+    "exact": [
+      "e1_w1k2_exact_A",
+      "e2_w1k2_exact_B",
+      "e3_w1k2_exact_C",
+      "e4_w1k2_exact_D"
+    ],
+    "greedy": [
+      "g1_ck3_greedy_A_r3",
+      "g2_ck3_greedy_B_r3",
+      "g3_ck3_greedy_C_r3",
+      "g4_ck3_greedy_D_r3"
+    ]
+  },
+  "failed_attempts_preserved": 7
+}

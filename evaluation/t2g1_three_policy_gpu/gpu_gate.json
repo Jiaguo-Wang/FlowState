@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-27T10:44:18",
+  "gpu_query": "index, memory.used [MiB], memory.total [MiB], utilization.gpu [%]\n0, 65824 MiB, 81559 MiB, 0 %\n1, 78668 MiB, 81559 MiB, 0 %",
+  "compute_apps": "pid, process_name, used_gpu_memory [MiB]\n3492611, sglang::scheduler_TP0_EP0, 65736 MiB\n3113108, VLLM::EngineCore, 12836 MiB\n3492924, sglang::scheduler_TP1_EP1, 65736 MiB",
+  "decision": "GPU0/GPU1 均被其他任务占用（sglang/vLLM，合计>65G/卡）；按任务约束本轮仅完成 CPU 接入，不干扰其他任务、不等待重试",
+  "smoke_test": "PASS(3/3 臂，2026-10-27)",
+  "smoke_gpu_etiquette": "GPU0 有 1.5G 他人常驻进程（robot-learning，0%利用率）；本轮放宽门禁=空闲≥40G+利用率0%+共存进程留档；正式 60 臂仍须空卡",
+  "smoke_arms": [
+    "strict_FlowState-Greedy_C_B",
+    "strict_Marconi-Evict_C_B",
+    "strict_KVFlow-inspired_C_B"
+  ],
+  "updated": "2026-10-27T15:19:45"
+}

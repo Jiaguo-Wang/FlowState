@@ -1,0 +1,951 @@
+{
+  "verdict": "PASS",
+  "arms": [
+    {
+      "run": "exact_a",
+      "solver": "Exact",
+      "pending": "B5C2_A_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "exact_branch",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "exact_oracle_winner",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 3712,
+        "H": 4160,
+        "cuda_prefill_ms": 48.84515380859375,
+        "ttft_ms": 56.563625,
+        "request_wall_ms": 251.123518,
+        "cuda_decode_ms": 184.67913627624512,
+        "control_rpc_wall_ms": 4801.354547
+      },
+      "status": "PASS"
+    },
+    {
+      "run": "exact_b",
+      "solver": "Exact",
+      "pending": "B5C2_B_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "exact_branch",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "exact_oracle_winner",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 3712,
+        "H": 4096,
+        "cuda_prefill_ms": 45.90796661376953,
+        "ttft_ms": 52.687836,
+        "request_wall_ms": 178.583874,
+        "cuda_decode_ms": 120.41571044921875,
+        "control_rpc_wall_ms": 4775.120845
+      },
+      "status": "PASS"
+    },
+    {
+      "run": "exact_c",
+      "solver": "Exact",
+      "pending": "B5C2_C_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "exact_branch",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "exact_oracle_winner",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 3520,
+        "H": 3904,
+        "cuda_prefill_ms": 39.930049896240234,
+        "ttft_ms": 46.594703,
+        "request_wall_ms": 168.379184,
+        "cuda_decode_ms": 116.21475219726562,
+        "control_rpc_wall_ms": 4752.003527
+      },
+      "status": "PASS"
+    },
+    {
+      "run": "exact_d",
+      "solver": "Exact",
+      "pending": "B5C2_D_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "exact_branch",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "exact_oracle_winner",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 3520,
+        "H": 3566,
+        "cuda_prefill_ms": 41.406368255615234,
+        "ttft_ms": 48.428842,
+        "request_wall_ms": 175.80159,
+        "cuda_decode_ms": 121.75980758666992,
+        "control_rpc_wall_ms": 4786.125424
+      },
+      "status": "PASS"
+    },
+    {
+      "run": "greedy_a",
+      "solver": "Greedy",
+      "pending": "B5C2_A_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "greedy_domain_admissible",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "greedy_oracle_bound",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 3712,
+        "H": 4160,
+        "cuda_prefill_ms": 46.40681457519531,
+        "ttft_ms": 53.863718,
+        "request_wall_ms": 181.751083,
+        "cuda_decode_ms": 121.77568244934082,
+        "control_rpc_wall_ms": 4918.291026
+      },
+      "status": "PASS"
+    },
+    {
+      "run": "greedy_b",
+      "solver": "Greedy",
+      "pending": "B5C2_B_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "greedy_domain_admissible",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "greedy_oracle_bound",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 3712,
+        "H": 4096,
+        "cuda_prefill_ms": 45.85523223876953,
+        "ttft_ms": 53.115619,
+        "request_wall_ms": 182.132368,
+        "cuda_decode_ms": 123.61667251586914,
+        "control_rpc_wall_ms": 4769.79084
+      },
+      "status": "PASS"
+    },
+    {
+      "run": "greedy_c",
+      "solver": "Greedy",
+      "pending": "B5C2_C_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "greedy_domain_admissible",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "greedy_oracle_bound",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 2432,
+        "H": 3904,
+        "cuda_prefill_ms": 74.47679901123047,
+        "ttft_ms": 81.999824,
+        "request_wall_ms": 214.396524,
+        "cuda_decode_ms": 127.06339073181152,
+        "control_rpc_wall_ms": 5140.206582
+      },
+      "status": "PASS"
+    },
+    {
+      "run": "greedy_d",
+      "solver": "Greedy",
+      "pending": "B5C2_D_TURN_003",
+      "checks": [
+        {
+          "check": "summary_pass",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "lifecycle",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "greedy_domain_admissible",
+          "pass": true,
+          "detail": "{'budget_k': 2, 'candidates': 7, 'enumerable_subsets': 29, 'pendings': 4}"
+        },
+        {
+          "check": "greedy_oracle_bound",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_selection_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "e3_J_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "domain_7x4",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_contract_all_pendings",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "prefill_token_count",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "fa_hit_frontier",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "evictions_complete",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "cold_token_match",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "audit_two",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "request_window_zero_compile",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "shape_warm_before_timing",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "ttft_decompose_closed",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "control_stages_complete",
+          "pass": true,
+          "detail": "['apply_time_freshness_preflight', 'fa_content_audit_before', 'fa_content_postcheck_and_resume_baseline', 'heavy_observation_gpu_sync', 'independent_oracle', 'online_solve', 'strict_epoch_authenticati"
+        },
+        {
+          "check": "output_timestamps",
+          "pass": true,
+          "detail": ""
+        },
+        {
+          "check": "state_preserved",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "fail": [],
+      "metrics": {
+        "E": 2432,
+        "H": 3566,
+        "cuda_prefill_ms": 79.62611389160156,
+        "ttft_ms": 87.346637,
+        "request_wall_ms": 216.657675,
+        "cuda_decode_ms": 123.57286262512207,
+        "control_rpc_wall_ms": 4649.859636
+      },
+      "status": "PASS"
+    }
+  ],
+  "d4b_ttft_reversal_check": {
+    "noise_band_ms": 3.0,
+    "rows": [
+      {
+        "pending": "A",
+        "delta_cuda_prefill_ms": -2.44,
+        "delta_ttft_ms": -2.7,
+        "both_beyond_noise": false,
+        "reversed": false
+      },
+      {
+        "pending": "B",
+        "delta_cuda_prefill_ms": -0.05,
+        "delta_ttft_ms": 0.43,
+        "both_beyond_noise": false,
+        "reversed": false
+      },
+      {
+        "pending": "C",
+        "delta_cuda_prefill_ms": 34.55,
+        "delta_ttft_ms": 35.41,
+        "both_beyond_noise": true,
+        "reversed": false
+      },
+      {
+        "pending": "D",
+        "delta_cuda_prefill_ms": 38.22,
+        "delta_ttft_ms": 38.92,
+        "both_beyond_noise": true,
+        "reversed": false
+      }
+    ],
+    "pass": true,
+    "note": "两量均超出噪声带时不得反向；A/B 为 E 相同对照（应近零差），C/D 为结构差异主效应"
+  },
+  "cold_references": {
+    "A": "preflight/cold_reference_B5C2_A_TURN_003.json",
+    "B": "preflight/cold_reference_B5C2_B_TURN_003.json",
+    "C": "preflight/cold_reference_B5C2_C_TURN_003.json",
+    "D": "preflight/cold_reference_B5C2_D_TURN_003.json"
+  },
+  "gate_scope": "G2-A 门禁：8/8 臂合同 + 测量有效性 + D4b 专项；性能数值仅记录，不在此宣称结论"
+}

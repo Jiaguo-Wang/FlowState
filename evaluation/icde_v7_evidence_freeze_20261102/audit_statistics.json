@@ -1,0 +1,246 @@
+{
+  "natural": {
+    "OpenHands": {
+      "snapshots": 168,
+      "conditions": 504,
+      "shared_conditions": 0,
+      "tight_conditions": 90
+    },
+    "AgentX": {
+      "snapshots": 23,
+      "conditions": 69,
+      "shared_conditions": 66,
+      "tight_conditions": 0
+    }
+  },
+  "fixed": {
+    "OpenHands/K1": {
+      "conditions": 168,
+      "shared": 0,
+      "tight": 168,
+      "shared_and_tight": 0,
+      "different_J": 0
+    },
+    "OpenHands/K2": {
+      "conditions": 168,
+      "shared": 0,
+      "tight": 168,
+      "shared_and_tight": 0,
+      "different_J": 0
+    },
+    "OpenHands/K3": {
+      "conditions": 168,
+      "shared": 0,
+      "tight": 168,
+      "shared_and_tight": 0,
+      "different_J": 1
+    },
+    "OpenHands/K4": {
+      "conditions": 168,
+      "shared": 0,
+      "tight": 0,
+      "shared_and_tight": 0,
+      "different_J": 0
+    },
+    "AgentX/K1": {
+      "conditions": 23,
+      "shared": 22,
+      "tight": 9,
+      "shared_and_tight": 9,
+      "different_J": 9
+    },
+    "AgentX/K2": {
+      "conditions": 23,
+      "shared": 22,
+      "tight": 0,
+      "shared_and_tight": 0,
+      "different_J": 0
+    },
+    "AgentX/K3": {
+      "conditions": 23,
+      "shared": 22,
+      "tight": 0,
+      "shared_and_tight": 0,
+      "different_J": 0
+    },
+    "AgentX/K4": {
+      "conditions": 23,
+      "shared": 22,
+      "tight": 0,
+      "shared_and_tight": 0,
+      "different_J": 0
+    }
+  },
+  "fixed_divergent_conditions": 10,
+  "fixed_same_J": 754,
+  "fixed_different_set_equal_J": 0,
+  "oracle_conditions": 396,
+  "oracle_not_admitted": 368,
+  "oracle_optimal_counts": {
+    "FlowState": 396,
+    "PCB": 395,
+    "LDR": 395,
+    "WFC": 394
+  },
+  "strict20_optimal_counts": {
+    "Exact": 20,
+    "Greedy": 5,
+    "Greedy+1-Swap": 18,
+    "WFC": 5,
+    "StandaloneTopK": 5,
+    "PCB": 5,
+    "LDR": 5
+  },
+  "strict20_unique_optima": 20,
+  "strict20_structural_nonnested_transitions": 11,
+  "model_heldout": {
+    "M0": {
+      "MAPE_percent": 15.291274883419174,
+      "MAE_ms": 287.5140841675346
+    },
+    "M1": {
+      "MAPE_percent": 4.63574961002962,
+      "MAE_ms": 79.64875671962054
+    },
+    "M2": {
+      "MAPE_percent": 2.6824804229004857,
+      "MAE_ms": 31.179582912685916
+    }
+  },
+  "main15": {
+    "fs": {
+      "sum_ttft_median_ms": 261.90219,
+      "sum_cuda_median_ms": 236.5094394683838,
+      "control_median_ms": 10138.857665,
+      "full_median_ms": 24107.214637,
+      "selection_call_median_ms": 16.381412
+    },
+    "mc": {
+      "sum_ttft_median_ms": 732.219799,
+      "sum_cuda_median_ms": 699.8102798461914,
+      "control_median_ms": 8123.1008,
+      "full_median_ms": 21379.656555,
+      "selection_call_median_ms": 2.048189
+    },
+    "kv": {
+      "sum_ttft_median_ms": 684.4454539999999,
+      "sum_cuda_median_ms": 653.2408142089844,
+      "control_median_ms": 9596.033092,
+      "full_median_ms": 22840.290056,
+      "selection_call_median_ms": 4.4025
+    }
+  },
+  "main15_paired": {
+    "mc": {
+      "ttft_fs_minus_baseline_each_ms": [
+        -457.400074,
+        -468.94081299999993,
+        -471.870528,
+        -470.2076129999999,
+        -481.1570390000001
+      ],
+      "median_ttft_difference_ms": -470.2076129999999,
+      "median_relative_improvement_percent": 64.22637848492244,
+      "full_fs_minus_baseline_each_ms": [
+        -214.0498230000012,
+        3125.632708000001,
+        -122.52066700000069,
+        3648.274449999997,
+        1704.0205519999981
+      ],
+      "median_full_difference_ms": 1704.0205519999981
+    },
+    "kv": {
+      "ttft_fs_minus_baseline_each_ms": [
+        -434.8527589999999,
+        -437.23781499999996,
+        -417.814728,
+        -422.5432639999999,
+        -429.7107190000001
+      ],
+      "median_ttft_difference_ms": -429.7107190000001,
+      "median_relative_improvement_percent": 61.73512608354616,
+      "full_fs_minus_baseline_each_ms": [
+        781.3484419999986,
+        -171.61532299999817,
+        1536.5526040000004,
+        3454.060330999997,
+        -419.29513300000326
+      ],
+      "median_full_difference_ms": 781.3484419999986
+    }
+  },
+  "g2_40": {
+    "A": {
+      "paired_TTFT_median_ms": -0.09379900000000418,
+      "deltas": [
+        -1.4833479999999994,
+        -0.09379900000000418,
+        0.8016679999999994,
+        0.8676340000000025,
+        -1.5171300000000016
+      ],
+      "paired_CUDA_median_ms": 0.12297439575195312
+    },
+    "B": {
+      "paired_TTFT_median_ms": 0.12869500000000045,
+      "deltas": [
+        0.12869500000000045,
+        -15.197078999999995,
+        -12.800241000000007,
+        1.074183000000005,
+        6.162984999999999
+      ],
+      "paired_CUDA_median_ms": 0.08380889892578125
+    },
+    "C": {
+      "paired_TTFT_median_ms": 34.70693800000001,
+      "deltas": [
+        35.586601,
+        31.876661,
+        34.70693800000001,
+        40.341907,
+        34.10370499999999
+      ],
+      "paired_CUDA_median_ms": 33.768131256103516
+    },
+    "D": {
+      "paired_TTFT_median_ms": 36.712278,
+      "deltas": [
+        36.712278,
+        29.534543,
+        22.89600700000001,
+        41.261804999999995,
+        37.779337999999996
+      ],
+      "paired_CUDA_median_ms": 36.44022750854492
+    }
+  },
+  "g2_round_equal_weight_TTFT_deltas_ms": [
+    17.7360565,
+    11.5300815,
+    11.401093000000003,
+    20.88638225,
+    19.132224499999996
+  ],
+  "legacy24": {
+    "LRU": {
+      "mean_snapshot_relative_improvement_percent": 43.057901500116024,
+      "wins": 24,
+      "losses": 0
+    },
+    "Marconi": {
+      "mean_snapshot_relative_improvement_percent": 24.264400653100353,
+      "wins": 22,
+      "losses": 2
+    }
+  },
+  "kimi_paired_mean_ms": 760.1912362,
+  "kimi_paired_median_ms": 759.0802500000001,
+  "strict20_CPU_pooled_median_ms": {
+    "Exact": 0.223828,
+    "Greedy": 0.097175,
+    "Greedy+1-Swap": 0.22094
+  },
+  "fixed_CPU_median_of_condition_medians_ms": 0.1045101
+}

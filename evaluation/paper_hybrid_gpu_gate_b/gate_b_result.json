@@ -1,0 +1,409 @@
+{
+  "scenario": "B_ck3_greedy_branch",
+  "run": "b1_hybrid_greedy",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check": "在线决策=Marginal Greedy且门禁拒绝",
+      "status": "PASS",
+      "detail": {
+        "gate": {
+          "budget_k": 3,
+          "candidates": 16,
+          "enumerable_subsets": 697,
+          "pendings": 4
+        },
+        "gate_allowed": false,
+        "objective_ms": 154.34895561599998,
+        "pure_solve_ms": 0.402763,
+        "selected_ids": [
+          "B5C3_NODE_57",
+          "B5C3_NODE_56",
+          "B5C3_NODE_55"
+        ],
+        "solver": "Marginal Greedy"
+      }
+    },
+    {
+      "check": "门禁规模=16候选/4Pending/K=3",
+      "status": "PASS",
+      "detail": {
+        "budget_k": 3,
+        "candidates": 16,
+        "enumerable_subsets": 697,
+        "pendings": 4
+      }
+    },
+    {
+      "check": "选择来源=plan_strict在线(非policy_plans)",
+      "status": "PASS",
+      "detail": "GlobalOptimizer.plan_strict(在线)"
+    },
+    {
+      "check": "决策记录完整(选集/J/纯求解时间)",
+      "status": "PASS",
+      "detail": {
+        "selected_ids": [
+          "B5C3_NODE_57",
+          "B5C3_NODE_56",
+          "B5C3_NODE_55"
+        ],
+        "objective_ms": 154.34895561599998,
+        "pure_solve_ms": 0.402763
+      }
+    },
+    {
+      "check": "选集==g1冻结GPU计划",
+      "status": "PASS",
+      "detail": [
+        "B5C3_NODE_55",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57"
+      ]
+    },
+    {
+      "check": "选集==policy_plans冻结FS(经census映射)",
+      "status": "PASS",
+      "detail": [
+        "C_D_P07168",
+        "C_C_P06144",
+        "C_B_P05120"
+      ]
+    },
+    {
+      "check": "选集==cpu_results冻结FS(经census映射)",
+      "status": "PASS",
+      "detail": [
+        "C_D_P07168",
+        "C_C_P06144",
+        "C_B_P05120"
+      ]
+    },
+    {
+      "check": "J==冻结J 154.34895561599998",
+      "status": "PASS",
+      "detail": 154.34895561599998
+    },
+    {
+      "check": "J==g1冻结计划J且==cpu_results J",
+      "status": "PASS",
+      "detail": {
+        "g1": 154.34895561599998,
+        "cpu": 154.34895561599998
+      }
+    },
+    {
+      "check": "逐Pending E/T/G==冻结预期",
+      "status": "PASS",
+      "detail": [
+        [
+          "C_A",
+          0,
+          4096,
+          4096
+        ],
+        [
+          "C_B",
+          5120,
+          5120,
+          0
+        ],
+        [
+          "C_C",
+          6144,
+          6144,
+          0
+        ],
+        [
+          "C_D",
+          7168,
+          7168,
+          0
+        ]
+      ]
+    },
+    {
+      "check": "census 16=16且物化于冻结预热水(round0/1)",
+      "status": "PASS",
+      "detail": {
+        "mapped": 16,
+        "rounds": [
+          "round0",
+          "round1"
+        ]
+      }
+    },
+    {
+      "check": "驱逐==未选中补集(13项)且全部返回",
+      "status": "PASS",
+      "detail": [
+        [
+          "B5C3_NODE_51",
+          true
+        ],
+        [
+          "B5C3_NODE_52",
+          true
+        ],
+        [
+          "B5C3_NODE_53",
+          true
+        ],
+        [
+          "B5C3_NODE_54",
+          true
+        ],
+        [
+          "B5C3_NODE_58",
+          true
+        ],
+        [
+          "B5C3_NODE_60",
+          true
+        ],
+        [
+          "B5C3_NODE_62",
+          true
+        ],
+        [
+          "B5C3_NODE_64",
+          true
+        ],
+        [
+          "B5C3_NODE_66",
+          true
+        ],
+        [
+          "B5C3_NODE_68",
+          true
+        ],
+        [
+          "B5C3_NODE_70",
+          true
+        ],
+        [
+          "B5C3_NODE_72",
+          true
+        ],
+        [
+          "B5C3_NODE_74",
+          true
+        ]
+      ]
+    },
+    {
+      "check": "目标C_B恢复源==计划绑定(B5C3_NODE_55)",
+      "status": "PASS",
+      "detail": {
+        "source": "B5C3_NODE_55",
+        "native": [
+          55,
+          [
+            11
+          ]
+        ],
+        "bound": [
+          55,
+          [
+            11
+          ]
+        ]
+      }
+    },
+    {
+      "check": "Native E=5120/H=5120/G=0与冻结合同一致",
+      "status": "PASS",
+      "detail": {
+        "E": 5120,
+        "H": 5120,
+        "G": 0
+      }
+    },
+    {
+      "check": "Prefill区间=计划E准入+32新Token",
+      "status": "PASS",
+      "detail": {
+        "batch_prefix_length": 5120,
+        "prefill_token_count": 32
+      }
+    },
+    {
+      "check": "输出==冻结Cold参照逐Token",
+      "status": "PASS",
+      "detail": {
+        "output": [
+          220,
+          197,
+          1,
+          198,
+          197,
+          1,
+          198,
+          197
+        ],
+        "cold": [
+          220,
+          197,
+          1,
+          198,
+          197,
+          1,
+          198,
+          197
+        ]
+      }
+    },
+    {
+      "check": "请求后Selected内容不变",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "请求后FA映射全保留",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "请求后受保护FA内容不变",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Epoch形成方式已记录(冻结预热两轮重放,非全在线)",
+      "status": "PASS",
+      "detail": {
+        "note": "复用C/K3冻结16条预热×2轮重放+实时观察准入"
+      }
+    },
+    {
+      "check": "进程退出码0且GPU清理PASS",
+      "status": "PASS",
+      "detail": {
+        "returncode": 0
+      }
+    },
+    {
+      "check": "冻结输入/被测代码/生产入口全程未变",
+      "status": "PASS",
+      "detail": "24 files（宿主机脚本除外）"
+    }
+  ],
+  "decision": {
+    "gate": {
+      "budget_k": 3,
+      "candidates": 16,
+      "enumerable_subsets": 697,
+      "pendings": 4
+    },
+    "gate_allowed": false,
+    "objective_ms": 154.34895561599998,
+    "pure_solve_ms": 0.402763,
+    "selected_ids": [
+      "B5C3_NODE_57",
+      "B5C3_NODE_56",
+      "B5C3_NODE_55"
+    ],
+    "solver": "Marginal Greedy"
+  },
+  "selected_physical": [
+    "B5C3_NODE_55",
+    "B5C3_NODE_56",
+    "B5C3_NODE_57"
+  ],
+  "selected_cpu_mapped": [
+    "C_B_P05120",
+    "C_C_P06144",
+    "C_D_P07168"
+  ],
+  "J_ms": 154.34895561599998,
+  "evictions": [
+    [
+      "B5C3_NODE_51",
+      true
+    ],
+    [
+      "B5C3_NODE_52",
+      true
+    ],
+    [
+      "B5C3_NODE_53",
+      true
+    ],
+    [
+      "B5C3_NODE_54",
+      true
+    ],
+    [
+      "B5C3_NODE_58",
+      true
+    ],
+    [
+      "B5C3_NODE_60",
+      true
+    ],
+    [
+      "B5C3_NODE_62",
+      true
+    ],
+    [
+      "B5C3_NODE_64",
+      true
+    ],
+    [
+      "B5C3_NODE_66",
+      true
+    ],
+    [
+      "B5C3_NODE_68",
+      true
+    ],
+    [
+      "B5C3_NODE_70",
+      true
+    ],
+    [
+      "B5C3_NODE_72",
+      true
+    ],
+    [
+      "B5C3_NODE_74",
+      true
+    ]
+  ],
+  "native_match": {
+    "best_match_node": 55,
+    "cow_requested": true,
+    "cow_source_slots": [
+      11
+    ],
+    "executable_prefix": 5120,
+    "input_token_count": 5152,
+    "input_token_digest": "cf053cb2f3e11fb49c7a006671ee15d6d2a18bc4626c3add87bb0a3f886696b2",
+    "last_device_node": 55,
+    "last_host_node": 55,
+    "mamba_branching_seqlen": null,
+    "mamba_host_hit_length": 0,
+    "monotonic_ns": 1236315759820378,
+    "physical_fa_hit": 5120,
+    "replay_gap": 0,
+    "request_id": "C_B",
+    "working_slots": [
+      12
+    ]
+  },
+  "output_ids": [
+    220,
+    197,
+    1,
+    198,
+    197,
+    1,
+    198,
+    197
+  ],
+  "cold_match": true,
+  "census_counts": {
+    "physical": 16,
+    "mapped": 16
+  }
+}

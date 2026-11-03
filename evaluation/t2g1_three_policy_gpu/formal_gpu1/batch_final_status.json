@@ -1,0 +1,13 @@
+{
+  "gate": "BLOCKED",
+  "cpu_precheck": "静态身份及镜像检查通过，但遗漏multiprocessing spawn入口重入合同",
+  "gpu_binding": "PASS：GPU1 UUID且仅一个可见CUDA设备",
+  "gate_attempted": 1,
+  "gate_passed": 0,
+  "main_attempted": 0,
+  "cleanup": "PASS：三次17MiB，无计算进程，专用容器不存在",
+  "root_cause": "新增device_entry.py缺少__main__保护，spawn子进程重复执行顶层文件写入，FileExistsError",
+  "original_file_hash_mismatches": [],
+  "retry": false,
+  "performance_conclusion": "NOT_AVAILABLE"
+}

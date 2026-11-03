@@ -1,0 +1,1310 @@
+{
+  "start_ns": 1909448100036857,
+  "end_ns": 1909479545634349,
+  "performed_after_gpu_measurements": true,
+  "records": [
+    {
+      "spec": {
+        "arm": "smoke_serving_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 0,
+        "phase": "smoke",
+        "verify": true
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/smoke_serving_fs/run/summary.json": "6bc4213bf14df670bbc11c46a134147e7e940cc4cee3de57c70b210debcb38c5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/smoke_serving_fs/run/reconciliation.json": "0657fa0cc844a733189ca80e3a46247fde36b574ec4259a6f8d811d49a0f8a83",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/smoke_serving_fs/run/post_request.json": "a77107ef4e90694e426f8b513c5bc237d0466041095be4a5f97fc16d8daa299c",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/smoke_serving_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/smoke_serving_fs/gpu_cleanup.json": "b1a2b4513d9c1394af205e00e3fddb5bd4ad53ad9e6335a83b9550c215fa7af8",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/smoke_serving_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/smoke_serving_fs/run/rpc_1906230000823681/response.raw": "d7f1806fefdb9dcfdf76c2e04a85b7e741d3374643a5f5919b111f97e1c9d7c3"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p1_original_fs",
+        "mode": "original",
+        "policy": "FlowState-Greedy",
+        "round": 1,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_original_fs/run/summary.json": "ad405c25144988f5d9a7b688d316b64e3f92b629c848ac5364a08303ef5c3f35",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_original_fs/run/reconciliation.json": "3b216ea5ab29ae11c179b65ca483d24646deb388fe9c6fae0aa5685d49b06b66",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_original_fs/run/post_request.json": "718b2d9a8030c32107fcc5a654de794aaae706ef83e9c91888af0a4c494e350b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_original_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_original_fs/gpu_cleanup.json": "d3d71a01c73604b983f1e2ad8c28a1a333214974ef0adb5623e95d4ca1f5a4d2",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_original_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_original_fs/run/rpc_1906466054489245/response.raw": "50b1555adbf1f0f73a5af059ba1ef541c40802ec6d349cc1186625dc339123ea"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p1_serving_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 1,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_serving_fs/run/summary.json": "d04185007f60e9e967752c32c4104f210b108ed97cf7d2411df67118d876e928",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_serving_fs/run/reconciliation.json": "95ce4727794811b6b1e6fdecc07d486f2f76d235f53182cbb5107ba28816b77f",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_serving_fs/run/post_request.json": "a6248efbd39da727f51ef4e339e10d63009efcef1e5702e6f232b91be5256d90",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_serving_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_serving_fs/gpu_cleanup.json": "751acdac684b171b239135305f2628d6dd880d838213faf784d65a4ee4f48f02",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_serving_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p1_serving_fs/run/rpc_1906578871354426/response.raw": "168979a73b819872597726aa216b7750e250b1bb7e0c7dcc2f2ffeb21a0efb74"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p2_serving_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 2,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_serving_fs/run/summary.json": "66aed3cee9e168ef6d0e47ab85966dcb59c9976e251200dccc51d68216a1a1a7",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_serving_fs/run/reconciliation.json": "4c2ddf74df143f124993bc4169922c1a9566a03f8a06c03268e127dd27c55b05",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_serving_fs/run/post_request.json": "062bc22a1a73787acde80a96a31441812f81d07e23e93826393c2c2da34540d9",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_serving_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_serving_fs/gpu_cleanup.json": "86cfc788fd7d23e38c460b3d3c25c532edfed97e2788685c686a1c1bfdfc7cc4",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_serving_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_serving_fs/run/rpc_1906714522085493/response.raw": "bf13af6d1c49a333a8ef6a744ba66e79012740288e752155214297332ec50509"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p2_original_fs",
+        "mode": "original",
+        "policy": "FlowState-Greedy",
+        "round": 2,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_original_fs/run/summary.json": "e7aae39d33d4d7c7920c3564bb12bc86462acdfab56d2773c000c4ab68eb4f32",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_original_fs/run/reconciliation.json": "9eca4cad81a5a1bf67b967aa457d43900fc052e0eb7611e6f83e29f6d3a32dcf",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_original_fs/run/post_request.json": "c6f043ceef024f7d9fe84e630c45ff9e7e809fbc5d485d951f732d535b1d0c7e",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_original_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_original_fs/gpu_cleanup.json": "8725fb4097c17d83fc48dae546a266c422e904f5149ba047ce6d29a53372aae2",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_original_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p2_original_fs/run/rpc_1906826299219767/response.raw": "5875e823484183bcef0c6d74ab561c7ea7095589d0b883f3eb8190a6748457e1"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p3_original_fs",
+        "mode": "original",
+        "policy": "FlowState-Greedy",
+        "round": 3,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_original_fs/run/summary.json": "e7c910dbfeccb9a53596871f9584b2ea26467561bb290465b06718d4a2ad138a",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_original_fs/run/reconciliation.json": "b04843cdae54ec5690b044aca15dbecf00f195bd95bab5ac8d0c82dca93d3b5f",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_original_fs/run/post_request.json": "fe7dcc29b8542a00cf98ad6fee4bff4d37e7102cc7361d8c9de4a26c0fcfac75",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_original_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_original_fs/gpu_cleanup.json": "c5a673c1eca6e215689fde89b977a5a0538a67bd4f301bfbcd206e9d48953796",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_original_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_original_fs/run/rpc_1906941858380594/response.raw": "885ed94ab263e083880a0172fa1ca48d5994f6384d06a57a3961d6b5e7a337c8"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p3_serving_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 3,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_serving_fs/run/summary.json": "e4e751cac8117a8c4da31ceec5cd76e37eb2a039e0ecdfcef67a8e559d9ed435",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_serving_fs/run/reconciliation.json": "b384c798dbf31246840f454d8453fb663981ba06c63be5fdb312d4386fa941cb",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_serving_fs/run/post_request.json": "a366bf1f4a07de9f579044bb48069bbf572f8f276a0a9f0897fdedc8983bf2d8",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_serving_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_serving_fs/gpu_cleanup.json": "1aadd2156075a43483108684b81bf518a78359c24d07a34441d0c5db5ec43cb1",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_serving_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p3_serving_fs/run/rpc_1907055509589025/response.raw": "51d388deb7a045790591f60b66402604b86c4346ee3853534b95ac95e522224a"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p4_serving_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 4,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_serving_fs/run/summary.json": "0be768be03371cb0096d8730b4bc7faebbe4bae9c153c4e479e903d5c43934f0",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_serving_fs/run/reconciliation.json": "7cd17843987cd7bee52ce9740463089e7d3cf2c49f29928aaed8b8a8b6fc36ae",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_serving_fs/run/post_request.json": "5ebb6e448b5d467110c2e0ed2c4f2644a834df0fd4dd3015299de2244742ebee",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_serving_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_serving_fs/gpu_cleanup.json": "bb4e16448d6a50ed5349502aae5609d83ab797d0bbc9fa5488b25e11a537fd20",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_serving_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_serving_fs/run/rpc_1907168828318940/response.raw": "1cb0cf1e1f664325b7c440ad6ed77d8d58fb64450eb5288bafd4af8402770886"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p4_original_fs",
+        "mode": "original",
+        "policy": "FlowState-Greedy",
+        "round": 4,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_original_fs/run/summary.json": "833992c88e3decc123724cdc64a6b71a2583074c3dd7d475a243a933d086e070",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_original_fs/run/reconciliation.json": "aed474dc9d65fa3ac0187f9f8e57cb819f1e70c5e3ebe121efda03030f73e733",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_original_fs/run/post_request.json": "f927ded28ecdfd5b2fe06e90e445554b2b78466eae730d0f04dab93b47f4194d",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_original_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_original_fs/gpu_cleanup.json": "0718320317b20f36781881a69a8357c942bdccbd7aa6e49cb555c76e713a238a",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_original_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p4_original_fs/run/rpc_1907279473445857/response.raw": "9123de85998f4972419f9d250709f8936df122e466dab16c5b6c78b456b6fca0"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p5_original_fs",
+        "mode": "original",
+        "policy": "FlowState-Greedy",
+        "round": 5,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_original_fs/run/summary.json": "381538a6e8ba695766f6faf98147619e60b45c5f0e906a1fe83672467a617068",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_original_fs/run/reconciliation.json": "78e4c6f4a1cb52e3aaa8c0174260c913e417a792b396a1de4c6ffbd121179872",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_original_fs/run/post_request.json": "9e70c46fc68340694a35a4a06822526d5d53f8292e5f712fdbc2fcbe1d4f2421",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_original_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_original_fs/gpu_cleanup.json": "bd5ce15d8165682daf280abd2700b759781703af3dccfc4e114c0ce800d49331",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_original_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_original_fs/run/rpc_1907394180398614/response.raw": "ad604e51a3862664009e0ab38fadfb67cda671eebfaac5adce6eb437e1befe69"
+      }
+    },
+    {
+      "spec": {
+        "arm": "p5_serving_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 5,
+        "phase": "paired",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_serving_fs/run/summary.json": "77a5a502259af230b16a0769c9acd61b9cd818f73740dd6c74946263542b794f",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_serving_fs/run/reconciliation.json": "7855d45be797c84b351dd5f32bec1b28d64a188d21db12fb58a97df246fbdebd",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_serving_fs/run/post_request.json": "aaa1c337d42221186b03cb061459be0accc428af5662a0804078a7350efc41bf",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_serving_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_serving_fs/gpu_cleanup.json": "6a3da8049252aeab350766f8c54c9fe69a773feb93e162fce1fe170e79fed1ef",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_serving_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/p5_serving_fs/run/rpc_1907506276846706/response.raw": "607de5224219184cf2455f9514c8625c670477c050b984262baafa958b931c90"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t1_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 1,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_fs/run/summary.json": "aac02872af649a01c5a38dccfe49f9ef8e6682427840ca66bc9766a97fead062",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_fs/run/reconciliation.json": "8e01e45651868eb871dbb0f335b1f6948078ab0eee87fcda24963ffaac14a5f2",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_fs/run/post_request.json": "e640003efcd10ac84cdb7cfbc4f4cfb6b2da7e984cb206cddc434fcb3fdd13be",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_fs/gpu_cleanup.json": "c2963864cca836f3324f1e804dc79a169b9d81dcf573c8b7a268b08df44e93fc",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_fs/run/rpc_1907841815844815/response.raw": "8e07ed3d57bbd8e6e3aa6299432f41eb14e84a6a5d74544b28c439b52dee2e8a"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t1_mc",
+        "mode": "serving",
+        "policy": "Marconi-Evict",
+        "round": 1,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "E": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "G": [
+        3072,
+        4096,
+        5120,
+        6144
+      ],
+      "prefill": [
+        3104,
+        4128,
+        5152,
+        6176
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_mc/run/summary.json": "842a5c7ca761aee88279ec9910d63c56a9e8cec3f6b51637f49b641c029193fd",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_mc/run/reconciliation.json": "b17ec1f17aeab6fcb465dd5dc2b15d6942a0613fd0d3a312ed92cad1987cf9aa",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_mc/run/post_request.json": "10a9b18c17bd3292ee345169a9a467a6da4ba23b46590aa849705b3404b61952",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_mc/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_mc/gpu_cleanup.json": "1883c2fda7dcd8555726c4699e1664e76a82153f1e9d884e2320de720deec9c6",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_mc/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_mc/run/rpc_1907951652154430/response.raw": "43ed491917c8127b146677b809912aae2ff64e863bb42bea67f842560af25415"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t1_kv",
+        "mode": "serving",
+        "policy": "KVFlow-inspired",
+        "round": 1,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "E": [
+        4032,
+        2048,
+        0,
+        0
+      ],
+      "G": [
+        64,
+        3072,
+        6144,
+        7168
+      ],
+      "prefill": [
+        96,
+        3104,
+        6176,
+        7200
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_kv/run/summary.json": "a621bacd16e58ca399204665a6119117b0035935ee39a5a7ce501c4a6201150b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_kv/run/reconciliation.json": "70a58557fa91d6ede1a0748cdce976f3d8b7edff5229c5783e3b3952b456e78c",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_kv/run/post_request.json": "8ec4755d1672efdddb0b211e1377bad60ad16ea2606119d17fec4eb9b35ffc77",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_kv/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_kv/gpu_cleanup.json": "c22451a00f05026fef1514dcc0df9dc44b91b88ad6d006e222dd038f1366cd6d",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_kv/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t1_kv/run/rpc_1908064369180250/response.raw": "7fe95ef7b892b2fe789e1d5b61e4592c659aae2891d7df85554a051ec80fc169"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t2_mc",
+        "mode": "serving",
+        "policy": "Marconi-Evict",
+        "round": 2,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "E": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "G": [
+        3072,
+        4096,
+        5120,
+        6144
+      ],
+      "prefill": [
+        3104,
+        4128,
+        5152,
+        6176
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_mc/run/summary.json": "da70cdea03ee6fcfa3c340fb5400e0554d5509fa1c2fbfb13c4561db67a21b5f",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_mc/run/reconciliation.json": "2ed948b2da7b60c1013a7180531bfc8ef5bc8ee5dde46a994daf93d99cdd9b21",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_mc/run/post_request.json": "bd6947379ecc25cf791fc87edd49783b1cc8982047645e18c933e5db97fe7545",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_mc/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_mc/gpu_cleanup.json": "1f18f4bc46273a0e1fce73b0ff083b122a282ab08fc6bd0000ef99db2938e422",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_mc/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_mc/run/rpc_1908174892504838/response.raw": "a2d061c5542588543ba4dd04d6ef362d2ca74d3b1fa06b4fcf361fd9219a525e"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t2_kv",
+        "mode": "serving",
+        "policy": "KVFlow-inspired",
+        "round": 2,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "E": [
+        4032,
+        2048,
+        0,
+        0
+      ],
+      "G": [
+        64,
+        3072,
+        6144,
+        7168
+      ],
+      "prefill": [
+        96,
+        3104,
+        6176,
+        7200
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_kv/run/summary.json": "255e34371b5b0099ad0acea3b65102f715ca232390dc5409fb389f19927b7a46",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_kv/run/reconciliation.json": "e8975d9c191eb242f36402953f0dac00953cc4365de268d7593c9917afb4aec9",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_kv/run/post_request.json": "2cd7b80f12650cc0157c11073a03096633b3ae3027c378b036504c43a709dd45",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_kv/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_kv/gpu_cleanup.json": "b1f1a1062a96abfa8e352bb3e850ff26da6a8960f5ada4baa25d9eeab2fb2893",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_kv/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_kv/run/rpc_1908284579634540/response.raw": "a964a1c3907ee17f281ee6b1c822f4dc673377264f4e32d66913bad6955db764"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t2_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 2,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_fs/run/summary.json": "26e788af9eafbf4dc005c9f326a109261e5ce279cb3f2abc28edb7afaae4de28",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_fs/run/reconciliation.json": "44db55ed29d0647960e9a396e2d2c3cfdab4835e2a0d846bdf68b30d37de28e1",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_fs/run/post_request.json": "8cb4c338f6bb08476399414ccfc7c11f3ac56c3a1c8b121702b389e6edee8960",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_fs/gpu_cleanup.json": "0b8ee1526d23944b52bd45da5ab5174c23834cb0cf6947a733a092fda0817425",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t2_fs/run/rpc_1908398069881387/response.raw": "2a4a52282c4b3a26b133be254c02faec9de4c59bb1aa68eb60b3f772bf005b53"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t3_kv",
+        "mode": "serving",
+        "policy": "KVFlow-inspired",
+        "round": 3,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "E": [
+        4032,
+        2048,
+        0,
+        0
+      ],
+      "G": [
+        64,
+        3072,
+        6144,
+        7168
+      ],
+      "prefill": [
+        96,
+        3104,
+        6176,
+        7200
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_kv/run/summary.json": "f5296f895e4286d89a49bdfb84c45c827273167c6adc2154a04075e19bfd1746",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_kv/run/reconciliation.json": "7f3b61ad67b1e87447813064ba2c91010046184970264b11a8849b288977dc69",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_kv/run/post_request.json": "35fa904383db6c688d74c6257cba87244bfe84d5ccd6ffd6562d153e6b6393d5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_kv/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_kv/gpu_cleanup.json": "0afcd333ebe1a197a353de3135eae4099bbabc444c85941cdc4bd39da8b31a32",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_kv/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_kv/run/rpc_1908508319712075/response.raw": "b7fa34c8fb758784d306651e440afcbcd3353cec1d1496a3abceb035470311a6"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t3_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 3,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_fs/run/summary.json": "b0b3fcddf9216db0f4cf92e20e2279b4836bf2f256aada461fef9846b740bf23",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_fs/run/reconciliation.json": "b296c66314a8be994c76e42014c78dc2b0fb592d00bf3c03185cfba74253a906",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_fs/run/post_request.json": "f4d9923a979f933ecc139edb7b46d8c99ccb8e203fe3f62bbc40ff01698d3120",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_fs/gpu_cleanup.json": "01146c84bdf42bf42f73fce7b60e0d1f38a13c90a57978636fc185ea5d7eee04",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_fs/run/rpc_1908620540985952/response.raw": "9b0e6c7e80e869e9b4f1d311acbcdeb5789309c0e13be8aab7d93f9aa4b0a2b6"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t3_mc",
+        "mode": "serving",
+        "policy": "Marconi-Evict",
+        "round": 3,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "E": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "G": [
+        3072,
+        4096,
+        5120,
+        6144
+      ],
+      "prefill": [
+        3104,
+        4128,
+        5152,
+        6176
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_mc/run/summary.json": "bebaf1a1d6e4726bc5ca0f9f9c9639e9eee6a0f9db9b821dff7d760792d33edf",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_mc/run/reconciliation.json": "71517c5203b577f2f49661355f32bd80f8642ecb25d1a7964e946b32aa9761e9",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_mc/run/post_request.json": "d9be9a6422381331851317a48bdb611d6787a894a5214b8b2b02e8626eba1e62",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_mc/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_mc/gpu_cleanup.json": "949e9fca78cad0c37bb672018cc3f218ffbaf022e9b38aafeb4370c7ad4df3d3",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_mc/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t3_mc/run/rpc_1908729745670557/response.raw": "f8f3d907d272730ca745ca35b1cbe019a28b3199d9a8f34c06a97b6e0f026d5e"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t4_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 4,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_fs/run/summary.json": "19357dafb9be214b6b10bf2b3f0d8fafa77a8f46aa228d73baff8aa072574393",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_fs/run/reconciliation.json": "4d5a5546b4689330b69520a293cc70cdb59677fb05405d710216ff3bb5a3e37c",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_fs/run/post_request.json": "68b74d385587a9d542f2973839f8d132683e60bde0cf8c9650ca43a1dbef0f32",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_fs/gpu_cleanup.json": "b5eaa07cb34f52824cd593bc3fe3f6c84f57b7d04cd2f73d7cf5b6703ba2dfeb",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_fs/run/rpc_1908839711933050/response.raw": "92486c58d465124804232478901edac69c40f87d67d358494c4e9297687ed430"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t4_kv",
+        "mode": "serving",
+        "policy": "KVFlow-inspired",
+        "round": 4,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "E": [
+        4032,
+        2048,
+        0,
+        0
+      ],
+      "G": [
+        64,
+        3072,
+        6144,
+        7168
+      ],
+      "prefill": [
+        96,
+        3104,
+        6176,
+        7200
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_kv/run/summary.json": "fc77d5890e5c09d329995f5d9522271b784c7f360aee6e5ff1bb832ce3720710",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_kv/run/reconciliation.json": "ec26679d554acaadb847074d40b50b9660569c64a45ba47100a997578708a4e3",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_kv/run/post_request.json": "3a704970186333db1c263db8876b93837ff614641e4b0176f34e70a5021f08e0",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_kv/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_kv/gpu_cleanup.json": "e156090ed1f7a1ef8aa42a2b16e146e38634cb8d950dd09ebda18c842b361230",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_kv/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_kv/run/rpc_1908947342658316/response.raw": "9179a36fc95a615c64b18d5972c1fb56fc699510303bf31987db470c8dd975c3"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t4_mc",
+        "mode": "serving",
+        "policy": "Marconi-Evict",
+        "round": 4,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "E": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "G": [
+        3072,
+        4096,
+        5120,
+        6144
+      ],
+      "prefill": [
+        3104,
+        4128,
+        5152,
+        6176
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_mc/run/summary.json": "5681be9d874f134ec54d3ff507d1e955ace1f042b65f94fe2a5904ef8aa8e9be",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_mc/run/reconciliation.json": "48ff9dd304c24a8e70b662072eeaa2f189bb966fd10b2d4eb96a910c22bf7991",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_mc/run/post_request.json": "a24ff36452c625caf5dac8bbabbab4ddb3b64d4d60ebbd3d6738981e6cb36314",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_mc/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_mc/gpu_cleanup.json": "57816c9a8c569c0d314f59a3fc6a0ad9027e980ec12f267b7d904403ff7e2e4c",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_mc/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t4_mc/run/rpc_1909058348548542/response.raw": "9c925776e7edd45b41f0620a236547ff351cb9968438354fa18abf24eea51d7b"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t5_mc",
+        "mode": "serving",
+        "policy": "Marconi-Evict",
+        "round": 5,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "E": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "G": [
+        3072,
+        4096,
+        5120,
+        6144
+      ],
+      "prefill": [
+        3104,
+        4128,
+        5152,
+        6176
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_mc/run/summary.json": "643247526fc6d3c4bd9086903d5ae61a00a41b0d38ee642e96b2ed833bd31506",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_mc/run/reconciliation.json": "e265295b176f0a910ea9118aa9c85bf777d81d698b0e58d7b4c9174ce0f67ea0",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_mc/run/post_request.json": "766d7e61f75ef1924273d3e8955187da5643cd69b3bc447fb771579d651ea1dc",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_mc/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_mc/gpu_cleanup.json": "b969a2922bf58493ec947e77db83967703b2e76bc477b640b15a06d52d5a5fc2",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_mc/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_mc/run/rpc_1909166978118463/response.raw": "0028181003c21067a86377372ee520ab4e23026db8455b60e0cefcdb635fa703"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t5_fs",
+        "mode": "serving",
+        "policy": "FlowState-Greedy",
+        "round": 5,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "E": [
+        0,
+        5120,
+        6144,
+        7168
+      ],
+      "G": [
+        4096,
+        0,
+        0,
+        0
+      ],
+      "prefill": [
+        4128,
+        32,
+        32,
+        32
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_fs/run/summary.json": "49bea65b5ad444422e53047d6f46183ce47ef8b1f51b67b78837912a09166319",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_fs/run/reconciliation.json": "60f48c713c8d02d81dae35c394bede898c655c29c948b01d455423eb4911afea",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_fs/run/post_request.json": "ddf351dda98069bd5121db0e00f7c4338e42cd7ad40e9d0f4e151c21fa718799",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_fs/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_fs/gpu_cleanup.json": "7cbb9cde6657450d3cc7d7cbcbb5f876ab21dda3d5be83cd6d3548766e93c4a5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_fs/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_fs/run/rpc_1909278331541012/response.raw": "bf9852cb8ca0e3d71ad4743761b5022329ae3d709cc306ef4e6f5143ff24cb34"
+      }
+    },
+    {
+      "spec": {
+        "arm": "t5_kv",
+        "mode": "serving",
+        "policy": "KVFlow-inspired",
+        "round": 5,
+        "phase": "three_policy",
+        "verify": false
+      },
+      "initial_state_signature": "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c",
+      "operations": 13,
+      "edges": 64,
+      "unknown": 0,
+      "free_slots": [
+        12,
+        25
+      ],
+      "selected": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "E": [
+        4032,
+        2048,
+        0,
+        0
+      ],
+      "G": [
+        64,
+        3072,
+        6144,
+        7168
+      ],
+      "prefill": [
+        96,
+        3104,
+        6176,
+        7200
+      ],
+      "source_hashes": {
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_kv/run/summary.json": "7aec9de03f0e33d82182d8406b5dd63f32d4facad08f5fb15cd1e522a4d0585b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_kv/run/reconciliation.json": "1b3e24c129ef579469a910573627f7632908948455041312bc996b23138a1a84",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_kv/run/post_request.json": "707863e198d1d8739ffa7905e645c4831fbcc7182e2b7946b9a10968cc70cd83",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_kv/run/engine_cleanup.json": "e0789fd495f85b5af7d0ea4b7950ba42922a58682bd868f4caca02245484003b",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_kv/gpu_cleanup.json": "00b0acb0a57d3124341aee393b0eed47f5571989bbaef2aee42fa76d489de858",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_kv/device_binding.json": "27bbe7067549318c2359c86253852973cd73c60f97401769d710f63701a782f5",
+        "/home/wjg/code/FlowState/evaluation/control_path_separation_20261101/arms/t5_kv/run/rpc_1909391142736269/response.raw": "3a2e22e28b6dab27bfa1500cc659168964842465c7cfadd7372517033fe61ed7"
+      }
+    }
+  ],
+  "initial_signatures": [
+    "78f98106a4893a68e62d764e6d041f1cb54ff1c61a153c74d3e434cd7506e20c"
+  ]
+}

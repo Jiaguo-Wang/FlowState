@@ -1,0 +1,53 @@
+{
+  "fix_b_dir": "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_b",
+  "package": "/home/wjg/code/FlowState/evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy",
+  "files": {
+    "bridge.py": {
+      "fix_b_sha256": "ae07e3394bb515d9c432a2bdff08b47d019af9bfcebdc4ed59a5e59ab8fdbbda",
+      "pkg_sha256": "ae07e3394bb515d9c432a2bdff08b47d019af9bfcebdc4ed59a5e59ab8fdbbda",
+      "identical": true
+    },
+    "control.py": {
+      "fix_b_sha256": "c08ba52dfa01f84a4931001b110a12f15261296c7cb0461093d0062d51002db4",
+      "pkg_sha256": "c08ba52dfa01f84a4931001b110a12f15261296c7cb0461093d0062d51002db4",
+      "identical": true
+    },
+    "observation.py": {
+      "fix_b_sha256": "10d2e2557bc414877b10473c18046f4b058063e7608945510df12ebf17bc2950",
+      "pkg_sha256": "10d2e2557bc414877b10473c18046f4b058063e7608945510df12ebf17bc2950",
+      "identical": true
+    },
+    "persistence.py": {
+      "fix_b_sha256": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139",
+      "pkg_sha256": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139",
+      "identical": true
+    },
+    "protocol.py": {
+      "fix_b_sha256": "fbb1cde5eaed13e46588b4b74873dce41f36e17781ef1b17c32f4a89c9c51718",
+      "pkg_sha256": "fbb1cde5eaed13e46588b4b74873dce41f36e17781ef1b17c32f4a89c9c51718",
+      "identical": true
+    },
+    "runner.py": {
+      "fix_b_sha256": "70d2ec8059c87bc31e8b5698d095db5d8e2402351495292760f5874da093cef8",
+      "pkg_sha256": "bb5c3e337ed007b774dc9815e0a852a03912858ae0f455d72f0b82ab91836d64",
+      "identical": false
+    }
+  },
+  "deviation": "仅runner.py一处：E=0目标的无源分支（对齐c_formal生产语义）；其余文件逐字节同fix_b",
+  "deviation_detail": [
+    {
+      "file": "runner.py",
+      "anchor": "恢复来源错误/COW/别名三断言块",
+      "change": "包裹为 if expected_E>0 分支；E=0改为正向断言(无源/无COW/无工作槽)",
+      "reference": "c_formal_perf_gpu/runner.py 行261起 同语义（60正式臂含E=0臂验证）",
+      "reason": "g1首跑在C_A(E=0)上StopIteration"
+    },
+    {
+      "file": "runner.py",
+      "anchor": "write(OUT/'target_request.json')",
+      "change": "改写至本臂run目录 out/target_request.json",
+      "reference": "全仓grep无任何读取方（纯留证写出）",
+      "reason": "多臂复用同一/b5out时根目录x写跨臂冲突（g2/g3/g4首批及r2均FileExistsError）"
+    }
+  ]
+}

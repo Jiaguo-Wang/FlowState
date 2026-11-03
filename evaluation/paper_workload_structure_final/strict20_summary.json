@@ -1,0 +1,197 @@
+{
+  "checks": [
+    {
+      "check": "五快照采集链在位且均无生成器参数",
+      "pass": false
+    }
+  ],
+  "sensitivity_rows": 80,
+  "greedy_optimal_by_K": {
+    "1": 5,
+    "2": 0,
+    "3": 0,
+    "4": 0
+  },
+  "nesting_violations": {
+    "Exact": [
+      {
+        "case": "B5-C4",
+        "from_K": 1,
+        "set_k": [
+          "B5C3_NODE_20"
+        ],
+        "set_k1": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ]
+      },
+      {
+        "case": "B5-C4",
+        "from_K": 2,
+        "set_k": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_27"
+        ],
+        "set_k1": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_27"
+        ]
+      },
+      {
+        "case": "w1",
+        "from_K": 1,
+        "set_k": [
+          "B5C3_NODE_20"
+        ],
+        "set_k1": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21"
+        ]
+      },
+      {
+        "case": "w1",
+        "from_K": 2,
+        "set_k": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21"
+        ],
+        "set_k1": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      {
+        "case": "w1",
+        "from_K": 3,
+        "set_k": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ],
+        "set_k1": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      {
+        "case": "w2",
+        "from_K": 1,
+        "set_k": [
+          "B5C3_NODE_20"
+        ],
+        "set_k1": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21"
+        ]
+      },
+      {
+        "case": "w2",
+        "from_K": 2,
+        "set_k": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_21"
+        ],
+        "set_k1": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      {
+        "case": "w2",
+        "from_K": 3,
+        "set_k": [
+          "B5C3_NODE_18",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ],
+        "set_k1": [
+          "B5C3_NODE_22",
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      },
+      {
+        "case": "w3",
+        "from_K": 1,
+        "set_k": [
+          "B5C3_NODE_20"
+        ],
+        "set_k1": [
+          "B5C3_NODE_24",
+          "B5C3_NODE_27"
+        ]
+      },
+      {
+        "case": "w4",
+        "from_K": 1,
+        "set_k": [
+          "B5C3_NODE_20"
+        ],
+        "set_k1": [
+          "B5C3_NODE_21",
+          "B5C3_NODE_24"
+        ]
+      },
+      {
+        "case": "w4",
+        "from_K": 2,
+        "set_k": [
+          "B5C3_NODE_21",
+          "B5C3_NODE_24"
+        ],
+        "set_k1": [
+          "B5C3_NODE_24",
+          "B5C3_NODE_25",
+          "B5C3_NODE_27"
+        ]
+      }
+    ],
+    "Greedy": [],
+    "StandaloneTopK": [],
+    "WFC": []
+  },
+  "nonnested_ratio": {
+    "Exact": "11/15",
+    "Greedy": "0/15",
+    "StandaloneTopK": "0/15",
+    "WFC": "0/15"
+  },
+  "pairwise_same_set": [
+    {
+      "pair": "Exact-Greedy",
+      "same_set_conditions": 5,
+      "n": 20
+    },
+    {
+      "pair": "Exact-StandaloneTopK",
+      "same_set_conditions": 5,
+      "n": 20
+    },
+    {
+      "pair": "Exact-WFC",
+      "same_set_conditions": 5,
+      "n": 20
+    },
+    {
+      "pair": "Greedy-StandaloneTopK",
+      "same_set_conditions": 16,
+      "n": 20
+    },
+    {
+      "pair": "Greedy-WFC",
+      "same_set_conditions": 20,
+      "n": 20
+    },
+    {
+      "pair": "StandaloneTopK-WFC",
+      "same_set_conditions": 16,
+      "n": 20
+    }
+  ]
+}

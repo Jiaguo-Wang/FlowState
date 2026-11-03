@@ -1,0 +1,27 @@
+{
+  "retry_of": "r1_ck3_fs",
+  "attempt": 4,
+  "timestamp": "2026-10-29 15:56:41",
+  "archived_dir": "/home/wjg/code/FlowState/evaluation/p0_control_cycle_gpu/arms/passed_print_bug_r1_ck3_fs_20261029_155640",
+  "previous_failures": [
+    {
+      "error": "SystemExit(0)（Scheduler SIGQUIT 级联）",
+      "root_cause": "observation.py wrap_eager.execute 于 ForwardBatch 访问 batch.reqs（属性不存在）；首个目标请求 C_A 的首个 forward 触发，history/shape warm 因 ACTIVE=False 早退未触发",
+      "fix": "run() 暂存 ACTIVE_RID（同一同步调用栈），execute() 读取；offline_test_observation 3/3"
+    },
+    {
+      "error": "ValueError('T0–T4 恒等式失败：存在重复累加或遗漏')",
+      "root_cause": "runner.py 恒等式 bounds 平坦列表使 sum(gaps) 覆盖全部相邻对（含段内 start→end），与 warm_total/req_total 双计段长；实测差 7570.6ms == warm_total(6807.9)+req_total(762.6)，且四请求全部内容门禁（cold/E/prefill/COW/FA/admission/audit/triton）在该次已通过",
+      "fix": "gaps 改为仅段间间隙；attempt2 落盘数字复算恒等式精确闭合"
+    },
+    {
+      "error": "KeyError('recovery_cost_ms')",
+      "root_cause": "runner.py oracle 对照凭记忆引用 frozen[recovery_cost_ms]，t2g1 冻结 schema 实际字段为 J_ms_current_scope；该次选集对照已逐位一致、J 数值逐位相等（154.34895561599998），且 T0–T4 恒等式已通过",
+      "fix": "改为 frozen['J_ms_current_scope']；prepare cpu_prechecks 增加 oracle 必备字段断言"
+    }
+  ],
+  "prepared": {
+    "arm": "r1_ck3_fs",
+    "dir": "/home/wjg/code/FlowState/evaluation/p0_control_cycle_gpu/arms/r1_ck3_fs"
+  }
+}

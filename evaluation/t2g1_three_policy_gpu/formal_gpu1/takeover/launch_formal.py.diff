@@ -1,0 +1,72 @@
+--- /home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal/launch_formal.py
++++ /home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/launch_formal.py
+@@ -20,7 +20,7 @@
+ from pathlib import Path
+ 
+ ROOT = Path('/home/wjg/code/FlowState')
+-OUT = ROOT / 'evaluation/t2g1_three_policy_gpu/formal'
++OUT = ROOT / 'evaluation/t2g1_three_policy_gpu/formal_gpu1'
+ CFORMAL = ROOT / 'evaluation/c_formal_perf_gpu'
+ RUNNER_MODULE = 'evaluation.c_formal_perf_gpu.runner'  # 零改动复用的测量栈入口
+ REUSED_MODULES = ['runner.py', 'bridge.py', 'control.py']  # 被复用的 c_formal 模块（逐臂哈希复核）
+@@ -81,9 +81,9 @@
+             case.mkdir(exist_ok=False)
+             for f in SHARED:
+                 (case / f).write_bytes((OUT / f).read_bytes())
+-            env = {'CUDA_VISIBLE_DEVICES': '0', 'HF_HUB_OFFLINE': '1', 'TRANSFORMERS_OFFLINE': '1',
++            env = {'CUDA_VISIBLE_DEVICES': 'GPU-051c9abc-864a-9f31-c4f7-a737aed997ff', 'HF_HUB_OFFLINE': '1', 'TRANSFORMERS_OFFLINE': '1',
+                    'PYTHONDONTWRITEBYTECODE': '1', 'PYTHONUNBUFFERED': '1',
+-                   'FLOWSTATE_STEP5D_PORT': '49987', 'B5D4_RUN': 'run', 'B5D4_ARM': 'strict',
++                   'FLOWSTATE_STEP5D_PORT': '50087', 'B5D4_RUN': 'run', 'B5D4_ARM': 'strict',
+                    'PILOT_MODE': 'strict_warm', 'PILOT_POLICY': arm['policy'], 'PILOT_PENDING': arm['pending'],
+                    'FS_MEASURE_MODE': '1', 'TRITON_CACHE_DIR': '/b5out/triton_cache',
+                    'PYTHONPATH': '%s:%s:%s' % (ROOT, ROOT / 'tests/runtime',
+@@ -91,19 +91,19 @@
+             for p, h in lock.items():
+                 assert sha(p) == h, p
+             # GPU 空卡门禁（正式礼仪，与 c_formal 一致；不用 Smoke 放宽条件）
+-            apps = run(['nvidia-smi', '-i', '0', '--query-compute-apps=pid,process_name,used_memory', '--format=csv'])
+-            assert len(apps.strip().splitlines()) == 1, 'GPU0 存在其他任务（空卡礼仪：不抢占，停止）'
+-            gpu = run(['nvidia-smi', '-i', '0', '--query-gpu=uuid,name,memory.used,memory.total', '--format=csv'])
++            apps = run(['nvidia-smi', '-i', 'GPU-051c9abc-864a-9f31-c4f7-a737aed997ff', '--query-compute-apps=pid,process_name,used_memory', '--format=csv'])
++            assert len(apps.strip().splitlines()) == 1, 'GPU1 存在其他任务（空卡礼仪：不抢占，停止）'
++            gpu = run(['nvidia-smi', '-i', 'GPU-051c9abc-864a-9f31-c4f7-a737aed997ff', '--query-gpu=uuid,name,memory.used,memory.total', '--format=csv'])
+             assert 'H100 PCIe' in gpu
+-            assert int(run(['nvidia-smi', '-i', '0', '--query-gpu=memory.used',
+-                            '--format=csv,noheader,nounits']).strip()) < 1000, 'GPU0 显存基线异常'
+-            name = 'flowstate-t2g2-' + arm['name'].replace('_', '-').lower()
++            assert int(run(['nvidia-smi', '-i', 'GPU-051c9abc-864a-9f31-c4f7-a737aed997ff', '--query-gpu=memory.used',
++                            '--format=csv,noheader,nounits']).strip()) < 1000, 'GPU1 显存基线异常'
++            name = 'flowstate-t2g2-gpu1-' + arm['name'].replace('_', '-').lower()
+             assert not run(['docker', 'ps', '-a', '--filter', 'name=' + name,
+                             '--format', '{{.Names}}']).strip(), '专用容器已存在'
+             with socket.socket() as sock:
+-                sock.bind(('127.0.0.1', 49987))
++                sock.bind(('127.0.0.1', 50087))
+             write(OUT / ('%s_gpu_before.json' % arm['name']), {'gpu': gpu, 'processes': apps})
+-            cmd = ['docker', 'run', '--rm', '--pull', 'never', '--name', name, '--gpus', 'device=0',
++            cmd = ['docker', 'run', '--rm', '--pull', 'never', '--name', name, '--gpus', 'device=GPU-051c9abc-864a-9f31-c4f7-a737aed997ff',
+                    '--network', 'host', '--shm-size', '32g']
+             for src, dst, ro in [(ROOT, ROOT, True),
+                                  (Path('/home/wjg/models/qwen3.5-9b'), Path('/home/wjg/models/qwen3.5-9b'), True),
+@@ -112,7 +112,7 @@
+             for k, v in env.items():
+                 cmd += ['--env', k + '=' + v]
+             cmd += ['--workdir', str(ROOT), '--entrypoint', 'python3', image_id,
+-                    '-B', '-m', RUNNER_MODULE]
++                    '-B', str(OUT / 'device_entry.py')]
+             write(OUT / ('%s_command.json' % arm['name']), cmd)
+             try:
+                 with (OUT / ('%s.runtime.log' % arm['name'])).open('x') as log:
+@@ -124,9 +124,9 @@
+                 obs = []
+                 for _ in range(3):
+                     time.sleep(3)
+-                    mem = int(run(['nvidia-smi', '-i', '0', '--query-gpu=memory.used',
++                    mem = int(run(['nvidia-smi', '-i', 'GPU-051c9abc-864a-9f31-c4f7-a737aed997ff', '--query-gpu=memory.used',
+                                    '--format=csv,noheader,nounits']).strip())
+-                    apps2 = run(['nvidia-smi', '-i', '0', '--query-compute-apps=pid,process_name,used_memory',
++                    apps2 = run(['nvidia-smi', '-i', 'GPU-051c9abc-864a-9f31-c4f7-a737aed997ff', '--query-compute-apps=pid,process_name,used_memory',
+                                  '--format=csv'])
+                     obs.append({'memory_mib': mem, 'processes': apps2})
+                 own = run(['docker', 'ps', '-a', '--filter', 'name=' + name,

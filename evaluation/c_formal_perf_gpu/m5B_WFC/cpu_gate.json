@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "runtime_sources": {
+    "/sgl-workspace/sglang/python/sglang/srt/managers/scheduler.py": "1d4a7683e32f0862cf5b03be33e5ec23f9d112e59546d391e28fa222fcd1619b",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/memory_pool.py": "29ef7b37d2e12b1a4b674b97c33b3ceb05cd8421a3742eb33cb6a75f52896ddc",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/unified_tree_core.py": "f0719d30542f8c54e7e035091e4f8b5753282e7d3b8f65e31f54d3f1362bafe8",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/session_ref_tracker.py": "21353af6b20585132b65e3952dc5ce3f2450780db1fd8d0d809e184d3fb37007",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/component_type.py": "7d369ff5f0c9b84c0f0f73910357e7929b4bda6fc1287f987522a83f8c893376",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/cache_action.py": "6e1ff116fbcbc77954e12bfbb8d525e9d60d26aa2b95d54f19920c3f15f9ed52",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/tree_core_registry.py": "d767fcdc2c2d7ec40f541be897a4036d55fae7a40c629217cf72ddacf1bb7359",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/unified_tree_core_interface.py": "ff5412bbf1629a1fb67fb4ee1ed4824d5c14012f60c4606065e4a6937386532c",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/__init__.py": "dfe2244f37bf6c26b2b8473d6c0317fa4996ec16a1e98afb8dabd1ed93c90efc",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/components/swa_component.py": "dd6e74925e6b8ccf07b316f65e38b1ec5aaf5b1e69d11e707501f20862b13948",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/components/mamba_component.py": "51ce309485e054e356fda112e4c441750c145b164fa600ab472d73d03ecff2f6",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/components/full_component.py": "edf7ff730f81db8d2d322d54329f74953175cba5745ed55ab6e5d24115706d66",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/components/tree_component.py": "e1625742122a9c0e963dc4d854447672fb6e082abdfb360d748205d042a35d07",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/components/__init__.py": "bde842f9c2d5054e000281d301ecfa1e934bef65628a77fdb6c20172c0f0995c",
+    "/sgl-workspace/sglang/python/sglang/srt/managers/schedule_batch.py": "7bdd988f3274bb11b3b5fd699b985ae27c28ff9e2e7f601a6320e182efcf1595",
+    "/sgl-workspace/sglang/python/sglang/srt/model_executor/model_runner.py": "221032bf7ae57d2ebdb96801150a48d23244840a9b7938dc586e911671c11102"
+  },
+  "checks": [
+    "冻结来源摘要一致（workloads/cpu_results/input_lock 逐项重算）",
+    "C 案例仅16条原始预热（8前缀×2轮），4个 ready Pending 输入不变",
+    "CPU 候选前缀=预热水截断，两轮前缀一致（prepare.py 已断言）",
+    "三策略冻结选择来自 cpu_results.json/复核 review_results.json，未按 GPU 结果调整",
+    "保留既有 bind/preflight/reconcile_strict 合同及逐项 Postcheck",
+    "语法检查通过"
+  ],
+  "说明": "真实Native接口前置检查在容器内、启动Engine前执行；不是GPU成功证据；与 kvflow_native_recovery_diagnostic 同一镜像与16项runtime源码摘要"
+}

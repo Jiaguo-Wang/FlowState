@@ -1,0 +1,38 @@
+{
+  "strict20": {
+    "conditions": 20,
+    "cross_checked": "e3_step1/condition_results.csv：Greedy/Exact/Greedy+1-Swap/WFC 选集与 J 全部一致（EPS=1e-9）",
+    "exact_gate": "全部 20 条件 n=7、|P|=4、K≤4、枚举子集 99 ≤ 794，planner.allowed 放行",
+    "tolerance_tiebreak": {
+      "EPS": 1e-09,
+      "Greedy": "边际收益并列时按 checkpoint_id 字典序（optimizer.py tie-break）",
+      "Exact": "容差 1e-9 内取最少项、再字典序（audit.py:63 与 planner.choose_exact 同语义）",
+      "Greedy+1-Swap": "初始集=Greedy 解；(removed,added) 固定字典序首改善；仅严格下降接受（不跨等值平台）；无改善终止（audit.py:42-56）",
+      "WFC": "排序键 (-q, -r, checkpoint_id)（wfc.py:14）"
+    },
+    "same_J_different_set": []
+  },
+  "ck3": {
+    "input_lock_verified": true,
+    "candidates": 16,
+    "pending": 4,
+    "K": 3,
+    "exact_gate": "n=16 > 12 → planner.allowed 拒绝；Exact 列留空，未绕过门禁，不宣称任何最优性",
+    "cross_checked": "Greedy/WFC 选集与 current_J_ms 对 kvflow_multiworkflow_cpu_main/cpu_results.json C/K3 行一致",
+    "one_swap_reference": "C/K3 无冻结 1-Swap 参照（e3 未覆盖该输入），仅报告相对 Greedy 的 J 变化"
+  },
+  "sources": {
+    "greedy": "flowstate/optimizer.py GlobalOptimizer._select_candidates（经 e3 audit.py:60 闭包）",
+    "exact": "e3 audit.py:61-63（choose_exact 语义 = b5d1 planner.py:123-126）",
+    "one_swap": "e3 audit.py:42-56 swap()",
+    "wfc": "evaluation/p1_strong_baseline_validation/wfc.py select()",
+    "allowed_gate": "b5d1 planner.py:121-122 allowed()"
+  },
+  "environment": {
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "cpu": ": Intel(R) Xeon(R) Gold 6426Y",
+    "clock": "namespace(implementation='clock_gettime(CLOCK_MONOTONIC)', monotonic=True, adjustable=False, resolution=1e-09)",
+    "note": "共享机器上的本地微基准，可能受后台负载干扰；P95 仅为微基准经验分位数"
+  }
+}

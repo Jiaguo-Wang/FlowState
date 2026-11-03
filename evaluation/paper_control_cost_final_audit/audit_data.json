@@ -1,0 +1,229 @@
+{
+ "T2G2_control": {
+  "apply_rpc_wall_median_ms": {
+   "FS": 11499.245,
+   "MC": 11060.673,
+   "KV": 11123.472
+  },
+  "production_core_ms": {
+   "FS": 1213.0,
+   "MC": 1185.3,
+   "KV": 1292.9
+  },
+  "audit_stages_ms": {
+   "FS": 6316.3,
+   "MC": 6081.8,
+   "KV": 6148.7
+  },
+  "production_core_share_percent": {
+   "FS": 10.5,
+   "MC": 10.7,
+   "KV": 11.6
+  },
+  "paired_control_diff_ms": {
+   "FS-MC": {
+    "median": 575.7,
+    "min": -1091.7,
+    "max": 1348.1,
+    "n": 20
+   },
+   "FS-KV": {
+    "median": 370.9,
+    "min": -1101.8,
+    "max": 1529.6,
+    "n": 20
+   }
+  },
+  "eq_ttft_paired_diff_median_ms": {
+   "FS-MC": -114.127,
+   "FS-KV": -105.728
+  },
+  "amortization": {
+   "FS-MC": {
+    "ctrl_rpc_paired_diff_median_ms": 575.7,
+    "production_core_diff_ms": 27.7,
+    "eq_ttft_saved_per_request_ms": 114.1,
+    "break_even_rpc_inclusive_requests": 6.0,
+    "break_even_production_core_requests": 1.0
+   },
+   "FS-KV": {
+    "ctrl_rpc_paired_diff_median_ms": 370.9,
+    "production_core_diff_ms": -79.9,
+    "eq_ttft_saved_per_request_ms": 105.7,
+    "break_even_rpc_inclusive_requests": 4.0,
+    "break_even_production_core_requests": 0.0
+   }
+  }
+ },
+ "CK3_control": {
+  "segments": {
+   "FS": {
+    "rpc_wall": 11318.0,
+    "auth_plan": 160.0,
+    "reconcile": 869.0,
+    "core_sum": 1029.0
+   },
+   "SA": {
+    "rpc_wall": 11246.0,
+    "auth_plan": 158.0,
+    "reconcile": 870.0,
+    "core_sum": 1028.0
+   },
+   "WFC": {
+    "rpc_wall": 11300.0,
+    "auth_plan": 161.0,
+    "reconcile": 875.0,
+    "core_sum": 1036.0
+   }
+  },
+  "amortization": {
+   "FS-SA": {
+    "production_core_diff_ms": 1.0,
+    "eq_ttft_saved_per_request_ms": 34.1,
+    "break_even_production_core_requests": 1.0,
+    "fs_self_core_amortize_deep_requests": 7.0
+   },
+   "FS-WFC": {
+    "production_core_diff_ms": -7.0,
+    "eq_ttft_saved_per_request_ms": 46.9,
+    "break_even_production_core_requests": 0.0,
+    "fs_self_core_amortize_deep_requests": 7.0
+   }
+  }
+ },
+ "RQ6_optimization": {
+  "harness": "RQ6 冻结 24 快照 × 3 = 72 正式 run（前后同基线、同 perf_counter_ns 四阶段口径）",
+  "before_total_ms": 8398.846824527778,
+  "after_total_ms": 629.8267051805556,
+  "reduction_percent": 92.501,
+  "stages": {
+   "introspection": {
+    "before": 1913.3012818333332,
+    "after": 322.57272415277777
+   },
+   "reconciliation": {
+    "before": 6483.255894138889,
+    "after": 304.78507512500005
+   }
+  },
+  "rpc": {
+   "before_per_epoch": 51.5,
+   "after_per_epoch": 2.0
+  },
+  "semantic_equivalence_gates": {
+   "fa_preservation": true,
+   "formal_runs": true,
+   "gpu_cleanup": true,
+   "heg_equivalence": true,
+   "no_cross_run_contamination": true,
+   "no_fa_cascade": true,
+   "no_future_leakage": true,
+   "no_native_recurrent_eviction": true,
+   "no_unexpected_rematerialization": true,
+   "recurrent_residency": true,
+   "selected_set_equivalence": true,
+   "snapshot_immutable": true,
+   "two_rpc_per_epoch": true
+  }
+ },
+ "control_path_and_epoch": {
+  "transport_optimization": {
+   "harness": "control_path resume-epoch harness（前后各自完整采集，时段不同、不拼接）",
+   "flowstate_total_control_before_ms": 656.77120285564,
+   "flowstate_total_control_after_ms": 131.90408737129636,
+   "reduction_percent": 79.9,
+   "semantic_equivalence": {
+    "identical_plan": true,
+    "same_selected_sets": 216,
+    "same_request_heg": 864
+   }
+  },
+  "request_execution_ms": {
+   "LRU": {
+    "before": 163.37485203819443,
+    "after": 163.19131822569446
+   },
+   "Marconi": {
+    "before": 128.15689534375,
+    "after": 127.98688558680556
+   },
+   "FlowState": {
+    "before": 92.53696051041668,
+    "after": 91.15194313194445
+   }
+  },
+  "control_inclusive_epoch_paired": {
+   "LRU": {
+    "mean_diff_ms": 526.6,
+    "median_diff_ms": 156.5,
+    "bootstrap_95_ci_ms": [
+     -1057.4,
+     2214.9
+    ],
+    "win_loss": "15/9"
+   },
+   "Marconi": {
+    "mean_diff_ms": -549.6,
+    "median_diff_ms": -134.4,
+    "bootstrap_95_ci_ms": [
+     -1784.9,
+     699.4
+    ],
+    "win_loss": "8/16"
+   }
+  },
+  "statistically_stable_net_benefit_vs_both": false
+ },
+ "checks": [
+  {
+   "check": "T2G2: spec 给定等权配对差复核（FS-MC −114.127 / FS-KV −105.728）",
+   "pass": true,
+   "detail": "{'FS-MC': -114.127, 'FS-KV': -105.728}"
+  },
+  {
+   "check": "T2G2: 生产核心占 RPC 墙钟比例 <15%（仪表主导墙钟）",
+   "pass": true,
+   "detail": "{'FS': 10.5, 'MC': 10.7, 'KV': 11.6}"
+  },
+  {
+   "check": "CK3: 生产核心 FS 与基线差 <20ms（协议内可比）",
+   "pass": true,
+   "detail": "{'FS-SA': {'production_core_diff_ms': 1.0, 'eq_ttft_saved_per_request_ms': 34.1, 'break_even_production_core_requests': 1.0, 'fs_self_core_amortize_deep_requests': 7.0}, 'FS-WFC': {'production_core_diff_ms': -7.0, 'eq_ttft_saved_per_request_ms': 46.9, 'break_even_production_core_requests': 0.0, 'fs_"
+  },
+  {
+   "check": "RQ6E: before 均值与 RQ6 基线一致（同基线可比）",
+   "pass": true,
+   "detail": "{'rq6': 8398.846824527778, 'rq6e_before': 8398.847}"
+  },
+  {
+   "check": "RQ6E: 8398.847→629.827 复核（−92.50%）",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "RQ6E: 语义等价门禁全过（selected-set/H-E-G/FA 等）",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "control_path: 656.771→131.904 复核（≈−79.9%）",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "control_path: 语义保持（identical_plan 且选集/HEG 等价）",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "完整 Epoch: 两组配对差 95%CI 均含零（未证明稳定净收益）",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "完整 Epoch: FlowState 平均 Request Execution 最低（前后均成立）",
+   "pass": true,
+   "detail": ""
+  }
+ ]
+}

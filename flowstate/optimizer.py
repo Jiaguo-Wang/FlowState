@@ -1,7 +1,10 @@
-"""为等大小检查点执行全局贪心分配。"""
+"""等大小检查点的分配求解：严格入口按规模门禁在 Exact 枚举与 Marginal Greedy 间选择，Legacy 入口仅 Greedy。"""
 
 from __future__ import annotations
 
+import itertools
+import math
+import time
 from dataclasses import dataclass
 from typing import Callable, Sequence
 
@@ -14,6 +17,35 @@ from .workflow import PendingContinuation
 
 
 _FLOAT_TOLERANCE_MS = 1e-9
+
+# Exact 准入门禁：严格沿用已验证边界（b5d1 合同），只做规模判定，不扩大支持范围。
+_EXACT_MAX_CANDIDATES = 12
+_EXACT_MAX_PENDINGS = 4
+_EXACT_MAX_BUDGET_K = 4
+_EXACT_MAX_SUBSETS = 794
+
+
+def _exact_admission(candidate_count: int, pending_count: int, budget_k: int) -> tuple[bool, dict]:
+    """判定当前规模是否落在已验证 Exact 枚举域内；返回 (是否准许, 判定明细)。
+
+    仅规模超限才允许切换 Greedy；本函数不承担输入合法性检查（由 Epoch 合同负责）。
+    """
+    subsets = sum(
+        math.comb(candidate_count, size)
+        for size in range(min(candidate_count, budget_k) + 1)
+    )
+    allowed = (
+        candidate_count <= _EXACT_MAX_CANDIDATES
+        and pending_count <= _EXACT_MAX_PENDINGS
+        and budget_k <= _EXACT_MAX_BUDGET_K
+        and subsets <= _EXACT_MAX_SUBSETS
+    )
+    return allowed, {
+        "candidates": candidate_count,
+        "pendings": pending_count,
+        "budget_k": budget_k,
+        "enumerable_subsets": subsets,
+    }
 
 
 @dataclass(frozen=True)
@@ -32,6 +64,8 @@ class GlobalOptimizer:
 
     def __init__(self, recovery_cost_model: RecoveryCostModel) -> None:
         self._recovery_cost_model = recovery_cost_model
+        # 最近一次 plan_strict 的决策记录（求解器、门禁判定、选集、目标值、纯求解时间），供审计。
+        self.last_strict_decision: dict | None = None
 
     def select(
         self,
@@ -50,29 +84,84 @@ class GlobalOptimizer:
         )
 
     def plan_strict(self, epoch: StrictAllocationEpoch) -> StrictAllocationPlan:
-        """只产生严格逻辑计划；不调用 Controller 或物理适配器。"""
+        """严格入口的混合求解：规模门禁内 Exact 枚举，超域走原有 Marginal Greedy。
+
+        仅当规模超出已验证 Exact 准入门禁时才使用 Greedy；Epoch 合同错误、
+        输入不完整或求解器异常一律向上抛出，绝不静默回退。Exact 与 Greedy
+        共用同一 frontiers 评分闭包（同一冻结收益语义与共同目标 J）。
+        """
         if type(epoch) is not StrictAllocationEpoch:
             raise TypeError("严格入口只接受 StrictAllocationEpoch")
         epoch.validate()
         candidates = tuple(c.candidate for c in epoch.candidates)
 
-        def score(selected):
-            frontiers = epoch.frontiers(c.checkpoint_id for c in selected)
+        def score_ids(selected_ids):
+            frontiers = epoch.frontiers(selected_ids)
             return sum(self._recovery_cost_model.estimate(p.target - e, p.target)
                        for p, e in zip(epoch.pendings, frontiers))
 
-        size = candidates[0].memory_bytes if candidates else 1
-        allocation = self._select_candidates(candidates, epoch.K * size, score)
-        ids = tuple(c.checkpoint_id for c in allocation.selected)
+        allowed, gate = _exact_admission(
+            len(candidates), len(epoch.pendings), epoch.K)
+        started_ns = time.perf_counter_ns()
+        if allowed:
+            ids = self._enumerate_exact_subsets(
+                tuple(sorted(c.checkpoint_id for c in candidates)), epoch.K, score_ids)
+            solver = "Exact"
+            cost_after_ms = score_ids(ids)
+            total_benefit_ms = score_ids(()) - cost_after_ms
+            if total_benefit_ms < -_FLOAT_TOLERANCE_MS:
+                raise ValueError(f"总收益不能为负：{total_benefit_ms} ms")
+            if total_benefit_ms < 0.0:
+                total_benefit_ms = 0.0
+        else:
+            size = candidates[0].memory_bytes if candidates else 1
+            allocation = self._select_candidates(
+                candidates, epoch.K * size,
+                lambda selected: score_ids(tuple(c.checkpoint_id for c in selected)))
+            ids = tuple(c.checkpoint_id for c in allocation.selected)
+            solver = "Marginal Greedy"
+            cost_after_ms = allocation.recovery_cost_after_ms
+            total_benefit_ms = allocation.total_benefit_ms
+        pure_solve_ms = (time.perf_counter_ns() - started_ns) / 1e6
+        self.last_strict_decision = {
+            "solver": solver,
+            "gate_allowed": allowed,
+            "gate": gate,
+            "selected_ids": list(ids),
+            "objective_ms": cost_after_ms,
+            "pure_solve_ms": pure_solve_ms,
+        }
         frontiers = epoch.frontiers(ids)
         pending = tuple(PendingPlan(p.pending_id, p.target, e, p.target - e,
                          self._recovery_cost_model.estimate(p.target - e, p.target))
                         for p, e in zip(epoch.pendings, frontiers))
         return StrictAllocationPlan(
             epoch.epoch_id, epoch.snapshot_sha256, epoch.content_digest, epoch.K,
-            ids, len(ids), pending, allocation.recovery_cost_after_ms,
-            allocation.total_benefit_ms,
+            ids, len(ids), pending, cost_after_ms,
+            total_benefit_ms,
             tuple(sorted(c.checkpoint_id for c in candidates if c.checkpoint_id not in ids)),
+        )
+
+    def _enumerate_exact_subsets(
+        self,
+        sorted_ids: tuple[str, ...],
+        budget_k: int,
+        score_ids: Callable[[tuple[str, ...]], float],
+    ) -> tuple[str, ...]:
+        """迁移自已验证 Exact 实现：穷举 |S|≤K 子集按共同目标评分。
+
+        同分规则与既有合同一致：容差 1e-9 内取最少项、再按 ID 字典序。
+        """
+        scored = [
+            (score_ids(subset), subset)
+            for size in range(min(budget_k, len(sorted_ids)) + 1)
+            for subset in itertools.combinations(sorted_ids, size)
+        ]
+        best_ms = min(value for value, _ in scored)
+        return min(
+            (subset for value, subset in scored
+             if abs(value - best_ms) <= _FLOAT_TOLERANCE_MS),
+            key=lambda subset: (len(subset), subset),
         )
 
     def _select_candidates(

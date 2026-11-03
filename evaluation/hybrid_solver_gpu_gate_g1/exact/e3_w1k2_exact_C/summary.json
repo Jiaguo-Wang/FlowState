@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "arm": "strict",
+  "scenario": "A_w1_k2_exact_branch",
+  "solver": "Exact",
+  "strict_decision": {
+    "gate": {
+      "budget_k": 2,
+      "candidates": 7,
+      "enumerable_subsets": 29,
+      "pendings": 4
+    },
+    "gate_allowed": true,
+    "objective_ms": 53.77075886917578,
+    "pure_solve_ms": 0.20342,
+    "selected_ids": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_21"
+    ],
+    "solver": "Exact"
+  },
+  "selection_source": "GlobalOptimizer.plan_strict(在线)",
+  "plan_selected_ids": [
+    "B5C3_NODE_18",
+    "B5C3_NODE_21"
+  ],
+  "plan_recovery_cost_ms": 53.77075886917578,
+  "oracle": {
+    "J_ms": 53.77075886917578,
+    "selected": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_21"
+    ],
+    "status": "PASS",
+    "subsets": 29
+  },
+  "provenance_status": "PROVENANCE_UNVERIFIED",
+  "cross_workflow_resume_certified": false,
+  "native_match": {
+    "best_match_node": 21,
+    "cow_requested": true,
+    "cow_source_slots": [
+      10
+    ],
+    "executable_prefix": 3712,
+    "input_token_count": 4497,
+    "input_token_digest": "6e920fdf7bc1cebc5a675c5919b233b366f05a5316e7de18dbd8fc6eb3126b02",
+    "last_device_node": 21,
+    "last_host_node": 21,
+    "mamba_branching_seqlen": 4096,
+    "mamba_host_hit_length": 0,
+    "monotonic_ns": 1322180071806463,
+    "physical_fa_hit": 4096,
+    "replay_gap": 384,
+    "request_id": "IMW1_C_TURN_003",
+    "working_slots": [
+      19
+    ]
+  },
+  "output_ids": [
+    248058,
+    198,
+    27,
+    1628,
+    15462,
+    10318,
+    32634,
+    29
+  ],
+  "cold_reference_match": true,
+  "evictions": [
+    [
+      "B5C3_NODE_20",
+      true
+    ],
+    [
+      "B5C3_NODE_22",
+      true
+    ],
+    [
+      "B5C3_NODE_24",
+      true
+    ],
+    [
+      "B5C3_NODE_25",
+      true
+    ],
+    [
+      "B5C3_NODE_27",
+      true
+    ]
+  ],
+  "request_wall_ms": 8335.222258,
+  "ttft_ms": 1048.151794,
+  "stream_tpot_ms": 1040.9481855714287,
+  "control_rpc_wall_ms": 4675.866812,
+  "control_through_completion_ms": 13325.643415,
+  "control_timing_stages": [
+    {
+      "ms": 1057.297565,
+      "stage": "heavy_observation_gpu_sync"
+    },
+    {
+      "ms": 518.944371,
+      "stage": "strict_epoch_authentication"
+    },
+    {
+      "ms": 9.34955,
+      "stage": "plan_strict_hybrid_solve"
+    },
+    {
+      "ms": 0.301699,
+      "stage": "independent_oracle"
+    },
+    {
+      "ms": 538.874178,
+      "stage": "apply_time_freshness_preflight"
+    },
+    {
+      "ms": 160.074455,
+      "stage": "fa_content_audit_before"
+    },
+    {
+      "ms": 171.370995,
+      "stage": "strict_reconciliation_with_postchecks"
+    },
+    {
+      "ms": 289.84631,
+      "stage": "fa_content_postcheck_and_resume_baseline"
+    }
+  ],
+  "说明": "单臂GPU正确性验证，非性能实验；计时字段仅为执行记录；CUDA事件是设备时间线区间而非纯内核之和"
+}

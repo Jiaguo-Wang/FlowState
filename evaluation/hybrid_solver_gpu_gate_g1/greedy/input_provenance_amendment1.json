@@ -1,0 +1,9 @@
+{
+  "amendment": "运行模块由 evaluation.paper_hybrid_gpu_fix_b.runner 改为 evaluation.hybrid_solver_gpu_gate_g1.pkg_greedy.runner",
+  "reason": "g1_ck3_greedy_A 首跑失败（returncode=1）：fix_b runner 第94行无条件查找目标绑定源节点，C_A 在 FS 冻结计划下 E=0 无恢复源（control.py 已有无源分支），next() 抛 StopIteration。gate_b 当时只验证过 C_B(E>0)，该路径未被覆盖。",
+  "fix": "pkg_greedy=fix_b 逐字节复制＋唯一最小修复：源绑定/COW/别名三断言包裹为 if expected_E>0；E=0 改为正向断言（无源/无COW痕迹/无工作槽）。语义对齐 c_formal_perf_gpu/runner.py 行261起的同款生产分支（60 正式臂含 5 个 E=0 的 C_A 臂验证）。",
+  "unchanged": "求解/协调/安全语义、冻结输入、Cold 参照、其余 fix_b 文件均零改动；失败证据 g1_ck3_greedy_A* 与其 execution_lock 完整保留（其锁记录的 runner 为 fix_b 原版）。",
+  "detail": "evaluation/hybrid_solver_gpu_gate_g1/pkg_greedy/build_record.json",
+  "failed_first_attempt": "g1_ck3_greedy_A（fix_b 原版 runner）",
+  "successful_rerun_naming": "RUN 追加 _r{重试序号}"
+}

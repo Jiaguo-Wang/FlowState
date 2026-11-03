@@ -1,0 +1,11 @@
+PASS m1A_FS TTFT 159 ms
+PASS m1A_MC TTFT 128 ms
+PASS m1A_KV TTFT 40 ms
+Traceback (most recent call last):
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal/launch_formal.py", line 180, in <module>
+    main()
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal/launch_formal.py", line 174, in main
+    launch_phase(protocol['main_arms'], 'main')
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal/launch_formal.py", line 138, in launch_phase
+    assert cleanup['status'] == 'PASS', '清理失败：' + arm['name']
+AssertionError: 清理失败：m1B_FS

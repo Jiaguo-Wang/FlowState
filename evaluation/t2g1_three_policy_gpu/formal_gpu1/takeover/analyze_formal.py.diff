@@ -1,0 +1,11 @@
+--- /home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal/analyze_formal.py
++++ /home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/analyze_formal.py
+@@ -21,7 +21,7 @@
+ 
+ ROOT = Path('/home/wjg/code/FlowState')
+ T2G1 = ROOT / 'evaluation/t2g1_three_policy_gpu'
+-OUT = T2G1 / 'formal'
++OUT = T2G1 / 'formal_gpu1'
+ POLICIES = ['FlowState-Greedy', 'Marconi-Evict', 'KVFlow-inspired']
+ COMPARATORS = [('FS-MC', 'FlowState-Greedy', 'Marconi-Evict'), ('FS-KV', 'FlowState-Greedy', 'KVFlow-inspired')]
+ PENDINGS = ['C_A', 'C_B', 'C_C', 'C_D']

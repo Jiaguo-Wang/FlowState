@@ -1,0 +1,14 @@
+{
+  "gate": "BLOCKED",
+  "query": "nvidia-smi -i 0 --query-compute-apps=pid,process_name,used_memory --format=csv",
+  "observed_date": "2026-10-27 Asia/Shanghai",
+  "processes": [
+    {
+      "pid": 3492611,
+      "process_name": "sglang::scheduler_TP0_EP0",
+      "used_memory_MiB": 65736
+    }
+  ],
+  "action": "未启动Engine、未等待重试、未干预进程",
+  "protocol_status": "没有启动新的三策略GPU臂；正式重复协议尚未提交审核"
+}

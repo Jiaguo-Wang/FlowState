@@ -1,0 +1,445 @@
+{
+  "status": "PASS",
+  "mode": "four_pending_control_cycle",
+  "policy": "Marconi-Evict",
+  "order": [
+    "C_A",
+    "C_B",
+    "C_C",
+    "C_D"
+  ],
+  "selection": {
+    "kernel_entry": "evaluation.marconi_evict_t2m.evict_policy.MarconiEvictPolicy.select",
+    "solver": "Marconi-Evict 真实内核",
+    "selection_call_ms": 2.31301,
+    "selected_cpu": [
+      "C_JOIN_P04032",
+      "C_JOIN_P04096",
+      "C_ROOT_P01024"
+    ],
+    "plan_recovery_cost_ms": 703.45464601
+  },
+  "cycle": {
+    "t0_ns": 1908174895903165,
+    "t3_ns": 1908182648248605,
+    "t4_ns": 1908193416042678,
+    "control_cycle_ms": 7752.34544,
+    "cycle_ms_full_incl_warm": 18520.139513,
+    "request_exec_total_ms": 1293.560693,
+    "apply_stages_ms": [
+      {
+        "stage": "final_heavy_observation",
+        "ms": 2488.068194
+      },
+      {
+        "stage": "cpu_physical_mapping",
+        "ms": 0.58436
+      },
+      {
+        "stage": "strict_epoch_authentication",
+        "ms": 147.505573
+      },
+      {
+        "stage": "policy_online_select",
+        "ms": 35.619019
+      },
+      {
+        "stage": "apply_time_freshness_preflight",
+        "ms": 1322.113048
+      },
+      {
+        "stage": "fa_content_postcheck_and_resume_baseline",
+        "ms": 1089.516181
+      }
+    ],
+    "apply_stage_gaps_ms": [
+      10.338804,
+      232.749219,
+      14.294046,
+      36.841753,
+      2374.715243
+    ],
+    "rpc_tail_ms": 2372.473893,
+    "control_rpc_wall_ms": 10128.222896,
+    "shape_warm_block_ms": [
+      {
+        "pending": "C_A",
+        "wall_ms": 6378.779729
+      },
+      {
+        "pending": "C_B",
+        "wall_ms": 193.364831
+      },
+      {
+        "pending": "C_C",
+        "wall_ms": 238.753919
+      },
+      {
+        "pending": "C_D",
+        "wall_ms": 281.290125
+      }
+    ],
+    "window_gaps_ms": [
+      1.208325,
+      1.580422,
+      2.67891,
+      2.373074,
+      1.730152,
+      1.196773,
+      1.687448,
+      1.681433
+    ],
+    "identity_exact": true,
+    "definition_note": "control_cycle_ms=T3−T0（不含形状预热/请求）；cycle_ms_full_incl_warm=T4−T0（含预热块与全部间隙）；request_exec_total_ms=首请求发送→T4（不含预热）；三口径并列，禁止混用或事后扣除"
+  },
+  "pending_rows": [
+    {
+      "pending_id": "C_A",
+      "E": 1024,
+      "T": 4096,
+      "G": 3072,
+      "physical_fa_hit": 4096,
+      "executable_prefix": 1024,
+      "prefill_token_count": 3104,
+      "batch_prefix_length": 1024,
+      "cold_output_match": true,
+      "ttft_ms": 128.388852,
+      "request_wall_ms": 279.94993,
+      "stream_tpot_ms": 21.60080442857143,
+      "timing_decomposition": {
+        "queue_ms": 3.707422,
+        "pregap_ms": 2.534145,
+        "execwin_ms": 121.586142,
+        "compute_cuda_ms": 118.84031677246094,
+        "postgap_ms": 0.16565,
+        "delivery_ms": 3.095288,
+        "ttft_ms_check": 128.388852,
+        "first_decode_cuda_ms": 24.62041664123535
+      },
+      "cuda_prefill_ms": 118.84031677246094,
+      "cuda_decode_ms": 144.7526092529297,
+      "cow_copy_count": 4,
+      "cow_copy_cuda_ms": 1.1399360001087189,
+      "start_ns": 1908192122481985,
+      "end_ns": 1908192402431915,
+      "first_token_ns": 1908192250870837,
+      "output_ids": [
+        220,
+        200,
+        248046,
+        198,
+        248045,
+        74455,
+        198,
+        248068
+      ]
+    },
+    {
+      "pending_id": "C_B",
+      "E": 1024,
+      "T": 5120,
+      "G": 4096,
+      "physical_fa_hit": 5120,
+      "executable_prefix": 1024,
+      "prefill_token_count": 4128,
+      "batch_prefix_length": 1024,
+      "cold_output_match": true,
+      "ttft_ms": 163.909189,
+      "request_wall_ms": 292.151397,
+      "stream_tpot_ms": 18.282071857142856,
+      "timing_decomposition": {
+        "queue_ms": 2.266959,
+        "pregap_ms": 2.152514,
+        "execwin_ms": 158.9564,
+        "compute_cuda_ms": 156.63792419433594,
+        "postgap_ms": 0.130854,
+        "delivery_ms": 2.68583,
+        "ttft_ms_check": 163.909189,
+        "first_decode_cuda_ms": 17.550304412841797
+      },
+      "cuda_prefill_ms": 156.63792419433594,
+      "cuda_decode_ms": 122.71260833740234,
+      "cow_copy_count": 4,
+      "cow_copy_cuda_ms": 1.1399360001087189,
+      "start_ns": 1908192403628688,
+      "end_ns": 1908192695780085,
+      "first_token_ns": 1908192567537877,
+      "output_ids": [
+        220,
+        197,
+        1,
+        198,
+        197,
+        1,
+        198,
+        197
+      ]
+    },
+    {
+      "pending_id": "C_C",
+      "E": 1024,
+      "T": 6144,
+      "G": 5120,
+      "physical_fa_hit": 6144,
+      "executable_prefix": 1024,
+      "prefill_token_count": 5152,
+      "batch_prefix_length": 1024,
+      "cold_output_match": true,
+      "ttft_ms": 208.435422,
+      "request_wall_ms": 340.251135,
+      "stream_tpot_ms": 18.791515571428572,
+      "timing_decomposition": {
+        "queue_ms": 2.96128,
+        "pregap_ms": 2.509038,
+        "execwin_ms": 202.637083,
+        "compute_cuda_ms": 199.94677734375,
+        "postgap_ms": 0.14513,
+        "delivery_ms": 2.837059,
+        "ttft_ms_check": 208.435422,
+        "first_decode_cuda_ms": 17.280223846435547
+      },
+      "cuda_prefill_ms": 199.94677734375,
+      "cuda_decode_ms": 126.2241268157959,
+      "cow_copy_count": 4,
+      "cow_copy_cuda_ms": 1.1399360001087189,
+      "start_ns": 1908192697467533,
+      "end_ns": 1908193037718668,
+      "first_token_ns": 1908192905902955,
+      "output_ids": [
+        220,
+        197,
+        510,
+        596,
+        29,
+        198,
+        197,
+        197
+      ]
+    },
+    {
+      "pending_id": "C_D",
+      "E": 1024,
+      "T": 7168,
+      "G": 6144,
+      "physical_fa_hit": 7168,
+      "executable_prefix": 1024,
+      "prefill_token_count": 6176,
+      "batch_prefix_length": 1024,
+      "cold_output_match": true,
+      "ttft_ms": 247.47221,
+      "request_wall_ms": 376.642577,
+      "stream_tpot_ms": 18.413372714285714,
+      "timing_decomposition": {
+        "queue_ms": 3.444784,
+        "pregap_ms": 2.951117,
+        "execwin_ms": 241.108537,
+        "compute_cuda_ms": 237.9481658935547,
+        "postgap_ms": 0.169781,
+        "delivery_ms": 2.918889,
+        "ttft_ms_check": 247.47221,
+        "first_decode_cuda_ms": 19.275775909423828
+      },
+      "cuda_prefill_ms": 237.9481658935547,
+      "cuda_decode_ms": 123.5852165222168,
+      "cow_copy_count": 4,
+      "cow_copy_cuda_ms": 1.1399360001087189,
+      "start_ns": 1908193039400101,
+      "end_ns": 1908193416042678,
+      "first_token_ns": 1908193286872311,
+      "output_ids": [
+        95860,
+        220,
+        197,
+        1,
+        198,
+        197,
+        1,
+        198
+      ]
+    }
+  ],
+  "residuals": [
+    {
+      "pending_id": "C_A",
+      "gap_after_request_ns": 1196773,
+      "note": "请求间隙残余（不含请求自身执行）；末项=0（T4=第4请求终点）"
+    },
+    {
+      "pending_id": "C_B",
+      "gap_after_request_ns": 1687448,
+      "note": "请求间隙残余（不含请求自身执行）；末项=0（T4=第4请求终点）"
+    },
+    {
+      "pending_id": "C_C",
+      "gap_after_request_ns": 1681433,
+      "note": "请求间隙残余（不含请求自身执行）；末项=0（T4=第4请求终点）"
+    },
+    {
+      "pending_id": "C_D",
+      "gap_after_request_ns": 0,
+      "note": "请求间隙残余（不含请求自身执行）；末项=0（T4=第4请求终点）"
+    }
+  ],
+  "shape_warm": [
+    {
+      "pending": "C_A",
+      "executable_prefix": 1024,
+      "physical_fa_hit": 1024
+    },
+    {
+      "pending": "C_B",
+      "executable_prefix": 1024,
+      "physical_fa_hit": 1024
+    },
+    {
+      "pending": "C_C",
+      "executable_prefix": 1024,
+      "physical_fa_hit": 1024
+    },
+    {
+      "pending": "C_D",
+      "executable_prefix": 1024,
+      "physical_fa_hit": 1024
+    }
+  ],
+  "census_counts": {
+    "physical": 16,
+    "mapped": 16,
+    "unmapped_extras": 0
+  },
+  "measure_mode": true,
+  "audit_entries_total": 2,
+  "triton_new_kernels": [
+    {
+      "window": "engine_ready→post_warmup",
+      "new_entries": 41,
+      "new_names": [
+        "2MM5N7L4ZVSMCNPKCJLEJOFKMDQO3SOG7FAHPRBDIX5EJP5B2DBA",
+        "2XO62VVRCHPYKD7QFDIRQSQQB45AW767DXFGXOKAQEJ2DENGFM7Q",
+        "3AVXPVCXGEG5BUUGUEMMFSIFPAXWYEXQJZAQXENNTAV2BH77OIXQ",
+        "4VSOC3JURK4SCEZIYQFKL64ZK4TTIWSNWRE2TV6NLCBE6YDXMCCA",
+        "4YCPUJ4VAR5VWZR7IHGHIO73QQNUNGZ5WXYHHUCB2S5YAIX3L4JA",
+        "5FEL27CVOFWIM2GEL4CBVQI7ZILJ5TAH7BNTODLVLJNVXDZWVSWA",
+        "6QKBZAW3QXIJQ276AMGNZTQ2QNL4YRRB75ABS5EYCW22C4NMWWXA",
+        "7EJWCUPOGIQIJ4IXZ4C3LOP5STVZMV2QVZTWJG5CMNQUGMYZXRAQ",
+        "A3MDGPZF5HVEAB4YN23DDHM5HCNCZ4IXKPTMAVFJ5SXBLG2JZHVA",
+        "ABBFFYPSFEQSZPGARP23E3SCBZRN4KYDG6SIDNQABSXWCZ7Q3EVQ",
+        "BWUK7O3ASTPPQTSDSC3NLPL5YDPPGNMCND62XARNZXKSUPNTHNPQ",
+        "CAR5A6G2AN3CV2EVF67AVPERDZW26DKHNYTJA44RTZ67UAA3W2LA",
+        "EJQHUP6LPJIBYFIO3AAZF4NNXF4HDTCPXUEWAFZF6BH3EGKY3ORA",
+        "F4C6MZYV4KQNV4GTAOWB2M5NZZ6M3FRSNVL46I7U2WJMA2VX4QJQ",
+        "FF4JIDLOLQ5LEFJON5DSVL5PNWUY7AFX3HAFKU52GU6TX2XWCZVA",
+        "HCYS6HZPNLYSC6T6PJU5HWTCFBLSDLLO3HXOV56R7GXVCXMX4HQA",
+        "HDPGR6GJSEGL7776J5FXEDVSTQQYIISMBYE4WTNMDFJ2JDGNXEFA",
+        "HWI3V7UO5EY7V4CZFOKRBKTL3O3KQ2BY3JTHFBHMPZIXXYD3K7EA",
+        "JBFEHEVJWRDJHOCG43JGCMTWD557NQNQPJ7K6L6RPACCC3Q6C3FQ",
+        "L7KY7D264B6VVBDRZXOYGFUCWWXIFQZC64KIH4GL725LNCCPZHGQ",
+        "NCEDKKNHG55NOCYN675XCPY4DOZH6C3QIVTSM2DXRZXGOQMHVFRA",
+        "NJUG7NY5YAI4WZKGODEKDWTIOVY3INYYW3WUI6Y2ROMGTJCJVWOA",
+        "RLTF6LHPFFQYZP6SZOHEHSYXY7UQWZEK4QNP5VFAJIJFRZMY5FJA",
+        "RXJQJFWQXUYIHEXK6EQ7UVP7R3VCT37V2VQEE7LRGJSSQ6JS6S7A",
+        "S7G4UMY525SOKALOV2NLVAAI3ZVKC3T2X6N2CAXDOT6MU7B4VC6A",
+        "SAB6F3TUR35AGTICJQWKAWAFCZGPIWSMLXSB364JLNL5BTBOMZTA",
+        "SANHSBFUFZDKCPIOYXVMT2QJPBQVXGKAOFV77WDXYROCTXX7Q5EA",
+        "SRS7DJBJL4JK3VXTIWT2OIDIMRU3EBFDH6MOCOUU2SU72V2TBM3Q",
+        "SU5YJEYDWTQ57DB6SD4TNVRFLTOAPMYYBKJ34ESUDCKZGSJL7MAA",
+        "TYBLHHTWMPNICYBKGC6MCJMPDE3675VQYIDLBKMPD5VXJX5MHR5A",
+        "ULJGBDQVVZN6RMEFISRO7FM3JGZLLI52JESP42DBPA3DQFMZJFDA",
+        "VYDMZWGLTQKOMF5DM65JFTOAHCGWVQKRJF4QGVMWSTRMRR5FHAWQ",
+        "WAYUEKC2JVQ25RTDPJJEILYHW6AHNXEGI2HH6POCQKT2UDXOMZJA",
+        "X727QUOG3ZXXXEPPUN3P3NJ2IULYDOINUEVAFNBUCJGHWZKRW6YA",
+        "XNQGUFFKCGRLFKJQLVFN3YSG2QHPBD5KTURMHKOSLOPMZVD2E2AA",
+        "XRRQICQ5BVVB25F26WL2HC2YQDBCAWMW5TMY7ZZK7IEVQRUPY52A",
+        "Y6DMWX4LNMFIWHQLP7M36EP5YKS4SC4MJXVVFHVI6IDRF5LDGMHA",
+        "YCULH56BLCGXION424GOFESU6VG4KBKQM3BZBZW5VE37WOF2ILLQ",
+        "YHR7LE7BH5XEFMQB3PZISUDRYB5RLMYCDFYAGMG4TPCZ3UZJ6XCA",
+        "YRCSBBAMPKFQAP4FYI5IZXB6SHXXR5PKGEPJIFU3MUDS55JBOXHQ",
+        "Z4USOSDJPDVP7HGZPDB57G4FUBAWIT5USECJVCNFWSFDMEC7RZ7A"
+      ]
+    },
+    {
+      "window": "post_flush→post_warmup2",
+      "new_entries": 0,
+      "new_names": []
+    },
+    {
+      "window": "post_warmup2→post_control",
+      "new_entries": 0,
+      "new_names": []
+    },
+    {
+      "window": "post_control→post_warm_block",
+      "new_entries": 8,
+      "new_names": [
+        "3DJJCHSFFS5LRFBC5MHPFYMJTUL5VQVIFEE3QXD27G4ZDLD2D74A",
+        "AXOCIGKVQHBSXFGXYHTHUZ57YHIWB2A4RYTRILLDLLIGXMZOPXMA",
+        "CFTS6Y66RO56MSLRD2N4RZU3BX2OJO7SDJOFQPGGOB2WOGOUFIIQ",
+        "DWYKB3S5LJ53RHIK2OMHLIO4SIB2FOHVMH7DTHUE7OIYCA22QHQA",
+        "KV6YW4FWCOYG63QRYZFV2SV4GEWLUAOTLPWX6LM4CEEYLUHKEKMA",
+        "VS4ZATRPS63ION54C5XILA6ZNNKHEJU6WEAD2IXHOPOMJLSJZATQ",
+        "WPOY3MSZ4RPEH6NIXDDT73QLTLPZALKPY2W3P4MKAMNUNRIXVWTA",
+        "ZFBRRU6BIZPU3NUXKEPZVSR7WZMDANJRDQNPKH4NHM7RLVLGQUYQ"
+      ]
+    },
+    {
+      "window": "post_warm_block→post_request",
+      "new_entries": 0,
+      "new_names": []
+    }
+  ],
+  "oracle_match": true,
+  "oracle_check_ms": 0.168197,
+  "journal_io": {
+    "records": 6,
+    "in_window_serialize_ms": 52.899134000000004,
+    "after_window_serialize_ms": 194.848068,
+    "after_window_flush_ms": 203.65701,
+    "note": "T0–T3 窗口内零取证磁盘 I/O（仅同步序列化，计入段间隙）；写盘+fsync 全部在 T3 之后"
+  },
+  "warmup1_wall_ms": 31701.765959,
+  "warmup2_wall_ms": 5247.181155,
+  "warmup_observe_rpc_wall_ms": 161.207241375,
+  "flush_wall_ms": 3.062269,
+  "engine_boot_ms": 28099.556234,
+  "epoch_wall_ms": 57817.766648,
+  "说明": "双口径：control_cycle_ms=T3−T0（不含形状预热与请求）；cycle_ms_full_incl_warm=T4−T0（含预热块与全部间隙），禁止混用/事后扣除；恒等式(T4−T0)=apply段+间隙+RPC尾+形状预热块+请求段+请求间隙 整数精确；T0–T3 窗口内零取证磁盘 I/O（Journal 序列化在窗内如实计入段间隙，写盘+fsync 全部出窗）；oracle 对照与全量观察均在 T4 之后窗口外执行",
+  "separation": {
+    "mode": "serving",
+    "t5_ns": 1908195704035231,
+    "audit_inclusive_ms": 20808.132066,
+    "post_t4_audit_ms": 2287.992553,
+    "report_timing": {
+      "start_ns": 1908194223717700,
+      "end_ns": 1908195695167013,
+      "wall_ms": 1471.449313,
+      "cpu_ms": 1473.519347,
+      "gpu_calls": 0,
+      "raw_response_already_fsynced": true
+    },
+    "transfers": [
+      {
+        "start_ns": 1908184430178544,
+        "end_ns": 1908185020108070,
+        "wall_ms": 589.929526,
+        "cpu_ms": 590.781071,
+        "raw_bytes": 27902130,
+        "compressed_bytes": 12596245,
+        "digest_verified": true,
+        "encoding": {
+          "compressed_bytes": 12596245,
+          "compression_ms": 235.566915,
+          "cpu_ms": 512.466437,
+          "end_ns": 1908183937324019,
+          "full_evidence_preserved": true,
+          "gpu_calls": 0,
+          "json_ms": 245.623704,
+          "raw_bytes": 27902130,
+          "start_ns": 1908183428750657,
+          "wall_ms": 508.573362
+        },
+        "gpu_calls": 0
+      }
+    ],
+    "definition": "T5为全部原正确性与Oracle检查、报告格式化和附加审计记录完成；不含summary写盘与Engine清理"
+  }
+}

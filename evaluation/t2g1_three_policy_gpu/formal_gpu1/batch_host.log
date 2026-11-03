@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/launch_formal.py", line 180, in <module>
+    main()
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/launch_formal.py", line 168, in main
+    launch_phase(protocol['gate_arms'], 'gate')
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/launch_formal.py", line 139, in launch_phase
+    assert r.returncode == 0, '本生命周期失败，不继续：' + arm['name']
+AssertionError: 本生命周期失败，不继续：g_CB_FS
+Traceback (most recent call last):
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/takeover/run_batch.py", line 13, in <module>
+    step(OUT/'launch_formal.py','gate')
+  File "/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/takeover/run_batch.py", line 9, in step
+    subprocess.run([sys.executable,'-B',str(script),*args],check=True)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/python3', '-B', '/home/wjg/code/FlowState/evaluation/t2g1_three_policy_gpu/formal_gpu1/launch_formal.py', 'gate']' returned non-zero exit status 1.

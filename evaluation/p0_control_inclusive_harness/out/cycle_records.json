@@ -1,0 +1,722 @@
+{
+  "FlowState-Greedy": {
+    "policy": "FlowState-Greedy",
+    "stage_registry": [
+      [
+        "T0",
+        "observe_and_authenticate",
+        "状态观察与 Strict Epoch 认证（from_frozen/prepare 全合同）"
+      ],
+      [
+        "T1",
+        "census_epoch_confirm",
+        "CPU↔物理候选对账 16=16 + 物化时间线合同"
+      ],
+      [
+        "T2",
+        "policy_select",
+        "本策略真实内核在线 Select（select_entry 三内核之一）"
+      ],
+      [
+        "T3",
+        "plan_validate_and_reconcile",
+        "Plan 校验 + Recurrent-only Reconciliation + 必要后验合同（驱逐逐项落实/FA 保护/驻留==Plan；GPU 阶段真实物化）"
+      ],
+      [
+        "T4",
+        "resume_p0..p3",
+        "四 Pending 串行 Native Resume：每请求必要前置检查 + TTFT + 执行终点"
+      ]
+    ],
+    "epoch_candidates": [
+      "B5C3_NODE_51",
+      "B5C3_NODE_52",
+      "B5C3_NODE_53",
+      "B5C3_NODE_54",
+      "B5C3_NODE_55",
+      "B5C3_NODE_56",
+      "B5C3_NODE_57",
+      "B5C3_NODE_58",
+      "B5C3_NODE_60",
+      "B5C3_NODE_62",
+      "B5C3_NODE_64",
+      "B5C3_NODE_66",
+      "B5C3_NODE_68",
+      "B5C3_NODE_70",
+      "B5C3_NODE_72",
+      "B5C3_NODE_74"
+    ],
+    "epoch_pendings": [
+      "C_A",
+      "C_B",
+      "C_C",
+      "C_D"
+    ],
+    "census": {
+      "mapped": 16,
+      "unmapped": 0
+    },
+    "selection": {
+      "policy": "FlowState-Greedy",
+      "kernel_entry": "flowstate.optimizer.GlobalOptimizer.plan_strict",
+      "selection_call_ms": 58.137638,
+      "decision": {
+        "solver": "Marginal Greedy",
+        "gate_allowed": false,
+        "gate": {
+          "candidates": 16,
+          "pendings": 4,
+          "budget_k": 3,
+          "enumerable_subsets": 697
+        },
+        "selected_ids": [
+          "B5C3_NODE_57",
+          "B5C3_NODE_56",
+          "B5C3_NODE_55"
+        ],
+        "objective_ms": 154.34895561599998,
+        "pure_solve_ms": 0.49341
+      },
+      "selected_physical_ids": [
+        "B5C3_NODE_57",
+        "B5C3_NODE_56",
+        "B5C3_NODE_55"
+      ],
+      "selected_cpu_ids": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "evicted_physical_ids": [
+        "B5C3_NODE_51",
+        "B5C3_NODE_52",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_58",
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72",
+        "B5C3_NODE_74"
+      ],
+      "recovery_cost_ms": 154.34895561599998,
+      "inputs_visibility": "Strict Epoch 冻结快照域：16 物理候选（含 L/槽位/物化时间线）、4 Pending 的 T 与 FA 前沿、Φ 恢复成本模型；GPU 阶段为实时观察 + census 映射后同域"
+    },
+    "reconciliation": {
+      "evicted": [
+        "B5C3_NODE_51",
+        "B5C3_NODE_52",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_58",
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72",
+        "B5C3_NODE_74"
+      ],
+      "postchecks": [
+        "FA/非R摘要不变",
+        "槽位释放记账",
+        "驻留==Plan"
+      ],
+      "execution": "CPU:Plan校验+意图台账；GPU:reconcile_strict真实物化（待验证）"
+    },
+    "pending_rows": [
+      {
+        "pending_id": "C_A",
+        "ttft_ns": 1635399373886619,
+        "exec_end_ns": 1635399374941591,
+        "gap_before_ns": 401,
+        "gap_after_ns": 4063
+      },
+      {
+        "pending_id": "C_B",
+        "ttft_ns": 1635399377090190,
+        "exec_end_ns": 1635399378146024,
+        "gap_before_ns": 667,
+        "gap_after_ns": 1134
+      },
+      {
+        "pending_id": "C_C",
+        "ttft_ns": 1635399380269802,
+        "exec_end_ns": 1635399381325244,
+        "gap_before_ns": 651,
+        "gap_after_ns": 759
+      },
+      {
+        "pending_id": "C_D",
+        "ttft_ns": 1635399383448964,
+        "exec_end_ns": 1635399384504101,
+        "gap_before_ns": 678,
+        "gap_after_ns": 1410
+      }
+    ],
+    "timing": {
+      "t0_ns": 1635399371699651,
+      "t4_ns": 1635399384505907,
+      "cycle_ms": 12.806256,
+      "segments": [
+        {
+          "stage": "observe_and_authenticate",
+          "ms": 0.032582
+        },
+        {
+          "stage": "census_epoch_confirm",
+          "ms": 0.007608
+        },
+        {
+          "stage": "policy_select",
+          "ms": 0.004205
+        },
+        {
+          "stage": "plan_validate_and_reconcile",
+          "ms": 0.004678
+        },
+        {
+          "stage": "resume_preflight_C_A",
+          "ms": 0.567994
+        },
+        {
+          "stage": "resume_execute_C_A",
+          "ms": 2.623418
+        },
+        {
+          "stage": "resume_preflight_C_B",
+          "ms": 0.575234
+        },
+        {
+          "stage": "resume_execute_C_B",
+          "ms": 2.622986
+        },
+        {
+          "stage": "resume_preflight_C_C",
+          "ms": 0.56081
+        },
+        {
+          "stage": "resume_execute_C_C",
+          "ms": 2.616425
+        },
+        {
+          "stage": "resume_preflight_C_D",
+          "ms": 0.560343
+        },
+        {
+          "stage": "resume_execute_C_D",
+          "ms": 2.617227
+        }
+      ],
+      "gaps_ms": [
+        0.001933,
+        0.000444,
+        0.000318,
+        0.000288,
+        0.000401,
+        0.004063,
+        0.000667,
+        0.001134,
+        0.000651,
+        0.000759,
+        0.000678,
+        0.00141
+      ],
+      "gap_total_ms": 0.012746,
+      "identity_exact": true,
+      "note": "T4=第4请求执行终点；t4_exec_end 与窗口边界差 = 终点后采样延迟",
+      "t4_exec_end_offset_ns": 1806
+    },
+    "evidence": {
+      "ops": [
+        "census_summary",
+        "metrics_snapshot"
+      ],
+      "flush_ms": 0.00152,
+      "note": "取证仅在 T4 后执行；耗时不计入周期"
+    }
+  },
+  "Marconi-Evict": {
+    "policy": "Marconi-Evict",
+    "stage_registry": [
+      [
+        "T0",
+        "observe_and_authenticate",
+        "状态观察与 Strict Epoch 认证（from_frozen/prepare 全合同）"
+      ],
+      [
+        "T1",
+        "census_epoch_confirm",
+        "CPU↔物理候选对账 16=16 + 物化时间线合同"
+      ],
+      [
+        "T2",
+        "policy_select",
+        "本策略真实内核在线 Select（select_entry 三内核之一）"
+      ],
+      [
+        "T3",
+        "plan_validate_and_reconcile",
+        "Plan 校验 + Recurrent-only Reconciliation + 必要后验合同（驱逐逐项落实/FA 保护/驻留==Plan；GPU 阶段真实物化）"
+      ],
+      [
+        "T4",
+        "resume_p0..p3",
+        "四 Pending 串行 Native Resume：每请求必要前置检查 + TTFT + 执行终点"
+      ]
+    ],
+    "epoch_candidates": [
+      "B5C3_NODE_51",
+      "B5C3_NODE_52",
+      "B5C3_NODE_53",
+      "B5C3_NODE_54",
+      "B5C3_NODE_55",
+      "B5C3_NODE_56",
+      "B5C3_NODE_57",
+      "B5C3_NODE_58",
+      "B5C3_NODE_60",
+      "B5C3_NODE_62",
+      "B5C3_NODE_64",
+      "B5C3_NODE_66",
+      "B5C3_NODE_68",
+      "B5C3_NODE_70",
+      "B5C3_NODE_72",
+      "B5C3_NODE_74"
+    ],
+    "epoch_pendings": [
+      "C_A",
+      "C_B",
+      "C_C",
+      "C_D"
+    ],
+    "census": {
+      "mapped": 16,
+      "unmapped": 0
+    },
+    "selection": {
+      "policy": "Marconi-Evict",
+      "kernel_entry": "evaluation.marconi_evict_t2m.evict_policy.MarconiEvictPolicy.select",
+      "selection_call_ms": 0.374408,
+      "eviction_order_cpu": [
+        "C_ROOT_P00960",
+        "C_AB_P01984",
+        "C_A_P04096",
+        "C_B_P05120",
+        "C_CD_P03008",
+        "C_A_P04032",
+        "C_AB_P02048",
+        "C_C_P06144",
+        "C_D_P07168",
+        "C_B_P05056",
+        "C_C_P06080",
+        "C_CD_P03072",
+        "C_D_P07104"
+      ],
+      "rounds": 13,
+      "selected_physical_ids": [
+        "B5C3_NODE_74",
+        "B5C3_NODE_58",
+        "B5C3_NODE_51"
+      ],
+      "selected_cpu_ids": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "evicted_physical_ids": [
+        "B5C3_NODE_52",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72"
+      ],
+      "eviction_order_physical_ids": [
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_52",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_53",
+        "B5C3_NODE_72"
+      ],
+      "recovery_cost_ms": 703.45464601,
+      "inputs_visibility": "声明 case 候选（token_position_L、等大小 51,511,296B）、last_access_order （声明访问序）、parent 链；α=1.0；不读恢复成本"
+    },
+    "reconciliation": {
+      "evicted": [
+        "B5C3_NODE_52",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72"
+      ],
+      "postchecks": [
+        "FA/非R摘要不变",
+        "槽位释放记账",
+        "驻留==Plan"
+      ],
+      "execution": "CPU:Plan校验+意图台账；GPU:reconcile_strict真实物化（待验证）"
+    },
+    "pending_rows": [
+      {
+        "pending_id": "C_A",
+        "ttft_ns": 1635399386758019,
+        "exec_end_ns": 1635399387814080,
+        "gap_before_ns": 963,
+        "gap_after_ns": 1760
+      },
+      {
+        "pending_id": "C_B",
+        "ttft_ns": 1635399389945900,
+        "exec_end_ns": 1635399391014805,
+        "gap_before_ns": 809,
+        "gap_after_ns": 1666
+      },
+      {
+        "pending_id": "C_C",
+        "ttft_ns": 1635399393163029,
+        "exec_end_ns": 1635399394221620,
+        "gap_before_ns": 1560,
+        "gap_after_ns": 2168
+      },
+      {
+        "pending_id": "C_D",
+        "ttft_ns": 1635399396375873,
+        "exec_end_ns": 1635399397435889,
+        "gap_before_ns": 1787,
+        "gap_after_ns": 2832
+      }
+    ],
+    "timing": {
+      "t0_ns": 1635399384591141,
+      "t4_ns": 1635399397439477,
+      "cycle_ms": 12.848336,
+      "segments": [
+        {
+          "stage": "observe_and_authenticate",
+          "ms": 0.016959
+        },
+        {
+          "stage": "census_epoch_confirm",
+          "ms": 0.00683
+        },
+        {
+          "stage": "policy_select",
+          "ms": 0.006135
+        },
+        {
+          "stage": "plan_validate_and_reconcile",
+          "ms": 0.006052
+        },
+        {
+          "stage": "resume_preflight_C_A",
+          "ms": 0.56296
+        },
+        {
+          "stage": "resume_execute_C_A",
+          "ms": 2.621308
+        },
+        {
+          "stage": "resume_preflight_C_B",
+          "ms": 0.564722
+        },
+        {
+          "stage": "resume_execute_C_B",
+          "ms": 2.633369
+        },
+        {
+          "stage": "resume_preflight_C_C",
+          "ms": 0.56985
+        },
+        {
+          "stage": "resume_execute_C_C",
+          "ms": 2.63386
+        },
+        {
+          "stage": "resume_preflight_C_D",
+          "ms": 0.572993
+        },
+        {
+          "stage": "resume_execute_C_D",
+          "ms": 2.63735
+        }
+      ],
+      "gaps_ms": [
+        0.000844,
+        0.000527,
+        0.000529,
+        0.000503,
+        0.000963,
+        0.00176,
+        0.000809,
+        0.001666,
+        0.00156,
+        0.002168,
+        0.001787,
+        0.002832
+      ],
+      "gap_total_ms": 0.015948,
+      "identity_exact": true,
+      "note": "T4=第4请求执行终点；t4_exec_end 与窗口边界差 = 终点后采样延迟",
+      "t4_exec_end_offset_ns": 3588
+    },
+    "evidence": {
+      "ops": [
+        "census_summary",
+        "metrics_snapshot"
+      ],
+      "flush_ms": 0.002737,
+      "note": "取证仅在 T4 后执行；耗时不计入周期"
+    }
+  },
+  "KVFlow-inspired": {
+    "policy": "KVFlow-inspired",
+    "stage_registry": [
+      [
+        "T0",
+        "observe_and_authenticate",
+        "状态观察与 Strict Epoch 认证（from_frozen/prepare 全合同）"
+      ],
+      [
+        "T1",
+        "census_epoch_confirm",
+        "CPU↔物理候选对账 16=16 + 物化时间线合同"
+      ],
+      [
+        "T2",
+        "policy_select",
+        "本策略真实内核在线 Select（select_entry 三内核之一）"
+      ],
+      [
+        "T3",
+        "plan_validate_and_reconcile",
+        "Plan 校验 + Recurrent-only Reconciliation + 必要后验合同（驱逐逐项落实/FA 保护/驻留==Plan；GPU 阶段真实物化）"
+      ],
+      [
+        "T4",
+        "resume_p0..p3",
+        "四 Pending 串行 Native Resume：每请求必要前置检查 + TTFT + 执行终点"
+      ]
+    ],
+    "epoch_candidates": [
+      "B5C3_NODE_51",
+      "B5C3_NODE_52",
+      "B5C3_NODE_53",
+      "B5C3_NODE_54",
+      "B5C3_NODE_55",
+      "B5C3_NODE_56",
+      "B5C3_NODE_57",
+      "B5C3_NODE_58",
+      "B5C3_NODE_60",
+      "B5C3_NODE_62",
+      "B5C3_NODE_64",
+      "B5C3_NODE_66",
+      "B5C3_NODE_68",
+      "B5C3_NODE_70",
+      "B5C3_NODE_72",
+      "B5C3_NODE_74"
+    ],
+    "epoch_pendings": [
+      "C_A",
+      "C_B",
+      "C_C",
+      "C_D"
+    ],
+    "census": {
+      "mapped": 16,
+      "unmapped": 0
+    },
+    "selection": {
+      "policy": "KVFlow-inspired",
+      "kernel_entry": "evaluation.kvflow_inspired_retention_cpu.policy.select",
+      "selection_call_ms": 4.431978,
+      "selected_physical_ids": [
+        "B5C3_NODE_62",
+        "B5C3_NODE_52",
+        "B5C3_NODE_66"
+      ],
+      "selected_cpu_ids": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "evicted_physical_ids": [
+        "B5C3_NODE_51",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_58",
+        "B5C3_NODE_60",
+        "B5C3_NODE_64",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72",
+        "B5C3_NODE_74"
+      ],
+      "recovery_cost_ms": 627.6149768490118,
+      "inputs_visibility": "声明 candidates + graph + declarations（ASG/STE，known_at_epoch 门控，无未来信息）；不读恢复成本"
+    },
+    "reconciliation": {
+      "evicted": [
+        "B5C3_NODE_51",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_58",
+        "B5C3_NODE_60",
+        "B5C3_NODE_64",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72",
+        "B5C3_NODE_74"
+      ],
+      "postchecks": [
+        "FA/非R摘要不变",
+        "槽位释放记账",
+        "驻留==Plan"
+      ],
+      "execution": "CPU:Plan校验+意图台账；GPU:reconcile_strict真实物化（待验证）"
+    },
+    "pending_rows": [
+      {
+        "pending_id": "C_A",
+        "ttft_ns": 1635399399819215,
+        "exec_end_ns": 1635399400878766,
+        "gap_before_ns": 2101,
+        "gap_after_ns": 3640
+      },
+      {
+        "pending_id": "C_B",
+        "ttft_ns": 1635399403039432,
+        "exec_end_ns": 1635399404099322,
+        "gap_before_ns": 1612,
+        "gap_after_ns": 3445
+      },
+      {
+        "pending_id": "C_C",
+        "ttft_ns": 1635399406258320,
+        "exec_end_ns": 1635399407317548,
+        "gap_before_ns": 1901,
+        "gap_after_ns": 2493
+      },
+      {
+        "pending_id": "C_D",
+        "ttft_ns": 1635399409474250,
+        "exec_end_ns": 1635399410534104,
+        "gap_before_ns": 2016,
+        "gap_after_ns": 2673
+      }
+    ],
+    "timing": {
+      "t0_ns": 1635399397568920,
+      "t4_ns": 1635399410537654,
+      "cycle_ms": 12.968734,
+      "segments": [
+        {
+          "stage": "observe_and_authenticate",
+          "ms": 0.02168
+        },
+        {
+          "stage": "census_epoch_confirm",
+          "ms": 0.028864
+        },
+        {
+          "stage": "policy_select",
+          "ms": 0.018454
+        },
+        {
+          "stage": "plan_validate_and_reconcile",
+          "ms": 0.017537
+        },
+        {
+          "stage": "resume_preflight_C_A",
+          "ms": 0.576299
+        },
+        {
+          "stage": "resume_execute_C_A",
+          "ms": 2.63798
+        },
+        {
+          "stage": "resume_preflight_C_B",
+          "ms": 0.577356
+        },
+        {
+          "stage": "resume_execute_C_B",
+          "ms": 2.638021
+        },
+        {
+          "stage": "resume_preflight_C_C",
+          "ms": 0.575657
+        },
+        {
+          "stage": "resume_execute_C_C",
+          "ms": 2.636639
+        },
+        {
+          "stage": "resume_preflight_C_D",
+          "ms": 0.575907
+        },
+        {
+          "stage": "resume_execute_C_D",
+          "ms": 2.636182
+        }
+      ],
+      "gaps_ms": [
+        0.002808,
+        0.002421,
+        0.001645,
+        0.001403,
+        0.002101,
+        0.00364,
+        0.001612,
+        0.003445,
+        0.001901,
+        0.002493,
+        0.002016,
+        0.002673
+      ],
+      "gap_total_ms": 0.028158,
+      "identity_exact": true,
+      "note": "T4=第4请求执行终点；t4_exec_end 与窗口边界差 = 终点后采样延迟",
+      "t4_exec_end_offset_ns": 3550
+    },
+    "evidence": {
+      "ops": [
+        "census_summary",
+        "metrics_snapshot"
+      ],
+      "flush_ms": 0.002459,
+      "note": "取证仅在 T4 后执行；耗时不计入周期"
+    }
+  }
+}

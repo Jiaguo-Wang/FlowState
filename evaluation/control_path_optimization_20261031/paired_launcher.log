@@ -1,0 +1,17 @@
+启动 {'arm': 'p1_original_fs', 'policy': 'FlowState-Greedy', 'mode': 'original', 'verify': False, 'round': 1, 'phase': 'paired'}
+完成 p1_original_fs 8104.757969 21317.44434
+启动 {'arm': 'p1_batched_fs', 'policy': 'FlowState-Greedy', 'mode': 'batched', 'verify': False, 'round': 1, 'phase': 'paired'}
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/wjg/code/FlowState/evaluation/control_path_optimization_20261031/execute.py", line 160, in <module>
+    main()
+  File "/home/wjg/code/FlowState/evaluation/control_path_optimization_20261031/execute.py", line 156, in main
+    run(spec, lock)
+  File "/home/wjg/code/FlowState/evaluation/control_path_optimization_20261031/execute.py", line 117, in run
+    after = resource_gate()
+  File "/home/wjg/code/FlowState/evaluation/control_path_optimization_20261031/execute.py", line 42, in resource_gate
+    assert int(row.split(',')[1]) < 100 and int(row.split(',')[2]) == 0, '目标GPU非独占空闲：'+row
+AssertionError: 目标GPU非独占空闲：GPU-bfff4d31-0b94-7de3-9946-f593437ae566, 14, 4

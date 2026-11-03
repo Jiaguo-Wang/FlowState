@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "baseline": "/home/wjg/code/FlowState/evaluation/exact_reconciliation_correctness_gate_b5d3/strict/reconciliation.json",
+  "gate": {
+    "allowed": true,
+    "detail": {
+      "candidates": 7,
+      "pendings": 4,
+      "budget_k": 2,
+      "enumerable_subsets": 29
+    }
+  },
+  "exact_decision": {
+    "solver": "Exact",
+    "gate_allowed": true,
+    "gate": {
+      "candidates": 7,
+      "pendings": 4,
+      "budget_k": 2,
+      "enumerable_subsets": 29
+    },
+    "selected_ids": [
+      "B5C3_NODE_18",
+      "B5C3_NODE_27"
+    ],
+    "objective_ms": 48.228728759089606,
+    "pure_solve_ms": 0.42039
+  },
+  "solver_checks": [
+    {
+      "solver": "Exact",
+      "selected": [
+        "B5C3_NODE_18",
+        "B5C3_NODE_27"
+      ],
+      "J_ms": 48.228728759089606,
+      "e3_match": true,
+      "validate_plan": "PASS"
+    },
+    {
+      "solver": "Greedy",
+      "selected": [
+        "B5C3_NODE_20",
+        "B5C3_NODE_18"
+      ],
+      "J_ms": 130.8030838298517,
+      "e3_match": true,
+      "validate_plan": "PASS"
+    }
+  ],
+  "source_checks": [
+    {
+      "solver": "Exact",
+      "pending": "B5C2_A_TURN_003",
+      "source": "B5C3_NODE_18",
+      "E": 3712,
+      "support_ok": true
+    },
+    {
+      "solver": "Exact",
+      "pending": "B5C2_B_TURN_003",
+      "source": "B5C3_NODE_18",
+      "E": 3712,
+      "support_ok": true
+    },
+    {
+      "solver": "Exact",
+      "pending": "B5C2_C_TURN_003",
+      "source": "B5C3_NODE_27",
+      "E": 3520,
+      "support_ok": true
+    },
+    {
+      "solver": "Exact",
+      "pending": "B5C2_D_TURN_003",
+      "source": "B5C3_NODE_27",
+      "E": 3520,
+      "support_ok": true
+    },
+    {
+      "solver": "Greedy",
+      "pending": "B5C2_A_TURN_003",
+      "source": "B5C3_NODE_18",
+      "E": 3712,
+      "support_ok": true
+    },
+    {
+      "solver": "Greedy",
+      "pending": "B5C2_B_TURN_003",
+      "source": "B5C3_NODE_18",
+      "E": 3712,
+      "support_ok": true
+    },
+    {
+      "solver": "Greedy",
+      "pending": "B5C2_C_TURN_003",
+      "source": "B5C3_NODE_20",
+      "E": 2432,
+      "support_ok": true
+    },
+    {
+      "solver": "Greedy",
+      "pending": "B5C2_D_TURN_003",
+      "source": "B5C3_NODE_20",
+      "E": 2432,
+      "support_ok": true
+    }
+  ],
+  "note": "宿主机 CPU 预检：两求解臂与 e3 冻结行全精度一致；来源合同 8 组合唯一；GPU 侧仍须每生命周期重验 Token/物理身份"
+}

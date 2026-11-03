@@ -1,0 +1,103 @@
+section,rep,policy_or_pair,pending,metric,value,n,note
+per_rep,1,FS,,eq_ttft_ms,77.8,4,
+per_rep,1,FS,,eq_prefill_ms,69.8,4,
+per_rep,1,FS,,slow_arms_of_4,2,4,规则:decode>150ms
+per_rep,1,SA,,eq_ttft_ms,111.2,4,
+per_rep,1,SA,,eq_prefill_ms,102.8,4,
+per_rep,1,SA,,slow_arms_of_4,1,4,规则:decode>150ms
+per_rep,1,WFC,,eq_ttft_ms,124.7,4,
+per_rep,1,WFC,,eq_prefill_ms,115.2,4,
+per_rep,1,WFC,,slow_arms_of_4,1,4,规则:decode>150ms
+per_rep,2,FS,,eq_ttft_ms,77.8,4,
+per_rep,2,FS,,eq_prefill_ms,69.4,4,
+per_rep,2,FS,,slow_arms_of_4,2,4,规则:decode>150ms
+per_rep,2,SA,,eq_ttft_ms,106.5,4,
+per_rep,2,SA,,eq_prefill_ms,99.1,4,
+per_rep,2,SA,,slow_arms_of_4,0,4,规则:decode>150ms
+per_rep,2,WFC,,eq_ttft_ms,124.5,4,
+per_rep,2,WFC,,eq_prefill_ms,116.4,4,
+per_rep,2,WFC,,slow_arms_of_4,0,4,规则:decode>150ms
+per_rep,3,FS,,eq_ttft_ms,71.8,4,
+per_rep,3,FS,,eq_prefill_ms,63.6,4,
+per_rep,3,FS,,slow_arms_of_4,2,4,规则:decode>150ms
+per_rep,3,SA,,eq_ttft_ms,112.0,4,
+per_rep,3,SA,,eq_prefill_ms,103.9,4,
+per_rep,3,SA,,slow_arms_of_4,1,4,规则:decode>150ms
+per_rep,3,WFC,,eq_ttft_ms,125.3,4,
+per_rep,3,WFC,,eq_prefill_ms,116.7,4,
+per_rep,3,WFC,,slow_arms_of_4,1,4,规则:decode>150ms
+per_rep,4,FS,,eq_ttft_ms,70.0,4,
+per_rep,4,FS,,eq_prefill_ms,62.7,4,
+per_rep,4,FS,,slow_arms_of_4,0,4,规则:decode>150ms
+per_rep,4,SA,,eq_ttft_ms,112.2,4,
+per_rep,4,SA,,eq_prefill_ms,103.9,4,
+per_rep,4,SA,,slow_arms_of_4,1,4,规则:decode>150ms
+per_rep,4,WFC,,eq_ttft_ms,125.2,4,
+per_rep,4,WFC,,eq_prefill_ms,117.0,4,
+per_rep,4,WFC,,slow_arms_of_4,0,4,规则:decode>150ms
+per_rep,5,FS,,eq_ttft_ms,79.4,4,
+per_rep,5,FS,,eq_prefill_ms,70.5,4,
+per_rep,5,FS,,slow_arms_of_4,3,4,规则:decode>150ms
+per_rep,5,SA,,eq_ttft_ms,113.5,4,
+per_rep,5,SA,,eq_prefill_ms,103.9,4,
+per_rep,5,SA,,slow_arms_of_4,3,4,规则:decode>150ms
+per_rep,5,WFC,,eq_ttft_ms,125.4,4,
+per_rep,5,WFC,,eq_prefill_ms,117.2,4,
+per_rep,5,WFC,,slow_arms_of_4,0,4,规则:decode>150ms
+five_rep_stats,,FS,,eq_ttft_ms,"{""mean"": 75.4, ""median"": 77.8, ""min"": 70.0, ""max"": 79, ""n"": 5}",5,
+five_rep_stats,,SA,,eq_ttft_ms,"{""mean"": 111.1, ""median"": 112.0, ""min"": 106.5, ""max"": 114, ""n"": 5}",5,
+five_rep_stats,,WFC,,eq_ttft_ms,"{""mean"": 125.0, ""median"": 125.2, ""min"": 124.5, ""max"": 125, ""n"": 5}",5,
+five_rep_stats,,FS,,eq_prefill_ms,"{""mean"": 67.2, ""median"": 69.4, ""min"": 62.7, ""max"": 70, ""n"": 5}",5,
+five_rep_stats,,SA,,eq_prefill_ms,"{""mean"": 102.7, ""median"": 103.9, ""min"": 99.1, ""max"": 104, ""n"": 5}",5,
+five_rep_stats,,WFC,,eq_prefill_ms,"{""mean"": 116.5, ""median"": 116.7, ""min"": 115.2, ""max"": 117, ""n"": 5}",5,
+paired_delta,1,FS-SA,,eq_ttft_ms,-33.4,4,
+paired_delta,2,FS-SA,,eq_ttft_ms,-28.7,4,
+paired_delta,3,FS-SA,,eq_ttft_ms,-40.2,4,
+paired_delta,4,FS-SA,,eq_ttft_ms,-42.3,4,
+paired_delta,5,FS-SA,,eq_ttft_ms,-34.1,4,
+paired_delta_stats,,FS-SA,,eq_ttft_ms,"{""mean"": -35.7, ""median"": -34.1, ""min"": -42.3, ""max"": -29, ""n"": 5}",5,
+paired_delta,1,FS-SA,,eq_prefill_ms,-33.0,4,
+paired_delta,2,FS-SA,,eq_prefill_ms,-29.7,4,
+paired_delta,3,FS-SA,,eq_prefill_ms,-40.3,4,
+paired_delta,4,FS-SA,,eq_prefill_ms,-41.2,4,
+paired_delta,5,FS-SA,,eq_prefill_ms,-33.5,4,
+paired_delta_stats,,FS-SA,,eq_prefill_ms,"{""mean"": -35.5, ""median"": -33.5, ""min"": -41.2, ""max"": -30, ""n"": 5}",5,
+paired_delta,1,FS-WFC,,eq_ttft_ms,-46.9,4,
+paired_delta,2,FS-WFC,,eq_ttft_ms,-46.7,4,
+paired_delta,3,FS-WFC,,eq_ttft_ms,-53.5,4,
+paired_delta,4,FS-WFC,,eq_ttft_ms,-55.3,4,
+paired_delta,5,FS-WFC,,eq_ttft_ms,-46.0,4,
+paired_delta_stats,,FS-WFC,,eq_ttft_ms,"{""mean"": -49.7, ""median"": -46.9, ""min"": -55.3, ""max"": -46, ""n"": 5}",5,
+paired_delta,1,FS-WFC,,eq_prefill_ms,-45.5,4,
+paired_delta,2,FS-WFC,,eq_prefill_ms,-47.0,4,
+paired_delta,3,FS-WFC,,eq_prefill_ms,-53.0,4,
+paired_delta,4,FS-WFC,,eq_prefill_ms,-54.2,4,
+paired_delta,5,FS-WFC,,eq_prefill_ms,-46.8,4,
+paired_delta_stats,,FS-WFC,,eq_prefill_ms,"{""mean"": -49.3, ""median"": -47.0, ""min"": -54.2, ""max"": -45, ""n"": 5}",5,
+pending_contribution,,FS-SA,C_A,d_ttft_ms_median,1.0,5,对等权均值贡献=0.2
+pending_contribution,,FS-SA,C_A,d_prefill_ms_median,0.5,5,
+pending_contribution,,FS-SA,C_B,d_ttft_ms_median,-163.2,5,对等权均值贡献=-40.8
+pending_contribution,,FS-SA,C_B,d_prefill_ms_median,-161.4,5,
+pending_contribution,,FS-SA,C_C,d_ttft_ms_median,6.6,5,对等权均值贡献=1.7
+pending_contribution,,FS-SA,C_C,d_prefill_ms_median,5.2,5,
+pending_contribution,,FS-SA,C_D,d_ttft_ms_median,21.1,5,对等权均值贡献=5.3
+pending_contribution,,FS-SA,C_D,d_prefill_ms_median,17.7,5,
+pending_contribution,,FS-WFC,C_A,d_ttft_ms_median,71.7,5,对等权均值贡献=17.9
+pending_contribution,,FS-WFC,C_A,d_prefill_ms_median,71.5,5,
+pending_contribution,,FS-WFC,C_B,d_ttft_ms_median,-84.4,5,对等权均值贡献=-21.1
+pending_contribution,,FS-WFC,C_B,d_prefill_ms_median,-83.5,5,
+pending_contribution,,FS-WFC,C_C,d_ttft_ms_median,-84.3,5,对等权均值贡献=-21.1
+pending_contribution,,FS-WFC,C_C,d_prefill_ms_median,-83.0,5,
+pending_contribution,,FS-WFC,C_D,d_ttft_ms_median,-105.4,5,对等权均值贡献=-26.3
+pending_contribution,,FS-WFC,C_D,d_prefill_ms_median,-106.7,5,
+slow_mode,,FS|SA|WFC,,slow_arms_total,"{""FS"": 9, ""SA"": 6, ""WFC"": 2}",60,分布见 per_rep slow_arms_of_4
+slow_mode_pairmix,,FS-SA,,fast_fast|slow_slow|mismatch,8|3|9,20,
+slow_mode_pairmix,,FS-WFC,,fast_fast|slow_slow|mismatch,9|0|11,20,
+fast_only_sensitivity,,FS,,eq_ttft_ms,68.5,11,"各格n=3,3,3,2"
+fast_only_sensitivity,,SA,,eq_ttft_ms,107.8,14,"各格n=4,3,4,3"
+fast_only_sensitivity,,WFC,,eq_ttft_ms,124.6,18,"各格n=5,4,4,5"
+fast_only_sensitivity,,FS-SA,,eq_ttft_delta_ms,-39.3,0,基于各格快模式中位
+fast_only_sensitivity,,FS-WFC,,eq_ttft_delta_ms,-56.1,0,基于各格快模式中位
+control_segments,,FS,,rpc_wall|auth_plan|reconcile|core_sum,11318|160|869|1029,20,中位
+control_segments,,SA,,rpc_wall|auth_plan|reconcile|core_sum,11246|158|870|1028,20,中位
+control_segments,,WFC,,rpc_wall|auth_plan|reconcile|core_sum,11300|161|875|1036,20,中位

@@ -1,0 +1,109 @@
+{
+  "metrics": {
+    "M0": {
+      "MAE_ms": 287.5140841675347,
+      "MAPE_percent": 15.291274883419177,
+      "max_APE_percent": 28.036457209746835,
+      "n_test_configurations": 12
+    },
+    "M1": {
+      "MAE_ms": 79.64875671962052,
+      "MAPE_percent": 4.635749610029623,
+      "max_APE_percent": 11.664182537610797,
+      "n_test_configurations": 12
+    },
+    "M2_fitted": {
+      "MAE_ms": 31.17958291268583,
+      "MAPE_percent": 2.682480422900486,
+      "max_APE_percent": 8.179468552927553,
+      "n_test_configurations": 12
+    },
+    "M2_production": {
+      "MAE_ms": 31.179579601000047,
+      "MAPE_percent": 2.682480406349888,
+      "max_APE_percent": 8.179468863415336,
+      "n_test_configurations": 12
+    }
+  },
+  "production_metadata": {
+    "name": "position_aware_quadratic_v1",
+    "coefficient_a": 37.82815,
+    "coefficient_b": 0.345974143,
+    "coefficient_c": -0.156201917,
+    "gap_unit": "tokens",
+    "target_unit": "tokens",
+    "output_unit": "ms",
+    "calibration_artifact": "recovery_model_freeze_20260826_154235_266020",
+    "minimum_gap_tokens": 0,
+    "maximum_target_tokens": 131072
+  },
+  "frozen_full_precision": {
+    "a": 37.82814985789258,
+    "b": 0.34597414281318883,
+    "c": -0.15620191741171993
+  },
+  "rounding_prediction_max_abs_ms": 1.6599638911429793e-05,
+  "train_count": 20,
+  "test_nonzero_configurations": 12,
+  "test_raw_trials": 210,
+  "test_measured_trials": 180,
+  "position_raw_trials": 280,
+  "long_raw_trials": 126,
+  "train_test_T_disjoint": true,
+  "train_test_TG_disjoint": true,
+  "parameter_hash_unchanged_across_heldout": true,
+  "heldout_used_for_parameter_fit": false,
+  "heldout_used_for_model_selection": true,
+  "M2_absolute_error_better_count": 10,
+  "same_G_adjacent_position_pairs": 12,
+  "same_G_increasing_count": 12,
+  "fixed_T_gap_steps": 36,
+  "fixed_T_gap_increasing_count": 36,
+  "finite_slope_changes": 28,
+  "finite_slope_increases": 9,
+  "native_source_hashes_matching_prior": [
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/unified_tree_core.py",
+    "/sgl-workspace/sglang/python/sglang/srt/mem_cache/unified_cache/components/mamba_component.py",
+    "/sgl-workspace/sglang/python/sglang/srt/managers/schedule_batch.py",
+    "/sgl-workspace/sglang/python/sglang/srt/managers/scheduler.py",
+    "/sgl-workspace/sglang/python/sglang/srt/model_executor/model_runner.py"
+  ],
+  "mathematics": {
+    "coefficient_a": "37.82815",
+    "coefficient_b": "0.345974143",
+    "coefficient_c": "-0.156201917",
+    "b_plus_2c": "0.033570309",
+    "b_plus_c": "0.189772226",
+    "tau_max": "128",
+    "derivative_at_vertices": [
+      {
+        "g": "0",
+        "tau": "0",
+        "dPhi_dg": "37.828150000"
+      },
+      {
+        "g": "0",
+        "tau": "128",
+        "dPhi_dg": "82.112840304"
+      },
+      {
+        "g": "128",
+        "tau": "128",
+        "dPhi_dg": "42.125149552"
+      }
+    ],
+    "global_min_derivative_ms_per_Ki": "37.828150000",
+    "zero_gap_exact": true,
+    "nonnegative_analytic": true,
+    "monotonic_analytic": true,
+    "actual_allocation_unique_points": 1600,
+    "allocation_T_min": 0,
+    "allocation_T_max": 126847,
+    "allocation_G_min": 0,
+    "allocation_G_max": 126847,
+    "all_actual_points_inside_domain": true,
+    "minus_two_c_over_b": 0.9029687342848625
+  },
+  "verdict": "PARTIAL",
+  "说明": "预测和数学性质通过；未将TTFT位置效应隔离归因到特定组件或Kernel。"
+}

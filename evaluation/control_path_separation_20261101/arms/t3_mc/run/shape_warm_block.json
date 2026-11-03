@@ -1,0 +1,58 @@
+{
+  "policy": "Marconi-Evict",
+  "rows": [
+    {
+      "pending": "C_A",
+      "start_ns": 1908739446139563,
+      "end_ns": 1908746328718881,
+      "wall_ms": 6882.579318,
+      "input_len": 4128,
+      "planned_E": 1024,
+      "diverge_from": 1024,
+      "output_ids": [
+        82,
+        220
+      ]
+    },
+    {
+      "pending": "C_B",
+      "start_ns": 1908746330421373,
+      "end_ns": 1908746512122523,
+      "wall_ms": 181.70115,
+      "input_len": 5152,
+      "planned_E": 1024,
+      "diverge_from": 1024,
+      "output_ids": [
+        220,
+        200
+      ]
+    },
+    {
+      "pending": "C_C",
+      "start_ns": 1908746513270058,
+      "end_ns": 1908746741046009,
+      "wall_ms": 227.775951,
+      "input_len": 6176,
+      "planned_E": 1024,
+      "diverge_from": 1024,
+      "output_ids": [
+        220,
+        220
+      ]
+    },
+    {
+      "pending": "C_D",
+      "start_ns": 1908746743014686,
+      "end_ns": 1908747008097486,
+      "wall_ms": 265.0828,
+      "input_len": 7200,
+      "planned_E": 1024,
+      "diverge_from": 1024,
+      "output_ids": [
+        220,
+        197
+      ]
+    }
+  ],
+  "note": "apply后形状预热块(v1.1,四Pending各一次)：计划E准入+目标extend/decode形状编译。口径归属：不进 control_cycle_ms(T3−T0)；计入 cycle_ms_full_incl_warm(T4−T0)，恒等式如实含 warm 段与其前后间隙；两口径并列报告，禁止事后扣除 warm 伪造连续生产窗口"
+}

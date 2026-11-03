@@ -6,7 +6,7 @@ from dataclasses import asdict, replace
 from pathlib import Path
 from unittest.mock import patch
 
-from flowstate.optimizer import GlobalOptimizer
+from flowstate.optimizer import GlobalOptimizer, _exact_admission
 from flowstate.recovery_model import RecoveryCostModel
 from flowstate.strict_epoch import StrictAllocationEpoch, _digest
 from flowstate.workflow import PendingContinuation
@@ -45,9 +45,19 @@ class StrictTests(unittest.TestCase):
                     epoch=load(g,k)
                     with patch('flowstate.executable_state.is_compatible',side_effect=AssertionError('严格入口调用旧谓词')),patch.object(self.optimizer,'_recovery_cost',side_effect=AssertionError('严格入口调用Legacy评分')):
                         plan=self.optimizer.plan_strict(epoch)
-                    ref=next(r for r in snapshot['rows'] if r['K']==k and r['policy']=='FlowState')
-                    self.assertEqual(list(plan.selected_ids),ref['selected'])
-                    self.assertEqual(list(plan.selected_ids),[x['chosen'] for x in snapshot['traces'][f'{k}/FlowState']])
+                    # 混合求解合同：规模门禁内走 Exact（对照冻结 Exact OPT 参照，字典序终集），
+                    # 超域走原有 Marginal Greedy（对照冻结 FlowState 参照与贪心轨迹顺序）。
+                    allowed,_gate=_exact_admission(len(epoch.candidates),len(epoch.pendings),k)
+                    self.assertEqual(self.optimizer.last_strict_decision['solver'],'Exact' if allowed else 'Marginal Greedy')
+                    policy='Exact OPT' if allowed else 'FlowState'
+                    ref=next(r for r in snapshot['rows'] if r['K']==k and r['policy']==policy)
+                    self.assertEqual(list(plan.selected_ids),sorted(ref['selected']) if allowed else ref['selected'])
+                    if allowed:
+                        # 门禁内质量不得劣于冻结 Greedy 参照
+                        greedy_ref=next(r for r in snapshot['rows'] if r['K']==k and r['policy']=='FlowState')
+                        self.assertLessEqual(plan.recovery_cost_ms,greedy_ref['J_ms']+1e-9)
+                    else:
+                        self.assertEqual(list(plan.selected_ids),[x['chosen'] for x in snapshot['traces'][f'{k}/FlowState']])
                     self.assertLessEqual(plan.selected_count,k)
                     self.assertAlmostEqual(plan.recovery_cost_ms,ref['J_ms'],places=9)
                     self.assertEqual(set(plan.logical_eviction_ids),{c.candidate.checkpoint_id for c in epoch.candidates}-set(plan.selected_ids))

@@ -1,0 +1,98 @@
+{
+  "FlowState-Greedy": {
+    "selected_checkpoint_ids": [
+      "C_D_P07168",
+      "C_C_P06144",
+      "C_B_P05120"
+    ],
+    "expected_E_G": {
+      "C_A": {
+        "E": 0,
+        "T": 4096,
+        "G": 4096
+      },
+      "C_B": {
+        "E": 5120,
+        "T": 5120,
+        "G": 0
+      },
+      "C_C": {
+        "E": 6144,
+        "T": 6144,
+        "G": 0
+      },
+      "C_D": {
+        "E": 7168,
+        "T": 7168,
+        "G": 0
+      }
+    },
+    "J_ms_current_scope": 154.34895561599998,
+    "selection_call_ms": 0.538993,
+    "selection_source": "T2-G1 统一接口（FS=生产Greedy内核；Marconi-Evict=T2-Mini；KVFlow=既有保留策略）"
+  },
+  "Marconi-Evict": {
+    "selected_checkpoint_ids": [
+      "C_JOIN_P04032",
+      "C_JOIN_P04096",
+      "C_ROOT_P01024"
+    ],
+    "expected_E_G": {
+      "C_A": {
+        "E": 1024,
+        "T": 4096,
+        "G": 3072
+      },
+      "C_B": {
+        "E": 1024,
+        "T": 5120,
+        "G": 4096
+      },
+      "C_C": {
+        "E": 1024,
+        "T": 6144,
+        "G": 5120
+      },
+      "C_D": {
+        "E": 1024,
+        "T": 7168,
+        "G": 6144
+      }
+    },
+    "J_ms_current_scope": 703.45464601,
+    "selection_call_ms": 0.567153,
+    "selection_source": "T2-G1 统一接口（FS=生产Greedy内核；Marconi-Evict=T2-Mini；KVFlow=既有保留策略）"
+  },
+  "KVFlow-inspired": {
+    "selected_checkpoint_ids": [
+      "C_AB_P01984",
+      "C_AB_P02048",
+      "C_A_P04032"
+    ],
+    "expected_E_G": {
+      "C_A": {
+        "E": 4032,
+        "T": 4096,
+        "G": 64
+      },
+      "C_B": {
+        "E": 2048,
+        "T": 5120,
+        "G": 3072
+      },
+      "C_C": {
+        "E": 0,
+        "T": 6144,
+        "G": 6144
+      },
+      "C_D": {
+        "E": 0,
+        "T": 7168,
+        "G": 7168
+      }
+    },
+    "J_ms_current_scope": 627.6149768490118,
+    "selection_call_ms": 7.016953,
+    "selection_source": "T2-G1 统一接口（FS=生产Greedy内核；Marconi-Evict=T2-Mini；KVFlow=既有保留策略）"
+  }
+}

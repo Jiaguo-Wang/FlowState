@@ -1,0 +1,70 @@
+{
+  "package": "/home/wjg/code/FlowState/evaluation/b5c4_formal_gpu_g2/pkg_g2",
+  "files": {
+    "__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "bridge.py": {
+      "sha256": "01481f4b2ece7700b888c0018d4c19605e36cd7e8f9b627a6b3ebbd1257a4ee5",
+      "bytes": 12189
+    },
+    "control.py": {
+      "sha256": "b67c4aff446ec0390922898d2c1dcca4c730709425c36fd255d3d26a322559c8",
+      "bytes": 13264
+    },
+    "greedy_adapter.py": {
+      "sha256": "e7ce77eab8ca4d6a8c021a673b708cd8ea4b26c63977e34a945522f31d9b3b96",
+      "bytes": 2252
+    },
+    "persistence.py": {
+      "sha256": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139",
+      "bytes": 1996
+    },
+    "prepare_pkg.py": {
+      "sha256": "0b980859db809b239d0800e8fbbf84164bd655101831e97e6b6932a8d8c7219f",
+      "bytes": 3938
+    },
+    "runner.py": {
+      "sha256": "5850270fd775c9dde995de0cdb12364a467c019363beb33524edd6987e8181c0",
+      "bytes": 26076
+    },
+    "source_contract.py": {
+      "sha256": "c531371544f0dd187f744424ebcec435bd44c7fa57cfe39482f225c5010e9cce",
+      "bytes": 4244
+    }
+  },
+  "bases": {
+    "bridge.py": {
+      "path": "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/bridge.py",
+      "sha256": "f73bfd88eae4b7d42f6be84435f4a8184f4c6a7e9c499f8b4c5f3685e98594a1"
+    },
+    "runner.py": {
+      "path": "/home/wjg/code/FlowState/evaluation/c_formal_perf_gpu/runner.py",
+      "sha256": "39125269e6636a24df4019716b6709f17c2d256e503205bf4e7be8517e3bff44"
+    },
+    "control.py": {
+      "path": "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_a/control.py",
+      "sha256": "992930d392acacc6272d6cb6d52673af69d9bae1d6f88511a0c4ccd1b3cd2136"
+    },
+    "source_contract.py": {
+      "path": "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_a/source_contract.py",
+      "sha256": "1fbb08637757715291a0e6737bbb7910e00a0c185c2cd39e80a65b4758ed3f91"
+    },
+    "persistence.py": {
+      "path": "/home/wjg/code/FlowState/evaluation/paper_hybrid_gpu_fix_a/persistence.py",
+      "sha256": "568806c2746dd1146ed19604e50e84158858d807e6ed892e5694a8df2c39e139"
+    }
+  },
+  "identical": [
+    "persistence.py"
+  ],
+  "handwritten": [
+    "runner.py",
+    "control.py",
+    "bridge.py",
+    "source_contract.py",
+    "greedy_adapter.py"
+  ],
+  "identical_note": "persistence.py 应为逐字节复制；其余为文档化差异（见本文件 docstring）"
+}

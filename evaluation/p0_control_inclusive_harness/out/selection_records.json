@@ -1,0 +1,174 @@
+{
+  "K": 3,
+  "gpu_pendings": [
+    "C_A",
+    "C_B",
+    "C_C",
+    "C_D"
+  ],
+  "selection_records": {
+    "FlowState-Greedy": {
+      "policy": "FlowState-Greedy",
+      "kernel_entry": "flowstate.optimizer.GlobalOptimizer.plan_strict",
+      "selection_call_ms": 60.151273,
+      "decision": {
+        "solver": "Marginal Greedy",
+        "gate_allowed": false,
+        "gate": {
+          "candidates": 16,
+          "pendings": 4,
+          "budget_k": 3,
+          "enumerable_subsets": 697
+        },
+        "selected_ids": [
+          "B5C3_NODE_57",
+          "B5C3_NODE_56",
+          "B5C3_NODE_55"
+        ],
+        "objective_ms": 154.34895561599998,
+        "pure_solve_ms": 0.506143
+      },
+      "selected_physical_ids": [
+        "B5C3_NODE_57",
+        "B5C3_NODE_56",
+        "B5C3_NODE_55"
+      ],
+      "selected_cpu_ids": [
+        "C_B_P05120",
+        "C_C_P06144",
+        "C_D_P07168"
+      ],
+      "evicted_physical_ids": [
+        "B5C3_NODE_51",
+        "B5C3_NODE_52",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_58",
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72",
+        "B5C3_NODE_74"
+      ],
+      "recovery_cost_ms": 154.34895561599998,
+      "inputs_visibility": "Strict Epoch 冻结快照域：16 物理候选（含 L/槽位/物化时间线）、4 Pending 的 T 与 FA 前沿、Φ 恢复成本模型；GPU 阶段为实时观察 + census 映射后同域"
+    },
+    "Marconi-Evict": {
+      "policy": "Marconi-Evict",
+      "kernel_entry": "evaluation.marconi_evict_t2m.evict_policy.MarconiEvictPolicy.select",
+      "selection_call_ms": 0.364803,
+      "eviction_order_cpu": [
+        "C_ROOT_P00960",
+        "C_AB_P01984",
+        "C_A_P04096",
+        "C_B_P05120",
+        "C_CD_P03008",
+        "C_A_P04032",
+        "C_AB_P02048",
+        "C_C_P06144",
+        "C_D_P07168",
+        "C_B_P05056",
+        "C_C_P06080",
+        "C_CD_P03072",
+        "C_D_P07104"
+      ],
+      "rounds": 13,
+      "selected_physical_ids": [
+        "B5C3_NODE_74",
+        "B5C3_NODE_58",
+        "B5C3_NODE_51"
+      ],
+      "selected_cpu_ids": [
+        "C_JOIN_P04032",
+        "C_JOIN_P04096",
+        "C_ROOT_P01024"
+      ],
+      "evicted_physical_ids": [
+        "B5C3_NODE_52",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72"
+      ],
+      "eviction_order_physical_ids": [
+        "B5C3_NODE_60",
+        "B5C3_NODE_62",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_64",
+        "B5C3_NODE_66",
+        "B5C3_NODE_52",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_53",
+        "B5C3_NODE_72"
+      ],
+      "recovery_cost_ms": 703.45464601,
+      "inputs_visibility": "声明 case 候选（token_position_L、等大小 51,511,296B）、last_access_order （声明访问序）、parent 链；α=1.0；不读恢复成本"
+    },
+    "KVFlow-inspired": {
+      "policy": "KVFlow-inspired",
+      "kernel_entry": "evaluation.kvflow_inspired_retention_cpu.policy.select",
+      "selection_call_ms": 4.401004,
+      "selected_physical_ids": [
+        "B5C3_NODE_62",
+        "B5C3_NODE_52",
+        "B5C3_NODE_66"
+      ],
+      "selected_cpu_ids": [
+        "C_AB_P01984",
+        "C_AB_P02048",
+        "C_A_P04032"
+      ],
+      "evicted_physical_ids": [
+        "B5C3_NODE_51",
+        "B5C3_NODE_53",
+        "B5C3_NODE_54",
+        "B5C3_NODE_55",
+        "B5C3_NODE_56",
+        "B5C3_NODE_57",
+        "B5C3_NODE_58",
+        "B5C3_NODE_60",
+        "B5C3_NODE_64",
+        "B5C3_NODE_68",
+        "B5C3_NODE_70",
+        "B5C3_NODE_72",
+        "B5C3_NODE_74"
+      ],
+      "recovery_cost_ms": 627.6149768490118,
+      "inputs_visibility": "声明 candidates + graph + declarations（ASG/STE，known_at_epoch 门控，无未来信息）；不读恢复成本"
+    }
+  },
+  "oracle": {
+    "per_policy": {
+      "FlowState-Greedy": {
+        "matches_t2g1_frozen": true,
+        "matches_g1_physical_plan": true,
+        "matches_frozen_J": true,
+        "matches_pilot_plans": true
+      },
+      "Marconi-Evict": {
+        "matches_t2g1_frozen": true
+      },
+      "KVFlow-inspired": {
+        "matches_t2g1_frozen": true
+      }
+    },
+    "oracle_check_ms": 526.511486,
+    "note": "oracle 读取与比对发生在全部在线选择之后；属窗口外研究审计，不计入 Select 耗时"
+  },
+  "note": "CPU 门禁产物；Select 为真实内核在线耗时；oracle 为事后对照"
+}

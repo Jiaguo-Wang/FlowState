@@ -1,0 +1,47 @@
+{
+  "task": "G2：B5-C4/K2 严格多共享结构 GPU 性能对照（FlowState-Hybrid/Exact vs Marginal Greedy）",
+  "spec_id": "82ee",
+  "research_question": "相同严格兼容关系与 K=2 预算下，把公共祖先状态替换为两个深层分支状态（Exact 选集 {N18,N27} vs Greedy 选集 {N20,N18}），能否稳定减少实际 Prefill 开销与请求 TTFT",
+  "scope_constraints": {
+    "strategies": "仅 Exact（生产 plan_strict 门禁内自动）与 Marginal Greedy（生产 _select_candidates 内部路径经 greedy_adapter 最小适配）；不增加其他策略",
+    "unchanged": ["Φ 成本模型", "Exact/Marginal Greedy 算法", "Strict Compatibility 语义", "候选域与预算 K=2", "SGLang 原生恢复语义", "已冻结实验产物", "安全门禁"],
+    "forbidden_and_honored": "未篡改候选数量/门禁/预算强制 Greedy（control 断言 B5-C4 域满足 Exact 门禁）；未使用冻结 Greedy Plan 替代本轮求解（在线求解 + 事后 Oracle）；未筛选快模式或剔除不利轮次；全部失败尝试保留",
+    "stop_condition": "G2 完成即停止，不进入 w1/K3、Baseline 移植、Runtime 性能优化或其他实验"
+  },
+  "phases": {
+    "G2-A_gate": {
+      "arms": "2 策略 × 4 Pending = 8 臂（preflight/gate/）",
+      "verdict_file": "preflight/gate/verify.json",
+      "checks": ["Native Recovery Frontier==Plan", "Prefill Token==len(pt)−E（B5-C4 语义，非 C/K3 的 G+32）", "8 Token 与独立 Cold 参照逐 Token 一致", "Attention-side State 完整（FA map/内容保护）", "未选 5 状态按计划驱逐", "TTFT/CUDA Prefill/Decode/Request Wall 计时边界明确", "重型审计不污染请求窗口（audit==2）", "形状预热在正式计时前完成且请求窗口零新增编译", "D4b 专项：ΔCUDA Prefill 与 ΔTTFT 方向不反向"]
+    },
+    "G2-B_formal": {
+      "arms": "2 策略 × 4 Pending × 5 轮 = 40 臂（formal/，schedule.json 预固定）",
+      "ordering": "奇数轮 Exact 先、偶数轮 Greedy 先；策略块内 A,B,C,D；launch.py 强制顺序（前序臂未终态不得启动）",
+      "lifecycle": "每臂独立 Docker/GPU 生命周期（镜像 sha256:1dfce9033670…，H100 PCIe GPU0），重试追加 _r{n} 不覆盖"
+    }
+  },
+  "frozen_references": {
+    "prepared_inputs": "b5d4b execution_lock 哈希核验复制（8 历史 + 4 Pending，K=2）",
+    "g2_reference": "e3 condition_results.csv 全精度抽取：Exact {N18,N27} J=48.228728759089606；Greedy {N20,N18} J=130.8030838298517；仅事后对照，控制路径不读取",
+    "cold_reference_C": "gate_a frozen_cold_reference.json（b5d4b 10 臂验证）",
+    "cold_reference_A_B_D": "preflight/cold/ 三臂补采（同 b5d4b Cold 协议）经 promote_cold.py 核验落位",
+    "node_id_semantics": "N18/N20/N27 为逻辑标签；每个新 GPU 生命周期内由实时 Census 重建 Token 身份与物理组件，不跨容器复用 Node/Slot ID"
+  },
+  "measurement": {
+    "caliber_A_compute": "CUDA prefill/decode 与 COW 事件（设备时间线区间，非纯内核之和）",
+    "caliber_B_request": "TTFT 六段分解（queue/pregap/execwin/compute/postgap/delivery，闭合<5ms）+ request_wall + 输出时间戳",
+    "caliber_C_control": "apply RPC 墙钟 + 控制分段（heavy_observation_gpu_sync/strict_epoch_authentication/online_solve/independent_oracle/apply_time_freshness_preflight/fa_content_*/strict_reconciliation_with_postchecks）；完整 Wall 保留审计成本",
+    "shape_warm": "apply 后形状预热 B：pt[:E]+确定性随机尾（E 处分叉），max_new_tokens=2，编译目标 extend/decode 形状，不进正式计时",
+    "measure_mode": "FS_MEASURE_MODE=1；请求窗口（发送→首Token）零 A 类审计零落盘；Triton 快照差分要求请求窗口零新增编译",
+    "gpu_clock_power": "每臂 gpu_before 记录 clocks.sm/clocks.mem/power.draw/power.limit；cleanup 记录 clocks.sm/power.draw"
+  },
+  "statistics": {
+    "request_level": "每 Pending 五轮 TTFT / CUDA Prefill 中位数（附全部五轮值）",
+    "set_level": "每轮四 Pending 等权均值 → 五轮中位",
+    "paired": "同轮同 Pending 配对差 ΔTTFT_r / ΔCUDA Prefill_r（Greedy−Exact）+ 轮级等权配对差中位",
+    "retention": "保留全部有效结果（含 Exact 更慢者）；不宣称统计显著性",
+    "three_layers": "(1) 模型化 J 更低 (2) Native Gap 减少（G_model=T−E、Prefill Token）(3) CUDA Prefill/TTFT 实测改善；(1)(2) 不得直接推导 (3)"
+  },
+  "statistics_env_note": "共享 GPU 单卡环境；未做 GPU 时钟锁频，clocks/power 逐臂留档供归因",
+  "deliverables": ["preflight/（prepare/cpu_preflight/stage_inputs/cold/gate + 冻结输入）", "pkg_g2/（bridge/runner/control/greedy_adapter/source_contract/persistence + build_record）", "formal/（schedule/launch/driver/analyze + 40 臂证据 + raw_results/paired_analysis/checks/arm_status）", "implementation_lock.json", "final_report.md"]
+}

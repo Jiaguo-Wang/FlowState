@@ -1,0 +1,946 @@
+{
+  "n_rounds": 5,
+  "n_arms": 15,
+  "all_pass": true,
+  "per_round": {
+    "1": {
+      "FlowState-Greedy": {
+        "arm": "m1_ck3_fs",
+        "E": [
+          0,
+          5120,
+          6144,
+          7168
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          4096,
+          0,
+          0,
+          0
+        ],
+        "ttft_ms": [
+          162.546,
+          46.967,
+          34.789,
+          35.908
+        ],
+        "cuda_prefill_ms": [
+          152.138,
+          40.02,
+          28.654,
+          29.446
+        ],
+        "control_cycle_ms": 10448.181433,
+        "cycle_ms_full_incl_warm": 25023.40581,
+        "request_exec_total_ms": 848.730977,
+        "sum_ttft_ms": 280.209,
+        "sum_cuda_prefill_ms": 250.258,
+        "J_ms": 154.34895561599998,
+        "selection_ids": [
+          "C_B_P05120",
+          "C_C_P06144",
+          "C_D_P07168"
+        ]
+      },
+      "Marconi-Evict": {
+        "arm": "m1_ck3_mc",
+        "E": [
+          1024,
+          1024,
+          1024,
+          1024
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          3072,
+          4096,
+          5120,
+          6144
+        ],
+        "ttft_ms": [
+          128.63,
+          163.252,
+          203.528,
+          242.2
+        ],
+        "cuda_prefill_ms": [
+          117.811,
+          153.808,
+          195.387,
+          232.804
+        ],
+        "control_cycle_ms": 9606.785315,
+        "cycle_ms_full_incl_warm": 25237.455633,
+        "request_exec_total_ms": 1323.33024,
+        "sum_ttft_ms": 737.609,
+        "sum_cuda_prefill_ms": 699.81,
+        "J_ms": 703.45464601,
+        "selection_ids": [
+          "C_JOIN_P04032",
+          "C_JOIN_P04096",
+          "C_ROOT_P01024"
+        ]
+      },
+      "KVFlow-inspired": {
+        "arm": "m1_ck3_kv",
+        "E": [
+          4032,
+          2048,
+          0,
+          0
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          64,
+          3072,
+          6144,
+          7168
+        ],
+        "ttft_ms": [
+          61.624,
+          128.048,
+          246.412,
+          278.977
+        ],
+        "cuda_prefill_ms": [
+          51.605,
+          117.693,
+          234.549,
+          269.443
+        ],
+        "control_cycle_ms": 10300.274652,
+        "cycle_ms_full_incl_warm": 24242.057368,
+        "request_exec_total_ms": 1375.023749,
+        "sum_ttft_ms": 715.062,
+        "sum_cuda_prefill_ms": 673.289,
+        "J_ms": 627.6149768490118,
+        "selection_ids": [
+          "C_AB_P01984",
+          "C_AB_P02048",
+          "C_A_P04032"
+        ]
+      }
+    },
+    "2": {
+      "FlowState-Greedy": {
+        "arm": "m2_ck3_fs",
+        "E": [
+          0,
+          5120,
+          6144,
+          7168
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          4096,
+          0,
+          0,
+          0
+        ],
+        "ttft_ms": [
+          159.982,
+          35.225,
+          34.427,
+          33.645
+        ],
+        "cuda_prefill_ms": [
+          152.444,
+          28.727,
+          29.02,
+          28.12
+        ],
+        "control_cycle_ms": 10138.857665,
+        "cycle_ms_full_incl_warm": 24107.214637,
+        "request_exec_total_ms": 795.725021,
+        "sum_ttft_ms": 263.279,
+        "sum_cuda_prefill_ms": 238.311,
+        "J_ms": 154.34895561599998,
+        "selection_ids": [
+          "C_B_P05120",
+          "C_C_P06144",
+          "C_D_P07168"
+        ]
+      },
+      "Marconi-Evict": {
+        "arm": "m2_ck3_mc",
+        "E": [
+          1024,
+          1024,
+          1024,
+          1024
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          3072,
+          4096,
+          5120,
+          6144
+        ],
+        "ttft_ms": [
+          124.1,
+          162.238,
+          203.232,
+          242.65
+        ],
+        "cuda_prefill_ms": [
+          116.506,
+          154.661,
+          195.242,
+          234.749
+        ],
+        "control_cycle_ms": 8123.1008,
+        "cycle_ms_full_incl_warm": 20981.581929,
+        "request_exec_total_ms": 1207.80201,
+        "sum_ttft_ms": 732.22,
+        "sum_cuda_prefill_ms": 701.158,
+        "J_ms": 703.45464601,
+        "selection_ids": [
+          "C_JOIN_P04032",
+          "C_JOIN_P04096",
+          "C_ROOT_P01024"
+        ]
+      },
+      "KVFlow-inspired": {
+        "arm": "m2_ck3_kv",
+        "E": [
+          4032,
+          2048,
+          0,
+          0
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          64,
+          3072,
+          6144,
+          7168
+        ],
+        "ttft_ms": [
+          40.733,
+          128.599,
+          246.257,
+          284.927
+        ],
+        "cuda_prefill_ms": [
+          33.175,
+          118.367,
+          233.655,
+          271.215
+        ],
+        "control_cycle_ms": 9701.982282,
+        "cycle_ms_full_incl_warm": 24278.82996,
+        "request_exec_total_ms": 1515.11023,
+        "sum_ttft_ms": 700.517,
+        "sum_cuda_prefill_ms": 656.412,
+        "J_ms": 627.6149768490118,
+        "selection_ids": [
+          "C_AB_P01984",
+          "C_AB_P02048",
+          "C_A_P04032"
+        ]
+      }
+    },
+    "3": {
+      "FlowState-Greedy": {
+        "arm": "m3_ck3_fs",
+        "E": [
+          0,
+          5120,
+          6144,
+          7168
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          4096,
+          0,
+          0,
+          0
+        ],
+        "ttft_ms": [
+          158.358,
+          32.754,
+          34.985,
+          34.068
+        ],
+        "cuda_prefill_ms": [
+          150.795,
+          27.291,
+          29.39,
+          28.153
+        ],
+        "control_cycle_ms": 10205.763211,
+        "cycle_ms_full_incl_warm": 23830.090345,
+        "request_exec_total_ms": 783.988886,
+        "sum_ttft_ms": 260.164,
+        "sum_cuda_prefill_ms": 235.629,
+        "J_ms": 154.34895561599998,
+        "selection_ids": [
+          "C_B_P05120",
+          "C_C_P06144",
+          "C_D_P07168"
+        ]
+      },
+      "Marconi-Evict": {
+        "arm": "m3_ck3_mc",
+        "E": [
+          1024,
+          1024,
+          1024,
+          1024
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          3072,
+          4096,
+          5120,
+          6144
+        ],
+        "ttft_ms": [
+          124.396,
+          160.73,
+          204.806,
+          242.103
+        ],
+        "cuda_prefill_ms": [
+          115.908,
+          152.675,
+          195.885,
+          233.523
+        ],
+        "control_cycle_ms": 9514.08078,
+        "cycle_ms_full_incl_warm": 23952.611012,
+        "request_exec_total_ms": 1240.865567,
+        "sum_ttft_ms": 732.035,
+        "sum_cuda_prefill_ms": 697.992,
+        "J_ms": 703.45464601,
+        "selection_ids": [
+          "C_JOIN_P04032",
+          "C_JOIN_P04096",
+          "C_ROOT_P01024"
+        ]
+      },
+      "KVFlow-inspired": {
+        "arm": "m3_ck3_kv",
+        "E": [
+          4032,
+          2048,
+          0,
+          0
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          64,
+          3072,
+          6144,
+          7168
+        ],
+        "ttft_ms": [
+          35.881,
+          123.795,
+          241.113,
+          277.19
+        ],
+        "cuda_prefill_ms": [
+          29.197,
+          116.449,
+          233.558,
+          268.276
+        ],
+        "control_cycle_ms": 7918.05377,
+        "cycle_ms_full_incl_warm": 22293.537741,
+        "request_exec_total_ms": 1168.323089,
+        "sum_ttft_ms": 677.979,
+        "sum_cuda_prefill_ms": 647.48,
+        "J_ms": 627.6149768490118,
+        "selection_ids": [
+          "C_AB_P01984",
+          "C_AB_P02048",
+          "C_A_P04032"
+        ]
+      }
+    },
+    "4": {
+      "FlowState-Greedy": {
+        "arm": "m4_ck3_fs",
+        "E": [
+          0,
+          5120,
+          6144,
+          7168
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          4096,
+          0,
+          0,
+          0
+        ],
+        "ttft_ms": [
+          160.581,
+          32.983,
+          34.21,
+          34.129
+        ],
+        "cuda_prefill_ms": [
+          152.582,
+          27.183,
+          28.995,
+          27.749
+        ],
+        "control_cycle_ms": 10000.545553,
+        "cycle_ms_full_incl_warm": 25027.931005,
+        "request_exec_total_ms": 775.023209,
+        "sum_ttft_ms": 261.902,
+        "sum_cuda_prefill_ms": 236.509,
+        "J_ms": 154.34895561599998,
+        "selection_ids": [
+          "C_B_P05120",
+          "C_C_P06144",
+          "C_D_P07168"
+        ]
+      },
+      "Marconi-Evict": {
+        "arm": "m4_ck3_mc",
+        "E": [
+          1024,
+          1024,
+          1024,
+          1024
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          3072,
+          4096,
+          5120,
+          6144
+        ],
+        "ttft_ms": [
+          124.253,
+          159.239,
+          204.758,
+          243.859
+        ],
+        "cuda_prefill_ms": [
+          116.474,
+          151.592,
+          196.675,
+          234.951
+        ],
+        "control_cycle_ms": 7681.772812,
+        "cycle_ms_full_incl_warm": 21379.656555,
+        "request_exec_total_ms": 1225.167057,
+        "sum_ttft_ms": 732.11,
+        "sum_cuda_prefill_ms": 699.693,
+        "J_ms": 703.45464601,
+        "selection_ids": [
+          "C_JOIN_P04032",
+          "C_JOIN_P04096",
+          "C_ROOT_P01024"
+        ]
+      },
+      "KVFlow-inspired": {
+        "arm": "m4_ck3_kv",
+        "E": [
+          4032,
+          2048,
+          0,
+          0
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          64,
+          3072,
+          6144,
+          7168
+        ],
+        "ttft_ms": [
+          37.959,
+          125.389,
+          241.327,
+          279.77
+        ],
+        "cuda_prefill_ms": [
+          31.426,
+          118.237,
+          232.984,
+          270.594
+        ],
+        "control_cycle_ms": 7784.825664,
+        "cycle_ms_full_incl_warm": 21573.870674,
+        "request_exec_total_ms": 1181.824723,
+        "sum_ttft_ms": 684.445,
+        "sum_cuda_prefill_ms": 653.241,
+        "J_ms": 627.6149768490118,
+        "selection_ids": [
+          "C_AB_P01984",
+          "C_AB_P02048",
+          "C_A_P04032"
+        ]
+      }
+    },
+    "5": {
+      "FlowState-Greedy": {
+        "arm": "m5_ck3_fs",
+        "E": [
+          0,
+          5120,
+          6144,
+          7168
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          4096,
+          0,
+          0,
+          0
+        ],
+        "ttft_ms": [
+          158.548,
+          32.116,
+          31.188,
+          32.514
+        ],
+        "cuda_prefill_ms": [
+          151.133,
+          26.083,
+          25.751,
+          26.338
+        ],
+        "control_cycle_ms": 10022.915981,
+        "cycle_ms_full_incl_warm": 22420.994923,
+        "request_exec_total_ms": 746.534448,
+        "sum_ttft_ms": 254.366,
+        "sum_cuda_prefill_ms": 229.304,
+        "J_ms": 154.34895561599998,
+        "selection_ids": [
+          "C_B_P05120",
+          "C_C_P06144",
+          "C_D_P07168"
+        ]
+      },
+      "Marconi-Evict": {
+        "arm": "m5_ck3_mc",
+        "E": [
+          1024,
+          1024,
+          1024,
+          1024
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          3072,
+          4096,
+          5120,
+          6144
+        ],
+        "ttft_ms": [
+          124.933,
+          160.721,
+          205.3,
+          244.569
+        ],
+        "cuda_prefill_ms": [
+          116.399,
+          152.914,
+          196.097,
+          235.129
+        ],
+        "control_cycle_ms": 7664.458736,
+        "cycle_ms_full_incl_warm": 20716.974371,
+        "request_exec_total_ms": 1256.07332,
+        "sum_ttft_ms": 735.523,
+        "sum_cuda_prefill_ms": 700.54,
+        "J_ms": 703.45464601,
+        "selection_ids": [
+          "C_JOIN_P04032",
+          "C_JOIN_P04096",
+          "C_ROOT_P01024"
+        ]
+      },
+      "KVFlow-inspired": {
+        "arm": "m5_ck3_kv",
+        "E": [
+          4032,
+          2048,
+          0,
+          0
+        ],
+        "T": [
+          4096,
+          5120,
+          6144,
+          7168
+        ],
+        "G": [
+          64,
+          3072,
+          6144,
+          7168
+        ],
+        "ttft_ms": [
+          36.494,
+          125.06,
+          241.575,
+          280.948
+        ],
+        "cuda_prefill_ms": [
+          29.928,
+          117.903,
+          233.04,
+          271.646
+        ],
+        "control_cycle_ms": 9596.033092,
+        "cycle_ms_full_incl_warm": 22840.290056,
+        "request_exec_total_ms": 1191.901929,
+        "sum_ttft_ms": 684.077,
+        "sum_cuda_prefill_ms": 652.518,
+        "J_ms": 627.6149768490118,
+        "selection_ids": [
+          "C_AB_P01984",
+          "C_AB_P02048",
+          "C_A_P04032"
+        ]
+      }
+    }
+  },
+  "paired": {
+    "FS-MC": {
+      "sum_ttft_ms": [
+        -457.4,
+        -468.941,
+        -471.871,
+        -470.208,
+        -481.157
+      ],
+      "sum_cuda_prefill_ms": [
+        -449.552,
+        -462.847,
+        -462.363,
+        -463.184,
+        -471.236
+      ],
+      "ttft_per_pending": [
+        [
+          33.916,
+          -116.285,
+          -168.739,
+          -206.292
+        ],
+        [
+          35.882,
+          -127.013,
+          -168.805,
+          -209.005
+        ],
+        [
+          33.962,
+          -127.976,
+          -169.821,
+          -208.035
+        ],
+        [
+          36.328,
+          -126.256,
+          -170.548,
+          -209.73
+        ],
+        [
+          33.615,
+          -128.605,
+          -174.112,
+          -212.055
+        ]
+      ]
+    },
+    "FS-KV": {
+      "sum_ttft_ms": [
+        -434.853,
+        -437.238,
+        -417.815,
+        -422.543,
+        -429.711
+      ],
+      "sum_cuda_prefill_ms": [
+        -423.031,
+        -418.101,
+        -411.851,
+        -416.732,
+        -423.214
+      ],
+      "ttft_per_pending": [
+        [
+          100.922,
+          -81.081,
+          -211.623,
+          -243.069
+        ],
+        [
+          119.249,
+          -93.374,
+          -211.83,
+          -251.282
+        ],
+        [
+          122.477,
+          -91.041,
+          -206.128,
+          -243.122
+        ],
+        [
+          122.622,
+          -92.406,
+          -207.117,
+          -245.641
+        ],
+        [
+          122.054,
+          -92.944,
+          -210.387,
+          -248.434
+        ]
+      ]
+    }
+  },
+  "summary_stats": {
+    "FlowState-Greedy": {
+      "sum_ttft_ms": {
+        "median": 261.902,
+        "min": 254.366,
+        "max": 280.209
+      },
+      "sum_cuda_prefill_ms": {
+        "median": 236.509,
+        "min": 229.304,
+        "max": 250.258
+      },
+      "J_ms": {
+        "median": 154.349,
+        "min": 154.349,
+        "max": 154.349
+      },
+      "control_cycle_ms": {
+        "median": 10138.858,
+        "min": 10000.546,
+        "max": 10448.181
+      },
+      "cycle_ms_full_incl_warm": {
+        "median": 24107.215,
+        "min": 22420.995,
+        "max": 25027.931
+      }
+    },
+    "Marconi-Evict": {
+      "sum_ttft_ms": {
+        "median": 732.22,
+        "min": 732.035,
+        "max": 737.609
+      },
+      "sum_cuda_prefill_ms": {
+        "median": 699.81,
+        "min": 697.992,
+        "max": 701.158
+      },
+      "J_ms": {
+        "median": 703.455,
+        "min": 703.455,
+        "max": 703.455
+      },
+      "control_cycle_ms": {
+        "median": 8123.101,
+        "min": 7664.459,
+        "max": 9606.785
+      },
+      "cycle_ms_full_incl_warm": {
+        "median": 21379.657,
+        "min": 20716.974,
+        "max": 25237.456
+      }
+    },
+    "KVFlow-inspired": {
+      "sum_ttft_ms": {
+        "median": 684.445,
+        "min": 677.979,
+        "max": 715.062
+      },
+      "sum_cuda_prefill_ms": {
+        "median": 653.241,
+        "min": 647.48,
+        "max": 673.289
+      },
+      "J_ms": {
+        "median": 627.615,
+        "min": 627.615,
+        "max": 627.615
+      },
+      "control_cycle_ms": {
+        "median": 9596.033,
+        "min": 7784.826,
+        "max": 10300.275
+      },
+      "cycle_ms_full_incl_warm": {
+        "median": 22840.29,
+        "min": 21573.871,
+        "max": 24278.83
+      }
+    }
+  },
+  "J_vs_realized_prefill": [
+    {
+      "round": 1,
+      "J_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "prefill_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "J_FS_minus_MC": -549.106,
+      "prefill_FS_minus_MC": -449.552,
+      "J_FS_minus_KV": -473.266,
+      "prefill_FS_minus_KV": -423.031
+    },
+    {
+      "round": 2,
+      "J_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "prefill_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "J_FS_minus_MC": -549.106,
+      "prefill_FS_minus_MC": -462.847,
+      "J_FS_minus_KV": -473.266,
+      "prefill_FS_minus_KV": -418.101
+    },
+    {
+      "round": 3,
+      "J_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "prefill_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "J_FS_minus_MC": -549.106,
+      "prefill_FS_minus_MC": -462.363,
+      "J_FS_minus_KV": -473.266,
+      "prefill_FS_minus_KV": -411.851
+    },
+    {
+      "round": 4,
+      "J_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "prefill_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "J_FS_minus_MC": -549.106,
+      "prefill_FS_minus_MC": -463.184,
+      "J_FS_minus_KV": -473.266,
+      "prefill_FS_minus_KV": -416.732
+    },
+    {
+      "round": 5,
+      "J_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "prefill_order": [
+        "FlowState-Greedy",
+        "KVFlow-inspired",
+        "Marconi-Evict"
+      ],
+      "J_FS_minus_MC": -549.106,
+      "prefill_FS_minus_MC": -471.236,
+      "J_FS_minus_KV": -473.266,
+      "prefill_FS_minus_KV": -423.214
+    }
+  ],
+  "note": "口径:逐轮配对差后取五轮中位;双口径分列禁混用;r1 Pilot 不进样本;n=5 不做显著性声明"
+}

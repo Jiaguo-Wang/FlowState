@@ -1,0 +1,14 @@
+A Strict20：20/20 走 Exact、J/选集==e3 与 b5d1 双参照；Greedy 行为 20/20 不变
+   Exact 纯求解时间 ms：min=0.0940 median=0.4589 max=0.9510
+B C/K3：门禁拒绝(n=16)→Marginal Greedy；选集==冻结 FS；J=154.348956
+C 失败路径：3/3 Fail-stop（无回退、无部分计划、无成功决策记录）
+边界判定： [(12, 4, True), (13, 4, False), (12, 4, False), (12, 5, False), (11, 4, True), (16, 3, False)]
+判定：PASS（CPU 门禁；不等于在线 GPU 端到端验证）
+Traceback (most recent call last):
+  File "/home/wjg/code/FlowState/evaluation/exact_greedy_mainpath_audit_20261103/recheck.py", line 135, in <module>
+    if __name__=='__main__':main()
+  File "/home/wjg/code/FlowState/evaluation/exact_greedy_mainpath_audit_20261103/recheck.py", line 90, in main
+    epoch=StrictAllocationEpoch.from_snapshot_bytes(raw,expected_sha256=hashlib.sha256(raw).hexdigest(),K=r['plan']['K'])
+  File "/home/wjg/code/FlowState/flowstate/strict_epoch.py", line 159, in from_snapshot_bytes
+    eid=s['barrier_id'];cfg=_digest(s['configuration'])
+KeyError: 'barrier_id'
